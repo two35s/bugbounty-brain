@@ -1,0 +1,303 @@
+Category: api-testing
+Reports: 75
+
+[Low] Bypass of Restricted Keyword "Mozilla" in Display Name Field via Unicode Homoglyphs on addons.allizom.org
+  URL: https://hackerone.com/reports/3279441 | CWE: Improper Input Validation
+  Program: mozilla | Reporter: icecream_23
+
+[High] Internal Access to Hackerone confluence Docs
+  URL: https://hackerone.com/reports/3113398 | CWE: Misconfiguration
+  Program: security | Reporter: madara_
+
+[Low] Bypass "No Links" Restriction in Biography via Protocol-Relative URL (//)
+  URL: https://hackerone.com/reports/3175695 | CWE: Improper Input Validation
+  Program: mozilla | Reporter: yoyomiski
+
+[Critical] [Xenoblade Chronicles X: Definitive Edition] Unrestricted RPCs allow DoS and writing arbitrary flags remotely
+  URL: https://hackerone.com/reports/3062122 | CWE: Resource Injection
+  Program: nintendo | Reporter: roccodev
+
+[Medium] Deadlock in x86 HVM standard VGA handling
+  URL: https://hackerone.com/reports/2921724 | CWE: Improper Input Validation
+  Program: ibb | Reporter: stonksy
+
+[Medium] [ addons-preview-cdn.mozilla.net ] A subdomain takeover is available via unregistered domain in Fastly
+  URL: https://hackerone.com/reports/2706358 | CWE: Misconfiguration
+  Program: mozilla | Reporter: haveaniceday
+
+[Medium] phpinfo() exposed on ██████████
+  URL: https://hackerone.com/reports/2641211 | CWE: Misconfiguration
+  Program: mars | Reporter: blax17
+
+[?] phpinfo() exposed on ██████████
+  URL: https://hackerone.com/reports/2666151 | CWE: Misconfiguration
+  Program: mars | Reporter: thpless
+
+[Low] Subdomain takeover in Gitlab pages
+  URL: https://hackerone.com/reports/2523654 | CWE: Misconfiguration
+  Program: gitlab | Reporter: fdeleite
+
+[Low] HTML injection possible with soft email confirmations when Administrator manually confirms attacker email address
+  URL: https://hackerone.com/reports/1935628 | CWE: Resource Injection
+  Program: gitlab | Reporter: cryptopone
+
+[Low] Remove obsolete domain from handbook subdomain
+  URL: https://hackerone.com/reports/2599840 | CWE: Misconfiguration
+  Program: gitlab | Reporter: tefa_
+
+[Low] Posts sent via websockets aren't sanitized properly
+  URL: https://hackerone.com/reports/2541027 | CWE: Improper Input Validation
+  Program: mattermost | Reporter: c0rydoras
+
+[Medium] RC Between GitHub's Repo Update REST API and updateTeamsRepository GraphQL Mutation Results in Covert and Persistent Admin Access Retention
+  URL: https://hackerone.com/reports/2357443 | CWE: Misconfiguration
+  Program: github | Reporter: inspector-ambitious
+
+[Medium] moderate: Apache HTTP Server: mod_rewrite proxy handler substitution (CVE-2024-39573) CWE-20 Improper Input Validation
+  URL: https://hackerone.com/reports/2585374 | CWE: Improper Input Validation
+  Program: ibb | Reporter: orange
+
+[Medium] Incorrect Deep-link validation leading to unresponsive application and device
+  URL: https://hackerone.com/reports/1157795 | CWE: Improper Input Validation
+  Program: flickr | Reporter: fr4via
+
+[Medium] Subdomain takeover on one of the subdomain under mozgcp.net
+  URL: https://hackerone.com/reports/2123680 | CWE: Misconfiguration
+  Program: mozilla | Reporter: d0xing
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2127469 | CWE: Misconfiguration
+  Program: mozilla | Reporter: d0xing
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2129791 | CWE: Misconfiguration
+  Program: mozilla | Reporter: d0xing
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2131215 | CWE: Misconfiguration
+  Program: mozilla | Reporter: d0xing
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2134671 | CWE: Misconfiguration
+  Program: mozilla | Reporter: d0xing
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2209571 | CWE: Misconfiguration
+  Program: mozilla | Reporter: d0xing
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2269867 | CWE: Misconfiguration
+  Program: mozilla | Reporter: holybugx
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2286867 | CWE: Misconfiguration
+  Program: mozilla | Reporter: holybugx
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2287098 | CWE: Misconfiguration
+  Program: mozilla | Reporter: holybugx
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2285286 | CWE: Misconfiguration
+  Program: mozilla | Reporter: holybugx
+
+[Medium] Misconfiguration in AWS CloudFront CDN configuration makes rubygems.org serve (and cache) content from a unclaimed S3-bucket
+  URL: https://hackerone.com/reports/2262939 | CWE: Misconfiguration
+  Program: ibb | Reporter: p4fg
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2194289 | CWE: Misconfiguration
+  Program: mozilla | Reporter: holybugx
+
+[Medium] Subdomain takeover on one of the subdomain under mozilla.org
+  URL: https://hackerone.com/reports/2017323 | CWE: Misconfiguration
+  Program: mozilla | Reporter: d0xing
+
+[Medium] Complete Admin account takeover due to PhpDebugBar turned on in Uber's production server
+  URL: https://hackerone.com/reports/1883806 | CWE: Misconfiguration
+  Program: uber | Reporter: lalit2020
+
+[Medium] CVE-2023-28710 Apache Airflow Spark Provider Arbitrary File Read via JDBC
+  URL: https://hackerone.com/reports/1966083 | CWE: Improper Input Validation
+  Program: ibb | Reporter: sw0rd1ight
+
+[Low] 2M Reports on HackerOne Celebration! - Ability to bulk-submit many reports.
+  URL: https://hackerone.com/reports/2000000 | CWE: Misconfiguration
+  Program: security | Reporter: nagli
+
+[Low] The `stripe/veneur` GitHub repository links to a domain `veneur.org`, which is not under stripe's control
+  URL: https://hackerone.com/reports/2011298 | CWE: Misconfiguration
+  Program: stripe | Reporter: peterldowns
+
+[Medium] Apache Airflow Google Cloud Sql Provider Remote Command Execution
+  URL: https://hackerone.com/reports/1895277 | CWE: Improper Input Validation
+  Program: ibb | Reporter: sw0rd1ight
+
+[Low] CVE-2023-25692: Apache Airflow Google Provider: Google Cloud Sql Provider Denial Of Service and Remote Command Execution
+  URL: https://hackerone.com/reports/1895316 | CWE: Improper Input Validation
+  Program: ibb | Reporter: sw0rd1ight
+
+[Low] Bypass parsing of transaction data, users on the phishing site will transfer/approve  ERC20 tokens without being alerted
+  URL: https://hackerone.com/reports/1651429 | CWE: Improper Input Validation
+  Program: metamask | Reporter: ronnyx2017
+
+[Medium] Improper handling of null bytes in GitHub Actions Runner allows an attacker to set arbitrary environment variables
+  URL: https://hackerone.com/reports/1762025 | CWE: Resource Injection
+  Program: github | Reporter: ryotak
+
+[Low] Object injection in `stripe-billing-typographic` GitHub project via /auth/login 
+  URL: https://hackerone.com/reports/1183335 | CWE: Resource Injection
+  Program: stripe | Reporter: ph0r3nsic
+
+[Critical] Wordpress Takeover using setup configuration at http://████.edu [HtUS]
+  URL: https://hackerone.com/reports/1626205 | CWE: Misconfiguration
+  Program: deptofdefense | Reporter: ghostkernalbbt
+
+[Medium] Exposed Cortex API at https://cortex-ingest.shopifycloud.com/
+  URL: https://hackerone.com/reports/1258871 | CWE: Misconfiguration
+  Program: shopify | Reporter: ian
+
+[Low] XSS in Desktop Client in call notification popup
+  URL: https://hackerone.com/reports/1711847 | CWE: Resource Injection
+  Program: nextcloud | Reporter: b911bade858ce8e6a0f50f8
+
+[Low] XSS in Desktop Client via user status and information
+  URL: https://hackerone.com/reports/1707977 | CWE: Resource Injection
+  Program: nextcloud | Reporter: b911bade858ce8e6a0f50f8
+
+[Medium] Add more seats by paying less via PUT /v2/seats request manipulation
+  URL: https://hackerone.com/reports/1446090 | CWE: Improper Input Validation
+  Program: krisp | Reporter: life__001
+
+[Low] Hyper Link Injection while signup 
+  URL: https://hackerone.com/reports/1166073 | CWE: Improper Input Validation
+  Program: upchieve | Reporter: 011alsanosi
+
+[Medium] CVE-2022-27780: percent-encoded path separator in URL host
+  URL: https://hackerone.com/reports/1565619 | CWE: Improper Input Validation
+  Program: ibb | Reporter: haxatron1
+
+[Low] Bypass global deny-lists by wrapping domains using "[]" in https://github.com/stripe/smokescreen
+  URL: https://hackerone.com/reports/1528242 | CWE: Improper Input Validation
+  Program: stripe | Reporter: haxatron1
+
+[High] Security misconfiguration 
+  URL: https://hackerone.com/reports/1486327 | CWE: Misconfiguration
+  Program: lemlist | Reporter: mr23r0
+
+[Low] Information Leakage via TikTok Ads Web Cache Deception
+  URL: https://hackerone.com/reports/1484468 | CWE: Misconfiguration
+  Program: tiktok | Reporter: bobo_ka
+
+[Critical] Мисконфигурация Cisco Smart Install
+  URL: https://hackerone.com/reports/1398662 | CWE: Misconfiguration
+  Program: av | Reporter: kerbyj
+
+[Medium] Improper input validation in projects leads to fully deny access to project resources
+  URL: https://hackerone.com/reports/1237700 | CWE: Improper Input Validation
+  Program: semrush | Reporter: a_d_a_m
+
+[None] Захват домена ozoncorporate.ru
+  URL: https://hackerone.com/reports/1160381 | CWE: Misconfiguration
+  Program: ozon | Reporter: mrdruid
+
+[Critical] Weak password policy leading to exposure of administrator account access
+  URL: https://hackerone.com/reports/1168104 | CWE: Misconfiguration
+  Program: gsa_vdp | Reporter: rptl
+
+[Medium] No error thrown when IDOR attempted while editing address
+  URL: https://hackerone.com/reports/1085743 | CWE: Misconfiguration
+  Program: openmage | Reporter: merbin
+
+[Low] Social media link hijack of team member [Linkedin] at https://mackeeper.com/team/
+  URL: https://hackerone.com/reports/1152588 | CWE: Misconfiguration
+  Program: clario | Reporter: beerboy_ankit
+
+[Medium] Nextcloud Desktop Client RCE via malicious URI schemes
+  URL: https://hackerone.com/reports/1078002 | CWE: Resource Injection
+  Program: nextcloud | Reporter: 7a69
+
+[High] Ability To Delete User(s) Account Without User Interaction
+  URL: https://hackerone.com/reports/928255 | CWE: Misconfiguration
+  Program: gitlab | Reporter: hx01
+
+[Medium] GraphQL introspection query works through unauthenticated WebSocket
+  URL: https://hackerone.com/reports/862835 | CWE: Misconfiguration
+  Program: nuri | Reporter: zerodivisi0n
+
+[Medium] CORS bypass on TikTok Ads Endpoint
+  URL: https://hackerone.com/reports/1001951 | CWE: Misconfiguration
+  Program: tiktok | Reporter: ahmed_alwardani
+
+[Medium] CVE-2020-8177: curl overwrite local file with -J
+  URL: https://hackerone.com/reports/887462 | CWE: Improper Input Validation
+  Program: curl | Reporter: snsn
+
+[High] 2FA Disable With Wrong Password - Response Tampering.
+  URL: https://hackerone.com/reports/893085 | CWE: Improper Input Validation
+  Program: 8x8-bounty | Reporter: the_predator
+
+[High] Django DEBUG mode enabled and leaked system information.
+  URL: https://hackerone.com/reports/963542 | CWE: Misconfiguration
+  Program: dropcontact | Reporter: aungkyawphyo
+
+[Critical] Spring Actuator endpoints publicly available, leading to account takeover
+  URL: https://hackerone.com/reports/862589 | CWE: Misconfiguration
+  Program: line | Reporter: kazan71p
+
+[Medium] http://cpanel.hostinger.com/demo exposes Notifications and PII info
+  URL: https://hackerone.com/reports/815778 | CWE: Misconfiguration
+  Program: hostinger | Reporter: nismo
+
+[Medium] Bypass front server restrictions and access to forbidden files and directories through X-Rewrite-Url/X-original-url header on account.mackeeper.com
+  URL: https://hackerone.com/reports/737323 | CWE: Misconfiguration
+  Program: clario | Reporter: rumiljonov
+
+[Low] CSS Injection on static.mackeeper.com - Potential XSS
+  URL: https://hackerone.com/reports/783993 | CWE: Resource Injection
+  Program: clario | Reporter: m4ll0k
+
+[Medium] athome.starbucks.com - URL parameter tampering of review forms permitted possible content injection
+  URL: https://hackerone.com/reports/367589 | CWE: Improper Input Validation
+  Program: starbucks | Reporter: jackb898
+
+[High] [url-parse] Improper Validation and Sanitization
+  URL: https://hackerone.com/reports/496293 | CWE: Improper Input Validation
+  Program: nodejs-ecosystem | Reporter: ronperris
+
+[Critical] Steal ALL collateral during liquidation by exploiting lack of validation in `flip.kick`
+  URL: https://hackerone.com/reports/684092 | CWE: Improper Input Validation
+  Program: makerdao_bbp | Reporter: lucash-dev
+
+[High] Steal all MKR from `flap` during liquidation by exploiting lack of validation in `flap.kick`
+  URL: https://hackerone.com/reports/684152 | CWE: Improper Input Validation
+  Program: makerdao_bbp | Reporter: lucash-dev
+
+[Medium] CSS injection via BB code tag "█████"
+  URL: https://hackerone.com/reports/587727 | CWE: Resource Injection
+  Program: phpbb | Reporter: hanno
+
+[Low] HTML injection in https://interviewing.shopify.com/index.php?candidate=
+  URL: https://hackerone.com/reports/601192 | CWE: Resource Injection
+  Program: shopify | Reporter: pklfpklf
+
+[Critical] Zero-amount miner TX + RingCT allows monero wallet to receive arbitrary amount of monero
+  URL: https://hackerone.com/reports/501585 | CWE: Resource Injection
+  Program: monero | Reporter: cutcoin
+
+[Critical] Bypass of GitLab CI runner slash fix in YAML validation
+  URL: https://hackerone.com/reports/409395 | CWE: Improper Input Validation
+  Program: gitlab | Reporter: ngalog
+
+[None] H1514 Shopify API ruby SDK session setup lacks input validation, resulting in SSRF and leakage of client secret
+  URL: https://hackerone.com/reports/423437 | CWE: Improper Input Validation
+  Program: shopify | Reporter: jobert
+
+[High] Improper UUID validation results in bypass of #419896
+  URL: https://hackerone.com/reports/423073 | CWE: Improper Input Validation
+  Program: security | Reporter: popeax
+
+[Medium] flash injection in http://www.rockstargames.com/IV/imgPlayer/imageEmbed.swf
+  URL: https://hackerone.com/reports/241231 | CWE: Resource Injection
+  Program: rockstargames | Reporter: netfuzzer
+

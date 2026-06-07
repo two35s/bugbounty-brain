@@ -1,0 +1,36 @@
+[
+  {
+    "id": 3122019,
+    "title": "Remote Code Execution via unsafe usage of `reply.view({ raw })` in @fastify/view (EJS template engine)",
+    "url": "https://hackerone.com/reports/3122019",
+    "substate": "resolved",
+    "severity_rating": "None",
+    "disclosed": true,
+    "disclosed_at": "2025-05-28T16:56:06.578Z",
+    "submitted_at": "2025-05-01T15:15:25.581Z",
+    "cve_ids": [],
+    "cwe": null,
+    "votes": 66,
+    "total_awarded_amount": null,
+    "reporter": "oblivionsage",
+    "program": "fastify",
+    "program_name": "Fastify"
+  },
+  {
+    "id": 237927,
+    "title": "Stored XSS templates -> 'call for action' feature",
+    "url": "https://hackerone.com/reports/237927",
+    "substate": "resolved",
+    "severity_rating": "High",
+    "disclosed": true,
+    "disclosed_at": "2017-06-09T17:41:09.049Z",
+    "submitted_at": "2017-06-08T08:04:58.056Z",
+    "cve_ids": [],
+    "cwe": null,
+    "votes": 4,
+    "total_awarded_amount": null,
+    "reporter": "r0h17",
+    "program": "mixmax",
+    "program_name": "Mixmax"
+  }
+]

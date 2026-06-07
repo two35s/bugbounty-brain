@@ -1,0 +1,1487 @@
+Category: business-logic
+Reports: 371
+
+[High] FS Permissions Bypass
+  URL: https://hackerone.com/reports/3417819 | CWE: Violation of Secure Design Principles
+  Program: nodejs | Reporter: natann
+
+[Low] Unlimited Reuse of Coupon Code Allows Free Shipping on All Orders on ██████████
+  URL: https://hackerone.com/reports/3426839 | CWE: Business Logic Errors
+  Program: aws_vdp | Reporter: aneeeketh
+
+[High] Account Takeover via Unverified Email Change and Improper Session Handling
+  URL: https://hackerone.com/reports/3324823 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: 0xoroot
+
+[Low] Email not verified when changing afterwards on apps.nextcloud.com
+  URL: https://hackerone.com/reports/2305880 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: farhad0x1
+
+[Medium]  Exposing debug.log file leads to server full path disclosure
+  URL: https://hackerone.com/reports/2778441 | CWE: Business Logic Errors
+  Program: nextcloud | Reporter: farhad0x1
+
+[None] Business Logic Error – Bypass of OTP Verification During Signup on hover.com
+  URL: https://hackerone.com/reports/3255473 | CWE: Business Logic Errors
+  Program: tucows_vdp | Reporter: c0rvuz
+
+[?] Order More Than Maximum Allowed Quantity
+  URL: https://hackerone.com/reports/3185001 | CWE: Business Logic Errors
+  Program: mars | Reporter: blackbird_azar
+
+[Medium] No SPF/DMARC records on  mb-cosmos.com
+  URL: https://hackerone.com/reports/1030042 | CWE: Violation of Secure Design Principles
+  Program: malwarebytes | Reporter: assassin_marcos
+
+[Low] Exceed the maximum number of subscribers using Race Condition 
+  URL: https://hackerone.com/reports/3221185 | CWE: Business Logic Errors
+  Program: singlestore | Reporter: bl4ck-
+
+[Medium] IDOR - Scheduled data leak to other accounts By "projectID"
+  URL: https://hackerone.com/reports/3219944 | CWE: Business Logic Errors
+  Program: singlestore | Reporter: bl4ck-
+
+[Medium] Double Clickjacking Attack on WakaTime OAuth Authorization Flow at https://wakatime.com/oauth/authorize
+  URL: https://hackerone.com/reports/3287060 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: zeesozee
+
+[Medium] Race condition on add 1 free domain
+  URL: https://hackerone.com/reports/2616045 | CWE: Business Logic Errors
+  Program: automattic | Reporter: root_geek280
+
+[Low] Domain highlighting on External link warning is not working on Chrome & Microsoft Edge browsers on Mobile
+  URL: https://hackerone.com/reports/2553026 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: sarthakbhingare015
+
+[Medium] Unauthenticated phpinfo()files could lead to ability file read at h2f54.n1.ips.mtn.co.ug [/dashboard/]
+  URL: https://hackerone.com/reports/2610478 | CWE: Violation of Secure Design Principles
+  Program: mtn_group | Reporter: odaysec
+
+[Low]  Error Page Content Spoofing or Text Injection
+  URL: https://hackerone.com/reports/2968559 | CWE: Violation of Secure Design Principles
+  Program: xvideos | Reporter: mcblockchamp
+
+[Critical] Change phone number OTP flaw leads to any phone number takeover
+  URL: https://hackerone.com/reports/2588329 | CWE: Business Logic Errors
+  Program: indrive | Reporter: polem4rch
+
+[Low] Brave Android: Incorrect URL Eliding in Brave Shields Pop Up
+  URL: https://hackerone.com/reports/2501378 | CWE: Violation of Secure Design Principles
+  Program: brave | Reporter: jayateerthag
+
+[High] Unauthenticated arbitrary file upload on the https://█████/ (█████████)
+  URL: https://hackerone.com/reports/698789 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[Critical] Subdomain takeover ██████
+  URL: https://hackerone.com/reports/2552243 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: martinvw
+
+[Medium] File sizes may be manipulated into negative numbers when uploading
+  URL: https://hackerone.com/reports/1068301 | CWE: Business Logic Errors
+  Program: line | Reporter: yinmo
+
+[Medium] Unlimited fake rate to the passenger in city to city, Affected endpoint `/api/v1/reviews/ride/<ID>/driver`
+  URL: https://hackerone.com/reports/2125049 | CWE: Business Logic Errors
+  Program: indrive | Reporter: bugsv2
+
+[Medium] Attacker can add two free bags offered by the site at the same time.
+  URL: https://hackerone.com/reports/2402010 | CWE: Business Logic Errors
+  Program: mars | Reporter: mkhmd17
+
+[Medium] Notes app can be tricked into using a received share created before the user logged in
+  URL: https://hackerone.com/reports/2254151 | CWE: Business Logic Errors
+  Program: nextcloud | Reporter: maholli
+
+[Low] Ability to bulk submit reports via query named based batching
+  URL: https://hackerone.com/reports/2166697 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: 0x999
+
+[High] Attackers can *Upgrade and claim offer* on the Premium Trial Subscription with a total price of *IDR0.00* from the original *IDR7,022,061.82*
+  URL: https://hackerone.com/reports/2131224 | CWE: Business Logic Errors
+  Program: linkedin | Reporter: find_me_here
+
+[?] fetch with integrity option is too lax when algorithm is specified but hash value is in incorrect
+  URL: https://hackerone.com/reports/2377760 | CWE: Violation of Secure Design Principles
+  Program: nodejs | Reporter: uzlopak
+
+[?] Login page password-guessing attack
+  URL: https://hackerone.com/reports/96115 | CWE: Violation of Secure Design Principles
+  Program: revive_adserver | Reporter: karan
+
+[Low] OAuth2 "authorization_code" is valid indefinetly
+  URL: https://hackerone.com/reports/1784162 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: mikaelgundersen
+
+[Low] Account creation with invalid email addresses / email is accepting % and %0d%0a line termination chars
+  URL: https://hackerone.com/reports/815085 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: resett3r
+
+[Low] Text Injection/ Content Spoofing on  https://cloud.e.khanacademy.org  by breaking out of input tag.
+  URL: https://hackerone.com/reports/2234420 | CWE: Violation of Secure Design Principles
+  Program: khanacademy | Reporter: grassye
+
+[Low] Race condition in up voting and down voting
+  URL: https://hackerone.com/reports/183837 | CWE: Violation of Secure Design Principles
+  Program: urbandictionary | Reporter: flashdisk
+
+[Medium] Integrity checks according to policies can be circumvented
+  URL: https://hackerone.com/reports/2094235 | CWE: Insufficient Verification of Data Authenticity
+  Program: nodejs | Reporter: tniessen
+
+[High] the domain is truck-admin.eu-east-1.indriverapp.com and Enter the management system of the blasting mobile phone verification code
+  URL: https://hackerone.com/reports/1991376 | CWE: Business Logic Errors
+  Program: indrive | Reporter: trustworthy
+
+[Medium] Response Manipulation lead to bypass verification code while making appointment at `█████████`
+  URL: https://hackerone.com/reports/1943252 | CWE: Business Logic Errors
+  Program: mars | Reporter: mo3giza
+
+[Medium] An Attacker Can Flag Draft Job Posts And Can Disclose The Draft Job Posts Details [ Similar to #1581528 Resolved Report]
+  URL: https://hackerone.com/reports/1675674 | CWE: Business Logic Errors
+  Program: linkedin | Reporter: tushar6378
+
+[Low] A Unverified User Can Post Newsletter (Which Is Not Allowed Through Application UI)
+  URL: https://hackerone.com/reports/1691603 | CWE: Business Logic Errors
+  Program: linkedin | Reporter: tushar6378
+
+[Medium] Asset Inventory Internal Descriptions are leaked in CSV export
+  URL: https://hackerone.com/reports/2011431 | CWE: Business Logic Errors
+  Program: security | Reporter: archangel
+
+[Medium] Arbitrary file write triggered by deeplink abuse - MetaMask Android
+  URL: https://hackerone.com/reports/1768166 | CWE: Business Logic Errors
+  Program: metamask | Reporter: hackerontwowheels
+
+[High] User scoped external storage can be used to gather credentials of other users 
+  URL: https://hackerone.com/reports/1978882 | CWE: Business Logic Errors
+  Program: nextcloud | Reporter: bhmth
+
+[Low] connect.8x8.com: Too much resource consumption of the server due to incorrect date range control via /api/v1/reports?dateFrom=
+  URL: https://hackerone.com/reports/1877185 | CWE: Violation of Secure Design Principles
+  Program: 8x8-bounty | Reporter: exhandler
+
+[Low] Program managers can see draft reports using Export Reports feature
+  URL: https://hackerone.com/reports/1664920 | CWE: Business Logic Errors
+  Program: security | Reporter: alp
+
+[Low] CVE-2023-27538: SSH connection too eager reuse still
+  URL: https://hackerone.com/reports/1912783 | CWE: Business Logic Errors
+  Program: ibb | Reporter: nyymi
+
+[Medium] Web Cache Deception vulnerability on algolia.com leads to personal information leakage
+  URL: https://hackerone.com/reports/1530066 | CWE: Violation of Secure Design Principles
+  Program: algolia | Reporter: golim
+
+[Medium] Cloudflare is not properly deleting user's account
+  URL: https://hackerone.com/reports/1728292 | CWE: Business Logic Errors
+  Program: cloudflare | Reporter: csc_
+
+[Low] adding h1_analyst_* to username for normal users 
+  URL: https://hackerone.com/reports/1770797 | CWE: Business Logic Errors
+  Program: security | Reporter: refaat01
+
+[Low] Ability to control the filename when uploading a logo or favicon on theming
+  URL: https://hackerone.com/reports/1781751 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: ctulhu
+
+[Low] Dangling DNS Record docs.jitsi.net (unsuccessful GSuite takeover)
+  URL: https://hackerone.com/reports/1354066 | CWE: Violation of Secure Design Principles
+  Program: 8x8-bounty | Reporter: bababounty99
+
+[Medium] Fee discounts can be redeemed many times, resulting in unlimited fee-free transactions
+  URL: https://hackerone.com/reports/1849626 | CWE: Business Logic Errors
+  Program: stripe | Reporter: ian
+
+[Low] CVE-2023-23914: HSTS ignored on multiple requests
+  URL: https://hackerone.com/reports/1874715 | CWE: Business Logic Errors
+  Program: ibb | Reporter: nyymi
+
+[Low] CVE-2023-23915: HSTS amnesia with --parallel
+  URL: https://hackerone.com/reports/1874716 | CWE: Business Logic Errors
+  Program: ibb | Reporter: nyymi
+
+[High] [█████] Bug Reports allow for Unrestricted File Upload
+  URL: https://hackerone.com/reports/1850065 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: b911bade858ce8e6a0f50f8
+
+[Medium] Bypass invite accept for victim
+  URL: https://hackerone.com/reports/1663361 | CWE: Business Logic Errors
+  Program: slack | Reporter: analyz3r
+
+[Low] ABLE TO TRICK THE VICTIM INTO USING A CRAFTED EMAIL ADDRESS FOR A PARTICULAR  SESSION AND THEN LATER TAKE BACK THE ACCOUNT 
+  URL: https://hackerone.com/reports/1357013 | CWE: Violation of Secure Design Principles
+  Program: mattermost | Reporter: at11zt00
+
+[None] No rate limiting for Remove Account lead to huge Mass mailings
+  URL: https://hackerone.com/reports/1723445 | CWE: Business Logic Errors
+  Program: weblate | Reporter: tanvir_0x
+
+[Medium] Host Header Injection on https://███/████████/Account/ForgotPassword
+  URL: https://hackerone.com/reports/1679969 | CWE: Business Logic Errors
+  Program: deptofdefense | Reporter: 696e746c6f6c
+
+[Low] Found Origin IP's Lead To Access ████
+  URL: https://hackerone.com/reports/1556808 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: ibrahim0936356
+
+[High] String length restriction byepass at https://callerfeel.mtnonline.com/profile/feedback.html
+  URL: https://hackerone.com/reports/1638347 | CWE: Violation of Secure Design Principles
+  Program: mtn_group | Reporter: aliyugombe
+
+[Medium] Redirecting users to malicious torrent-files/websites using WebTorrent
+  URL: https://hackerone.com/reports/968328 | CWE: Violation of Secure Design Principles
+  Program: brave | Reporter: d3f4u17
+
+[Low] CVE-2022-32208: FTP-KRB bad message verification
+  URL: https://hackerone.com/reports/1614332 | CWE: Business Logic Errors
+  Program: ibb | Reporter: nyymi
+
+[Medium] CVE-2022-32207: Unpreserved file permissions
+  URL: https://hackerone.com/reports/1614331 | CWE: Business Logic Errors
+  Program: ibb | Reporter: nyymi
+
+[Medium] CVE-2022-32207: Unpreserved file permissions
+  URL: https://hackerone.com/reports/1573634 | CWE: Business Logic Errors
+  Program: curl | Reporter: nyymi
+
+[Low] CVE-2022-32208: FTP-KRB bad message verification
+  URL: https://hackerone.com/reports/1590071 | CWE: Business Logic Errors
+  Program: curl | Reporter: nyymi
+
+[Medium] User can link non-public file attachments, leading to file disclose on edit by higher-privileged user
+  URL: https://hackerone.com/reports/763177 | CWE: Business Logic Errors
+  Program: phabricator | Reporter: foobar7
+
+[High] Able to approve admin approval and change effective status without adding payment details . 
+  URL: https://hackerone.com/reports/1543159 | CWE: Business Logic Errors
+  Program: reddit | Reporter: bisesh
+
+[Low] bypass forced password protection via circles app
+  URL: https://hackerone.com/reports/1406926 | CWE: Business Logic Errors
+  Program: nextcloud | Reporter: michag86
+
+[Low] Race condition via project team member invitation system.
+  URL: https://hackerone.com/reports/1108291 | CWE: Business Logic Errors
+  Program: enjin | Reporter: akashhamal0x01
+
+[High] [app.lemlist.com] Improper handling of payment lead to bypass payment
+  URL: https://hackerone.com/reports/1420697 | CWE: Business Logic Errors
+  Program: lemlist | Reporter: omarelfarsaoui
+
+[Medium] CVE-2022-27778: curl removes wrong file on error
+  URL: https://hackerone.com/reports/1565623 | CWE: Business Logic Errors
+  Program: ibb | Reporter: nyymi
+
+[Medium] CVE-2022-27782: TLS and SSH connection too eager reuse
+  URL: https://hackerone.com/reports/1565624 | CWE: Business Logic Errors
+  Program: ibb | Reporter: nyymi
+
+[Medium] CVE-2022-27782: TLS and SSH connection too eager reuse
+  URL: https://hackerone.com/reports/1555796 | CWE: Business Logic Errors
+  Program: curl | Reporter: nyymi
+
+[Medium] CVE-2022-27778: curl removes wrong file on error
+  URL: https://hackerone.com/reports/1553598 | CWE: Business Logic Errors
+  Program: curl | Reporter: nyymi
+
+[Medium] Misconfigured rate limit for SMS phone verification endpoint
+  URL: https://hackerone.com/reports/1482919 | CWE: Business Logic Errors
+  Program: alohi | Reporter: shamim_12__
+
+[Medium] Bypassing CORS Misconfiguration Leads to Sensitive Exposure at https://███/
+  URL: https://hackerone.com/reports/1092125 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: whoisbinit
+
+[Medium] Attacker shall recieve order updates on whatsapp for users who have activated whatsapp notification
+  URL: https://hackerone.com/reports/1523584 | CWE: Business Logic Errors
+  Program: eternal | Reporter: schutzx0r
+
+[High] Ability to use premium templates as free user via https://stripo.email/templates/?utm_source=viewstripo&utm_medium=referral
+  URL: https://hackerone.com/reports/1166993 | CWE: Business Logic Errors
+  Program: stripo | Reporter: 20kilograma
+
+[Medium] objectId in share location can be set to open arbitrary URL or Deeplinks
+  URL: https://hackerone.com/reports/1337178 | CWE: Business Logic Errors
+  Program: nextcloud | Reporter: ctulhu
+
+[Medium] Uber Test Report 20220301
+  URL: https://hackerone.com/reports/1496297 | CWE: Business Logic Errors
+  Program: uber | Reporter: johnzilla313
+
+[High] Add upto 10K rupees to a wallet by paying an arbitrary amount
+  URL: https://hackerone.com/reports/1408782 | CWE: Business Logic Errors
+  Program: eternal | Reporter: ashoka_rao
+
+[Medium] When sharing a Deck card in conversation the metaData can be manipulated to open arbitrary URL
+  URL: https://hackerone.com/reports/1358977 | CWE: Business Logic Errors
+  Program: nextcloud | Reporter: ctulhu
+
+[Medium] (CORS) Cross-origin resource sharing misconfiguration on https://█████████
+  URL: https://hackerone.com/reports/995144 | CWE: Business Logic Errors
+  Program: deptofdefense | Reporter: fiveguyslover
+
+[Critical] Unauthorized access to PII leads to MASS account Takeover
+  URL: https://hackerone.com/reports/1061736 | CWE: Business Logic Errors
+  Program: deptofdefense | Reporter: takester
+
+[?] Password reset token leak via "Host header"  on third party website
+  URL: https://hackerone.com/reports/1092831 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: danishalkatiri
+
+[High] Subdomain takeover of images.crossinstall.com
+  URL: https://hackerone.com/reports/1406335 | CWE: Business Logic Errors
+  Program: x | Reporter: ian
+
+[Medium] Change project visibility to a restricted option
+  URL: https://hackerone.com/reports/1086781 | CWE: Violation of Secure Design Principles
+  Program: gitlab | Reporter: s4nderdevelopment
+
+[Medium] Cache Poisoning DoS on updates.rockstargames.com
+  URL: https://hackerone.com/reports/1219038 | CWE: Violation of Secure Design Principles
+  Program: rockstargames | Reporter: youstin
+
+[Low] WordPress Plugin Update Confusion at trafficfactory.com
+  URL: https://hackerone.com/reports/1364851 | CWE: Business Logic Errors
+  Program: trafficfactory | Reporter: vavkamil
+
+[Medium] Broken link hijacing in https://kubernetes-csi.github.io/docs/drivers.html
+  URL: https://hackerone.com/reports/1212853 | CWE: Violation of Secure Design Principles
+  Program: kubernetes | Reporter: tendermint
+
+[Low] Ability to subscribe to inactive Post+ creators
+  URL: https://hackerone.com/reports/1322334 | CWE: Business Logic Errors
+  Program: automattic | Reporter: ajoekerr
+
+[Low] Broken Link on TikTokUS.Info
+  URL: https://hackerone.com/reports/1338457 | CWE: Violation of Secure Design Principles
+  Program: tiktok | Reporter: s1rat
+
+[High] [mtn.com.af] Multiple vulnerabilities allow to Application level DoS
+  URL: https://hackerone.com/reports/946578 | CWE: Business Logic Errors
+  Program: mtn_group | Reporter: lmhu
+
+[Medium] com.duckduckgo.mobile.android - Cache corruption
+  URL: https://hackerone.com/reports/1074613 | CWE: Business Logic Errors
+  Program: duckduckgo | Reporter: webklex
+
+[High] Payment method token being sent to 3rd party analytics service
+  URL: https://hackerone.com/reports/637267 | CWE: Business Logic Errors
+  Program: upserve | Reporter: ctulhu
+
+[?] e-mail verification bypass through interception & modification of response status
+  URL: https://hackerone.com/reports/1181253 | CWE: Violation of Secure Design Principles
+  Program: gsa_vdp | Reporter: rptl
+
+[Low] No Rate Limit On Reset Password
+  URL: https://hackerone.com/reports/1166066 | CWE: Violation of Secure Design Principles
+  Program: upchieve | Reporter: scorpion_x
+
+[Low] A profile page of a user can be denied from loading by appending .html to the username
+  URL: https://hackerone.com/reports/475098 | CWE: Violation of Secure Design Principles
+  Program: gitlab | Reporter: maruthi12
+
+[Medium] Bypass Rate Limits on app.snapchat.com API Endpoint via X-Forwarded-For Header
+  URL: https://hackerone.com/reports/727487 | CWE: Business Logic Errors
+  Program: snapchat | Reporter: sicarius
+
+[Low] Broken Link on Urban Company's Vulnerability Submission Form
+  URL: https://hackerone.com/reports/1239334 | CWE: Violation of Secure Design Principles
+  Program: urbancompany | Reporter: thruster
+
+[Low] CVE-2021-22897: schannel cipher selection surprise
+  URL: https://hackerone.com/reports/1172857 | CWE: Business Logic Errors
+  Program: curl | Reporter: nyymi
+
+[Low] Bypass t.co link shortener in Twitter direct messages
+  URL: https://hackerone.com/reports/1148548 | CWE: Business Logic Errors
+  Program: x | Reporter: iambouali
+
+[Medium]  Sharing products with Mail allows phishing attacks due to misconfiguration.
+  URL: https://hackerone.com/reports/1083923 | CWE: Business Logic Errors
+  Program: openmage | Reporter: grmx
+
+[Low] Отправляем смс на любой номер от имени vk.com.  (Сообщение в смс всегда одно и то же, его менять нельзя.)
+  URL: https://hackerone.com/reports/1115759 | CWE: Business Logic Errors
+  Program: vkcom | Reporter: aboba
+
+[Medium] Indexing of urls on the "External link warning" pages discloses many vulnerable endpoints from the past and unlisted videos/photos
+  URL: https://hackerone.com/reports/1034257 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: nagli
+
+[Low] Misconfigured oauth leads to Pre account takeover 
+  URL: https://hackerone.com/reports/1074047 | CWE: Business Logic Errors
+  Program: bumble | Reporter: dhakal_bibek
+
+[Low] Failure to Invalid Session after Password Change
+  URL: https://hackerone.com/reports/1118402 | CWE: Violation of Secure Design Principles
+  Program: liberapay | Reporter: sudipraj
+
+[Low] Race Condition allows to get more free trials and get more than 100 languages and strings for free
+  URL: https://hackerone.com/reports/1087188 | CWE: Business Logic Errors
+  Program: weblate | Reporter: b9cc1792602cc31402c20c9
+
+[Medium] RDR2 game service method allows adding any player to a new Posse without consent
+  URL: https://hackerone.com/reports/1029594 | CWE: Violation of Secure Design Principles
+  Program: rockstargames | Reporter: bugstar
+
+[Medium] DNS Setup allows sending mail on behalf of other customers
+  URL: https://hackerone.com/reports/981824 | CWE: Violation of Secure Design Principles
+  Program: basecamp | Reporter: aisforarray
+
+[High] Arbitrary file upload and stored XSS via ███ support request
+  URL: https://hackerone.com/reports/865354 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: z32
+
+[Medium] No rate Limit on Licenses Activation 
+  URL: https://hackerone.com/reports/911880 | CWE: Business Logic Errors
+  Program: clario | Reporter: akash-labade
+
+[High] Able to use 'PREMIUM TEMPLATES' in 'FREE PLAN' at [https://my.stripo.email/cabinet/#/my-templates/]
+  URL: https://hackerone.com/reports/1009046 | CWE: Business Logic Errors
+  Program: stripo | Reporter: xploiterr
+
+[Low] User password left in memory in plain text after GUI launch
+  URL: https://hackerone.com/reports/761480 | CWE: Violation of Secure Design Principles
+  Program: nordsecurity | Reporter: kaimi
+
+[High] [intensedebate.com] No Rate Limit On The report Functionality Lead To Delete Any Comment When it is enabled
+  URL: https://hackerone.com/reports/1051734 | CWE: Business Logic Errors
+  Program: automattic | Reporter: fuzzme
+
+[Low] Reset password policy isn't consistent with registration / change password policy.
+  URL: https://hackerone.com/reports/1083531 | CWE: Business Logic Errors
+  Program: enjin | Reporter: michaelrowley
+
+[Medium] Manipulating response leads to free access to Streamlabs Prime 
+  URL: https://hackerone.com/reports/1070510 | CWE: Business Logic Errors
+  Program: logitech | Reporter: sudi
+
+[Medium] Unrestricted Upload of File with Dangerous Type
+  URL: https://hackerone.com/reports/1081766 | CWE: Business Logic Errors
+  Program: enjin | Reporter: michaelrowley
+
+[Medium] No rate limit in email subscription
+  URL: https://hackerone.com/reports/1047124 | CWE: Business Logic Errors
+  Program: stripo | Reporter: splint3rsec
+
+[High] Host Header injection in oslo.io (using X-Forwarded-For header) leading to email spoofing
+  URL: https://hackerone.com/reports/1072277 | CWE: Business Logic Errors
+  Program: logitech | Reporter: hammodmt
+
+[Medium] No rate limiting - Create data
+  URL: https://hackerone.com/reports/1047100 | CWE: Business Logic Errors
+  Program: stripo | Reporter: ofjaaaah
+
+[Medium] No rate limiting - Create Plug-ins
+  URL: https://hackerone.com/reports/1047119 | CWE: Business Logic Errors
+  Program: stripo | Reporter: ofjaaaah
+
+[Low] Hyper Link Injection while signup 
+  URL: https://hackerone.com/reports/864751 | CWE: Business Logic Errors
+  Program: lark_technologies | Reporter: susant_wagle123
+
+[Medium] Bypass subscription
+  URL: https://hackerone.com/reports/1029027 | CWE: Business Logic Errors
+  Program: imgur | Reporter: 1a2er3d
+
+[Medium] Broken validation of user Id for JWT Token
+  URL: https://hackerone.com/reports/853145 | CWE: Business Logic Errors
+  Program: semrush | Reporter: a_d_a_m
+
+[High] Email Verification bypass on signup
+  URL: https://hackerone.com/reports/1040047 | CWE: Violation of Secure Design Principles
+  Program: automattic | Reporter: farhan0x00
+
+[Medium] No rate limiting for subscribe email + lead to Cross origin misconfiguration
+  URL: https://hackerone.com/reports/1029723 | CWE: Business Logic Errors
+  Program: stripo | Reporter: lmhu
+
+[Medium] Race Condition of Transfer data Credits to Organization Leads to Add Extra free Data Credits to the Organization
+  URL: https://hackerone.com/reports/974892 | CWE: Business Logic Errors
+  Program: helium | Reporter: eissen5c
+
+[High] Attachments may be hijacked via AppCache+CookieBombing trick (bc3_production_blobs bucket)
+  URL: https://hackerone.com/reports/403602 | CWE: Business Logic Errors
+  Program: basecamp | Reporter: hudmi
+
+[Low] Session misconfiguration on change password feature at https://apps-staging.pingone.com/myaccount/?environmentId=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx#
+  URL: https://hackerone.com/reports/643731 | CWE: Violation of Secure Design Principles
+  Program: pingidentity | Reporter: gujjuboy10x00
+
+[Low] Possibility to freeze/crash the host system of all Slack Desktop users easily
+  URL: https://hackerone.com/reports/392728 | CWE: Violation of Secure Design Principles
+  Program: slack | Reporter: freesec
+
+[Low] No rate limiting for confirmation email lead to email flooding and leads to enumeration of emails in publishers.basicattentiontoken.org
+  URL: https://hackerone.com/reports/854793 | CWE: Violation of Secure Design Principles
+  Program: brave | Reporter: root_geek280
+
+[Low] [www.drive2.ru]  Insufficient Security Configurability - Notification message not sent when account is deleted
+  URL: https://hackerone.com/reports/1006691 | CWE: Business Logic Errors
+  Program: drive_net_inc | Reporter: what_web
+
+[None] weak password poilicy in signup password leak to account takeover
+  URL: https://hackerone.com/reports/985367 | CWE: Violation of Secure Design Principles
+  Program: stripo | Reporter: assafrty
+
+[Low] Getting New Invitations without Leaving Programs
+  URL: https://hackerone.com/reports/999789 | CWE: Business Logic Errors
+  Program: security | Reporter: ali
+
+[Low] Recently added 'Country' field doesn't send email notification when changed
+  URL: https://hackerone.com/reports/961841 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: bugra
+
+[Medium] Business Logic Flaw - A non premium user can change/update retailers to get cashback on all the retailers associated with Curve
+  URL: https://hackerone.com/reports/672487 | CWE: Business Logic Errors
+  Program: curve | Reporter: praseudo7
+
+[Low] Unrestricted file upload on the image of contacts
+  URL: https://hackerone.com/reports/808287 | CWE: Business Logic Errors
+  Program: nextcloud | Reporter: hitman_47
+
+[Low] insecure redirect in https://www.rockstargames.com
+  URL: https://hackerone.com/reports/253975 | CWE: Violation of Secure Design Principles
+  Program: rockstargames | Reporter: netfuzzer
+
+[Low] Rounding errors on rewarding a bounty leads to bypassing the 20% H1 commission fee
+  URL: https://hackerone.com/reports/808975 | CWE: Business Logic Errors
+  Program: security | Reporter: haxta4ok00
+
+[Low] A team member of the program with Report rights can ban the Admin
+  URL: https://hackerone.com/reports/816143 | CWE: Business Logic Errors
+  Program: security | Reporter: haxta4ok00
+
+[Low] Mismatch between frontend and backend validation via `ban_researcher` leads to H1 support and hackers email spam
+  URL: https://hackerone.com/reports/808755 | CWE: Business Logic Errors
+  Program: security | Reporter: haxta4ok00
+
+[Low] No rate limiting on password reset page
+  URL: https://hackerone.com/reports/731351 | CWE: Business Logic Errors
+  Program: clario | Reporter: karna__
+
+[Medium] Account Takeover because of the mis-configuration on the Password Reset Page
+  URL: https://hackerone.com/reports/767765 | CWE: Business Logic Errors
+  Program: clario | Reporter: karna__
+
+[?] Leak of authorization urls leads to account takeover
+  URL: https://hackerone.com/reports/746186 | CWE: Violation of Secure Design Principles
+  Program: bumble | Reporter: 0x3c3e
+
+[Medium] Variant of CVE-2013-0269 (Denial of Service and Unsafe Object Creation Vulnerability in JSON)
+  URL: https://hackerone.com/reports/706934 | CWE: Business Logic Errors
+  Program: ruby | Reporter: jeremyevans
+
+[Critical] Flaw in Change Email https://youtu.be/MMvlcHIGs2A
+  URL: https://hackerone.com/reports/825643 | CWE: Violation of Secure Design Principles
+  Program: stagingdoteverydotorg | Reporter: ahmd_halabi
+
+[Medium] Improper email address verifiation while saving Account Details
+  URL: https://hackerone.com/reports/825646 | CWE: Violation of Secure Design Principles
+  Program: stagingdoteverydotorg | Reporter: harshitshah4
+
+[Low] Username and Access Token Disclousure
+  URL: https://hackerone.com/reports/672623 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: jannikg
+
+[Critical] [yarn] yarn.lock integrity & hash check logic is broken
+  URL: https://hackerone.com/reports/703138 | CWE: Business Logic Errors
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[None] Past payments using the Direct Debit method keep subscriptions active even if payments fail
+  URL: https://hackerone.com/reports/789260 | CWE: Business Logic Errors
+  Program: nordsecurity | Reporter: zaitunoil
+
+[Medium] Steam chat - trade offer presentation vulnerability
+  URL: https://hackerone.com/reports/745447 | CWE: Business Logic Errors
+  Program: valve | Reporter: hackerontwowheels
+
+[Low] Tabnabbing in template comments - stripo.email
+  URL: https://hackerone.com/reports/759133 | CWE: Violation of Secure Design Principles
+  Program: stripo | Reporter: renekroka
+
+[Medium] Wordpress unzip_file path traversal
+  URL: https://hackerone.com/reports/205481 | CWE: Violation of Secure Design Principles
+  Program: wordpress | Reporter: ajxchapman
+
+[High] Race Condition allows to redeem multiple times gift cards which leads to free "money"
+  URL: https://hackerone.com/reports/759247 | CWE: Business Logic Errors
+  Program: reverb | Reporter: muon4
+
+[?] Bruteforce password recovery code
+  URL: https://hackerone.com/reports/743545 | CWE: Violation of Secure Design Principles
+  Program: bumble | Reporter: 0x3c3e
+
+[High] Bypass Email Verification using Salesforce -- Reproducible in gitlab.com
+  URL: https://hackerone.com/reports/617896 | CWE: Violation of Secure Design Principles
+  Program: gitlab | Reporter: ngalog
+
+[Medium] Video player on ███ allows arbitrary remote videos to be played
+  URL: https://hackerone.com/reports/195635 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: tomnomnom
+
+[Low] previous token seems to work even though it does not verify email
+  URL: https://hackerone.com/reports/263672 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: rashedhasan007
+
+[Medium] CVE-2019-13132 - libzmq 4.1 series is vulnerable
+  URL: https://hackerone.com/reports/652911 | CWE: Violation of Secure Design Principles
+  Program: monero | Reporter: evertonmelo
+
+[High] Improper handling of payment callback allows topping up a Swiss Starbucks Card bypassing actual payment via a crafted success message
+  URL: https://hackerone.com/reports/682617 | CWE: Business Logic Errors
+  Program: starbucks | Reporter: khovansky
+
+[Low] Linux Desktop application slack executable does not use pie / no ASLR
+  URL: https://hackerone.com/reports/415272 | CWE: Violation of Secure Design Principles
+  Program: slack | Reporter: hanno
+
+[Low] bypass captcha in the form forgot password
+  URL: https://hackerone.com/reports/700075 | CWE: Violation of Secure Design Principles
+  Program: kartpay | Reporter: hami
+
+[?] Ability to verify any email address you don't own - accounts.shopify.com
+  URL: https://hackerone.com/reports/229619 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: zombiehelp54
+
+[Low] Invalidate session after password reset
+  URL: https://hackerone.com/reports/678050 | CWE: Violation of Secure Design Principles
+  Program: liberapay | Reporter: nikhil786
+
+[Medium] H1514 Ability to MiTM Shopify PoS Session to Takeover Communications
+  URL: https://hackerone.com/reports/423467 | CWE: Business Logic Errors
+  Program: shopify | Reporter: teknogeek
+
+[?] plugins.trac.wordpress.org likely vulnerable to Cross Site Tracing (xst), TRACE HTTP method should be disabled
+  URL: https://hackerone.com/reports/222692 | CWE: Violation of Secure Design Principles
+  Program: wordpress | Reporter: geeknik
+
+[Critical] Unrestricted File Upload Leading to Remote Code Execution
+  URL: https://hackerone.com/reports/683965 | CWE: Business Logic Errors
+  Program: central-security-project | Reporter: hland
+
+[?] no captcha for register user and weak question attacker can spam email
+  URL: https://hackerone.com/reports/236398 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: fr0nk
+
+[Critical] Ability to perform actions (Tweet, Retweet, DM) and other actions, unauthenticated, on any account with SMS enabled.
+  URL: https://hackerone.com/reports/470749 | CWE: Business Logic Errors
+  Program: x | Reporter: antisocial_eng
+
+[Medium] Web cache poisoning leads to disclosure of CSRF token and sensitive information
+  URL: https://hackerone.com/reports/504514 | CWE: Violation of Secure Design Principles
+  Program: smule | Reporter: d3f4u17
+
+[Medium] Lack of proper paymentProfileUUID validation allows any number of free rides without any outstanding balance
+  URL: https://hackerone.com/reports/574638 | CWE: Business Logic Errors
+  Program: uber | Reporter: eequalsmc2
+
+[Critical] OLO Total price manipulation using negative quantities
+  URL: https://hackerone.com/reports/364843 | CWE: Business Logic Errors
+  Program: upserve | Reporter: fuzz
+
+[High] Gaining unlimited bonus points on websites with WooCommerce Points and Rewards
+  URL: https://hackerone.com/reports/592803 | CWE: Business Logic Errors
+  Program: automattic | Reporter: kolyasapphire
+
+[Low] Password not checked when disabling 2FA on HackerOne
+  URL: https://hackerone.com/reports/587910 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: tester1231233
+
+[Medium] Insufficient validation of sides/modifiers quantity
+  URL: https://hackerone.com/reports/361960 | CWE: Business Logic Errors
+  Program: upserve | Reporter: liquid8
+
+[Low] Account recovery text message is sending a wrong domain to users.
+  URL: https://hackerone.com/reports/549364 | CWE: Business Logic Errors
+  Program: security | Reporter: zeesek
+
+[Low] API Last Request Date/Time Not Updating
+  URL: https://hackerone.com/reports/220774 | CWE: Business Logic Errors
+  Program: security | Reporter: yaworsk
+
+[High] [api.zomato.com] Able to manipulate order amount
+  URL: https://hackerone.com/reports/512968 | CWE: Business Logic Errors
+  Program: eternal | Reporter: pasw
+
+[Low] No Rate Limit on CrowdSignal Polls when Adding Comment
+  URL: https://hackerone.com/reports/488923 | CWE: Business Logic Errors
+  Program: automattic | Reporter: bugra
+
+[Low] Previous attachments can be referenced when creating a new report
+  URL: https://hackerone.com/reports/129773 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: kusl
+
+[Medium] HackerOne Integrations Design Issue
+  URL: https://hackerone.com/reports/172289 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: whhackersbr
+
+[Medium] H1514 Simple phishing using auto-created modal with weak URL-pattern check in incontext_app_link
+  URL: https://hackerone.com/reports/422279 | CWE: Business Logic Errors
+  Program: shopify | Reporter: fransrosen
+
+[Low] Claiming package names in GitLab's automatic package referencer.
+  URL: https://hackerone.com/reports/462503 | CWE: Business Logic Errors
+  Program: gitlab | Reporter: edoverflow
+
+[Low] Client-Side Race Condition using Marketo, allows sending user to data-protocol in Safari when form without onSuccess is submitted on www.hackerone.com
+  URL: https://hackerone.com/reports/381356 | CWE: Business Logic Errors
+  Program: security | Reporter: fransrosen
+
+[None] Takeover of Twitter-owned domain at mobileapplinking.com
+  URL: https://hackerone.com/reports/321699 | CWE: Business Logic Errors
+  Program: x | Reporter: healdb
+
+[?] Page replacement and redirect loop
+  URL: https://hackerone.com/reports/64529 | CWE: Violation of Secure Design Principles
+  Program: vkcom | Reporter: tohasec
+
+[High] Logic flaw in the Post creation process allows creating posts with arbitrary types without needing the corresponding nonce
+  URL: https://hackerone.com/reports/404323 | CWE: Business Logic Errors
+  Program: wordpress | Reporter: simonscannell
+
+[High] Missing Protection Mechanism in Mail Servers allows malicious user to use staff.ratelimited.me email could lead to identity theft.
+  URL: https://hackerone.com/reports/486667 | CWE: Violation of Secure Design Principles
+  Program: ratelimited | Reporter: notexist
+
+[Low] Response program can display "eligible for bounty" in scope area in program policy
+  URL: https://hackerone.com/reports/475660 | CWE: Business Logic Errors
+  Program: security | Reporter: kunal94
+
+[?] Server Header disclose The Os and Web server Version 
+  URL: https://hackerone.com/reports/460514 | CWE: Violation of Secure Design Principles
+  Program: ratelimited | Reporter: bb00x
+
+[Medium] SPF Records (SMTP protection not used)
+  URL: https://hackerone.com/reports/457829 | CWE: Violation of Secure Design Principles
+  Program: mycrypto | Reporter: shantanu_kul
+
+[Medium] App messaging can be hijacked by third-party websites
+  URL: https://hackerone.com/reports/387279 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: palant
+
+[Low] Chaturbate "/chat_ignore_list/" endpoint does not check for Account status: Disabled  before adding Ignore via POST
+  URL: https://hackerone.com/reports/415398 | CWE: Business Logic Errors
+  Program: chaturbate | Reporter: nismo
+
+[Low] Race condition at create new Location
+  URL: https://hackerone.com/reports/413759 | CWE: Business Logic Errors
+  Program: shopify | Reporter: zhurig
+
+[Low] 2nd issue>>> flood of email  no rate limit on delete account confirmation email >> 
+  URL: https://hackerone.com/reports/404713 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: code_monkey
+
+[Low] flood of comment no rate  limit on commnets >>  by using different user agent 
+  URL: https://hackerone.com/reports/404035 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: code_monkey
+
+[Low] no notification send to victim if attacker hacks/accesses his victims WebLate account.
+  URL: https://hackerone.com/reports/282772 | CWE: Business Logic Errors
+  Program: weblate | Reporter: c0narp
+
+[High] Items bought for free due to lacks of quantity controls
+  URL: https://hackerone.com/reports/357929 | CWE: Business Logic Errors
+  Program: reverb | Reporter: nadino
+
+[Low] Insecure Account Removal #2
+  URL: https://hackerone.com/reports/229532 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: japz
+
+[?] Running 2 accounts with a single email #3
+  URL: https://hackerone.com/reports/245304 | CWE: Business Logic Errors
+  Program: weblate | Reporter: footstep
+
+[High] Domain pointing to vimeo portfolio are prone to takeover using on-demand.
+  URL: https://hackerone.com/reports/387307 | CWE: Business Logic Errors
+  Program: vimeo | Reporter: bugdiscloseguys
+
+[Low] Password reset token leakage via referer
+  URL: https://hackerone.com/reports/342693 | CWE: Violation of Secure Design Principles
+  Program: semrush | Reporter: mansishah
+
+[Medium] Общий CSRF токен для сообщений сообществ, или как подставить соседа-редактора
+  URL: https://hackerone.com/reports/315524 | CWE: Business Logic Errors
+  Program: vkcom | Reporter: povargek
+
+[Low] CSRF at [Apply to this program] that lead to submit your request automatic with out any validations
+  URL: https://hackerone.com/reports/334253 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: modam3r5
+
+[Medium] SUBDOMAIN TAKEOVER [http://dev.rbk.money/]
+  URL: https://hackerone.com/reports/363778 | CWE: Violation of Secure Design Principles
+  Program: rbkmoney | Reporter: n00bsec
+
+[Low] Error Page Content Spoofing or Text Injection 
+  URL: https://hackerone.com/reports/327671 | CWE: Violation of Secure Design Principles
+  Program: semrush | Reporter: asad_anwar
+
+[Medium] No Password Verification on  Changing Email Address Cause Account takeover   
+  URL: https://hackerone.com/reports/292673 | CWE: Violation of Secure Design Principles
+  Program: coursera | Reporter: nohack
+
+[Medium] CSRF token fixation and potential account takeover
+  URL: https://hackerone.com/reports/308394 | CWE: Violation of Secure Design Principles
+  Program: khanacademy | Reporter: co0nan
+
+[Low] Email Forwarding invitations for Drafts are not marked as accepted, allowing multiple users to join a program after disabling Email Forwarding
+  URL: https://hackerone.com/reports/331691 | CWE: Business Logic Errors
+  Program: security | Reporter: d4rk_g1rl
+
+[Medium] Harvesting all private invites using leave program fast-tracked invitation and security@ email forwarding feature
+  URL: https://hackerone.com/reports/334205 | CWE: Business Logic Errors
+  Program: security | Reporter: japz
+
+[Medium] Просмотр части номера телефона и отправка на него SMS, всего раз скомпроментировав аккаунт
+  URL: https://hackerone.com/reports/301572 | CWE: Business Logic Errors
+  Program: vkcom | Reporter: povargek
+
+[Critical] Double Payout via PayPal
+  URL: https://hackerone.com/reports/307239 | CWE: Business Logic Errors
+  Program: coinbase | Reporter: dawgyg
+
+[Critical] ETH contract handling errors
+  URL: https://hackerone.com/reports/328526 | CWE: Business Logic Errors
+  Program: coinbase | Reporter: ambisafe
+
+[Low] Leaking Referrer in Reset Password Link
+  URL: https://hackerone.com/reports/297198 | CWE: Violation of Secure Design Principles
+  Program: deriv | Reporter: flex0geek
+
+[Low] Password Complexity Not Enforced On Password Change
+  URL: https://hackerone.com/reports/276123 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: cosmopolitan_fi
+
+[Medium] myshopify.com domain takeover
+  URL: https://hackerone.com/reports/320355 | CWE: Business Logic Errors
+  Program: shopify | Reporter: 0xacb
+
+[Low] Bypassing Homograph Attack Using /@ [ Tested On Windows ]
+  URL: https://hackerone.com/reports/317931 | CWE: Violation of Secure Design Principles
+  Program: brave | Reporter: apapedulimu
+
+[High] Using GitLab to monitor and hijack domains in mass quantity.
+  URL: https://hackerone.com/reports/312118 | CWE: Business Logic Errors
+  Program: gitlab | Reporter: edoverflow
+
+[Low] Common response suggestion is sent to Google Analytics when user accepts duplicate comment Genius suggestion
+  URL: https://hackerone.com/reports/297181 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: bigbug
+
+[?] [tor] pre-emptive defenses, potential vulnerabilities
+  URL: https://hackerone.com/reports/115686 | CWE: Violation of Secure Design Principles
+  Program: torproject | Reporter: guido
+
+[None] Security: Publicly accessible x.509 Public and Private Key of Ubiquiti Networks.
+  URL: https://hackerone.com/reports/265701 | CWE: Business Logic Errors
+  Program: ui | Reporter: voidexploit
+
+[High] Access to local file system using javascript
+  URL: https://hackerone.com/reports/258630 | CWE: Violation of Secure Design Principles
+  Program: torproject | Reporter: cuso4
+
+[?] Race Condition in account survey
+  URL: https://hackerone.com/reports/165570 | CWE: Violation of Secure Design Principles
+  Program: slack | Reporter: cablej
+
+[?] Opportunity to obtain private tweets through search widget preview caches
+  URL: https://hackerone.com/reports/263760 | CWE: Business Logic Errors
+  Program: x | Reporter: csanuragjain
+
+[Low] Vulnerable exported broadcast receiver
+  URL: https://hackerone.com/reports/289000 | CWE: Violation of Secure Design Principles
+  Program: bitwarden | Reporter: b3nac
+
+[None] Improper Implementation of Password strength checker
+  URL: https://hackerone.com/reports/271950 | CWE: Violation of Secure Design Principles
+  Program: legalrobot | Reporter: ethio
+
+[?] IDNs displayed in unicode in messages/about/talk sections (Homograph Attack)
+  URL: https://hackerone.com/reports/172933 | CWE: Violation of Secure Design Principles
+  Program: yelp | Reporter: hk755a
+
+[None] Non-HTTPS link on blog
+  URL: https://hackerone.com/reports/281274 | CWE: Violation of Secure Design Principles
+  Program: legalrobot | Reporter: ph0b0s
+
+[?] Logging a user into attacker's account using password reset link
+  URL: https://hackerone.com/reports/53531 | CWE: Violation of Secure Design Principles
+  Program: mapbox | Reporter: shahmeer-amir
+
+[?] Venturebeat.com URL should be HTTPS
+  URL: https://hackerone.com/reports/268612 | CWE: Violation of Secure Design Principles
+  Program: legalrobot | Reporter: test99767
+
+[Medium] Homograph fix Bypass 
+  URL: https://hackerone.com/reports/271324 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: hk755a
+
+[Low] Improper validation at Phone verification (possible cost increase + SMS SPAM attack)
+  URL: https://hackerone.com/reports/263010 | CWE: Violation of Secure Design Principles
+  Program: unikrn | Reporter: luciann
+
+[Low] Homograph Attack Bypass [ Tested on Linux & Windows ]
+  URL: https://hackerone.com/reports/268984 | CWE: Violation of Secure Design Principles
+  Program: brave | Reporter: apapedulimu
+
+[?] Failed OutLink on Terms of Service
+  URL: https://hackerone.com/reports/268629 | CWE: Violation of Secure Design Principles
+  Program: legalrobot | Reporter: nihad_rekany
+
+[?] UX: JS error on Password Safety link
+  URL: https://hackerone.com/reports/260941 | CWE: Business Logic Errors
+  Program: legalrobot | Reporter: exploit0tango
+
+[None] No rate limit or captcha to identify humans
+  URL: https://hackerone.com/reports/257384 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: alyanwarr
+
+[?] 2FA manual entry uses wrong encoding
+  URL: https://hackerone.com/reports/260491 | CWE: Business Logic Errors
+  Program: legalrobot | Reporter: goodhackonly
+
+[None] Clearing , Shifting and Pop Value from Frozen Array  
+  URL: https://hackerone.com/reports/196416 | CWE: Violation of Secure Design Principles
+  Program: shopify-scripts | Reporter: an0n-j
+
+[Medium] api.vk.com отдаёт в ответ HTML авторизированную страницу vk.com
+  URL: https://hackerone.com/reports/219657 | CWE: Business Logic Errors
+  Program: vkcom | Reporter: zhumarin
+
+[?] Stealing contact form data on www.hackerone.com using Marketo Forms XSS with postMessage frame-jumping and jQuery-JSONP
+  URL: https://hackerone.com/reports/207042 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: fransrosen
+
+[Low] Password complexity not evenly enforced
+  URL: https://hackerone.com/reports/249398 | CWE: Violation of Secure Design Principles
+  Program: legalrobot | Reporter: japz
+
+[Low] Text injection on status.algolia.com
+  URL: https://hackerone.com/reports/238915 | CWE: Violation of Secure Design Principles
+  Program: algolia | Reporter: sh3r1
+
+[Low] [debian.weblate.org]-Missing SPF Record
+  URL: https://hackerone.com/reports/245518 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: hackerhero
+
+[?] Reset password more than once with a reset link
+  URL: https://hackerone.com/reports/243594 | CWE: Business Logic Errors
+  Program: weblate | Reporter: footstep
+
+[?] Persistence of Third Party Association.
+  URL: https://hackerone.com/reports/241623 | CWE: Business Logic Errors
+  Program: weblate | Reporter: footstep
+
+[Low] Password Restriction
+  URL: https://hackerone.com/reports/229920 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: chols
+
+[?] Improper validation of unicode characters
+  URL: https://hackerone.com/reports/242171 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: asaxena2190
+
+[?] Impersonation of Wakatime user using Invitation functionality.
+  URL: https://hackerone.com/reports/257119 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: asaxena2190
+
+[Medium] Missing link to TOTP manual enroll option
+  URL: https://hackerone.com/reports/249339 | CWE: Business Logic Errors
+  Program: legalrobot | Reporter: goodhackonly
+
+[Medium] Enhancement: email confirmation for 2FA recovery
+  URL: https://hackerone.com/reports/250082 | CWE: Business Logic Errors
+  Program: legalrobot | Reporter: goodhackonly
+
+[?] Content Spoofing on link.greenhouse.io
+  URL: https://hackerone.com/reports/209521 | CWE: Violation of Secure Design Principles
+  Program: greenhouse | Reporter: 0xorigin
+
+[None] The username of an account can be ..
+  URL: https://hackerone.com/reports/243609 | CWE: Business Logic Errors
+  Program: weblate | Reporter: blake12356
+
+[None] No filteration of null characters in name field
+  URL: https://hackerone.com/reports/242945 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: blake12356
+
+[Low] Unsafe Inline and Eval CSP Usage
+  URL: https://hackerone.com/reports/244724 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: mr_r3boot
+
+[Low] https://wakatime.com/ website CSP "script-src" includes "unsafe-inline"
+  URL: https://hackerone.com/reports/244766 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: silv3rpoision
+
+[?] Content Spoofing possible in concrete5.org
+  URL: https://hackerone.com/reports/168078 | CWE: Violation of Secure Design Principles
+  Program: concretecms | Reporter: csanuragjain
+
+[Low] Content Spoofing in udemy
+  URL: https://hackerone.com/reports/172711 | CWE: Violation of Secure Design Principles
+  Program: udemy | Reporter: csanuragjain
+
+[None] Account profile shows encryption recovery box for all users
+  URL: https://hackerone.com/reports/250088 | CWE: Business Logic Errors
+  Program: legalrobot | Reporter: viking_007
+
+[Low] Violation of secure design principles on a DoD website
+  URL: https://hackerone.com/reports/188124 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: spam404
+
+[Low] Missing filteration of meta characters in all full name field on wakatime.com
+  URL: https://hackerone.com/reports/245236 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: silv3rpoision
+
+[?] No rate limiting for confirmation email, can spam anyone with confirmation emails
+  URL: https://hackerone.com/reports/245147 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: pratyushjanghel
+
+[?] No rate limit when creating new goals [https://wakatime.com/goals]
+  URL: https://hackerone.com/reports/244813 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: e11x
+
+[Low] No notificatoin sent on email after account deletion.
+  URL: https://hackerone.com/reports/244971 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: silv3rpoision
+
+[?] Two email addresses can access the same account
+  URL: https://hackerone.com/reports/245305 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: streaak
+
+[?] Lack of Password Confirmation When Changing Email
+  URL: https://hackerone.com/reports/245334 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: pratyushjanghel
+
+[Low] Missing SPF Flags
+  URL: https://hackerone.com/reports/244432 | CWE: Violation of Secure Design Principles
+  Program: wakatime | Reporter: mr_r3boot
+
+[None] deleting payment profile during active trip puts account into arrears but active trip is temporarily “free”
+  URL: https://hackerone.com/reports/216373 | CWE: Business Logic Errors
+  Program: uber | Reporter: temmyscript
+
+[Medium] limit number of images in statement
+  URL: https://hackerone.com/reports/117739 | CWE: Violation of Secure Design Principles
+  Program: gratipay | Reporter: hogarth45
+
+[Low] Missing restriction on string size of contact field
+  URL: https://hackerone.com/reports/236188 | CWE: Violation of Secure Design Principles
+  Program: mixmax | Reporter: mr_r3boot
+
+[Low] invalid homepage URL causes 'uncaught typeerror' or blank state
+  URL: https://hackerone.com/reports/177184 | CWE: Violation of Secure Design Principles
+  Program: brave | Reporter: tsug0d
+
+[?] Content Spoof in opel.es.wpsegment2.gm.com
+  URL: https://hackerone.com/reports/121100 | CWE: Violation of Secure Design Principles
+  Program: gm | Reporter: adrianomarcmont
+
+[None] www.hackerone.com website CSP "script-src" includes "unsafe-inline"
+  URL: https://hackerone.com/reports/225833 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: rootkid
+
+[Medium] Changing Victim's JIRA Integration Settings Through Multiple Bugs
+  URL: https://hackerone.com/reports/226199 | CWE: Business Logic Errors
+  Program: security | Reporter: whhackersbr
+
+[None] Missing filteration of meta characters in full name field on registration page https://demo.weblate.org/accounts/register
+  URL: https://hackerone.com/reports/225901 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: sumit7
+
+[None] Option method enabled
+  URL: https://hackerone.com/reports/230194 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: hurthearts
+
+[Low] Improper Password Reset Policy on https://hosted.weblate.org/
+  URL: https://hackerone.com/reports/223362 | CWE: Violation of Secure Design Principles
+  Program: weblate | Reporter: mrnull1337
+
+[Low] Content Spoofing/Text Injection in nextcloud.com
+  URL: https://hackerone.com/reports/213360 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: demo--hacker
+
+[Medium] Harden resend throttling
+  URL: https://hackerone.com/reports/108645 | CWE: Violation of Secure Design Principles
+  Program: gratipay | Reporter: whit537
+
+[Medium] SIGSEGV - mrb_yield_with_class
+  URL: https://hackerone.com/reports/212074 | CWE: Violation of Secure Design Principles
+  Program: shopify-scripts | Reporter: icanthack
+
+[?] Invalid request may lead content spoofing for phishing
+  URL: https://hackerone.com/reports/213056 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: d4rk_g1rl
+
+[?] Example HackerOne security@ forward domain is not registered
+  URL: https://hackerone.com/reports/218705 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: intidc
+
+[Low] SSLv3 POODLE Vulnerability
+  URL: https://hackerone.com/reports/210331 | CWE: Violation of Secure Design Principles
+  Program: rockstargames | Reporter: rmtyronerf
+
+[Medium] HTTP trace method is enabled on gip.rocks
+  URL: https://hackerone.com/reports/203384 | CWE: Violation of Secure Design Principles
+  Program: gratipay | Reporter: a0xnirudh
+
+[Medium] HTML Injection/Load Images vulnerability on a DoD website
+  URL: https://hackerone.com/reports/195356 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: jon_bottarini
+
+[?] No rate limit for Referral Program
+  URL: https://hackerone.com/reports/171205 | CWE: Violation of Secure Design Principles
+  Program: algolia | Reporter: m17hun
+
+[Low] Mixed Active content issue on https://www.lyst.com
+  URL: https://hackerone.com/reports/207329 | CWE: Violation of Secure Design Principles
+  Program: lyst | Reporter: mrnull1337
+
+[Medium] [wave.informatica.com]- Subdomain missconfiguration
+  URL: https://hackerone.com/reports/205034 | CWE: Violation of Secure Design Principles
+  Program: informatica | Reporter: mohammad-obaid
+
+[Low] QuickTime Promotion on a DoD website
+  URL: https://hackerone.com/reports/189149 | CWE: Violation of Secure Design Principles
+  Program: deptofdefense | Reporter: spam404
+
+[?] API: Bug in method auth.signup , дающий возможность бесконечно звонить 
+  URL: https://hackerone.com/reports/107877 | CWE: Violation of Secure Design Principles
+  Program: vkcom | Reporter: pisarenko
+
+[?] [Screenhero] Subdomain takeover
+  URL: https://hackerone.com/reports/142096 | CWE: Violation of Secure Design Principles
+  Program: slack | Reporter: yassineaboukir
+
+[?] Validation bypass on user profile
+  URL: https://hackerone.com/reports/164687 | CWE: Violation of Secure Design Principles
+  Program: legalrobot | Reporter: mostafamamdoh
+
+[Low] No user confirmation when an auto-updated extension gets more permissions
+  URL: https://hackerone.com/reports/199243 | CWE: Violation of Secure Design Principles
+  Program: brave | Reporter: i1iii11iiiii111iii1
+
+[?] Text injection on Auth problem at urbandictionary.com
+  URL: https://hackerone.com/reports/189356 | CWE: Violation of Secure Design Principles
+  Program: urbandictionary | Reporter: ak1t4
+
+[?] URI scheme bypass in mail app lead to HTML content spoof and opener control
+  URL: https://hackerone.com/reports/175085 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: trichimtrich_
+
+[None] Bypass rate limiting on /users/password (possibly site-wide rate limit bypass?)
+  URL: https://hackerone.com/reports/170310 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: zseano
+
+[?] [Nextcloud 9.0.53] Content Spoofing in 'trustDomain' parameter
+  URL: https://hackerone.com/reports/153251 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: ahsan
+
+[Low] Content (Text) Injection at NextCloud Server 9.0.52 - via http://custom_nextcloud_url/remote.php/dav/files/ 
+  URL: https://hackerone.com/reports/149798 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: abcdefghijklmnopqrstuvwxyzabc
+
+[Low] race condition in adding team members
+  URL: https://hackerone.com/reports/176127 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: flashdisk
+
+[Low] More content spoofing through dir param in the files app
+  URL: https://hackerone.com/reports/154827 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: lmx
+
+[None] Content spoofing due to the improper behavior of the 403 page in Private Server
+  URL: https://hackerone.com/reports/177335 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: ahsan
+
+[?] Bypass 8 chars password complexity with 6 chars only due to insecure password reset functionaliy
+  URL: https://hackerone.com/reports/173195 | CWE: Violation of Secure Design Principles
+  Program: legalrobot | Reporter: japz
+
+[?] Insecure 2FA/authentication implementation creates a brute force vulnerability
+  URL: https://hackerone.com/reports/149598 | CWE: Violation of Secure Design Principles
+  Program: gitlab | Reporter: yaworsk
+
+[?] Login credentials transmitted in cleartext on index.rubygems.org
+  URL: https://hackerone.com/reports/173268 | CWE: Violation of Secure Design Principles
+  Program: rubygems | Reporter: eterm
+
+[Low] Hacker.One Subdomain Takeover
+  URL: https://hackerone.com/reports/159156 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: geekboy
+
+[?] Brute force login and bypass locked account restrictions via iOS app
+  URL: https://hackerone.com/reports/160109 | CWE: Violation of Secure Design Principles
+  Program: instacart | Reporter: cablej
+
+[?] CSRF AT INVITING PEOPLE THOUGH PHONE NUMBER
+  URL: https://hackerone.com/reports/113865 | CWE: Violation of Secure Design Principles
+  Program: eternal | Reporter: kiraak-boy
+
+[?] Race Condition in Redeeming Coupons
+  URL: https://hackerone.com/reports/157996 | CWE: Violation of Secure Design Principles
+  Program: instacart | Reporter: cablej
+
+[?] Missing rel=noreferrer tag allows link in list to change url of currently open tab
+  URL: https://hackerone.com/reports/158002 | CWE: Violation of Secure Design Principles
+  Program: instacart | Reporter: cablej
+
+[?] User Information leak allows user to bypass email verification.
+  URL: https://hackerone.com/reports/163467 | CWE: Violation of Secure Design Principles
+  Program: legalrobot | Reporter: cablej
+
+[?] Content Injection - apps.nextcloud.com
+  URL: https://hackerone.com/reports/161299 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: spodermen
+
+[?] Expired SSL certificate 
+  URL: https://hackerone.com/reports/163342 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: goethe_
+
+[?] window.opener is leaking to external domains upon redirect on Safari
+  URL: https://hackerone.com/reports/160498 | CWE: Violation of Secure Design Principles
+  Program: coinbase | Reporter: cablej
+
+[?] Subdomain takeover on http://fastly.sc-cdn.net/
+  URL: https://hackerone.com/reports/154425 | CWE: Violation of Secure Design Principles
+  Program: snapchat | Reporter: ebrietas
+
+[Medium] fix bug in username restriction
+  URL: https://hackerone.com/reports/128121 | CWE: Violation of Secure Design Principles
+  Program: gratipay | Reporter: dorkybug
+
+[?] Local File Inclusion path bypass
+  URL: https://hackerone.com/reports/147570 | CWE: Violation of Secure Design Principles
+  Program: concretecms | Reporter: paulos__
+
+[?] X-Content-Type-Options header missing at Auth Login
+  URL: https://hackerone.com/reports/151786 | CWE: Violation of Secure Design Principles
+  Program: gocd | Reporter: kiraak-boy
+
+[?] Response Header injection using redirect_uri together with PHP that utilizes Header Folding according to RFC1945 and Internet Explorer 11
+  URL: https://hackerone.com/reports/145392 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: fransrosen
+
+[Low] bring grtp.co up to A grade on SSLLabs
+  URL: https://hackerone.com/reports/131065 | CWE: Violation of Secure Design Principles
+  Program: gratipay | Reporter: mmyamin
+
+[?] Avoiding Surge Pricing
+  URL: https://hackerone.com/reports/125250 | CWE: Violation of Secure Design Principles
+  Program: uber | Reporter: nikhil_patil
+
+[?] Content spoofing due to the improper behavior of the not-found message 
+  URL: https://hackerone.com/reports/144084 | CWE: Violation of Secure Design Principles
+  Program: secnews | Reporter: malcolmx
+
+[?] Directory Listening
+  URL: https://hackerone.com/reports/117573 | CWE: Violation of Secure Design Principles
+  Program: leaseweb | Reporter: kiraak-boy
+
+[Low] limit HTTP methods on other domains
+  URL: https://hackerone.com/reports/117142 | CWE: Violation of Secure Design Principles
+  Program: gratipay | Reporter: jackds
+
+[?] Nextcloud server software: Content Spoofing
+  URL: https://hackerone.com/reports/145463 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: ishahriyar
+
+[?] stats.nextcloud.com: Content Injection
+  URL: https://hackerone.com/reports/145375 | CWE: Violation of Secure Design Principles
+  Program: nextcloud | Reporter: kiraak-boy
+
+[?] Weak HSTS age
+  URL: https://hackerone.com/reports/147260 | CWE: Violation of Secure Design Principles
+  Program: fantasytote | Reporter: ketankumar_godhani
+
+[?] Able to remove the admin access of my program
+  URL: https://hackerone.com/reports/141629 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: pardeepbattu02
+
+[?] Malicious File Upload
+  URL: https://hackerone.com/reports/131028 | CWE: Violation of Secure Design Principles
+  Program: moneybird | Reporter: hackheaven
+
+[?] Creating multiple user with the same link which is sent to email after registeration
+  URL: https://hackerone.com/reports/123380 | CWE: Violation of Secure Design Principles
+  Program: veris | Reporter: girish_s_pattanashetty
+
+[?] Password reset link is not Expiring
+  URL: https://hackerone.com/reports/118948 | CWE: Violation of Secure Design Principles
+  Program: veris | Reporter: itly
+
+[?] No rate limit or captcha to identify humans
+  URL: https://hackerone.com/reports/89178 | CWE: Violation of Secure Design Principles
+  Program: bithunt | Reporter: bugs3ra
+
+[?] SECURITY: Referencing  previous Reports attachment_IDs on new Reports via Draft_Sync DELETES Attachments
+  URL: https://hackerone.com/reports/123615 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: nismo
+
+[?] (URGENT!) Покупка OK дешевле, чем он стоит
+  URL: https://hackerone.com/reports/78436 | CWE: Violation of Secure Design Principles
+  Program: ok | Reporter: 4lemon
+
+[?] Race Conditions Exist When Accepting Invitations
+  URL: https://hackerone.com/reports/119354 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: yaworsk
+
+[?] Reflected File Download
+  URL: https://hackerone.com/reports/39658 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: 0xbastion
+
+[?] Signals get affected once reports closed as self 
+  URL: https://hackerone.com/reports/108928 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: kpr
+
+[?] Add text to the title of the page "Thanks"
+  URL: https://hackerone.com/reports/44359 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: bohdansec
+
+[?] All Active user sessions should be deleted when user change his password!
+  URL: https://hackerone.com/reports/9950 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: faisalahmed
+
+[?] Increase number of bugs by sending duplicate of your own valid report
+  URL: https://hackerone.com/reports/116951 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: ashish_r_padelkar
+
+[?] Accepting Invalid characters on email address
+  URL: https://hackerone.com/reports/3991 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: siddiki
+
+[?] Edit Auto Response Messages
+  URL: https://hackerone.com/reports/123027 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: rohk
+
+[?] Missing Function Level Access Control in /cindex.php/widget/customize/
+  URL: https://hackerone.com/reports/30575 | CWE: Violation of Secure Design Principles
+  Program: bookfresh | Reporter: adrianomarcmont
+
+[?] Sending emails (via HackerOne) impersonating other users
+  URL: https://hackerone.com/reports/123743 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: anshuman_bh
+
+[Medium] SPF DNS Record 
+  URL: https://hackerone.com/reports/115275 | CWE: Violation of Secure Design Principles
+  Program: gratipay | Reporter: 1shahzaib1
+
+[?] owncloud.com: Parameter pollution in social sharing buttons
+  URL: https://hackerone.com/reports/106024 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: gorang_joshi
+
+[?] Self-XSS in mails sent by hello@owncloud.com
+  URL: https://hackerone.com/reports/92111 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: dz_samir
+
+[?] Mixed Active Scripting Issue on stats.owncloud.org
+  URL: https://hackerone.com/reports/108692 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: ishahriyar
+
+[?] *.owncloud.com / *.owncloud.org: Using not strong enough SSL ciphers
+  URL: https://hackerone.com/reports/84078 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: c0ldb00t3r
+
+[?] HTML injection can lead to data theft
+  URL: https://hackerone.com/reports/110578 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: intidc
+
+[?] owncloud.help: Text  Injection
+  URL: https://hackerone.com/reports/112304 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: geekh
+
+[?] content injection
+  URL: https://hackerone.com/reports/102327 | CWE: Violation of Secure Design Principles
+  Program: withinsecurity | Reporter: ckmk44
+
+[?] text injection can be used in phishing 404 page should not include attacker text
+  URL: https://hackerone.com/reports/106350 | CWE: Violation of Secure Design Principles
+  Program: withinsecurity | Reporter: djamel-ghorab
+
+[?] profile cover can also load external URL's 
+  URL: https://hackerone.com/reports/99687 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: smiegles
+
+[?] Cookie securing your "Opening soon" store is not secured against XSS
+  URL: https://hackerone.com/reports/100956 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: hafolife
+
+[?] SPF records not found
+  URL: https://hackerone.com/reports/92740 | CWE: Violation of Secure Design Principles
+  Program: coinbase | Reporter: brain
+
+[?] owncloud.com: PermError SPF Permanent Error: Too many DNS lookups
+  URL: https://hackerone.com/reports/83578 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: karthic
+
+[?] owncloud.com: Outdated plugins contains public exploits  
+  URL: https://hackerone.com/reports/84581 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: dad
+
+[?] Config
+  URL: https://hackerone.com/reports/84797 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: paulos__
+
+[?] Passwords Returned in Later Responses.
+  URL: https://hackerone.com/reports/90862 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: iamavinasht
+
+[?] [s3.owncloud.com] Web Server HTTP Trace/Track Method Support 
+  URL: https://hackerone.com/reports/90601 | CWE: Violation of Secure Design Principles
+  Program: owncloud | Reporter: bigbear_
+
+[?] Extremely high Course rating values could be set in order to make really high Average rating of the course. Negative values could be set to.
+  URL: https://hackerone.com/reports/73808 | CWE: Violation of Secure Design Principles
+  Program: udemy | Reporter: decay
+
+[?] Weak HSTS age in support hackerone site
+  URL: https://hackerone.com/reports/86067 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: codequick
+
+[?] SSRF via 'Add Image from URL' feature
+  URL: https://hackerone.com/reports/67377 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: alpha
+
+[?] SSL cookie without secure flag set
+  URL: https://hackerone.com/reports/58679 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: blackpanther_pintoo
+
+[?] Content Spoofing - External Link Warning Page
+  URL: https://hackerone.com/reports/60402 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: thsa
+
+[?] Fake URL + Additional vectors for homograph attack
+  URL: https://hackerone.com/reports/59469 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: abze
+
+[?] Enumeration/Guess of Private (Invited) Programs
+  URL: https://hackerone.com/reports/32990 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: prakharprasad
+
+[?] Homograph attack
+  URL: https://hackerone.com/reports/59375 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: filedescriptor
+
+[?] Unauthorized Tweeting on behalf of Account Owners
+  URL: https://hackerone.com/reports/31082 | CWE: Violation of Secure Design Principles
+  Program: x | Reporter: anshuman_bh
+
+[?] Content Spoofing
+  URL: https://hackerone.com/reports/58630 | CWE: Violation of Secure Design Principles
+  Program: shopify | Reporter: zerohat
+
+[?] Captcha Bypass in Snapchat's Geofilter Submission Process
+  URL: https://hackerone.com/reports/54641 | CWE: Violation of Secure Design Principles
+  Program: snapchat | Reporter: zero
+
+[?] Homograph attack
+  URL: https://hackerone.com/reports/58612 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: abze
+
+[?] Anti-MIME-Sniffing header X-Content-Type-Options header has not been set.
+  URL: https://hackerone.com/reports/9479 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: uname
+
+[?] Logic Issue with Reputation: Boost Reputation Points
+  URL: https://hackerone.com/reports/36211 | CWE: Violation of Secure Design Principles
+  Program: security | Reporter: prakharprasad
+

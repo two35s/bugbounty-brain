@@ -1,0 +1,129 @@
+{
+  "id": 118925,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMTg5MjU=",
+  "url": "https://hackerone.com/reports/118925",
+  "title": "API Key added for one Indices works for all other indices too.",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2016-02-26T11:12:27.014Z",
+  "submitted_at": "2016-02-26T11:12:27.014Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "bugs3ra",
+    "url": "/bugs3ra",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 443,
+    "url": "https://hackerone.com/algolia",
+    "handle": "algolia",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/000/443/6dc48cd913e21beebc873e81aaf28fd3b6b9e12e_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/000/443/6dc48cd913e21beebc873e81aaf28fd3b6b9e12e_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Algolia",
+      "twitter_handle": "algolia",
+      "website": "https://algolia.com",
+      "about": "Hosted search API that delivers instant and relevant results from the first keystroke"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2016-06-01T10:22:23.321Z",
+  "bug_reporter_agreed_on_going_public_at": "2016-05-02T10:22:13.416Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi,\n\nI created one API key and restricted it to only one index by adding it and gave it right for creating record.\nNow this api can be used to add records in other indeces in same account.\n\nScreenshot is attached",
+  "bounty_amount": "1000.0",
+  "formatted_bounty": "$1,000",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 75488,
+      "file_name": "API_permissions.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/075/488/4286961bf29c5de1b302825cb8a4894f8921a344/API_permissions.JPG?response-content-disposition=attachment%3B%20filename%3D%22API_permissions.JPG%22%3B%20filename%2A%3DUTF-8%27%27API_permissions.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQRZWXXGLE%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124224Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDqZUGl3VV2etMJyVqIrgNV6wD2AtzHKWfQgp6W8WTKRAiEAuJ6EJBHKu7Zh4Bf3gJoc1LKi6doFIo%2BI%2Bp0ubPUSeQ4qugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDNDZtoMpjV%2FNfA7n0yqOBXq4Ryw%2F5Yd%2FQNa7197uwZCuDUBsfMpuu2m0KPzdqi2r3yvVdBblqztsIOlxuppNU99Aneeb585iyd5c%2FdKzAGrKnT9EcU5%2FAY8g9ydwpP3Z6oqNbTkvI8kcO69T62qBsiIH9HE9Ih7iGskLf1tFc6gxpmBpE%2Be4Pc4NIL4RXDUEyUsgP%2FuInqHI6fFGCJonLGTIjmNdXBrL9pCtraT35cepcP9ULauP1SPg7ms76%2BxkmN6otElOHEX7ugcmWsxsX0BBl7GHkcuhE6bzQw2pTLKvaQ45swjnserrioQaod8IsO3TzMU9mhjJ9B3qyOsZOe7%2F2G0tUo4%2Bqrf55owJ831%2B%2FOC6TTP%2By0oZzZDPO7uC1py55yhj9UB%2F8NVt3E02ZjGIQL4dLK7HKMcjmgkIVexkQ7qNX1pRgX7kWLW2vOF4GsyPDyAyoy1w7KD0xyH49LqrZpHot5d0QOOJK3%2BYkd3Ms5ArOe25ezGEYkgvH4CNEvhF8gT5nhJniTAp44j6TFtyGMtG8cfZnrWHAmfVuzw0D%2FgcY9aU2T9QIBN9V9BWaA%2BDGP%2FaPlR7LBh6skZz0a3ObaAwjn24hewlCorLCMOMLnokaso6pLySGzvYE114%2BTPL6jqr2FxSxwcxT6JE10I5n5FITH535hXySPublsZJU5dd5d%2FBKL%2BStHdaFD5IN2r8WsacCYENQQiLGmUhAG5DAz9YRUJ2vWGWWQeei1RynMGfrz9d3iPFkhE8N1ewUGM1PdaQu0kNFWp%2BtkE%2BggqnLgCDKKtrI%2Bxri9kI%2FI9dJvuCLXFiKh5s0idwqXpD%2BcbRijTWV3Qb1DmVbL6yOD0xG9WTv%2F7VamvmYSzGLCLH3%2FmrrCURDG8%2BDTB3ezDbkJXRBjqxAZW5Y55x3VEu4yLEcrjZ9d%2FsiqcplBfBpVFhxMkhrzSiaI0nc6xLi66saw6%2Fy4ApmQNSOVzmvgl3BzMD8jR4kx0K5IQiRun0iSqlaG5QLJdtlqjvutpYtpKqDbcbt5DBc3QnloagyP5%2BxVxG5KpHt%2F38n1C16RB2fWU5QFxxk5Z5ODBCOQwbJVANz3K7Oy%2Bx%2BfRerrdhYyYhlYJYb7OWtIyAD81zvt9zrlr1ti2T94lGYg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=34140d4021998360febeb6d6864058c745ee7a5b36c64e1443eae0767db46221",
+      "file_size": 29901,
+      "type": "image/jpeg",
+      "moderated": null
+    },
+    {
+      "id": 75489,
+      "file_name": "API_request_response.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/075/489/81099a9996f61103d83e49f895899a2e7e693d6a/API_request_response.JPG?response-content-disposition=attachment%3B%20filename%3D%22API_request_response.JPG%22%3B%20filename%2A%3DUTF-8%27%27API_request_response.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQRZWXXGLE%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124224Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDqZUGl3VV2etMJyVqIrgNV6wD2AtzHKWfQgp6W8WTKRAiEAuJ6EJBHKu7Zh4Bf3gJoc1LKi6doFIo%2BI%2Bp0ubPUSeQ4qugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDNDZtoMpjV%2FNfA7n0yqOBXq4Ryw%2F5Yd%2FQNa7197uwZCuDUBsfMpuu2m0KPzdqi2r3yvVdBblqztsIOlxuppNU99Aneeb585iyd5c%2FdKzAGrKnT9EcU5%2FAY8g9ydwpP3Z6oqNbTkvI8kcO69T62qBsiIH9HE9Ih7iGskLf1tFc6gxpmBpE%2Be4Pc4NIL4RXDUEyUsgP%2FuInqHI6fFGCJonLGTIjmNdXBrL9pCtraT35cepcP9ULauP1SPg7ms76%2BxkmN6otElOHEX7ugcmWsxsX0BBl7GHkcuhE6bzQw2pTLKvaQ45swjnserrioQaod8IsO3TzMU9mhjJ9B3qyOsZOe7%2F2G0tUo4%2Bqrf55owJ831%2B%2FOC6TTP%2By0oZzZDPO7uC1py55yhj9UB%2F8NVt3E02ZjGIQL4dLK7HKMcjmgkIVexkQ7qNX1pRgX7kWLW2vOF4GsyPDyAyoy1w7KD0xyH49LqrZpHot5d0QOOJK3%2BYkd3Ms5ArOe25ezGEYkgvH4CNEvhF8gT5nhJniTAp44j6TFtyGMtG8cfZnrWHAmfVuzw0D%2FgcY9aU2T9QIBN9V9BWaA%2BDGP%2FaPlR7LBh6skZz0a3ObaAwjn24hewlCorLCMOMLnokaso6pLySGzvYE114%2BTPL6jqr2FxSxwcxT6JE10I5n5FITH535hXySPublsZJU5dd5d%2FBKL%2BStHdaFD5IN2r8WsacCYENQQiLGmUhAG5DAz9YRUJ2vWGWWQeei1RynMGfrz9d3iPFkhE8N1ewUGM1PdaQu0kNFWp%2BtkE%2BggqnLgCDKKtrI%2Bxri9kI%2FI9dJvuCLXFiKh5s0idwqXpD%2BcbRijTWV3Qb1DmVbL6yOD0xG9WTv%2F7VamvmYSzGLCLH3%2FmrrCURDG8%2BDTB3ezDbkJXRBjqxAZW5Y55x3VEu4yLEcrjZ9d%2FsiqcplBfBpVFhxMkhrzSiaI0nc6xLi66saw6%2Fy4ApmQNSOVzmvgl3BzMD8jR4kx0K5IQiRun0iSqlaG5QLJdtlqjvutpYtpKqDbcbt5DBc3QnloagyP5%2BxVxG5KpHt%2F38n1C16RB2fWU5QFxxk5Z5ODBCOQwbJVANz3K7Oy%2Bx%2BfRerrdhYyYhlYJYb7OWtIyAD81zvt9zrlr1ti2T94lGYg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=bdf65e01bd26381bfa44f480931ed083ca1d90211f21ed8078dc4b52de430ec2",
+      "file_size": 86684,
+      "type": "image/jpeg",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-06-01T10:22:13.482Z",
+  "allow_singular_disclosure_after": -316059610.8676595,
+  "singular_disclosure_allowed": true,
+  "vote_count": 6,
+  "voters": [
+    "michiel",
+    "jens",
+    "at3nder",
+    "imran_hadid",
+    "dyabla",
+    "destinedtohack"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

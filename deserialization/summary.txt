@@ -1,0 +1,67 @@
+Category: deserialization
+Reports: 16
+
+[Critical] insecure deserilize object leads to RCE On Sitecore (CVE-██████████-27218)
+  URL: https://hackerone.com/reports/3090123 | CWE: Deserialization of Untrusted Data
+  Program: mars | Reporter: the_reinhardt
+
+[Medium] Navgraph confusion allows any 3p app to send and read requests from the server at app.hey.com
+  URL: https://hackerone.com/reports/2552879 | CWE: Deserialization of Untrusted Data
+  Program: basecamp | Reporter: fr4via
+
+[Low] Unsafe yaml load can lead to remote code execution
+  URL: https://hackerone.com/reports/2467232 | CWE: Deserialization of Untrusted Data
+  Program: liberapay | Reporter: tarun_sec
+
+[High] CVE-2023-46132
+  URL: https://hackerone.com/reports/2255968 | CWE: Deserialization of Untrusted Data
+  Program: hyperledger | Reporter: yacovm
+
+[Critical] RCE on Wordpress website
+  URL: https://hackerone.com/reports/2248328 | CWE: Deserialization of Untrusted Data
+  Program: nextcloud | Reporter: lukasreschke
+
+[Medium] CVE-2023-40195: Apache Airflow Spark Provider Deserialization Vulnerability RCE
+  URL: https://hackerone.com/reports/2127968 | CWE: Deserialization of Untrusted Data
+  Program: ibb | Reporter: x_h1
+
+[Critical] SQL Injection + Insecure Deserialization leads to Remote Code Execution on https://krisp.ai
+  URL: https://hackerone.com/reports/1842674 | CWE: Deserialization of Untrusted Data
+  Program: krisp | Reporter: mikemyers
+
+[Medium] RCE vulnerability in Hyperledger Fabric SDK for Java
+  URL: https://hackerone.com/reports/801370 | CWE: Deserialization of Untrusted Data
+  Program: hyperledger | Reporter: freskimo
+
+[Medium] Phar Deserialization Vulnerability via Logging Settings
+  URL: https://hackerone.com/reports/1063039 | CWE: Deserialization of Untrusted Data
+  Program: concretecms | Reporter: egix
+
+[Medium] Loading YAML in Java client can lead to command execution
+  URL: https://hackerone.com/reports/1167773 | CWE: Deserialization of Untrusted Data
+  Program: kubernetes | Reporter: j0v
+
+[Critical] Unsafe deserialization in Nexus Repository helm plugin
+  URL: https://hackerone.com/reports/917843 | CWE: Deserialization of Untrusted Data
+  Program: central-security-project | Reporter: c0d3p1ut0s
+
+[Critical] Remote Code Execution via Insecure Deserialization in Telerik UI 
+  URL: https://hackerone.com/reports/838196 | CWE: Deserialization of Untrusted Data
+  Program: deptofdefense | Reporter: sw33tlie
+
+[?] Remote attacker can impersonate Social users via ActivityPub API
+  URL: https://hackerone.com/reports/461308 | CWE: Deserialization of Untrusted Data
+  Program: nextcloud | Reporter: tomk
+
+[Critical] Remote Code Execution (RCE) in a DoD website
+  URL: https://hackerone.com/reports/329397 | CWE: Deserialization of Untrusted Data
+  Program: deptofdefense | Reporter: joaomatosf
+
+[Critical] Remote code execution on rubygems.org
+  URL: https://hackerone.com/reports/274990 | CWE: Deserialization of Untrusted Data
+  Program: rubygems | Reporter: max
+
+[?] Password reset Token not expiring 
+  URL: https://hackerone.com/reports/220185 | CWE: Deserialization of Untrusted Data
+  Program: skyliner | Reporter: peeper35
+

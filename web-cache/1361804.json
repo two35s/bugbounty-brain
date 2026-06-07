@@ -1,0 +1,187 @@
+{
+  "id": 1361804,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMzYxODA0",
+  "url": "https://hackerone.com/reports/1361804",
+  "title": "1-click DOS in fastify-static via directly passing user's input to new URL() of NodeJS without try/catch",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2021-10-06T15:23:51.096Z",
+  "submitted_at": "2021-10-06T15:23:51.154Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "drstrnegth",
+    "url": "/drstrnegth",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/3d278lk34qc2o0nio62phla176ut/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef?response-content-disposition=inline%3B%20filename%3D%2225105395.jpg%22%3B%20filename%2A%3DUTF-8%27%2725105395.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQVNY4JZOL%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154753Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDcFvoevjKQeStcY1C0HIWH7jXpf9MEDp4deMBLXonL6AiEAhtQhlH5j8KTtCp0ajNTpEzkWJqwPa1zETEuyNYQzXYQqugUIof%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDKei6ZF8zoAHFnymKiqOBYu07QmddxP96vLIR%2BZkZASmWyWJA4TzBOMZyNoaSLuUkkuMGL%2FGx9hZv9Cl3crVtFjgmF82ajIXZUu96CZOqdSriHO50e%2Fp%2FGyhdGPUowj%2FWsTxSMMTIIT4tKX8iY2SyzT3nKAHCcGX3cVKa2%2B%2B5hut0A9LVRv%2BqJjP8JndakAmaOnVsHY1g3ATQ801LCaAHb%2FCMiaESiz9us1pH5cfp2cTwFYbGBEj6%2FncJBYVYO735IdHymy11JyzMNcgaZv4MRivq5aczrf6uuUyTeeEJrdgvYBUNiDeB5MlEAhB8c10O%2BEGU4EkdtD4HU7yquh1Ej%2Bb648b0DVnqt8ab7Se5FgKtjSmgGfUhZjZiLtLsVBKzL%2Bx1c3Zztqr3lzPI3iQNcABXQQepdZsxRisdM%2BU%2FMgjkCMhFWhoXz5vcYLIPCUZGEeUZyISlJ%2FkzrVqRnEan%2FiVhVgR9jU%2FfTkIl%2FNIg9Pws%2FQBPn9E4YodNJ1UmjVHxP2Y%2BRrmLdZmKu7JQWsWVR9wcf8biMYRYZK2eZTs%2BNBSYYJoFX%2BkGagjncrKDjJCsdS6LEKxz%2BrdPsmwrqnvd5z7O68MRuA0nQHsHc3VwYjdVvO7aHgAkCo3Cgj2hq7kv4XR5%2BZxQXqHcs29f8ZtiTZV6LkQ7erlYO4FmilOWdbH93nxYJf5D8Nb2OHGPWtjq2aauLCmYYnXWTP3L%2F%2BCMT4AS5lWWfkLHAh9jKRbD6pkD6c%2FSr6NNRM14G10w8TeCk5drh7cpvX34WNlt7Vfk5SGHiYWJ4jI6mPV2zgkkVFcaLmRAtH7R74EhMGrrGlpBj90lmqyeTrOqCjShYWPxSIcgJgyCCrWXMKgmt3%2FZ6usX08syBMHV7jlvY1PbTC4mZbRBjqxAefGdVMpuSQJlgHNOMrL2HCRO6HznHunYfISzTC3%2Brjmmma4Y42ZWqWtPrnd0i3BXYvE7Hjg9mghM14DYCQw2doPXCNHLaV8fXHUVr5zaZln989k3Ptxu8NWpUqNoSLvnplGDnHav6CMU%2BnLf2xfWACyYxJFR0BXx1OlCL1fvHHRPfl6ywzCEQ%2Fr0ZdhSpFRFUYMHyAhM6xD%2BrCjpjGKu1b2igMFUBcspEYrRp3JI2pszQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3ca7c7f2c1446b3d536b2283de900ad75598612037fe07cf3c8231aeb131647e"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 52423,
+    "url": "https://hackerone.com/fastify",
+    "handle": "fastify",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/yymnmpf4rds5l145me0ar8og76k9/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22logo.png%22%3B%20filename%2A%3DUTF-8%27%27logo.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQVNY4JZOL%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154753Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDcFvoevjKQeStcY1C0HIWH7jXpf9MEDp4deMBLXonL6AiEAhtQhlH5j8KTtCp0ajNTpEzkWJqwPa1zETEuyNYQzXYQqugUIof%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDKei6ZF8zoAHFnymKiqOBYu07QmddxP96vLIR%2BZkZASmWyWJA4TzBOMZyNoaSLuUkkuMGL%2FGx9hZv9Cl3crVtFjgmF82ajIXZUu96CZOqdSriHO50e%2Fp%2FGyhdGPUowj%2FWsTxSMMTIIT4tKX8iY2SyzT3nKAHCcGX3cVKa2%2B%2B5hut0A9LVRv%2BqJjP8JndakAmaOnVsHY1g3ATQ801LCaAHb%2FCMiaESiz9us1pH5cfp2cTwFYbGBEj6%2FncJBYVYO735IdHymy11JyzMNcgaZv4MRivq5aczrf6uuUyTeeEJrdgvYBUNiDeB5MlEAhB8c10O%2BEGU4EkdtD4HU7yquh1Ej%2Bb648b0DVnqt8ab7Se5FgKtjSmgGfUhZjZiLtLsVBKzL%2Bx1c3Zztqr3lzPI3iQNcABXQQepdZsxRisdM%2BU%2FMgjkCMhFWhoXz5vcYLIPCUZGEeUZyISlJ%2FkzrVqRnEan%2FiVhVgR9jU%2FfTkIl%2FNIg9Pws%2FQBPn9E4YodNJ1UmjVHxP2Y%2BRrmLdZmKu7JQWsWVR9wcf8biMYRYZK2eZTs%2BNBSYYJoFX%2BkGagjncrKDjJCsdS6LEKxz%2BrdPsmwrqnvd5z7O68MRuA0nQHsHc3VwYjdVvO7aHgAkCo3Cgj2hq7kv4XR5%2BZxQXqHcs29f8ZtiTZV6LkQ7erlYO4FmilOWdbH93nxYJf5D8Nb2OHGPWtjq2aauLCmYYnXWTP3L%2F%2BCMT4AS5lWWfkLHAh9jKRbD6pkD6c%2FSr6NNRM14G10w8TeCk5drh7cpvX34WNlt7Vfk5SGHiYWJ4jI6mPV2zgkkVFcaLmRAtH7R74EhMGrrGlpBj90lmqyeTrOqCjShYWPxSIcgJgyCCrWXMKgmt3%2FZ6usX08syBMHV7jlvY1PbTC4mZbRBjqxAefGdVMpuSQJlgHNOMrL2HCRO6HznHunYfISzTC3%2Brjmmma4Y42ZWqWtPrnd0i3BXYvE7Hjg9mghM14DYCQw2doPXCNHLaV8fXHUVr5zaZln989k3Ptxu8NWpUqNoSLvnplGDnHav6CMU%2BnLf2xfWACyYxJFR0BXx1OlCL1fvHHRPfl6ywzCEQ%2Fr0ZdhSpFRFUYMHyAhM6xD%2BrCjpjGKu1b2igMFUBcspEYrRp3JI2pszQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7bfb4392594ca55de035382fa4fa7ca87fb3b5b21302218599731a350db3bf78",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/yymnmpf4rds5l145me0ar8og76k9/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22logo.png%22%3B%20filename%2A%3DUTF-8%27%27logo.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQVNY4JZOL%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154753Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDcFvoevjKQeStcY1C0HIWH7jXpf9MEDp4deMBLXonL6AiEAhtQhlH5j8KTtCp0ajNTpEzkWJqwPa1zETEuyNYQzXYQqugUIof%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDKei6ZF8zoAHFnymKiqOBYu07QmddxP96vLIR%2BZkZASmWyWJA4TzBOMZyNoaSLuUkkuMGL%2FGx9hZv9Cl3crVtFjgmF82ajIXZUu96CZOqdSriHO50e%2Fp%2FGyhdGPUowj%2FWsTxSMMTIIT4tKX8iY2SyzT3nKAHCcGX3cVKa2%2B%2B5hut0A9LVRv%2BqJjP8JndakAmaOnVsHY1g3ATQ801LCaAHb%2FCMiaESiz9us1pH5cfp2cTwFYbGBEj6%2FncJBYVYO735IdHymy11JyzMNcgaZv4MRivq5aczrf6uuUyTeeEJrdgvYBUNiDeB5MlEAhB8c10O%2BEGU4EkdtD4HU7yquh1Ej%2Bb648b0DVnqt8ab7Se5FgKtjSmgGfUhZjZiLtLsVBKzL%2Bx1c3Zztqr3lzPI3iQNcABXQQepdZsxRisdM%2BU%2FMgjkCMhFWhoXz5vcYLIPCUZGEeUZyISlJ%2FkzrVqRnEan%2FiVhVgR9jU%2FfTkIl%2FNIg9Pws%2FQBPn9E4YodNJ1UmjVHxP2Y%2BRrmLdZmKu7JQWsWVR9wcf8biMYRYZK2eZTs%2BNBSYYJoFX%2BkGagjncrKDjJCsdS6LEKxz%2BrdPsmwrqnvd5z7O68MRuA0nQHsHc3VwYjdVvO7aHgAkCo3Cgj2hq7kv4XR5%2BZxQXqHcs29f8ZtiTZV6LkQ7erlYO4FmilOWdbH93nxYJf5D8Nb2OHGPWtjq2aauLCmYYnXWTP3L%2F%2BCMT4AS5lWWfkLHAh9jKRbD6pkD6c%2FSr6NNRM14G10w8TeCk5drh7cpvX34WNlt7Vfk5SGHiYWJ4jI6mPV2zgkkVFcaLmRAtH7R74EhMGrrGlpBj90lmqyeTrOqCjShYWPxSIcgJgyCCrWXMKgmt3%2FZ6usX08syBMHV7jlvY1PbTC4mZbRBjqxAefGdVMpuSQJlgHNOMrL2HCRO6HznHunYfISzTC3%2Brjmmma4Y42ZWqWtPrnd0i3BXYvE7Hjg9mghM14DYCQw2doPXCNHLaV8fXHUVr5zaZln989k3Ptxu8NWpUqNoSLvnplGDnHav6CMU%2BnLf2xfWACyYxJFR0BXx1OlCL1fvHHRPfl6ywzCEQ%2Fr0ZdhSpFRFUYMHyAhM6xD%2BrCjpjGKu1b2igMFUBcspEYrRp3JI2pszQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=87a965e4b2ed929683384d68ed808b919d8e666ec3862e2bdf49b53ab230033e"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Fastify",
+      "twitter_handle": "fastifyjs",
+      "website": "https://www.fastify.io/",
+      "about": "Fast and low overhead web framework, for Node.js"
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2021-22964"
+  ],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2021-10-11T16:41:34.583Z",
+  "bug_reporter_agreed_on_going_public_at": "2021-10-11T16:41:34.525Z",
+  "team_member_agreed_on_going_public_at": "2021-10-11T12:54:31.165Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\nWhen fastify-static is mounted at root and registered the option `{ redirect: true }` (default of redirect option is `false`), the following line directly feed user's input which is `req.raw.url` to URL API without try/catch: https://github.com/fastify/fastify-static/blob/master/index.js#L439. A remote attacker can send a GET request to server with path = `//^/..`, this will cause the URL API to throw error and eventually crash the server.\n\n## Steps To Reproduce:\n\n  1. Download `fastify-dos.zip`\n  2. bash run.sh\n  3. Open your terminal and run: `curl --path-as-is \"http://localhost:3000//^/..\"`\n \nAfter that the server will crash and return error `TypeError [ERR_INVALID_URL]: Invalid URL: //^/..`.\n\n## Fix proposal\n\nYou can add a try/catch to prevent crash. However, if you only fix by adding try/catch, attacker can still cause open redirect. \n\n 1. Run the server in my `fastify-dos.zip` again\n 2. Use Google Chrome and navigate to `http://localhost:3000//a//youtube.com/%2e%2e%2f%2e%2e` (I tested on Chrome, Firefox, Safari, Opera, Edge, worked on all of them)\n 3. You will see that you get redirected to `https://www.youtube.com/..%2F..`\n\nI like the idea of fixing open redirect  by having a base URL = `http://localhost.com/` as second parameter in https://github.com/fastify/fastify-static/blob/master/index.js#L439. However, I looked up on MDN spec about the URL API and I got surprised when I saw the last example at: https://developer.mozilla.org/en-US/docs/Web/API/URL/URL#examples, which is `new URL(\"//foo.com\", \"https://example.com\")    // => 'https://foo.com' (see relative URLs)`, this is the main reason why the open redirect bug is still persist.\n\nTo fix this bug, I think we can check leading slash of `req.raw.url`, and allow at most 1 leading slash `/` before attempt to redirect.\n\n## Impact\n\n- Denial of service\n- Open redirect",
+  "weakness": {
+    "id": 48,
+    "name": "Uncontrolled Resource Consumption"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1473123,
+      "file_name": "fastify-dos.zip",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/749xd352x8hzft8oqka18ltooaal?response-content-disposition=attachment%3B%20filename%3D%22fastify-dos.zip%22%3B%20filename%2A%3DUTF-8%27%27fastify-dos.zip&response-content-type=application%2Fzip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQVNY4JZOL%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154753Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDcFvoevjKQeStcY1C0HIWH7jXpf9MEDp4deMBLXonL6AiEAhtQhlH5j8KTtCp0ajNTpEzkWJqwPa1zETEuyNYQzXYQqugUIof%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDKei6ZF8zoAHFnymKiqOBYu07QmddxP96vLIR%2BZkZASmWyWJA4TzBOMZyNoaSLuUkkuMGL%2FGx9hZv9Cl3crVtFjgmF82ajIXZUu96CZOqdSriHO50e%2Fp%2FGyhdGPUowj%2FWsTxSMMTIIT4tKX8iY2SyzT3nKAHCcGX3cVKa2%2B%2B5hut0A9LVRv%2BqJjP8JndakAmaOnVsHY1g3ATQ801LCaAHb%2FCMiaESiz9us1pH5cfp2cTwFYbGBEj6%2FncJBYVYO735IdHymy11JyzMNcgaZv4MRivq5aczrf6uuUyTeeEJrdgvYBUNiDeB5MlEAhB8c10O%2BEGU4EkdtD4HU7yquh1Ej%2Bb648b0DVnqt8ab7Se5FgKtjSmgGfUhZjZiLtLsVBKzL%2Bx1c3Zztqr3lzPI3iQNcABXQQepdZsxRisdM%2BU%2FMgjkCMhFWhoXz5vcYLIPCUZGEeUZyISlJ%2FkzrVqRnEan%2FiVhVgR9jU%2FfTkIl%2FNIg9Pws%2FQBPn9E4YodNJ1UmjVHxP2Y%2BRrmLdZmKu7JQWsWVR9wcf8biMYRYZK2eZTs%2BNBSYYJoFX%2BkGagjncrKDjJCsdS6LEKxz%2BrdPsmwrqnvd5z7O68MRuA0nQHsHc3VwYjdVvO7aHgAkCo3Cgj2hq7kv4XR5%2BZxQXqHcs29f8ZtiTZV6LkQ7erlYO4FmilOWdbH93nxYJf5D8Nb2OHGPWtjq2aauLCmYYnXWTP3L%2F%2BCMT4AS5lWWfkLHAh9jKRbD6pkD6c%2FSr6NNRM14G10w8TeCk5drh7cpvX34WNlt7Vfk5SGHiYWJ4jI6mPV2zgkkVFcaLmRAtH7R74EhMGrrGlpBj90lmqyeTrOqCjShYWPxSIcgJgyCCrWXMKgmt3%2FZ6usX08syBMHV7jlvY1PbTC4mZbRBjqxAefGdVMpuSQJlgHNOMrL2HCRO6HznHunYfISzTC3%2Brjmmma4Y42ZWqWtPrnd0i3BXYvE7Hjg9mghM14DYCQw2doPXCNHLaV8fXHUVr5zaZln989k3Ptxu8NWpUqNoSLvnplGDnHav6CMU%2BnLf2xfWACyYxJFR0BXx1OlCL1fvHHRPfl6ywzCEQ%2Fr0ZdhSpFRFUYMHyAhM6xD%2BrCjpjGKu1b2igMFUBcspEYrRp3JI2pszQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=8e3db19303b5de5c48e3e18d8547ce060bab668bfab3cd6e442e8cc08b7ed5bd",
+      "file_size": 1043,
+      "type": "application/zip",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2021-11-10T12:54:31.302Z",
+  "allow_singular_disclosure_after": -144298401.99981043,
+  "singular_disclosure_allowed": true,
+  "vote_count": 4,
+  "voters": [
+    "2026",
+    "khizer47",
+    "xzqtao",
+    "charliem4n"
+  ],
+  "severity": {
+    "rating": "medium",
+    "score": 5.9,
+    "author_type": "User",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "high",
+      "privileges_required": "none",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "none",
+      "integrity": "none",
+      "availability": "high"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 65195,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/fastify",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

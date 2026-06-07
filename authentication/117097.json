@@ -1,0 +1,128 @@
+{
+  "id": 117097,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMTcwOTc=",
+  "url": "https://hackerone.com/reports/117097",
+  "title": "Email Forgery through Mandrillapp SPF",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2016-02-18T07:11:14.654Z",
+  "submitted_at": "2016-02-18T07:11:14.654Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "bugdiscloseguys",
+    "url": "/bugdiscloseguys",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/xVUwqLPZMRzBgybFxVY3ec6o/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 1868,
+    "url": "https://hackerone.com/gratipay",
+    "handle": "gratipay",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/001/868/a75c6649c5b4671b3cf44160af884a7da9fd0b67_original.jpg/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/001/868/a75c6649c5b4671b3cf44160af884a7da9fd0b67_original.jpg/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a"
+    },
+    "permissions": [],
+    "submission_state": "disabled",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Gratipay",
+      "twitter_handle": "Gratipay",
+      "website": "https://gratipay.com/",
+      "about": "Gratitude? Gratipay! The easiest way for your company to pay for open source."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2016-03-19T19:16:58.197Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2016-02-18T19:16:49.496Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Description :-\nThe SPF record of gratipay.com include Mandrillapp which you are not using right now, i'm able to add gratipay.com in my account, although a further verification of domain is required but you should know that Mandrillapp allow to send email from a domain if its SPF records point Mandrill server.\nI have attached a screenshot to proof my concept\n1 SPF record found for the domain gratipay.com :\n\"\"  v=spf1 include:email.freshdesk.com include:spf.mandrillapp.com include:_spf.google.com -all  \"\nThis is useful in phishing, and this type of vulnerability is news worthy (http://bits.blogs.nytimes.com/2015/04/09/sendgrid-email-breach-was-used-to-attack-coinbase-a-bitcoin-exchange/)\nVulnerability Impact Scenario :-\nUsing my own mandrill account I can send email which appears to originate from @gratipay.com\nPatch :-\nThe patch is pretty simple. Complete your mandrill registration process. This will lock out other mandrill users from sending email that originates from *@gratipay.com.\nLet me know if you have any other questions.\nCheck Screenshot.\nThanks.",
+  "bounty_amount": "10.0",
+  "formatted_bounty": "$10",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 74045,
+      "file_name": "Screen_Shot_2016-02-18_at_12.40.48_pm.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/074/045/93c2d8e619364168e7187fcd5bb344ed7558e78e/Screen_Shot_2016-02-18_at_12.40.48_pm.png?response-content-disposition=attachment%3B%20filename%3D%22Screen_Shot_2016-02-18_at_12.40.48_pm.png%22%3B%20filename%2A%3DUTF-8%27%27Screen_Shot_2016-02-18_at_12.40.48_pm.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124236Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ac1de0f493cb76a556320b77cbae67d311f0804f8ce32bcbf5241a005cbfe55f",
+      "file_size": 26008,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-03-19T19:16:49.624Z",
+  "allow_singular_disclosure_after": -322421146.81205374,
+  "singular_disclosure_allowed": true,
+  "vote_count": 8,
+  "voters": [
+    "shubham_srt",
+    "jmo740",
+    "zl33t",
+    "silv3rpoision",
+    "spetr0x",
+    "dyabla",
+    "saurabhmeher",
+    "destinedtohack"
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "Team"
+  },
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

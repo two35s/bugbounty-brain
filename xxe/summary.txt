@@ -1,0 +1,59 @@
+Category: xxe
+Reports: 14
+
+[High] XML E██████ternal Entity (XXE) Injection in ███
+  URL: https://hackerone.com/reports/2564265 | CWE: XML External Entities (XXE)
+  Program: deptofdefense | Reporter: maskedpersian
+
+[?] xmlrpc.php &wp-cron.php files are enabled, and will used for (DDOS),(DOS) and broutforce users attack.
+  URL: https://hackerone.com/reports/2299069 | CWE: XML External Entities (XXE)
+  Program: nextcloud | Reporter: cyber-tech
+
+[Critical] [HTA2] XXE on https://███ via SpellCheck Endpoint.
+  URL: https://hackerone.com/reports/715949 | CWE: XML External Entities (XXE)
+  Program: deptofdefense | Reporter: cdl
+
+[Critical] AEM forms XXE Vulnerability
+  URL: https://hackerone.com/reports/1321070 | CWE: XML External Entities (XXE)
+  Program: adobe | Reporter: ismailmuh
+
+[Critical] HackerOne’s 100K CTF Writeup
+  URL: https://hackerone.com/reports/1218708 | CWE: XML External Entities (XXE)
+  Program: h1-ctf | Reporter: rykkard
+
+[Critical] CCC H1 June 2021 CTF Writeup
+  URL: https://hackerone.com/reports/1217114 | CWE: XML External Entities (XXE)
+  Program: h1-ctf | Reporter: pmnh
+
+[Medium] Authenticated XXE
+  URL: https://hackerone.com/reports/1095645 | CWE: XML External Entities (XXE)
+  Program: wordpress | Reporter: sonarsource
+
+[Critical] Non-production Open Database In Combination With XXE Leads To SSRF
+  URL: https://hackerone.com/reports/742808 | CWE: XML External Entities (XXE)
+  Program: evernote | Reporter: kaulse
+
+[Critical] XXE at ecjobs.starbucks.com.cn/retail/hxpublic_v6/hxdynamicpage6.aspx
+  URL: https://hackerone.com/reports/500515 | CWE: XML External Entities (XXE)
+  Program: starbucks | Reporter: johnstone
+
+[Critical] XXE in DoD website that may lead to RCE
+  URL: https://hackerone.com/reports/227880 | CWE: XML External Entities (XXE)
+  Program: deptofdefense | Reporter: jin
+
+[High] Partial bypass of #483774 with Blind XXE on https://duckduckgo.com
+  URL: https://hackerone.com/reports/486732 | CWE: XML External Entities (XXE)
+  Program: duckduckgo | Reporter: mik317
+
+[Critical] XXE on https://duckduckgo.com
+  URL: https://hackerone.com/reports/483774 | CWE: XML External Entities (XXE)
+  Program: duckduckgo | Reporter: mik317
+
+[Medium] Blind XXE on pu.vk.com
+  URL: https://hackerone.com/reports/296622 | CWE: XML External Entities (XXE)
+  Program: vkcom | Reporter: barracud4_
+
+[Medium] XXE on sms-be-vip.twitter.com in SXMP Processor
+  URL: https://hackerone.com/reports/248668 | CWE: XML External Entities (XXE)
+  Program: x | Reporter: joshbrodienz
+

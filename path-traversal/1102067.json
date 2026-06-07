@@ -1,0 +1,208 @@
+{
+  "id": 1102067,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMTAyMDY3",
+  "url": "https://hackerone.com/reports/1102067",
+  "title": "Authenticated path traversal to RCE",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "high",
+  "readable_substate": "Resolved",
+  "created_at": "2021-02-12T10:41:51.990Z",
+  "submitted_at": "2021-02-12T10:41:52.074Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "d3addog",
+    "url": "/d3addog",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/6eYT7pNzVhruckM1E1V5w8K1/c8a1698ff707a5e3e8a91a3484838363845daac68cb82c86d55c9e2d44d67b67"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 60,
+    "url": "https://hackerone.com/concretecms",
+    "handle": "concretecms",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/mhbwznkvtxed2330krmlxr2bpqa8/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22concrete_CMS_logo_-_handat2x.png%22%3B%20filename%2A%3DUTF-8%27%27concrete_CMS_logo_-_handat2x.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ3AMBO3BJ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T153658Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCEkM%2FIyFGvKYmvgjKMfcbBbR7O6mkTL3xXyvRoQuEoFgIhAJffq56Q%2BQriN7alSLjGnPtYbd%2BeDy%2Fqy3QxxTd2VxvvKroFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxuhKjKK6FxoI%2BHpiEqjgVb4V0UOOj8rp%2FHWahfpi6jif0iA3wpS4xoG7LQQ3fGnkG3MUhXuFbYXqeF47C60Sa%2FFDSjDUFqv%2BhHqr3DD4BhxHS2SqaVdEWi3YYLuLCRIt0BlXXVVQ2xRfWZWFue%2FLPlDS8%2BBUbPk23FjDPrR8nULZR8gZx9RcQGvlqOHj62oqfyuhdzk0bpVc9NKsRFwTN3ehTTS43wXcUKqAD%2Bu6FEJeINDez7xh7YfentYD6WigdFWoLhxrzPeZjmSu5hLvADwY31UzHCparsbzAhosB1QxtfncbRSPyRaN6AcE69VdTPOnGnIIE9F4BM8EQ5hTY1ho00A%2Fe52ZtCl05YWFvxnldUZngp4Mo9eyJdcvzgKbS9KFPTSuyS0JNzjxD8ChjaPNF7SfLuiXDP%2FiiKOBaY8PbDiYZqccKEKHkSeRGA8zEkAG7TLugXBtMJPxYyYtzM5fayPuWJCUEsPr8gMc%2BPpSrTva4PRIwVR4OyA%2BoO7hh05ksp9W9Ywm%2F33a5EiG0mlNcxI7l0My4i3qzhL8DQJsMdle0qbAGdq4lEj%2F7LkxNAZMHrPV1Rk6FFeLqnW%2FV0XTlnn5YVd%2FritAtlhfHQcsqMLeK2hEkWr1J23JacyzvtnKasrf47VznFJuWJ8FoJG6OPonpRnxulmdXoLOZWQoHZip5YNjNDQFgOkCvKNaSxe%2FaxuD4R494AqZ2XOwOh1w8lnN94Y2RWtO2UR9vyKm%2BSl6nuRabS%2FnHWcGeQYAjVOzWK3%2BWpjyvGvaLthFXYpd%2BKz7Y47xSacXHKytu1bExzr8PDVmj1wH8MMWZlJLdiBV%2FHLbsNQweSxwA3JYqvFxPDEtxz66sqxYs7el15L%2FsLNiFEb3KlkPsaNqgwpIqW0QY6sAH9bH%2BIjIfKtsSZmyb80CRa%2BLUXQ%2F4AjGJLuGV%2BrX7ut4mvBB8TxHSsDo5UnOtrLRrMgprrzfNoZyVBWwz%2B7HMp7kHboyf8yQukbPRJBn42KLHcktQazNxDXsiEzhn1YX5Lqd8iPruPnAqkYwfzJv9WjZZN0NHctxuR6vBaY6lvfgbFVb7JaCGf7YVBbYdD0ky5GxfDFCayGU10%2FXaXzahwu%2FgSxbcsVgbt6iSBgE1H2w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ca09b0e8036b5489ef2f7efb3f171045faf2c96d07f89b9dc875a536da836aa9",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/mhbwznkvtxed2330krmlxr2bpqa8/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22concrete_CMS_logo_-_handat2x.png%22%3B%20filename%2A%3DUTF-8%27%27concrete_CMS_logo_-_handat2x.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ3AMBO3BJ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T153658Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCEkM%2FIyFGvKYmvgjKMfcbBbR7O6mkTL3xXyvRoQuEoFgIhAJffq56Q%2BQriN7alSLjGnPtYbd%2BeDy%2Fqy3QxxTd2VxvvKroFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxuhKjKK6FxoI%2BHpiEqjgVb4V0UOOj8rp%2FHWahfpi6jif0iA3wpS4xoG7LQQ3fGnkG3MUhXuFbYXqeF47C60Sa%2FFDSjDUFqv%2BhHqr3DD4BhxHS2SqaVdEWi3YYLuLCRIt0BlXXVVQ2xRfWZWFue%2FLPlDS8%2BBUbPk23FjDPrR8nULZR8gZx9RcQGvlqOHj62oqfyuhdzk0bpVc9NKsRFwTN3ehTTS43wXcUKqAD%2Bu6FEJeINDez7xh7YfentYD6WigdFWoLhxrzPeZjmSu5hLvADwY31UzHCparsbzAhosB1QxtfncbRSPyRaN6AcE69VdTPOnGnIIE9F4BM8EQ5hTY1ho00A%2Fe52ZtCl05YWFvxnldUZngp4Mo9eyJdcvzgKbS9KFPTSuyS0JNzjxD8ChjaPNF7SfLuiXDP%2FiiKOBaY8PbDiYZqccKEKHkSeRGA8zEkAG7TLugXBtMJPxYyYtzM5fayPuWJCUEsPr8gMc%2BPpSrTva4PRIwVR4OyA%2BoO7hh05ksp9W9Ywm%2F33a5EiG0mlNcxI7l0My4i3qzhL8DQJsMdle0qbAGdq4lEj%2F7LkxNAZMHrPV1Rk6FFeLqnW%2FV0XTlnn5YVd%2FritAtlhfHQcsqMLeK2hEkWr1J23JacyzvtnKasrf47VznFJuWJ8FoJG6OPonpRnxulmdXoLOZWQoHZip5YNjNDQFgOkCvKNaSxe%2FaxuD4R494AqZ2XOwOh1w8lnN94Y2RWtO2UR9vyKm%2BSl6nuRabS%2FnHWcGeQYAjVOzWK3%2BWpjyvGvaLthFXYpd%2BKz7Y47xSacXHKytu1bExzr8PDVmj1wH8MMWZlJLdiBV%2FHLbsNQweSxwA3JYqvFxPDEtxz66sqxYs7el15L%2FsLNiFEb3KlkPsaNqgwpIqW0QY6sAH9bH%2BIjIfKtsSZmyb80CRa%2BLUXQ%2F4AjGJLuGV%2BrX7ut4mvBB8TxHSsDo5UnOtrLRrMgprrzfNoZyVBWwz%2B7HMp7kHboyf8yQukbPRJBn42KLHcktQazNxDXsiEzhn1YX5Lqd8iPruPnAqkYwfzJv9WjZZN0NHctxuR6vBaY6lvfgbFVb7JaCGf7YVBbYdD0ky5GxfDFCayGU10%2FXaXzahwu%2FgSxbcsVgbt6iSBgE1H2w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ddc6173759f2975f246aa3944593aede0e99558fb18d17dd55d91d62562405df"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Concrete CMS",
+      "twitter_handle": "concrete_cms",
+      "website": "https://www.concretecms.org",
+      "about": "A simple and powerful content management system."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2021-40097"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2021-10-15T16:37:38.539Z",
+  "bug_reporter_agreed_on_going_public_at": "2021-10-15T13:51:31.246Z",
+  "team_member_agreed_on_going_public_at": "2021-10-15T16:37:38.387Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "** crayons **\n\n## Description\nThe `bFilename` parameter in the scenario `index.php/ccm/system/dialogs/block/design/submit` is vulnerable to remote code execution via path traversal vulnerability. Authenticated attacker with rights to edit web application pages can upload malicious PNG file containing PHP code using any attachment upload functions (for example in comment section of the blog) and then use its relative path in `bFilename` parameter while editing layout design.  The file, supplied in vulnerable parameter will be included in PHP, leading to injected malicious code to run.\n\n## Testing setup :\nConcrete5 CMS version: 8.5.4\nPHP Version: 7.2.24\n\n## Steps to reproduce\n1) Login to your Concrete5 account with rights to edit pages\n2) Upload using any attachment upload function png file, containing php code at its end. You can use file ```png-transparent.png``` from the attachments . It is empty PNG file with the following payload at its end:\n\n```\n<?php system(\"uname -a\");?>\n```\nYou can get file path for example by viewing uploaded file properties:\n{F1193239}\n3) Navigate to page edit constructor\n4) Select any element (for example Sidebar) and click \"Add Layout\" -> \"Add Layout\"\n5) Click on newly added block and select \"Edit layout Design\" -> Save\n6) Get the request from step 5 from any web proxy (for example Burp Suite) and resend it modifying `bFilename` with the system relative path to the uploaded file, for example:\n\n```\nbFilename=../../../../application/files/9316/1312/5391/png-transparent.png\n```\n7) Reload the page, your are editing, and see the payload fired\n\n{F1193235}\n\n## Credits\nThis bug was found as a part of Solar Security CMS Reseach, with https://hackerone.com/d0bby, https://hackerone.com/wezery0, https://hackerone.com/silvereniqma in collaboration. Can you, please, add them to this report?\n\n## Impact\n\nAuthenticated attacker with page editing rights can run arbitrary system commands and obtain sensitive information",
+  "weakness": {
+    "id": 19,
+    "name": "Path Traversal"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1193232,
+      "file_name": "png-transparent.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/uioiajawhnrsyp8vu33nser0j8jk?response-content-disposition=attachment%3B%20filename%3D%22png-transparent.png%22%3B%20filename%2A%3DUTF-8%27%27png-transparent.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ3AMBO3BJ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T153658Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCEkM%2FIyFGvKYmvgjKMfcbBbR7O6mkTL3xXyvRoQuEoFgIhAJffq56Q%2BQriN7alSLjGnPtYbd%2BeDy%2Fqy3QxxTd2VxvvKroFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxuhKjKK6FxoI%2BHpiEqjgVb4V0UOOj8rp%2FHWahfpi6jif0iA3wpS4xoG7LQQ3fGnkG3MUhXuFbYXqeF47C60Sa%2FFDSjDUFqv%2BhHqr3DD4BhxHS2SqaVdEWi3YYLuLCRIt0BlXXVVQ2xRfWZWFue%2FLPlDS8%2BBUbPk23FjDPrR8nULZR8gZx9RcQGvlqOHj62oqfyuhdzk0bpVc9NKsRFwTN3ehTTS43wXcUKqAD%2Bu6FEJeINDez7xh7YfentYD6WigdFWoLhxrzPeZjmSu5hLvADwY31UzHCparsbzAhosB1QxtfncbRSPyRaN6AcE69VdTPOnGnIIE9F4BM8EQ5hTY1ho00A%2Fe52ZtCl05YWFvxnldUZngp4Mo9eyJdcvzgKbS9KFPTSuyS0JNzjxD8ChjaPNF7SfLuiXDP%2FiiKOBaY8PbDiYZqccKEKHkSeRGA8zEkAG7TLugXBtMJPxYyYtzM5fayPuWJCUEsPr8gMc%2BPpSrTva4PRIwVR4OyA%2BoO7hh05ksp9W9Ywm%2F33a5EiG0mlNcxI7l0My4i3qzhL8DQJsMdle0qbAGdq4lEj%2F7LkxNAZMHrPV1Rk6FFeLqnW%2FV0XTlnn5YVd%2FritAtlhfHQcsqMLeK2hEkWr1J23JacyzvtnKasrf47VznFJuWJ8FoJG6OPonpRnxulmdXoLOZWQoHZip5YNjNDQFgOkCvKNaSxe%2FaxuD4R494AqZ2XOwOh1w8lnN94Y2RWtO2UR9vyKm%2BSl6nuRabS%2FnHWcGeQYAjVOzWK3%2BWpjyvGvaLthFXYpd%2BKz7Y47xSacXHKytu1bExzr8PDVmj1wH8MMWZlJLdiBV%2FHLbsNQweSxwA3JYqvFxPDEtxz66sqxYs7el15L%2FsLNiFEb3KlkPsaNqgwpIqW0QY6sAH9bH%2BIjIfKtsSZmyb80CRa%2BLUXQ%2F4AjGJLuGV%2BrX7ut4mvBB8TxHSsDo5UnOtrLRrMgprrzfNoZyVBWwz%2B7HMp7kHboyf8yQukbPRJBn42KLHcktQazNxDXsiEzhn1YX5Lqd8iPruPnAqkYwfzJv9WjZZN0NHctxuR6vBaY6lvfgbFVb7JaCGf7YVBbYdD0ky5GxfDFCayGU10%2FXaXzahwu%2FgSxbcsVgbt6iSBgE1H2w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=dd54f61d317d022d6b1ceb24b9e0be253b620a1b58b441b85dda0eca522a1688",
+      "file_size": 95,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1193235,
+      "file_name": "rce_layout_design.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/ryxnmh1a76ppcsunx6gx09ind9a4?response-content-disposition=attachment%3B%20filename%3D%22rce_layout_design.png%22%3B%20filename%2A%3DUTF-8%27%27rce_layout_design.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ3AMBO3BJ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T153658Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCEkM%2FIyFGvKYmvgjKMfcbBbR7O6mkTL3xXyvRoQuEoFgIhAJffq56Q%2BQriN7alSLjGnPtYbd%2BeDy%2Fqy3QxxTd2VxvvKroFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxuhKjKK6FxoI%2BHpiEqjgVb4V0UOOj8rp%2FHWahfpi6jif0iA3wpS4xoG7LQQ3fGnkG3MUhXuFbYXqeF47C60Sa%2FFDSjDUFqv%2BhHqr3DD4BhxHS2SqaVdEWi3YYLuLCRIt0BlXXVVQ2xRfWZWFue%2FLPlDS8%2BBUbPk23FjDPrR8nULZR8gZx9RcQGvlqOHj62oqfyuhdzk0bpVc9NKsRFwTN3ehTTS43wXcUKqAD%2Bu6FEJeINDez7xh7YfentYD6WigdFWoLhxrzPeZjmSu5hLvADwY31UzHCparsbzAhosB1QxtfncbRSPyRaN6AcE69VdTPOnGnIIE9F4BM8EQ5hTY1ho00A%2Fe52ZtCl05YWFvxnldUZngp4Mo9eyJdcvzgKbS9KFPTSuyS0JNzjxD8ChjaPNF7SfLuiXDP%2FiiKOBaY8PbDiYZqccKEKHkSeRGA8zEkAG7TLugXBtMJPxYyYtzM5fayPuWJCUEsPr8gMc%2BPpSrTva4PRIwVR4OyA%2BoO7hh05ksp9W9Ywm%2F33a5EiG0mlNcxI7l0My4i3qzhL8DQJsMdle0qbAGdq4lEj%2F7LkxNAZMHrPV1Rk6FFeLqnW%2FV0XTlnn5YVd%2FritAtlhfHQcsqMLeK2hEkWr1J23JacyzvtnKasrf47VznFJuWJ8FoJG6OPonpRnxulmdXoLOZWQoHZip5YNjNDQFgOkCvKNaSxe%2FaxuD4R494AqZ2XOwOh1w8lnN94Y2RWtO2UR9vyKm%2BSl6nuRabS%2FnHWcGeQYAjVOzWK3%2BWpjyvGvaLthFXYpd%2BKz7Y47xSacXHKytu1bExzr8PDVmj1wH8MMWZlJLdiBV%2FHLbsNQweSxwA3JYqvFxPDEtxz66sqxYs7el15L%2FsLNiFEb3KlkPsaNqgwpIqW0QY6sAH9bH%2BIjIfKtsSZmyb80CRa%2BLUXQ%2F4AjGJLuGV%2BrX7ut4mvBB8TxHSsDo5UnOtrLRrMgprrzfNoZyVBWwz%2B7HMp7kHboyf8yQukbPRJBn42KLHcktQazNxDXsiEzhn1YX5Lqd8iPruPnAqkYwfzJv9WjZZN0NHctxuR6vBaY6lvfgbFVb7JaCGf7YVBbYdD0ky5GxfDFCayGU10%2FXaXzahwu%2FgSxbcsVgbt6iSBgE1H2w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4665a012ba2408e27baba5b0bcec32f3dca32cb2d17da9e26e7824eebe88c8c1",
+      "file_size": 215671,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1193239,
+      "file_name": "path_to_file.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/5is0b9fbigmwor0exq655yr98r1y?response-content-disposition=attachment%3B%20filename%3D%22path_to_file.png%22%3B%20filename%2A%3DUTF-8%27%27path_to_file.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ3AMBO3BJ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T153658Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCEkM%2FIyFGvKYmvgjKMfcbBbR7O6mkTL3xXyvRoQuEoFgIhAJffq56Q%2BQriN7alSLjGnPtYbd%2BeDy%2Fqy3QxxTd2VxvvKroFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxuhKjKK6FxoI%2BHpiEqjgVb4V0UOOj8rp%2FHWahfpi6jif0iA3wpS4xoG7LQQ3fGnkG3MUhXuFbYXqeF47C60Sa%2FFDSjDUFqv%2BhHqr3DD4BhxHS2SqaVdEWi3YYLuLCRIt0BlXXVVQ2xRfWZWFue%2FLPlDS8%2BBUbPk23FjDPrR8nULZR8gZx9RcQGvlqOHj62oqfyuhdzk0bpVc9NKsRFwTN3ehTTS43wXcUKqAD%2Bu6FEJeINDez7xh7YfentYD6WigdFWoLhxrzPeZjmSu5hLvADwY31UzHCparsbzAhosB1QxtfncbRSPyRaN6AcE69VdTPOnGnIIE9F4BM8EQ5hTY1ho00A%2Fe52ZtCl05YWFvxnldUZngp4Mo9eyJdcvzgKbS9KFPTSuyS0JNzjxD8ChjaPNF7SfLuiXDP%2FiiKOBaY8PbDiYZqccKEKHkSeRGA8zEkAG7TLugXBtMJPxYyYtzM5fayPuWJCUEsPr8gMc%2BPpSrTva4PRIwVR4OyA%2BoO7hh05ksp9W9Ywm%2F33a5EiG0mlNcxI7l0My4i3qzhL8DQJsMdle0qbAGdq4lEj%2F7LkxNAZMHrPV1Rk6FFeLqnW%2FV0XTlnn5YVd%2FritAtlhfHQcsqMLeK2hEkWr1J23JacyzvtnKasrf47VznFJuWJ8FoJG6OPonpRnxulmdXoLOZWQoHZip5YNjNDQFgOkCvKNaSxe%2FaxuD4R494AqZ2XOwOh1w8lnN94Y2RWtO2UR9vyKm%2BSl6nuRabS%2FnHWcGeQYAjVOzWK3%2BWpjyvGvaLthFXYpd%2BKz7Y47xSacXHKytu1bExzr8PDVmj1wH8MMWZlJLdiBV%2FHLbsNQweSxwA3JYqvFxPDEtxz66sqxYs7el15L%2FsLNiFEb3KlkPsaNqgwpIqW0QY6sAH9bH%2BIjIfKtsSZmyb80CRa%2BLUXQ%2F4AjGJLuGV%2BrX7ut4mvBB8TxHSsDo5UnOtrLRrMgprrzfNoZyVBWwz%2B7HMp7kHboyf8yQukbPRJBn42KLHcktQazNxDXsiEzhn1YX5Lqd8iPruPnAqkYwfzJv9WjZZN0NHctxuR6vBaY6lvfgbFVb7JaCGf7YVBbYdD0ky5GxfDFCayGU10%2FXaXzahwu%2FgSxbcsVgbt6iSBgE1H2w%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3667b1679d2f2a284dd2cf3a90eba64f46d3c05771999195e32eb0852e0c9fc9",
+      "file_size": 41222,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 18,
+  "voters": [
+    "m4khn0",
+    "shafou",
+    "alp",
+    "run_win",
+    "bl4de",
+    "shreyaschavhan",
+    "sudi",
+    "huntinex",
+    "official_blackhat13",
+    "xmlx0",
+    "and 8 more..."
+  ],
+  "severity": {
+    "rating": "high",
+    "score": 8.0,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "high",
+      "privileges_required": "high",
+      "user_interaction": "none",
+      "scope": "changed",
+      "confidentiality": "high",
+      "integrity": "high",
+      "availability": "high"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 13099,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/concrete5/concrete5",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

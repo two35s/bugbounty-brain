@@ -1,0 +1,153 @@
+{
+  "id": 2585374,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yNTg1Mzc0",
+  "url": "https://hackerone.com/reports/2585374",
+  "title": "moderate: Apache HTTP Server: mod_rewrite proxy handler substitution (CVE-2024-39573) CWE-20 Improper Input Validation",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2024-07-03T06:54:12.157Z",
+  "submitted_at": "2024-07-03T07:09:53.659Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "orange",
+    "url": "/orange",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/000/051/3495315121602d0de9c4f6728fef03bc3b41d3fe_original.jpeg/c8a1698ff707a5e3e8a91a3484838363845daac68cb82c86d55c9e2d44d67b67"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 54349,
+    "url": "https://hackerone.com/ibb",
+    "handle": "ibb",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYUM7PI4M%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123231Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC71FNTMd9PmHmXiBwqaRgOVr4JhPQ6o%2FbeiuxK%2B8VdzAIgZsO3ak9CnGJzHAMyICTCticovAtD8qPek%2FLBW7mYYD8qugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDxMBiUNjA9QGdpICSqOBT6Uzmm%2F%2Bc%2BokafKimwvE2h4hbugd7QSlmjuzkaEYz4JgntWOFxcG2Cg9RxRvLbFI6zrfcDbDAAwDo%2BeIwQJcqPrL76aPLpwibhiCTlpUKM5fhns7EVBFLKhKBrPbswcGPOGEazk4DzxpefIxeALwXWEQlbQVuLs4AXlN%2FiAYiKZCPuyq9YbvuUYelIB5PNfIC4N3%2FVpWYKZFC4FGSFSixkH6yFZ29x61oDjmhl6HedUR8iC%2B39YbY4yWoE79zD5B46jOv3UuIODJCjblKODIUFg8lViy4OZzuVDJ1e9Lnb8q%2BCF9q3yVkcbHdI6Kxhxk4dH9ETnNmPZ9Okzsa39KHHvw7HAJbupSjfolWkKOUO89DafI348OuNMMJSMudNLs5%2FepvQBvPgbbmNG8LqqUvvRhQsd%2BVqu7RXlFiC5p9xXIm8bp94H0gvTEXzamO9bgMRYNCN5YmC%2FGT%2B2kSLwNu3tPW6dF0sI2pIKhOOhtWlo6nM2tC0VWxYYiqGbqwnY1%2B2PBtWbCnfeJ%2FAXAOpc8GmJ34VJzaTmfgCYI1dgNBCfsqJR38wktmiUewo6h%2FpSinWmqF%2FUSeyDlg%2BC%2Bzn7j8NLkYzpjk%2FqG73DJgRsZxFmj4Lmd5BjFIvpXliRIau4ZqiyqZ3OgS1oEE8aNUh21dQkyUgiQ9nQyDao69iDJvlvCs0xtq4iJiIPzu1Oq8hMViCc0xoiEjOZ6Jl4lcYjNxRKNRIIow7%2FaQZDUYkoIS3c0lB1qxMtSe22jaaEH1whNQABaAk04YehHGfdSF0cedGbQFYgZTB4GG5VfZiNvevuJEbAfdFsPrM8LGjwo99OiWs6WgZaYLuWZhuDN9k4YrxvTAJIoYUBhY0WESunSDCylpXRBjqxAZxYlhIgBKBlxuUERvdcKHGybj1FuFl3or6OY09XQI1wNt4LW0Qnsvnb6G%2BD85CukBwG9a8NOwMl4hyo8IFlATBsxULioif%2FR0KrJlCwIGZ%2FnZ7kQ3Byav7%2FFT2DOFccJqbk1zWivmm0IwhP%2BcUVISwSDJgrQpoC3%2FIE4Phy7o%2FSgXD%2FVuMWMYUIzpPr2LaqVEqNL92g2WnCDcwgRpPjA28SCAqtSlhYV0GSfwh0krV18Q%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6bc02f8b741aeaf469e16fa58f9ab6b2ffffa0ec54f929572823527f7e16361e",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYUM7PI4M%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123231Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQC71FNTMd9PmHmXiBwqaRgOVr4JhPQ6o%2FbeiuxK%2B8VdzAIgZsO3ak9CnGJzHAMyICTCticovAtD8qPek%2FLBW7mYYD8qugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDxMBiUNjA9QGdpICSqOBT6Uzmm%2F%2Bc%2BokafKimwvE2h4hbugd7QSlmjuzkaEYz4JgntWOFxcG2Cg9RxRvLbFI6zrfcDbDAAwDo%2BeIwQJcqPrL76aPLpwibhiCTlpUKM5fhns7EVBFLKhKBrPbswcGPOGEazk4DzxpefIxeALwXWEQlbQVuLs4AXlN%2FiAYiKZCPuyq9YbvuUYelIB5PNfIC4N3%2FVpWYKZFC4FGSFSixkH6yFZ29x61oDjmhl6HedUR8iC%2B39YbY4yWoE79zD5B46jOv3UuIODJCjblKODIUFg8lViy4OZzuVDJ1e9Lnb8q%2BCF9q3yVkcbHdI6Kxhxk4dH9ETnNmPZ9Okzsa39KHHvw7HAJbupSjfolWkKOUO89DafI348OuNMMJSMudNLs5%2FepvQBvPgbbmNG8LqqUvvRhQsd%2BVqu7RXlFiC5p9xXIm8bp94H0gvTEXzamO9bgMRYNCN5YmC%2FGT%2B2kSLwNu3tPW6dF0sI2pIKhOOhtWlo6nM2tC0VWxYYiqGbqwnY1%2B2PBtWbCnfeJ%2FAXAOpc8GmJ34VJzaTmfgCYI1dgNBCfsqJR38wktmiUewo6h%2FpSinWmqF%2FUSeyDlg%2BC%2Bzn7j8NLkYzpjk%2FqG73DJgRsZxFmj4Lmd5BjFIvpXliRIau4ZqiyqZ3OgS1oEE8aNUh21dQkyUgiQ9nQyDao69iDJvlvCs0xtq4iJiIPzu1Oq8hMViCc0xoiEjOZ6Jl4lcYjNxRKNRIIow7%2FaQZDUYkoIS3c0lB1qxMtSe22jaaEH1whNQABaAk04YehHGfdSF0cedGbQFYgZTB4GG5VfZiNvevuJEbAfdFsPrM8LGjwo99OiWs6WgZaYLuWZhuDN9k4YrxvTAJIoYUBhY0WESunSDCylpXRBjqxAZxYlhIgBKBlxuUERvdcKHGybj1FuFl3or6OY09XQI1wNt4LW0Qnsvnb6G%2BD85CukBwG9a8NOwMl4hyo8IFlATBsxULioif%2FR0KrJlCwIGZ%2FnZ7kQ3Byav7%2FFT2DOFccJqbk1zWivmm0IwhP%2BcUVISwSDJgrQpoC3%2FIE4Phy7o%2FSgXD%2FVuMWMYUIzpPr2LaqVEqNL92g2WnCDcwgRpPjA28SCAqtSlhYV0GSfwh0krV18Q%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=09ab00cb7625ba98fb199cbb442c3b46d6bb93d62b6d977c85b07961a66bc162"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Internet Bug Bounty",
+      "twitter_handle": "",
+      "website": "https://www.hackerone.com/internet-bug-bounty",
+      "about": "The Internet Bug Bounty rewards security research into vulnerabilities impacting Open Source Software Projects."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2024-39573"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2024-08-12T14:37:59.090Z",
+  "bug_reporter_agreed_on_going_public_at": "2024-07-13T14:37:58.072Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "I reported this vulnerability through the official Apache HTTP Server security email on April 1, 2024, and received a fix along with a CVE number on July 1, 2024. You can check detailed information from there:\n> https://httpd.apache.org/security/vulnerabilities_24.html\n\n## Impact\n\nPotential SSRF in mod_rewrite in Apache HTTP Server 2.4.59 and earlier allows an attacker to cause unsafe RewriteRules to unexpectedly setup URL's to be handled by mod_proxy.\n\nUsers are recommended to upgrade to version 2.4.60, which fixes this issue.",
+  "bounty_amount": "2600.0",
+  "formatted_bounty": "$2,600",
+  "weakness": {
+    "id": 107,
+    "name": "Improper Input Validation"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [],
+  "allow_singular_disclosure_at": "2024-08-12T14:37:58.169Z",
+  "allow_singular_disclosure_after": -57362073.7077932,
+  "singular_disclosure_allowed": true,
+  "vote_count": 87,
+  "voters": [
+    "lihaft",
+    "muslimfrompk",
+    "n1m0",
+    "a_d_a_m",
+    "maskopatol",
+    "geekfreak",
+    "zy9ard3",
+    "orange",
+    "likith_teki",
+    "dnelsaka",
+    "and 77 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 86382,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/apache/httpd",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 476752,
+      "category": "team",
+      "content": "###moderate: Apache HTTP Server proxy encoding problem (CVE-2024-38473)\n\nEncoding problem in mod_proxy in Apache HTTP Server 2.4.59 and earlier allows request URLs with incorrect encoding to be sent to backend services, potentially bypassing authentication via crafted requests. This affects configurations where mechanisms other than ProxyPass/ProxyPassMatch or RewriteRule with the 'P' flag are used to configure a request to be proxied, such as SetHandler or inadvertent proxying via CVE-2024-39573. Note that these alternate mechanisms may be used within .htaccess.\n\nUsers are recommended to upgrade to version 2.4.60, which fixes this issue.\n\nAcknowledgements: finder: Orange Tsai (@orange_8361) from DEVCORE\n\nReported to security team: 2024-04-01\nfixed by r1918559, r1918666, r1918600, r1918625, r1918668 in 2.4.x: 2024-07-01\nUpdate 2.4.60 released: 2024-07-01\nAffects: 2.4.0 through 2.4.59",
+      "updated_at": "2024-07-04T20:04:52.938Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 2032618,
+        "username": "pr0tag0nist",
+        "name": "p h",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": "",
+        "created_at": "2021-10-18T10:02:41.859Z",
+        "url": "https://hackerone.com/pr0tag0nist",
+        "hackerone_triager": false,
+        "hackerone_employee": true,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "medium": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "xtralarge": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+        }
+      }
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

@@ -1,0 +1,135 @@
+{
+  "id": 145452,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNDU0NTI=",
+  "url": "https://hackerone.com/reports/145452",
+  "title": "Share owner has no possibility to list all existing derived shares",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2016-06-17T15:52:32.076Z",
+  "submitted_at": "2016-06-17T15:52:32.076Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "detroitsmash",
+    "url": "/detroitsmash",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/004/413/41c32fbc43531758b56229d97d2efe805d2b725c_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 13291,
+    "url": "https://hackerone.com/nextcloud",
+    "handle": "nextcloud",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/hsgut1vi1cv8housqai9cm9383yx/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/hsgut1vi1cv8housqai9cm9383yx/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Nextcloud",
+      "twitter_handle": "nextclouders",
+      "website": "https://nextcloud.com",
+      "about": "Access, share and protect your files, calendars, contacts, communication & more at home and in your enterprise."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2016-12-13T16:20:08.706Z",
+  "bug_reporter_agreed_on_going_public_at": "2016-12-13T16:20:08.656Z",
+  "team_member_agreed_on_going_public_at": "2016-12-10T12:10:36.248Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi,\n\nI found a bug where a shared link of particular file can disclose all files of that folder. \n\n###Steps to reproduce\n\n+ Make a group( ```http://*/nextcloud/index.php/settings/users```) and a standard user in it.\n+ Now goto any folder and change it to gallery view\n{F99993}\n\n+ Invite that group which u made in step 1 with ``share`` privilege .\n+ From standard user account, goto that shared folder and make a shared link of any file. E.g:\n\n{F99992}\n\n+ Untick the ``can share`` privilege from that group using folder owner account. Eg: \n\n{F99994}\n\n\n\n\nNow the shared link which was created by standard user will work as folder shared link. And when folder untick the ``can share`` privilege public is automatically created without asking folder owner.\n\nThanks",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 99992,
+      "file_name": "Screenshot_from_2016-06-17_21_08_32.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/099/992/7aa8ea2557c13818d06537e9beff4cd8c9847d2e/Screenshot_from_2016-06-17_21_08_32.png?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_from_2016-06-17_21_08_32.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_from_2016-06-17_21_08_32.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQXZDE4FXC%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124122Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAqrTy0NKXAw4YC1PZvu6Bo05rY%2F6lnzd8XR%2BJM3z0LeAiEAqlJ%2BftVyeBahitf0CS8nQckI19Q2j8Mz%2Bi5Y%2FXJNOnIquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDIkRFw%2FXgrYA%2FFXVeiqPBWjIvn9LGLJtXCEl8s8jaucPKrWNICLc3QScLIyvTtE8FeevizEB%2B7tCwbPHXICI5vPqmuItLC2Sg7ExgpQKZSwyk2SpHu1qeDsXavb7AQBCByDYRoToUM6M3cp5YPMQpmKXofjX3v%2FUFEowoBcw5v1vfjDXZ8%2F5aJk8KQiaEfH%2BtXxa0Cs7%2FIXzMPZ%2BD9FeDRs741Vo3fGe%2BNn3XC%2FLQZmdMaK4wbcNaOBV2xAttDghfhQaoEclpE5Pdi71C672J9BRq%2FikxrWuZoTaeQXXPMohYcvofhBhvKz4xQfJROqIXTLKnnKoBsGs0Rr%2F9E%2BpZANqoKQBgpeBTMdIDdtTRKE8wr8OZIN%2FR7ITsxGFws8bz0bw7Wz8F0UvHSZL6zUVUq9188F7NVtS1KCXMjG2L3%2FVelofnXvYbyE%2FcgRqZcXlkHHPQbzitm3v7yhPOXyy2rPgG1LQnpkA4rPOYHqCUh89Wn9kLF9ilDTuaUqcqi1r8xH2hmGJLME0W6kpwMd48vSISla%2Fmd3hJ9jIzjzKONUH7HKumgv4zigA69evhrRVVagAGLU4Bj94MpUMlZcky%2FyyD4H1dSepVeQKKd%2BYr8pFD7bfxREUXdMPM0jK9bErrYhOVhSMZvH3VwGNNqIoDbeLf8P5d4q7E01v7wttU168I4p7Y8sPiWnLwUIlpYeCuLLOXQmjhz2WG4J8Ufmgtrq9S9Mqo3HQQcVs6X6L9Gwvi6Nut0BoB7qADXeDZl8bq8ncrpnciUGRDyJZ0btCTAGQ%2BndXhOQzLrpvtQ14iAAqPhQdTy2B3vF8NRdrTz3MC7Q6l2Oj2IK5v%2Flny0IQiRy1P54ayCsAblp1BNztrFJ0LEH8jtcjYH3IN49TJ7gwkruV0QY6sQFT6g4rIc%2FOexFMHx3KULQCvR0yu4b%2FKkPq7qLKrnjhiA4xcmJRW0gdOFiQgpmUFu8W6AjYFThrKHN4pJqrY8hRDf%2Fwvq1UM1xD469LL9Lr45MPs2ZPC7hYnzo3AnYnywAOYF0REM3WAR89wjc%2FcHZ4yHplHbn0IwnYV6q8N%2F7zyRqf2Ot4Zq%2B3cbpaxGdJzQnR3lKDZesRa5jAQ1X4DrpgI5sbDf%2BiigBCL4exLgGw3b0%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d1bb6b6f06bc934068b40272f4841efaca78d13aff995512a1db22c5928d32e5",
+      "file_size": 94477,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 99993,
+      "file_name": "Screenshot_from_2016-06-17_20_56_19.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/099/993/e28e81948778ddbc7663b23243b646d5392dd904/Screenshot_from_2016-06-17_20_56_19.png?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_from_2016-06-17_20_56_19.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_from_2016-06-17_20_56_19.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQXZDE4FXC%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124122Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAqrTy0NKXAw4YC1PZvu6Bo05rY%2F6lnzd8XR%2BJM3z0LeAiEAqlJ%2BftVyeBahitf0CS8nQckI19Q2j8Mz%2Bi5Y%2FXJNOnIquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDIkRFw%2FXgrYA%2FFXVeiqPBWjIvn9LGLJtXCEl8s8jaucPKrWNICLc3QScLIyvTtE8FeevizEB%2B7tCwbPHXICI5vPqmuItLC2Sg7ExgpQKZSwyk2SpHu1qeDsXavb7AQBCByDYRoToUM6M3cp5YPMQpmKXofjX3v%2FUFEowoBcw5v1vfjDXZ8%2F5aJk8KQiaEfH%2BtXxa0Cs7%2FIXzMPZ%2BD9FeDRs741Vo3fGe%2BNn3XC%2FLQZmdMaK4wbcNaOBV2xAttDghfhQaoEclpE5Pdi71C672J9BRq%2FikxrWuZoTaeQXXPMohYcvofhBhvKz4xQfJROqIXTLKnnKoBsGs0Rr%2F9E%2BpZANqoKQBgpeBTMdIDdtTRKE8wr8OZIN%2FR7ITsxGFws8bz0bw7Wz8F0UvHSZL6zUVUq9188F7NVtS1KCXMjG2L3%2FVelofnXvYbyE%2FcgRqZcXlkHHPQbzitm3v7yhPOXyy2rPgG1LQnpkA4rPOYHqCUh89Wn9kLF9ilDTuaUqcqi1r8xH2hmGJLME0W6kpwMd48vSISla%2Fmd3hJ9jIzjzKONUH7HKumgv4zigA69evhrRVVagAGLU4Bj94MpUMlZcky%2FyyD4H1dSepVeQKKd%2BYr8pFD7bfxREUXdMPM0jK9bErrYhOVhSMZvH3VwGNNqIoDbeLf8P5d4q7E01v7wttU168I4p7Y8sPiWnLwUIlpYeCuLLOXQmjhz2WG4J8Ufmgtrq9S9Mqo3HQQcVs6X6L9Gwvi6Nut0BoB7qADXeDZl8bq8ncrpnciUGRDyJZ0btCTAGQ%2BndXhOQzLrpvtQ14iAAqPhQdTy2B3vF8NRdrTz3MC7Q6l2Oj2IK5v%2Flny0IQiRy1P54ayCsAblp1BNztrFJ0LEH8jtcjYH3IN49TJ7gwkruV0QY6sQFT6g4rIc%2FOexFMHx3KULQCvR0yu4b%2FKkPq7qLKrnjhiA4xcmJRW0gdOFiQgpmUFu8W6AjYFThrKHN4pJqrY8hRDf%2Fwvq1UM1xD469LL9Lr45MPs2ZPC7hYnzo3AnYnywAOYF0REM3WAR89wjc%2FcHZ4yHplHbn0IwnYV6q8N%2F7zyRqf2Ot4Zq%2B3cbpaxGdJzQnR3lKDZesRa5jAQ1X4DrpgI5sbDf%2BiigBCL4exLgGw3b0%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2f3205331f661705924f36331126470bc6ccd731c6fd7912fe0704981316166c",
+      "file_size": 128005,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 99994,
+      "file_name": "Screenshot_from_2016-06-17_21_14_13.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/099/994/1f9a295ff1230be421b73c50447f8f309e7ececb/Screenshot_from_2016-06-17_21_14_13.png?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_from_2016-06-17_21_14_13.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_from_2016-06-17_21_14_13.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQXZDE4FXC%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124122Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAqrTy0NKXAw4YC1PZvu6Bo05rY%2F6lnzd8XR%2BJM3z0LeAiEAqlJ%2BftVyeBahitf0CS8nQckI19Q2j8Mz%2Bi5Y%2FXJNOnIquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDIkRFw%2FXgrYA%2FFXVeiqPBWjIvn9LGLJtXCEl8s8jaucPKrWNICLc3QScLIyvTtE8FeevizEB%2B7tCwbPHXICI5vPqmuItLC2Sg7ExgpQKZSwyk2SpHu1qeDsXavb7AQBCByDYRoToUM6M3cp5YPMQpmKXofjX3v%2FUFEowoBcw5v1vfjDXZ8%2F5aJk8KQiaEfH%2BtXxa0Cs7%2FIXzMPZ%2BD9FeDRs741Vo3fGe%2BNn3XC%2FLQZmdMaK4wbcNaOBV2xAttDghfhQaoEclpE5Pdi71C672J9BRq%2FikxrWuZoTaeQXXPMohYcvofhBhvKz4xQfJROqIXTLKnnKoBsGs0Rr%2F9E%2BpZANqoKQBgpeBTMdIDdtTRKE8wr8OZIN%2FR7ITsxGFws8bz0bw7Wz8F0UvHSZL6zUVUq9188F7NVtS1KCXMjG2L3%2FVelofnXvYbyE%2FcgRqZcXlkHHPQbzitm3v7yhPOXyy2rPgG1LQnpkA4rPOYHqCUh89Wn9kLF9ilDTuaUqcqi1r8xH2hmGJLME0W6kpwMd48vSISla%2Fmd3hJ9jIzjzKONUH7HKumgv4zigA69evhrRVVagAGLU4Bj94MpUMlZcky%2FyyD4H1dSepVeQKKd%2BYr8pFD7bfxREUXdMPM0jK9bErrYhOVhSMZvH3VwGNNqIoDbeLf8P5d4q7E01v7wttU168I4p7Y8sPiWnLwUIlpYeCuLLOXQmjhz2WG4J8Ufmgtrq9S9Mqo3HQQcVs6X6L9Gwvi6Nut0BoB7qADXeDZl8bq8ncrpnciUGRDyJZ0btCTAGQ%2BndXhOQzLrpvtQ14iAAqPhQdTy2B3vF8NRdrTz3MC7Q6l2Oj2IK5v%2Flny0IQiRy1P54ayCsAblp1BNztrFJ0LEH8jtcjYH3IN49TJ7gwkruV0QY6sQFT6g4rIc%2FOexFMHx3KULQCvR0yu4b%2FKkPq7qLKrnjhiA4xcmJRW0gdOFiQgpmUFu8W6AjYFThrKHN4pJqrY8hRDf%2Fwvq1UM1xD469LL9Lr45MPs2ZPC7hYnzo3AnYnywAOYF0REM3WAR89wjc%2FcHZ4yHplHbn0IwnYV6q8N%2F7zyRqf2Ot4Zq%2B3cbpaxGdJzQnR3lKDZesRa5jAQ1X4DrpgI5sbDf%2BiigBCL4exLgGw3b0%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=df8ec388ab5315ec5be260e25d0cf508baae207b1d50f4f8498ffc836339c336",
+      "file_size": 180206,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2017-01-09T12:10:36.300Z",
+  "allow_singular_disclosure_after": -296872245.7102076,
+  "singular_disclosure_allowed": true,
+  "vote_count": 6,
+  "voters": [
+    "mpz",
+    "eveeez",
+    "alfredsaonoy",
+    "sumit7",
+    "spetr0x",
+    "destinedtohack"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+Category: oauth
+Reports: 3
+
+[High] page.line.me Open Redirect Leading to OAuth Authorization Code Exposure and Access Token Compromise
+  URL: https://hackerone.com/reports/3423013 | CWE: Unknown
+  Program: line | Reporter: imnotr3al
+
+[Low] Mail app stores cleartext password in database until OAUTH2 setup is done
+  URL: https://hackerone.com/reports/1806275 | CWE: Plaintext Storage of a Password
+  Program: nextcloud | Reporter: christophwurst
+
+[Low] Shop App - Attacker is able to intercept authorization code during authentication (OAuth) and is able to get access to Microsoft Outlook email account
+  URL: https://hackerone.com/reports/1700734 | CWE: Insufficiently Protected Credentials
+  Program: shopify | Reporter: kun_19
+

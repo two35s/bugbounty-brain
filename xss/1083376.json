@@ -1,0 +1,183 @@
+{
+  "id": 1083376,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMDgzMzc2",
+  "url": "https://hackerone.com/reports/1083376",
+  "title": "Reflected XSS on /admin/stats.php",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2021-01-21T17:33:21.832Z",
+  "submitted_at": "2021-01-21T17:33:21.916Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "solov9ev",
+    "url": "/solov9ev",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/e13a14k9b63izco3g8hses0t809l/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%221.png%22%3B%20filename%2A%3DUTF-8%27%271.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQRW2RDUEU%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T155852Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIHeyjoqp95DSBX2utIkrvOwUgnSI3wp84HVR6SsO3kQtAiAsUqSM5wAzHZce0Qq2Vify3b2SdwuKBqAgQwav25x%2FCyq7BQig%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMMi7k4gmG5d9ZcygSKo8FFPj7We8b2KizQJCvNJJCAerf7Str5smCi89T2nWrNTGF%2FJ2imiS3ITzWLcSIkASxO9qtMBkVpZk894cQqzAIaOo100sNpJe7XrLAaGlJ6Kg2TFg3oQYGt%2FZTB58psBgLP0i6t%2FnybowiRhn9fBz2MZXa0zV4VybPdgJYZM1odpkM6EvfruKWGThg2Zgk%2Fi4XUeev%2BDfZYL2ISiEzxtRdOwk%2Bq7GnPjYGKSaEWcxzQmTLMjGpp2qen4I1%2BeXDjhWtT%2BZ2b3%2Bmn2MctkSdbcsCZeySpawpK73An7HLBzYQu0KQWwvmrkEJnZfgN4qVryzraz9kNI71PVtSe2GINaHi9Q1sfsNRF74QPka%2BfAZwYXxjcGK1vywpk4ACJo4HfewpdxQl%2BZJVojXnWGz82AtbLX3Absa7UuX6NoGQFK7KQzKImkbps0z7UGl1wICa%2FV5lZFsyx5NUAxYgXNxlanbTu5qC20QdssAUOUvaBPswi08TIKidSfxhfw7tXYklYnCjLS0ogUYpCBJCAnFbqz7KIoKbdL9q6oF9D1fXsPOlom6P70rvqYvCSzK%2F4YjXOPc0%2B7CvRq4SYK97N9YqnHRV1BLWjhQas%2BlsRsz%2FEL8hOWE0Fave0p5nOiiRP1Ct3m5IJqejmy2qQ8hDXEkBxWRPHdRUICBaN1b1%2FdKU%2FrYJRM2UenGGiQe0sF96F8rKDjCg2f0ji0YyxQZkjZ%2F3KnhfyAZgvkHwPWXF2iP6Gpvv%2BVHTO%2B7bHuJoYZ63jDl6rwQ%2B57WBLp7ugPoCIDBqJoPVRkxJAqIMzQDbwS6bsxCm7jEYPE1H%2F5qqeO8txeGrN1Xci2f44jA3oOfMLbjaG5jmAqs2FhyETgYNX7xhU5hFqjDmk5bRBjqyASdgJboeeOGCjp%2B%2Bah9Xp122n4vPurHX8b%2Bi59vGUjjIOXscPL6ZWglp28dVSNgC8n45TtiP%2F%2FTzSVTyM8z3IeFS7GRWwqG2Qo3dpV76ILv1oEXUAzldj7yCFPN2ELl3z8XCXco6ya%2BM%2FtOT634Cw%2Fc58Zzeh2KsTDqptIF4egiEqTu5d1r4cYEmHxRSZUo5pETqx9Tk2AKhm2kgFwhVtbZ5bRkjkkeh%2F786bNGlZZobr%2B0%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=70a5cbb9e5e010b570cd24bcdecbd9e42e6a07aaf90de2314175cf5c2fc29ba1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 2367,
+    "url": "https://hackerone.com/revive_adserver",
+    "handle": "revive_adserver",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/002/367/4f47a5b4a364515d4bbdc17550d67ea5415363cd_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/002/367/4f47a5b4a364515d4bbdc17550d67ea5415363cd_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Revive Adserver",
+      "twitter_handle": "",
+      "website": "https://www.revive-adserver.com",
+      "about": "Revive Adserver is a free open source ad serving system"
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2021-22875"
+  ],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2021-01-26T14:27:08.895Z",
+  "bug_reporter_agreed_on_going_public_at": "2021-01-23T09:17:46.103Z",
+  "team_member_agreed_on_going_public_at": "2021-01-26T14:27:08.813Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "I found a reflected XSS attack on `/admin/stats.php`.\n\nRevive-Adserver version is `revive-adserver-5.1.0`.\n\n- Go to `http://revive-adserver.loc/admin/stats.php?statsBreakdown=day&listorder=key&orderdirection=up&day=&setPerPage=15%27%20onclick=alert(document.domain)%20accesskey=X%20&entity=global&breakdown=history&period_preset=last_month&period_start=01+December+2020&period_end=31+December+2020`\n\n- For the payload to be executed, the user needs to press the access key combination for the hidden input field (for Firefox, `Alt`+`Shift`+`X`, see [this](https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/accesskey) for other browsers).\n\n{F1166756}\n\n## Impact\n\nWith this vulnerability, an attacker can for example steal users cookies or redirect users on malicious website.",
+  "weakness": {
+    "id": 61,
+    "name": "Cross-site Scripting (XSS) - Reflected"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1166756,
+      "file_name": "_________________2021-01-21_20-31-11.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/6dmrvh28ijy1cjbgsb90w7betvkk?response-content-disposition=attachment%3B%20filename%3D%22_________________2021-01-21_20-31-11.png%22%3B%20filename%2A%3DUTF-8%27%27_________________2021-01-21_20-31-11.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQRW2RDUEU%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T155852Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIHeyjoqp95DSBX2utIkrvOwUgnSI3wp84HVR6SsO3kQtAiAsUqSM5wAzHZce0Qq2Vify3b2SdwuKBqAgQwav25x%2FCyq7BQig%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMMi7k4gmG5d9ZcygSKo8FFPj7We8b2KizQJCvNJJCAerf7Str5smCi89T2nWrNTGF%2FJ2imiS3ITzWLcSIkASxO9qtMBkVpZk894cQqzAIaOo100sNpJe7XrLAaGlJ6Kg2TFg3oQYGt%2FZTB58psBgLP0i6t%2FnybowiRhn9fBz2MZXa0zV4VybPdgJYZM1odpkM6EvfruKWGThg2Zgk%2Fi4XUeev%2BDfZYL2ISiEzxtRdOwk%2Bq7GnPjYGKSaEWcxzQmTLMjGpp2qen4I1%2BeXDjhWtT%2BZ2b3%2Bmn2MctkSdbcsCZeySpawpK73An7HLBzYQu0KQWwvmrkEJnZfgN4qVryzraz9kNI71PVtSe2GINaHi9Q1sfsNRF74QPka%2BfAZwYXxjcGK1vywpk4ACJo4HfewpdxQl%2BZJVojXnWGz82AtbLX3Absa7UuX6NoGQFK7KQzKImkbps0z7UGl1wICa%2FV5lZFsyx5NUAxYgXNxlanbTu5qC20QdssAUOUvaBPswi08TIKidSfxhfw7tXYklYnCjLS0ogUYpCBJCAnFbqz7KIoKbdL9q6oF9D1fXsPOlom6P70rvqYvCSzK%2F4YjXOPc0%2B7CvRq4SYK97N9YqnHRV1BLWjhQas%2BlsRsz%2FEL8hOWE0Fave0p5nOiiRP1Ct3m5IJqejmy2qQ8hDXEkBxWRPHdRUICBaN1b1%2FdKU%2FrYJRM2UenGGiQe0sF96F8rKDjCg2f0ji0YyxQZkjZ%2F3KnhfyAZgvkHwPWXF2iP6Gpvv%2BVHTO%2B7bHuJoYZ63jDl6rwQ%2B57WBLp7ugPoCIDBqJoPVRkxJAqIMzQDbwS6bsxCm7jEYPE1H%2F5qqeO8txeGrN1Xci2f44jA3oOfMLbjaG5jmAqs2FhyETgYNX7xhU5hFqjDmk5bRBjqyASdgJboeeOGCjp%2B%2Bah9Xp122n4vPurHX8b%2Bi59vGUjjIOXscPL6ZWglp28dVSNgC8n45TtiP%2F%2FTzSVTyM8z3IeFS7GRWwqG2Qo3dpV76ILv1oEXUAzldj7yCFPN2ELl3z8XCXco6ya%2BM%2FtOT634Cw%2Fc58Zzeh2KsTDqptIF4egiEqTu5d1r4cYEmHxRSZUo5pETqx9Tk2AKhm2kgFwhVtbZ5bRkjkkeh%2F786bNGlZZobr%2B0%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c65fff4e48cc3ea403e9cefc02cf47b1536e875efbb50e0add9dd7351ee4b5ad",
+      "file_size": 134127,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2021-02-22T09:17:46.169Z",
+  "allow_singular_disclosure_after": -166862466.25252756,
+  "singular_disclosure_allowed": true,
+  "vote_count": 24,
+  "voters": [
+    "taha",
+    "xploiterr",
+    "ali",
+    "nightm4re",
+    "darkerhack",
+    "nafisaqil",
+    "nikolat3sla",
+    "anoint2",
+    "h4bittle",
+    "slaich",
+    "and 14 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 154,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/revive-adserver/revive-adserver",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

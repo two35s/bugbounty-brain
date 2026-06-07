@@ -1,0 +1,191 @@
+{
+  "id": 2629968,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yNjI5OTY4",
+  "url": "https://hackerone.com/reports/2629968",
+  "title": "CVE-2024-7264: ASN.1 date parser overread",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2024-07-30T05:16:36.481Z",
+  "submitted_at": "2024-07-30T05:16:36.739Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "dubek",
+    "url": "/dubek",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 35663,
+    "url": "https://hackerone.com/curl",
+    "handle": "curl",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/035/663/2faf4c279d437d64bfda6d23d62ce1833813a4d9_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/035/663/2faf4c279d437d64bfda6d23d62ce1833813a4d9_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "curl",
+      "twitter_handle": "",
+      "website": "https://curl.se",
+      "about": "cURL is an Open Source project providing a library and command-line tool doing internet transfers"
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2024-7264"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2024-08-01T22:05:14.361Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2024-07-31T07:03:37.057Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\n\nWhen a specially-crafted certificate is passed to `Curl_extract_certinfo` to parse, it may read bytes beyond the end of the buffer in which the certificate is held. According to the application, this may be a stack read overflow or a heap read overflow.\n\nSpecifically the issue is in function `GTime2str`, in which the specially-crafted input may cause it to set `fracl = -1` and then pass it to `Curl_dyn_addf`, which in turn treats this `-1` as \"no length given\" and goes on to run `strlen(tzp)` which goes beyond the end of the certificate buffer (assuming there are no null bytes).\n\nI believe the issue is in this loop (in `lib/vtls/x509asn1.c`):\n\n```\n 524     /* Strip leading zeroes in fractional seconds. */\n 525     for(fracl = tzp - fracp - 1; fracl && fracp[fracl - 1] == '0'; fracl--)\n 526       ;\n```\n\nIf `tzp == fracp`, then `fracl` is set to -1 in the loop initialization.\n\nI tested this on curl 8.9.0 commit `2a59c8d4cebfd199f930213ee82ae95f71e44578` (2024-07-24). I haven't looked when the issue was introduced.\n\n## Steps To Reproduce:\n\n  1. Compile libcurl with `-fsanitize=address` and with gnutls. I used clang. `CC=clang CFLAGS=-fsanitize=address ../configure --disable-shared --enable-debug --with-gnutls=/usr/lib/aarch64-linux-gnu`\n  1. Compile the attached `poc.c` program which uses libcurl's `Curl_extract_certinfo`.\n  1. Run `./poc bad_cert_1.bin` \n\nThe resulting report from AddressSanitizer:\n\n```\n=================================================================\n==2166==ERROR: AddressSanitizer: stack-buffer-overflow on address 0xffffaae02020 at pc 0xaaaad3fedb44 bp 0xffffee270350 sp 0xffffee26fb40\nREAD of size 4471 at 0xffffaae02020 thread T0\n    #0 0xaaaad3fedb40 in strlen (/root/work/curl/fuzz2/tests/unit/poc+0x11db40) (BuildId: 950d22dbc354c1f19b0a0459aa9b72f968a5aff4)\n    #1 0xaaaad40dfb58 in formatf /root/work/curl/fuzz2/lib/../../lib/mprintf.c:883:15\n    #2 0xaaaad40e1f14 in Curl_dyn_vprintf /root/work/curl/fuzz2/lib/../../lib/mprintf.c:1105:9\n    #3 0xaaaad427c2ec in Curl_dyn_vaddf /root/work/curl/fuzz2/lib/../../lib/dynbuf.c:198:8\n    #4 0xaaaad427c844 in Curl_dyn_addf /root/work/curl/fuzz2/lib/../../lib/dynbuf.c:231:12\n    #5 0xaaaad41f0338 in GTime2str /root/work/curl/fuzz2/lib/../../lib/vtls/x509asn1.c:542:10\n    #6 0xaaaad41ec5fc in ASN1tostr /root/work/curl/fuzz2/lib/../../lib/vtls/x509asn1.c:632:14\n    #7 0xaaaad41eb410 in Curl_extract_certinfo /root/work/curl/fuzz2/lib/../../lib/vtls/x509asn1.c:1185:12\n    #8 0xaaaad40b4f4c in main /root/work/curl/fuzz2/tests/unit/poc.c:36:14\n    #9 0xffffac9b84c0 in __libc_start_call_main csu/../sysdeps/nptl/libc_start_call_main.h:58:16\n    #10 0xffffac9b8594 in __libc_start_main csu/../csu/libc-start.c:360:3\n    #11 0xaaaad3fd886c in _start (/root/work/curl/fuzz2/tests/unit/poc+0x10886c) (BuildId: 950d22dbc354c1f19b0a0459aa9b72f968a5aff4)\n\nAddress 0xffffaae02020 is located in stack of thread T0 at offset 8224 in frame\n    #0 0xaaaad40b4cc8 in main /root/work/curl/fuzz2/tests/unit/poc.c:9\n\n  This frame has 1 object(s):\n    [32, 8224) 'buf' (line 14) <== Memory access at offset 8224 overflows this variable\nHINT: this may be a false positive if your program uses some custom stack unwind mechanism, swapcontext or vfork\n      (longjmp and C++ exceptions *are* supported)\nSUMMARY: AddressSanitizer: stack-buffer-overflow (/root/work/curl/fuzz2/tests/unit/poc+0x11db40) (BuildId: 950d22dbc354c1f19b0a0459aa9b72f968a5aff4) in strlen\nShadow bytes around the buggy address:\n  0xffffaae01d80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0xffffaae01e00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0xffffaae01e80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0xffffaae01f00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0xffffaae01f80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n=>0xffffaae02000: 00 00 00 00[f3]f3 f3 f3 f3 f3 f3 f3 f3 f3 f3 f3\n  0xffffaae02080: f3 f3 f3 f3 f3 f3 f3 f3 f3 f3 f3 f3 f3 f3 f3 f3\n  0xffffaae02100: f3 f3 f3 f3 00 00 00 00 00 00 00 00 00 00 00 00\n  0xffffaae02180: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0xffffaae02200: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\n  0xffffaae02280: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00\nShadow byte legend (one shadow byte represents 8 application bytes):\n  Addressable:           00\n  Partially addressable: 01 02 03 04 05 06 07 \n  Heap left redzone:       fa\n  Freed heap region:       fd\n  Stack left redzone:      f1\n  Stack mid redzone:       f2\n  Stack right redzone:     f3\n  Stack after return:      f5\n  Stack use after scope:   f8\n  Global redzone:          f9\n  Global init order:       f6\n  Poisoned by user:        f7\n  Container overflow:      fc\n  Array cookie:            ac\n  Intra object redzone:    bb\n  ASan internal:           fe\n  Left alloca redzone:     ca\n  Right alloca redzone:    cb\n==2166==ABORTING\n```\n\nNote that this will only affect libcurl when built with gnutls, schannel, sectransp, mbedtls (only then it'll use `Curl_extract_certinfo`).\n\n## Supporting Material/References:\n\n  * `poc.c`: The client code to reproduce; it simply reads a file and passes its content to `Curl_extract_certinfo`. The code uses a buffer on the stack, but it also works if you switch it to be a heap buffer (see the commented-out malloc call).\n  * `bad_cert_1.bin`: The certificate with which causes the memory over-read.\n\n## Submitter info\n\n  * I used LLVM libFuzzer to find this.\n  * If this is accepted, please credit the finding to Dov Murik from Transmit Security.\n  * If this is eligible for any bug bounty, please donate it to the curl project.\n\n## Impact\n\nAttacker-controller HTTPS server can return a specially-crafted certificates that can crash libcurl-based clients when fetching the certificates and parsing them.\n\nI couldn't see a way where the remote attacker can actually get the content of the over-read memory bytes.",
+  "weakness": {
+    "id": 9,
+    "name": "Buffer Over-read"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 3478887,
+      "file_name": "poc.c",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/r03b564trsx8jz4e8fj2zq19ga2c?response-content-disposition=attachment%3B%20filename%3D%22poc.c%22%3B%20filename%2A%3DUTF-8%27%27poc.c&response-content-type=text%2Fx-csrc&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQQR4ZXKK4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T134142Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCN42wv26kNeEt5Ne6ayFok%2BB8OfZ2W50kOUv67q206ewIhAMUZ1bI%2F8tS4eR%2Brw%2B65B3vS4p%2BcYy48zIJVC%2F6t4L7vKroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxFmVHnZiiaK4U3zCcqjgVKhvKPnYtP4%2FXqQjF7milQsfwUHGj%2FIK62qpgoZjpkohw1ZLImLSYVPtgtGvStB8FHKEwfWD%2BjmRaW%2B7tGJtMSRcBQk2IcfxhkRdIwUuqnuEnEww5pzXJBcq1biIELnl2YIR4d4gokE8E67h0ebXzoc0nbFaiGqJLRlrEYIoPCM6DOtgZNNf5IGuk0qG3hjC3YTzoIcWskYJ216n%2BkxgaXrUOIEfTVq7y1uwkHw6XRrUfB%2FSTdQndpG94yMyvaj8w1sHWPE0RU8or%2B0w8IlI7DBNsK0Li%2FtSEwVLVZeWFPbPiOk5XzNpA7RspkQsFNmRBY995VrB%2Ft7YS48WAxu%2FLbYYIINvnx5iTfcwLI89zGSVXlSEDqIeQAMbIcRrAPLg2VIXJMm0Rt1LRLxCe75kQviFGf3oW43vRgOUVorzK4NVjcvIqwcaUeZozA73XIR8J9FtKmFJtU6gzKajZafibfvZTlVHQ%2B3ZEJaNAC%2FkLAYdi82MQWmMKsMCVAbfzV85MueIKeurALZEztukIoztpaO7TKHmyYiGnxa5QCJ7fyRWY%2BAUN%2BP9PgxrIjjykRK67xJcIDt2%2F%2FFRyizA405VVqWUGgzIblfdod3iFryS8SQuz0rae7mS81EjHe8v0PFWu%2FGac6EwaFmsaoXckk8JGTroRYMYXyrHLZXsuTIFh%2BMke6zFRyv8%2BvXe4eF97B%2BqVVnLf53lyEyi8eVVLWt2Pnv1b4brReVAXSnzwU5MMsMctprt3b7EdwB4s5gZlpW0xTjp6R9A8ejclENo0Qek%2B4bJ6bQNOIm%2BrUwQv8tFKhEdY142ItCnbUoPNmiyijPlTdzNJHme1PcB3EAZxbOHu6S9FhsM8ePuc9HFrbsbow3seV0QY6sAGeBSSNbq5dXtLGwxRMvGS2E%2BQa%2BnSlytnRT8YkkH18Mw0%2BIT5j2NF1TPQ2ii1JnzeP4Tby%2BrMQ8D9w3RKq6%2B%2FSy2eizzpH%2BlOmLWuLWhlkDyQK6tvt8knNbIpTSnXGDE1T2QKvd0JsRIZh3dvRVFKwrBxYyK7FZW6KPxL9sHqX5zhYTpA6MNLOxguDqEwckXSCN3%2F1GONaTB2Y5gRZNOGGrwrvCJsD17zNYCWeHjHWyw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a85d86c2f4be4c2f6d618edfb1f5b9d8eafe4aad22756b9b1a379f6ba31087d4",
+      "file_size": 848,
+      "type": "text/x-csrc",
+      "moderated": null
+    },
+    {
+      "id": 3478889,
+      "file_name": "bad_cert_1.bin",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/rdfp0fqaxd14b1ldj7ud2jp9zf07?response-content-disposition=attachment%3B%20filename%3D%22bad_cert_1.bin%22%3B%20filename%2A%3DUTF-8%27%27bad_cert_1.bin&response-content-type=application%2Fmacbinary&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQQR4ZXKK4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T134142Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCN42wv26kNeEt5Ne6ayFok%2BB8OfZ2W50kOUv67q206ewIhAMUZ1bI%2F8tS4eR%2Brw%2B65B3vS4p%2BcYy48zIJVC%2F6t4L7vKroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxFmVHnZiiaK4U3zCcqjgVKhvKPnYtP4%2FXqQjF7milQsfwUHGj%2FIK62qpgoZjpkohw1ZLImLSYVPtgtGvStB8FHKEwfWD%2BjmRaW%2B7tGJtMSRcBQk2IcfxhkRdIwUuqnuEnEww5pzXJBcq1biIELnl2YIR4d4gokE8E67h0ebXzoc0nbFaiGqJLRlrEYIoPCM6DOtgZNNf5IGuk0qG3hjC3YTzoIcWskYJ216n%2BkxgaXrUOIEfTVq7y1uwkHw6XRrUfB%2FSTdQndpG94yMyvaj8w1sHWPE0RU8or%2B0w8IlI7DBNsK0Li%2FtSEwVLVZeWFPbPiOk5XzNpA7RspkQsFNmRBY995VrB%2Ft7YS48WAxu%2FLbYYIINvnx5iTfcwLI89zGSVXlSEDqIeQAMbIcRrAPLg2VIXJMm0Rt1LRLxCe75kQviFGf3oW43vRgOUVorzK4NVjcvIqwcaUeZozA73XIR8J9FtKmFJtU6gzKajZafibfvZTlVHQ%2B3ZEJaNAC%2FkLAYdi82MQWmMKsMCVAbfzV85MueIKeurALZEztukIoztpaO7TKHmyYiGnxa5QCJ7fyRWY%2BAUN%2BP9PgxrIjjykRK67xJcIDt2%2F%2FFRyizA405VVqWUGgzIblfdod3iFryS8SQuz0rae7mS81EjHe8v0PFWu%2FGac6EwaFmsaoXckk8JGTroRYMYXyrHLZXsuTIFh%2BMke6zFRyv8%2BvXe4eF97B%2BqVVnLf53lyEyi8eVVLWt2Pnv1b4brReVAXSnzwU5MMsMctprt3b7EdwB4s5gZlpW0xTjp6R9A8ejclENo0Qek%2B4bJ6bQNOIm%2BrUwQv8tFKhEdY142ItCnbUoPNmiyijPlTdzNJHme1PcB3EAZxbOHu6S9FhsM8ePuc9HFrbsbow3seV0QY6sAGeBSSNbq5dXtLGwxRMvGS2E%2BQa%2BnSlytnRT8YkkH18Mw0%2BIT5j2NF1TPQ2ii1JnzeP4Tby%2BrMQ8D9w3RKq6%2B%2FSy2eizzpH%2BlOmLWuLWhlkDyQK6tvt8knNbIpTSnXGDE1T2QKvd0JsRIZh3dvRVFKwrBxYyK7FZW6KPxL9sHqX5zhYTpA6MNLOxguDqEwckXSCN3%2F1GONaTB2Y5gRZNOGGrwrvCJsD17zNYCWeHjHWyw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=07dd8a0f8654243d57875543974be4277cddf3294b4a636b55c7e6904dc77dc3",
+      "file_size": 464,
+      "type": "application/macbinary",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2024-08-30T07:03:37.257Z",
+  "allow_singular_disclosure_after": -55838284.89452225,
+  "singular_disclosure_allowed": true,
+  "vote_count": 53,
+  "voters": [
+    "t3l3sc0p3",
+    "sec_line",
+    "zy9ard3",
+    "thalaivar304",
+    "fedoom",
+    "anonymous_8848_",
+    "deku1564",
+    "idealphaseth",
+    "stawho",
+    "l07f1",
+    "and 43 more..."
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 18844,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/curl/curl",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

@@ -1,0 +1,186 @@
+{
+  "id": 1063039,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMDYzMDM5",
+  "url": "https://hackerone.com/reports/1063039",
+  "title": "Phar Deserialization Vulnerability via Logging Settings",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2020-12-20T17:38:21.706Z",
+  "submitted_at": "2020-12-20T17:38:21.867Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": true,
+    "username": "egix",
+    "url": "/egix",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/001/431/9435ac0bb25492f164582fbbc7e3f6f8f016b1d1_original.jpg/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 60,
+    "url": "https://hackerone.com/concretecms",
+    "handle": "concretecms",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/mhbwznkvtxed2330krmlxr2bpqa8/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22concrete_CMS_logo_-_handat2x.png%22%3B%20filename%2A%3DUTF-8%27%27concrete_CMS_logo_-_handat2x.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133739Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9b8754c12cb6de364611e128cfd90756cd41069f580e83b3505749c5051a144b",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/mhbwznkvtxed2330krmlxr2bpqa8/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22concrete_CMS_logo_-_handat2x.png%22%3B%20filename%2A%3DUTF-8%27%27concrete_CMS_logo_-_handat2x.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133739Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e1ea5d18ca7d8351ddd51747f3dd08e64556cf04f6f4a726180a6c7e2a1fa391"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Concrete CMS",
+      "twitter_handle": "concrete_cms",
+      "website": "https://www.concretecms.org",
+      "about": "A simple and powerful content management system."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2021-36766"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2021-09-24T16:52:04.397Z",
+  "bug_reporter_agreed_on_going_public_at": "2021-09-24T16:11:34.078Z",
+  "team_member_agreed_on_going_public_at": "2021-09-24T16:52:04.290Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "**Vulnerability Description:**\n\nThe vulnerable code is located within the `concrete/controllers/single_page/dashboard/system/environment/logging.php` script.\nSpecifically, into the  `Logging::update_logging() ` method:\n\n```\n    public function update_logging()\n    {\n        $config = $this->app->make('config');\n        $request = $this->request;\n\n        if (!$this->token->validate('update_logging')) {\n            return $this->showError($this->token->getErrorMessage());\n        }\n\n        // Load in variables from the request\n        $mode = (string) $request->request->get('logging_mode') === 'advanced' ? 'advanced' : 'simple';\n        $handler = $mode === 'simple' ? (string) $request->request->get('handler', 'database') : null;\n        $logFile = $handler === 'file' ? (string) $request->request->get('logFile') : null;\n        $enableDashboardReport = $request->request->get('enable_dashboard_report') ? true : false;\n        $loggingLevel = strtoupper((string) $request->request->get('logging_level'));\n        $intLogErrorsPost = $request->request->get('ENABLE_LOG_ERRORS') === 1 ? 1 : 0;\n        $intLogEmailsPost = $request->request->get('ENABLE_LOG_EMAILS') === 1 ? 1 : 0;\n        $intLogApiPost = $request->request->get('ENABLE_LOG_API') === 1 ? 1 : 0;\n\n\n        // Handle 'file' based logging\n        if ($handler === 'file') {\n            $directory = dirname($logFile);\n\n            // Validate the file name\n            if (pathinfo($logFile, PATHINFO_EXTENSION) !== 'log') {\n                return $this->showError(t('The filename provided must be a valid filename and end with .log'));\n            }\n\n            // Validate the file path, create the log file if needed\n            if (!file_exists($logFile)) {\n                // If the file doesn't exist, make sure we can create one\n                if (!is_writable($directory) || !is_dir($directory)) {\n                    return $this->showError(t('Log file does not exist on the server. The directory of the file provided must exist and be writable on the web server.'));\n                }\n```\n\nUser input passed through the \u201clogFile\u201d request parameter is not properly sanitized before being used in a call to the `file_exists` function. This can be exploited by malicious users to inject arbitrary PHP objects into the application scope ([PHP Object Injection via phar:// stream wrapper](https://github.com/s-n-t/presentations/blob/master/us-18-Thomas-It's-A-PHP-Unserialization-Vulnerability-Jim-But-Not-As-We-Know-It.pdf)), allowing them to carry out a variety of attacks, such as executing arbitrary PHP code.\n\n**Reproduction Steps:**\n\n1. Login to the Concrete5 instance as an admin user\n2. Go to \"System & Settings\" -> \"Files\" -> \"Allowed File Types\" and add `log` to File Extensions to Accept\n3. Use the attached Proof of Concept (PoC) script to create a sample Phar file to upload (just run `php phar-generator.php` from the CLI)\n4. Go to \"Files\" and upload the `phar.log` file\n5. Take note of the path where the file has been uploaded (e.g. `application/files/4916/0848/5009/phar.log`)\n6. Go to \"System & Settings\" -> \"Environment\" -> \"Logging Settings\" and select File as Handler\n7. Put the following string into the File text box: `phar://./application/files/4916/0848/5009/phar.log`\n8. Click the Save button, go to http://[host]/[concrete5]/application/files/tmp/test.php and you will see a \"phpinfo\" page\n\n**Notes:**\n\nThe vulnerability has been successfully tested on Concrete5 versions 8.5.4 and 8.5.5 RC1.\n\n## Impact\n\nThis vulnerability might be abused by malicious users to inject and execute arbitrary PHP code on the web server.\nHowever, successful exploitation requires an admin account, and this partially mitigates the issue.",
+  "weakness": {
+    "id": 52,
+    "name": "Deserialization of Untrusted Data"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1123279,
+      "file_name": "poc.zip",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/ckvk9wsqdm1sr7iau3em8y28qfq5?response-content-disposition=attachment%3B%20filename%3D%22poc.zip%22%3B%20filename%2A%3DUTF-8%27%27poc.zip&response-content-type=application%2Fzip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133739Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4fa8969331cb4d970b79094a38bce03ea3fe0e292da49a485c85dd60d9175267",
+      "file_size": 904,
+      "type": "application/zip",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 5,
+  "voters": [
+    "akashhamal0x01",
+    "cryptographer",
+    "shivammusic",
+    "mutsuraev01",
+    "meispi"
+  ],
+  "severity": {
+    "rating": "medium",
+    "score": 6.4,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "high",
+      "privileges_required": "high",
+      "user_interaction": "required",
+      "scope": "unchanged",
+      "confidentiality": "high",
+      "integrity": "high",
+      "availability": "high"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 13099,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/concrete5/concrete5",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

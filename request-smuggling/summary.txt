@@ -1,0 +1,99 @@
+Category: request-smuggling
+Reports: 24
+
+[Medium] HTTP Request Smuggling via Content Length Obfuscation
+  URL: https://hackerone.com/reports/2237099 | CWE: HTTP Request Smuggling
+  Program: nodejs | Reporter: bpingel
+
+[Medium] [demo.stripo.email] HTTP request Smuggling
+  URL: https://hackerone.com/reports/1631228 | CWE: HTTP Request Smuggling
+  Program: stripo | Reporter: deb0con
+
+[High] Request Smuggling in Apache Tomcat (Important, CVE-2023-45648)
+  URL: https://hackerone.com/reports/2299692 | CWE: HTTP Request Smuggling
+  Program: ibb | Reporter: mukeran
+
+[High] Possibility of Request smuggling attack
+  URL: https://hackerone.com/reports/2280391 | CWE: HTTP Request Smuggling
+  Program: ibb | Reporter: aimotonorihito
+
+[Medium] HTTP Request Smuggling via Empty headers separated by CR
+  URL: https://hackerone.com/reports/2032842 | CWE: HTTP Request Smuggling
+  Program: ibb | Reporter: yadhukrishnam
+
+[Medium] HTTP Request Smuggling Due to Incorrect Parsing of Header Fields
+  URL: https://hackerone.com/reports/1888760 | CWE: HTTP Request Smuggling
+  Program: ibb | Reporter: vwx7
+
+[Medium] CVE-2022-32214 - HTTP Request Smuggling Due To Improper Delimiting of Header Fields
+  URL: https://hackerone.com/reports/1630669 | CWE: HTTP Request Smuggling
+  Program: ibb | Reporter: zeyu2001
+
+[Medium]  CVE-2022-32213 - HTTP Request Smuggling Due to Flawed Parsing of Transfer-Encoding
+  URL: https://hackerone.com/reports/1630668 | CWE: HTTP Request Smuggling
+  Program: ibb | Reporter: zeyu2001
+
+[Medium]  CVE-2022-32215 - HTTP Request Smuggling Due to Incorrect Parsing of Multi-line Transfer-Encoding
+  URL: https://hackerone.com/reports/1630667 | CWE: HTTP Request Smuggling
+  Program: ibb | Reporter: zeyu2001
+
+[Critical] HTTP request smuggling with Origin Rules using newlines in the host_header action parameter
+  URL: https://hackerone.com/reports/1575912 | CWE: HTTP Request Smuggling
+  Program: cloudflare | Reporter: albertspedersen
+
+[Critical] HTTP Request Smuggling in Transform Rules using hexadecimal escape sequences in the concat() function
+  URL: https://hackerone.com/reports/1478633 | CWE: HTTP Request Smuggling
+  Program: cloudflare | Reporter: albertspedersen
+
+[Low] HTTP Request Smuggling on https://consumer.acronis.com
+  URL: https://hackerone.com/reports/1063627 | CWE: HTTP Request Smuggling
+  Program: acronis | Reporter: riramar
+
+[Low] HTTP Request Smuggling on https://promosandbox.acronis.com
+  URL: https://hackerone.com/reports/1063493 | CWE: HTTP Request Smuggling
+  Program: acronis | Reporter: riramar
+
+[Critical] HTTP Request Smuggling via HTTP/2
+  URL: https://hackerone.com/reports/1211724 | CWE: HTTP Request Smuggling
+  Program: basecamp | Reporter: neex
+
+[High] HTTP Request Smuggling 
+  URL: https://hackerone.com/reports/1120982 | CWE: HTTP Request Smuggling
+  Program: deptofdefense | Reporter: lu3ky-13
+
+[High] HTTP Request Smuggling due to CR-to-Hyphen conversion
+  URL: https://hackerone.com/reports/922597 | CWE: HTTP Request Smuggling
+  Program: nodejs | Reporter: amitklein
+
+[Low] Potential HTTP Request Smuggling in nodejs
+  URL: https://hackerone.com/reports/1002188 | CWE: HTTP Request Smuggling
+  Program: nodejs | Reporter: piao
+
+[Medium] Default behavior of Fastifys versioned routes can be used for cache poisoning when Fastify is used in combination with a http cache / CDN
+  URL: https://hackerone.com/reports/1025575 | CWE: HTTP Request Smuggling
+  Program: nodejs-ecosystem | Reporter: trygve_lie
+
+[Critical] Unauthenticated request smuggling on launchpad.37signals.com
+  URL: https://hackerone.com/reports/867577 | CWE: HTTP Request Smuggling
+  Program: basecamp | Reporter: hazimaslam
+
+[High] http request smuggling in pscp.tv and periscope.tv
+  URL: https://hackerone.com/reports/713285 | CWE: HTTP Request Smuggling
+  Program: x | Reporter: protostar0
+
+[High] HTTP request Smuggling
+  URL: https://hackerone.com/reports/867952 | CWE: HTTP Request Smuggling
+  Program: helium | Reporter: dracomalfoy
+
+[High] Request smuggling on admin-official.line.me could lead to account takeover
+  URL: https://hackerone.com/reports/740037 | CWE: HTTP Request Smuggling
+  Program: line | Reporter: shaolin_tw
+
+[Medium] HTTP SMUGGLING EXPOSED HMAC/DOS 
+  URL: https://hackerone.com/reports/753939 | CWE: HTTP Request Smuggling
+  Program: magic-bbp | Reporter: pwny_sec
+
+[High] Bypass for #488147 enables stored XSS on https://paypal.com/signin again
+  URL: https://hackerone.com/reports/510152 | CWE: HTTP Request Smuggling
+  Program: paypal | Reporter: albinowax
+

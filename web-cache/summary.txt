@@ -1,0 +1,971 @@
+Category: web-cache
+Reports: 242
+
+[Critical] Critical Deadlock Vulnerability in Monero RPC Leading to Complete Node Paralysis
+  URL: https://hackerone.com/reports/3307874 | CWE: Uncontrolled Resource Consumption
+  Program: monero | Reporter: rorkh
+
+[Medium] TLS PSK/ALPN Callback Exceptions Bypass Error Handlers, Causing DoS and FD Leak
+  URL: https://hackerone.com/reports/3473882 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: 0xmaxhax
+
+[Medium] Memory leak that enables remote Denial of Service against applications processing TLS client certificates
+  URL: https://hackerone.com/reports/3357723 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: giant_anteater
+
+[Medium] Cache Pollution via Unkeyed GET Parameters on www.omise.co
+  URL: https://hackerone.com/reports/3183046 | CWE: Unknown
+  Program: omise | Reporter: alitoni224
+
+[Low] URL Path Manipulation Enables Cache Poisoning of Amazon Affiliate Products in Shopify Linkpop
+  URL: https://hackerone.com/reports/1848940 | CWE: Cache Poisoning
+  Program: shopify | Reporter: saltymermaid
+
+[Medium] DoS Vulnerability via Cache Poisoning on cdn.shopify.com and shopify-assets.shopifycdn.com
+  URL: https://hackerone.com/reports/1695604 | CWE: Cache Poisoning
+  Program: shopify | Reporter: bassem_sadaqah
+
+[Low] Dynamic fee algorithm doesn't check for zero fee
+  URL: https://hackerone.com/reports/1981441 | CWE: Uncontrolled Resource Consumption
+  Program: monero | Reporter: sech1
+
+[Medium] RPC service DOS
+  URL: https://hackerone.com/reports/2338094 | CWE: Uncontrolled Resource Consumption
+  Program: monero | Reporter: ptrstr
+
+[Medium] Possible ReDoS vulnerability in query parameter filtering in Action Dispatch
+  URL: https://hackerone.com/reports/2872502 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: scyoon
+
+[Low] Unsufficent input verification leads to DoS and resource consumption
+  URL: https://hackerone.com/reports/2818147 | CWE: Uncontrolled Resource Consumption
+  Program: sorare | Reporter: tinine
+
+[Medium] Uncontrolled Resource Consumption when parsing maliciously crafted XML with REXML
+  URL: https://hackerone.com/reports/2666849 | CWE: Uncontrolled Resource Consumption
+  Program: ruby | Reporter: l33thaxor
+
+[Medium] CVE-2024-56374 Potential denial-of-service in IPv6 validation
+  URL: https://hackerone.com/reports/2939077 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: ibb | Reporter: 0xsaravana
+
+[Medium] CVE-2024-41990: Potential denial-of-service in django.utils.html.urlize()
+  URL: https://hackerone.com/reports/2795558 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: ibb | Reporter: mprogrammer
+
+[Medium] CVE-2024-49761: ReDoS vulnerability in REXML
+  URL: https://hackerone.com/reports/2807139 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: manun
+
+[Low] [CVE-2024-47888] Possible ReDoS vulnerability in plain_text_for_blockquote_node in Action Text
+  URL: https://hackerone.com/reports/2792776 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: ooooooo_q
+
+[Medium] DOS: taking down a 1k users Gitlab EE instance or multiple Sidekiq instances by importing a malicious repo from a Github EE self-hosted server
+  URL: https://hackerone.com/reports/2499070 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: anhiu102
+
+[Medium] ReDoS due to device-detector parsing user agents
+  URL: https://hackerone.com/reports/1772063 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: afewgoats
+
+[Medium] CVE-2024-41989: Denial-Of-Service vulnerability in the floatformat template filter when input string contains a big exponent in scientific notation
+  URL: https://hackerone.com/reports/2644244 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: l33thaxor
+
+[Low] Unbounded memory growth with session handling in TLSv1.3
+  URL: https://hackerone.com/reports/2622671 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: ibb | Reporter: manishpatidar
+
+[Medium] [CVE-2024-35176] DoS vulnerability in REXML
+  URL: https://hackerone.com/reports/2645836 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: ibb | Reporter: mprogrammer
+
+[Medium] CVE-2024-38875: Denial-Of-Service through uncontrolled resource consumption caused by poor time complexity of strip_punctuation .
+  URL: https://hackerone.com/reports/2591681 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: l33thaxor
+
+[High] CVE-2024-34750 Apache Tomcat DoS vulnerability in HTTP/2 connector
+  URL: https://hackerone.com/reports/2586226 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: devme4f
+
+[High] Assertion failed in node::http2::Http2Session::~Http2Session() leads to HTTP/2 server crash
+  URL: https://hackerone.com/reports/2453328 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: bart
+
+[Medium] CVE-2024-27351: Potential regular expression denial-of-service in django.utils.text.Truncator.words()
+  URL: https://hackerone.com/reports/2402193 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: scyoon
+
+[Medium] Apache HTTP Server: HTTP/2 DoS by memory exhaustion on endless continuation frames
+  URL: https://hackerone.com/reports/2453322 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: bart
+
+[High] Denial of Service caused by HTTP/2 CONTINUATION Flood
+  URL: https://hackerone.com/reports/2334401 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: bart
+
+[High] "Assertion failed" in node::http2::Http2Session::~Http2Session() leads to HTTP/2 server crash
+  URL: https://hackerone.com/reports/2319584 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: bart
+
+[High] http: Reading unprocessed HTTP request with unbounded chunk extension allows DoS attacks
+  URL: https://hackerone.com/reports/2233486 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: bart
+
+[Low] unsanitized input goes to regex function leads to ReDos that make request hangs
+  URL: https://hackerone.com/reports/2064723 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: shin24
+
+[Low] [CVE-2022-44570] Possible Denial of Service Vulnerability in Rack’s Range header parsing
+  URL: https://hackerone.com/reports/2012121 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: ooooooo_q
+
+[Low] [CVE-2022-44571] Possible Denial of Service Vulnerability in Rack Content-Disposition parsing
+  URL: https://hackerone.com/reports/2012122 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: ooooooo_q
+
+[Low] [CVE-2022-44572] Possible Denial of Service Vulnerability in Rack’s RFC2183 boundary parsing
+  URL: https://hackerone.com/reports/2012125 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: ooooooo_q
+
+[Low] [CVE-2023-22796] Possible ReDoS based DoS vulnerability in Active Support’s underscore
+  URL: https://hackerone.com/reports/2012131 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: ooooooo_q
+
+[Low] [CVE-2023-22799] Possible ReDoS based DoS vulnerability in GlobalID
+  URL: https://hackerone.com/reports/2012135 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: ooooooo_q
+
+[Medium] node.js process aborts when processing x509 certs with invalid public key information
+  URL: https://hackerone.com/reports/1884159 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: m_r_beauchamp
+
+[Medium] Possible DOS in app with crashing `exceptions_app`
+  URL: https://hackerone.com/reports/1300802 | CWE: Uncontrolled Resource Consumption
+  Program: rails | Reporter: ghiculescu
+
+[Low] DOS via cache poisoning on [developer.mozilla.org]
+  URL: https://hackerone.com/reports/1976449 | CWE: Cache Poisoning
+  Program: mozilla | Reporter: zhero_
+
+[Critical]  WordPress application vulnerable to DoS attack via wp-cron.php
+  URL: https://hackerone.com/reports/1888723 | CWE: Uncontrolled Resource Consumption
+  Program: deptofdefense | Reporter: 0r10nh4ck
+
+[High] Cache Deception Allows Account Takeover
+  URL: https://hackerone.com/reports/1698316 | CWE: Use of Cache Containing Sensitive Information
+  Program: expediagroup_bbp | Reporter: bombon
+
+[Medium] JSON RPC methods for debugging enabled by default allow DoS
+  URL: https://hackerone.com/reports/324021 | CWE: Uncontrolled Resource Consumption
+  Program: rootstocklabs | Reporter: teknogeek
+
+[Medium] HTTP multi-header compression denial of service
+  URL: https://hackerone.com/reports/1886139 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: ibb | Reporter: monnerat
+
+[Critical] DoS at ████████ (CVE-2018-6389)
+  URL: https://hackerone.com/reports/1861569 | CWE: Uncontrolled Resource Consumption
+  Program: deptofdefense | Reporter: raditz
+
+[Medium] CVE-2023-23916: HTTP multi-header compression denial of service
+  URL: https://hackerone.com/reports/1826048 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: curl | Reporter: monnerat
+
+[Low] Specially crafted message request crashes the webapp for users who view the message
+  URL: https://hackerone.com/reports/1253732 | CWE: Uncontrolled Resource Consumption
+  Program: mattermost | Reporter: thesecuritydev
+
+[Medium] DoS via Playbook 
+  URL: https://hackerone.com/reports/1685979 | CWE: Uncontrolled Resource Consumption
+  Program: mattermost | Reporter: vultza
+
+[Low] Missing character limitation allows to put generate a database error
+  URL: https://hackerone.com/reports/1596059 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: errorsec_
+
+[Low] Calendar name length not validated before writing to database
+  URL: https://hackerone.com/reports/1596148 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: errorsec_
+
+[Medium] potential denial of service attack via the locale parameter
+  URL: https://hackerone.com/reports/1746098 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: benjaoming_realone
+
+[Medium] Database resource exhaustion for logged-in users via sharee recommendations with circles
+  URL: https://hackerone.com/reports/1688199 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: michag86
+
+[Medium] DoS via Automatic Response Message
+  URL: https://hackerone.com/reports/1680241 | CWE: Uncontrolled Resource Consumption
+  Program: mattermost | Reporter: vultza
+
+[Medium] DoS of  https://research.adobe.com/ via CVE-2018-6389 exploitation
+  URL: https://hackerone.com/reports/1511628 | CWE: Uncontrolled Resource Consumption
+  Program: adobe | Reporter: shirshak
+
+[High] Deny of service via malicious Content-Type
+  URL: https://hackerone.com/reports/1715536 | CWE: Uncontrolled Resource Consumption
+  Program: fastify | Reporter: bitk
+
+[Low] DOS: out of memory from gif through upload api
+  URL: https://hackerone.com/reports/1620170 | CWE: Uncontrolled Resource Consumption
+  Program: mattermost | Reporter: catenacyber
+
+[High] DOS validator nodes of blockchain to block external connections
+  URL: https://hackerone.com/reports/1695472 | CWE: Uncontrolled Resource Consumption
+  Program: hyperledger | Reporter: cre8
+
+[Medium] ReDoS in net/http affects webhooks: Sidekiq job stuck at 100% CPU for a year
+  URL: https://hackerone.com/reports/1531958 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: afewgoats
+
+[Medium] monerod JSON RPC server remote DoS
+  URL: https://hackerone.com/reports/1511843 | CWE: Uncontrolled Resource Consumption
+  Program: monero | Reporter: m31007
+
+[Medium] xmlrpc.php FILE IS enable it will used for Bruteforce attack and Denial of Service(DoS)
+  URL: https://hackerone.com/reports/1622867 | CWE: Uncontrolled Resource Consumption
+  Program: top_echelon_software | Reporter: mertergun305
+
+[Medium] Enrolling to a CA that returns an empty response crashes the node process
+  URL: https://hackerone.com/reports/506412 | CWE: Uncontrolled Resource Consumption
+  Program: hyperledger | Reporter: mttrbrts
+
+[Low] @nextcloud/logger NPM package brings vulnerable ansi-regex version
+  URL: https://hackerone.com/reports/1607601 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: ro0t_elqayser
+
+[Low] CVE-2022-27781: CERTINFO never-ending busy-loop
+  URL: https://hackerone.com/reports/1606039 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: sybr
+
+[Medium] CVE-2022-32206: HTTP compression denial of service
+  URL: https://hackerone.com/reports/1614330 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: ibb | Reporter: nyymi
+
+[Low] CVE-2022-32205: Set-Cookie denial of service
+  URL: https://hackerone.com/reports/1614328 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: ibb | Reporter: nyymi
+
+[Low] CVE-2022-32205: Set-Cookie denial of service
+  URL: https://hackerone.com/reports/1569946 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: curl | Reporter: nyymi
+
+[Medium] CVE-2022-32206: HTTP compression denial of service
+  URL: https://hackerone.com/reports/1570651 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: curl | Reporter: nyymi
+
+[Low] CVE-2022-27781: CERTINFO never-ending busy-loop
+  URL: https://hackerone.com/reports/1555441 | CWE: Uncontrolled Resource Consumption
+  Program: curl | Reporter: sybr
+
+[?] Slowvote and Countdown can cause Denial of Service due to recursive inclusion
+  URL: https://hackerone.com/reports/1563142 | CWE: Uncontrolled Resource Consumption
+  Program: phabricator | Reporter: dyls
+
+[Low] %0A (New line) and limitness URL leads to DoS at all system [Main adress (https://www.acronis.com/)]
+  URL: https://hackerone.com/reports/1382448 | CWE: Uncontrolled Resource Consumption
+  Program: acronis | Reporter: plantos
+
+[High] Cache Poisoning DoS on downloads.exodus.com
+  URL: https://hackerone.com/reports/1173153 | CWE: Uncontrolled Resource Consumption
+  Program: exodus | Reporter: youstin
+
+[Medium] Static files on HackerOne.com can be made inaccessible through Cache Poisoning attack
+  URL: https://hackerone.com/reports/1181946 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: youstin
+
+[High] Cache poisoning Denial of Service affecting assets.gitlab-static.net
+  URL: https://hackerone.com/reports/1160407 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: youstin
+
+[Medium] Ruby - Regular Expression Denial of Service Vulnerability of Date Parsing Methods
+  URL: https://hackerone.com/reports/1404789 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: svalkanov
+
+[Medium] ReDoS in syntax highlighting due to Rouge
+  URL: https://hackerone.com/reports/1283484 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: doyensec
+
+[Medium] Web Cache Poisoning leading to DoS
+  URL: https://hackerone.com/reports/1346618 | CWE: Uncontrolled Resource Consumption
+  Program: gsa_vdp | Reporter: letm3through
+
+[High] Cache Posioning leading to denial of service at `█████████` - Bypass fix from report #1198434	
+  URL: https://hackerone.com/reports/1322732 | CWE: Uncontrolled Resource Consumption
+  Program: deptofdefense | Reporter: brumens
+
+[Medium] 1-click DOS in fastify-static via directly passing user's input to new URL() of NodeJS without try/catch
+  URL: https://hackerone.com/reports/1361804 | CWE: Uncontrolled Resource Consumption
+  Program: fastify | Reporter: drstrnegth
+
+[Medium] Denial of Service via Hyperlinks in Posts
+  URL: https://hackerone.com/reports/1077136 | CWE: Uncontrolled Resource Consumption
+  Program: slack | Reporter: joaovitormaia
+
+[Medium] DoS of LINE client for Android via message containing multiple unicode characters (0x0e & 0x0f)
+  URL: https://hackerone.com/reports/1058383 | CWE: Uncontrolled Resource Consumption
+  Program: line | Reporter: alderson-chiu
+
+[Low] No Limit on Email Subscription
+  URL: https://hackerone.com/reports/1085079 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: openmage | Reporter: thecyberjerry
+
+[Medium] 2 Bypass of  #1067533 rate limit via X-Forwarded-For<space>: Source IP on ( www.trycourier.app )
+  URL: https://hackerone.com/reports/1206777 | CWE: Uncontrolled Resource Consumption
+  Program: trycourier | Reporter: basant0x01
+
+[High] Cache Poisoning
+  URL: https://hackerone.com/reports/824753 | CWE: Improper Handling of URL Encoding (Hex Encoding)
+  Program: ibb | Reporter: jeriko_one
+
+[Low] The possibility of disrupting the normal operation of frontend using markdown
+  URL: https://hackerone.com/reports/1138668 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: haxta4ok00
+
+[Medium] Denial of Service in anti_ransomware_service.exe via logs files
+  URL: https://hackerone.com/reports/858603 | CWE: Uncontrolled Resource Consumption
+  Program: acronis | Reporter: mjoensen
+
+[High] DoS due to improper input validation can break the admin access into the user data will disallow him from editing that user's data.
+  URL: https://hackerone.com/reports/1147611 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: demonia
+
+[Medium] https://themes.shopify.com::: Host header web cache poisoning lead to DoS
+  URL: https://hackerone.com/reports/1096609 | CWE: Uncontrolled Resource Consumption
+  Program: shopify | Reporter: g4mm4
+
+[Low] Slowloris, body parsing
+  URL: https://hackerone.com/reports/799072 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: underflow0
+
+[Critical] Denial of Service by resource exhaustion CWE-400 due to unfinished HTTP/1.1 requests
+  URL: https://hackerone.com/reports/868834 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: shogunpanda
+
+[High] DNS Max Responses for DOS
+  URL: https://hackerone.com/reports/1033107 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: zeus1999
+
+[Critical] HTTP2 'unknownProtocol' cause Denial of Service by resource exhaustion
+  URL: https://hackerone.com/reports/1043360 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: omicronenergy
+
+[Low] Cookie Bombing cause DOS -  businesses.uber.com
+  URL: https://hackerone.com/reports/847493 | CWE: Uncontrolled Resource Consumption
+  Program: uber | Reporter: m4ll0k
+
+[Medium] Permanent DoS at https://happy.tools/ when inviting a user
+  URL: https://hackerone.com/reports/1041173 | CWE: Uncontrolled Resource Consumption
+  Program: automattic | Reporter: boy_child_
+
+[High] Denial of Service by requesting to reset a password
+  URL: https://hackerone.com/reports/812754 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: makerlab
+
+[None] 12 Days of Hacky Holidays write-up, but as a text-based RPG?
+  URL: https://hackerone.com/reports/1066851 | CWE: Uncontrolled Resource Consumption
+  Program: h1-ctf | Reporter: dee-see
+
+[Medium] Potential DDoS when posting long data into workflow validation rules
+  URL: https://hackerone.com/reports/1018146 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: demonia
+
+[Critical] [CTF] I've DDoSed Grinch Network
+  URL: https://hackerone.com/reports/1065493 | CWE: Uncontrolled Resource Consumption
+  Program: h1-ctf | Reporter: jeti
+
+[High] a very long name in hey.com can prevent anyone from accessing their contacts and probably can cause denial of service
+  URL: https://hackerone.com/reports/1018037 | CWE: Uncontrolled Resource Consumption
+  Program: basecamp | Reporter: tw4v3sx
+
+[Medium] [api.tumblr.com] Denial of Service by cookies manipulation
+  URL: https://hackerone.com/reports/1005421 | CWE: Uncontrolled Resource Consumption
+  Program: automattic | Reporter: fuzzme
+
+[Medium] DoS on the Direct Messages
+  URL: https://hackerone.com/reports/746003 | CWE: Uncontrolled Resource Consumption
+  Program: slack | Reporter: try_to_hac
+
+[Medium] ReDoS at wiki.cs.money graphQL endpoint (AND probably a kind of command injection)
+  URL: https://hackerone.com/reports/1000567 | CWE: Uncontrolled Resource Consumption
+  Program: cs_money | Reporter: mvm
+
+[Medium] [http-live-simulator] Application-level DoS
+  URL: https://hackerone.com/reports/764725 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: ryotak
+
+[Low] Cookie injection leads to complete DoS over whole domain *.mackeeper.com. Injection point accountstage.mackeeper.com/
+  URL: https://hackerone.com/reports/861521 | CWE: Uncontrolled Resource Consumption
+  Program: clario | Reporter: mayurudiniya
+
+[Low] Cache poisoning via X-Forwarded-Host in www.shopify.com/partners/blog
+  URL: https://hackerone.com/reports/977851 | CWE: Improper Neutralization of HTTP Headers for Scripting Syntax
+  Program: shopify | Reporter: dakitu
+
+[Medium] Prototype pollution attack (lodash)
+  URL: https://hackerone.com/reports/841380 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: macasun
+
+[High] Prototype Pollution lodash 4.17.15
+  URL: https://hackerone.com/reports/864701 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: awarau
+
+[High] [is-my-json-valid] ReDoS via 'style' format
+  URL: https://hackerone.com/reports/909757 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Medium] Fastify uses allErrors: true ajv configuration by default which is susceptible to DoS
+  URL: https://hackerone.com/reports/903521 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Medium] Untrusted users able to run pending migrations in production
+  URL: https://hackerone.com/reports/899069 | CWE: Uncontrolled Resource Consumption
+  Program: rails | Reporter: tenderlove
+
+[Medium] Denial of Service  [Chrome]
+  URL: https://hackerone.com/reports/921286 | CWE: Uncontrolled Resource Consumption
+  Program: x | Reporter: try_to_hac
+
+[Low] Node.js HTTP/2 Large Settings Frame DoS
+  URL: https://hackerone.com/reports/446662 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: galgo
+
+[High] disable test send feature if user's email address isn't verified
+  URL: https://hackerone.com/reports/906226 | CWE: Uncontrolled Resource Consumption
+  Program: trycourier | Reporter: vaalici
+
+[Medium] xmlrpc.php FILE IS enable which enables attacker to XSPA Brute-force and even Denial of Service(DOS), in https://████/xmlrpc.php
+  URL: https://hackerone.com/reports/884756 | CWE: Uncontrolled Resource Consumption
+  Program: deptofdefense | Reporter: dhakal_bibek
+
+[Medium] Attacker may be able to bounce enough emails which suspend HackerOne's SES service and cause a DoS of HackerOne's email service
+  URL: https://hackerone.com/reports/823915 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: iamr0000t
+
+[Low] Attacker with an Old account might still be able to DoS ctf.hacker101.com by sending a Crafted request 
+  URL: https://hackerone.com/reports/861170 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: iamr0000t
+
+[Medium] Pixel flood attack cause the javascript heap out of memory
+  URL: https://hackerone.com/reports/842462 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: mayaseven
+
+[Low] No redirect_uri in the db for web-internal clientKey leads to one-click DoS on gitter.im
+  URL: https://hackerone.com/reports/702987 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: gregxsunday
+
+[Medium] character limitation bypass can lead to DoS on Twitter App and 500 Internal Server Error
+  URL: https://hackerone.com/reports/819088 | CWE: Uncontrolled Resource Consumption
+  Program: x | Reporter: exit_n0de
+
+[Medium] Malformed string sent through FireServer leads to server freezing/hanging
+  URL: https://hackerone.com/reports/679907 | CWE: Uncontrolled Resource Consumption
+  Program: roblox | Reporter: teeth
+
+[High] Prototype pollution attack (lodash)
+  URL: https://hackerone.com/reports/712065 | CWE: Allocation of Resources Without Limits or Throttling
+  Program: nodejs-ecosystem | Reporter: posix
+
+[Medium] Crash Node.js process from handlebars using a small and simple source
+  URL: https://hackerone.com/reports/726364 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: macasun
+
+[Medium] User input validation can lead to DOS
+  URL: https://hackerone.com/reports/767458 | CWE: Uncontrolled Resource Consumption
+  Program: x | Reporter: meepmerp
+
+[Medium] profile-picture name parameter with large value lead to DoS for other users and programs on the platform
+  URL: https://hackerone.com/reports/764434 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: d3f4u17
+
+[Low] scripts loader (denial of service) vulnerability
+  URL: https://hackerone.com/reports/690330 | CWE: Uncontrolled Resource Consumption
+  Program: mariadb | Reporter: badisman
+
+[Critical] Prototype pollution in multipart parsing
+  URL: https://hackerone.com/reports/804772 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: mcollina
+
+[Medium] iOS app crashed by specially crafted direct message reactions
+  URL: https://hackerone.com/reports/784676 | CWE: Uncontrolled Resource Consumption
+  Program: x | Reporter: alexiaya
+
+[Medium] Fix for CVE-2018-12122 can be bypassed via keep-alive requests
+  URL: https://hackerone.com/reports/453513 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs | Reporter: mpracucci
+
+[High] https://help.nextcloud.com::: Web cache poisoning attack
+  URL: https://hackerone.com/reports/429747 | CWE: Unknown
+  Program: nextcloud | Reporter: g4mm4
+
+[Low] Denial Of Service in Strapi Framework using argument injection
+  URL: https://hackerone.com/reports/768574 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: princechaddha
+
+[Medium] ActiveStorage throws exception when using whitespace as filename, may lead to denial of service of multiple pages
+  URL: https://hackerone.com/reports/713407 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: ninetynine
+
+[Medium] `rgb2hex` is vulnerable to ReDoS when parsing crafted invalid colors
+  URL: https://hackerone.com/reports/319629 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Critical] Fastify denial-of-service vulnerability with large JSON payloads
+  URL: https://hackerone.com/reports/303632 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: nwoltman
+
+[High] Prototype pollution attack (lodash / constructor.prototype)
+  URL: https://hackerone.com/reports/380873 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: asgerf
+
+[Low] DoS attack via comment on Issue
+  URL: https://hackerone.com/reports/557154 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: 8ayac
+
+[Low] WEBrick::HTTPAuth::DigestAuth authentication is vulnerable to regular expression denial of service (ReDoS)
+  URL: https://hackerone.com/reports/661722 | CWE: Uncontrolled Resource Consumption
+  Program: ruby | Reporter: 358
+
+[?] NULL Pointer Dereference at _gdScaleVert
+  URL: https://hackerone.com/reports/146944 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: emyei
+
+[Medium]  Assertion `len == 1' failed, process aborted while streaming ouput from remote server
+  URL: https://hackerone.com/reports/495508 | CWE: Uncontrolled Resource Consumption
+  Program: putty_h1c | Reporter: geeknik
+
+[Medium] Enable 2FA without verifying the email
+  URL: https://hackerone.com/reports/649533 | CWE: Uncontrolled Resource Consumption
+  Program: moneybird | Reporter: rioncool22
+
+[Medium] DoS on PayPal via web cache poisoning
+  URL: https://hackerone.com/reports/622122 | CWE: Uncontrolled Resource Consumption
+  Program: paypal | Reporter: albinowax
+
+[?] CVE-2015-8874 Stack overflow with imagefilltoborder
+  URL: https://hackerone.com/reports/146936 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: fms
+
+[Medium] Crash (DoS) when parsing a hostile TIFF
+  URL: https://hackerone.com/reports/195580 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: aerodudrizzt
+
+[High] Denial of service in libxml2, using malicious lzma file to consume available system memory
+  URL: https://hackerone.com/reports/270059 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: geeknik
+
+[?] Use after free with assign by ref to overloaded objects
+  URL: https://hackerone.com/reports/123119 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: geeknik
+
+[?] pngcrush double-free/segfault could result in DoS (CVE-2015-7700)
+  URL: https://hackerone.com/reports/93546 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: geeknik
+
+[Low] Clientside resource Exhausting by exploiting gitlab math rendering 
+  URL: https://hackerone.com/reports/549040 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: abdilahrf_
+
+[Low] Application level denial of service due to shutting down the server 
+  URL: https://hackerone.com/reports/627376 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: 3la2kb
+
+[Low] All functions that allow users to specify color code are vulnerable to ReDoS
+  URL: https://hackerone.com/reports/511381 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: 8ayac
+
+[?] Excessive Resource Usage
+  URL: https://hackerone.com/reports/543782 | CWE: Uncontrolled Resource Consumption
+  Program: monero | Reporter: talko
+
+[Medium] cookie injection allow dos attack to periscope.tv
+  URL: https://hackerone.com/reports/583819 | CWE: Uncontrolled Resource Consumption
+  Program: x | Reporter: protostar0
+
+[High] CryptoNote: remote node DoS
+  URL: https://hackerone.com/reports/506595 | CWE: Uncontrolled Resource Consumption
+  Program: monero | Reporter: anonimal
+
+[Medium] DoS on the Issue page by exploiting Mermaid.
+  URL: https://hackerone.com/reports/470067 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: 8ayac
+
+[None] Lack of length validation on user address attribute
+  URL: https://hackerone.com/reports/161947 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: rohitdua
+
+[Medium] Hogging up all the resources on hackerone.com
+  URL: https://hackerone.com/reports/125587 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: kirils
+
+[High] `useragent` is vulnerable to ReDoS in user-agent string
+  URL: https://hackerone.com/reports/320159 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Medium] DoS for remote nodes using Slow Loris attack
+  URL: https://hackerone.com/reports/416494 | CWE: Uncontrolled Resource Consumption
+  Program: monero | Reporter: sobhraj_charles
+
+[High] xmlrpc.php file is enable it will used for (DOS) and bruteforce attack
+  URL: https://hackerone.com/reports/448524 | CWE: Uncontrolled Resource Consumption
+  Program: formassembly | Reporter: meepmerp
+
+[Medium] Denial of service via cache poisoning
+  URL: https://hackerone.com/reports/409370 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: albinowax
+
+[Medium] Prototype pollution attack (lutils-merge)
+  URL: https://hackerone.com/reports/439107 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: dienpv
+
+[Medium] Prototype pollution attack in node.extend
+  URL: https://hackerone.com/reports/430831 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: asgerf
+
+[High] Prototype Pollution Vulnerability in cached-path-relative Package
+  URL: https://hackerone.com/reports/390847 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: cris_semmle
+
+[Low] XML hash collision DoS vulnerability in Python's xml.etree module
+  URL: https://hackerone.com/reports/412673 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: tiran
+
+[?] Multiple File Manipulation bugs in WP Super Cache 
+  URL: https://hackerone.com/reports/240886 | CWE: Unknown
+  Program: automattic | Reporter: paulos__
+
+[Medium] DoS for HTTP/2 connections by crafted requests (CVE-2018-1333)
+  URL: https://hackerone.com/reports/384839 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: cy1337
+
+[High] Malicious get_random_rct_outs.bin rpc can cause a near-infinite loop
+  URL: https://hackerone.com/reports/391611 | CWE: Uncontrolled Resource Consumption
+  Program: monero | Reporter: ahook
+
+[Low] Prototype pollution attack (merge.recursive)
+  URL: https://hackerone.com/reports/381194 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: asgerf
+
+[Medium] Prototype pollution attack (defaults-deep / constructor.prototype)
+  URL: https://hackerone.com/reports/380878 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: asgerf
+
+[Low] DoS in Brave browser for iOS
+  URL: https://hackerone.com/reports/357665 | CWE: Uncontrolled Resource Consumption
+  Program: brave | Reporter: metnew
+
+[Critical] Prototype pollution attack (extend)
+  URL: https://hackerone.com/reports/381185 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: asgerf
+
+[Critical] `memjs` allocates and stores buffers on typed input, resulting in DoS and uninitialized memory usage
+  URL: https://hackerone.com/reports/319809 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Low] [DOS] Browser hangs on loading the code snippet
+  URL: https://hackerone.com/reports/181686 | CWE: Uncontrolled Resource Consumption
+  Program: brave | Reporter: tikoo_sahil
+
+[Low] [DOS] denial of service using code snippet on brave browser
+  URL: https://hackerone.com/reports/181558 | CWE: Uncontrolled Resource Consumption
+  Program: brave | Reporter: tikoo_sahil
+
+[High] `http-proxy-agent` passes unsanitized options to Buffer(arg), resulting in DoS and uninitialized memory leak
+  URL: https://hackerone.com/reports/321631 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[High] `sshpk` is vulnerable to ReDoS when parsing crafted invalid public keys
+  URL: https://hackerone.com/reports/319593 | CWE: Uncontrolled Resource Consumption
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Low] Negative size in tar header causes infinite loop
+  URL: https://hackerone.com/reports/281336 | CWE: Uncontrolled Resource Consumption
+  Program: rubygems | Reporter: plover
+
+[Medium] Cookie bomb
+  URL: https://hackerone.com/reports/221041 | CWE: Uncontrolled Resource Consumption
+  Program: gitlab | Reporter: moritz30
+
+[Medium] SSL_peek() hang on empty record (CVE-2016-6305)
+  URL: https://hackerone.com/reports/288993 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: alex_gaynor
+
+[?] mruby heredoc notation
+  URL: https://hackerone.com/reports/297383 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: j0s3
+
+[Low] Fix for self-DoS in Security-txt Chrome Extension.
+  URL: https://hackerone.com/reports/299460 | CWE: Uncontrolled Resource Consumption
+  Program: ed | Reporter: karel_origin
+
+[High] Server-side cache poisoning leads to the http://my.dev.owox.com inaccessibility
+  URL: https://hackerone.com/reports/291012 | CWE: Unknown
+  Program: owox | Reporter: sp1d3rs
+
+[?] WordPress core  - Denial of Service via Cross Site Request Forgery
+  URL: https://hackerone.com/reports/153093 | CWE: Uncontrolled Resource Consumption
+  Program: wordpress | Reporter: spipm
+
+[Low] stack overflow #6 in libsass
+  URL: https://hackerone.com/reports/221292 | CWE: Uncontrolled Resource Consumption
+  Program: libsass | Reporter: geeknik
+
+[Low] stack overflow #5 in libsass
+  URL: https://hackerone.com/reports/221286 | CWE: Uncontrolled Resource Consumption
+  Program: libsass | Reporter: geeknik
+
+[Low] stack overflow #4 in libsass
+  URL: https://hackerone.com/reports/221267 | CWE: Uncontrolled Resource Consumption
+  Program: libsass | Reporter: geeknik
+
+[Low] stack overflow #3 in libsass
+  URL: https://hackerone.com/reports/221264 | CWE: Uncontrolled Resource Consumption
+  Program: libsass | Reporter: geeknik
+
+[Low] stack overflow #2 in libsass
+  URL: https://hackerone.com/reports/221262 | CWE: Uncontrolled Resource Consumption
+  Program: libsass | Reporter: geeknik
+
+[Low] stack overflow in libsass
+  URL: https://hackerone.com/reports/221260 | CWE: Uncontrolled Resource Consumption
+  Program: libsass | Reporter: geeknik
+
+[?] [tor] control connection pre-auth DoS (infinite loop) with --enable-bufferevents
+  URL: https://hackerone.com/reports/113424 | CWE: Uncontrolled Resource Consumption
+  Program: torproject | Reporter: guido
+
+[High] ci.nextcloud.com: CVE-2015-5477 BIND9 TKEY Vulnerability + Exploit (Denial of Service)
+  URL: https://hackerone.com/reports/237860 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: 0xsamar
+
+[?] WordPress Authentication Denial of Service
+  URL: https://hackerone.com/reports/163307 | CWE: Uncontrolled Resource Consumption
+  Program: instacart | Reporter: clizsec
+
+[Low] Malformed SHA512 ticket DoS (CVE-2016-6302)
+  URL: https://hackerone.com/reports/221787 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: theyarestone
+
+[Low] Excessive allocation of memory in tls_get_message_header() (CVE-2016-6307)
+  URL: https://hackerone.com/reports/221791 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: theyarestone
+
+[Low] Excessive allocation of memory in dtls1_preprocess_fragment() (CVE-2016-6308)
+  URL: https://hackerone.com/reports/221792 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: theyarestone
+
+[Low] No Password Length Restriction leads to Denial of Service
+  URL: https://hackerone.com/reports/223854 | CWE: Uncontrolled Resource Consumption
+  Program: weblate | Reporter: ant_pyne
+
+[High]  XXE in upload file feature
+  URL: https://hackerone.com/reports/105787 | CWE: Uncontrolled Resource Consumption
+  Program: informatica | Reporter: yarbabin
+
+[?] Null pointer dereferences in ary_concat
+  URL: https://hackerone.com/reports/214171 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: locator
+
+[?] Null pointer dereferences in mrb_get_args
+  URL: https://hackerone.com/reports/216351 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: locator
+
+[Medium] SIGSEGV - mrb_obj_value
+  URL: https://hackerone.com/reports/213779 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: icanthack
+
+[?] Null pointer dereferences from mrb_vm_exec
+  URL: https://hackerone.com/reports/210671 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: locator
+
+[Low] Invalid pointer dereference in OP_ENTER
+  URL: https://hackerone.com/reports/218570 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dgaletic
+
+[Low] Garbage collector crash
+  URL: https://hackerone.com/reports/215854 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dgaletic
+
+[Medium] mrb_vm_exec - null ptr dereference
+  URL: https://hackerone.com/reports/210429 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: icanthack
+
+[High] Segmentation fault when a Ruby method is invoked by a C method via Object#send
+  URL: https://hackerone.com/reports/183425 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: h72
+
+[High] OCSP Status Request extension unbounded memory growth (CVE-2016-6304)
+  URL: https://hackerone.com/reports/216840 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: theyarestone
+
+[?] DOM based cookie bomb
+  URL: https://hackerone.com/reports/57356 | CWE: Uncontrolled Resource Consumption
+  Program: x | Reporter: filedescriptor
+
+[Low]  DoS vulnerability in mod_auth_digest CVE-2016-2161
+  URL: https://hackerone.com/reports/194065 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: danse
+
+[High] [app.informaticaondemand.com] XXE
+  URL: https://hackerone.com/reports/105753 | CWE: Uncontrolled Resource Consumption
+  Program: informatica | Reporter: yarbabin
+
+[Low] Incomplete or No Cache-control and Pragma HTTP Header Set
+  URL: https://hackerone.com/reports/185833 | CWE: Unknown
+  Program: gratipay | Reporter: lulliii
+
+[Medium] Send email asynchronously
+  URL: https://hackerone.com/reports/128856 | CWE: Uncontrolled Resource Consumption
+  Program: gratipay | Reporter: hharry
+
+[High] Interger overflow in str_substr leading to read/write out of bound memory
+  URL: https://hackerone.com/reports/205884 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: beyondchain
+
+[Low] Null pointer dereference in mark_context_stack
+  URL: https://hackerone.com/reports/208526 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dgaletic
+
+[Low] Null pointer dereference in mrb_class
+  URL: https://hackerone.com/reports/212107 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dgaletic
+
+[Low] Segmentation fault while printing backtrace
+  URL: https://hackerone.com/reports/204047 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dgaletic
+
+[?] Heap buffer overflow with long array assignment
+  URL: https://hackerone.com/reports/209449 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: titanous
+
+[Low] Denial of service attack on Brave Browser.
+  URL: https://hackerone.com/reports/176066 | CWE: Uncontrolled Resource Consumption
+  Program: brave | Reporter: sahiltikoo
+
+[Low] SIGSEGV Null Pointer mrb_str_concat()
+  URL: https://hackerone.com/reports/192734 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: ston3
+
+[Low] SIGSEGV on mruby mrb_get_args() 
+  URL: https://hackerone.com/reports/191938 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: ston3
+
+[High] Authorization issue in Google G Suite allows DoS through HTTP redirect
+  URL: https://hackerone.com/reports/191196 | CWE: Uncontrolled Resource Consumption
+  Program: uber | Reporter: rijalrojan
+
+[Low] Filename enumeration && DoS
+  URL: https://hackerone.com/reports/174524 | CWE: Uncontrolled Resource Consumption
+  Program: nextcloud | Reporter: b42f97eb69dddcafe5cc278
+
+[Medium] Missing restriction on string size in profile fields
+  URL: https://hackerone.com/reports/180548 | CWE: Uncontrolled Resource Consumption
+  Program: legalrobot | Reporter: arnonymous
+
+[High] ruby DoS https://www.mruby.science
+  URL: https://hackerone.com/reports/180695 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: bugdelivery
+
+[High] Null pointer dereference due to TOCTTOU bug in mrb_time_initialize
+  URL: https://hackerone.com/reports/182274 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: raydot
+
+[High] Invalid handling of zero-length heredoc identifiers leads to infinite loop in the sandbox
+  URL: https://hackerone.com/reports/187305 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dkasak
+
+[Low] Incorrect code generation when result of NODE_NEGATE is not used
+  URL: https://hackerone.com/reports/191689 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dkasak
+
+[None] Invalid memory access in `mrb_str_format`
+  URL: https://hackerone.com/reports/191328 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: haquaman
+
+[High] Range constructor type confusion DoS
+  URL: https://hackerone.com/reports/181910 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: h72
+
+[High] Null target_class DoS
+  URL: https://hackerone.com/reports/183405 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: h72
+
+[High] Segfault in mruby, mruby_engine and the parent MRI Ruby due to null pointer dereference
+  URL: https://hackerone.com/reports/181828 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dkasak
+
+[High] Segfault and/or potential unwanted (byte)code execution with "break" and "||=" inside a loop
+  URL: https://hackerone.com/reports/183356 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: dkasak
+
+[Critical] Type confusion in mrb_exc_set leading to memory corruption
+  URL: https://hackerone.com/reports/185041 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: raydot
+
+[High] Exception cause SIGABRT
+  URL: https://hackerone.com/reports/180977 | CWE: Uncontrolled Resource Consumption
+  Program: shopify-scripts | Reporter: isra17
+
+[High] [rev-app.informatica.com] - XXE
+  URL: https://hackerone.com/reports/105434 | CWE: Uncontrolled Resource Consumption
+  Program: informatica | Reporter: yarbabin
+
+[Medium] Denial of service attack(window object) on brave browser
+  URL: https://hackerone.com/reports/176197 | CWE: Uncontrolled Resource Consumption
+  Program: brave | Reporter: sahiltikoo
+
+[?] Arbitrary SQL query execution and reflected XSS in the "SQL Query Form"
+  URL: https://hackerone.com/reports/149279 | CWE: Uncontrolled Resource Consumption
+  Program: expressionengine | Reporter: strukt
+
+[?] Email spoofing in 	support@veris.in 
+  URL: https://hackerone.com/reports/147919 | CWE: Uncontrolled Resource Consumption
+  Program: veris | Reporter: ahsan
+
+[?] Wordpress  Pingback  DDoS Attacks in domain:  veris.in
+  URL: https://hackerone.com/reports/124097 | CWE: Uncontrolled Resource Consumption
+  Program: veris | Reporter: aziose
+
+[?] Denial of service in account statistics endpoint
+  URL: https://hackerone.com/reports/136221 | CWE: Uncontrolled Resource Consumption
+  Program: mapbox | Reporter: apok
+
+[?] ASN.1 BIO excessive memory allocation (CVE-2016-2109)
+  URL: https://hackerone.com/reports/134880 | CWE: Uncontrolled Resource Consumption
+  Program: ibb | Reporter: geeknik
+
+[?] Error Page Text Injection #106350
+  URL: https://hackerone.com/reports/111860 | CWE: Uncontrolled Resource Consumption
+  Program: withinsecurity | Reporter: geekboy
+
+[?] DoS Attack in Controller Lookup Code
+  URL: https://hackerone.com/reports/83962 | CWE: Uncontrolled Resource Consumption
+  Program: rails | Reporter: tenderlove
+
+[?] attack in not an authorized user
+  URL: https://hackerone.com/reports/111676 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: pisarenko
+
+[?] Privilege escalation vulnerability
+  URL: https://hackerone.com/reports/90671 | CWE: Uncontrolled Resource Consumption
+  Program: shopify | Reporter: marhvhelous
+
+[?] Inadequate input validation on API endpoint leading to self denial of service and increased system load.
+  URL: https://hackerone.com/reports/90912 | CWE: Uncontrolled Resource Consumption
+  Program: irccloud | Reporter: mantis
+
+[?] Prevent Shop Admin From Seeing his Installed Apps / Install Persistent Unremovable App
+  URL: https://hackerone.com/reports/72793 | CWE: Uncontrolled Resource Consumption
+  Program: shopify | Reporter: prakharprasad
+
+[?] Making any Report Failed to load
+  URL: https://hackerone.com/reports/59369 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: atom
+
+[?] Denial of Service
+  URL: https://hackerone.com/reports/17785 | CWE: Uncontrolled Resource Consumption
+  Program: security | Reporter: coolboss
+

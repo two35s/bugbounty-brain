@@ -1,0 +1,427 @@
+Category: path-traversal
+Reports: 106
+
+[Medium] ActiveStorage Disk Service Path Traversal via Custom Blob Key Injection
+  URL: https://hackerone.com/reports/3580511 | CWE: Path Traversal
+  Program: rails | Reporter: ksw9722
+
+[Critical] CVE-█████-35813 in █████
+  URL: https://hackerone.com/reports/2200329 | CWE: Relative Path Traversal
+  Program: mars | Reporter: 0xr2r
+
+[High] Mozilla VPN Clients: RCE via file write and path traversal
+  URL: https://hackerone.com/reports/2995025 | CWE: Path Traversal
+  Program: mozilla | Reporter: trein
+
+[Critical] Path Traversal Vulnerability found on IBM Cloud
+  URL: https://hackerone.com/reports/3060373 | CWE: Path Traversal
+  Program: ibm | Reporter: 0xnullbytex0
+
+[Medium] Path traversal in deeplink query parameter can expose any user's private info to a public directory (one click)
+  URL: https://hackerone.com/reports/2553411 | CWE: Path Traversal
+  Program: basecamp | Reporter: fr4via
+
+[High] Arbitrary File Reading leads to RCE in the Pulse Secure SSL VPN on the https://██████ (███)
+  URL: https://hackerone.com/reports/696276 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[Medium] [CVE-2018-0296] Cisco VPN path traversal on the https://███████/ (████.███.mil)
+  URL: https://hackerone.com/reports/695429 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[High] [portswigger.net] Path Traversal al /cms/audioitems
+  URL: https://hackerone.com/reports/2424815 | CWE: Path Traversal
+  Program: portswigger | Reporter: 0xd0m7
+
+[High] Path traversal by monkey-patching Buffer internals
+  URL: https://hackerone.com/reports/2218653 | CWE: Path Traversal
+  Program: nodejs | Reporter: tniessen
+
+[High] Multiple permission model bypasses due to improper path traversal sequence sanitization
+  URL: https://hackerone.com/reports/2259914 | CWE: Path Traversal
+  Program: nodejs | Reporter: xion
+
+[High] Path traversal through path stored in Uint8Array
+  URL: https://hackerone.com/reports/2199818 | CWE: Path Traversal
+  Program: nodejs | Reporter: tniessen
+
+[High] Permission model improperly protects against path traversal
+  URL: https://hackerone.com/reports/2092852 | CWE: Path Traversal
+  Program: nodejs | Reporter: tniessen
+
+[High] (CVE-2023-32004) Permission model bypass by specifying a path traversal sequence in a Buffer
+  URL: https://hackerone.com/reports/2104564 | CWE: Path Traversal
+  Program: ibb | Reporter: haxatron1
+
+[High] process.binding() can bypass the permission model through path traversal
+  URL: https://hackerone.com/reports/2051257 | CWE: Path Traversal
+  Program: nodejs | Reporter: rafaelgss
+
+[Medium] Path traversal allows tricking the Talk Android app into writing files into it's root directory 
+  URL: https://hackerone.com/reports/1997029 | CWE: Path Traversal
+  Program: nextcloud | Reporter: fr4via
+
+[High] Filesystem experimental permissions policy does not handle path traversal cases.
+  URL: https://hackerone.com/reports/1952978 | CWE: Path Traversal
+  Program: nodejs | Reporter: haxatron1
+
+[Critical] Server-side RCE through directory traversal-based arbitrary file write
+  URL: https://hackerone.com/reports/1049367 | CWE: Path Traversal
+  Program: rocket_chat | Reporter: fabianfreyer
+
+[Medium] Internal machine learning API endpoint for CWE classification is vulnerable to path traversal
+  URL: https://hackerone.com/reports/2032778 | CWE: Path Traversal
+  Program: security | Reporter: jobert
+
+[Low] GitHub Security Lab (GHSL) Vulnerability Report: Insufficient path validation in ReceiveExternalFilesActivity.java (GHSL-2022-060)
+  URL: https://hackerone.com/reports/1650270 | CWE: Path Traversal
+  Program: owncloud | Reporter: atorralba
+
+[Critical] Local file read at https://████/ [HtUS]
+  URL: https://hackerone.com/reports/1626210 | CWE: Path Traversal: '.../...//'
+  Program: deptofdefense | Reporter: sudi
+
+[High] Directory Traversal at █████
+  URL: https://hackerone.com/reports/1641148 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: 0x45
+
+[Low] Access to arbitrary file of the Nextcloud Android app from within the Nextcloud Android app
+  URL: https://hackerone.com/reports/1408692 | CWE: Path Traversal
+  Program: nextcloud | Reporter: luchua
+
+[Critical] Access to admininstrative resources/account via path traversal
+  URL: https://hackerone.com/reports/1326352 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: j4k3d
+
+[Low] Fix : (Security) Mitigate Path Traversal Bug
+  URL: https://hackerone.com/reports/1635321 | CWE: Path Traversal
+  Program: hyperledger | Reporter: bhaskar_ram
+
+[Medium] Off-by-slash vulnerability in nodejs.org and iojs.org
+  URL: https://hackerone.com/reports/1650273 | CWE: Path Traversal
+  Program: ibb | Reporter: nagaro
+
+[High] [doc.rt.informaticacloud.com] Arbitrary File Reading via Double URL Encode
+  URL: https://hackerone.com/reports/232371 | CWE: Path Traversal
+  Program: informatica | Reporter: bigbear_
+
+[High] [CVE-2020-3452] Unauthenticated file read in Cisco ASA
+  URL: https://hackerone.com/reports/1555015 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: b4dc4t
+
+[High] [CVE-2020-3452] Unauthenticated file read in Cisco ASA
+  URL: https://hackerone.com/reports/1555021 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: b4dc4t
+
+[Critical] CVE-2020-3187 - Unauthenticated Arbitrary File Deletion
+  URL: https://hackerone.com/reports/1555027 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: b4dc4t
+
+[Critical] CVE-2020-3187 - Unauthenticated Arbitrary File Deletion
+  URL: https://hackerone.com/reports/1555025 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: b4dc4t
+
+[High] [CVE-2020-3452] on ███████
+  URL: https://hackerone.com/reports/1234925 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: splint3rsec
+
+[High] [Android] Directory traversal leading to disclosure of auth tokens
+  URL: https://hackerone.com/reports/1378889 | CWE: Path Traversal
+  Program: slack | Reporter: danielllewellyn
+
+[Critical] Arbitrary File Read at ███ via filename parameter
+  URL: https://hackerone.com/reports/1436223 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: shiar
+
+[Critical] [CVE-2020-3452] Unauthenticated file read in Cisco ASA
+  URL: https://hackerone.com/reports/1415825 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: b4dc4t
+
+[Critical] Disclosure of github access token in config file via nignx off-by-slash
+  URL: https://hackerone.com/reports/1386547 | CWE: Path Traversal
+  Program: adobe | Reporter: letm3through
+
+[Critical] Path Traversal and Remote Code Execution in Apache HTTP Server 2.4.50
+  URL: https://hackerone.com/reports/1404731 | CWE: Path Traversal: '.../...//'
+  Program: ibb | Reporter: itsecurityco
+
+[Critical] Path Traversal and Remote Code Execution in Apache HTTP Server 2.4.49 and 2.4.50 (incomplete fix of CVE-2021-41773) (CVE-2021-42013)
+  URL: https://hackerone.com/reports/1400238 | CWE: Path Traversal
+  Program: ibb | Reporter: fms
+
+[Low] Fix for CVE-2021-22151 (Kibana path traversal issue) can be bypassed on Windows
+  URL: https://hackerone.com/reports/1353603 | CWE: Path Traversal
+  Program: elastic | Reporter: dee-see
+
+[Critical] Path traversal and file disclosure vulnerability in Apache HTTP Server 2.4.49
+  URL: https://hackerone.com/reports/1394916 | CWE: Path Traversal
+  Program: ibb | Reporter: monkey_logic
+
+[High] Authenticated path traversal to RCE
+  URL: https://hackerone.com/reports/1102067 | CWE: Path Traversal
+  Program: concretecms | Reporter: d3addog
+
+[High] Path traversal on [███]
+  URL: https://hackerone.com/reports/1212746 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: ozn3r
+
+[Low] Path Traversal on meetcqpub1.gsa.gov allows attackers to see arbitrary file listings.
+  URL: https://hackerone.com/reports/1313040 | CWE: Path Traversal
+  Program: gsa_vdp | Reporter: 0x0luke
+
+[High] Unauthenticated Arbitrary File Deletion (CVE-2020-3187)
+  URL: https://hackerone.com/reports/1056611 | CWE: Path Traversal
+  Program: mtn_group | Reporter: 3mm3
+
+[Medium] https://██████/ Vulnerable to CVE-2013-3827 (Directory-traversal vulnerability)
+  URL: https://hackerone.com/reports/1280188 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: team_tsk
+
+[Medium] CVE-2020-3452 - unauthenticated file read on anyconnect.routematch.com
+  URL: https://hackerone.com/reports/1257100 | CWE: Path Traversal
+  Program: uber | Reporter: 0xprial
+
+[Medium] Local File Disclosure /Delete On [us-az-vpn.acronis.com]
+  URL: https://hackerone.com/reports/924407 | CWE: Path Traversal
+  Program: acronis | Reporter: 10nf
+
+[Critical] Arbitrary file read during project import
+  URL: https://hackerone.com/reports/1132378 | CWE: Path Traversal
+  Program: gitlab | Reporter: saltyyolk
+
+[High] Path Traversal в iOS приложении
+  URL: https://hackerone.com/reports/1050231 | CWE: Path Traversal
+  Program: vkcom | Reporter: executor
+
+[Medium] Delete directory using symlink when decompressing tar
+  URL: https://hackerone.com/reports/317321 | CWE: Path Traversal
+  Program: rubygems | Reporter: ooooooo_q
+
+[Medium] Path traversal in ZIP extract routine on LINE Android
+  URL: https://hackerone.com/reports/859469 | CWE: Path Traversal
+  Program: line | Reporter: kanytu
+
+[Medium] [node-downloader-helper] Path traversal via Content-Disposition header
+  URL: https://hackerone.com/reports/772509 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: ryotak
+
+[High] [CVE-2020-3452] Unauthenticated file read in Cisco ASA
+  URL: https://hackerone.com/reports/951530 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: mzfr
+
+[High] [██████████.mil] Cisco VPN Service Path Traversal
+  URL: https://hackerone.com/reports/943717 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: arm4nd0
+
+[High] [http_server] Path Traversal allowing to read any files on the server
+  URL: https://hackerone.com/reports/579523 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: lightangel1412
+
+[High] [hnzserver] Path Traversal allowing to read any files on the server
+  URL: https://hackerone.com/reports/579517 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: lightangel1412
+
+[Critical] CVE-2020-3187 - Unauthenticated Arbitrary File Deletion
+  URL: https://hackerone.com/reports/960330 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: grimnir
+
+[Medium] Path Traversal in App Proxy
+  URL: https://hackerone.com/reports/869888 | CWE: Path Traversal
+  Program: shopify | Reporter: ngalog
+
+[High] Path traversal in filename in LINE Mac client
+  URL: https://hackerone.com/reports/727727 | CWE: Path Traversal
+  Program: line | Reporter: hackerontwowheels
+
+[Critical] Misuse of an authentication cookie combined with a path traversal on app.starbucks.com permitted access to restricted data
+  URL: https://hackerone.com/reports/876295 | CWE: Path Traversal
+  Program: starbucks | Reporter: zlz
+
+[High] Korea - LFI Server directory traversal at starbucks.co.kr
+  URL: https://hackerone.com/reports/844067 | CWE: Path Traversal
+  Program: starbucks | Reporter: 0xb33
+
+[Critical] Arbitrary file read via the UploadsRewriter when moving and issue
+  URL: https://hackerone.com/reports/827052 | CWE: Path Traversal
+  Program: gitlab | Reporter: vakzz
+
+[Medium] [Total.js] Path traversal vulnerability allows to read files outside public directory
+  URL: https://hackerone.com/reports/748765 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: visat
+
+[Medium] Ad Builder Display Ads Path Traversal
+  URL: https://hackerone.com/reports/316713 | CWE: Path Traversal
+  Program: semrush | Reporter: ajxchapman
+
+[Medium] Filesystem Writes via `yarn install` via symlinks and tar transforms inside a crafted malicious package
+  URL: https://hackerone.com/reports/730239 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: rhyselsmore
+
+[High] [deliver-or-else] Path Traversal
+  URL: https://hackerone.com/reports/507310 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: johnssimon007
+
+[High] [md-fileserver] Path Traversal
+  URL: https://hackerone.com/reports/509697 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: johnssimon007
+
+[Medium] Path traversal in https://www.npmjs.com/package/http_server via symlink
+  URL: https://hackerone.com/reports/692262 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: vineetpandey
+
+[High] Path traversal on ████████
+  URL: https://hackerone.com/reports/217344 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: twicedi
+
+[High] [Critical] Full local fylesystem access (LFI/LFD) as admin via Path Traversal in the misconfigured Java servlet on the https://███/
+  URL: https://hackerone.com/reports/497771 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[High] https://█████████ Vulnerable to CVE-2018-0296 Cisco ASA Path Traversal Authentication Bypass
+  URL: https://hackerone.com/reports/622864 | CWE: Path Traversal
+  Program: deptofdefense | Reporter: warsong
+
+[Medium] Arbitrary file creation with semi-controlled content (leads to DoS, EoP and others) at Steam Windows Client
+  URL: https://hackerone.com/reports/682774 | CWE: Path Traversal
+  Program: valve | Reporter: xi-tauw
+
+[Medium] [public] Path traversal using symlink
+  URL: https://hackerone.com/reports/593911 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: henrychen
+
+[High] [statichttpserver] List any file in the folder by using path traversal.
+  URL: https://hackerone.com/reports/570035 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: toannc123
+
+[High] [http-file-server] List any files and sub folders in the folder by using path traversal.
+  URL: https://hackerone.com/reports/570133 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: toannc123
+
+[Medium] [domokeeper] Unintended Require
+  URL: https://hackerone.com/reports/538938 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: ermilov
+
+[Medium] [harp] Path traversal using symlink
+  URL: https://hackerone.com/reports/530289 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: skyn3t
+
+[Medium] Ability to login to the Nexus Repo Manager from https://nexus.imgur.com/ 
+  URL: https://hackerone.com/reports/435457 | CWE: Path Traversal
+  Program: imgur | Reporter: sbakhour
+
+[High] DNS SRV lookup of file:// sources enables local hijacking of gems
+  URL: https://hackerone.com/reports/411519 | CWE: Path Traversal
+  Program: rubygems | Reporter: plover
+
+[High] UniFi Video Server - Arbitrary file upload as SYSTEM
+  URL: https://hackerone.com/reports/129641 | CWE: Path Traversal
+  Program: ui | Reporter: hamlon
+
+[High] [takeapeek] Path traversal allow to expose directory and files
+  URL: https://hackerone.com/reports/403736 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: abdilahrf_
+
+[High] [knightjs] Path Traversal allows to read content of arbitrary files
+  URL: https://hackerone.com/reports/403707 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: abdilahrf_
+
+[High] [simplehttpserver] List any file in the folder by using path traversal.
+  URL: https://hackerone.com/reports/357109 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: n0n4me
+
+[Critical] Arbitrary file deletion in wp-core - guides towards RCE and information disclosure
+  URL: https://hackerone.com/reports/291878 | CWE: Path Traversal
+  Program: wordpress | Reporter: b258ea62bf297b02afa9854
+
+[High] Arbitrary File Write through archive extraction
+  URL: https://hackerone.com/reports/362119 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: danny_grander
+
+[Medium] [m-server] Path Traversal allows to display content of arbitrary file(s) from the server
+  URL: https://hackerone.com/reports/319795 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[Medium] [bruteser] Path Traversal allows to read content of arbitrary file
+  URL: https://hackerone.com/reports/342066 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[Critical] UniFi Video Server web interface Configuration Restore path traversal leading to local system compromise
+  URL: https://hackerone.com/reports/329770 | CWE: Path Traversal
+  Program: ui | Reporter: ajxchapman
+
+[Critical] [serve] Server Directory Traversal
+  URL: https://hackerone.com/reports/358645 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: tungpun
+
+[Critical] [buttle] Path traversal in mid-buttle module allows to read any file in the server.
+  URL: https://hackerone.com/reports/358112 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: n0n4me
+
+[Critical] [html-pages] Path Traversal in html-pages module allows to read any file from the server with curl
+  URL: https://hackerone.com/reports/306607 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[High] Bypass to defective fix of Path Traversal 
+  URL: https://hackerone.com/reports/329837 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: caioluders
+
+[High] LFI in pChart php library
+  URL: https://hackerone.com/reports/288298 | CWE: Path Traversal
+  Program: valve | Reporter: ramsexy
+
+[Medium] [crud-file-server] Path Traversal allows to read arbitrary file from the server
+  URL: https://hackerone.com/reports/310690 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[High] [glance] Path Traversal in glance static file server allows to read content of arbitrary file
+  URL: https://hackerone.com/reports/310106 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[High] [angular-http-server] Path Traversal in angular-http-server.js allows to read arbitrary file from the remote server
+  URL: https://hackerone.com/reports/309120 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[High] [hekto] Path Traversal vulnerability allows to read content of arbitrary files
+  URL: https://hackerone.com/reports/311218 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[High] [626] Path Traversal allows to read arbitrary file from remote server
+  URL: https://hackerone.com/reports/311216 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[High] [localhost-now] Path Traversal allows to read content of arbitrary file
+  URL: https://hackerone.com/reports/312889 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[High] Path Traversal on Resolve-Path
+  URL: https://hackerone.com/reports/315760 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: orange
+
+[High] [public] Path Traversal allows to read content of arbitrary files
+  URL: https://hackerone.com/reports/312918 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[Medium] [featurebook] Specification Server Directory Traversal via Crafted Browser Request
+  URL: https://hackerone.com/reports/296305 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: ysx
+
+[Medium] [serve-here] Static Web Server Directory Traversal via Crafted GET Request
+  URL: https://hackerone.com/reports/296254 | CWE: Path Traversal
+  Program: nodejs-ecosystem | Reporter: ysx
+
+[High] [dev-nightly.ubnt.com] Local File Reading
+  URL: https://hackerone.com/reports/260420 | CWE: Path Traversal
+  Program: ui | Reporter: bobrov
+
+[Medium] Escaping images directory in S3 bucket when saving new avatar, using Path Traversal in filename
+  URL: https://hackerone.com/reports/254200 | CWE: Path Traversal
+  Program: unikrn | Reporter: sp1d3rs
+
+[Medium] full path disclosure at hosted.weblate.org/admin/accounts/profile/ 
+  URL: https://hackerone.com/reports/225495 | CWE: Path Traversal
+  Program: weblate | Reporter: geekdad
+
+[?] Arbritrary file Upload on AirMax
+  URL: https://hackerone.com/reports/73480 | CWE: Path Traversal
+  Program: ui | Reporter: rbran
+

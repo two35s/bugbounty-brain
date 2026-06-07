@@ -1,0 +1,170 @@
+{
+  "id": 316078,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8zMTYwNzg=",
+  "url": "https://hackerone.com/reports/316078",
+  "title": "\u041e\u0431\u0445\u043e\u0434\u0438\u043c 2FA \u0438/\u0438\u043b\u0438 \u043f\u043e\u043b\u0443\u0447\u0430\u0435\u043c access_token, \u0435\u0441\u043b\u0438 \u043c\u044b \u043a\u043e\u0433\u0434\u0430-\u043b\u0438\u0431\u043e \u0431\u044b\u043b\u0438 \u043d\u0430 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0435 \u0436\u0435\u0440\u0442\u0432\u044b",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2018-02-14T16:58:00.508Z",
+  "submitted_at": "2018-02-14T16:58:00.508Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "povargek",
+    "url": "/povargek",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/nS7rNaLQVwztSp3zfcDqNCHF/20fc426031f09e5347054871ae4e3af2478fd2b3d5e8a321468ecf6f2da5ac20"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 1254,
+    "url": "https://hackerone.com/vkcom",
+    "handle": "vkcom",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/xi6gy7iqrhbbv40tykqvr749mtzc/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef?response-content-disposition=inline%3B%20filename%3D%22VK_Compact_Logo.jpg%22%3B%20filename%2A%3DUTF-8%27%27VK_Compact_Logo.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQW6DNA2DM%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123933Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBwHgYaj6VuTMMn%2Ft2XknwvFopEj5hTZCUjIqMpc3IwcAiEA3lJZNlZ6JI7hgyNgwDtLVHonylwcoEfjfq0Q2uKeSB4qugUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGuRdXsQtsniHUqZAiqOBdTPfv%2FOEC2OZ4iX17UW6HeHTu%2Bg3BJJ18BgdpuBrVwOImusswfssNcCNHG7bpGt5vKFjaxca5zDl52xmW9WBk4HfWXi85SFiSbK2lhzdbXMDd%2BUhMlg5SC7uAd5UFZ%2F%2FBUL%2BGDELuxNCR8imhcwqnA1SafNlm%2F4jtOOBX4pVIiR3Kpn75uTEMahIPZN8edngLqzvOZBl84OiYZFNNlv4APbaguIYMzIt0MZJ6E6EC%2FboteLn93emofTBJ%2F%2B1nOu5JxI4rCrSV0EWWr3pAq1n865RgPfKK%2BYootJa%2FySZ5tXqXu7VO%2FEbomK18a4DwShxF4qHI8hjcKMjtVF3U7i99UzWwxax4Vd3HfKuXNjPIYoLhgWt0oRlRzPQ6hWDMqf0JAthItTkyWoarXkIRkATcr2hJxfvVbPcIhHVm0ouHkdRZmqyY%2B479KeFvK%2BUPm6DbiFWLD1FNL3p8F0pzl2vZe%2B4jpNFcUfcIum2p1wg%2FWKznflMw7ghdha8%2BuwLUtTYjz8bfAFenJ6o3eArfBtXDQqWwNCKQYQ5frqRq4vAi7m8TJSuvPoX2UYJU7xMtoFja9OrRwCWz0hoht7VrWNCVf%2F3HoOscEKDoLio3Iatldc3Q9KYv2F2DRgZwndf1KNt5d3j3zN8qJzpA7rvS3lYKP0VqVfCmQydsSEHYe7yrY3YpWZSvoKmGeNisThNQbwIMcc1j4pTaAA6FxV5X4qep1Gs4%2Fm4i6L5xKIE1EIXNvHO0nFpQxg%2BuU47yNRuxJap3cSpZGWZCLBTx8BUcy0hwmPuIdpiXQCKm45xPD4fzc86jKKm75HreFob8yJZcFwDMUWUS5WP6RYQVY%2BHRr8bpqZwqXA%2Fr%2FIhFQLtwpfyzDKtJXRBjqxAakorzXfapIxlb%2FTRtlUuNPmAmu49%2FPK%2B%2BcyKvk7uZOtSHT0MKmlvFqb01hGSAQl1Otxe1yn3Yhe5bIU0XcEuRf4n9aWICM3nQApjZh0WeAx3DafUYY34iZ7jq5n7TJU5A%2Bxc9tfi69v5AQrumAq%2BLR5Xzx1YwVrv5tYFznn4wFBVhrC5o0bK8fm3ahYookVtmTzcr0sZ7c4hYe8l6fm9ag9mE4kDALQPV%2BAz9pmOlbH0A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=f8f11d4322f832800499fec421aee5aeb8b2bfa5ee0168846e772eec8c37d605",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/xi6gy7iqrhbbv40tykqvr749mtzc/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a?response-content-disposition=inline%3B%20filename%3D%22VK_Compact_Logo.jpg%22%3B%20filename%2A%3DUTF-8%27%27VK_Compact_Logo.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQW6DNA2DM%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123933Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBwHgYaj6VuTMMn%2Ft2XknwvFopEj5hTZCUjIqMpc3IwcAiEA3lJZNlZ6JI7hgyNgwDtLVHonylwcoEfjfq0Q2uKeSB4qugUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGuRdXsQtsniHUqZAiqOBdTPfv%2FOEC2OZ4iX17UW6HeHTu%2Bg3BJJ18BgdpuBrVwOImusswfssNcCNHG7bpGt5vKFjaxca5zDl52xmW9WBk4HfWXi85SFiSbK2lhzdbXMDd%2BUhMlg5SC7uAd5UFZ%2F%2FBUL%2BGDELuxNCR8imhcwqnA1SafNlm%2F4jtOOBX4pVIiR3Kpn75uTEMahIPZN8edngLqzvOZBl84OiYZFNNlv4APbaguIYMzIt0MZJ6E6EC%2FboteLn93emofTBJ%2F%2B1nOu5JxI4rCrSV0EWWr3pAq1n865RgPfKK%2BYootJa%2FySZ5tXqXu7VO%2FEbomK18a4DwShxF4qHI8hjcKMjtVF3U7i99UzWwxax4Vd3HfKuXNjPIYoLhgWt0oRlRzPQ6hWDMqf0JAthItTkyWoarXkIRkATcr2hJxfvVbPcIhHVm0ouHkdRZmqyY%2B479KeFvK%2BUPm6DbiFWLD1FNL3p8F0pzl2vZe%2B4jpNFcUfcIum2p1wg%2FWKznflMw7ghdha8%2BuwLUtTYjz8bfAFenJ6o3eArfBtXDQqWwNCKQYQ5frqRq4vAi7m8TJSuvPoX2UYJU7xMtoFja9OrRwCWz0hoht7VrWNCVf%2F3HoOscEKDoLio3Iatldc3Q9KYv2F2DRgZwndf1KNt5d3j3zN8qJzpA7rvS3lYKP0VqVfCmQydsSEHYe7yrY3YpWZSvoKmGeNisThNQbwIMcc1j4pTaAA6FxV5X4qep1Gs4%2Fm4i6L5xKIE1EIXNvHO0nFpQxg%2BuU47yNRuxJap3cSpZGWZCLBTx8BUcy0hwmPuIdpiXQCKm45xPD4fzc86jKKm75HreFob8yJZcFwDMUWUS5WP6RYQVY%2BHRr8bpqZwqXA%2Fr%2FIhFQLtwpfyzDKtJXRBjqxAakorzXfapIxlb%2FTRtlUuNPmAmu49%2FPK%2B%2BcyKvk7uZOtSHT0MKmlvFqb01hGSAQl1Otxe1yn3Yhe5bIU0XcEuRf4n9aWICM3nQApjZh0WeAx3DafUYY34iZ7jq5n7TJU5A%2Bxc9tfi69v5AQrumAq%2BLR5Xzx1YwVrv5tYFznn4wFBVhrC5o0bK8fm3ahYookVtmTzcr0sZ7c4hYe8l6fm9ag9mE4kDALQPV%2BAz9pmOlbH0A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a42eeef0a29ecfa372c918e6549b59fdadc0c956ad9e0b3fd7eeff4791f9f723"
+    },
+    "permissions": [],
+    "submission_state": "disabled",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "VK.com",
+      "twitter_handle": "vkontakte",
+      "website": "https://vk.com",
+      "about": "VKontakte is the largest European social network, with more than 97 million monthly active users."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "no-content",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2019-07-04T20:47:10.194Z",
+  "bug_reporter_agreed_on_going_public_at": "2019-06-06T17:26:10.827Z",
+  "team_member_agreed_on_going_public_at": "2019-07-04T20:47:10.105Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "",
+  "bounty_amount": "300.0",
+  "formatted_bounty": "$300",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [],
+  "allow_singular_disclosure_at": "2019-07-06T17:26:10.951Z",
+  "allow_singular_disclosure_after": -218402002.76968336,
+  "singular_disclosure_allowed": true,
+  "vote_count": 11,
+  "voters": [
+    "ali",
+    "mohaned0101",
+    "trainzment",
+    "catferq",
+    "pr0f0x01",
+    "eveeez",
+    "xaleraf4ra",
+    "japz",
+    "cryptographer",
+    "l6stzk",
+    "and 1 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "Team"
+  },
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 17069,
+      "category": "team",
+      "content": "\u0427\u0430\u0441\u0442\u0438\u0447\u043d\u044b\u0439 \u043e\u0431\u0445\u043e\u0434 2FA \u0432 \u043d\u0435\u043a\u043e\u0442\u043e\u0440\u044b\u0445 \u0441\u043b\u0443\u0447\u0430\u044f\u0445, \u0438\u043c\u0435\u044f \u0434\u043e\u0441\u0442\u0443\u043f \u043a \u0441\u0442\u0440\u0430\u043d\u0438\u0446\u0435. ",
+      "updated_at": "2019-07-04T20:47:02.180Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 58768,
+        "username": "exe",
+        "name": "",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": "https://vk.com",
+        "location": "",
+        "created_at": "2016-03-01T21:12:04.069Z",
+        "url": "https://hackerone.com/exe",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/000/058/768/cb3119e614f25ed716db2258fd649c2cd62b29b1_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/000/058/768/cb3119e614f25ed716db2258fd649c2cd62b29b1_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/000/058/768/cb3119e614f25ed716db2258fd649c2cd62b29b1_original.png/d6d8259739a2a4d509639b7804214d057bca547cc3fafe509ec3e3a86321b1d1"
+        }
+      }
+    },
+    {
+      "id": 16562,
+      "category": "researcher",
+      "content": "\u0411\u044b\u043b\u0430 \u0432\u043e\u0437\u043c\u043e\u0436\u043d\u043e\u0441\u0442\u044c \u0432\u0441\u0435\u0433\u043e \u043e\u0434\u0438\u043d \u0440\u0430\u0437 \u043f\u043e\u0431\u044b\u0432\u0430\u0432 \u043d\u0430 \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0435 \u0432 \u043f\u043e\u0441\u043b\u0435\u0434\u0443\u044e\u0449\u0438\u0445 \u0441\u043b\u0443\u0447\u0430\u044f\u0445 \u043e\u0431\u0445\u043e\u0434\u0438\u0442\u044c 2FA.\n\n\u0425\u0435\u0448\u0438 \u043d\u0430  https://login.vk.com/?act=grant_access \u043d\u0435 \u0438\u043c\u0435\u043b\u0438 \u0441\u0440\u043e\u043a\u0430 \u0434\u0435\u0439\u0441\u0442\u0432\u0438\u044f \u0438 \u043f\u0440\u0438\u0432\u044f\u0437\u043a\u0438 \u043a \u0437\u043d\u0430\u0447\u0438\u043c\u044b\u043c \u043f\u0430\u0440\u0430\u043c\u0435\u0442\u0440\u0430\u043c \u0430\u043a\u043a\u0430\u0443\u043d\u0442\u0430 (\u0432\u043a\u043b\u044e\u0447\u0435\u043d\u0430 \u043b\u0438 2\u0444\u0430, \u043a\u043e\u0433\u0434\u0430 \u043f\u043e\u0441\u043b. \u0440\u0430\u0437 \u0441\u0431\u0440\u043e\u0448\u0435\u043d\u044b \u0441\u0435\u0441\u0441\u0438\u0438, etc)",
+      "updated_at": "2019-06-08T18:41:15.049Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 82698,
+        "username": "povargek",
+        "name": "",
+        "bio": "Farmer",
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": "Phuket",
+        "created_at": "2016-06-03T11:04:58.744Z",
+        "url": "https://hackerone.com/povargek",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/nS7rNaLQVwztSp3zfcDqNCHF/20fc426031f09e5347054871ae4e3af2478fd2b3d5e8a321468ecf6f2da5ac20",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/nS7rNaLQVwztSp3zfcDqNCHF/2b223a072c4b1b7ace4bb8e4a654ece8bf9e85dd759228c02857631ab0893a4b",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/nS7rNaLQVwztSp3zfcDqNCHF/c03c144aff954b5f0f23d3bd8c235102a72528777fe4cb0d26990b4ccaa02fdc"
+        }
+      }
+    }
+  ]
+}

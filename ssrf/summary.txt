@@ -1,0 +1,371 @@
+Category: ssrf
+Reports: 92
+
+[Medium] Blind POST SSRF via Web Push Notification Endpoint
+  URL: https://hackerone.com/reports/3608558 | CWE: Server-Side Request Forgery (SSRF)
+  Program: phpbb | Reporter: misop00p
+
+[Medium] Node.js permission model bypass via unchecked Unix Domain Socket connections (UDS)
+  URL: https://hackerone.com/reports/3465156 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nodejs | Reporter: winfunc
+
+[Medium] Link unfurling calls out to arbitrary URLs and the private-network guard misses link-local addresses
+  URL: https://hackerone.com/reports/3445890 | CWE: Server-Side Request Forgery (SSRF)
+  Program: basecamp | Reporter: brumbelow
+
+[Critical] Server-Side Request Forgery (SSRF) via Game Export API
+  URL: https://hackerone.com/reports/3165242 | CWE: Server-Side Request Forgery (SSRF)
+  Program: lichess | Reporter: oblivionsage
+
+[High] External service interaction (HTTP)
+  URL: https://hackerone.com/reports/2731133 | CWE: Server-Side Request Forgery (SSRF)
+  Program: aws_vdp | Reporter: hesham_elsheme
+
+[Medium] SSRF Keycloak before 13.0.0 - CVE-2020-10770 on https://sponsoredata.mtn.ci
+  URL: https://hackerone.com/reports/1379080 | CWE: Server-Side Request Forgery (SSRF)
+  Program: mtn_group | Reporter: renzi
+
+[High] SSRF and secret key disclosure found on Turbonomic endpoint
+  URL: https://hackerone.com/reports/2697592 | CWE: Server-Side Request Forgery (SSRF)
+  Program: ibm | Reporter: mersa-v6
+
+[High] SSRF and secret key disclosure found on Turbonomic endpoint
+  URL: https://hackerone.com/reports/2697601 | CWE: Server-Side Request Forgery (SSRF)
+  Program: ibm | Reporter: mersa-v6
+
+[High] Unauthenticated full-read SSRF via Twilio integration
+  URL: https://hackerone.com/reports/1886954 | CWE: Server-Side Request Forgery (SSRF)
+  Program: rocket_chat | Reporter: mokusou
+
+[High] /applications/dpc_(get|post) provide full access to api.steampowered.com with the Dota2 API key
+  URL: https://hackerone.com/reports/674800 | CWE: Server-Side Request Forgery (SSRF)
+  Program: valve | Reporter: njbooher3
+
+[Critical] [SSRF] my.stripo.email via the setup-wizard parameter
+  URL: https://hackerone.com/reports/1622432 | CWE: Server-Side Request Forgery (SSRF)
+  Program: stripo | Reporter: deb0con
+
+[Medium] DNS pin middleware can be tricked into DNS rebinding allowing SSRF
+  URL: https://hackerone.com/reports/2115212 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nextcloud | Reporter: retr02332
+
+[Critical] Server Side Request Forgery (SSRF) via Analytics Reports
+  URL: https://hackerone.com/reports/2262382 | CWE: Server-Side Request Forgery (SSRF)
+  Program: security | Reporter: hackersight
+
+[Medium] Blind SSRF on https://my.exnessaffiliates.com/ allows for internal network enumeration
+  URL: https://hackerone.com/reports/1832494 | CWE: Server-Side Request Forgery (SSRF)
+  Program: exness | Reporter: null_hypothesis
+
+[Medium] Responsive Server-side Request Forgery (SSRF)
+  URL: https://hackerone.com/reports/1895874 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nextcloud | Reporter: bhmth
+
+[Medium] SSRF in graphQL query (pwapi.ex2b.com)
+  URL: https://hackerone.com/reports/1864188 | CWE: Server-Side Request Forgery (SSRF)
+  Program: exness | Reporter: kirtixs
+
+[Low] Blind SSRF as normal user from mailapp
+  URL: https://hackerone.com/reports/1913095 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nextcloud | Reporter: unknownsh
+
+[Medium] connect.8x8.com: Blind SSRF via /api/v2/chats/image-check allows for Internal Ports scan
+  URL: https://hackerone.com/reports/1875484 | CWE: Server-Side Request Forgery (SSRF)
+  Program: 8x8-bounty | Reporter: yassinek3ch
+
+[High] Unauthenticated Blind SSRF at https://█████ via xmlrpc.php file
+  URL: https://hackerone.com/reports/1890719 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: 0r10nh4ck
+
+[Low] SSRF mitigation bypass using DNS Rebind attack
+  URL: https://hackerone.com/reports/1369312 | CWE: Server-Side Request Forgery (SSRF)
+  Program: concretecms | Reporter: adrian_t
+
+[Low] SSRF - pivoting in the private LAN
+  URL: https://hackerone.com/reports/1364797 | CWE: Server-Side Request Forgery (SSRF)
+  Program: concretecms | Reporter: adrian_t
+
+[Low] Bypassing domain deny_list rule in Smokescreen via double brackets [[]] which leads to SSRF
+  URL: https://hackerone.com/reports/1580495 | CWE: Server-Side Request Forgery (SSRF)
+  Program: stripe | Reporter: sim4n6
+
+[Critical] SSRF to read AWS metaData at https://█████/ [HtUS]
+  URL: https://hackerone.com/reports/1624140 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: rohsec
+
+[High] Blind SSRF via image upload URL downloader on https://██████/ 
+  URL: https://hackerone.com/reports/1691501 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: 696e746c6f6c
+
+[Critical]  mail.acronis.com is vulnerable to zero day vulnerability CVE-2022-41040
+  URL: https://hackerone.com/reports/1719719 | CWE: Server-Side Request Forgery (SSRF)
+  Program: acronis | Reporter: bbece5b1ea2cbb33d0690ad
+
+[Low] SSRF via potential filter bypass with too lax local domain checking
+  URL: https://hackerone.com/reports/1608039 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nextcloud | Reporter: tomorrowisnew_
+
+[Critical] SSRF in Functional Administrative Support Tool pdf generator (████) [HtUS]
+  URL: https://hackerone.com/reports/1628209 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: codeprivate
+
+[High] Full read SSRF at █████████ [HtUS]
+  URL: https://hackerone.com/reports/1628102 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: sudi
+
+[Medium] SSRF ACCESS AWS METADATA - █████
+  URL: https://hackerone.com/reports/1623685 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: 0xr3dhunt
+
+[Medium] CVE-2022-27780: percent-encoded path separator in URL host
+  URL: https://hackerone.com/reports/1553841 | CWE: Server-Side Request Forgery (SSRF)
+  Program: curl | Reporter: haxatron1
+
+[Low] FULL SSRF 
+  URL: https://hackerone.com/reports/1241149 | CWE: Server-Side Request Forgery (SSRF)
+  Program: acronis | Reporter: lu3ky-13
+
+[Medium] SSRF for kube-apiserver cloudprovider scene
+  URL: https://hackerone.com/reports/941178 | CWE: Server-Side Request Forgery (SSRF)
+  Program: kubernetes | Reporter: lazydog
+
+[Low] SSRF bypass
+  URL: https://hackerone.com/reports/863221 | CWE: Server-Side Request Forgery (SSRF)
+  Program: concretecms | Reporter: pabl00nicarres
+
+[High] SSRF By adding a custom integration on console.helium.com
+  URL: https://hackerone.com/reports/1055823 | CWE: Server-Side Request Forgery (SSRF)
+  Program: helium | Reporter: th0roid
+
+[Medium] SSRF with information disclosure
+  URL: https://hackerone.com/reports/810401 | CWE: Server-Side Request Forgery (SSRF)
+  Program: lark_technologies | Reporter: jin0ne
+
+[Critical] CVE-2021-26855 on ████████ resulting in SSRF
+  URL: https://hackerone.com/reports/1119228 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: spongebhav
+
+[Critical] SSRF due to CVE-2021-26855 on ████████
+  URL: https://hackerone.com/reports/1119224 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: spongebhav
+
+[Low] Server Side Request Forgery
+  URL: https://hackerone.com/reports/659565 | CWE: Server-Side Request Forgery (SSRF)
+  Program: lark_technologies | Reporter: jin0ne
+
+[High] [usuppliers.uber.com] - Server Side Request Forgery via XXE OOB
+  URL: https://hackerone.com/reports/448598 | CWE: Server-Side Request Forgery (SSRF)
+  Program: uber | Reporter: 0xd0m7
+
+[Medium] SSRF allows reading AWS EC2 metadata using "readapi" variable in Streamlabs Cloudbot
+  URL: https://hackerone.com/reports/1108418 | CWE: Server-Side Request Forgery (SSRF)
+  Program: logitech | Reporter: nrockhouse
+
+[High] External SSRF and Local File Read via video upload due to vulnerable FFmpeg HLS processing
+  URL: https://hackerone.com/reports/1062888 | CWE: Server-Side Request Forgery (SSRF)
+  Program: tiktok | Reporter: ach
+
+[Critical] Infiltrating into Grinch-Networks and saving Christmas!
+  URL: https://hackerone.com/reports/1069141 | CWE: Server-Side Request Forgery (SSRF)
+  Program: h1-ctf | Reporter: castilho
+
+[Critical] [ Hacky Holidays CTF ] Completely taken down the Grinch Networks
+  URL: https://hackerone.com/reports/1066914 | CWE: Server-Side Request Forgery (SSRF)
+  Program: h1-ctf | Reporter: ht0x0
+
+[Critical] 12 Days of CTF Walkthroughs
+  URL: https://hackerone.com/reports/1068433 | CWE: Server-Side Request Forgery (SSRF)
+  Program: h1-ctf | Reporter: meraxes
+
+[Low] Blind SSRF on velodrome.canary.k8s.io
+  URL: https://hackerone.com/reports/808169 | CWE: Server-Side Request Forgery (SSRF)
+  Program: kubernetes | Reporter: rhynorater
+
+[Low] SSRF external interaction
+  URL: https://hackerone.com/reports/1023920 | CWE: Server-Side Request Forgery (SSRF)
+  Program: stripo | Reporter: 0xcharan
+
+[?] Server-Side Request Forgery using Javascript allows to exfill data from Google Metadata
+  URL: https://hackerone.com/reports/530974 | CWE: Server-Side Request Forgery (SSRF)
+  Program: snapchat | Reporter: nahamsec
+
+[Critical] [h1-2006 2020] Bounty payments are done !
+  URL: https://hackerone.com/reports/895824 | CWE: Server-Side Request Forgery (SSRF)
+  Program: h1-ctf | Reporter: louzogh
+
+[Low] Blind HTTP GET SSRF via website icon fetch (bypass of pull#812)
+  URL: https://hackerone.com/reports/925527 | CWE: Server-Side Request Forgery (SSRF)
+  Program: bitwarden | Reporter: shielder
+
+[Medium] Get-based SSRF limited to HTTP protocol on https://resizer.line-apps.com/form
+  URL: https://hackerone.com/reports/707014 | CWE: Server-Side Request Forgery (SSRF)
+  Program: line | Reporter: ledz1996
+
+[High] SSRF in my.stripo.email
+  URL: https://hackerone.com/reports/852413 | CWE: Server-Side Request Forgery (SSRF)
+  Program: stripo | Reporter: x25s
+
+[Critical] [Uppy] Internal Server side request forgery (bypass of #786956)
+  URL: https://hackerone.com/reports/891270 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nodejs-ecosystem | Reporter: mahmoud0x00
+
+[Critical] [h1-2006 2020] CTF Walkthrough
+  URL: https://hackerone.com/reports/895780 | CWE: Server-Side Request Forgery (SSRF)
+  Program: h1-ctf | Reporter: meraxes
+
+[Low] Bypass for blind SSRF #281950 and #287496
+  URL: https://hackerone.com/reports/642675 | CWE: Server-Side Request Forgery (SSRF)
+  Program: infogram | Reporter: 7001
+
+[Medium] SSRF in notifications.server configuration
+  URL: https://hackerone.com/reports/850114 | CWE: Server-Side Request Forgery (SSRF)
+  Program: phabricator | Reporter: codeprivate
+
+[Medium] SSRF/XSPA in labs.data.gov/dashboard/validate
+  URL: https://hackerone.com/reports/272095 | CWE: Server-Side Request Forgery (SSRF)
+  Program: gsa_bbp | Reporter: haxta4ok00
+
+[High] SSRF and LFI in site-audit tool
+  URL: https://hackerone.com/reports/794099 | CWE: Server-Side Request Forgery (SSRF)
+  Program: semrush | Reporter: a_d_a_m
+
+[Medium] SSRF via 3d.cs.money/pasteLinkToImage
+  URL: https://hackerone.com/reports/832858 | CWE: Server-Side Request Forgery (SSRF)
+  Program: cs_money | Reporter: putsi
+
+[High] SSRF on music.line.me through getXML.php
+  URL: https://hackerone.com/reports/746024 | CWE: Server-Side Request Forgery (SSRF)
+  Program: line | Reporter: hahwul
+
+[High] Blind SSRF while Creating Templates
+  URL: https://hackerone.com/reports/800909 | CWE: Server-Side Request Forgery (SSRF)
+  Program: stripo | Reporter: dotsecurity
+
+[Low] SSRF leads to internal port scan
+  URL: https://hackerone.com/reports/764517 | CWE: Server-Side Request Forgery (SSRF)
+  Program: stripo | Reporter: veejeey_
+
+[Critical] SSRF in the Custom Integration Webhook discloses AWS metadata
+  URL: https://hackerone.com/reports/643278 | CWE: Server-Side Request Forgery (SSRF)
+  Program: dynatrace | Reporter: mohammad_obaid
+
+[Medium] SSRF on local storage of iOS mobile
+  URL: https://hackerone.com/reports/746541 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nextcloud | Reporter: l0l1ch3ng
+
+[Low] Blind SSRF on debug.nordvpn.com due to misconfigured sentry instance
+  URL: https://hackerone.com/reports/756149 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nordsecurity | Reporter: mase289
+
+[Critical] SSRF & unrestricted file upload on https://my.stripo.email/
+  URL: https://hackerone.com/reports/771382 | CWE: Server-Side Request Forgery (SSRF)
+  Program: stripo | Reporter: abdellah29
+
+[None] Open redirect bypass &  SSRF Security Vulnerability
+  URL: https://hackerone.com/reports/771465 | CWE: Server-Side Request Forgery (SSRF)
+  Program: smule | Reporter: snwlvl
+
+[Medium] SSRF in /cabinet/stripeapi/v1/siteInfoLookup?url=XXX
+  URL: https://hackerone.com/reports/738553 | CWE: Server-Side Request Forgery (SSRF)
+  Program: stripo | Reporter: eliel
+
+[Critical] SSRF  leaking internal google cloud data through upload function [SSH Keys, etc..]
+  URL: https://hackerone.com/reports/549882 | CWE: Server-Side Request Forgery (SSRF)
+  Program: vimeo | Reporter: dphoeniixx
+
+[High] GitLab::UrlBlocker validation bypass leading to full Server Side Request Forgery
+  URL: https://hackerone.com/reports/541169 | CWE: Server-Side Request Forgery (SSRF)
+  Program: gitlab | Reporter: ajxchapman
+
+[Medium] Server-Side request forgery in New-Subscription feature of the calendar app
+  URL: https://hackerone.com/reports/427835 | CWE: Server-Side Request Forgery (SSRF)
+  Program: nextcloud | Reporter: foobar7
+
+[Medium] GitLab's GitHub integration is vulnerable to SSRF vulnerability
+  URL: https://hackerone.com/reports/446593 | CWE: Server-Side Request Forgery (SSRF)
+  Program: gitlab | Reporter: jobert
+
+[Low] SSRF in Search.gov via ?url= parameter
+  URL: https://hackerone.com/reports/514224 | CWE: Server-Side Request Forgery (SSRF)
+  Program: gsa_bbp | Reporter: niwasaki
+
+[Medium] SSRF in CI after first run
+  URL: https://hackerone.com/reports/369451 | CWE: Server-Side Request Forgery (SSRF)
+  Program: gitlab | Reporter: plazmaz
+
+[Low] SSRF in hatchful.shopify.com
+  URL: https://hackerone.com/reports/409701 | CWE: Server-Side Request Forgery (SSRF)
+  Program: shopify | Reporter: zhurig
+
+[High] SSRF at ideas.starbucks.com
+  URL: https://hackerone.com/reports/500468 | CWE: Server-Side Request Forgery (SSRF)
+  Program: starbucks | Reporter: damian89
+
+[Medium] Bypass of the SSRF protection in Event Subscriptions parameter.
+  URL: https://hackerone.com/reports/386292 | CWE: Server-Side Request Forgery (SSRF)
+  Program: slack | Reporter: elber
+
+[Medium] SSRF in api.slack.com, using slash commands and bypassing the protections.
+  URL: https://hackerone.com/reports/381129 | CWE: Server-Side Request Forgery (SSRF)
+  Program: slack | Reporter: elber
+
+[Medium] SSRF on infawiki.informatica.com and infawikitest.informatica.com
+  URL: https://hackerone.com/reports/327480 | CWE: Server-Side Request Forgery (SSRF)
+  Program: informatica | Reporter: 0ang3el
+
+[High] SSRF in proxy.duckduckgo.com via the image_host parameter
+  URL: https://hackerone.com/reports/358119 | CWE: Server-Side Request Forgery (SSRF)
+  Program: duckduckgo | Reporter: fpatrik
+
+[Medium] [out-of-scope] toxiproxy: Lack of CSRF protection allows an attacker to gain access to internal Shopify network
+  URL: https://hackerone.com/reports/236349 | CWE: Server-Side Request Forgery (SSRF)
+  Program: shopify | Reporter: bored-engineer
+
+[Critical] SSRF in https://www.zomato.com████ allows reading local files and website source code
+  URL: https://hackerone.com/reports/271224 | CWE: Server-Side Request Forgery (SSRF)
+  Program: eternal | Reporter: adibou
+
+[High] SMB SSRF in emblem editor exposes taketwo domain credentials, may lead to RCE
+  URL: https://hackerone.com/reports/288353 | CWE: Server-Side Request Forgery (SSRF)
+  Program: rockstargames | Reporter: alexbirsan
+
+[Medium] cURL / libcURL - CVE-2016-8624 invalid URL parsing with '#'
+  URL: https://hackerone.com/reports/180434 | CWE: Server-Side Request Forgery (SSRF)
+  Program: ibb | Reporter: fms
+
+[?] SSRF thru File Replace
+  URL: https://hackerone.com/reports/243865 | CWE: Server-Side Request Forgery (SSRF)
+  Program: concretecms | Reporter: zuh4n
+
+[?] Additional bypass allows SSRF for internal netblocks
+  URL: https://hackerone.com/reports/288950 | CWE: Server-Side Request Forgery (SSRF)
+  Program: security | Reporter: edoverflow
+
+[?] Blind SSRF in "Integrations" by abusing a bug in Ruby's native resolver.
+  URL: https://hackerone.com/reports/287245 | CWE: Server-Side Request Forgery (SSRF)
+  Program: security | Reporter: edoverflow
+
+[Medium] SSRF vulnerability in gitlab.com via project import.
+  URL: https://hackerone.com/reports/215105 | CWE: Server-Side Request Forgery (SSRF)
+  Program: gitlab | Reporter: edoverflow
+
+[Low] SSRF at iris.lystit.com
+  URL: https://hackerone.com/reports/206894 | CWE: Server-Side Request Forgery (SSRF)
+  Program: lyst | Reporter: tripwire
+
+[Low] SVG Server Side Request Forgery (SSRF)
+  URL: https://hackerone.com/reports/223203 | CWE: Server-Side Request Forgery (SSRF)
+  Program: shopify | Reporter: floyd
+
+[High] Limited code execution vulnerability on a DoD website
+  URL: https://hackerone.com/reports/229199 | CWE: Server-Side Request Forgery (SSRF)
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[Medium] SSRF in https://cards-dev.twitter.com/validator
+  URL: https://hackerone.com/reports/178184 | CWE: Server-Side Request Forgery (SSRF)
+  Program: x | Reporter: mindaugas
+
+[?] SSRF (open) - via GET request
+  URL: https://hackerone.com/reports/180527 | CWE: Server-Side Request Forgery (SSRF)
+  Program: vkcom | Reporter: firex
+

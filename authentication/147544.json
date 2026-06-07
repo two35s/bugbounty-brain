@@ -1,0 +1,144 @@
+{
+  "id": 147544,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNDc1NDQ=",
+  "url": "https://hackerone.com/reports/147544",
+  "title": "Generate new Test token",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2016-06-26T21:17:25.067Z",
+  "submitted_at": "2016-06-26T21:17:25.067Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "alblandino_",
+    "url": "/alblandino_",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/96meq2qmp1s3o3rc71tog6pg6i6m/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 69,
+    "url": "https://hackerone.com/slack",
+    "handle": "slack",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/000/069/683fee312381bc46cadc7ea1950abc87944d12c3_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/000/069/683fee312381bc46cadc7ea1950abc87944d12c3_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Slack",
+      "twitter_handle": "slackhq",
+      "website": "https://slack.com",
+      "about": "All your team communication in one place, instantly searchable, and available wherever you go."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2016-09-15T03:30:48.240Z",
+  "bug_reporter_agreed_on_going_public_at": "2016-08-16T03:30:35.643Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "We can generate a __token__ test in any community that we are to use the API in the community (__although we are not community managers__)\n\nIn the attached __video__, I show you how to generate a token in a community in which I am not administrator and I can check absolutely everything and even make use of the API.\n\n__Note__: talk to the administrator of the community to make this test getbootstrap.",
+  "bounty_amount": "100.0",
+  "formatted_bounty": "$100",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 101833,
+      "file_name": "Screen_Shot_2016-06-26_at_5.14.46_PM.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/101/833/42697170b4673c7c8bb375b2a969c7d337bfacb7/Screen_Shot_2016-06-26_at_5.14.46_PM.png?response-content-disposition=attachment%3B%20filename%3D%22Screen_Shot_2016-06-26_at_5.14.46_PM.png%22%3B%20filename%2A%3DUTF-8%27%27Screen_Shot_2016-06-26_at_5.14.46_PM.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124144Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=510ad25369ad5f9052b5f60f76b488bb68b27639bf2e68c94e8114a1ad462fb8",
+      "file_size": 413742,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-09-15T03:30:35.894Z",
+  "allow_singular_disclosure_after": -306925868.2506395,
+  "singular_disclosure_allowed": true,
+  "vote_count": 5,
+  "voters": [
+    "alblandino_",
+    "sumit7",
+    "akshay_raj",
+    "dyabla",
+    "destinedtohack"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "id": 2126,
+      "category": "researcher",
+      "content": "A hacker can get a token **XOXP** administrator without being the administrator of the community even without being a member of the same.\n\nBug Fixed.",
+      "updated_at": "2016-08-31T18:45:21.625Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 88033,
+        "username": "alblandino_",
+        "name": "Joel Jaime",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": "https://alblandino.com/",
+        "location": "Anywhere",
+        "created_at": "2016-06-26T20:58:52.686Z",
+        "url": "https://hackerone.com/alblandino_",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/96meq2qmp1s3o3rc71tog6pg6i6m/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/96meq2qmp1s3o3rc71tog6pg6i6m/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/96meq2qmp1s3o3rc71tog6pg6i6m/4ac84fbe897190579a137d0cf55152b233cdd4f9984435bd80ef67e5e51a0586"
+        }
+      }
+    }
+  ]
+}

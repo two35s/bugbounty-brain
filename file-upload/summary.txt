@@ -1,0 +1,35 @@
+Category: file-upload
+Reports: 8
+
+[Critical] DNN - Unrestricted Arbitrary File Upload #████████
+  URL: https://hackerone.com/reports/3414079 | CWE: File Content Injection
+  Program: deptofdefense | Reporter: 0xr2r
+
+[High] Content-Security Policy bypass with File Uploads
+  URL: https://hackerone.com/reports/1380157 | CWE: Unknown
+  Program: rocket_chat | Reporter: gronke
+
+[Critical] Unrestricted File Upload at ██████████
+  URL: https://hackerone.com/reports/2357778 | CWE: Unrestricted Upload of File with Dangerous Type
+  Program: mars | Reporter: xplo1t
+
+[Medium] Unrestricted File Upload on https://partner.tiktokshop.com/wsos_v2/oec_partner/upload
+  URL: https://hackerone.com/reports/1890284 | CWE: Unrestricted Upload of File with Dangerous Type
+  Program: tiktok | Reporter: h4x0r_dz
+
+[Medium] Unrestricted File Upload on https://app.lemlist.com
+  URL: https://hackerone.com/reports/722919 | CWE: Unrestricted Upload of File with Dangerous Type
+  Program: lemlist | Reporter: ctulhu
+
+[?] Unrestricted File Upload on https://auth.ratelimited.me
+  URL: https://hackerone.com/reports/463604 | CWE: Unknown
+  Program: ratelimited | Reporter: daniel_v
+
+[Medium] File upload vulnerability on a DoD website
+  URL: https://hackerone.com/reports/191243 | CWE: Unrestricted Upload of File with Dangerous Type
+  Program: deptofdefense | Reporter: korprit
+
+[?] Flash Cross Domain Policy Bypass by Using File Upload and Redirection - only in Chrome
+  URL: https://hackerone.com/reports/51265 | CWE: Unknown
+  Program: ibb | Reporter: irsdl
+

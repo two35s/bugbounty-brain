@@ -1,0 +1,153 @@
+{
+  "id": 210188,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yMTAxODg=",
+  "url": "https://hackerone.com/reports/210188",
+  "title": "Subdomain takeover on https://cloudfront.ubnt.com/ due to non-used CloudFront DNS entry",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2017-03-02T20:15:54.196Z",
+  "submitted_at": "2017-03-02T20:15:54.196Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": true,
+    "username": "linkks",
+    "url": "/linkks",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 800,
+    "url": "https://hackerone.com/ui",
+    "handle": "ui",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/fpqjzgms7de9639u414bw6vid1be/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/fpqjzgms7de9639u414bw6vid1be/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Ubiquiti Inc.",
+      "twitter_handle": "ubiquiti",
+      "website": "https://ui.com",
+      "about": ""
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2017-05-07T18:18:34.562Z",
+  "bug_reporter_agreed_on_going_public_at": "2017-04-07T18:18:31.297Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "So lately I have discovered that CloudFront is not validating which user that connects a CNAME:d domain to a CloudFront Origin. This means that if I could find a domain that is still pointing to CloudFront, without being connected to any Origin as a Custom CNAME, I can actually claim the domain myself and point it to whatever I want.\n\ndig cloudfront.ubnt.com\n\n; <<>> DiG 9.10.3-P4-Debian <<>> cloudfront.ubnt.com\n;; global options: +cmd\n;; Got answer:\n;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 52550\n;; flags: qr rd ra; QUERY: 1, ANSWER: 9, AUTHORITY: 0, ADDITIONAL: 1\n\n;; OPT PSEUDOSECTION:\n; EDNS: version: 0, flags:; udp: 4096\n;; QUESTION SECTION:\n;cloudfront.ubnt.com. IN A\n\n;; ANSWER SECTION:\ncloudfront.ubnt.com. 268 IN CNAME du6drkqe7qw4g.cloudfront.net.\ndu6drkqe7qw4g.cloudfront.net. 29 IN A 52.222.171.58\ndu6drkqe7qw4g.cloudfront.net. 29 IN A 52.222.171.143\ndu6drkqe7qw4g.cloudfront.net. 29 IN A 52.222.171.238\ndu6drkqe7qw4g.cloudfront.net. 29 IN A 52.222.171.216\ndu6drkqe7qw4g.cloudfront.net. 29 IN A 52.222.171.144\ndu6drkqe7qw4g.cloudfront.net. 29 IN A 52.222.171.190\ndu6drkqe7qw4g.cloudfront.net. 29 IN A 52.222.171.55\ndu6drkqe7qw4g.cloudfront.net. 29 IN A 52.222.171.71\n\n;; Query time: 7 msec\n;; SERVER: 192.168.1.1#53(192.168.1.1)\n;; WHEN: Wed Feb 22 03:26:49 MSK 2017\n;; MSG SIZE rcvd: 218\n\n;; ANSWER SECTION:\ncloudfront.ubnt.com. 268 IN CNAME du6drkqe7qw4g.cloudfront.net.\n\nYou should most likely just remove the DNS-entry for this domain, and also make sure you constantly remove DNS records pointing to CloudFront (and other services as well of course) when you stop using them.\n\nAs you might understand, the consequences of this are pretty bad. I now can serve whatever I like on this domain, even fetching httpOnly cookies. I would also be able to issue an SSL for this domain through AlphaSSL or Let's Encrypt (that only needs meta/file verification to issue the certificate) That would end up with the ability to read secure cookies as well.\n\nAlso, there's no way at all for a visitor of this page to validate that the content on this domain is not served by UBNT, making it extremely easy to utilize this for targeting the organization by fake login forms / spear phishing using your own domain to plant the attack.\n\nYou can read about this sort of attacks here : http://labs.detectify.com/post/109964122636/hostile-subdomain-takeover-using",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 165774,
+      "file_name": "1ulCdCJc_1_.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/165/774/a1806cbd24dd3af2bd9522f0fc8bb8afb224823a/1ulCdCJc_1_.png?response-content-disposition=attachment%3B%20filename%3D%221ulCdCJc_1_.png%22%3B%20filename%2A%3DUTF-8%27%271ulCdCJc_1_.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQXCS3PB6G%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124059Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDXss9BLU7eOVYlXPNODoUiXnuPNivD1UnqaPw0qZV7AQIhAIAfbQjK%2Fq1hUfoVGkI9zbUwwhMGfkSBG7OUgrzUT3wiKrsFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwdEI0jFIhLwvOTCWwqjwXXn43lqNr6X0u9ty0F4TNEK6g9AZHATyGuNi%2Fp3vrV1XDH2V7pa%2FnPCcB%2FgEEHiZ0c7XEBR4mQ11cRFKpoZxLM0fPr4mtmL1Br7%2B4O%2FHu8yUHWN2dr1k7ENEbpUzuQBa6s0T1ISCRej89vmYI%2B8YfYwG%2ByeIp00r4zMKpnzfNnTlSiFvwlrUfs3q8ArC%2FbXiSkTXntt%2BQiIekjtXJnTpTADCEmEumtwRu7PRNttZH4NvM5lWJyfwGYfg%2BJ1gskfvsBnbMrtr1tszC3x4MBCM2FlSY%2BgIZk4ots%2B5K%2BbwJFdrrEbLCiV1D4%2BywPRDpXvE5iHsITit4%2BJ72ZZxvDOipLu%2FVh%2BLsY75Q7eEqePUoFlaWkZGQ8jgJt2n%2FsC0HgyQMzZain3inHQ4OnW1TEft8ErRWECJq9QxfB7odhKexNiYsxwW2HSM8SYn%2FPbeZqnbmrCZiL0fuJVxnIPArUEEElGf2g63%2BOZoXDcZxeY0TjLd98hWHjg6vXjH9a6ICeY3PHQ9OA0VSQlUbPLtTvS7PlFPmzeSzLW4OCrBBNi9ZJBfx1qTZDZBayYJQrHFZno4zAOiCZ7zMqY5N5tkL0sPEyyqqensVXtOmqjS2C3KOn%2BA%2B94A4T2Yqln8sMsYLVlzPQxC5dTBVUgL1ClY%2FbIcDFUKohE%2BvITPPcaiMvB%2FfYVgVaJ1Y4GCKIOmEOBkvD151d9VDVzdmX4YZyNmlBEwT9iZM2%2Ba%2FkufkE34BOtYb3y8iNXBfKFD9XSg%2FYQfK%2FedXF2rL5fwn2fQjCdYKYf8ylVMZUWVVFAix4bIRqHXYqaqrUEwxYbBO0dPUDlcFN2DtKA9hJWUTZSKI6L3N7EReCNNDU9iNQEqckmnKkbNXWMM%2BzldEGOrABnnUO%2BhnDqxAf5BmQXmM9cIJWxMv435VeA7%2FHXBJ4TORPHByuG2hxGTlBbgu86wFlLyJhJ3CGJD1AxcUvRKSgEcV%2BzBHV9gJEaMrPkDXIBOgM0VwFfAoZvRAIhQ7nADkuIrjrGdyAfK4Rv2m8bGluUv7B3NhzyD23L3E%2FnylbfbX6vRoxK9DCgJlBQXRV3w7YGYkU%2F44cc0BYTbEGLea5jpog%2BYeV6dKgK9Q4ZVODgnk%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=cb6a2cd8be434211c5d98fff576846082bcb49a2285474a1406cc492eafd8f89",
+      "file_size": 16908,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2017-05-07T18:18:31.340Z",
+  "allow_singular_disclosure_after": -286654947.80209297,
+  "singular_disclosure_allowed": true,
+  "vote_count": 12,
+  "voters": [
+    "sameerphad72",
+    "cuso4",
+    "tony_tsep",
+    "mpz",
+    "eveeez",
+    "t4ym",
+    "exception",
+    "japz",
+    "sumit7",
+    "spetr0x",
+    "and 2 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "User"
+  },
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "id": 3981,
+      "category": "researcher",
+      "content": "I see LFI via  SQL injection  that the vulnerability was serious and I have limit report.\nBut team UBNT not reward for me.",
+      "updated_at": "2017-05-07T18:27:50.848Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 15691,
+        "username": "linkks",
+        "name": "Link",
+        "bio": "hostsbugbounty@mail.ru",
+        "cleared": false,
+        "verified": false,
+        "website": "https://t.me/Bugbountygroup",
+        "location": "Russia",
+        "created_at": "2014-12-26T18:37:58.056Z",
+        "url": "https://hackerone.com/linkks",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "medium": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "xtralarge": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+        }
+      }
+    }
+  ]
+}

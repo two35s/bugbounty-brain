@@ -1,0 +1,137 @@
+{
+  "id": 1792544,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNzkyNTQ0",
+  "url": "https://hackerone.com/reports/1792544",
+  "title": "Security Issue into Wallet lock protection ",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "high",
+  "readable_substate": "Resolved",
+  "created_at": "2022-12-04T17:20:39.715Z",
+  "submitted_at": "2022-12-04T17:20:39.808Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "bug_vs_me",
+    "url": "/bug_vs_me",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/quigw9z1r1jq7abpc4g4q2oxzix5/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 13798,
+    "url": "https://hackerone.com/hiro",
+    "handle": "hiro",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/h6naa3v2dywfeaa0b48kb70fbtqf/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/h6naa3v2dywfeaa0b48kb70fbtqf/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Hiro",
+      "twitter_handle": "hirosystems",
+      "website": "https://hiro.so",
+      "about": "Hiro builds developer tools for Stacks, the network that enables apps and smart contracts on Bitcoin."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2023-01-11T13:17:23.226Z",
+  "bug_reporter_agreed_on_going_public_at": "2022-12-12T13:17:22.148Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "# Description\n\nWhile testing wallet extension i generally try to test multiple endpoints, so 2 tabs were open of wallet on chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/popup.html\n\n\nSo i tried to lock Wallet extension buti found that i can still use browser in 2nd tab, why i had already locked wallet,\n\n\nSo there is a security issue where wallet is not properly encrypted after user press lock\n\nWallet should close all open tabs of wallets and encrypt data for all tabs, It's very insecure way of password protection or lock protection\n\n\n# Steps To reproduce\n\nTo understand clearly i had created a POC video \n{F2061644}\n\n1. Open two tabs of chrome-extension://ldinpeekobnhjjdofggfgjlcehhmanlj/popup.html\n2. lock wallet in any of 1 tab and you can see you can access wallet on other tab and still able to do transaction as shown in POC{F2061648}\n\n\n# HOW to fix?\n\nEdit code and make sure when user click on lock wallet wallet should encrypt data in all tabs or close rest of the tabs to protect user and make lock protection work more securely\n\nThank you\n\n## Impact\n\nThis is totally fail of lock protection AND attacker can use this vulnerability to craft custom attacks",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 2061644,
+      "file_name": "hiro-wallet.mkv",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/xec7noeitfa3gbha36pglstevpsr?response-content-disposition=attachment%3B%20filename%3D%22hiro-wallet.mkv%22%3B%20filename%2A%3DUTF-8%27%27hiro-wallet.mkv&response-content-type=video%2Fx-matroska&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JU4EJ5J%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123606Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDBbBITVwfkk2qa2031g8YMghb%2FgT6ZIiKyaxjKksSj0wIhALs2tTARz5vqe%2BOhHhWUsobK5RIT5dLqNHgxaX8lNzNkKroFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igz512IR3M9%2BxCz1x9cqjgVTdK0kDg43%2Brsci%2F6HL19DEnBV8tINoWOz4R8rr74QqrBs2C7q%2BaT1lEygGcAPp11AuFwmLpEWWJRIgbiG8HZ4HXGxygPDqw28QUfHvQs23qUwbyK3cb9OXInwl3VIigNc2pds%2FBqMXhm1pGib56iz955tBONrQ4W8GxfM8DQ9FkVl8xgtj%2BNcNx%2FYjkRSzvKadmjtRTGFZVkffxu74sA0nFcTphSR7jvbPQr90NDBy8mIJaJcHXjU1WJ%2BrfHg%2BpbaBHZ2Wfhz2x9hqEJvxrVjWGyUfyW9ae1btGezaBZFCLFxam0iW23IDUEkusfQh9aCGPkd0c29lXih1Wqwo2xUCoGS%2FM%2BWi6o3BPBpQLeogUKnA9oXt2f8mGI3RZWglx%2BMRwwBgpKiwxYn4y8vWTOTuv6C0WBwTCxjMEj9BII6bQFNjrsigF0Z3KUDg09ra%2F6P%2F32Vy46XeQS3eK%2FV7JtllYiSxvwJc9OVlEnvPSN2kPA0hDvDQZ%2FjGu%2BKDkH1EG78XJVrtu6j7bLKN2ep%2BHCDHFmCyjk8A%2FLqVi8JmCn41rqr3ottmHO8FGIEVxUe8m9j5%2FSj1f%2BvC8VDTmUkAdDAEMOQXkebo%2Fe%2FK9KREsHG%2BpgABB%2BMAOaemv3QYBJTPSOWfxbT5PugnXQJjyYcoF8wXe438fk3SBm4%2Fs4JkjTFzthI6sJLbldGSzJCd2qhNgdj1bYG4Pa%2F0M8TRHciGogUuzdQuxzphwqaaEceIY5SgD6SiYkaFbkf7Ba89psbrXCSpwrBPBImKGEyQy3fOa%2F2gTyPyyy%2BtZbBqOfR39E8ML8h1Z1sfLNuderwNGGkFqlkCEyAU0vB69OFjWLY965tqvu0MTeXyceti9XbIfAw56uV0QY6sAFKqWvzxcKUk6y5UPGna6d9S4%2FUaeTgJGmZvu2w44p%2BWB2saplQdkkYzzYIssHOJ5IRUH6If%2BiDvCSP4SZlUIFIEMo0zPdwQeGCmoUCki8v3cCmlQMrQsOOa0taREeSuscjNbzm3%2BYqkDCxquLJCEcvXJ%2FL7kzWh0UZv%2BfCU8bTl3nqzuR0qVJikhZzorDUHvWVvNZHWjeJTsD2WZVeujxrjdfSDR6AXlAHviB8vqIhCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=f9045c8745192b7db8786404f5abb5e98dfb3b3bbb9d7403325791c42f286bc9",
+      "file_size": 11150499,
+      "type": "video/x-matroska",
+      "moderated": null
+    },
+    {
+      "id": 2061648,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/dr9e4qlxprjon1w6249x901cm1zn?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JU4EJ5J%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123606Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDBbBITVwfkk2qa2031g8YMghb%2FgT6ZIiKyaxjKksSj0wIhALs2tTARz5vqe%2BOhHhWUsobK5RIT5dLqNHgxaX8lNzNkKroFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igz512IR3M9%2BxCz1x9cqjgVTdK0kDg43%2Brsci%2F6HL19DEnBV8tINoWOz4R8rr74QqrBs2C7q%2BaT1lEygGcAPp11AuFwmLpEWWJRIgbiG8HZ4HXGxygPDqw28QUfHvQs23qUwbyK3cb9OXInwl3VIigNc2pds%2FBqMXhm1pGib56iz955tBONrQ4W8GxfM8DQ9FkVl8xgtj%2BNcNx%2FYjkRSzvKadmjtRTGFZVkffxu74sA0nFcTphSR7jvbPQr90NDBy8mIJaJcHXjU1WJ%2BrfHg%2BpbaBHZ2Wfhz2x9hqEJvxrVjWGyUfyW9ae1btGezaBZFCLFxam0iW23IDUEkusfQh9aCGPkd0c29lXih1Wqwo2xUCoGS%2FM%2BWi6o3BPBpQLeogUKnA9oXt2f8mGI3RZWglx%2BMRwwBgpKiwxYn4y8vWTOTuv6C0WBwTCxjMEj9BII6bQFNjrsigF0Z3KUDg09ra%2F6P%2F32Vy46XeQS3eK%2FV7JtllYiSxvwJc9OVlEnvPSN2kPA0hDvDQZ%2FjGu%2BKDkH1EG78XJVrtu6j7bLKN2ep%2BHCDHFmCyjk8A%2FLqVi8JmCn41rqr3ottmHO8FGIEVxUe8m9j5%2FSj1f%2BvC8VDTmUkAdDAEMOQXkebo%2Fe%2FK9KREsHG%2BpgABB%2BMAOaemv3QYBJTPSOWfxbT5PugnXQJjyYcoF8wXe438fk3SBm4%2Fs4JkjTFzthI6sJLbldGSzJCd2qhNgdj1bYG4Pa%2F0M8TRHciGogUuzdQuxzphwqaaEceIY5SgD6SiYkaFbkf7Ba89psbrXCSpwrBPBImKGEyQy3fOa%2F2gTyPyyy%2BtZbBqOfR39E8ML8h1Z1sfLNuderwNGGkFqlkCEyAU0vB69OFjWLY965tqvu0MTeXyceti9XbIfAw56uV0QY6sAFKqWvzxcKUk6y5UPGna6d9S4%2FUaeTgJGmZvu2w44p%2BWB2saplQdkkYzzYIssHOJ5IRUH6If%2BiDvCSP4SZlUIFIEMo0zPdwQeGCmoUCki8v3cCmlQMrQsOOa0taREeSuscjNbzm3%2BYqkDCxquLJCEcvXJ%2FL7kzWh0UZv%2BfCU8bTl3nqzuR0qVJikhZzorDUHvWVvNZHWjeJTsD2WZVeujxrjdfSDR6AXlAHviB8vqIhCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=91315344f06b629f8e43268e4839cf5c048d6240eb6b1bcecd7ecd31acc92cb4",
+      "file_size": 169711,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2023-01-11T13:17:22.252Z",
+  "allow_singular_disclosure_after": -107392724.04275241,
+  "singular_disclosure_allowed": true,
+  "vote_count": 51,
+  "voters": [
+    "tango__mango",
+    "rootz491",
+    "rmrizki",
+    "0xclover",
+    "hurujin",
+    "roland_hack",
+    "zy9ard3",
+    "7odamoo",
+    "bug_vs_me",
+    "kr1shna4garwal",
+    "and 41 more..."
+  ],
+  "severity": {
+    "rating": "high",
+    "author_type": "User"
+  },
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

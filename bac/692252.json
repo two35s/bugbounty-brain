@@ -1,0 +1,192 @@
+{
+  "id": 692252,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC82OTIyNTI=",
+  "url": "https://hackerone.com/reports/692252",
+  "title": "Group search leaks private MRs, code, commits",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "high",
+  "readable_substate": "Resolved",
+  "created_at": "2019-09-11T10:22:51.911Z",
+  "submitted_at": "2019-09-11T10:22:51.911Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "rpadovani",
+    "url": "/rpadovani",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/geoyjjx2sc7a7bvf6hguumezg0i0/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef?response-content-disposition=inline%3B%20filename%3D%22avatar.jpg%22%3B%20filename%2A%3DUTF-8%27%27avatar.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYA3HYQQJ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125315Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICVi64P3hv%2B9zSmUg8PW56lQVeHrUUsI0wFMSlHad1GnAiEAtDxKygJt8i5m22xMRz7ERsHCjT558WHbZmsKAdZJKGgquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDFFlQuKqfTBdqC2mhCqPBdXUGHStdtq9V%2BHeox87fmI4SpmF3Eo0233rt09%2BuoYCFusJjZD0q7uDHJBUvi%2FhhRhthK9vJz557ooj1eIh7PAX7M8bG6%2FLUtVlhFnHoyiLHyKxEQ0JCIkgyXGxtGg1l3C5ZHRv0x08%2BSjyJLw4%2F%2FnHAi83toPKD85cfpLZ34ngBSdE14wJAO02gNOt1beci%2B2%2Fy0dFRoDrPsVCh0HhNq5IGAuG6Zc1l4L0n6F5Ip0nXJq684nGfeQcyrO9MyevdP06GJ7QUhvJNdricebCTy099S3br0ktRFIG8onG26%2Bdd8onedS2mC1%2F5qCdxP6vBg2p76dn47KS%2FjAvhLydTsglZZdjQ%2FEaPnsbAEhdD7fkD9sEWqnWwh3U18tAQ%2BDfz%2BuOKUvSGG39p1vOzNSncXXFkWH%2FNiAPDUukRM79wLve4pLaiAgYHSEsTF0vjVFe2yDdo8JHcAH8tRGsJXc82176z3449WPqds3CMwQsfiNI55cbl9WlbyP3aXprt921DaP697VDhLKRO5AgkFhzvQqs5Rb0ysxnQzcnVcyxbB0Ex9n2DHcmsTzHVCeR%2BrFrIKR3ckEUsfZ5x36UV12i0ka2c6huGmBevcpVBBx%2BjlQdb2jD9hA9X6BXyazbS%2FGrwWPJ%2FVM%2B0AVR8vNhrK5n7lf6M9KE7zSOnQEWjLkdxcvNii0Tq9L3le99ui%2FL3GkGA1F3ZSia5cXsVSqslt05bHBO98MI3LSa4zy5MlYdBKXzZDhBi0f4Pw%2BU1xjo8QINNOwbEviSZb6GNJ4Hh2MG8O%2F4eHPeiguV9SN1oUddVqzt9Fe%2Fro3b9yPdDm4Xywb%2BmqtfbgUMq3IcHrZmi5l9MQk%2FUvgssS5HxxQ0aqwSqCcwt6aV0QY6sQE3XHDNQrDC8qY4mX4qN%2BybLTkmfeNQqVDm72FI1Dfra9Q5gQBGxfOWtcscnVsNPigfH4g4davWidGol873gwrMrvo7%2B9vFzRAqkEJr7bpj2TEHWiLVaRYIBK7x9qkZppE2yYGqx4iIn9NZekKSLbbAdObNj3i5VsdUB1n2dbytIJMgm1nXYTKxqw3AwpemlZEf9Ef299fhw0xhkPe0GPulkMLK88OiR3Bk422bE9kMenw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=aedf629608a742db7ad44a2bfd4ab4575a4072192aca48fff0b4e231a7a533f8"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 264,
+    "url": "https://hackerone.com/gitlab",
+    "handle": "gitlab",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "GitLab",
+      "twitter_handle": "gitlab",
+      "website": "https://about.gitlab.com",
+      "about": "A single application for the entire software development lifecycle."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2019-5487"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2019-12-14T11:25:59.717Z",
+  "bug_reporter_agreed_on_going_public_at": "2019-12-14T11:25:59.638Z",
+  "team_member_agreed_on_going_public_at": "2019-12-13T13:44:21.589Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "### Summary\n\nUsing the group search you can access MRs and code set as \"not public\" in a project\n\n### Steps to reproduce\n\nCreate a public group, create a public project inside the group, but with private code.\nPush some code, search in the **group search** the code while logged out, you will find it also if it should be private.\n\nI provide some working links in the example section.\n\n### Impact\n\nAn attacker can extract all the private code, private MRs, private commits from a project\n\n### Examples\n\nI am going to use customers.gitlab.com examples because it is how I actually found the problem - the search I have done are about a Hackerone report I first published. I haven't saved any data, nor screenshot of what I have found, apart from the one attached\n\n1. Go to https://gitlab.com/gitlab-org in a private window\n2. In the top right bar, insert `Resolve \"Account takeover due to IDOR on customers.gitlab.com [applicable for gitlab users only]\"`\n3. Select \"Merge requests\"\n4. You see in the search result a MR that should be private, since the `customer-gitlab-com` project has no public code/MR\n5. Link: https://gitlab.com/search?group_id=9970&project_id=&repository_ref=&scope=merge_requests&search=Resolve+%22Account+takeover+due+to+IDOR+on+customers.gitlab.com+%5Bapplicable+for+gitlab+users+only%5D%22\n\nYou can do the same thing for the code:\n1. Go to https://gitlab.com/gitlab-org in a private window\n2. In the top right bar, insert `In order to create an account for the [admin panel]`\n3. Select \"Code\"\n4. You see a piece of the README of customers.gitlab.com, which has a private code\n5. Link:  https://gitlab.com/search?group_id=9970&repository_ref=&scope=blobs&search=In+order+to+create+an+account+for+the+%5Badmin+panel%5D&snippets=#\n\nIn the case of MRs, you can use also the wildcard symbol and filter by project, to extract all the private MRs:\n\nhttps://gitlab.com/search?utf8=%E2%9C%93&snippets=&scope=merge_requests&repository_ref=&search=*&group_id=9970&project_id=2670515\n\nWhen you filter by project, the code search stops to work, so if you want to extract all the code you have to apply custom search, but it is still feasible.\n\nYou got the point, we have also commits:\n- https://gitlab.com/search?utf8=%E2%9C%93&snippets=&scope=commits&repository_ref=&search=Merge+branch+%27433-idor-fix%27+into+%27staging%27&group_id=9970\n\nIssues are not affected by this bug\n\n### What is the current *bug* behavior?\n\nLeak of MRs overview, code, commits, and I suspect also wiki, but for some reason group search of wiki didn't work on my personal group, and I didn't want to look over other gitlab-org data\n\n### What is the expected *correct* behavior?\n\nNo search result\n\n### Relevant logs and/or screenshots\n\nA MR of customers.gitlab.com I shouldn't have access to. Notice how I am not logged in in this screenshot\n\n### Output of checks\n\nThis bug happens on GitLab.com\n\n## Impact\n\nAn attacker can extract all the private code, private MRs, private commits from a project",
+  "weakness": {
+    "id": 26,
+    "name": "Improper Access Control - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 580145,
+      "file_name": "Screenshot_2019-09-11_Resolve_Account_takeover_due_to_IDOR_on_customers_gitlab_com__applicable_for_gitlab_users_only____Sea_..._.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/59CJxDx816GBVFPKnHKX7bVG?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_2019-09-11_Resolve_Account_takeover_due_to_IDOR_on_customers_gitlab_com__applicable_for_gitlab_users_only____Sea_..._.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_2019-09-11_Resolve_Account_takeover_due_to_IDOR_on_customers_gitlab_com__applicable_for_gitlab_users_only____Sea_..._.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYA3HYQQJ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125315Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICVi64P3hv%2B9zSmUg8PW56lQVeHrUUsI0wFMSlHad1GnAiEAtDxKygJt8i5m22xMRz7ERsHCjT558WHbZmsKAdZJKGgquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDFFlQuKqfTBdqC2mhCqPBdXUGHStdtq9V%2BHeox87fmI4SpmF3Eo0233rt09%2BuoYCFusJjZD0q7uDHJBUvi%2FhhRhthK9vJz557ooj1eIh7PAX7M8bG6%2FLUtVlhFnHoyiLHyKxEQ0JCIkgyXGxtGg1l3C5ZHRv0x08%2BSjyJLw4%2F%2FnHAi83toPKD85cfpLZ34ngBSdE14wJAO02gNOt1beci%2B2%2Fy0dFRoDrPsVCh0HhNq5IGAuG6Zc1l4L0n6F5Ip0nXJq684nGfeQcyrO9MyevdP06GJ7QUhvJNdricebCTy099S3br0ktRFIG8onG26%2Bdd8onedS2mC1%2F5qCdxP6vBg2p76dn47KS%2FjAvhLydTsglZZdjQ%2FEaPnsbAEhdD7fkD9sEWqnWwh3U18tAQ%2BDfz%2BuOKUvSGG39p1vOzNSncXXFkWH%2FNiAPDUukRM79wLve4pLaiAgYHSEsTF0vjVFe2yDdo8JHcAH8tRGsJXc82176z3449WPqds3CMwQsfiNI55cbl9WlbyP3aXprt921DaP697VDhLKRO5AgkFhzvQqs5Rb0ysxnQzcnVcyxbB0Ex9n2DHcmsTzHVCeR%2BrFrIKR3ckEUsfZ5x36UV12i0ka2c6huGmBevcpVBBx%2BjlQdb2jD9hA9X6BXyazbS%2FGrwWPJ%2FVM%2B0AVR8vNhrK5n7lf6M9KE7zSOnQEWjLkdxcvNii0Tq9L3le99ui%2FL3GkGA1F3ZSia5cXsVSqslt05bHBO98MI3LSa4zy5MlYdBKXzZDhBi0f4Pw%2BU1xjo8QINNOwbEviSZb6GNJ4Hh2MG8O%2F4eHPeiguV9SN1oUddVqzt9Fe%2Fro3b9yPdDm4Xywb%2BmqtfbgUMq3IcHrZmi5l9MQk%2FUvgssS5HxxQ0aqwSqCcwt6aV0QY6sQE3XHDNQrDC8qY4mX4qN%2BybLTkmfeNQqVDm72FI1Dfra9Q5gQBGxfOWtcscnVsNPigfH4g4davWidGol873gwrMrvo7%2B9vFzRAqkEJr7bpj2TEHWiLVaRYIBK7x9qkZppE2yYGqx4iIn9NZekKSLbbAdObNj3i5VsdUB1n2dbytIJMgm1nXYTKxqw3AwpemlZEf9Ef299fhw0xhkPe0GPulkMLK88OiR3Bk422bE9kMenw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ff23449238ae3b3ba7c868116b283bfc5b96bf19ee4b438f92a659e557b2c0e0",
+      "file_size": 73488,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 211,
+  "voters": [
+    "redeyehere",
+    "xandero_be",
+    "orange303",
+    "sky003",
+    "0xwintermute",
+    "ansleon",
+    "ajxchapman",
+    "n0x496n",
+    "mashoud1122",
+    "base_64",
+    "and 201 more..."
+  ],
+  "severity": {
+    "rating": "high",
+    "score": 7.5,
+    "author_type": "User",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "none",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "high",
+      "integrity": "none",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 18138,
+    "asset_type": "URL",
+    "asset_identifier": "gitlab.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

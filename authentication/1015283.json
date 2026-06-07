@@ -1,0 +1,189 @@
+{
+  "id": 1015283,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMDE1Mjgz",
+  "url": "https://hackerone.com/reports/1015283",
+  "title": "Bypass For #997350 your-store.myshopify.com preview link is leak on third party website Via Online Store",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2020-10-21T13:47:53.938Z",
+  "submitted_at": "2020-10-21T13:47:54.036Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "danishalkatiri",
+    "url": "/danishalkatiri",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 1382,
+    "url": "https://hackerone.com/shopify",
+    "handle": "shopify",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/fjjiC5585s8WoDGHv2M5okbJ/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/fjjiC5585s8WoDGHv2M5okbJ/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Shopify",
+      "twitter_handle": "",
+      "website": "https://www.shopify.com",
+      "about": "Shopify is a multi-channel commerce platform that helps people sell online, in-store, and everywhere in between."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2022-02-10T19:42:54.345Z",
+  "bug_reporter_agreed_on_going_public_at": "2022-01-20T19:42:45.562Z",
+  "team_member_agreed_on_going_public_at": "2022-02-10T19:42:54.233Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi Security Team,\n\n#Description\nFull Description in #997350 \n\n\nThe owner of that website can perform a security compromise by grabbing those links.\n\n#Solution:\nThe solution is very very SIMPLE. Just include the following HTML code in the following in code between <head> tags of the html of the page: <meta name=\"referrer\" content=\"never\" />\nThis will not send referrer headers to third party websites.\n\n#Reproduction Instructions /\n1)Open your Store & add  social media Links.\n2)Click  F1045363. \n3)Now turn burp suite intercept on and click on Click on any social media link(on follow us section). Check for the requests having the Link in Referrer as third party website. And copy the Link.\n4)Now turn intercept off and Open Link.(with that token) in other tab,browser or PC.\n5)Now you you sucesfully catch/preview all action in your-store.myshopify.com from store owner without store password.\n\n>Preview all action/Login\n\n#Proof of Concept\nF1045355\nF1045356\nF1045357\nF1045358\nF1045359\nF1045360\n\n#Additional Information:\nNote also that if users can author content within the application then an attacker may be able to inject links referring to a domain they control in order to capture data from URLs used within the application.\n\n## Impact\n\nAs you can see in the Referrer preview Link is getting leaked to third party sites. So, the person who has the complete control over that particular third party site can Use the Link to preview all action in your-store.myshopify.com from store owner without store password.",
+  "bounty_amount": "500.0",
+  "formatted_bounty": "$500",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1045355,
+      "file_name": "01.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/CSaAvFHYd8mj4MT7d2tDCDzK?response-content-disposition=attachment%3B%20filename%3D%2201.PNG%22%3B%20filename%2A%3DUTF-8%27%2701.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123646Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=73e7ea7cdc0e91c29c1260348dd26d7bcb19b7117501278863d1d9caf44e1738",
+      "file_size": 49105,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1045356,
+      "file_name": "02.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/2txktbK4NWHaMisfguPtdM1L?response-content-disposition=attachment%3B%20filename%3D%2202.PNG%22%3B%20filename%2A%3DUTF-8%27%2702.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123646Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c24d142997719c4c3f08678b54d2ba3219325fa3edffc70d80347c263d0fd778",
+      "file_size": 43633,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1045357,
+      "file_name": "03.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/X98M9CrrXcsxzMie8JBzMEC5?response-content-disposition=attachment%3B%20filename%3D%2203.PNG%22%3B%20filename%2A%3DUTF-8%27%2703.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123646Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2f9addd34a3402b3624976b615f125168a2a0aa0f6851fec54e16557e2adf9a6",
+      "file_size": 43126,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1045358,
+      "file_name": "04.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/EkDFmH8mefobYoDkf4NAWY6c?response-content-disposition=attachment%3B%20filename%3D%2204.PNG%22%3B%20filename%2A%3DUTF-8%27%2704.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123646Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b90b3dc1fc461bba0f35311cfc7b6e133de6e75eeab69c8f359add259ff93003",
+      "file_size": 69820,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1045359,
+      "file_name": "05.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/eysNrEUpJykJHZtu2BR16ZRR?response-content-disposition=attachment%3B%20filename%3D%2205.PNG%22%3B%20filename%2A%3DUTF-8%27%2705.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123646Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=5b249c21db0e0e9eeb3dec95f9c00f46ae2f5652edfcc843ebb9d910114d04cd",
+      "file_size": 56099,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1045360,
+      "file_name": "Video_1.avi",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/PoYHb721Tj8kvyKrywsZGDVS?response-content-disposition=attachment%3B%20filename%3D%22Video_1.avi%22%3B%20filename%2A%3DUTF-8%27%27Video_1.avi&response-content-type=video%2Fx-msvideo&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123646Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e42e24eb0ec744ccd4e6bcd8dadc72e6232d1486a57be3875f3e089a14f4bc57",
+      "file_size": 6492688,
+      "type": "video/x-msvideo",
+      "moderated": null
+    },
+    {
+      "id": 1045363,
+      "file_name": "preview_Via_`Online_store`.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/wmZr9jYppxL1h66Ftv5wDvM6?response-content-disposition=attachment%3B%20filename%3D%22preview_Via_%60Online_store%60.PNG%22%3B%20filename%2A%3DUTF-8%27%27preview_Via_%60Online_store%60.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123646Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=08576a7ea7060e71c1e53e29c805bddeaf973b39eb400bbefe2b9f25e1ca978f",
+      "file_size": 52174,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 7,
+  "voters": [
+    "loaymorad",
+    "drsniper",
+    "run_win",
+    "h4x0r_dz",
+    "pr0f0x01",
+    "aneet",
+    "destinedtohack"
+  ],
+  "severity": {
+    "rating": "low",
+    "score": 2.4,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "high",
+      "user_interaction": "required",
+      "scope": "unchanged",
+      "confidentiality": "low",
+      "integrity": "none",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 413,
+    "asset_type": "URL",
+    "asset_identifier": "your-store.myshopify.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

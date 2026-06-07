@@ -1,0 +1,159 @@
+{
+  "id": 2043552,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yMDQzNTUy",
+  "url": "https://hackerone.com/reports/2043552",
+  "title": "Admin.MyTVA.com Customer lookup and internal notes bypass",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2023-06-29T20:14:54.611Z",
+  "submitted_at": "2023-06-29T20:14:54.705Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "itssixtynein",
+    "url": "/itssixtynein",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 50979,
+    "url": "https://hackerone.com/tennessee-valley-authority",
+    "handle": "tennessee-valley-authority",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/oEWB6C6GfvVzDUgyTrpvhh9u/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/oEWB6C6GfvVzDUgyTrpvhh9u/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "disabled",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Tennessee Valley Authority",
+      "twitter_handle": null,
+      "website": "http://tva.com",
+      "about": ""
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2023-10-13T12:32:36.833Z",
+  "bug_reporter_agreed_on_going_public_at": "2023-08-15T23:25:15.765Z",
+  "team_member_agreed_on_going_public_at": "2023-10-13T12:32:36.598Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\nThe admin.mytva.com site does not properly secure the admin only endpoints, which can allow an attacker to bypass the login and take actions like looking up customers. The endpoints can be enumerated through the forgot password function.\n\n## Steps To Reproduce:\n\n\n  1. Navigate to https://admin.mytva.com/Account/ForgotPassword.aspx and enter 'admin' as the ID\n  2. Wait on the admin email to appear (this should also be restricted)\n  3. Attempt to send the reset password and capture the request with BURP\n4. Review the response to the request for new endpoints. Some of them that will stand out are:\n/Evaluation/EditNotes.aspx?ProjectId=\n/Evaluation/HOEvalDetailWONav.aspx?ProjectID=\n/Tools/Customer/AddressLookup.aspx\n5. The endpoints do not protect themselves for bruteforcing either, so the attacker can now attempt to retrieve further information or add internal/customer notes\n\n## Supporting Material/References:\n[list any additional material (e.g. screenshots, logs, etc.)]\n\n  * [attachment / reference]\n\n## Impact\n\nUnprotected endpoints may lead to a data breach. It would be recommended to check the logs for previous attacks",
+  "weakness": {
+    "id": 142,
+    "name": "Authentication Bypass Using an Alternate Path or Channel"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 2455103,
+      "file_name": "customer.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/2p8de8d0ggnpc1ib63stjzpaz3is?response-content-disposition=attachment%3B%20filename%3D%22customer.JPG%22%3B%20filename%2A%3DUTF-8%27%27customer.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ3JJ2MWZR%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123535Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIH8Vt4ncGUUoJAHBOwPNTLVjez7KGQvaCyTw0bO3%2BwniAiB0Jaq3td3apj1ydSNzhG86IqocpCuxIPN2UcpYiGWDkiq7BQid%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIM3zQGz6NKMhjVUkZBKo8FgChqulNt3hGezqsPBkbOD7Wjl00O%2Bg2L%2BPl0AHm7VAZrHbQ4x4gb2IYAy9y2USBbbYoR%2FRsn0F4kCons4zjPTyuJa6bVH0CZHuYwjNVnficN78aANUEba9d9%2Ff6n0GzpAAPUJpVlLN2MYAD%2F8%2FtWXmaEFLBH1xEQEgFwiCxKXJ0eA3lmYioa4JZll95umjEXRhuPCPjDdVFX4EHuu%2Fq%2BUIT9TT3vn9aivdoEQngCPpY%2Bzt1tXSu1NwM5JynqwrkIfjX2g5Nym1raRoXEIGFetH0BPvtu3gDZbKS44xLdqIu%2F9drhhKnm1UH5hyKSdvWdNbVIWXFOpLSD32KcgHJjBCLuBZ26%2FjS%2Fnca4TXE90iO%2ByOyp8Iw32zf3TpAlYBeYGZxR9Vw1SmfMyaTlO80ibCZ9PIZPSwMMhUDB83uFyJqffKYJyNaaQ47O4DvPxT5Xvkpj3BedFBNQk1CB1uwyoXfnOA8op8Oyy0twXSvxw9dJwZCkbfDacDats7FirIVtG3%2B%2FoWscSqKp0sd682jXgM5WAXdhILsCT7x%2F%2FLd9%2BTGoJa5zAtna%2BWuZMsellO07HawQWTzVp4XnBV7ens7pEYA%2Bob1CORiZoDgfeA9MtF%2F1IXAa1ExtGgIy%2FJPkfssLt6nZib1hMd1ZaHUHiBh6IfWRWWyhYOwl5S%2BgV06hWNt%2FPmoyKdrGYuUxHT9REhH5C3OwfzEw3P6rQBowTeqn61P5t0MjTLbXzNqnnn7biQYYyM0G1j%2F%2BvNqGWSbt3r7HAqYl%2BNeF43CEOfs6kBw6fIc%2F0Br1TTInJSpaugqRSAHPAHbD6L8Birnt1a3hhlk1Eelol7XDiQTCpsFJZhJFCCRYOOe6HUASBwZdadHHpzDBvJXRBjqyAZCef8HxcWb41sYL%2B4dJ%2Fr5oku8YW%2BStw4JjFvDORfi01TrAuQ0HuKauyHqVMK5sU%2F%2BYaHMrC3xpNj%2BlIKZMn6SViOGedan1EDBUXbbUrpEVaMct3osJeIUosm6d6N92tNb7kR6VDJpo97fyMyPfY3jtSL06MoYwPfB%2BLsVT8k%2FTz%2FlMloSZh9UJCQU7fTgMCwWWDDIA1EGn9wfX6cNFyCX7Wa21Fek8Q3OFiJEssY16dcw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=24d5a62204ae2a65079cd677976128461cc7bbe340ecdd607903c4c760b6a064",
+      "file_size": 28625,
+      "type": "image/jpeg",
+      "moderated": null
+    },
+    {
+      "id": 2455104,
+      "file_name": "notes.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/et38hurksyg415az9v3uowtqiyxq?response-content-disposition=attachment%3B%20filename%3D%22notes.JPG%22%3B%20filename%2A%3DUTF-8%27%27notes.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ3JJ2MWZR%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123535Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIH8Vt4ncGUUoJAHBOwPNTLVjez7KGQvaCyTw0bO3%2BwniAiB0Jaq3td3apj1ydSNzhG86IqocpCuxIPN2UcpYiGWDkiq7BQid%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIM3zQGz6NKMhjVUkZBKo8FgChqulNt3hGezqsPBkbOD7Wjl00O%2Bg2L%2BPl0AHm7VAZrHbQ4x4gb2IYAy9y2USBbbYoR%2FRsn0F4kCons4zjPTyuJa6bVH0CZHuYwjNVnficN78aANUEba9d9%2Ff6n0GzpAAPUJpVlLN2MYAD%2F8%2FtWXmaEFLBH1xEQEgFwiCxKXJ0eA3lmYioa4JZll95umjEXRhuPCPjDdVFX4EHuu%2Fq%2BUIT9TT3vn9aivdoEQngCPpY%2Bzt1tXSu1NwM5JynqwrkIfjX2g5Nym1raRoXEIGFetH0BPvtu3gDZbKS44xLdqIu%2F9drhhKnm1UH5hyKSdvWdNbVIWXFOpLSD32KcgHJjBCLuBZ26%2FjS%2Fnca4TXE90iO%2ByOyp8Iw32zf3TpAlYBeYGZxR9Vw1SmfMyaTlO80ibCZ9PIZPSwMMhUDB83uFyJqffKYJyNaaQ47O4DvPxT5Xvkpj3BedFBNQk1CB1uwyoXfnOA8op8Oyy0twXSvxw9dJwZCkbfDacDats7FirIVtG3%2B%2FoWscSqKp0sd682jXgM5WAXdhILsCT7x%2F%2FLd9%2BTGoJa5zAtna%2BWuZMsellO07HawQWTzVp4XnBV7ens7pEYA%2Bob1CORiZoDgfeA9MtF%2F1IXAa1ExtGgIy%2FJPkfssLt6nZib1hMd1ZaHUHiBh6IfWRWWyhYOwl5S%2BgV06hWNt%2FPmoyKdrGYuUxHT9REhH5C3OwfzEw3P6rQBowTeqn61P5t0MjTLbXzNqnnn7biQYYyM0G1j%2F%2BvNqGWSbt3r7HAqYl%2BNeF43CEOfs6kBw6fIc%2F0Br1TTInJSpaugqRSAHPAHbD6L8Birnt1a3hhlk1Eelol7XDiQTCpsFJZhJFCCRYOOe6HUASBwZdadHHpzDBvJXRBjqyAZCef8HxcWb41sYL%2B4dJ%2Fr5oku8YW%2BStw4JjFvDORfi01TrAuQ0HuKauyHqVMK5sU%2F%2BYaHMrC3xpNj%2BlIKZMn6SViOGedan1EDBUXbbUrpEVaMct3osJeIUosm6d6N92tNb7kR6VDJpo97fyMyPfY3jtSL06MoYwPfB%2BLsVT8k%2FTz%2FlMloSZh9UJCQU7fTgMCwWWDDIA1EGn9wfX6cNFyCX7Wa21Fek8Q3OFiJEssY16dcw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=5e3ff59286c2391793f136f954d7da34b716f5d2d611af75ebd9f1e762088355",
+      "file_size": 43705,
+      "type": "image/jpeg",
+      "moderated": null
+    },
+    {
+      "id": 2455110,
+      "file_name": "request.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/7azs6xixmw6q0hmxezkt2j1yg7rp?response-content-disposition=attachment%3B%20filename%3D%22request.JPG%22%3B%20filename%2A%3DUTF-8%27%27request.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ3JJ2MWZR%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123535Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIH8Vt4ncGUUoJAHBOwPNTLVjez7KGQvaCyTw0bO3%2BwniAiB0Jaq3td3apj1ydSNzhG86IqocpCuxIPN2UcpYiGWDkiq7BQid%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIM3zQGz6NKMhjVUkZBKo8FgChqulNt3hGezqsPBkbOD7Wjl00O%2Bg2L%2BPl0AHm7VAZrHbQ4x4gb2IYAy9y2USBbbYoR%2FRsn0F4kCons4zjPTyuJa6bVH0CZHuYwjNVnficN78aANUEba9d9%2Ff6n0GzpAAPUJpVlLN2MYAD%2F8%2FtWXmaEFLBH1xEQEgFwiCxKXJ0eA3lmYioa4JZll95umjEXRhuPCPjDdVFX4EHuu%2Fq%2BUIT9TT3vn9aivdoEQngCPpY%2Bzt1tXSu1NwM5JynqwrkIfjX2g5Nym1raRoXEIGFetH0BPvtu3gDZbKS44xLdqIu%2F9drhhKnm1UH5hyKSdvWdNbVIWXFOpLSD32KcgHJjBCLuBZ26%2FjS%2Fnca4TXE90iO%2ByOyp8Iw32zf3TpAlYBeYGZxR9Vw1SmfMyaTlO80ibCZ9PIZPSwMMhUDB83uFyJqffKYJyNaaQ47O4DvPxT5Xvkpj3BedFBNQk1CB1uwyoXfnOA8op8Oyy0twXSvxw9dJwZCkbfDacDats7FirIVtG3%2B%2FoWscSqKp0sd682jXgM5WAXdhILsCT7x%2F%2FLd9%2BTGoJa5zAtna%2BWuZMsellO07HawQWTzVp4XnBV7ens7pEYA%2Bob1CORiZoDgfeA9MtF%2F1IXAa1ExtGgIy%2FJPkfssLt6nZib1hMd1ZaHUHiBh6IfWRWWyhYOwl5S%2BgV06hWNt%2FPmoyKdrGYuUxHT9REhH5C3OwfzEw3P6rQBowTeqn61P5t0MjTLbXzNqnnn7biQYYyM0G1j%2F%2BvNqGWSbt3r7HAqYl%2BNeF43CEOfs6kBw6fIc%2F0Br1TTInJSpaugqRSAHPAHbD6L8Birnt1a3hhlk1Eelol7XDiQTCpsFJZhJFCCRYOOe6HUASBwZdadHHpzDBvJXRBjqyAZCef8HxcWb41sYL%2B4dJ%2Fr5oku8YW%2BStw4JjFvDORfi01TrAuQ0HuKauyHqVMK5sU%2F%2BYaHMrC3xpNj%2BlIKZMn6SViOGedan1EDBUXbbUrpEVaMct3osJeIUosm6d6N92tNb7kR6VDJpo97fyMyPfY3jtSL06MoYwPfB%2BLsVT8k%2FTz%2FlMloSZh9UJCQU7fTgMCwWWDDIA1EGn9wfX6cNFyCX7Wa21Fek8Q3OFiJEssY16dcw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9c8a0a6eb13d7e5a0fb873b9efbe82a37a721fc9f3e88cad6b714bd40c1e7b6d",
+      "file_size": 193906,
+      "type": "image/jpeg",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 19,
+  "voters": [
+    "rachid_aym",
+    "zy9ard3",
+    "shreyaschavhan",
+    "itssixtynein",
+    "shubham_srt",
+    "eminfidan",
+    "ninikocholo",
+    "k4lialexis",
+    "mrworst",
+    "imnatarobot",
+    "and 9 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "score": 6.5,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "none",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "low",
+      "integrity": "low",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 435760,
+    "asset_type": "URL",
+    "asset_identifier": "http://admin.mytva.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

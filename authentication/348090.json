@@ -1,0 +1,168 @@
+{
+  "id": 348090,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8zNDgwOTA=",
+  "url": "https://hackerone.com/reports/348090",
+  "title": "many commands can be manipulated to delete identities or affiliations",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2018-05-07T06:47:29.590Z",
+  "submitted_at": "2018-05-07T06:47:29.590Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "cet2000",
+    "url": "/cet2000",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/127/472/f03acdf5a3465ab8fd3395d362dad81e208b1cec_original.jpeg/c8a1698ff707a5e3e8a91a3484838363845daac68cb82c86d55c9e2d44d67b67"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 22522,
+    "url": "https://hackerone.com/hyperledger",
+    "handle": "hyperledger",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/4unr4nty3m2omunib0bwxy2s189l/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/4unr4nty3m2omunib0bwxy2s189l/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Linux Foundation Decentralized Trust",
+      "twitter_handle": "lfdecentralized",
+      "website": "https://www.lfdecentralizedtrust.org/",
+      "about": "An industry-wide open source initiative to advance blockchain technology, governed by The Linux Foundation."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2022-08-10T14:23:14.558Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2022-07-11T14:22:52.736Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "**Introduction:**\n\nThe Faric-ca  data in http body and authorization header for many commands that send from client to server are protected by signature.  \n\nBut I find the identity and affiliation commands still have the risk to be manipulated. Hacker can manipulate most other commands to delete identities or affiliations in a server (server start with \u2013cfg.identities.allowremove and \u2013cfg.affiliations.allowremove). \n\nExample 1: Manipulating list an identity command to delete any identity or affiliation. \n{F294541}\nnormal list identity command\n\nyou can manipulate it:\n\n{F294542}\nManipulate the list command to delete command\n\nIf a hacker gets the request http data (maybe by sniffer), he can manipulate the GET method to DELETE method, and change the admin3 identity to any other valid identity in the server, he can delete it. \n\n\nExample 2: Manipulating add an identity command to delete an identity or affiliation. \n{F294543}\nnormal add an identity command\n\nyou can manipulated:\n{F294544}\nManipulate the add identity command to delete an identity\n\nor you can manipulated as:\n{F294545}\nManipulate the add identity command as delete an affiliation command\n\n\nActually, you can also manipulate other commands by this way. Such as: enroll, revoke,register\u2026 and so on. \n\n\n\n**Analysis:**\n\nThe authentication and authorization checking just covers the Authorization header and body, \nbut the code for deleting identity and affiliation gets the identity value and affiliation value from **url path**. They are not protected by signature. And you can manipulate the method from other to DELETE.  \n\n**DELETE** /affiliations/**org1.dep2**?force=true HTTP/1.1\n**DELETE** /identities/**admin2** HTTP/1.1\n\n## Impact\n\nIf a hacker get any of the normal request data by some way (maybe by network sniffer), he can delete all identities or affiliations.",
+  "bounty_amount": "500.0",
+  "formatted_bounty": "$500",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 294541,
+      "file_name": "identities_list.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/294/541/ba095fd2acf119677f0ff296daa566d9bbb592f1/identities_list.png?response-content-disposition=attachment%3B%20filename%3D%22identities_list.png%22%3B%20filename%2A%3DUTF-8%27%27identities_list.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQWSHVRABK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123626Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB0%2Bb9CB%2BR5CqopzNHyysBEFHcPHYjgwYBnqrxndDtwWAiEAlcb5qU9w1Dp7orWzLP%2FrzUwbl0yoUVk4fcwXyenslJwquwUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDAkosnRFeBSqAsXZhiqPBTXxyx233Bx0nsTrZN6V87pEKmmc%2BsNXmV72WOcDKozOKxDV0iygkENdUDfP2m%2BgCDyNeP7BEksl7x9HsKVD2J6oXWstODOon8H3ZPFtgoJz62sSM99k4DSokX%2BwQwkBJZkKtNTreBPCDYxBUqrFLNy%2Fp5eE%2F562eq9Ls67BxTLzXO01e%2BBtkzfeC0gQWsTP0k7WUge32X0wvMATgXxf0Gv0VpjrhxewbU47yv61jCpGRX3mbDb7Sfxd3vHowubaRIIuU8Hdjqz2MeT8byxvgI6qIWnoOeHrRczmgkJ9os2qM6K87iSYyh41QGXnngoHAuKtJiWfKnaT%2FLEMIV2AOX2p0T585hn6tfRUM0JuKW7LC4gg0ojSju6zyI2SOSJ5LrvJp4%2BxOoUuv%2FxWV4wpObTYnCjkvb%2Fm4e4JZJZZ42%2BmdPDmZVzmc1tK2B87vU2m0esDR3I%2F1c%2Bo5T4vUmlev6rkEUQ5qnc6p7MxIb8n3kNIwgRvB4%2FFfHVDLJF5I8cDV2wFSGM3qudjUHLgwR3Fazf4y8WDgmyyOoQjono8XZ6XIeKi3tBLyLNbxZgYOKch6s5BGfQIlu8PY3VQzrs5q5ff5g3kl1kXeW5J4z%2Fr9y3DY0jWcTgStdr0R5tFE14GAMSxfIAN6BTdGR8JigvY%2BZ3l%2B6AV8jZyFxVus2BREhTeFf8Z8fh0b3wqErpn96YlLEUqoBHXFm8XwkP9VUCF7R6IZblW5e0CC8rQUFEFmJd%2F2CXpsmj5S7QhrAV1M4XB9dCNuW%2FpY5zDPYHzdlyvZvglfa6zntPhp0NYxFa27%2FclFrHOvswnQfuZKcGfMWPaAPj%2FevW03NvRsRu0BH30k%2B%2BYAXUxlH%2Bl%2FGbFsRSuasgw8YSV0QY6sQGwplV0kmEOAM5VxTc%2BoGefaqTTlxXHobWmGh8Pbf4VhCg5nWEZiXESqp4DpLriB5AvJ3YWd%2BS4F%2Bmrh0LlcGsFvh%2FqJ78clpX6WB9%2BGZFxNZkbm952wvdcPymbnYZEBTu%2BRU4446H5Po770UnCNPplbiz9FoVF7jWxrpHgqcpIFQQPQdBKOwV6rJufl9dtT2dX7lPhW0YDj7GJj%2FEjD1tjba%2BTTh7H2dGBpTE9Thso8Kw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0638ab76dee03e11d8a530746af6175f25d6ec6ee5a8ba20241213b4cde9e650",
+      "file_size": 99260,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 294542,
+      "file_name": "identitie_list_delete.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/294/542/6e743539617094323a104848a3c039b4ce2ace53/identitie_list_delete.png?response-content-disposition=attachment%3B%20filename%3D%22identitie_list_delete.png%22%3B%20filename%2A%3DUTF-8%27%27identitie_list_delete.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQWSHVRABK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123626Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB0%2Bb9CB%2BR5CqopzNHyysBEFHcPHYjgwYBnqrxndDtwWAiEAlcb5qU9w1Dp7orWzLP%2FrzUwbl0yoUVk4fcwXyenslJwquwUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDAkosnRFeBSqAsXZhiqPBTXxyx233Bx0nsTrZN6V87pEKmmc%2BsNXmV72WOcDKozOKxDV0iygkENdUDfP2m%2BgCDyNeP7BEksl7x9HsKVD2J6oXWstODOon8H3ZPFtgoJz62sSM99k4DSokX%2BwQwkBJZkKtNTreBPCDYxBUqrFLNy%2Fp5eE%2F562eq9Ls67BxTLzXO01e%2BBtkzfeC0gQWsTP0k7WUge32X0wvMATgXxf0Gv0VpjrhxewbU47yv61jCpGRX3mbDb7Sfxd3vHowubaRIIuU8Hdjqz2MeT8byxvgI6qIWnoOeHrRczmgkJ9os2qM6K87iSYyh41QGXnngoHAuKtJiWfKnaT%2FLEMIV2AOX2p0T585hn6tfRUM0JuKW7LC4gg0ojSju6zyI2SOSJ5LrvJp4%2BxOoUuv%2FxWV4wpObTYnCjkvb%2Fm4e4JZJZZ42%2BmdPDmZVzmc1tK2B87vU2m0esDR3I%2F1c%2Bo5T4vUmlev6rkEUQ5qnc6p7MxIb8n3kNIwgRvB4%2FFfHVDLJF5I8cDV2wFSGM3qudjUHLgwR3Fazf4y8WDgmyyOoQjono8XZ6XIeKi3tBLyLNbxZgYOKch6s5BGfQIlu8PY3VQzrs5q5ff5g3kl1kXeW5J4z%2Fr9y3DY0jWcTgStdr0R5tFE14GAMSxfIAN6BTdGR8JigvY%2BZ3l%2B6AV8jZyFxVus2BREhTeFf8Z8fh0b3wqErpn96YlLEUqoBHXFm8XwkP9VUCF7R6IZblW5e0CC8rQUFEFmJd%2F2CXpsmj5S7QhrAV1M4XB9dCNuW%2FpY5zDPYHzdlyvZvglfa6zntPhp0NYxFa27%2FclFrHOvswnQfuZKcGfMWPaAPj%2FevW03NvRsRu0BH30k%2B%2BYAXUxlH%2Bl%2FGbFsRSuasgw8YSV0QY6sQGwplV0kmEOAM5VxTc%2BoGefaqTTlxXHobWmGh8Pbf4VhCg5nWEZiXESqp4DpLriB5AvJ3YWd%2BS4F%2Bmrh0LlcGsFvh%2FqJ78clpX6WB9%2BGZFxNZkbm952wvdcPymbnYZEBTu%2BRU4446H5Po770UnCNPplbiz9FoVF7jWxrpHgqcpIFQQPQdBKOwV6rJufl9dtT2dX7lPhW0YDj7GJj%2FEjD1tjba%2BTTh7H2dGBpTE9Thso8Kw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7ac252f65e123b349bd56ba2b3dd08bbebb27e1fba43458874a1756306073fbd",
+      "file_size": 245568,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 294543,
+      "file_name": "identities_add.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/294/543/9f6e34738a67028d77ba8e353174588d5f3d79d9/identities_add.png?response-content-disposition=attachment%3B%20filename%3D%22identities_add.png%22%3B%20filename%2A%3DUTF-8%27%27identities_add.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQWSHVRABK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123626Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB0%2Bb9CB%2BR5CqopzNHyysBEFHcPHYjgwYBnqrxndDtwWAiEAlcb5qU9w1Dp7orWzLP%2FrzUwbl0yoUVk4fcwXyenslJwquwUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDAkosnRFeBSqAsXZhiqPBTXxyx233Bx0nsTrZN6V87pEKmmc%2BsNXmV72WOcDKozOKxDV0iygkENdUDfP2m%2BgCDyNeP7BEksl7x9HsKVD2J6oXWstODOon8H3ZPFtgoJz62sSM99k4DSokX%2BwQwkBJZkKtNTreBPCDYxBUqrFLNy%2Fp5eE%2F562eq9Ls67BxTLzXO01e%2BBtkzfeC0gQWsTP0k7WUge32X0wvMATgXxf0Gv0VpjrhxewbU47yv61jCpGRX3mbDb7Sfxd3vHowubaRIIuU8Hdjqz2MeT8byxvgI6qIWnoOeHrRczmgkJ9os2qM6K87iSYyh41QGXnngoHAuKtJiWfKnaT%2FLEMIV2AOX2p0T585hn6tfRUM0JuKW7LC4gg0ojSju6zyI2SOSJ5LrvJp4%2BxOoUuv%2FxWV4wpObTYnCjkvb%2Fm4e4JZJZZ42%2BmdPDmZVzmc1tK2B87vU2m0esDR3I%2F1c%2Bo5T4vUmlev6rkEUQ5qnc6p7MxIb8n3kNIwgRvB4%2FFfHVDLJF5I8cDV2wFSGM3qudjUHLgwR3Fazf4y8WDgmyyOoQjono8XZ6XIeKi3tBLyLNbxZgYOKch6s5BGfQIlu8PY3VQzrs5q5ff5g3kl1kXeW5J4z%2Fr9y3DY0jWcTgStdr0R5tFE14GAMSxfIAN6BTdGR8JigvY%2BZ3l%2B6AV8jZyFxVus2BREhTeFf8Z8fh0b3wqErpn96YlLEUqoBHXFm8XwkP9VUCF7R6IZblW5e0CC8rQUFEFmJd%2F2CXpsmj5S7QhrAV1M4XB9dCNuW%2FpY5zDPYHzdlyvZvglfa6zntPhp0NYxFa27%2FclFrHOvswnQfuZKcGfMWPaAPj%2FevW03NvRsRu0BH30k%2B%2BYAXUxlH%2Bl%2FGbFsRSuasgw8YSV0QY6sQGwplV0kmEOAM5VxTc%2BoGefaqTTlxXHobWmGh8Pbf4VhCg5nWEZiXESqp4DpLriB5AvJ3YWd%2BS4F%2Bmrh0LlcGsFvh%2FqJ78clpX6WB9%2BGZFxNZkbm952wvdcPymbnYZEBTu%2BRU4446H5Po770UnCNPplbiz9FoVF7jWxrpHgqcpIFQQPQdBKOwV6rJufl9dtT2dX7lPhW0YDj7GJj%2FEjD1tjba%2BTTh7H2dGBpTE9Thso8Kw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=550eb4f4980cfdbb7b4d4aaa1a4e931525f8c264e9134b4c8811d8e86dd06310",
+      "file_size": 81417,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 294544,
+      "file_name": "identities_add_delete.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/294/544/a5a1943070968a01b3634a558b286d5637cfeb23/identities_add_delete.png?response-content-disposition=attachment%3B%20filename%3D%22identities_add_delete.png%22%3B%20filename%2A%3DUTF-8%27%27identities_add_delete.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQWSHVRABK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123626Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB0%2Bb9CB%2BR5CqopzNHyysBEFHcPHYjgwYBnqrxndDtwWAiEAlcb5qU9w1Dp7orWzLP%2FrzUwbl0yoUVk4fcwXyenslJwquwUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDAkosnRFeBSqAsXZhiqPBTXxyx233Bx0nsTrZN6V87pEKmmc%2BsNXmV72WOcDKozOKxDV0iygkENdUDfP2m%2BgCDyNeP7BEksl7x9HsKVD2J6oXWstODOon8H3ZPFtgoJz62sSM99k4DSokX%2BwQwkBJZkKtNTreBPCDYxBUqrFLNy%2Fp5eE%2F562eq9Ls67BxTLzXO01e%2BBtkzfeC0gQWsTP0k7WUge32X0wvMATgXxf0Gv0VpjrhxewbU47yv61jCpGRX3mbDb7Sfxd3vHowubaRIIuU8Hdjqz2MeT8byxvgI6qIWnoOeHrRczmgkJ9os2qM6K87iSYyh41QGXnngoHAuKtJiWfKnaT%2FLEMIV2AOX2p0T585hn6tfRUM0JuKW7LC4gg0ojSju6zyI2SOSJ5LrvJp4%2BxOoUuv%2FxWV4wpObTYnCjkvb%2Fm4e4JZJZZ42%2BmdPDmZVzmc1tK2B87vU2m0esDR3I%2F1c%2Bo5T4vUmlev6rkEUQ5qnc6p7MxIb8n3kNIwgRvB4%2FFfHVDLJF5I8cDV2wFSGM3qudjUHLgwR3Fazf4y8WDgmyyOoQjono8XZ6XIeKi3tBLyLNbxZgYOKch6s5BGfQIlu8PY3VQzrs5q5ff5g3kl1kXeW5J4z%2Fr9y3DY0jWcTgStdr0R5tFE14GAMSxfIAN6BTdGR8JigvY%2BZ3l%2B6AV8jZyFxVus2BREhTeFf8Z8fh0b3wqErpn96YlLEUqoBHXFm8XwkP9VUCF7R6IZblW5e0CC8rQUFEFmJd%2F2CXpsmj5S7QhrAV1M4XB9dCNuW%2FpY5zDPYHzdlyvZvglfa6zntPhp0NYxFa27%2FclFrHOvswnQfuZKcGfMWPaAPj%2FevW03NvRsRu0BH30k%2B%2BYAXUxlH%2Bl%2FGbFsRSuasgw8YSV0QY6sQGwplV0kmEOAM5VxTc%2BoGefaqTTlxXHobWmGh8Pbf4VhCg5nWEZiXESqp4DpLriB5AvJ3YWd%2BS4F%2Bmrh0LlcGsFvh%2FqJ78clpX6WB9%2BGZFxNZkbm952wvdcPymbnYZEBTu%2BRU4446H5Po770UnCNPplbiz9FoVF7jWxrpHgqcpIFQQPQdBKOwV6rJufl9dtT2dX7lPhW0YDj7GJj%2FEjD1tjba%2BTTh7H2dGBpTE9Thso8Kw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c9b696997fb64ab39d7fbe22ddfb3d2f7319f960330c18f1e0dacacebc60e2aa",
+      "file_size": 155057,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 294545,
+      "file_name": "identities_add_delete_affi.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/294/545/a7d176b409c66fb487aa1d1eb1fabe88c6f414e4/identities_add_delete_affi.png?response-content-disposition=attachment%3B%20filename%3D%22identities_add_delete_affi.png%22%3B%20filename%2A%3DUTF-8%27%27identities_add_delete_affi.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQWSHVRABK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123626Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB0%2Bb9CB%2BR5CqopzNHyysBEFHcPHYjgwYBnqrxndDtwWAiEAlcb5qU9w1Dp7orWzLP%2FrzUwbl0yoUVk4fcwXyenslJwquwUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDAkosnRFeBSqAsXZhiqPBTXxyx233Bx0nsTrZN6V87pEKmmc%2BsNXmV72WOcDKozOKxDV0iygkENdUDfP2m%2BgCDyNeP7BEksl7x9HsKVD2J6oXWstODOon8H3ZPFtgoJz62sSM99k4DSokX%2BwQwkBJZkKtNTreBPCDYxBUqrFLNy%2Fp5eE%2F562eq9Ls67BxTLzXO01e%2BBtkzfeC0gQWsTP0k7WUge32X0wvMATgXxf0Gv0VpjrhxewbU47yv61jCpGRX3mbDb7Sfxd3vHowubaRIIuU8Hdjqz2MeT8byxvgI6qIWnoOeHrRczmgkJ9os2qM6K87iSYyh41QGXnngoHAuKtJiWfKnaT%2FLEMIV2AOX2p0T585hn6tfRUM0JuKW7LC4gg0ojSju6zyI2SOSJ5LrvJp4%2BxOoUuv%2FxWV4wpObTYnCjkvb%2Fm4e4JZJZZ42%2BmdPDmZVzmc1tK2B87vU2m0esDR3I%2F1c%2Bo5T4vUmlev6rkEUQ5qnc6p7MxIb8n3kNIwgRvB4%2FFfHVDLJF5I8cDV2wFSGM3qudjUHLgwR3Fazf4y8WDgmyyOoQjono8XZ6XIeKi3tBLyLNbxZgYOKch6s5BGfQIlu8PY3VQzrs5q5ff5g3kl1kXeW5J4z%2Fr9y3DY0jWcTgStdr0R5tFE14GAMSxfIAN6BTdGR8JigvY%2BZ3l%2B6AV8jZyFxVus2BREhTeFf8Z8fh0b3wqErpn96YlLEUqoBHXFm8XwkP9VUCF7R6IZblW5e0CC8rQUFEFmJd%2F2CXpsmj5S7QhrAV1M4XB9dCNuW%2FpY5zDPYHzdlyvZvglfa6zntPhp0NYxFa27%2FclFrHOvswnQfuZKcGfMWPaAPj%2FevW03NvRsRu0BH30k%2B%2BYAXUxlH%2Bl%2FGbFsRSuasgw8YSV0QY6sQGwplV0kmEOAM5VxTc%2BoGefaqTTlxXHobWmGh8Pbf4VhCg5nWEZiXESqp4DpLriB5AvJ3YWd%2BS4F%2Bmrh0LlcGsFvh%2FqJ78clpX6WB9%2BGZFxNZkbm952wvdcPymbnYZEBTu%2BRU4446H5Po770UnCNPplbiz9FoVF7jWxrpHgqcpIFQQPQdBKOwV6rJufl9dtT2dX7lPhW0YDj7GJj%2FEjD1tjba%2BTTh7H2dGBpTE9Thso8Kw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9d4b7279c5b94a90985cda1a6d7d58788819302d3c6fad723a50265f2d42b760",
+      "file_size": 157225,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2022-08-10T14:22:52.860Z",
+  "allow_singular_disclosure_after": -120694413.19407059,
+  "singular_disclosure_allowed": true,
+  "vote_count": 42,
+  "voters": [
+    "nulladdress",
+    "wagde",
+    "cyanidex1",
+    "zy9ard3",
+    "ali",
+    "run_win",
+    "alimanshester",
+    "michan",
+    "0x61_",
+    "eveeez",
+    "and 32 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 3010,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/hyperledger/fabric-ca",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

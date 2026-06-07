@@ -1,0 +1,213 @@
+{
+  "id": 1193641,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMTkzNjQx",
+  "url": "https://hackerone.com/reports/1193641",
+  "title": "GlassWire 2.1.167 vulnerability - MSVR 56639",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2021-05-12T13:14:15.461Z",
+  "submitted_at": "2021-05-12T13:14:15.559Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "msvr",
+    "url": "/msvr",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 374,
+    "url": "https://hackerone.com/glasswire",
+    "handle": "glasswire",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/000/374/13d3682f5d09f12442bfa7e74e96c1ded88562a7_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/000/374/13d3682f5d09f12442bfa7e74e96c1ded88562a7_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "GlassWire",
+      "twitter_handle": "glasswire",
+      "website": "http://www.glasswire.com",
+      "about": "GlassWire helps protect your computer and privacy by monitoring your network activity."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2021-22961"
+  ],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2021-11-13T08:51:22.233Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2021-10-14T08:51:19.347Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Arbitrary code execution vulnerability within the firewall software, GlassWire version 2.1.167\n\n## Impact\n\nAfter the program is installed, on first execution, it will attempt to load Wtsapi32.dll.dll from the user's PATH (without doing any checks to see if the file is signed). Attached is a demo leveraging this vulnerability to spawn notepad.exe as well as screenshots showing the software searching the user\u2019s PATH.",
+  "weakness": {
+    "id": 70,
+    "name": "Code Injection"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1298657,
+      "file_name": "glasswire_dlls.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/8uhxsqhsmj6ogjwqhhpm5v2vwrai?response-content-disposition=attachment%3B%20filename%3D%22glasswire_dlls.PNG%22%3B%20filename%2A%3DUTF-8%27%27glasswire_dlls.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6KRO5UHR%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T134237Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCxFjLxsIZTI9yRlGIRAGKrvvB3jUSziyNvFvoy9z2twgIhAJCpO7uGdSUt%2BvhK3u88KG48pQ%2FT8nQFh9icknDXerlJKrsFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igya0i%2B9%2BDVn8njj7NoqjwU4KGnYpBBfzLYnVluE%2Fai0IfgMHv%2B3GVQ9FGk78db2AS9UdT0hrmsJu0BINTj0kO3Dmvxo8MyV9LsnvYfzJefgo2nZOME3bubX2ubYlao5UFcVYVqqbBL%2ByOvm8C3LbP1I51JXQSIA%2FzvxzxapeL%2B%2FQOZXQxoiN6TW2ITwe4B2NAbn5aRb3ZStfyM5omZqxdAJA4vD0qSxzpAC74QxPDaEpSjUZExU%2FFwMDtxeCEVW8OFnCf9REPhAl8OExrF1gLJUiCFzO0fvu7sZoxGqvNdmahid2xiQRpQpnEobxmmpTauk5CxeX1B%2FR9brk6gUf6prssWPszzLnLU20EsJJd8GlEcZIPUt62rJk0%2Byf7Ire42ewKXx6yAnr%2B%2B%2BlH9dqiPO%2BkiD04S3wyvlpSX2EVXv6aS0%2Fvd537qmrk05FgRDuA1IBHlV8Uzqp6lZOPOykAtAoIcZQtli7gryKLZN7TrAmLhck9H2AOR2dUld3ilqty2nyhJsIDdQDG9YRUSg8XbnMEZqrvFDmde80qZa%2B3i3Y3SYlad8jWIC%2BxAHdrBhQiIhDa2qh1OmjQThONreFU9zHAXTOWJn1XPKGdFFqY8hzLUcbIerRRzkQ4hmWVfoTIBibJzuZbQmxnqQgUq%2BpJ1lSi8U7RB%2BSkX4k0t2iiLWTsLFxB3d4yfxeT16IqVrGpd7kt1YbwW19d8Gkickl5LHgYGc3qA68AyjZK5A4im1ayFPD59EV88SGSz%2FBT9339yIFZZ5cPmJIehhC6L%2BbDOPBUByxo4v5eq4piOIJPeXx%2FDd1pMTQtQLbSvh%2FPaPCtP%2Bjv8Q%2Ba6nqy2xjuv6icIncbpswlDP4VQxE%2BkG%2FSxWdkJAZeZlshio4Zhi%2F3XbMK3ZldEGOrABna5bxETo8rytWWIamvBqn2peuiYn8bGH7XXNHKnVWbzmIQGiDPY66VqSdKi3eLebYQAA20ciO6a%2FZi6XsO1tTkBgwrCBqtR835TjqYRL0Es1F36pg3Rh7YZu8yiLcq6J1LWjx2Rzgc3yLBcYa4nuhVlaZvMRtooxB2y7NebVEgyJ14vn7TKsrb268Bnl2hXIaoGzXcpZxaLQ%2BCPIISnZEMjeyZkRsVL85csD0HlcBtU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3e8a9db260dadc779372549b487316772541fcfaacd69bc1cbaa3baf69902523",
+      "file_size": 57617,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1298658,
+      "file_name": "glasswire_demo1.zip",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/nrocpg944f7gdw5b13nto3g1275u?response-content-disposition=attachment%3B%20filename%3D%22glasswire_demo1.zip%22%3B%20filename%2A%3DUTF-8%27%27glasswire_demo1.zip&response-content-type=application%2Fzip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6KRO5UHR%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T134237Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQCxFjLxsIZTI9yRlGIRAGKrvvB3jUSziyNvFvoy9z2twgIhAJCpO7uGdSUt%2BvhK3u88KG48pQ%2FT8nQFh9icknDXerlJKrsFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igya0i%2B9%2BDVn8njj7NoqjwU4KGnYpBBfzLYnVluE%2Fai0IfgMHv%2B3GVQ9FGk78db2AS9UdT0hrmsJu0BINTj0kO3Dmvxo8MyV9LsnvYfzJefgo2nZOME3bubX2ubYlao5UFcVYVqqbBL%2ByOvm8C3LbP1I51JXQSIA%2FzvxzxapeL%2B%2FQOZXQxoiN6TW2ITwe4B2NAbn5aRb3ZStfyM5omZqxdAJA4vD0qSxzpAC74QxPDaEpSjUZExU%2FFwMDtxeCEVW8OFnCf9REPhAl8OExrF1gLJUiCFzO0fvu7sZoxGqvNdmahid2xiQRpQpnEobxmmpTauk5CxeX1B%2FR9brk6gUf6prssWPszzLnLU20EsJJd8GlEcZIPUt62rJk0%2Byf7Ire42ewKXx6yAnr%2B%2B%2BlH9dqiPO%2BkiD04S3wyvlpSX2EVXv6aS0%2Fvd537qmrk05FgRDuA1IBHlV8Uzqp6lZOPOykAtAoIcZQtli7gryKLZN7TrAmLhck9H2AOR2dUld3ilqty2nyhJsIDdQDG9YRUSg8XbnMEZqrvFDmde80qZa%2B3i3Y3SYlad8jWIC%2BxAHdrBhQiIhDa2qh1OmjQThONreFU9zHAXTOWJn1XPKGdFFqY8hzLUcbIerRRzkQ4hmWVfoTIBibJzuZbQmxnqQgUq%2BpJ1lSi8U7RB%2BSkX4k0t2iiLWTsLFxB3d4yfxeT16IqVrGpd7kt1YbwW19d8Gkickl5LHgYGc3qA68AyjZK5A4im1ayFPD59EV88SGSz%2FBT9339yIFZZ5cPmJIehhC6L%2BbDOPBUByxo4v5eq4piOIJPeXx%2FDd1pMTQtQLbSvh%2FPaPCtP%2Bjv8Q%2Ba6nqy2xjuv6icIncbpswlDP4VQxE%2BkG%2FSxWdkJAZeZlshio4Zhi%2F3XbMK3ZldEGOrABna5bxETo8rytWWIamvBqn2peuiYn8bGH7XXNHKnVWbzmIQGiDPY66VqSdKi3eLebYQAA20ciO6a%2FZi6XsO1tTkBgwrCBqtR835TjqYRL0Es1F36pg3Rh7YZu8yiLcq6J1LWjx2Rzgc3yLBcYa4nuhVlaZvMRtooxB2y7NebVEgyJ14vn7TKsrb268Bnl2hXIaoGzXcpZxaLQ%2BCPIISnZEMjeyZkRsVL85csD0HlcBtU%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e2a9c20df0f42b0d19a70f0635104e20ae4648e73a7d467324685092e79a39e2",
+      "file_size": 28937784,
+      "type": "application/zip",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2021-11-13T08:51:19.474Z",
+  "allow_singular_disclosure_after": -144046278.02465743,
+  "singular_disclosure_allowed": true,
+  "vote_count": 3,
+  "voters": [
+    "colbyjack",
+    "official_blackhat13",
+    "chicononobubu"
+  ],
+  "severity": {
+    "rating": "medium",
+    "score": 5.8,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "local",
+      "attack_complexity": "high",
+      "privileges_required": "high",
+      "user_interaction": "required",
+      "scope": "unchanged",
+      "confidentiality": "high",
+      "integrity": "low",
+      "availability": "high"
+    }
+  },
+  "structured_scope": null,
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 100052,
+      "category": "team",
+      "content": "On May 12th Katie Lewis at Microsoft found GlassWire 2.1.167 would attempt to load Wtsapi32.dll.dll from the user's PATH (without doing any checks to see if the file is signed).  GlassWire's team sent a fix that Katie Lewis confirmed solved the issue, then released an update with the fix.",
+      "updated_at": "2021-10-20T13:31:08.849Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 9298,
+        "username": "linkyj",
+        "name": "LinkyJ",
+        "bio": null,
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": null,
+        "created_at": "2014-08-21T16:58:41.816Z",
+        "url": "https://hackerone.com/linkyj",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "medium": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "xtralarge": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+        }
+      }
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

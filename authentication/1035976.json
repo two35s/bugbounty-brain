@@ -1,0 +1,149 @@
+{
+  "id": 1035976,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMDM1OTc2",
+  "url": "https://hackerone.com/reports/1035976",
+  "title": "Slack server disclose h1 private issue report",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2020-11-16T23:25:38.235Z",
+  "submitted_at": "2020-11-16T23:25:38.287Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "ex1st3nc3_",
+    "url": "/ex1st3nc3_",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 38302,
+    "url": "https://hackerone.com/impresscms",
+    "handle": "impresscms",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/038/302/c9f69b5546e2b4211c0a26681a398b1685cc5ebb_original./235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/038/302/c9f69b5546e2b4211c0a26681a398b1685cc5ebb_original./3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "ImpressCMS",
+      "twitter_handle": "impresscms",
+      "website": "https://www.impresscms.org",
+      "about": "PHP and MySQL Open source content management system for multiple languages"
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "no-content",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2020-11-18T00:27:18.599Z",
+  "bug_reporter_agreed_on_going_public_at": "2020-11-17T12:04:50.122Z",
+  "team_member_agreed_on_going_public_at": "2020-11-18T00:27:18.517Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "",
+  "weakness": {
+    "id": 142,
+    "name": "Authentication Bypass Using an Alternate Path or Channel"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [],
+  "allow_singular_disclosure_at": "2020-12-17T12:04:50.218Z",
+  "allow_singular_disclosure_after": -172629181.66037202,
+  "singular_disclosure_allowed": true,
+  "vote_count": 12,
+  "voters": [
+    "sw33tlie",
+    "badcracker",
+    "ex1st3nc3_",
+    "akashhamal0x01",
+    "0xneutrall",
+    "hundredpercent",
+    "term1nal",
+    "yusuf_furkan",
+    "hellrider9",
+    "yogi79",
+    "and 2 more..."
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 28943,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/impresscms/impresscms",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 25495,
+      "category": "team",
+      "content": "Summary\n=======\nUpon browsing the https://www.impresscms.org/, one of the post include the public Slack Channel however the devel channel exposed some of the private h1 reports.\n\nChecking ImpressCMS hacktivity the issues that get resolved/reported are private which helps me to verify that the team doesn't want to expose these issues that reported on Hackerone.\n\nSteps To Reproduce\n=============\n* Go to https://www.impresscms.org/modules/news/article.php?article_id=1019\n* Signup a Slack account\n* After successful installation, go to devel channel\n* Scroll up to top and you can disclose different reports from h1.\n\nPossible Mitigation\n============\nConvert those channel that contain sensitive information to private channels. https://www.businessinsider.com/how-to-make-a-slack-channel-private\nImpact\n====\nThis allows the attacker to read old exploit and those exploit can be use for outdated version of ImpressCMS",
+      "updated_at": "2020-11-18T23:00:36.427Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 507653,
+        "username": "fiammybe",
+        "name": "David  Janssens",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": "https://www.impresscms.org",
+        "location": "",
+        "created_at": "2019-02-20T12:24:05.268Z",
+        "url": "https://hackerone.com/fiammybe",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/lxkyst8a6qjynobukzkzu3703h0h/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef?response-content-disposition=inline%3B%20filename%3D%22WIN_20201204_12_47_17_Pro.jpg%22%3B%20filename%2A%3DUTF-8%27%27WIN_20201204_12_47_17_Pro.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123751Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6e323d4d8f1ad89ba2f9e447ae60fe40a4ebfeeb934a04ff751cacc3861674a9",
+          "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/lxkyst8a6qjynobukzkzu3703h0h/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a?response-content-disposition=inline%3B%20filename%3D%22WIN_20201204_12_47_17_Pro.jpg%22%3B%20filename%2A%3DUTF-8%27%27WIN_20201204_12_47_17_Pro.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123751Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9d3cf164b272c96b9bdbf1fe49b3e38b578215af599e72a19c09d4a20bc101c3",
+          "xtralarge": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/lxkyst8a6qjynobukzkzu3703h0h/4ac84fbe897190579a137d0cf55152b233cdd4f9984435bd80ef67e5e51a0586?response-content-disposition=inline%3B%20filename%3D%22WIN_20201204_12_47_17_Pro.jpg%22%3B%20filename%2A%3DUTF-8%27%27WIN_20201204_12_47_17_Pro.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123751Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ee87bd079b6e9e0f966daf88415257d0d61f6d17bfde106174de976133066fd6"
+        }
+      }
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

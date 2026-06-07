@@ -1,0 +1,76 @@
+[
+  {
+    "id": 3330839,
+    "title": "CVE-2025-10148: predictable WebSocket mask",
+    "url": "https://hackerone.com/reports/3330839",
+    "substate": "resolved",
+    "severity_rating": "Low",
+    "disclosed": true,
+    "disclosed_at": "2025-09-10T06:05:01.480Z",
+    "submitted_at": "2025-09-08T09:52:16.842Z",
+    "cve_ids": [
+      "CVE-2025-10148"
+    ],
+    "cwe": "Reusing a Nonce, Key Pair in Encryption",
+    "votes": 30,
+    "total_awarded_amount": null,
+    "reporter": "cruocco",
+    "program": "curl",
+    "program_name": "curl"
+  },
+  {
+    "id": 3168039,
+    "title": "CVE-2025-5399: WebSocket endless loop",
+    "url": "https://hackerone.com/reports/3168039",
+    "substate": "resolved",
+    "severity_rating": "Low",
+    "disclosed": true,
+    "disclosed_at": "2025-06-04T05:57:17.156Z",
+    "submitted_at": "2025-05-30T03:38:19.537Z",
+    "cve_ids": [
+      "CVE-2025-5399"
+    ],
+    "cwe": "Loop with Unreachable Exit Condition ('Infinite Loop')",
+    "votes": 57,
+    "total_awarded_amount": null,
+    "reporter": "z2_",
+    "program": "curl",
+    "program_name": "curl"
+  },
+  {
+    "id": 395729,
+    "title": "`socket` command allows sending data over WebSockets to arbitrary origins from Grammarly Extension",
+    "url": "https://hackerone.com/reports/395729",
+    "substate": "resolved",
+    "severity_rating": "High",
+    "disclosed": true,
+    "disclosed_at": "2019-07-15T16:34:14.775Z",
+    "submitted_at": "2018-08-16T04:25:52.208Z",
+    "cve_ids": [],
+    "cwe": null,
+    "votes": 139,
+    "total_awarded_amount": null,
+    "reporter": "metnew",
+    "program": "superhuman",
+    "program_name": "Superhuman (formerly Grammarly)"
+  },
+  {
+    "id": 103991,
+    "title": "mod_lua: Crash in websockets PING handling",
+    "url": "https://hackerone.com/reports/103991",
+    "substate": "resolved",
+    "severity_rating": null,
+    "disclosed": true,
+    "disclosed_at": "2015-02-04T00:00:00.000Z",
+    "submitted_at": "2015-01-28T00:00:00.000Z",
+    "cve_ids": [
+      "CVE-2015-0228"
+    ],
+    "cwe": null,
+    "votes": 2,
+    "total_awarded_amount": null,
+    "reporter": "guido",
+    "program": "ibb",
+    "program_name": "Internet Bug Bounty"
+  }
+]

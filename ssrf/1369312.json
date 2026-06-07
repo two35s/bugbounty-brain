@@ -1,0 +1,207 @@
+{
+  "id": 1369312,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMzY5MzEy",
+  "url": "https://hackerone.com/reports/1369312",
+  "title": "SSRF mitigation bypass using DNS Rebind attack",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2021-10-13T13:27:58.015Z",
+  "submitted_at": "2021-10-13T13:27:58.085Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "adrian_t",
+    "url": "/adrian_t",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 60,
+    "url": "https://hackerone.com/concretecms",
+    "handle": "concretecms",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/mhbwznkvtxed2330krmlxr2bpqa8/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22concrete_CMS_logo_-_handat2x.png%22%3B%20filename%2A%3DUTF-8%27%27concrete_CMS_logo_-_handat2x.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66KWXKRZ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154339Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHp5JZdBsnFXp1KoMp1buiZGfdaFUo5johy6JvUE40UBAiEA0Cbdmcpsglf33ldDOYBangt0e7wtajz35AKir5z6fWQquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDD5fdA%2F8vBbHDEzPpCqPBSPGFRTuMNIpDMYZvWFt1soG9nwUW0xmS99emNvT2KVPd9kNxQ74PQ3P5S490YtY4DD0nsSk6JyxOP7fvHOKTeSursPBSmp%2FH95mDUimpOYksLqdblawIOvq90r1rdXfUkGzEZ%2FXtOqCsVc6G0mJcPKOcOWO8P6xSHOG%2BS%2FjCRDFtr7V%2B%2F5tyJmEkSKcHjArnOS5xQalj8fAtY7Gy8BEhMUfdbYem7Fvi5lau43KOgWPp43MUn90%2B0LdS4YesZ5%2B6UqWc2L754CnnMJI0BJrHIs83jp6th8ctXwNPhjQIjeJXV5u6NHjJbamO%2BFtghv2p2qYsQM5aF%2BIxMSbNyiexIfzWH2D06Obz2iOZPJfF8Nzh3AiAwd2znXuZJr5u3NYu1wDll12g%2BAEYyBs4PsqQj0NEIXzFrHGZALVMy13QmrM%2Be28Uj04psQcao7zoMz3w542LAj5yhcK5gImBl1rpb81F6RUQN5x9%2F6QxsikfBKumcLjEYJUuwesYSKBXT3qzUNXC0YHzNQUDK87lbGlelfSPeCLW8WD5brYkTMe9kj%2BCtxRByU0EVPiMSFf6qRwkbSZav7FchqaQ3lm3o6X1%2FjkB%2BnZb7%2BuH06NJmbjfkJUmnbxi09YawV2C57IV2rVupepTY72xKU%2BVAwX4o%2BUQVETw%2BLtr83AohBxuvyhr0el5OnLCO54piM6Ns9%2F52%2BxRVvgSgw90EyG%2FrL56fzLnXi0L65ZHaIQP6W%2BFeSjjfbCaKH33N3qnc9WKY5EM%2BZENt1G0GEbArSt%2FgJfVQL4dIjZFHLZuqOEP35AthduFFL8KE7SwW3ciGGmsD%2BbMXgYxxsk2hCIadF4l0Z%2BxIQVyV92OOY0OIGYsaeCES1DHXkw%2BIqW0QY6sQFpdWQ9TFaTI4sUW%2BH8005zYG0agV1NMszpLt2UJwMsh8EjH%2FRzrSsZ%2B8BLNOUjwFioB2ct3GFzUx%2FmwEXj5aiD7%2BIPcBoQ0CKeIE60qXqtFxqd6rh%2FW%2BjREQwwVdzcD5TgTPSzcEEHalGDLcM0iJWZlA%2Bio2ietoR17kXq9I%2FOT%2Bhnb72%2Bma%2FNPWRN9tBU52GAwe34238UK91ScTDcgT52Zz%2FS7XfVmwlE2ge7EOIW3RE%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d93c3530ca210c8189ede703c731ca0210802365ef837ff46d8630341fd024b4",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/mhbwznkvtxed2330krmlxr2bpqa8/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22concrete_CMS_logo_-_handat2x.png%22%3B%20filename%2A%3DUTF-8%27%27concrete_CMS_logo_-_handat2x.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66KWXKRZ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154339Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHp5JZdBsnFXp1KoMp1buiZGfdaFUo5johy6JvUE40UBAiEA0Cbdmcpsglf33ldDOYBangt0e7wtajz35AKir5z6fWQquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDD5fdA%2F8vBbHDEzPpCqPBSPGFRTuMNIpDMYZvWFt1soG9nwUW0xmS99emNvT2KVPd9kNxQ74PQ3P5S490YtY4DD0nsSk6JyxOP7fvHOKTeSursPBSmp%2FH95mDUimpOYksLqdblawIOvq90r1rdXfUkGzEZ%2FXtOqCsVc6G0mJcPKOcOWO8P6xSHOG%2BS%2FjCRDFtr7V%2B%2F5tyJmEkSKcHjArnOS5xQalj8fAtY7Gy8BEhMUfdbYem7Fvi5lau43KOgWPp43MUn90%2B0LdS4YesZ5%2B6UqWc2L754CnnMJI0BJrHIs83jp6th8ctXwNPhjQIjeJXV5u6NHjJbamO%2BFtghv2p2qYsQM5aF%2BIxMSbNyiexIfzWH2D06Obz2iOZPJfF8Nzh3AiAwd2znXuZJr5u3NYu1wDll12g%2BAEYyBs4PsqQj0NEIXzFrHGZALVMy13QmrM%2Be28Uj04psQcao7zoMz3w542LAj5yhcK5gImBl1rpb81F6RUQN5x9%2F6QxsikfBKumcLjEYJUuwesYSKBXT3qzUNXC0YHzNQUDK87lbGlelfSPeCLW8WD5brYkTMe9kj%2BCtxRByU0EVPiMSFf6qRwkbSZav7FchqaQ3lm3o6X1%2FjkB%2BnZb7%2BuH06NJmbjfkJUmnbxi09YawV2C57IV2rVupepTY72xKU%2BVAwX4o%2BUQVETw%2BLtr83AohBxuvyhr0el5OnLCO54piM6Ns9%2F52%2BxRVvgSgw90EyG%2FrL56fzLnXi0L65ZHaIQP6W%2BFeSjjfbCaKH33N3qnc9WKY5EM%2BZENt1G0GEbArSt%2FgJfVQL4dIjZFHLZuqOEP35AthduFFL8KE7SwW3ciGGmsD%2BbMXgYxxsk2hCIadF4l0Z%2BxIQVyV92OOY0OIGYsaeCES1DHXkw%2BIqW0QY6sQFpdWQ9TFaTI4sUW%2BH8005zYG0agV1NMszpLt2UJwMsh8EjH%2FRzrSsZ%2B8BLNOUjwFioB2ct3GFzUx%2FmwEXj5aiD7%2BIPcBoQ0CKeIE60qXqtFxqd6rh%2FW%2BjREQwwVdzcD5TgTPSzcEEHalGDLcM0iJWZlA%2Bio2ietoR17kXq9I%2FOT%2Bhnb72%2Bma%2FNPWRN9tBU52GAwe34238UK91ScTDcgT52Zz%2FS7XfVmwlE2ge7EOIW3RE%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a5cec1bcf965c4ca0aa9af00ce9bd828f8adbd548126fcbae474e44b99345846"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Concrete CMS",
+      "twitter_handle": "concrete_cms",
+      "website": "https://www.concretecms.org",
+      "about": "A simple and powerful content management system."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2021-22969"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2022-11-25T18:11:12.845Z",
+  "bug_reporter_agreed_on_going_public_at": "2022-11-24T20:39:04.152Z",
+  "team_member_agreed_on_going_public_at": "2022-11-25T18:11:12.666Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "We noticed that the upload functionality contains the ability to upload files from remote server, however there are some mitigations against accessing the AWS Instance Metadata service.\n\nWe've managed to bypass these mitigations using DNS rebinding and we've managed to fetch the AWS IAM keys when Concrete CMS is running in the cloud.\n\nWe've used http://1u.ms/ service for DNS rebinding, please see screenshots with evidence.\n\n## Impact\n\nAn attacker can bypass the SSRF protections and he can fetch the AWS IAM keys under which the application is running. From here on he can do enumeration and mount other attacks.",
+  "weakness": {
+    "id": 68,
+    "name": "Server-Side Request Forgery (SSRF)"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1480442,
+      "file_name": "fetch_IAM_role.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/kg48rwa7q4uks02cfol7zraa0sjw?response-content-disposition=attachment%3B%20filename%3D%22fetch_IAM_role.png%22%3B%20filename%2A%3DUTF-8%27%27fetch_IAM_role.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66KWXKRZ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154339Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHp5JZdBsnFXp1KoMp1buiZGfdaFUo5johy6JvUE40UBAiEA0Cbdmcpsglf33ldDOYBangt0e7wtajz35AKir5z6fWQquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDD5fdA%2F8vBbHDEzPpCqPBSPGFRTuMNIpDMYZvWFt1soG9nwUW0xmS99emNvT2KVPd9kNxQ74PQ3P5S490YtY4DD0nsSk6JyxOP7fvHOKTeSursPBSmp%2FH95mDUimpOYksLqdblawIOvq90r1rdXfUkGzEZ%2FXtOqCsVc6G0mJcPKOcOWO8P6xSHOG%2BS%2FjCRDFtr7V%2B%2F5tyJmEkSKcHjArnOS5xQalj8fAtY7Gy8BEhMUfdbYem7Fvi5lau43KOgWPp43MUn90%2B0LdS4YesZ5%2B6UqWc2L754CnnMJI0BJrHIs83jp6th8ctXwNPhjQIjeJXV5u6NHjJbamO%2BFtghv2p2qYsQM5aF%2BIxMSbNyiexIfzWH2D06Obz2iOZPJfF8Nzh3AiAwd2znXuZJr5u3NYu1wDll12g%2BAEYyBs4PsqQj0NEIXzFrHGZALVMy13QmrM%2Be28Uj04psQcao7zoMz3w542LAj5yhcK5gImBl1rpb81F6RUQN5x9%2F6QxsikfBKumcLjEYJUuwesYSKBXT3qzUNXC0YHzNQUDK87lbGlelfSPeCLW8WD5brYkTMe9kj%2BCtxRByU0EVPiMSFf6qRwkbSZav7FchqaQ3lm3o6X1%2FjkB%2BnZb7%2BuH06NJmbjfkJUmnbxi09YawV2C57IV2rVupepTY72xKU%2BVAwX4o%2BUQVETw%2BLtr83AohBxuvyhr0el5OnLCO54piM6Ns9%2F52%2BxRVvgSgw90EyG%2FrL56fzLnXi0L65ZHaIQP6W%2BFeSjjfbCaKH33N3qnc9WKY5EM%2BZENt1G0GEbArSt%2FgJfVQL4dIjZFHLZuqOEP35AthduFFL8KE7SwW3ciGGmsD%2BbMXgYxxsk2hCIadF4l0Z%2BxIQVyV92OOY0OIGYsaeCES1DHXkw%2BIqW0QY6sQFpdWQ9TFaTI4sUW%2BH8005zYG0agV1NMszpLt2UJwMsh8EjH%2FRzrSsZ%2B8BLNOUjwFioB2ct3GFzUx%2FmwEXj5aiD7%2BIPcBoQ0CKeIE60qXqtFxqd6rh%2FW%2BjREQwwVdzcD5TgTPSzcEEHalGDLcM0iJWZlA%2Bio2ietoR17kXq9I%2FOT%2Bhnb72%2Bma%2FNPWRN9tBU52GAwe34238UK91ScTDcgT52Zz%2FS7XfVmwlE2ge7EOIW3RE%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9f1110a89f997c28ec6dd4b581ade3472835f7facd80cc3dfb3208f6b8ae79f5",
+      "file_size": 26525,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1480443,
+      "file_name": "DNS-rebinding.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/z0qf86v59xa9bx8xl0c8wdedz9lb?response-content-disposition=attachment%3B%20filename%3D%22DNS-rebinding.png%22%3B%20filename%2A%3DUTF-8%27%27DNS-rebinding.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66KWXKRZ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154339Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHp5JZdBsnFXp1KoMp1buiZGfdaFUo5johy6JvUE40UBAiEA0Cbdmcpsglf33ldDOYBangt0e7wtajz35AKir5z6fWQquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDD5fdA%2F8vBbHDEzPpCqPBSPGFRTuMNIpDMYZvWFt1soG9nwUW0xmS99emNvT2KVPd9kNxQ74PQ3P5S490YtY4DD0nsSk6JyxOP7fvHOKTeSursPBSmp%2FH95mDUimpOYksLqdblawIOvq90r1rdXfUkGzEZ%2FXtOqCsVc6G0mJcPKOcOWO8P6xSHOG%2BS%2FjCRDFtr7V%2B%2F5tyJmEkSKcHjArnOS5xQalj8fAtY7Gy8BEhMUfdbYem7Fvi5lau43KOgWPp43MUn90%2B0LdS4YesZ5%2B6UqWc2L754CnnMJI0BJrHIs83jp6th8ctXwNPhjQIjeJXV5u6NHjJbamO%2BFtghv2p2qYsQM5aF%2BIxMSbNyiexIfzWH2D06Obz2iOZPJfF8Nzh3AiAwd2znXuZJr5u3NYu1wDll12g%2BAEYyBs4PsqQj0NEIXzFrHGZALVMy13QmrM%2Be28Uj04psQcao7zoMz3w542LAj5yhcK5gImBl1rpb81F6RUQN5x9%2F6QxsikfBKumcLjEYJUuwesYSKBXT3qzUNXC0YHzNQUDK87lbGlelfSPeCLW8WD5brYkTMe9kj%2BCtxRByU0EVPiMSFf6qRwkbSZav7FchqaQ3lm3o6X1%2FjkB%2BnZb7%2BuH06NJmbjfkJUmnbxi09YawV2C57IV2rVupepTY72xKU%2BVAwX4o%2BUQVETw%2BLtr83AohBxuvyhr0el5OnLCO54piM6Ns9%2F52%2BxRVvgSgw90EyG%2FrL56fzLnXi0L65ZHaIQP6W%2BFeSjjfbCaKH33N3qnc9WKY5EM%2BZENt1G0GEbArSt%2FgJfVQL4dIjZFHLZuqOEP35AthduFFL8KE7SwW3ciGGmsD%2BbMXgYxxsk2hCIadF4l0Z%2BxIQVyV92OOY0OIGYsaeCES1DHXkw%2BIqW0QY6sQFpdWQ9TFaTI4sUW%2BH8005zYG0agV1NMszpLt2UJwMsh8EjH%2FRzrSsZ%2B8BLNOUjwFioB2ct3GFzUx%2FmwEXj5aiD7%2BIPcBoQ0CKeIE60qXqtFxqd6rh%2FW%2BjREQwwVdzcD5TgTPSzcEEHalGDLcM0iJWZlA%2Bio2ietoR17kXq9I%2FOT%2Bhnb72%2Bma%2FNPWRN9tBU52GAwe34238UK91ScTDcgT52Zz%2FS7XfVmwlE2ge7EOIW3RE%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0334e0845dd94baa08b31a4707b65cbe6330598ffd590b59fa52119210dae320",
+      "file_size": 48785,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1480444,
+      "file_name": "IAM_keys.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/dv96r71wdphd0ou9q1r578j24kss?response-content-disposition=attachment%3B%20filename%3D%22IAM_keys.png%22%3B%20filename%2A%3DUTF-8%27%27IAM_keys.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66KWXKRZ%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154339Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHp5JZdBsnFXp1KoMp1buiZGfdaFUo5johy6JvUE40UBAiEA0Cbdmcpsglf33ldDOYBangt0e7wtajz35AKir5z6fWQquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDD5fdA%2F8vBbHDEzPpCqPBSPGFRTuMNIpDMYZvWFt1soG9nwUW0xmS99emNvT2KVPd9kNxQ74PQ3P5S490YtY4DD0nsSk6JyxOP7fvHOKTeSursPBSmp%2FH95mDUimpOYksLqdblawIOvq90r1rdXfUkGzEZ%2FXtOqCsVc6G0mJcPKOcOWO8P6xSHOG%2BS%2FjCRDFtr7V%2B%2F5tyJmEkSKcHjArnOS5xQalj8fAtY7Gy8BEhMUfdbYem7Fvi5lau43KOgWPp43MUn90%2B0LdS4YesZ5%2B6UqWc2L754CnnMJI0BJrHIs83jp6th8ctXwNPhjQIjeJXV5u6NHjJbamO%2BFtghv2p2qYsQM5aF%2BIxMSbNyiexIfzWH2D06Obz2iOZPJfF8Nzh3AiAwd2znXuZJr5u3NYu1wDll12g%2BAEYyBs4PsqQj0NEIXzFrHGZALVMy13QmrM%2Be28Uj04psQcao7zoMz3w542LAj5yhcK5gImBl1rpb81F6RUQN5x9%2F6QxsikfBKumcLjEYJUuwesYSKBXT3qzUNXC0YHzNQUDK87lbGlelfSPeCLW8WD5brYkTMe9kj%2BCtxRByU0EVPiMSFf6qRwkbSZav7FchqaQ3lm3o6X1%2FjkB%2BnZb7%2BuH06NJmbjfkJUmnbxi09YawV2C57IV2rVupepTY72xKU%2BVAwX4o%2BUQVETw%2BLtr83AohBxuvyhr0el5OnLCO54piM6Ns9%2F52%2BxRVvgSgw90EyG%2FrL56fzLnXi0L65ZHaIQP6W%2BFeSjjfbCaKH33N3qnc9WKY5EM%2BZENt1G0GEbArSt%2FgJfVQL4dIjZFHLZuqOEP35AthduFFL8KE7SwW3ciGGmsD%2BbMXgYxxsk2hCIadF4l0Z%2BxIQVyV92OOY0OIGYsaeCES1DHXkw%2BIqW0QY6sQFpdWQ9TFaTI4sUW%2BH8005zYG0agV1NMszpLt2UJwMsh8EjH%2FRzrSsZ%2B8BLNOUjwFioB2ct3GFzUx%2FmwEXj5aiD7%2BIPcBoQ0CKeIE60qXqtFxqd6rh%2FW%2BjREQwwVdzcD5TgTPSzcEEHalGDLcM0iJWZlA%2Bio2ietoR17kXq9I%2FOT%2Bhnb72%2Bma%2FNPWRN9tBU52GAwe34238UK91ScTDcgT52Zz%2FS7XfVmwlE2ge7EOIW3RE%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=513ba557d500711d0704f1a73f953e229a63ce98928904b7bb0e3359b98ca946",
+      "file_size": 50401,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 10,
+  "voters": [
+    "mr-medi",
+    "he4am",
+    "zy9ard3",
+    "anonxr",
+    "shreyaschavhan",
+    "shivammusic",
+    "qweasdzxcvbn",
+    "recklezzpenguin",
+    "destinedtohack",
+    "0xkenzo"
+  ],
+  "severity": {
+    "rating": "low",
+    "score": 3.5,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "high",
+      "privileges_required": "low",
+      "user_interaction": "none",
+      "scope": "changed",
+      "confidentiality": "low",
+      "integrity": "none",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 13099,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/concrete5/concrete5",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

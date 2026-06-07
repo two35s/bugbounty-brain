@@ -1,0 +1,11 @@
+Category: ssti
+Reports: 2
+
+[None] Remote Code Execution via unsafe usage of `reply.view({ raw })` in @fastify/view (EJS template engine)
+  URL: https://hackerone.com/reports/3122019 | CWE: Unknown
+  Program: fastify | Reporter: oblivionsage
+
+[High] Stored XSS templates -> 'call for action' feature
+  URL: https://hackerone.com/reports/237927 | CWE: Unknown
+  Program: mixmax | Reporter: r0h17
+

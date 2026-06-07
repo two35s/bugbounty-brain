@@ -1,0 +1,183 @@
+{
+  "id": 1081211,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMDgxMjEx",
+  "url": "https://hackerone.com/reports/1081211",
+  "title": "[nextcloud.com] Control character allowed in Submit Question",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2021-01-19T06:46:46.717Z",
+  "submitted_at": "2021-01-19T06:46:46.763Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": true,
+    "username": "lmhu",
+    "url": "/lmhu",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/mzorbmv6t3ar9rxldl6flguh5cml/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 13291,
+    "url": "https://hackerone.com/nextcloud",
+    "handle": "nextcloud",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/hsgut1vi1cv8housqai9cm9383yx/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/hsgut1vi1cv8housqai9cm9383yx/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Nextcloud",
+      "twitter_handle": "nextclouders",
+      "website": "https://nextcloud.com",
+      "about": "Access, share and protect your files, calendars, contacts, communication & more at home and in your enterprise."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2021-01-20T12:08:47.129Z",
+  "bug_reporter_agreed_on_going_public_at": "2021-01-20T12:05:39.688Z",
+  "team_member_agreed_on_going_public_at": "2021-01-20T12:08:47.022Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "**Issue descriptions**\nWe found that the maximum length of the first and last name fields was not set to 32 characters at registration and to 1000 characters when using the profile update form. The attacker can use this method as a malware attack, the user will redirect to a website that contains malware or hijack.\n\n**URL Effected**\nhttps://nextcloud.com/contact/\n\n### Steps To Reproduce:\n  * Open directory url https://nextcloud.com/contact/\n  * Repreat url to burp suite \n  * Chage a subject ``Organization-name`` your payloads.txt\n  * \"Subject Name\" has been effected a Control character allowed vulnerable but you can use this for hijacking emails\n  * Paste a victim emails to sent a malware attack\n  * Sent request to victim emails, and boom this emails has been hijact.\n\n**Proof On Concept**\n```\nPOST /api/t/1/credit/share HTTP/1.1\nHost: nextcloud.com\nConnection: close\nUpgrade-Insecure-Requests: 1\n\nyourname=%24%21%25%24%5E%21%25%24%5E%25%21*%24%25%21*%5E%24%25*%26%21%25%24*%26%5E%21%26*%5E%24%26*%21%5E%26*%24%21%25%24%5E%21%25%24%5E%25%21*%24%25%21*%5E%24%25*%26%21&email=kittytrace%40wearehackerone.com&organization=Hello+your+account+has+been+hacked+please+visit+here+https%3A%2F%2Fevil.com%2F&role=Administrator&phone=Test&comments=TEST&gdprcheck=gdprchecked&captcha=10&checksum=a29a82e78e%3A478e965f1f8045a0beac0c1ba3424f10ca25f859543909747b89c33eec6df943\n```\n### Screenshots POC\nF1163343\nF1163344\n\n## Impact\n\nAttacker can sent a malware attack to victim email using a server notification emails this is can leads to Business Logic Errors\n  * Email Hijacking\n  * Control character allowed in username",
+  "weakness": {
+    "id": 26,
+    "name": "Improper Access Control - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1163343,
+      "file_name": "Screenshots.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/k8sialqoz3mco4rnl8o6n4qfr4fr?response-content-disposition=attachment%3B%20filename%3D%22Screenshots.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshots.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQW6DNA2DM%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125058Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBwHgYaj6VuTMMn%2Ft2XknwvFopEj5hTZCUjIqMpc3IwcAiEA3lJZNlZ6JI7hgyNgwDtLVHonylwcoEfjfq0Q2uKeSB4qugUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGuRdXsQtsniHUqZAiqOBdTPfv%2FOEC2OZ4iX17UW6HeHTu%2Bg3BJJ18BgdpuBrVwOImusswfssNcCNHG7bpGt5vKFjaxca5zDl52xmW9WBk4HfWXi85SFiSbK2lhzdbXMDd%2BUhMlg5SC7uAd5UFZ%2F%2FBUL%2BGDELuxNCR8imhcwqnA1SafNlm%2F4jtOOBX4pVIiR3Kpn75uTEMahIPZN8edngLqzvOZBl84OiYZFNNlv4APbaguIYMzIt0MZJ6E6EC%2FboteLn93emofTBJ%2F%2B1nOu5JxI4rCrSV0EWWr3pAq1n865RgPfKK%2BYootJa%2FySZ5tXqXu7VO%2FEbomK18a4DwShxF4qHI8hjcKMjtVF3U7i99UzWwxax4Vd3HfKuXNjPIYoLhgWt0oRlRzPQ6hWDMqf0JAthItTkyWoarXkIRkATcr2hJxfvVbPcIhHVm0ouHkdRZmqyY%2B479KeFvK%2BUPm6DbiFWLD1FNL3p8F0pzl2vZe%2B4jpNFcUfcIum2p1wg%2FWKznflMw7ghdha8%2BuwLUtTYjz8bfAFenJ6o3eArfBtXDQqWwNCKQYQ5frqRq4vAi7m8TJSuvPoX2UYJU7xMtoFja9OrRwCWz0hoht7VrWNCVf%2F3HoOscEKDoLio3Iatldc3Q9KYv2F2DRgZwndf1KNt5d3j3zN8qJzpA7rvS3lYKP0VqVfCmQydsSEHYe7yrY3YpWZSvoKmGeNisThNQbwIMcc1j4pTaAA6FxV5X4qep1Gs4%2Fm4i6L5xKIE1EIXNvHO0nFpQxg%2BuU47yNRuxJap3cSpZGWZCLBTx8BUcy0hwmPuIdpiXQCKm45xPD4fzc86jKKm75HreFob8yJZcFwDMUWUS5WP6RYQVY%2BHRr8bpqZwqXA%2Fr%2FIhFQLtwpfyzDKtJXRBjqxAakorzXfapIxlb%2FTRtlUuNPmAmu49%2FPK%2B%2BcyKvk7uZOtSHT0MKmlvFqb01hGSAQl1Otxe1yn3Yhe5bIU0XcEuRf4n9aWICM3nQApjZh0WeAx3DafUYY34iZ7jq5n7TJU5A%2Bxc9tfi69v5AQrumAq%2BLR5Xzx1YwVrv5tYFznn4wFBVhrC5o0bK8fm3ahYookVtmTzcr0sZ7c4hYe8l6fm9ag9mE4kDALQPV%2BAz9pmOlbH0A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=f28417252c1de87235285afac8cbede1c3739096bdfe17d656544b4a789e1ead",
+      "file_size": 18725,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1163344,
+      "file_name": "ScreenshotsPOC.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/izhnxnpyqrbqvt3mtquo6ckmy0zt?response-content-disposition=attachment%3B%20filename%3D%22ScreenshotsPOC.png%22%3B%20filename%2A%3DUTF-8%27%27ScreenshotsPOC.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQW6DNA2DM%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125058Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBwHgYaj6VuTMMn%2Ft2XknwvFopEj5hTZCUjIqMpc3IwcAiEA3lJZNlZ6JI7hgyNgwDtLVHonylwcoEfjfq0Q2uKeSB4qugUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGuRdXsQtsniHUqZAiqOBdTPfv%2FOEC2OZ4iX17UW6HeHTu%2Bg3BJJ18BgdpuBrVwOImusswfssNcCNHG7bpGt5vKFjaxca5zDl52xmW9WBk4HfWXi85SFiSbK2lhzdbXMDd%2BUhMlg5SC7uAd5UFZ%2F%2FBUL%2BGDELuxNCR8imhcwqnA1SafNlm%2F4jtOOBX4pVIiR3Kpn75uTEMahIPZN8edngLqzvOZBl84OiYZFNNlv4APbaguIYMzIt0MZJ6E6EC%2FboteLn93emofTBJ%2F%2B1nOu5JxI4rCrSV0EWWr3pAq1n865RgPfKK%2BYootJa%2FySZ5tXqXu7VO%2FEbomK18a4DwShxF4qHI8hjcKMjtVF3U7i99UzWwxax4Vd3HfKuXNjPIYoLhgWt0oRlRzPQ6hWDMqf0JAthItTkyWoarXkIRkATcr2hJxfvVbPcIhHVm0ouHkdRZmqyY%2B479KeFvK%2BUPm6DbiFWLD1FNL3p8F0pzl2vZe%2B4jpNFcUfcIum2p1wg%2FWKznflMw7ghdha8%2BuwLUtTYjz8bfAFenJ6o3eArfBtXDQqWwNCKQYQ5frqRq4vAi7m8TJSuvPoX2UYJU7xMtoFja9OrRwCWz0hoht7VrWNCVf%2F3HoOscEKDoLio3Iatldc3Q9KYv2F2DRgZwndf1KNt5d3j3zN8qJzpA7rvS3lYKP0VqVfCmQydsSEHYe7yrY3YpWZSvoKmGeNisThNQbwIMcc1j4pTaAA6FxV5X4qep1Gs4%2Fm4i6L5xKIE1EIXNvHO0nFpQxg%2BuU47yNRuxJap3cSpZGWZCLBTx8BUcy0hwmPuIdpiXQCKm45xPD4fzc86jKKm75HreFob8yJZcFwDMUWUS5WP6RYQVY%2BHRr8bpqZwqXA%2Fr%2FIhFQLtwpfyzDKtJXRBjqxAakorzXfapIxlb%2FTRtlUuNPmAmu49%2FPK%2B%2BcyKvk7uZOtSHT0MKmlvFqb01hGSAQl1Otxe1yn3Yhe5bIU0XcEuRf4n9aWICM3nQApjZh0WeAx3DafUYY34iZ7jq5n7TJU5A%2Bxc9tfi69v5AQrumAq%2BLR5Xzx1YwVrv5tYFznn4wFBVhrC5o0bK8fm3ahYookVtmTzcr0sZ7c4hYe8l6fm9ag9mE4kDALQPV%2BAz9pmOlbH0A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4acbc350373e942446072b2173db3fcd46bfa3baf37a9aac9383183e27e6793a",
+      "file_size": 118424,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2021-02-19T12:05:39.781Z",
+  "allow_singular_disclosure_after": -167100319.09170952,
+  "singular_disclosure_allowed": true,
+  "vote_count": 5,
+  "voters": [
+    "lu3ky-13",
+    "destinedtohack",
+    "ca_r01c8tr64ciy-v",
+    "transquinnzel",
+    "martinspielmann"
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 56,
+    "asset_type": "URL",
+    "asset_identifier": "nextcloud.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

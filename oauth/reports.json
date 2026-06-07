@@ -1,0 +1,55 @@
+[
+  {
+    "id": 3423013,
+    "title": "page.line.me Open Redirect Leading to OAuth Authorization Code Exposure and Access Token Compromise",
+    "url": "https://hackerone.com/reports/3423013",
+    "substate": "resolved",
+    "severity_rating": "High",
+    "disclosed": true,
+    "disclosed_at": "2026-06-02T03:30:35.141Z",
+    "submitted_at": "2025-11-12T12:30:21.664Z",
+    "cve_ids": [],
+    "cwe": null,
+    "votes": 38,
+    "total_awarded_amount": 1000,
+    "reporter": "imnotr3al",
+    "program": "line",
+    "program_name": "LY Corporation"
+  },
+  {
+    "id": 1806275,
+    "title": "Mail app stores cleartext password in database until OAUTH2 setup is done",
+    "url": "https://hackerone.com/reports/1806275",
+    "substate": "resolved",
+    "severity_rating": "Low",
+    "disclosed": true,
+    "disclosed_at": "2023-03-08T09:49:01.303Z",
+    "submitted_at": "2022-12-15T10:21:14.550Z",
+    "cve_ids": [
+      "CVE-2023-23944"
+    ],
+    "cwe": "Plaintext Storage of a Password",
+    "votes": 12,
+    "total_awarded_amount": null,
+    "reporter": "christophwurst",
+    "program": "nextcloud",
+    "program_name": "Nextcloud"
+  },
+  {
+    "id": 1700734,
+    "title": "Shop App - Attacker is able to intercept authorization code during authentication (OAuth) and is able to get access to Microsoft Outlook email account",
+    "url": "https://hackerone.com/reports/1700734",
+    "substate": "resolved",
+    "severity_rating": "Low",
+    "disclosed": true,
+    "disclosed_at": "2023-03-02T21:21:51.265Z",
+    "submitted_at": "2022-09-14T19:13:42.938Z",
+    "cve_ids": [],
+    "cwe": "Insufficiently Protected Credentials",
+    "votes": 29,
+    "total_awarded_amount": 900,
+    "reporter": "kun_19",
+    "program": "shopify",
+    "program_name": "Shopify"
+  }
+]

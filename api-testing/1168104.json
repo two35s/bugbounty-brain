@@ -1,0 +1,145 @@
+{
+  "id": 1168104,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMTY4MTA0",
+  "url": "https://hackerone.com/reports/1168104",
+  "title": "Weak password policy leading to exposure of administrator account access",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "critical",
+  "readable_substate": "Resolved",
+  "created_at": "2021-04-19T06:46:31.413Z",
+  "submitted_at": "2021-04-19T06:46:31.444Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "rptl",
+    "url": "/rptl",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/HSnGP4ZA9NoaVBJ9pAHjSPSQ/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 50553,
+    "url": "https://hackerone.com/gsa_vdp",
+    "handle": "gsa_vdp",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/9AGCZikBbg78ZgLS65KZumei/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/9AGCZikBbg78ZgLS65KZumei/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "U.S. General Services Administration",
+      "twitter_handle": null,
+      "website": "http://gsa.gov",
+      "about": ""
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2021-05-20T14:45:10.915Z",
+  "bug_reporter_agreed_on_going_public_at": "2021-04-20T14:45:06.395Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi,\n\nThe login endpoint https://mysmartplans.gsa.gov/Marathon/Default.aspx is having weak password policy.\n\nDuring the recon, I came across a mysmartplans overview document http://www.accentimaging.com/accent/pdfs/Accent%20MySmartPlans.pdf\n. In this document few users are mentioned like - rick, ban, tim etc.I tried to login user password combination of these user-names & rick wass found a valid administrator username & password.\n\nusername- rick\npassword -rick\n\nThis user appears to be administrator user.\nHope GSA takes necessary measures to improve user account policies.\n\nPoC\n\n1) Open url https://mysmartplans.gsa.gov/Marathon/Default.aspx\n2) Enter username  rick password rick\n3) You will be logged into user account with administrative access. You can edit, create, update users.\n\n## Impact\n\nAdmin account compromise.",
+  "weakness": {
+    "id": 145,
+    "name": "Misconfiguration"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1270403,
+      "file_name": "Capture.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/yinjz7dkocu90c8bei4z6vtwywk3?response-content-disposition=attachment%3B%20filename%3D%22Capture.JPG%22%3B%20filename%2A%3DUTF-8%27%27Capture.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123347Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d22bab6dc1f9b70843aa1ecbf884cc68c4ba380c8ed631e452815ea53857a97d",
+      "file_size": 44881,
+      "type": "image/jpeg",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2021-05-20T14:45:06.525Z",
+  "allow_singular_disclosure_after": -159313720.76902938,
+  "singular_disclosure_allowed": true,
+  "vote_count": 36,
+  "voters": [
+    "achabi7",
+    "bombon",
+    "0x10n",
+    "run_win",
+    "shubham_srt",
+    "akashhamal0x01",
+    "musab_alharany",
+    "isira_adithya",
+    "unknownsh",
+    "saiduttmekala",
+    "and 26 more..."
+  ],
+  "severity": {
+    "rating": "critical",
+    "score": 9.1,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "none",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "high",
+      "integrity": "high",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 62814,
+    "asset_type": "URL",
+    "asset_identifier": "mysmartplans.gsa.gov",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

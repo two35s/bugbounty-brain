@@ -1,0 +1,99 @@
+Category: host-header
+Reports: 24
+
+[Medium] Host Header Attac
+  URL: https://hackerone.com/reports/2627221 | CWE: Unknown
+  Program: rubygems | Reporter: n_ob_o_dy
+
+[Medium] SSRF via host header let access localhost via https://go.dialexa.com
+  URL: https://hackerone.com/reports/2696271 | CWE: Unknown
+  Program: ibm | Reporter: mersa-v6
+
+[Low] Host Header Injection - internal.qa.delivery.indrive.com
+  URL: https://hackerone.com/reports/2076786 | CWE: Unknown
+  Program: indrive | Reporter: sid_x95
+
+[Medium] CRLF Injection in Nodejs ‘undici’ via host
+  URL: https://hackerone.com/reports/1878489 | CWE: CRLF Injection
+  Program: ibb | Reporter: timon8
+
+[Medium] CRLF Injection in Nodejs ‘undici’ via host
+  URL: https://hackerone.com/reports/1820955 | CWE: CRLF Injection
+  Program: nodejs | Reporter: timon8
+
+[Low] CGI::Cookieクラスにおけるセキュリティ上好ましくない仕様および実装
+  URL: https://hackerone.com/reports/1204977 | CWE: HTTP Response Splitting
+  Program: ruby | Reporter: htokumaru
+
+[High] RubyのCGIライブラリにHTTPレスポンス分割（HTTPヘッダインジェクション）があり、秘密情報が漏洩する
+  URL: https://hackerone.com/reports/1204695 | CWE: HTTP Response Splitting
+  Program: ruby | Reporter: htokumaru
+
+[Low] CRLF Injection - Http Response Splitting 
+  URL: https://hackerone.com/reports/1514359 | CWE: CRLF Injection
+  Program: exness | Reporter: socialcodia
+
+[Medium] Host Header Injection leads to Open Redirect and Content Spoofing or Text Injection.
+  URL: https://hackerone.com/reports/1444675 | CWE: Unknown
+  Program: omise | Reporter: oblivionlight
+
+[Low] Protocol Smuggling over LDAP password field
+  URL: https://hackerone.com/reports/1054282 | CWE: CRLF Injection
+  Program: owncloud | Reporter: pabl00nicarres
+
+[Critical] HTTP Smuggling multiple issues in Squid 3.x & squid 4.x
+  URL: https://hackerone.com/reports/758445 | CWE: HTTP Response Splitting
+  Program: ibb | Reporter: regilero
+
+[Medium] CRLF injection agentcrm.8x8.com
+  URL: https://hackerone.com/reports/413115 | CWE: CRLF Injection
+  Program: 8x8-bounty | Reporter: w2w
+
+[Low] CRLF Injection - http://stage.mackeeper.com/
+  URL: https://hackerone.com/reports/730786 | CWE: CRLF Injection
+  Program: clario | Reporter: kphaks
+
+[Low] CRLF Injection - http://stage-static-cdn.mackeeper.com/
+  URL: https://hackerone.com/reports/730788 | CWE: CRLF Injection
+  Program: clario | Reporter: kphaks
+
+[Medium] CRLF Injection in urllib
+  URL: https://hackerone.com/reports/590020 | CWE: CRLF Injection
+  Program: ibb | Reporter: push0ebp
+
+[Low] Creating malformed URLs via new line character in-between two URLs leads to misrepresented hyperlinks in Tweets/DMs
+  URL: https://hackerone.com/reports/712979 | CWE: CRLF Injection
+  Program: x | Reporter: zlz
+
+[Medium] CRLF injection at https://mariadb.org/.
+  URL: https://hackerone.com/reports/476257 | CWE: CRLF Injection
+  Program: mariadb | Reporter: sergeybelove
+
+[Medium] [downloads.mariadb.org] CRLF injection in case of encoded query mark
+  URL: https://hackerone.com/reports/490997 | CWE: CRLF Injection
+  Program: mariadb | Reporter: s_p_q_r
+
+[Medium] CRLF injection on https://buildbot.mariadb.org
+  URL: https://hackerone.com/reports/481512 | CWE: CRLF Injection
+  Program: mariadb | Reporter: mik317
+
+[Medium] mod_userdir CRLF injection (CVE-2016-4975)
+  URL: https://hackerone.com/reports/409512 | CWE: CRLF Injection
+  Program: ibb | Reporter: bobrov
+
+[Low] [m.airbnb.com] CRLF Injection
+  URL: https://hackerone.com/reports/197279 | CWE: HTTP Response Splitting
+  Program: airbnb | Reporter: bobrov
+
+[Low] Нет маркера на добавление песни в плейлист пользователя
+  URL: https://hackerone.com/reports/242408 | CWE: CRLF Injection
+  Program: vkcom | Reporter: pisarenko
+
+[Medium] CRLF Injection on openvpn.svc.ubnt.com
+  URL: https://hackerone.com/reports/232327 | CWE: CRLF Injection
+  Program: ui | Reporter: 0x0luke
+
+[Medium] CRLF Injection at vpn.bitstrips.com
+  URL: https://hackerone.com/reports/237357 | CWE: CRLF Injection
+  Program: snapchat | Reporter: wplus
+

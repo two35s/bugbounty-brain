@@ -1,0 +1,399 @@
+Category: open-redirect
+Reports: 99
+
+[?] Liberapay member team twitter account broken Link Hijacking via Expired Twitter Account Link
+  URL: https://hackerone.com/reports/3721519 | CWE: Open Redirect
+  Program: liberapay | Reporter: rox-11
+
+[Medium] Bypass of Open Redirect Fix on lovable.dev via /..// Path Traversal in redirect parameter
+  URL: https://hackerone.com/reports/3599248 | CWE: Open Redirect
+  Program: lovable-vdp | Reporter: marioniangi
+
+[Medium] █████████ (Android): Vulnerable to Javascript Injection and Open redirect
+  URL: https://hackerone.com/reports/2555949 | CWE: Open Redirect
+  Program: deptofdefense | Reporter: cleanchain50
+
+[Medium] Account takeover using reset password link
+  URL: https://hackerone.com/reports/2341038 | CWE: Open Redirect
+  Program: mars | Reporter: haoshokunoo
+
+[Low] Open Redirect - Polycom Company Directory
+  URL: https://hackerone.com/reports/1836339 | CWE: Open Redirect
+  Program: 8x8-bounty | Reporter: mr-k0anti
+
+[Medium] Open Redirect in Logout & Login
+  URL: https://hackerone.com/reports/1788006 | CWE: Open Redirect
+  Program: expediagroup_bbp | Reporter: qualw1n
+
+[Medium] CVE-2022-45402: Apache Airflow: Open redirect during login
+  URL: https://hackerone.com/reports/1782514 | CWE: Open Redirect
+  Program: ibb | Reporter: bugra
+
+[Medium] Open Redirect at █████
+  URL: https://hackerone.com/reports/1634105 | CWE: Open Redirect
+  Program: deptofdefense | Reporter: angeltsvetkov
+
+[Low] Redirection in Repeater & Intruder Tab
+  URL: https://hackerone.com/reports/1541301 | CWE: Open Redirect
+  Program: portswigger | Reporter: mr_vrush
+
+[Low] Open redirection at https://smartreports.mtncameroon.net
+  URL: https://hackerone.com/reports/1530396 | CWE: Open Redirect
+  Program: mtn_group | Reporter: vulnera
+
+[Medium] Open redirect found on account.brave.com
+  URL: https://hackerone.com/reports/1338437 | CWE: Open Redirect
+  Program: brave | Reporter: tabaahi
+
+[Low] Open Redirect TO  Stealing aadvid
+  URL: https://hackerone.com/reports/1378533 | CWE: Open Redirect
+  Program: tiktok | Reporter: lu3ky-13
+
+[Low] Attachment references in markdown don't warn before downloading 
+  URL: https://hackerone.com/reports/1386277 | CWE: Open Redirect
+  Program: security | Reporter: iamr0000t
+
+[Low] OPEN REDIRECT 
+  URL: https://hackerone.com/reports/1369806 | CWE: Open Redirect
+  Program: nutanix | Reporter: kauenavarro
+
+[Medium] Open redirect (DOM-based) on av.ru via "return_url" parameter (Login form)
+  URL: https://hackerone.com/reports/958864 | CWE: Open Redirect
+  Program: av | Reporter: zophi
+
+[Medium] The Host Authorization middleware in Action Pack is vulnerable to crafted X-Forwarded-Host values
+  URL: https://hackerone.com/reports/1374512 | CWE: Open Redirect
+  Program: ibb | Reporter: mshtawythug
+
+[Medium] Open Redirect in  www.shopify.dev Environment 
+  URL: https://hackerone.com/reports/842035 | CWE: Open Redirect
+  Program: shopify | Reporter: beerboy_ankit
+
+[Low] Open redirect in fastify-static via mishandled user's input when attempt to redirect
+  URL: https://hackerone.com/reports/1354255 | CWE: Open Redirect
+  Program: fastify | Reporter: drstrnegth
+
+[Medium] session takeover via open protocol redirection on streamlabs.com
+  URL: https://hackerone.com/reports/1178239 | CWE: Open Redirect
+  Program: logitech | Reporter: f_m
+
+[Low] Open Redirect at https://www.nutanix.com/tw/login via icid parameter
+  URL: https://hackerone.com/reports/1131753 | CWE: Open Redirect
+  Program: nutanix | Reporter: zevfw5pp
+
+[Low] Open Redirect
+  URL: https://hackerone.com/reports/1213580 | CWE: Open Redirect
+  Program: affirm | Reporter: 0xpugal
+
+[Low] Tab nabbing in Hackerone inbox.
+  URL: https://hackerone.com/reports/1145563 | CWE: Open Redirect
+  Program: security | Reporter: adhamsadaqah
+
+[Medium] Bypassing Content-Security-Policy leads to open-redirect and iframe xss
+  URL: https://hackerone.com/reports/1166766 | CWE: Open Redirect
+  Program: stripo | Reporter: echidonut
+
+[Low] New link opening method makes hackerone vulnerable to tabnabbing
+  URL: https://hackerone.com/reports/1159398 | CWE: Open Redirect
+  Program: security | Reporter: recon_ninja
+
+[Medium] Open URL Redirection
+  URL: https://hackerone.com/reports/1238684 | CWE: Open Redirect
+  Program: unikrn | Reporter: stark303
+
+[Low] Open redirect в карусели сообщения бота
+  URL: https://hackerone.com/reports/1206117 | CWE: Open Redirect
+  Program: vkcom | Reporter: manaenckov
+
+[Low] Open Redirect и подмена ссылки в сниппете приложения VKMA
+  URL: https://hackerone.com/reports/1112342 | CWE: Open Redirect
+  Program: vkcom | Reporter: manaenckov
+
+[Low] Open redirect on https://signin.rockstargames.com/connect/authorize/rsg
+  URL: https://hackerone.com/reports/1101771 | CWE: Open Redirect
+  Program: rockstargames | Reporter: bugstar
+
+[Medium] Open redirect in ck.php and lg.php
+  URL: https://hackerone.com/reports/1081406 | CWE: Open Redirect
+  Program: revive_adserver | Reporter: mbeccati
+
+[Low] Cross Site Scripting and Open Redirect in affiliate-preview.php file 
+  URL: https://hackerone.com/reports/819362 | CWE: Open Redirect
+  Program: revive_adserver | Reporter: keyurvala
+
+[Medium] Open Redirect Vulnerability on TikTok Ads Portal 
+  URL: https://hackerone.com/reports/948150 | CWE: Open Redirect
+  Program: tiktok | Reporter: luizviana
+
+[Low] Open Redirect on [blog.wavecell.com]
+  URL: https://hackerone.com/reports/929633 | CWE: Open Redirect
+  Program: 8x8-bounty | Reporter: melbadry9
+
+[Low] China - Open redirect at trackinghub.starbucks.com.cn
+  URL: https://hackerone.com/reports/856137 | CWE: Open Redirect
+  Program: starbucks | Reporter: m82a1
+
+[Low] Open Redirect at https://store.mackeeper.com/767/cookie via redirectto parameter
+  URL: https://hackerone.com/reports/734418 | CWE: Open Redirect
+  Program: clario | Reporter: sec0ndw0lf
+
+[Medium] Open redirect affecting  m.rockstargames.com/
+  URL: https://hackerone.com/reports/781718 | CWE: Open Redirect
+  Program: rockstargames | Reporter: netfuzzer
+
+[Low] Open redirect in https://www.rockstargames.com/GTAOnline/restricted-content/agegate/form may lead to Facebook OAuth token theft
+  URL: https://hackerone.com/reports/798121 | CWE: Open Redirect
+  Program: rockstargames | Reporter: netfuzzer
+
+[Low] open redirect at https://account.mackeeper.com/auth/signin/continue via improper uri sanitization
+  URL: https://hackerone.com/reports/782562 | CWE: Open Redirect
+  Program: clario | Reporter: dilawer
+
+[None] Open Redirection leads to redirect Users to malicious website
+  URL: https://hackerone.com/reports/625546 | CWE: Open Redirect
+  Program: unikrn | Reporter: bb00x
+
+[Medium] Open redirect
+  URL: https://hackerone.com/reports/753399 | CWE: Open Redirect
+  Program: nordsecurity | Reporter: nickelheck
+
+[Medium] Open redirect open.rocket.chat/file-upload/ID/filename.svg
+  URL: https://hackerone.com/reports/368927 | CWE: Open Redirect
+  Program: rocket_chat | Reporter: w2w
+
+[Medium] Open Redirect in the Path of vendhq.com
+  URL: https://hackerone.com/reports/692154 | CWE: Open Redirect
+  Program: vend_vdp | Reporter: zoidsec
+
+[Medium] Referer issue in Kartpay.com
+  URL: https://hackerone.com/reports/683925 | CWE: Open Redirect
+  Program: kartpay | Reporter: aslanemre
+
+[Low] Open redirect in semrush.com
+  URL: https://hackerone.com/reports/716976 | CWE: Open Redirect
+  Program: semrush | Reporter: batuhanu
+
+[High] Stealing Users OAuth Tokens through redirect_uri parameter
+  URL: https://hackerone.com/reports/665651 | CWE: Open Redirect
+  Program: gsa_bbp | Reporter: manshum12
+
+[Low] Open redirect protection (https://www.pixiv.net/jump.php) is broken for novels
+  URL: https://hackerone.com/reports/541862 | CWE: Open Redirect
+  Program: pixiv | Reporter: katsuragicsl
+
+[Low] Vulnerability Name: Host Header Injection Redirect
+  URL: https://hackerone.com/reports/601287 | CWE: Open Redirect
+  Program: wakatime | Reporter: jatingupta
+
+[Medium] URl redirection 
+  URL: https://hackerone.com/reports/642876 | CWE: Open Redirect
+  Program: kartpay | Reporter: ziel
+
+[Low] Wrong Interpretation of URL encoded characters, showing different punny code leads to redirection on different domain
+  URL: https://hackerone.com/reports/635597 | CWE: Open Redirect
+  Program: x | Reporter: mr_edwards
+
+[Low] Open Redirect in comment section
+  URL: https://hackerone.com/reports/603196 | CWE: Open Redirect
+  Program: expressionengine | Reporter: winst0n13
+
+[Medium] Open redirect on https://hq-api.upserve.com/
+  URL: https://hackerone.com/reports/497664 | CWE: Open Redirect
+  Program: upserve | Reporter: b3fa5e9aab949ed4574c10d
+
+[Medium] Open redirect at https://inventory.upserve.com/http://google.com/
+  URL: https://hackerone.com/reports/469803 | CWE: Open Redirect
+  Program: upserve | Reporter: stankoja
+
+[Medium] Open Redirect on ███
+  URL: https://hackerone.com/reports/440484 | CWE: Open Redirect
+  Program: smule | Reporter: assassin_marcos
+
+[Low] Open redirect on the https://tt.hboeck.de
+  URL: https://hackerone.com/reports/503922 | CWE: Open Redirect
+  Program: hannob | Reporter: zophi
+
+[Medium] [Venmo Android] Remote theft of user session
+  URL: https://hackerone.com/reports/401940 | CWE: Open Redirect
+  Program: paypal | Reporter: bagipro
+
+[Medium] [PayPal Android] Remote theft of user session using push_notification_webview deeplink
+  URL: https://hackerone.com/reports/424443 | CWE: Open Redirect
+  Program: paypal | Reporter: bagipro
+
+[None] Open redirect vulnerability in index.php
+  URL: https://hackerone.com/reports/439075 | CWE: Open Redirect
+  Program: security | Reporter: yoyobabaji
+
+[Low] Open Redirect
+  URL: https://hackerone.com/reports/311330 | CWE: Open Redirect
+  Program: semrush | Reporter: ankit_singh
+
+[Low] [idp.fr.cloud.gov] Open Redirect
+  URL: https://hackerone.com/reports/387007 | CWE: Open Redirect
+  Program: gsa_bbp | Reporter: bobrov
+
+[Low] Open redirect on chaturbate.com (tipping/purchase_success)
+  URL: https://hackerone.com/reports/413426 | CWE: Open Redirect
+  Program: chaturbate | Reporter: glc
+
+[Low] Open redirection in OAuth
+  URL: https://hackerone.com/reports/405697 | CWE: Open Redirect
+  Program: shopify | Reporter: dr_dragon
+
+[Low] Open Redirection Vulnerability in m.vk.com
+  URL: https://hackerone.com/reports/347645 | CWE: Open Redirect
+  Program: vkcom | Reporter: shad0walk3rtn
+
+[Low] [hekto] open redirect when target domain name is used as html filename on server
+  URL: https://hackerone.com/reports/320693 | CWE: Open Redirect
+  Program: nodejs-ecosystem | Reporter: brainpanic
+
+[Medium] Link filter protection bypass
+  URL: https://hackerone.com/reports/291750 | CWE: Open Redirect
+  Program: valve | Reporter: ramsexy
+
+[Low] [EE] Spoof the redirect process
+  URL: https://hackerone.com/reports/339987 | CWE: Open Redirect
+  Program: expressionengine | Reporter: flex0geek
+
+[Low] Open Redirect on the nl.wordpress.net
+  URL: https://hackerone.com/reports/309058 | CWE: Open Redirect
+  Program: wordpress | Reporter: sp1d3rs
+
+[?] Open Redirect Protection Bypass
+  URL: https://hackerone.com/reports/283460 | CWE: Open Redirect
+  Program: x | Reporter: avinash_
+
+[Medium] Open Redirection while saving User account Settings 
+  URL: https://hackerone.com/reports/288219 | CWE: Open Redirect
+  Program: moneybird | Reporter: 0xprial
+
+[Low] [BuddyPress 2.9.1] Open Redirect via "wp_http_referer" parameter on "bp-profile-edit" endpoint
+  URL: https://hackerone.com/reports/277502 | CWE: Open Redirect
+  Program: wordpress | Reporter: ysx
+
+[Medium] Open Redirect
+  URL: https://hackerone.com/reports/243001 | CWE: Open Redirect
+  Program: inflection | Reporter: malcolmx
+
+[Medium] Open Redirect through POST Request
+  URL: https://hackerone.com/reports/242243 | CWE: Open Redirect
+  Program: inflection | Reporter: malcolmx
+
+[?] Open Redirection Found in users.whisper.sh
+  URL: https://hackerone.com/reports/261592 | CWE: Open Redirect
+  Program: whisper | Reporter: hackedbrain
+
+[?] Open Redirect
+  URL: https://hackerone.com/reports/246897 | CWE: Open Redirect
+  Program: x | Reporter: malcolmx
+
+[Medium] [connect.teavana.com] Open Redirect and abuse of connect.teavana.com
+  URL: https://hackerone.com/reports/217430 | CWE: Open Redirect
+  Program: starbucks | Reporter: rbcafe
+
+[?] CPU utilization 99% on visiting wordpress site url & open redirect found
+  URL: https://hackerone.com/reports/129091 | CWE: Open Redirect
+  Program: automattic | Reporter: csanuragjain
+
+[Low] Open Redirect in shopify app URL
+  URL: https://hackerone.com/reports/226408 | CWE: Open Redirect
+  Program: shopify | Reporter: pappan
+
+[Medium] Open redirects protection bypass
+  URL: https://hackerone.com/reports/236599 | CWE: Open Redirect
+  Program: expressionengine | Reporter: strukt
+
+[?] Open redirect while disconnecting Email
+  URL: https://hackerone.com/reports/238117 | CWE: Open Redirect
+  Program: weblate | Reporter: atruba
+
+[Low] Tabnabbing via Window.Opener @Mavenlink
+  URL: https://hackerone.com/reports/220737 | CWE: Open Redirect
+  Program: mavenlink | Reporter: chols
+
+[Medium] Open redirect
+  URL: https://hackerone.com/reports/214034 | CWE: Open Redirect
+  Program: gitlab | Reporter: eadz
+
+[Medium] [Repository Import] Open Redirect via "continue[to]" parameter 
+  URL: https://hackerone.com/reports/215970 | CWE: Open Redirect
+  Program: gitlab | Reporter: ysx
+
+[Low] Gitlab.com is vulnerable to reverse tabnabbing.
+  URL: https://hackerone.com/reports/211065 | CWE: Open Redirect
+  Program: gitlab | Reporter: edoverflow
+
+[Low] Open Redirect in a DoD website
+  URL: https://hackerone.com/reports/187006 | CWE: Open Redirect
+  Program: deptofdefense | Reporter: adrianomarcmont
+
+[?] manipulate the Practical HTTP Host header 
+  URL: https://hackerone.com/reports/103546 | CWE: Open Redirect
+  Program: cert | Reporter: dr_dragon
+
+[Low] [ecommerce.shopify.com] Invalidated redirection
+  URL: https://hackerone.com/reports/175168 | CWE: Open Redirect
+  Program: shopify | Reporter: shailesh4594
+
+[?] Open redirect in bulk edit
+  URL: https://hackerone.com/reports/169759 | CWE: Open Redirect
+  Program: shopify | Reporter: zombiehelp54
+
+[?] [zaption.com] Open Redirect
+  URL: https://hackerone.com/reports/45516 | CWE: Open Redirect
+  Program: zaption | Reporter: bobrov
+
+[?] [admin.c2fo.com] Open Redirect
+  URL: https://hackerone.com/reports/39198 | CWE: Open Redirect
+  Program: c2fo | Reporter: bobrov
+
+[?] Open redirect allows changing iframe content in *.myshopify.com/admin/themes/<id>/editor
+  URL: https://hackerone.com/reports/165046 | CWE: Open Redirect
+  Program: shopify | Reporter: zombiehelp54
+
+[?] Hyperlink Injection in Friend Invitation Emails
+  URL: https://hackerone.com/reports/158554 | CWE: Open Redirect
+  Program: instacart | Reporter: corb3nik
+
+[?] Host Header Injection/Redirection in: https://www.instacart.com/
+  URL: https://hackerone.com/reports/158019 | CWE: Open Redirect
+  Program: instacart | Reporter: 0xm1racle
+
+[?] Bypassing callback_url validation on Digits
+  URL: https://hackerone.com/reports/108113 | CWE: Open Redirect
+  Program: x | Reporter: filedescriptor
+
+[?] https://windsor.shopify.com/ takeover
+  URL: https://hackerone.com/reports/150374 | CWE: Open Redirect
+  Program: shopify | Reporter: zseano
+
+[?] Open Redirector via (apps/files_pdfviewer) for un-authenticated users.
+  URL: https://hackerone.com/reports/131082 | CWE: Open Redirect
+  Program: owncloud | Reporter: penrose
+
+[?] Open-redirect on paragonie.com
+  URL: https://hackerone.com/reports/113112 | CWE: Open Redirect
+  Program: paragonie | Reporter: hat_mast3r
+
+[?] Following a User Actually Follows Another User
+  URL: https://hackerone.com/reports/95243 | CWE: Open Redirect
+  Program: x | Reporter: ericr
+
+[?] Open Redirect after login at http://ecommerce.shopify.com
+  URL: https://hackerone.com/reports/55546 | CWE: Open Redirect
+  Program: shopify | Reporter: dhaval
+
+[?] Open redirection in OAuth
+  URL: https://hackerone.com/reports/55525 | CWE: Open Redirect
+  Program: shopify | Reporter: coolboss
+
+[?] Homograph Attack
+  URL: https://hackerone.com/reports/59372 | CWE: Open Redirect
+  Program: security | Reporter: atom
+
+[?] Open-redirect on hackerone.com
+  URL: https://hackerone.com/reports/57163 | CWE: Open Redirect
+  Program: security | Reporter: abze
+

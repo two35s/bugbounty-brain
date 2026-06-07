@@ -1,0 +1,53 @@
+[
+  {
+    "id": 2048725,
+    "title": "Circular based introspetion Query leading to single request denial of service and cost consumption and query cost on api.sorare.com/graphql",
+    "url": "https://hackerone.com/reports/2048725",
+    "substate": "resolved",
+    "severity_rating": "Medium",
+    "disclosed": true,
+    "disclosed_at": "2024-10-17T08:07:20.077Z",
+    "submitted_at": "2023-07-03T17:37:00.570Z",
+    "cve_ids": [],
+    "cwe": null,
+    "votes": 55,
+    "total_awarded_amount": null,
+    "reporter": "thebeast99",
+    "program": "sorare",
+    "program_name": "Sorare"
+  },
+  {
+    "id": 813300,
+    "title": "Changes to data in a CVE request after draft via GraphQL query",
+    "url": "https://hackerone.com/reports/813300",
+    "substate": "resolved",
+    "severity_rating": "Low",
+    "disclosed": true,
+    "disclosed_at": "2020-05-15T17:23:49.575Z",
+    "submitted_at": "2020-03-08T20:42:00.136Z",
+    "cve_ids": [],
+    "cwe": "Modification of Assumed-Immutable Data (MAID)",
+    "votes": 14,
+    "total_awarded_amount": null,
+    "reporter": "haxta4ok00",
+    "program": "security",
+    "program_name": "HackerOne"
+  },
+  {
+    "id": 707406,
+    "title": "Team object in GraphQL disclosed of private programs via the industry",
+    "url": "https://hackerone.com/reports/707406",
+    "substate": "resolved",
+    "severity_rating": "Low",
+    "disclosed": true,
+    "disclosed_at": "2019-11-23T09:19:24.466Z",
+    "submitted_at": "2019-10-04T03:19:58.748Z",
+    "cve_ids": [],
+    "cwe": null,
+    "votes": 72,
+    "total_awarded_amount": 500,
+    "reporter": "haxta4ok00",
+    "program": "security",
+    "program_name": "HackerOne"
+  }
+]

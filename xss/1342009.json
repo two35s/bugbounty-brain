@@ -1,0 +1,203 @@
+{
+  "id": 1342009,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMzQyMDA5",
+  "url": "https://hackerone.com/reports/1342009",
+  "title": "Stored XSS in merge request creation page through payload in approval rule name",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "high",
+  "readable_substate": "Resolved",
+  "created_at": "2021-09-16T20:13:04.011Z",
+  "submitted_at": "2021-09-16T20:13:04.198Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "joaxcar",
+    "url": "/joaxcar",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/9865qc9er7t2lratx5rgszbf3257/c8a1698ff707a5e3e8a91a3484838363845daac68cb82c86d55c9e2d44d67b67?response-content-disposition=inline%3B%20filename%3D%224FB38693-148C-4D50-BBCD-D726D3AE2B4F.jpeg%22%3B%20filename%2A%3DUTF-8%27%274FB38693-148C-4D50-BBCD-D726D3AE2B4F.jpeg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQS32QWU56%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T155631Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDzNZgzHQtoCdNmZIfdtXmO7%2BJqTkPAoCb4iIhshygAcAiEA%2Bu3HoHFU%2BPX%2Fwzj7H5C2K2pHKvGvyOhDC%2F4PxxUgCnkquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOow2gsEO75CwgphTyqPBWTTxhZ3NAa36flDURIfpjkNCRYATEtMgnvtPs4rw8zshWtL8c%2B8q4Dvo%2FO0ijJUlop0nCeH1GBlb31nN8J90Ym7PIzfK6LRIUWn6VqW0WXxFDG6M8jtDrkV%2BOsUQ3THP3%2BhuIn6lIBmVHj8KSujO2NgGJKbBlGq0s2dMkl60asJ6mb%2BTS9ouO1vabCIaxxFtpqYdXfENs0X5lvchcknNM9ZZbgNfx5bLF2wA6BDq%2Bm3y0uYr8U7u0BpYeaknOWMdPFnCoAZDKBUWlk%2FoH8%2BSYtntBi8uIohtmA2vO9LVMkNjHK3nWotgUWXJBo96A5gVz0nuoHQsjmKYTDhcXtDm1E%2FmrlJXMVkuwjp4zXpR45Yah3SaFXUH07O1MsWzWcUe0QH293VW6ycxP3GXciNy38PRfVyq9LDx8ll2djDiKWI8MSzotZFiW6WxTVTRM7koG2vAjwLtFliLgAjBFGm2mQ%2Buhl0MTqzqfcHk9MymymV0NKtEua72rTfxWks3od2IpPQWg%2Fq96yIeP7yI3QbJMuI2mqPQbwAJMPat36HMxDTSuTPbvtCeXcMFraw9FksD4ra9dTkOYWcOcBFZ%2ByATJ5uDzjrEdtUQsHQkB68bd0YPL91D%2BSxoLEPM01a%2FWbIsAJp5OSfkjTNEmdQoblQ%2Bmj4n6eajdCn3945zlvS0Q1%2FsKboTFcz3Ab8mufsq0BjcnnyMOFPMyVnfcZHh2BK2x0sqmm5rtQmResOUhnb%2FfnX2xO4Qinyese0GjazJ%2BkHMJg%2BibXOXhW23QgtZ35zLWZUS1sUBs16wVlZZWOTyr3T5mM7GgIDHl7osbH0B6yWlXiT3MZVxROfgfQADNy4wVkz7t50if0MBhSuRXilqbQwxIqW0QY6sQHrbFMR3J%2Fy8ktBYrNTF8fBwk348A9oeCr5T7JPG%2FqwNyUted2Y4BIPukygFfhX4eJXU3gW2UyHmgo8XGeNHP0BrFMlTyizIXIbXLATF1LDUu5lY3mDYXzjsJrbxahLCDlG4eJmg0iTyB2iUR9xM6QrWoWGkkAqIRke60qlruMqRJwz3n8TdGzxdceRI0%2Fo5KzzpJhh2nTA32mr7DbLq%2F9RHZVmJ0CRuDiPrzgzPs8HIQo%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6e52af0dfba240c1b3d374bfeceadc48ec2dc70fc50b137859eb17e089773726"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 264,
+    "url": "https://hackerone.com/gitlab",
+    "handle": "gitlab",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "GitLab",
+      "twitter_handle": "gitlab",
+      "website": "https://about.gitlab.com",
+      "about": "A single application for the entire software development lifecycle."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2022-03-31T19:24:58.216Z",
+  "bug_reporter_agreed_on_going_public_at": "2022-01-27T08:12:57.859Z",
+  "team_member_agreed_on_going_public_at": "2022-03-31T19:24:58.050Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "### Summary\n\nHi GitLab team, I found a stored XSS in merge request creation page caused by a payload in the name of an \"approval rule\".\n\nAdding approval rules is a feature that is unlocked for premium subscriptions or above. This does not seem to block it from being used against regular users on for example Gitlab.com by inviting them into the \"infected project\".\n\nThis occurs when adding an \"Approval rule\" to a project and giving it a javascript/html payload as the name and attaching the rule to an approver. When a user tries to create a merge request in the project and opens the \"Reviewers\" dropdown, information about the user with the attached rule will be shown and the rule name will be injected underneath.\n\nWith the payload\n```\n<iframe/srcdoc='<script/src=/joaxcar_group/first/-/jobs/1415515489/artifacts/raw/data/alert.js></script>'></iframe>\n```\nthis XSS bypasses the current CSP on Gitlab.com (tried it with an Ultimate trial and inviting a user without a trial to the project)\n\nAs I got the impression that all XSS are treated equal when reporting a similar issue, I have not made any deeper analysis of the reason for this firing. Thought I just report it right away. Please reach back to me if you need me to research the impact deeper! As an example, it does not fire when one \"edits\" a MR which is a bit odd...\n\n### Steps to reproduce\n\n1. Create two user accounts, `attacker_user` and `victim_user` (`attacker_user` must have at least premium features enabled)\n2. Log in as `attacker_user`\n3. Create a project `xss_project` by going to https://gitlab.com/projects/new#blank_project\n4. Go to projects settings on https://gitlab.com/attacker_user/xss_project/edit and scroll down to and expand \"Merge request approvals\"\n\n{F1450906}\n\n5. Click \"Add approval rule\"\n6. Put the payload as the name, If on Gitlab.com use\n```\n<iframe/srcdoc='<script/src=/joaxcar_group/first/-/jobs/1415515489/artifacts/raw/data/alert.js></script>'></iframe>\n```\nif this is tested on a server without CSP feel free to use the payload\n```\n<script>alert(document.domain)</script>\n```\n7. Search for and select `attacker_user` as approver and click create rule.\n\n{F1450905}\n\n8. Invite `victim_user` to the project as `Developer` on https://gitlab.com/attacker_user/xss_project/-/project_members\n9. Log out and log back in as `victim_user`\n10. Go to https://\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588/user_01/pub/-/branches/new and create a branch `new`\n11. Directly click on \"Create merge request\" (which will appear on the screen)\n\n{F1450903}\n\n12. Click on the dropdown at \"Reviewers\"\n13. Payload will trigger\n\n{F1450904}\n\n\n### Impact\n\nStored XSS with CSP bypass. Full Javascript functionality without restrictions, so everything from stealing data to generating and exfiltrating access tokens.\n\n### Examples\n\nIf you access my private project at Gitlab.com (https://gitlab.com/ultimate-joaxcar-test3/xss) as an admin, you should be able to create an MR and trigger payload. (Just an alert box)\n\n### What is the current *bug* behavior?\n\nApprover rule name is injected in the user information without proper sanitization.\n\n### What is the expected *correct* behavior?\n\nThe name should be sanitized\n\n\n### Output of checks\n\nThis bug happens on GitLab.com\n\n## Impact\n\nStored XSS with CSP bypass. Full Javascript functionality without restrictions, so everything from stealing data to generating and exfiltrating access tokens.",
+  "weakness": {
+    "id": 62,
+    "name": "Cross-site Scripting (XSS) - Stored"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1450903,
+      "file_name": "newMR.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/yvaxgf2ipfotucj6isg6crdbzekt?response-content-disposition=attachment%3B%20filename%3D%22newMR.png%22%3B%20filename%2A%3DUTF-8%27%27newMR.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQS32QWU56%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T155631Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDzNZgzHQtoCdNmZIfdtXmO7%2BJqTkPAoCb4iIhshygAcAiEA%2Bu3HoHFU%2BPX%2Fwzj7H5C2K2pHKvGvyOhDC%2F4PxxUgCnkquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOow2gsEO75CwgphTyqPBWTTxhZ3NAa36flDURIfpjkNCRYATEtMgnvtPs4rw8zshWtL8c%2B8q4Dvo%2FO0ijJUlop0nCeH1GBlb31nN8J90Ym7PIzfK6LRIUWn6VqW0WXxFDG6M8jtDrkV%2BOsUQ3THP3%2BhuIn6lIBmVHj8KSujO2NgGJKbBlGq0s2dMkl60asJ6mb%2BTS9ouO1vabCIaxxFtpqYdXfENs0X5lvchcknNM9ZZbgNfx5bLF2wA6BDq%2Bm3y0uYr8U7u0BpYeaknOWMdPFnCoAZDKBUWlk%2FoH8%2BSYtntBi8uIohtmA2vO9LVMkNjHK3nWotgUWXJBo96A5gVz0nuoHQsjmKYTDhcXtDm1E%2FmrlJXMVkuwjp4zXpR45Yah3SaFXUH07O1MsWzWcUe0QH293VW6ycxP3GXciNy38PRfVyq9LDx8ll2djDiKWI8MSzotZFiW6WxTVTRM7koG2vAjwLtFliLgAjBFGm2mQ%2Buhl0MTqzqfcHk9MymymV0NKtEua72rTfxWks3od2IpPQWg%2Fq96yIeP7yI3QbJMuI2mqPQbwAJMPat36HMxDTSuTPbvtCeXcMFraw9FksD4ra9dTkOYWcOcBFZ%2ByATJ5uDzjrEdtUQsHQkB68bd0YPL91D%2BSxoLEPM01a%2FWbIsAJp5OSfkjTNEmdQoblQ%2Bmj4n6eajdCn3945zlvS0Q1%2FsKboTFcz3Ab8mufsq0BjcnnyMOFPMyVnfcZHh2BK2x0sqmm5rtQmResOUhnb%2FfnX2xO4Qinyese0GjazJ%2BkHMJg%2BibXOXhW23QgtZ35zLWZUS1sUBs16wVlZZWOTyr3T5mM7GgIDHl7osbH0B6yWlXiT3MZVxROfgfQADNy4wVkz7t50if0MBhSuRXilqbQwxIqW0QY6sQHrbFMR3J%2Fy8ktBYrNTF8fBwk348A9oeCr5T7JPG%2FqwNyUted2Y4BIPukygFfhX4eJXU3gW2UyHmgo8XGeNHP0BrFMlTyizIXIbXLATF1LDUu5lY3mDYXzjsJrbxahLCDlG4eJmg0iTyB2iUR9xM6QrWoWGkkAqIRke60qlruMqRJwz3n8TdGzxdceRI0%2Fo5KzzpJhh2nTA32mr7DbLq%2F9RHZVmJ0CRuDiPrzgzPs8HIQo%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4ccae6e0980982cd2d3e96325269569835e93853901f58c32173311f8b0621d3",
+      "file_size": 51019,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1450904,
+      "file_name": "fire.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/wucl49piuyctyv1wp78gsjy21hnv?response-content-disposition=attachment%3B%20filename%3D%22fire.png%22%3B%20filename%2A%3DUTF-8%27%27fire.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQS32QWU56%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T155631Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDzNZgzHQtoCdNmZIfdtXmO7%2BJqTkPAoCb4iIhshygAcAiEA%2Bu3HoHFU%2BPX%2Fwzj7H5C2K2pHKvGvyOhDC%2F4PxxUgCnkquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOow2gsEO75CwgphTyqPBWTTxhZ3NAa36flDURIfpjkNCRYATEtMgnvtPs4rw8zshWtL8c%2B8q4Dvo%2FO0ijJUlop0nCeH1GBlb31nN8J90Ym7PIzfK6LRIUWn6VqW0WXxFDG6M8jtDrkV%2BOsUQ3THP3%2BhuIn6lIBmVHj8KSujO2NgGJKbBlGq0s2dMkl60asJ6mb%2BTS9ouO1vabCIaxxFtpqYdXfENs0X5lvchcknNM9ZZbgNfx5bLF2wA6BDq%2Bm3y0uYr8U7u0BpYeaknOWMdPFnCoAZDKBUWlk%2FoH8%2BSYtntBi8uIohtmA2vO9LVMkNjHK3nWotgUWXJBo96A5gVz0nuoHQsjmKYTDhcXtDm1E%2FmrlJXMVkuwjp4zXpR45Yah3SaFXUH07O1MsWzWcUe0QH293VW6ycxP3GXciNy38PRfVyq9LDx8ll2djDiKWI8MSzotZFiW6WxTVTRM7koG2vAjwLtFliLgAjBFGm2mQ%2Buhl0MTqzqfcHk9MymymV0NKtEua72rTfxWks3od2IpPQWg%2Fq96yIeP7yI3QbJMuI2mqPQbwAJMPat36HMxDTSuTPbvtCeXcMFraw9FksD4ra9dTkOYWcOcBFZ%2ByATJ5uDzjrEdtUQsHQkB68bd0YPL91D%2BSxoLEPM01a%2FWbIsAJp5OSfkjTNEmdQoblQ%2Bmj4n6eajdCn3945zlvS0Q1%2FsKboTFcz3Ab8mufsq0BjcnnyMOFPMyVnfcZHh2BK2x0sqmm5rtQmResOUhnb%2FfnX2xO4Qinyese0GjazJ%2BkHMJg%2BibXOXhW23QgtZ35zLWZUS1sUBs16wVlZZWOTyr3T5mM7GgIDHl7osbH0B6yWlXiT3MZVxROfgfQADNy4wVkz7t50if0MBhSuRXilqbQwxIqW0QY6sQHrbFMR3J%2Fy8ktBYrNTF8fBwk348A9oeCr5T7JPG%2FqwNyUted2Y4BIPukygFfhX4eJXU3gW2UyHmgo8XGeNHP0BrFMlTyizIXIbXLATF1LDUu5lY3mDYXzjsJrbxahLCDlG4eJmg0iTyB2iUR9xM6QrWoWGkkAqIRke60qlruMqRJwz3n8TdGzxdceRI0%2Fo5KzzpJhh2nTA32mr7DbLq%2F9RHZVmJ0CRuDiPrzgzPs8HIQo%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=10624afb30d455396fe0e4183ed8bef71ce5e3103e1bbeb96329172d54b3fe87",
+      "file_size": 171396,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1450905,
+      "file_name": "create.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/prpdxrbzdwd3ftndjzlxv2y4occ5?response-content-disposition=attachment%3B%20filename%3D%22create.png%22%3B%20filename%2A%3DUTF-8%27%27create.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQS32QWU56%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T155631Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDzNZgzHQtoCdNmZIfdtXmO7%2BJqTkPAoCb4iIhshygAcAiEA%2Bu3HoHFU%2BPX%2Fwzj7H5C2K2pHKvGvyOhDC%2F4PxxUgCnkquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOow2gsEO75CwgphTyqPBWTTxhZ3NAa36flDURIfpjkNCRYATEtMgnvtPs4rw8zshWtL8c%2B8q4Dvo%2FO0ijJUlop0nCeH1GBlb31nN8J90Ym7PIzfK6LRIUWn6VqW0WXxFDG6M8jtDrkV%2BOsUQ3THP3%2BhuIn6lIBmVHj8KSujO2NgGJKbBlGq0s2dMkl60asJ6mb%2BTS9ouO1vabCIaxxFtpqYdXfENs0X5lvchcknNM9ZZbgNfx5bLF2wA6BDq%2Bm3y0uYr8U7u0BpYeaknOWMdPFnCoAZDKBUWlk%2FoH8%2BSYtntBi8uIohtmA2vO9LVMkNjHK3nWotgUWXJBo96A5gVz0nuoHQsjmKYTDhcXtDm1E%2FmrlJXMVkuwjp4zXpR45Yah3SaFXUH07O1MsWzWcUe0QH293VW6ycxP3GXciNy38PRfVyq9LDx8ll2djDiKWI8MSzotZFiW6WxTVTRM7koG2vAjwLtFliLgAjBFGm2mQ%2Buhl0MTqzqfcHk9MymymV0NKtEua72rTfxWks3od2IpPQWg%2Fq96yIeP7yI3QbJMuI2mqPQbwAJMPat36HMxDTSuTPbvtCeXcMFraw9FksD4ra9dTkOYWcOcBFZ%2ByATJ5uDzjrEdtUQsHQkB68bd0YPL91D%2BSxoLEPM01a%2FWbIsAJp5OSfkjTNEmdQoblQ%2Bmj4n6eajdCn3945zlvS0Q1%2FsKboTFcz3Ab8mufsq0BjcnnyMOFPMyVnfcZHh2BK2x0sqmm5rtQmResOUhnb%2FfnX2xO4Qinyese0GjazJ%2BkHMJg%2BibXOXhW23QgtZ35zLWZUS1sUBs16wVlZZWOTyr3T5mM7GgIDHl7osbH0B6yWlXiT3MZVxROfgfQADNy4wVkz7t50if0MBhSuRXilqbQwxIqW0QY6sQHrbFMR3J%2Fy8ktBYrNTF8fBwk348A9oeCr5T7JPG%2FqwNyUted2Y4BIPukygFfhX4eJXU3gW2UyHmgo8XGeNHP0BrFMlTyizIXIbXLATF1LDUu5lY3mDYXzjsJrbxahLCDlG4eJmg0iTyB2iUR9xM6QrWoWGkkAqIRke60qlruMqRJwz3n8TdGzxdceRI0%2Fo5KzzpJhh2nTA32mr7DbLq%2F9RHZVmJ0CRuDiPrzgzPs8HIQo%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=eede0d4efc599d3526d084dad4ea48e99cb76a4af553dff2a6fdf7e65ffb7cb1",
+      "file_size": 217512,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1450906,
+      "file_name": "approvals.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/61r59msq1h0wo4i9ac6guhq67c3w?response-content-disposition=attachment%3B%20filename%3D%22approvals.png%22%3B%20filename%2A%3DUTF-8%27%27approvals.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQS32QWU56%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T155631Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDzNZgzHQtoCdNmZIfdtXmO7%2BJqTkPAoCb4iIhshygAcAiEA%2Bu3HoHFU%2BPX%2Fwzj7H5C2K2pHKvGvyOhDC%2F4PxxUgCnkquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOow2gsEO75CwgphTyqPBWTTxhZ3NAa36flDURIfpjkNCRYATEtMgnvtPs4rw8zshWtL8c%2B8q4Dvo%2FO0ijJUlop0nCeH1GBlb31nN8J90Ym7PIzfK6LRIUWn6VqW0WXxFDG6M8jtDrkV%2BOsUQ3THP3%2BhuIn6lIBmVHj8KSujO2NgGJKbBlGq0s2dMkl60asJ6mb%2BTS9ouO1vabCIaxxFtpqYdXfENs0X5lvchcknNM9ZZbgNfx5bLF2wA6BDq%2Bm3y0uYr8U7u0BpYeaknOWMdPFnCoAZDKBUWlk%2FoH8%2BSYtntBi8uIohtmA2vO9LVMkNjHK3nWotgUWXJBo96A5gVz0nuoHQsjmKYTDhcXtDm1E%2FmrlJXMVkuwjp4zXpR45Yah3SaFXUH07O1MsWzWcUe0QH293VW6ycxP3GXciNy38PRfVyq9LDx8ll2djDiKWI8MSzotZFiW6WxTVTRM7koG2vAjwLtFliLgAjBFGm2mQ%2Buhl0MTqzqfcHk9MymymV0NKtEua72rTfxWks3od2IpPQWg%2Fq96yIeP7yI3QbJMuI2mqPQbwAJMPat36HMxDTSuTPbvtCeXcMFraw9FksD4ra9dTkOYWcOcBFZ%2ByATJ5uDzjrEdtUQsHQkB68bd0YPL91D%2BSxoLEPM01a%2FWbIsAJp5OSfkjTNEmdQoblQ%2Bmj4n6eajdCn3945zlvS0Q1%2FsKboTFcz3Ab8mufsq0BjcnnyMOFPMyVnfcZHh2BK2x0sqmm5rtQmResOUhnb%2FfnX2xO4Qinyese0GjazJ%2BkHMJg%2BibXOXhW23QgtZ35zLWZUS1sUBs16wVlZZWOTyr3T5mM7GgIDHl7osbH0B6yWlXiT3MZVxROfgfQADNy4wVkz7t50if0MBhSuRXilqbQwxIqW0QY6sQHrbFMR3J%2Fy8ktBYrNTF8fBwk348A9oeCr5T7JPG%2FqwNyUted2Y4BIPukygFfhX4eJXU3gW2UyHmgo8XGeNHP0BrFMlTyizIXIbXLATF1LDUu5lY3mDYXzjsJrbxahLCDlG4eJmg0iTyB2iUR9xM6QrWoWGkkAqIRke60qlruMqRJwz3n8TdGzxdceRI0%2Fo5KzzpJhh2nTA32mr7DbLq%2F9RHZVmJ0CRuDiPrzgzPs8HIQo%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=170d8026c3416428a1cca162c4aaf8016f975e640b7fe1b967f91bdd4d30915d",
+      "file_size": 219565,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 32,
+  "voters": [
+    "conda",
+    "n1m0",
+    "ola0",
+    "alp",
+    "thruster",
+    "address_below0",
+    "chupa__chups",
+    "20kilograma",
+    "cybersecuz",
+    "h4x0r_dz",
+    "and 22 more..."
+  ],
+  "severity": {
+    "rating": "high",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 18138,
+    "asset_type": "URL",
+    "asset_identifier": "gitlab.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "id": 87561,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC84NzU2MQ==",
+  "url": "https://hackerone.com/reports/87561",
+  "title": "OAUTH pemission set as true= lead to authorize malicious application",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2015-09-05T01:31:17.205Z",
+  "submitted_at": "2015-09-05T01:31:17.205Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "paresh_parmar",
+    "url": "/paresh_parmar",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/GisjzP2uPmdC3figSsfT7AEQ/8774a5031fc14b74dc4404da039040c69df8ed41021007c0c2beb9de489fcf66"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 104,
+    "url": "https://hackerone.com/coinbase",
+    "handle": "coinbase",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/fwfizd37a3tsttb1ff4539buzmdw/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22Coinbase.png%22%3B%20filename%2A%3DUTF-8%27%27Coinbase.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124253Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=24f53165de4fd7d4ad7497ca4728cda47a8aaa00100a7d6525718d172d9d74fe",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/fwfizd37a3tsttb1ff4539buzmdw/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22Coinbase.png%22%3B%20filename%2A%3DUTF-8%27%27Coinbase.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124253Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=06fb0f9f6b26a6695bde76801497e0af04c76b09c1c69eda5f3da2d7462baa8f"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Coinbase",
+      "twitter_handle": "",
+      "website": "https://coinbase.com/security",
+      "about": "Creating an open financial system for the world"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "no-content",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2015-12-01T14:26:06.718Z",
+  "bug_reporter_agreed_on_going_public_at": "2015-12-01T14:26:06.407Z",
+  "team_member_agreed_on_going_public_at": "2015-12-01T13:44:59.400Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "",
+  "bounty_amount": "100.0",
+  "formatted_bounty": "$100",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [],
+  "allow_singular_disclosure_at": "2015-12-31T13:44:59.664Z",
+  "allow_singular_disclosure_after": -329266673.68572915,
+  "singular_disclosure_allowed": true,
+  "vote_count": 5,
+  "voters": [
+    "tess",
+    "pr0f0x01",
+    "shivammusic",
+    "the_ancient",
+    "destinedtohack"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 1073,
+      "category": "team",
+      "content": "OAuth authorize button in the Coinbase Android App did not have the android:filterTouchesWhenObscured attribute set to true, which may have made it vulnerable to tap-jacking.\n",
+      "updated_at": "2015-12-01T13:44:50.072Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 12089,
+        "username": "coinbase2",
+        "name": "Coinbase",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": "https://www.coinbase.com",
+        "location": "",
+        "created_at": "2014-09-16T01:36:14.752Z",
+        "url": "https://hackerone.com/coinbase2",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "medium": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "xtralarge": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+        }
+      }
+    },
+    {
+      "id": 1074,
+      "category": "researcher",
+      "content": "Reported `UI Redressing (Clickjacking)` For ___Mobile application of Coinbase___ , attack scenario is same as www.paulosyibelo.com/2015/06/no-xfo-youre-d-silly-bugs-with-real-harm.html which is reported by @paulos_  \n\n",
+      "updated_at": "2015-12-19T18:24:46.304Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 13929,
+        "username": "paresh_parmar",
+        "name": "Paresh parmar",
+        "bio": "",
+        "cleared": false,
+        "verified": true,
+        "website": "https://pare.sh/blog",
+        "location": "Ahmedabad, Gujarat, India",
+        "created_at": "2014-11-09T14:49:56.075Z",
+        "url": "https://hackerone.com/paresh_parmar",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/GisjzP2uPmdC3figSsfT7AEQ/8774a5031fc14b74dc4404da039040c69df8ed41021007c0c2beb9de489fcf66",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/GisjzP2uPmdC3figSsfT7AEQ/83a62d03223573cfc0f155a612b2adb97f819481786b8f5c531134ea426ed026",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/GisjzP2uPmdC3figSsfT7AEQ/0edb7ad7ad0f50cf9c2e69c89ae9c522e7e14267ff47e234065e04398e7425fd"
+        }
+      }
+    }
+  ]
+}

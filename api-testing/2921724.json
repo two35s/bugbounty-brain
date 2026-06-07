@@ -1,0 +1,173 @@
+{
+  "id": 2921724,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yOTIxNzI0",
+  "url": "https://hackerone.com/reports/2921724",
+  "title": "Deadlock in x86 HVM standard VGA handling",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2025-01-03T22:22:00.130Z",
+  "submitted_at": "2025-01-03T22:22:00.514Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "stonksy",
+    "url": "/stonksy",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 54349,
+    "url": "https://hackerone.com/ibb",
+    "handle": "ibb",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUO3R647U%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123216Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB7tuEPt9H29dbTWyJW%2FywtcOXNrnMn469hp%2B%2B9gIqISAiEAsFUPZSM6RDiaXp%2BBIfm%2B%2FLrhV%2BzLGyeVGPpFGXdKToYquwUImv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEbBH1F9DTMEtcdt5SqPBT5X%2FsYqataEQaBLIOn3GnXmBvgYdRXUd2%2FBrVrWz39nw4TOKmjXDlYMOuBCo0r621RtlO295PTvCLtQKmJrhWueojS71935AFctq7Grhn6S0LKhHaAo9oHiL96C1HH9BFIj7tMCV%2FtpKKg9bJ%2BTJ3u0%2FT3VV%2FH0lm9wNbza93iqFwBOklkOLKik6sn0RJkZYEiZmQsJAY5F%2FFUqSs%2FBaXPIMzzySyMYpzNocaxsyxFzkI8UrPOVYXGJOUU2aNWcs8qdFlwOsxS5YZ2EE2yG0PCPLyqvDtol%2Futb%2BJQMOXI3L%2FU45e2ijFi%2BPus65xwg92wHFBXzRXry9Tpevik5cXoWL2fq1WfmSxKGokwdp38J3celMK389I2J3gdLIiGj3q4P1G8Hdx0sqBRtkLiCWzmLrQo%2BpRTE1B6exvE%2FzYzn0b9LgXF5EdyDRCFA1ihaFRIYfd3WodCmpgQq6EIQ9CZaY37%2Be8Ypr7HCHsNocY2SAV7%2BbU%2BJTOomPN2f9L2BMB9e%2BOUF9iYC3k3FIDZxQhBe4AYlTWCA6iO04P5i0uCzAPbWMjykr7sPVREoNDuwRDhDwjuZeJ0Zgzl8YBUeBRLCnjk%2FJUNzgrjyS%2BFMhlcOXIToSQvPo7lOBjNnSa5L9DJ%2FYrYN8o%2FiHIHeLWRjhL6UBVti4hhgqMXTgA3YIgA2gmui6ZFFeL9341Ke5B96uXh3GaRRRdGnoJL1477jesLfzQjcIrSXyOlwSr06b%2Bq3da93JMXe1MzzbhBECZM8Yqy7uBLzOAihVJGenPprqd8ajr10nsxO4SnAH3jkw8bWQTLbyqBmhkXnoJEtU52vcc3wN3JD0Zu4ex4dPgNURO2pv9soERPLwjCE9pAtIqUw8uOU0QY6sQFsqOQxcYJ76G4yI%2BUdKJiExOZn%2BhTxmG0iN2UNfOQq%2BFhxxHivylQM%2Bi7pjLTJg4ONXELJwoMAupUszlp6GyWbZ2KQVg50Asw6ToYp68cZjsssBwxKJuhtK92%2BCsCzEFRPo0zvxOW6NSuMtqla1sd98I0zKeylSd4yaehFx3E3%2Bf5klNikFqjOcAVlIFQz6TOYxyHA3LnEod9QW0wBPjo7DEGqAGNphStz9AB0frJWwl4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=814ad747c7fca01acccb4774d20111fd6d8d3d0e242db75fcef17f6dff1764d2",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUO3R647U%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123216Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB7tuEPt9H29dbTWyJW%2FywtcOXNrnMn469hp%2B%2B9gIqISAiEAsFUPZSM6RDiaXp%2BBIfm%2B%2FLrhV%2BzLGyeVGPpFGXdKToYquwUImv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEbBH1F9DTMEtcdt5SqPBT5X%2FsYqataEQaBLIOn3GnXmBvgYdRXUd2%2FBrVrWz39nw4TOKmjXDlYMOuBCo0r621RtlO295PTvCLtQKmJrhWueojS71935AFctq7Grhn6S0LKhHaAo9oHiL96C1HH9BFIj7tMCV%2FtpKKg9bJ%2BTJ3u0%2FT3VV%2FH0lm9wNbza93iqFwBOklkOLKik6sn0RJkZYEiZmQsJAY5F%2FFUqSs%2FBaXPIMzzySyMYpzNocaxsyxFzkI8UrPOVYXGJOUU2aNWcs8qdFlwOsxS5YZ2EE2yG0PCPLyqvDtol%2Futb%2BJQMOXI3L%2FU45e2ijFi%2BPus65xwg92wHFBXzRXry9Tpevik5cXoWL2fq1WfmSxKGokwdp38J3celMK389I2J3gdLIiGj3q4P1G8Hdx0sqBRtkLiCWzmLrQo%2BpRTE1B6exvE%2FzYzn0b9LgXF5EdyDRCFA1ihaFRIYfd3WodCmpgQq6EIQ9CZaY37%2Be8Ypr7HCHsNocY2SAV7%2BbU%2BJTOomPN2f9L2BMB9e%2BOUF9iYC3k3FIDZxQhBe4AYlTWCA6iO04P5i0uCzAPbWMjykr7sPVREoNDuwRDhDwjuZeJ0Zgzl8YBUeBRLCnjk%2FJUNzgrjyS%2BFMhlcOXIToSQvPo7lOBjNnSa5L9DJ%2FYrYN8o%2FiHIHeLWRjhL6UBVti4hhgqMXTgA3YIgA2gmui6ZFFeL9341Ke5B96uXh3GaRRRdGnoJL1477jesLfzQjcIrSXyOlwSr06b%2Bq3da93JMXe1MzzbhBECZM8Yqy7uBLzOAihVJGenPprqd8ajr10nsxO4SnAH3jkw8bWQTLbyqBmhkXnoJEtU52vcc3wN3JD0Zu4ex4dPgNURO2pv9soERPLwjCE9pAtIqUw8uOU0QY6sQFsqOQxcYJ76G4yI%2BUdKJiExOZn%2BhTxmG0iN2UNfOQq%2BFhxxHivylQM%2Bi7pjLTJg4ONXELJwoMAupUszlp6GyWbZ2KQVg50Asw6ToYp68cZjsssBwxKJuhtK92%2BCsCzEFRPo0zvxOW6NSuMtqla1sd98I0zKeylSd4yaehFx3E3%2Bf5klNikFqjOcAVlIFQz6TOYxyHA3LnEod9QW0wBPjo7DEGqAGNphStz9AB0frJWwl4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=5e5894c285e951642bbec21158dad51ec954886164fdba0caf3367f21d0e113f"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Internet Bug Bounty",
+      "twitter_handle": "",
+      "website": "https://www.hackerone.com/internet-bug-bounty",
+      "about": "The Internet Bug Bounty rewards security research into vulnerabilities impacting Open Source Software Projects."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2024-45818"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2025-03-07T20:37:45.934Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2025-02-05T20:37:45.339Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "### Overview\n\nThis vulnerability has been reported to the Xen project maintainers in mid October 2024. The Xen project has acknowledged the vulnerability, published patches and released an advisory as well as a CVE, see: https://xenbits.xen.org/xsa/advisory-463.html\n\n### Vulnerability\n\nThe hypervisor contains code to accelerate VGA memory accesses for HVM guests, when the (virtual) VGA is in \"standard\" mode. Locking involved there has an unusual discipline, leaving a lock acquired past the return from the function that acquired it. This behavior results in a problem when emulating an instruction with two memory accesses, both of which touch VGA memory (plus some further constraints which aren't relevant here). When emulating the 2nd access, the lock that is already being held would be attempted to be re-acquired, resulting in a deadlock. This deadlock was already found when the code was first introduced, but was analysed incorrectly and the fix was incomplete. Analysis in light of the new finding cannot find a way to make the existing locking discipline work. In staging, this logic has all been removed because it was discovered to be accidentally disabled since Xen 4.7. Therefore, we are fixing the locking problem by backporting the removal of most of the feature. Note that even with the feature disabled, the lock would still be acquired for any accesses to the VGA MMIO region.\n\nAttached is the PoC that I utilized for the original report of the vulnerability to the Xen maintainers. It was tested on Xen version 4.19.\n\n## Impact\n\nAn attacker executing code in ring0 inside of an unprivileged x86-HVM-DomU can trigger a deadlock in the host hypervisor, resulting in a Denial of Service of all other Domains running under the Hypervisor, including the hypervisor itself.\n\"Xen versions 4.6 through 4.19 are vulnerable.\" as per the referenced XSA.\nThe CVE database (https://nvd.nist.gov/vuln/detail/CVE-2024-45818) contains a CVSS v3.x rating of: 6.5 Medium.",
+  "bounty_amount": "2162.0",
+  "formatted_bounty": "$2,162",
+  "weakness": {
+    "id": 107,
+    "name": "Improper Input Validation"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 3912172,
+      "file_name": "poc-stdvga-io-deadlock.tar.gz",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/lq5vjwdl8har9jz9foahvsyk8uqj?response-content-disposition=attachment%3B%20filename%3D%22poc-stdvga-io-deadlock.tar.gz%22%3B%20filename%2A%3DUTF-8%27%27poc-stdvga-io-deadlock.tar.gz&response-content-type=application%2Fgzip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUO3R647U%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123216Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB7tuEPt9H29dbTWyJW%2FywtcOXNrnMn469hp%2B%2B9gIqISAiEAsFUPZSM6RDiaXp%2BBIfm%2B%2FLrhV%2BzLGyeVGPpFGXdKToYquwUImv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEbBH1F9DTMEtcdt5SqPBT5X%2FsYqataEQaBLIOn3GnXmBvgYdRXUd2%2FBrVrWz39nw4TOKmjXDlYMOuBCo0r621RtlO295PTvCLtQKmJrhWueojS71935AFctq7Grhn6S0LKhHaAo9oHiL96C1HH9BFIj7tMCV%2FtpKKg9bJ%2BTJ3u0%2FT3VV%2FH0lm9wNbza93iqFwBOklkOLKik6sn0RJkZYEiZmQsJAY5F%2FFUqSs%2FBaXPIMzzySyMYpzNocaxsyxFzkI8UrPOVYXGJOUU2aNWcs8qdFlwOsxS5YZ2EE2yG0PCPLyqvDtol%2Futb%2BJQMOXI3L%2FU45e2ijFi%2BPus65xwg92wHFBXzRXry9Tpevik5cXoWL2fq1WfmSxKGokwdp38J3celMK389I2J3gdLIiGj3q4P1G8Hdx0sqBRtkLiCWzmLrQo%2BpRTE1B6exvE%2FzYzn0b9LgXF5EdyDRCFA1ihaFRIYfd3WodCmpgQq6EIQ9CZaY37%2Be8Ypr7HCHsNocY2SAV7%2BbU%2BJTOomPN2f9L2BMB9e%2BOUF9iYC3k3FIDZxQhBe4AYlTWCA6iO04P5i0uCzAPbWMjykr7sPVREoNDuwRDhDwjuZeJ0Zgzl8YBUeBRLCnjk%2FJUNzgrjyS%2BFMhlcOXIToSQvPo7lOBjNnSa5L9DJ%2FYrYN8o%2FiHIHeLWRjhL6UBVti4hhgqMXTgA3YIgA2gmui6ZFFeL9341Ke5B96uXh3GaRRRdGnoJL1477jesLfzQjcIrSXyOlwSr06b%2Bq3da93JMXe1MzzbhBECZM8Yqy7uBLzOAihVJGenPprqd8ajr10nsxO4SnAH3jkw8bWQTLbyqBmhkXnoJEtU52vcc3wN3JD0Zu4ex4dPgNURO2pv9soERPLwjCE9pAtIqUw8uOU0QY6sQFsqOQxcYJ76G4yI%2BUdKJiExOZn%2BhTxmG0iN2UNfOQq%2BFhxxHivylQM%2Bi7pjLTJg4ONXELJwoMAupUszlp6GyWbZ2KQVg50Asw6ToYp68cZjsssBwxKJuhtK92%2BCsCzEFRPo0zvxOW6NSuMtqla1sd98I0zKeylSd4yaehFx3E3%2Bf5klNikFqjOcAVlIFQz6TOYxyHA3LnEod9QW0wBPjo7DEGqAGNphStz9AB0frJWwl4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=edd6f0a882ffa84a280342793c85e3422d4678040db70ed4106090d9cd014637",
+      "file_size": 643,
+      "type": "application/gzip",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2025-03-07T20:37:45.637Z",
+  "allow_singular_disclosure_after": -39455671.12041717,
+  "singular_disclosure_allowed": true,
+  "vote_count": 86,
+  "voters": [
+    "moroq",
+    "aboalezz",
+    "sunnybounty",
+    "huseyin_tuc",
+    "0xcyborg",
+    "n1m0",
+    "drsniper",
+    "zy9ard3",
+    "mohaned0101",
+    "ahmed_xyz",
+    "and 76 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "score": 5.5,
+    "author_type": "User",
+    "metrics": {
+      "attack_vector": "local",
+      "attack_complexity": "low",
+      "privileges_required": "low",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "none",
+      "integrity": "none",
+      "availability": "high"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 87519,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://wiki.xenproject.org/wiki/Xen_Project_Repositories",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 631157,
+      "category": "team",
+      "content": "ISSUE DESCRIPTION\n=================\n\nThe hypervisor contains code to accelerate VGA memory accesses for HVM\nguests, when the (virtual) VGA is in \"standard\" mode.  Locking involved\nthere has an unusual discipline, leaving a lock acquired past the\nreturn from the function that acquired it.  This behavior results in a\nproblem when emulating an instruction with two memory accesses, both of\nwhich touch VGA memory (plus some further constraints which aren't\nrelevant here).  When emulating the 2nd access, the lock that is already\nbeing held would be attempted to be re-acquired, resulting in a\ndeadlock.\n\nThis deadlock was already found when the code was first introduced, but\nwas analysed incorrectly and the fix was incomplete.  Analysis in light\nof the new finding cannot find a way to make the existing locking\ndiscipline work.\n\nIn staging, this logic has all been removed because it was discovered\nto be accidentally disabled since Xen 4.7.  Therefore, we are fixing the\nlocking problem by backporting the removal of most of the feature.  Note\nthat even with the feature disabled, the lock would still be acquired\nfor any accesses to the VGA MMIO region.\n\nAdvisory: https://xenbits.xen.org/xsa/advisory-463.txt",
+      "updated_at": "2025-02-05T20:35:12.536Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 2032618,
+        "username": "pr0tag0nist",
+        "name": "p h",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": "",
+        "created_at": "2021-10-18T10:02:41.859Z",
+        "url": "https://hackerone.com/pr0tag0nist",
+        "hackerone_triager": false,
+        "hackerone_employee": true,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "medium": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "xtralarge": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+        }
+      }
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

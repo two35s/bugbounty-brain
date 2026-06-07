@@ -1,0 +1,170 @@
+{
+  "id": 792737,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC83OTI3Mzc=",
+  "url": "https://hackerone.com/reports/792737",
+  "title": "Password Reset Link not expiring after changing the email Leads To Account Takeover",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2020-02-10T22:14:36.628Z",
+  "submitted_at": "2020-02-10T22:14:36.628Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "dantt",
+    "url": "/dantt",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/oe4lrc71ykbzmo7891ic6f26cbf4/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 17173,
+    "url": "https://hackerone.com/nordsecurity",
+    "handle": "nordsecurity",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/eptyogy5wqa70kmvct1tgqbaa2fw/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22nordsec-mountain.png%22%3B%20filename%2A%3DUTF-8%27%27nordsec-mountain.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTB6BBY5U%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123758Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDuHzX%2BRfyNXZxlqSUrzZ7r%2FEQHYK3WHsQvPJ3zJDXmmAIhAL7uXzLYGSoJfi2idAvkNuW%2BPsZQvhc2jLS8TVvr9K6EKrsFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzE5aPtf8srjQUyyloqjwWn%2BWaNrUcXecIlJrNrcxOGDnPnectItAB4hZgi7Nxwwf0AhM5fEDR5wgFw6jbn4L6wt4rbSzBM%2FBLvfhtVh6d%2BjmX0aN9lisYS6HJ%2F13c7GBl1LEk7e0dLX4Ea4EZpQDZkho54wkF4hys2tMzk4Te3MFE9MI96Z9XVWlwVM2lsM21%2F1YjDCFLgFtw8cqCRIr%2ByieN5lKDk7kLkUcQsgduqBJ451eajMKAmm8ST6V0FDLR6S7eKRhe5iNTHcAa8TeliLFNOa45bPI0iElALv3fS1AXoP7vWSzMDGy3G%2FhuhjpW5mTdxS4lEXKrM8UtZ8i0N6cUPuFiW9MlIcbK%2BPGiCINeYi2W4O3BWSxU492SkvvNk3%2FMDwynJ0P2Q9xcceO0dHcvuPCoNVFK2mD%2BPqd6tya40OQJt4ONH2HdU8DMTT4yiHzlkeIiKrUWuWTqc59OJthgujH2%2BDcVbci4iW7jARU2xulAuANVfVwdjy5j4qOn3bxU%2FCZNIUVl8f4d9FR%2FXOuj5PS8GnCmvvUQFkP%2BmGsocjUUEJo0HP5M425MzUk7QkiL469ymtUDE%2F7N9zexzSX4FOMczpE1WvBB6sGDLZjBEOjS6%2BwTWb0Ty%2BTI3RV5sXJEi63G6WdMk91%2FOTC4fcYsEnrE7y8j8MmTb66G35Go6vDmAxAhUiNTaSLU4BoFh3RtJoRzaNfD0v4A9qgWwwpEmPd%2BNNYYvQijV%2F2TaIA0NrS9HbOquZu%2BxnKmS2LsxTg9wTKyO8Ov%2BiNXj7KOba%2FFh7IjfuwDoCenSVORzBAAsq9f7aUJydv9AhlmhtQ1bndgC8V2IcfjNikZPFWC4slgqwVZjXoryIyIIzf1FGRpBIAL7WUKbQZ7DjHVrMJG6ldEGOrABta49WC2NKJ3SlwFUnBRjd3BqdO7Ykxl1a0BHZI11CRp9hlK0uvsUKz9g%2FEx8z1bZpCxI9TYZJ%2F%2BBb%2Fr0euoeb5vSlvaegtSfifMEJKOBppfgp0kUUDZF3Mv%2F3gQHpO%2FjenrKggjrdl1VbIulN6crU4FamdD0uVLaeoq%2B%2BpaV%2F9bdMOmCdzphwwP1NcjJwcjXqLeBY7QaANevy5T6NLh5NW6rIUDjDmwY4qMlWT9mNXk%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0bae9fdd1a521c697936107e69f80918ba8c7c80dd4113dfb934fbc5617dee79",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/eptyogy5wqa70kmvct1tgqbaa2fw/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22nordsec-mountain.png%22%3B%20filename%2A%3DUTF-8%27%27nordsec-mountain.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTB6BBY5U%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123758Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDuHzX%2BRfyNXZxlqSUrzZ7r%2FEQHYK3WHsQvPJ3zJDXmmAIhAL7uXzLYGSoJfi2idAvkNuW%2BPsZQvhc2jLS8TVvr9K6EKrsFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzE5aPtf8srjQUyyloqjwWn%2BWaNrUcXecIlJrNrcxOGDnPnectItAB4hZgi7Nxwwf0AhM5fEDR5wgFw6jbn4L6wt4rbSzBM%2FBLvfhtVh6d%2BjmX0aN9lisYS6HJ%2F13c7GBl1LEk7e0dLX4Ea4EZpQDZkho54wkF4hys2tMzk4Te3MFE9MI96Z9XVWlwVM2lsM21%2F1YjDCFLgFtw8cqCRIr%2ByieN5lKDk7kLkUcQsgduqBJ451eajMKAmm8ST6V0FDLR6S7eKRhe5iNTHcAa8TeliLFNOa45bPI0iElALv3fS1AXoP7vWSzMDGy3G%2FhuhjpW5mTdxS4lEXKrM8UtZ8i0N6cUPuFiW9MlIcbK%2BPGiCINeYi2W4O3BWSxU492SkvvNk3%2FMDwynJ0P2Q9xcceO0dHcvuPCoNVFK2mD%2BPqd6tya40OQJt4ONH2HdU8DMTT4yiHzlkeIiKrUWuWTqc59OJthgujH2%2BDcVbci4iW7jARU2xulAuANVfVwdjy5j4qOn3bxU%2FCZNIUVl8f4d9FR%2FXOuj5PS8GnCmvvUQFkP%2BmGsocjUUEJo0HP5M425MzUk7QkiL469ymtUDE%2F7N9zexzSX4FOMczpE1WvBB6sGDLZjBEOjS6%2BwTWb0Ty%2BTI3RV5sXJEi63G6WdMk91%2FOTC4fcYsEnrE7y8j8MmTb66G35Go6vDmAxAhUiNTaSLU4BoFh3RtJoRzaNfD0v4A9qgWwwpEmPd%2BNNYYvQijV%2F2TaIA0NrS9HbOquZu%2BxnKmS2LsxTg9wTKyO8Ov%2BiNXj7KOba%2FFh7IjfuwDoCenSVORzBAAsq9f7aUJydv9AhlmhtQ1bndgC8V2IcfjNikZPFWC4slgqwVZjXoryIyIIzf1FGRpBIAL7WUKbQZ7DjHVrMJG6ldEGOrABta49WC2NKJ3SlwFUnBRjd3BqdO7Ykxl1a0BHZI11CRp9hlK0uvsUKz9g%2FEx8z1bZpCxI9TYZJ%2F%2BBb%2Fr0euoeb5vSlvaegtSfifMEJKOBppfgp0kUUDZF3Mv%2F3gQHpO%2FjenrKggjrdl1VbIulN6crU4FamdD0uVLaeoq%2B%2BpaV%2F9bdMOmCdzphwwP1NcjJwcjXqLeBY7QaANevy5T6NLh5NW6rIUDjDmwY4qMlWT9mNXk%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2c8927c09363f9c2556b950e97cc725b2906f7aec34b426eedada0756d2b0396"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Nord Security",
+      "twitter_handle": "NordNewsroom",
+      "website": "https://nordsecurity.com/",
+      "about": "Digital security and privacy for everyone"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "no-content",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2020-10-27T09:36:47.326Z",
+  "bug_reporter_agreed_on_going_public_at": "2020-10-19T09:58:55.324Z",
+  "team_member_agreed_on_going_public_at": "2020-10-27T09:36:47.129Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [],
+  "allow_singular_disclosure_at": "2020-11-18T09:58:55.545Z",
+  "allow_singular_disclosure_after": -175142343.23883164,
+  "singular_disclosure_allowed": true,
+  "vote_count": 8,
+  "voters": [
+    "keshavkejriwal",
+    "pr0f0x01",
+    "dantt",
+    "r4sh7n_",
+    "levaaaa",
+    "destinedtohack",
+    "vgatewoo69",
+    "tjhoa"
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 39380,
+    "asset_type": "WILDCARD",
+    "asset_identifier": "*.nordvpn.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 25006,
+      "category": "team",
+      "content": "The researcher has identified an issue in our password reset workflow where the password reset URL was not expiring correctly after the user has requested a password change",
+      "updated_at": "2020-10-27T09:36:27.526Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 985760,
+        "username": "fixed_zero",
+        "name": "fixed_zero",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": "",
+        "created_at": "2020-03-13T11:28:32.716Z",
+        "url": "https://hackerone.com/fixed_zero",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/AvW9fqpFzmQqj8ZsU6TMKf3K/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/AvW9fqpFzmQqj8ZsU6TMKf3K/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/AvW9fqpFzmQqj8ZsU6TMKf3K/d6d8259739a2a4d509639b7804214d057bca547cc3fafe509ec3e3a86321b1d1"
+        }
+      }
+    },
+    {
+      "id": 24914,
+      "category": "researcher",
+      "content": "1) Go to this website : https://ucp.nordvpn.com/lost-password\n2) Enter your main account (main@main.com)\n3) Go to main@main.com mail adress and copy the link\n4) Open in your browser.\n5) Now lets chat with your support to changing mail request\n6) After great chat with Claudia and Marcus (Cheers!) They changed my email from \"main@main.com\" to \"main2@main2.com\"\n7) Go to step 4 and Enter new password.\n8) Password will be changed!",
+      "updated_at": "2020-10-19T09:59:19.474Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 939270,
+        "username": "dantt",
+        "name": "danTT",
+        "bio": "",
+        "cleared": false,
+        "verified": true,
+        "website": null,
+        "location": "",
+        "created_at": "2020-02-08T22:13:37.105Z",
+        "url": "https://hackerone.com/dantt",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/oe4lrc71ykbzmo7891ic6f26cbf4/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/oe4lrc71ykbzmo7891ic6f26cbf4/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/oe4lrc71ykbzmo7891ic6f26cbf4/4ac84fbe897190579a137d0cf55152b233cdd4f9984435bd80ef67e5e51a0586"
+        }
+      }
+    }
+  ]
+}

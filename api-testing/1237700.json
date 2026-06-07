@@ -1,0 +1,174 @@
+{
+  "id": 1237700,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMjM3NzAw",
+  "url": "https://hackerone.com/reports/1237700",
+  "title": "Improper input validation in projects leads to fully deny access to project resources",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2021-06-18T14:41:27.736Z",
+  "submitted_at": "2021-06-18T14:41:27.848Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "a_d_a_m",
+    "url": "/a_d_a_m",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/0daeuz8tsnfcv5fwgt3rfsx97chl/c8a1698ff707a5e3e8a91a3484838363845daac68cb82c86d55c9e2d44d67b67"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 15966,
+    "url": "https://hackerone.com/semrush",
+    "handle": "semrush",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/y7ptiv6rtfsv5gp8r7xt2fojdx4o/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/y7ptiv6rtfsv5gp8r7xt2fojdx4o/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Semrush",
+      "twitter_handle": "",
+      "website": "https://www.semrush.com/",
+      "about": "Online Visibility Management Platform."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2021-09-01T20:11:37.712Z",
+  "bug_reporter_agreed_on_going_public_at": "2021-08-02T20:11:27.621Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "#INTRODUCTION\n\n**Accounts used to search for this vulnerability:**\n- **id:** \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 **email:**\u2588\u2588\u2588\n- **id:** \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 **email:** \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\n\n**Most of the requests made to test the vulnerability were made with the \"X-hackerone:  a_d_a_m\"  header**\n\n**IP used:**\n\u2588\u2588\u2588\u2588 / \u2588\u2588\u2588\n\n**Endpoint URL:**\nhttps://fr.semrush.com/projects/api/projects/tags/PROJECT_ID/?key=API_KEY\n\n#EXPLOITATION\n**Description of Security Issue:**\n\nAccording to SEMrush documentation:\n>Semrush Projects allow you to set up 11 different tools analyzing all aspects of a business's online visibility.\n\nAs shown below these projects can include tags:\n{F1343556}\n\nThe problem stems from the fact that the input which contains the name of the tag is not validated correctly, an attacker has the possibility of setting the name of a tag to null, which is contrary to the logic of the application. Giving the value null to a tag name causes a critical bug in the front-end. If a person has a tag in their project list that has a null name, then the person will no longer be able to manage their projects, see their project list or access a project. The victim does not even have the option to delete the project with the sabotaged tag, since he can no longer manage his projects. A blank page will appear as shown in the video below:\n\n{F1343572}\n\n*However, this is not a security issue. For this to be considered as such, a vector would have to be found that would allow an attacker to impact other users.*\n\nAccording to the documentation:\n>Project sharing is also available to make collaboration between teams and agencies easy.\n\nThrough this tool I have found 2 ways to impact an external user:\n\n- The first is to have been invited by someone to a project with \"can edit\" rights. Thus, the attacker will be able to modify the labels of the project and impact the owner and all the participants of the project. (with interaction and privileges)\n\n{F1343606}\n\n*Steps needed to reproduce 1st bug:*\n{F1343639}\n\n- The second way is to invite someone with their email to a project that we created with a sabotaged tag, so our project will be directly present in the victim's project list and will be directly impacted without interaction of the victim.  (**without interaction and privileges**)\n\n*Steps needed to reproduce 2nd bug:*\n{F1343659}\n\n#RESOLUTION\n\nIn my opinion, the best solution would be to validate the type of the tag names entered in the request (forbid the null type).\n\n\n\n\n\n\nThe type of the bug is \"Improper Input Validation (CWE-20)\" but I couldn't find it in the list of weakness, it's weird given that it is available in other programs when I make a report. Given that I did not find any other type of weakness in the list which could come close to what I found, I didn't put the name of the weakness.Can you try to put it if you can ?\n\n## Impact\n\n**There is total loss of availability, resulting in the attacker being able to fully deny access to resources in the impacted component without any interaction from the victim.**\n\n**exploitation scenarios:**\n- We can take the email addresses of the most important semrush clients (agencies, companies, etc.) and paralyze all their projects\n\n*From what I heard in the documentation, agencies working on online visibility use SEMrush with this tool to have a project for each client, we can imagine that a malicious person can impact agencies specializing in online visibility by inviting their email address to a sabotaged project.\nThis will have the effect of preventing these agencies from accessing their clients' projects and managing them just with their email address.*\n\n- A guest of a project (employee / client / ...) with editing rights can paralyze all projects of the owner and collaborators on the project\n\nTo find the email of an individual/company that you are targeting, *you can search on google or on social networks/request the email from the company by inventing x or y reason/we can also know the target's email address for other reasons (former employee / collaborator, close to the company, etc ...). Another very good tool: hunter.io, which allows you to extract email addresses from a domain name.*\n\n{F1343710}\n\nOnce a wordlist of victims' email addresses has been created, an attacker can format these emails in json format to invite them to the sabotaged project.",
+  "weakness": {
+    "id": 107,
+    "name": "Improper Input Validation"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1343556,
+      "file_name": "tag_overview.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/jjhbmi4moa2rweorbw2200frqdj5?response-content-disposition=attachment%3B%20filename%3D%22tag_overview.PNG%22%3B%20filename%2A%3DUTF-8%27%27tag_overview.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX3U6BMKF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123333Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICJm8f0SZaxLlFQwnrHPvscUbquEicndadZSXVphsypGAiEAzwfKSKIah7pa0JU8oHvIPpDdQUCY1i8bRjCC9w%2FbQlEquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDyqpZba9raz31i66CqPBRfSO2MZ7Q%2F9rr0RYRtz1GICSBUnFYYmDTS06g3Dpf3BLuoOrKoyS%2BH5wDrH7vFnUrfanWDTNHIYXTMaHJf9OJkV%2F813CZ9w6xqc6RyN3CLpi01SNmaIT%2FsNXNsardpR6NWadVeE8A%2FGNKSRTqK5qhDO2AHT617LePdREqH7jUlMdmMHRxuMMrqmTZQc0us8nkRq4jcyA%2BI6P4jLhBMGvAn1CqGliq%2FpiqrqO4VX4baXL2mTeSSSkGeNg0izbtCGAVJZbFcdODD%2B1c%2FrqihpPbV98PxhIAP1hDSbh2RpZ29Z9Y7W4CSlWqg5IGaSUzNWNojguI5zqXlHPC03uxKAFOMtfwvCaRuO9PxuuQmGT1yvQc0NPZOF8DptTas1Yj5tBc0agaZPrZJBwPq5rNjo20zT51n6CRXSKMFlK%2FGGVQ%2BC3KwnAddkfSXONURTGZYdnuOKBVuTzLEw9oeIZVuCXzVkg2yiRaPB%2Bd4yQusB48wncCiNI2XrNdVcZOKurd1DpK%2FsBNXahMvqfanJ9cMnZLG7uUUfJ%2F0TOnCoEMeCb7CvFtGYlAjonKdcbC4oYBB%2BFxjYAJrOTF0VHjjqJzUqp7aCJV6HOGVea4U0tGO2kkMYH0dO0HyRrfW%2FBBsDI8A5G2%2Bqfb%2BiCLTE7%2F3rnZU2deOAgxaFaYsz34vFFzDW1NMftFb%2FjXV7%2FA9B9ML%2BFuI7xFs69YjzO%2BEDkHCFHMi%2FW8QLydPjHEnsFlyGVK%2BXpirhnmpudqxXpa19u%2F3ecDfySOuxP9547THxJaA1ZmsibUuRbZWJ%2F6g7os11QWMpyG1PfP2AptU1d2%2FrSAkyxWEbaNl3UrUDm0NcoJPRDMMOiPr5rE%2FfyPdvsEJGZL6ydXkwpJ6V0QY6sQFzkJ4x8Y5UepJnswxyMxmWB5mlp57kL1pzb2p266bvjXovcP9PFE74Jgn%2BK4bYTHuvAT8UL89xRpG8w7lqH5hTT93qb%2BLMLousM1JrsksqpuUwAc3ZUHVIoGDmDMMUWc5is3%2FcsvtohWbF%2FwTFI%2BoGHjLmBqpWrUjaVU93h4Kx6YUuwLz16Km52awVZyIbGJ6Fg9dT4QbinZefnMAvH2Dp%2F%2B2o%2FlG1Gy4XI5d9IX3Yozw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=195b8fb8092fc4d5898dbd2a83bdde712246747c7722581f6adba4932da6b029",
+      "file_size": 41961,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1343572,
+      "file_name": "front-end-bug.webm",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/xfny54u6epfcg0sik9zwylq316g7?response-content-disposition=attachment%3B%20filename%3D%22front-end-bug.webm%22%3B%20filename%2A%3DUTF-8%27%27front-end-bug.webm&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX3U6BMKF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123333Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICJm8f0SZaxLlFQwnrHPvscUbquEicndadZSXVphsypGAiEAzwfKSKIah7pa0JU8oHvIPpDdQUCY1i8bRjCC9w%2FbQlEquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDyqpZba9raz31i66CqPBRfSO2MZ7Q%2F9rr0RYRtz1GICSBUnFYYmDTS06g3Dpf3BLuoOrKoyS%2BH5wDrH7vFnUrfanWDTNHIYXTMaHJf9OJkV%2F813CZ9w6xqc6RyN3CLpi01SNmaIT%2FsNXNsardpR6NWadVeE8A%2FGNKSRTqK5qhDO2AHT617LePdREqH7jUlMdmMHRxuMMrqmTZQc0us8nkRq4jcyA%2BI6P4jLhBMGvAn1CqGliq%2FpiqrqO4VX4baXL2mTeSSSkGeNg0izbtCGAVJZbFcdODD%2B1c%2FrqihpPbV98PxhIAP1hDSbh2RpZ29Z9Y7W4CSlWqg5IGaSUzNWNojguI5zqXlHPC03uxKAFOMtfwvCaRuO9PxuuQmGT1yvQc0NPZOF8DptTas1Yj5tBc0agaZPrZJBwPq5rNjo20zT51n6CRXSKMFlK%2FGGVQ%2BC3KwnAddkfSXONURTGZYdnuOKBVuTzLEw9oeIZVuCXzVkg2yiRaPB%2Bd4yQusB48wncCiNI2XrNdVcZOKurd1DpK%2FsBNXahMvqfanJ9cMnZLG7uUUfJ%2F0TOnCoEMeCb7CvFtGYlAjonKdcbC4oYBB%2BFxjYAJrOTF0VHjjqJzUqp7aCJV6HOGVea4U0tGO2kkMYH0dO0HyRrfW%2FBBsDI8A5G2%2Bqfb%2BiCLTE7%2F3rnZU2deOAgxaFaYsz34vFFzDW1NMftFb%2FjXV7%2FA9B9ML%2BFuI7xFs69YjzO%2BEDkHCFHMi%2FW8QLydPjHEnsFlyGVK%2BXpirhnmpudqxXpa19u%2F3ecDfySOuxP9547THxJaA1ZmsibUuRbZWJ%2F6g7os11QWMpyG1PfP2AptU1d2%2FrSAkyxWEbaNl3UrUDm0NcoJPRDMMOiPr5rE%2FfyPdvsEJGZL6ydXkwpJ6V0QY6sQFzkJ4x8Y5UepJnswxyMxmWB5mlp57kL1pzb2p266bvjXovcP9PFE74Jgn%2BK4bYTHuvAT8UL89xRpG8w7lqH5hTT93qb%2BLMLousM1JrsksqpuUwAc3ZUHVIoGDmDMMUWc5is3%2FcsvtohWbF%2FwTFI%2BoGHjLmBqpWrUjaVU93h4Kx6YUuwLz16Km52awVZyIbGJ6Fg9dT4QbinZefnMAvH2Dp%2F%2B2o%2FlG1Gy4XI5d9IX3Yozw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ff22d8df3003b883c9cc24729a1af5eef299a4f8ecbd68fab00079ea1af3d69c",
+      "file_size": 4246226,
+      "type": "video/webm",
+      "moderated": null
+    },
+    {
+      "id": 1343606,
+      "file_name": "share-project.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/uda075xt2cii19ez8n1fs4qaitns?response-content-disposition=attachment%3B%20filename%3D%22share-project.PNG%22%3B%20filename%2A%3DUTF-8%27%27share-project.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX3U6BMKF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123333Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICJm8f0SZaxLlFQwnrHPvscUbquEicndadZSXVphsypGAiEAzwfKSKIah7pa0JU8oHvIPpDdQUCY1i8bRjCC9w%2FbQlEquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDyqpZba9raz31i66CqPBRfSO2MZ7Q%2F9rr0RYRtz1GICSBUnFYYmDTS06g3Dpf3BLuoOrKoyS%2BH5wDrH7vFnUrfanWDTNHIYXTMaHJf9OJkV%2F813CZ9w6xqc6RyN3CLpi01SNmaIT%2FsNXNsardpR6NWadVeE8A%2FGNKSRTqK5qhDO2AHT617LePdREqH7jUlMdmMHRxuMMrqmTZQc0us8nkRq4jcyA%2BI6P4jLhBMGvAn1CqGliq%2FpiqrqO4VX4baXL2mTeSSSkGeNg0izbtCGAVJZbFcdODD%2B1c%2FrqihpPbV98PxhIAP1hDSbh2RpZ29Z9Y7W4CSlWqg5IGaSUzNWNojguI5zqXlHPC03uxKAFOMtfwvCaRuO9PxuuQmGT1yvQc0NPZOF8DptTas1Yj5tBc0agaZPrZJBwPq5rNjo20zT51n6CRXSKMFlK%2FGGVQ%2BC3KwnAddkfSXONURTGZYdnuOKBVuTzLEw9oeIZVuCXzVkg2yiRaPB%2Bd4yQusB48wncCiNI2XrNdVcZOKurd1DpK%2FsBNXahMvqfanJ9cMnZLG7uUUfJ%2F0TOnCoEMeCb7CvFtGYlAjonKdcbC4oYBB%2BFxjYAJrOTF0VHjjqJzUqp7aCJV6HOGVea4U0tGO2kkMYH0dO0HyRrfW%2FBBsDI8A5G2%2Bqfb%2BiCLTE7%2F3rnZU2deOAgxaFaYsz34vFFzDW1NMftFb%2FjXV7%2FA9B9ML%2BFuI7xFs69YjzO%2BEDkHCFHMi%2FW8QLydPjHEnsFlyGVK%2BXpirhnmpudqxXpa19u%2F3ecDfySOuxP9547THxJaA1ZmsibUuRbZWJ%2F6g7os11QWMpyG1PfP2AptU1d2%2FrSAkyxWEbaNl3UrUDm0NcoJPRDMMOiPr5rE%2FfyPdvsEJGZL6ydXkwpJ6V0QY6sQFzkJ4x8Y5UepJnswxyMxmWB5mlp57kL1pzb2p266bvjXovcP9PFE74Jgn%2BK4bYTHuvAT8UL89xRpG8w7lqH5hTT93qb%2BLMLousM1JrsksqpuUwAc3ZUHVIoGDmDMMUWc5is3%2FcsvtohWbF%2FwTFI%2BoGHjLmBqpWrUjaVU93h4Kx6YUuwLz16Km52awVZyIbGJ6Fg9dT4QbinZefnMAvH2Dp%2F%2B2o%2FlG1Gy4XI5d9IX3Yozw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=916c46765b3a63585329b8533fe02af52e91054e04cd1ed4fd0113aff48f9990",
+      "file_size": 62706,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1343639,
+      "file_name": "first-case.webm",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/9qra5lbsh8o79mlzdok7fp36b1yc?response-content-disposition=attachment%3B%20filename%3D%22first-case.webm%22%3B%20filename%2A%3DUTF-8%27%27first-case.webm&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX3U6BMKF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123333Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICJm8f0SZaxLlFQwnrHPvscUbquEicndadZSXVphsypGAiEAzwfKSKIah7pa0JU8oHvIPpDdQUCY1i8bRjCC9w%2FbQlEquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDyqpZba9raz31i66CqPBRfSO2MZ7Q%2F9rr0RYRtz1GICSBUnFYYmDTS06g3Dpf3BLuoOrKoyS%2BH5wDrH7vFnUrfanWDTNHIYXTMaHJf9OJkV%2F813CZ9w6xqc6RyN3CLpi01SNmaIT%2FsNXNsardpR6NWadVeE8A%2FGNKSRTqK5qhDO2AHT617LePdREqH7jUlMdmMHRxuMMrqmTZQc0us8nkRq4jcyA%2BI6P4jLhBMGvAn1CqGliq%2FpiqrqO4VX4baXL2mTeSSSkGeNg0izbtCGAVJZbFcdODD%2B1c%2FrqihpPbV98PxhIAP1hDSbh2RpZ29Z9Y7W4CSlWqg5IGaSUzNWNojguI5zqXlHPC03uxKAFOMtfwvCaRuO9PxuuQmGT1yvQc0NPZOF8DptTas1Yj5tBc0agaZPrZJBwPq5rNjo20zT51n6CRXSKMFlK%2FGGVQ%2BC3KwnAddkfSXONURTGZYdnuOKBVuTzLEw9oeIZVuCXzVkg2yiRaPB%2Bd4yQusB48wncCiNI2XrNdVcZOKurd1DpK%2FsBNXahMvqfanJ9cMnZLG7uUUfJ%2F0TOnCoEMeCb7CvFtGYlAjonKdcbC4oYBB%2BFxjYAJrOTF0VHjjqJzUqp7aCJV6HOGVea4U0tGO2kkMYH0dO0HyRrfW%2FBBsDI8A5G2%2Bqfb%2BiCLTE7%2F3rnZU2deOAgxaFaYsz34vFFzDW1NMftFb%2FjXV7%2FA9B9ML%2BFuI7xFs69YjzO%2BEDkHCFHMi%2FW8QLydPjHEnsFlyGVK%2BXpirhnmpudqxXpa19u%2F3ecDfySOuxP9547THxJaA1ZmsibUuRbZWJ%2F6g7os11QWMpyG1PfP2AptU1d2%2FrSAkyxWEbaNl3UrUDm0NcoJPRDMMOiPr5rE%2FfyPdvsEJGZL6ydXkwpJ6V0QY6sQFzkJ4x8Y5UepJnswxyMxmWB5mlp57kL1pzb2p266bvjXovcP9PFE74Jgn%2BK4bYTHuvAT8UL89xRpG8w7lqH5hTT93qb%2BLMLousM1JrsksqpuUwAc3ZUHVIoGDmDMMUWc5is3%2FcsvtohWbF%2FwTFI%2BoGHjLmBqpWrUjaVU93h4Kx6YUuwLz16Km52awVZyIbGJ6Fg9dT4QbinZefnMAvH2Dp%2F%2B2o%2FlG1Gy4XI5d9IX3Yozw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=30d604626d91fa8d20bb9a0d9ac6fbc9e1c940838f4608ac191ed8c345b7d281",
+      "file_size": 7694411,
+      "type": "video/webm",
+      "moderated": null
+    },
+    {
+      "id": 1343659,
+      "file_name": "second-case.webm",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/boycxfrhzxum62vhkkselxqfw9xl?response-content-disposition=attachment%3B%20filename%3D%22second-case.webm%22%3B%20filename%2A%3DUTF-8%27%27second-case.webm&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX3U6BMKF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123333Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICJm8f0SZaxLlFQwnrHPvscUbquEicndadZSXVphsypGAiEAzwfKSKIah7pa0JU8oHvIPpDdQUCY1i8bRjCC9w%2FbQlEquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDyqpZba9raz31i66CqPBRfSO2MZ7Q%2F9rr0RYRtz1GICSBUnFYYmDTS06g3Dpf3BLuoOrKoyS%2BH5wDrH7vFnUrfanWDTNHIYXTMaHJf9OJkV%2F813CZ9w6xqc6RyN3CLpi01SNmaIT%2FsNXNsardpR6NWadVeE8A%2FGNKSRTqK5qhDO2AHT617LePdREqH7jUlMdmMHRxuMMrqmTZQc0us8nkRq4jcyA%2BI6P4jLhBMGvAn1CqGliq%2FpiqrqO4VX4baXL2mTeSSSkGeNg0izbtCGAVJZbFcdODD%2B1c%2FrqihpPbV98PxhIAP1hDSbh2RpZ29Z9Y7W4CSlWqg5IGaSUzNWNojguI5zqXlHPC03uxKAFOMtfwvCaRuO9PxuuQmGT1yvQc0NPZOF8DptTas1Yj5tBc0agaZPrZJBwPq5rNjo20zT51n6CRXSKMFlK%2FGGVQ%2BC3KwnAddkfSXONURTGZYdnuOKBVuTzLEw9oeIZVuCXzVkg2yiRaPB%2Bd4yQusB48wncCiNI2XrNdVcZOKurd1DpK%2FsBNXahMvqfanJ9cMnZLG7uUUfJ%2F0TOnCoEMeCb7CvFtGYlAjonKdcbC4oYBB%2BFxjYAJrOTF0VHjjqJzUqp7aCJV6HOGVea4U0tGO2kkMYH0dO0HyRrfW%2FBBsDI8A5G2%2Bqfb%2BiCLTE7%2F3rnZU2deOAgxaFaYsz34vFFzDW1NMftFb%2FjXV7%2FA9B9ML%2BFuI7xFs69YjzO%2BEDkHCFHMi%2FW8QLydPjHEnsFlyGVK%2BXpirhnmpudqxXpa19u%2F3ecDfySOuxP9547THxJaA1ZmsibUuRbZWJ%2F6g7os11QWMpyG1PfP2AptU1d2%2FrSAkyxWEbaNl3UrUDm0NcoJPRDMMOiPr5rE%2FfyPdvsEJGZL6ydXkwpJ6V0QY6sQFzkJ4x8Y5UepJnswxyMxmWB5mlp57kL1pzb2p266bvjXovcP9PFE74Jgn%2BK4bYTHuvAT8UL89xRpG8w7lqH5hTT93qb%2BLMLousM1JrsksqpuUwAc3ZUHVIoGDmDMMUWc5is3%2FcsvtohWbF%2FwTFI%2BoGHjLmBqpWrUjaVU93h4Kx6YUuwLz16Km52awVZyIbGJ6Fg9dT4QbinZefnMAvH2Dp%2F%2B2o%2FlG1Gy4XI5d9IX3Yozw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=dfc0d00cdcb6b50e260619a3619457af6d2871563b007a974da2d125dd2a18f6",
+      "file_size": 9821132,
+      "type": "video/webm",
+      "moderated": null
+    },
+    {
+      "id": 1343710,
+      "file_name": "hunter-io.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/wm0ds40bixvzmhf2fookylrbsj21?response-content-disposition=attachment%3B%20filename%3D%22hunter-io.PNG%22%3B%20filename%2A%3DUTF-8%27%27hunter-io.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX3U6BMKF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123333Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCICJm8f0SZaxLlFQwnrHPvscUbquEicndadZSXVphsypGAiEAzwfKSKIah7pa0JU8oHvIPpDdQUCY1i8bRjCC9w%2FbQlEquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDyqpZba9raz31i66CqPBRfSO2MZ7Q%2F9rr0RYRtz1GICSBUnFYYmDTS06g3Dpf3BLuoOrKoyS%2BH5wDrH7vFnUrfanWDTNHIYXTMaHJf9OJkV%2F813CZ9w6xqc6RyN3CLpi01SNmaIT%2FsNXNsardpR6NWadVeE8A%2FGNKSRTqK5qhDO2AHT617LePdREqH7jUlMdmMHRxuMMrqmTZQc0us8nkRq4jcyA%2BI6P4jLhBMGvAn1CqGliq%2FpiqrqO4VX4baXL2mTeSSSkGeNg0izbtCGAVJZbFcdODD%2B1c%2FrqihpPbV98PxhIAP1hDSbh2RpZ29Z9Y7W4CSlWqg5IGaSUzNWNojguI5zqXlHPC03uxKAFOMtfwvCaRuO9PxuuQmGT1yvQc0NPZOF8DptTas1Yj5tBc0agaZPrZJBwPq5rNjo20zT51n6CRXSKMFlK%2FGGVQ%2BC3KwnAddkfSXONURTGZYdnuOKBVuTzLEw9oeIZVuCXzVkg2yiRaPB%2Bd4yQusB48wncCiNI2XrNdVcZOKurd1DpK%2FsBNXahMvqfanJ9cMnZLG7uUUfJ%2F0TOnCoEMeCb7CvFtGYlAjonKdcbC4oYBB%2BFxjYAJrOTF0VHjjqJzUqp7aCJV6HOGVea4U0tGO2kkMYH0dO0HyRrfW%2FBBsDI8A5G2%2Bqfb%2BiCLTE7%2F3rnZU2deOAgxaFaYsz34vFFzDW1NMftFb%2FjXV7%2FA9B9ML%2BFuI7xFs69YjzO%2BEDkHCFHMi%2FW8QLydPjHEnsFlyGVK%2BXpirhnmpudqxXpa19u%2F3ecDfySOuxP9547THxJaA1ZmsibUuRbZWJ%2F6g7os11QWMpyG1PfP2AptU1d2%2FrSAkyxWEbaNl3UrUDm0NcoJPRDMMOiPr5rE%2FfyPdvsEJGZL6ydXkwpJ6V0QY6sQFzkJ4x8Y5UepJnswxyMxmWB5mlp57kL1pzb2p266bvjXovcP9PFE74Jgn%2BK4bYTHuvAT8UL89xRpG8w7lqH5hTT93qb%2BLMLousM1JrsksqpuUwAc3ZUHVIoGDmDMMUWc5is3%2FcsvtohWbF%2FwTFI%2BoGHjLmBqpWrUjaVU93h4Kx6YUuwLz16Km52awVZyIbGJ6Fg9dT4QbinZefnMAvH2Dp%2F%2B2o%2FlG1Gy4XI5d9IX3Yozw%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=8a6cba2874e4310278984d71de1e3e19003f4139918484ea1fdf6c08ab95d0da",
+      "file_size": 64121,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2021-09-01T20:11:27.693Z",
+  "allow_singular_disclosure_after": -150308525.70216212,
+  "singular_disclosure_allowed": true,
+  "vote_count": 35,
+  "voters": [
+    "pilvar",
+    "omarelfarsaoui",
+    "alp",
+    "run_win",
+    "sec44",
+    "captn0sharky1",
+    "th4nu_0x0",
+    "thalaivar304",
+    "sudi",
+    "akashhamal0x01",
+    "and 25 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 12483,
+    "asset_type": "WILDCARD",
+    "asset_identifier": "*.semrush.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

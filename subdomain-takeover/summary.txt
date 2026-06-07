@@ -1,0 +1,71 @@
+Category: subdomain-takeover
+Reports: 17
+
+[High] Subdomain takeover in GitLab Pages [george.ratelimited.me]
+  URL: https://hackerone.com/reports/2523677 | CWE: Unknown
+  Program: ratelimited | Reporter: fdeleite
+
+[Medium] Subdomain takeover on one of the subdomain under mozaws.net
+  URL: https://hackerone.com/reports/2037032 | CWE: Improper Resource Shutdown or Release
+  Program: mozilla | Reporter: proabiral
+
+[Medium] Take over subdomain undici.nodejs.org.cdn.cloudflare.net
+  URL: https://hackerone.com/reports/1763817 | CWE: Array Index Underflow
+  Program: nodejs | Reporter: algisec1337
+
+[Medium] Subdomain Takeover at http://██.get8x8.com/
+  URL: https://hackerone.com/reports/1697402 | CWE: Leftover Debug Code (Backdoor)
+  Program: 8x8-bounty | Reporter: testingforbugs
+
+[Critical] Subdomain takeover of █████████
+  URL: https://hackerone.com/reports/1457928 | CWE: Security Through Obscurity
+  Program: deptofdefense | Reporter: martinvw
+
+[Medium] Subdomain Takeover of brand.zen.ly
+  URL: https://hackerone.com/reports/1474784 | CWE: Unknown
+  Program: zenly | Reporter: hackersight
+
+[Medium] Broken subdomain takeover of runpanther which was pointing towards herokuapp
+  URL: https://hackerone.com/reports/1379910 | CWE: Unknown
+  Program: panther_labs | Reporter: dhakal_bibek
+
+[High] Subdomain takeover of v.zego.com
+  URL: https://hackerone.com/reports/1180697 | CWE: Externally Controlled Reference to a Resource in Another Sphere
+  Program: zego | Reporter: ian
+
+[Medium] Subdomain takeover of www2.growasyouplan.com
+  URL: https://hackerone.com/reports/1179193 | CWE: Externally Controlled Reference to a Resource in Another Sphere
+  Program: palo_alto_software | Reporter: ian
+
+[Medium]  Subdomain Takeover Via Insecure CloudFront Distribution cdn.grab.com
+  URL: https://hackerone.com/reports/352869 | CWE: Array Index Underflow
+  Program: grab | Reporter: todayisnew
+
+[Low] Subdomain takeover of resources.hackerone.com
+  URL: https://hackerone.com/reports/863551 | CWE: Unknown
+  Program: security | Reporter: amans
+
+[Critical] Subdomain Takeover to Authentication bypass 
+  URL: https://hackerone.com/reports/335330 | CWE: Unknown
+  Program: roblox | Reporter: geekboy
+
+[Low] Subdomain Takeover due to unclaimed domain pointing to AWS
+  URL: https://hackerone.com/reports/317005 | CWE: Off-by-one Error
+  Program: gsa_bbp | Reporter: zephrfish
+
+[High] Subdomain takeover of mydailydev.starbucks.com
+  URL: https://hackerone.com/reports/570651 | CWE: Externally Controlled Reference to a Resource in Another Sphere
+  Program: starbucks | Reporter: 0xpatrik
+
+[Low] subdomain Takeover at blog.exchangemarketplace.com 
+  URL: https://hackerone.com/reports/416474 | CWE: Unknown
+  Program: shopify | Reporter: m7mdharoun
+
+[Medium] Possible Subdomain Takeover
+  URL: https://hackerone.com/reports/399165 | CWE: Unknown
+  Program: khanacademy | Reporter: avileox
+
+[None] Subdomain Takeover (and Stored XSS) via Trailing Dot at https://coding-exercises.udemy.com
+  URL: https://hackerone.com/reports/223625 | CWE: Unknown
+  Program: udemy | Reporter: cha5m
+

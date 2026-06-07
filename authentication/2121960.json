@@ -1,0 +1,170 @@
+{
+  "id": 2121960,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yMTIxOTYw",
+  "url": "https://hackerone.com/reports/2121960",
+  "title": "CVE-2023-40273: Session fixation in Apache Airflow web interface",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2023-08-24T02:00:31.794Z",
+  "submitted_at": "2023-08-24T02:00:31.973Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "leixiao",
+    "url": "/leixiao",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/2icnnokb5gyejdn1vcg5lg20e3mg/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 54349,
+    "url": "https://hackerone.com/ibb",
+    "handle": "ibb",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JBIYRSO%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123539Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDeNC0qjFIKCNv7Y8LtQ78CMGLkNaJoX8YJ8yeYkGPH8QIhALKHdRCt2NNFlZs23rCLHJ049xlCLoN1fraeZnKRM3n5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igw7v4e4gyw0gQeBBFoqjwVJ9R55VOhkXbYKZSok7xnNb0oGYNrP93127p1gUrJx2yq%2FFu53W8GwSZsR1818maWUZRP%2FOrNYowTb0bCQ%2BmBh1yfHDHMxy%2BlY2cMtukRl1dljqwHXSkZhTb5nCX8ijk3D6gCAnQTJZ5rX7Sjk5v8QVRJhs2T4lu%2Fa1l4zcF%2BybGmUtJ35%2Fma3BOmd8jDKVS9MzLnh6ald2MlqaVdq%2Bcc1D8O999CRakAd0pDj6ygmq76qf1dpxJ22UQ1uy5bOGCVtS2ofUZ1BdmIWhyPvQqiC2%2FBnq4OI1WXO9IjzAkfU0P52osgNk1WY5Zi7oJVYMys3VvldzUSntYRXhF%2F4EWH32cUc1yZyUJGbZ9pxgTB86jyvxg%2BgKyK0Okbg3UGJzdy5WnvE7dpmkuWMSejdVS17OWkQ4mRvhgxgWiGBFc2%2F6k4f7pDiH3GJcgtGRfve4DFES8%2B3XFKatIxqMSU9mb8EMdpq0Ca57EauAQZZG8XgXP%2F%2BniQ9rrB2OtavSPFSpQqgO1AYm%2FN48pGBMNa17Q9nqUKnfHWj%2FjzF1G8M%2BGkv%2FWAp7RrMK1lZc5ySqhXdeEpuHDIDXQhcIvniJd%2Ffg1AVVfW2RUNl1K6XraUzFKYpH4UyAb93GVPsgMbNarGpbGvOPodo6jlH9meim7LC5YHAiKvEAeNrYbtfla%2BZD7sshhBViVxfDPQQxQ0zyjafpMN0JfAeREKYUga%2F3kQ138o%2Fj0TMHvslKOPCwk6UsvMdrs12ueZzHhdAvNLMEGX6wmZuHiv6zYe0%2FCEPGpzklxdFrg8aoyKIQOH2nr1d7abLJePKeagGj0RbwlOCD6GCcHL76swZ8xzcC3dKGWP%2B0Hh2rjTfp9nVJvK4f0ExF1KNMOSildEGOrABAdyAPSfnpBT79%2F0%2FkCP%2BzTjVrTkLx%2Bc127eOKs2PvS5Vy1eZ4KjM8wtCj%2BN4xvTWFE4vN5YWQIHG%2FQmEfyG9%2BoeGQ6RromIg5LipDag9ns3uobU%2BC11rzHjMdxV94RvpaS2WzuBjkHuavdlmyElkOzt6IWG5x8VffcYmwj7CvXnduH%2FcerOPUIpcF3eVZk4juj3xYV8EkZn%2BTrm7zdRngiCLfayaHrssJs8m7iC6VvA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7b4f4ed3207222e50be156a17911eba59c804fc01d22c03fef562409306f2296",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JBIYRSO%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123539Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDeNC0qjFIKCNv7Y8LtQ78CMGLkNaJoX8YJ8yeYkGPH8QIhALKHdRCt2NNFlZs23rCLHJ049xlCLoN1fraeZnKRM3n5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igw7v4e4gyw0gQeBBFoqjwVJ9R55VOhkXbYKZSok7xnNb0oGYNrP93127p1gUrJx2yq%2FFu53W8GwSZsR1818maWUZRP%2FOrNYowTb0bCQ%2BmBh1yfHDHMxy%2BlY2cMtukRl1dljqwHXSkZhTb5nCX8ijk3D6gCAnQTJZ5rX7Sjk5v8QVRJhs2T4lu%2Fa1l4zcF%2BybGmUtJ35%2Fma3BOmd8jDKVS9MzLnh6ald2MlqaVdq%2Bcc1D8O999CRakAd0pDj6ygmq76qf1dpxJ22UQ1uy5bOGCVtS2ofUZ1BdmIWhyPvQqiC2%2FBnq4OI1WXO9IjzAkfU0P52osgNk1WY5Zi7oJVYMys3VvldzUSntYRXhF%2F4EWH32cUc1yZyUJGbZ9pxgTB86jyvxg%2BgKyK0Okbg3UGJzdy5WnvE7dpmkuWMSejdVS17OWkQ4mRvhgxgWiGBFc2%2F6k4f7pDiH3GJcgtGRfve4DFES8%2B3XFKatIxqMSU9mb8EMdpq0Ca57EauAQZZG8XgXP%2F%2BniQ9rrB2OtavSPFSpQqgO1AYm%2FN48pGBMNa17Q9nqUKnfHWj%2FjzF1G8M%2BGkv%2FWAp7RrMK1lZc5ySqhXdeEpuHDIDXQhcIvniJd%2Ffg1AVVfW2RUNl1K6XraUzFKYpH4UyAb93GVPsgMbNarGpbGvOPodo6jlH9meim7LC5YHAiKvEAeNrYbtfla%2BZD7sshhBViVxfDPQQxQ0zyjafpMN0JfAeREKYUga%2F3kQ138o%2Fj0TMHvslKOPCwk6UsvMdrs12ueZzHhdAvNLMEGX6wmZuHiv6zYe0%2FCEPGpzklxdFrg8aoyKIQOH2nr1d7abLJePKeagGj0RbwlOCD6GCcHL76swZ8xzcC3dKGWP%2B0Hh2rjTfp9nVJvK4f0ExF1KNMOSildEGOrABAdyAPSfnpBT79%2F0%2FkCP%2BzTjVrTkLx%2Bc127eOKs2PvS5Vy1eZ4KjM8wtCj%2BN4xvTWFE4vN5YWQIHG%2FQmEfyG9%2BoeGQ6RromIg5LipDag9ns3uobU%2BC11rzHjMdxV94RvpaS2WzuBjkHuavdlmyElkOzt6IWG5x8VffcYmwj7CvXnduH%2FcerOPUIpcF3eVZk4juj3xYV8EkZn%2BTrm7zdRngiCLfayaHrssJs8m7iC6VvA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=de47da035ff8489ac9341715feb847d83ed836570b2930604be5a850aa293eb8"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Internet Bug Bounty",
+      "twitter_handle": "",
+      "website": "https://www.hackerone.com/internet-bug-bounty",
+      "about": "The Internet Bug Bounty rewards security research into vulnerabilities impacting Open Source Software Projects."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2023-40273"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2023-09-04T02:45:34.444Z",
+  "bug_reporter_agreed_on_going_public_at": "2023-09-04T02:45:34.352Z",
+  "team_member_agreed_on_going_public_at": "2023-08-28T09:50:30.493Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "When I reset the password of the test user through the button Reset Password, I hope that the person who previously had the password of the test user will lose the corresponding authority. However, if others have logged in to the test user before, they can still use the account.\n{F2630619}\n{F2630620}\nIn short\uff0cChange user password wouldn't prevent an already authenticated user from being able to continue using the UI or API.\n\n## Impact\n\nThe session fixation vulnerability allowed the authenticated user to continue accessing Airflow webserver even after the password of the user has been reset by the admin - up until the expiry of the session of the user.",
+  "bounty_amount": "540.0",
+  "formatted_bounty": "$540",
+  "weakness": {
+    "id": 47,
+    "name": "Session Fixation"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 2630619,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/xxn33ksbve76hhszdxes4a9z6hk8?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JBIYRSO%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123539Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDeNC0qjFIKCNv7Y8LtQ78CMGLkNaJoX8YJ8yeYkGPH8QIhALKHdRCt2NNFlZs23rCLHJ049xlCLoN1fraeZnKRM3n5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igw7v4e4gyw0gQeBBFoqjwVJ9R55VOhkXbYKZSok7xnNb0oGYNrP93127p1gUrJx2yq%2FFu53W8GwSZsR1818maWUZRP%2FOrNYowTb0bCQ%2BmBh1yfHDHMxy%2BlY2cMtukRl1dljqwHXSkZhTb5nCX8ijk3D6gCAnQTJZ5rX7Sjk5v8QVRJhs2T4lu%2Fa1l4zcF%2BybGmUtJ35%2Fma3BOmd8jDKVS9MzLnh6ald2MlqaVdq%2Bcc1D8O999CRakAd0pDj6ygmq76qf1dpxJ22UQ1uy5bOGCVtS2ofUZ1BdmIWhyPvQqiC2%2FBnq4OI1WXO9IjzAkfU0P52osgNk1WY5Zi7oJVYMys3VvldzUSntYRXhF%2F4EWH32cUc1yZyUJGbZ9pxgTB86jyvxg%2BgKyK0Okbg3UGJzdy5WnvE7dpmkuWMSejdVS17OWkQ4mRvhgxgWiGBFc2%2F6k4f7pDiH3GJcgtGRfve4DFES8%2B3XFKatIxqMSU9mb8EMdpq0Ca57EauAQZZG8XgXP%2F%2BniQ9rrB2OtavSPFSpQqgO1AYm%2FN48pGBMNa17Q9nqUKnfHWj%2FjzF1G8M%2BGkv%2FWAp7RrMK1lZc5ySqhXdeEpuHDIDXQhcIvniJd%2Ffg1AVVfW2RUNl1K6XraUzFKYpH4UyAb93GVPsgMbNarGpbGvOPodo6jlH9meim7LC5YHAiKvEAeNrYbtfla%2BZD7sshhBViVxfDPQQxQ0zyjafpMN0JfAeREKYUga%2F3kQ138o%2Fj0TMHvslKOPCwk6UsvMdrs12ueZzHhdAvNLMEGX6wmZuHiv6zYe0%2FCEPGpzklxdFrg8aoyKIQOH2nr1d7abLJePKeagGj0RbwlOCD6GCcHL76swZ8xzcC3dKGWP%2B0Hh2rjTfp9nVJvK4f0ExF1KNMOSildEGOrABAdyAPSfnpBT79%2F0%2FkCP%2BzTjVrTkLx%2Bc127eOKs2PvS5Vy1eZ4KjM8wtCj%2BN4xvTWFE4vN5YWQIHG%2FQmEfyG9%2BoeGQ6RromIg5LipDag9ns3uobU%2BC11rzHjMdxV94RvpaS2WzuBjkHuavdlmyElkOzt6IWG5x8VffcYmwj7CvXnduH%2FcerOPUIpcF3eVZk4juj3xYV8EkZn%2BTrm7zdRngiCLfayaHrssJs8m7iC6VvA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d519af8e0be3d98909437f52be6c8b42db3aa73f00acf12a7b40c29217482c22",
+      "file_size": 180615,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2630620,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/igwgha4w7eq7qms12lk58kwtzlr5?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JBIYRSO%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123539Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDeNC0qjFIKCNv7Y8LtQ78CMGLkNaJoX8YJ8yeYkGPH8QIhALKHdRCt2NNFlZs23rCLHJ049xlCLoN1fraeZnKRM3n5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igw7v4e4gyw0gQeBBFoqjwVJ9R55VOhkXbYKZSok7xnNb0oGYNrP93127p1gUrJx2yq%2FFu53W8GwSZsR1818maWUZRP%2FOrNYowTb0bCQ%2BmBh1yfHDHMxy%2BlY2cMtukRl1dljqwHXSkZhTb5nCX8ijk3D6gCAnQTJZ5rX7Sjk5v8QVRJhs2T4lu%2Fa1l4zcF%2BybGmUtJ35%2Fma3BOmd8jDKVS9MzLnh6ald2MlqaVdq%2Bcc1D8O999CRakAd0pDj6ygmq76qf1dpxJ22UQ1uy5bOGCVtS2ofUZ1BdmIWhyPvQqiC2%2FBnq4OI1WXO9IjzAkfU0P52osgNk1WY5Zi7oJVYMys3VvldzUSntYRXhF%2F4EWH32cUc1yZyUJGbZ9pxgTB86jyvxg%2BgKyK0Okbg3UGJzdy5WnvE7dpmkuWMSejdVS17OWkQ4mRvhgxgWiGBFc2%2F6k4f7pDiH3GJcgtGRfve4DFES8%2B3XFKatIxqMSU9mb8EMdpq0Ca57EauAQZZG8XgXP%2F%2BniQ9rrB2OtavSPFSpQqgO1AYm%2FN48pGBMNa17Q9nqUKnfHWj%2FjzF1G8M%2BGkv%2FWAp7RrMK1lZc5ySqhXdeEpuHDIDXQhcIvniJd%2Ffg1AVVfW2RUNl1K6XraUzFKYpH4UyAb93GVPsgMbNarGpbGvOPodo6jlH9meim7LC5YHAiKvEAeNrYbtfla%2BZD7sshhBViVxfDPQQxQ0zyjafpMN0JfAeREKYUga%2F3kQ138o%2Fj0TMHvslKOPCwk6UsvMdrs12ueZzHhdAvNLMEGX6wmZuHiv6zYe0%2FCEPGpzklxdFrg8aoyKIQOH2nr1d7abLJePKeagGj0RbwlOCD6GCcHL76swZ8xzcC3dKGWP%2B0Hh2rjTfp9nVJvK4f0ExF1KNMOSildEGOrABAdyAPSfnpBT79%2F0%2FkCP%2BzTjVrTkLx%2Bc127eOKs2PvS5Vy1eZ4KjM8wtCj%2BN4xvTWFE4vN5YWQIHG%2FQmEfyG9%2BoeGQ6RromIg5LipDag9ns3uobU%2BC11rzHjMdxV94RvpaS2WzuBjkHuavdlmyElkOzt6IWG5x8VffcYmwj7CvXnduH%2FcerOPUIpcF3eVZk4juj3xYV8EkZn%2BTrm7zdRngiCLfayaHrssJs8m7iC6VvA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4e0ef94d6a3e4bb8810673c948beff27d3e512854a713f7a9cc179d5cf73c270",
+      "file_size": 180615,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2023-09-27T09:50:30.564Z",
+  "allow_singular_disclosure_after": -85027508.64539656,
+  "singular_disclosure_allowed": true,
+  "vote_count": 26,
+  "voters": [
+    "8910jq",
+    "whit3ros3",
+    "jlgb",
+    "zy9ard3",
+    "eye_",
+    "road0606",
+    "kerolesmagdy",
+    "reporascal_1",
+    "0x0days",
+    "arajawatoo7",
+    "and 16 more..."
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 86381,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/apache/airflow",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 337307,
+      "category": "team",
+      "content": "The session fixation vulnerability allowed the authenticated user to continue accessing Airflow webserver even after the password of the user has been reset by the admin - up until the expiry of the session of the user. Other than manually cleaning the session database (for database session backend), or changing the secure_key and restarting the webserver, there were no mechanisms to force-logout the user (and all other users with that).\n\nWith this fix implemented, when using the database session backend, the existing sessions of the user are invalidated when the password of the user is reset. When using the securecookie session backend, the sessions are NOT invalidated and still require changing the secure key and restarting the webserver (and logging out all other users), but the user resetting the password is informed about it with a flash message warning displayed in the UI. Documentation is also updated explaining this behaviour.\n\nUsers of Apache Airflow are advised to upgrade to version 2.7.0 or newer to mitigate the risk associated with this vulnerability.",
+      "updated_at": "2023-08-28T09:47:15.224Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 2032618,
+        "username": "pr0tag0nist",
+        "name": "p h",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": "",
+        "created_at": "2021-10-18T10:02:41.859Z",
+        "url": "https://hackerone.com/pr0tag0nist",
+        "hackerone_triager": false,
+        "hackerone_employee": true,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "medium": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "xtralarge": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+        }
+      }
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

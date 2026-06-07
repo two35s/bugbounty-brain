@@ -1,0 +1,142 @@
+{
+  "id": 2160178,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yMTYwMTc4",
+  "url": "https://hackerone.com/reports/2160178",
+  "title": "default credentials at https://52.42.105.71/",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "critical",
+  "readable_substate": "Resolved",
+  "created_at": "2023-09-16T09:13:33.558Z",
+  "submitted_at": "2023-09-16T09:13:33.676Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "forcedrofes",
+    "url": "/forcedrofes",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/f6sf4q647i07hzt0qy7h0tg3kknc/c8a1698ff707a5e3e8a91a3484838363845daac68cb82c86d55c9e2d44d67b67"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 1930,
+    "url": "https://hackerone.com/trellix",
+    "handle": "trellix",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/ybrd6y6qwgyfnk739ppvqwa685xu/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/ybrd6y6qwgyfnk739ppvqwa685xu/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Trellix",
+      "twitter_handle": "",
+      "website": "https://www.trellix.com",
+      "about": ""
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2024-02-01T16:13:20.093Z",
+  "bug_reporter_agreed_on_going_public_at": "2024-01-02T16:13:18.637Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\n\nhi team i able to login in one of your servers by default credentials\n\n## Steps to reproduce:\n1.go to link : https://52.42.105.71/\n1.enter this credentials\n```\npassword=admin\nusername=admin\n```\n\n## PoC\n\n{F2703747}\n\n{F2703748}\n\n## How to remediate the vulnerability\n\nChange the password of the user or disable the account\n\n## Impact\n\nthe website was misconfigured in a manner that may have allowed a malicious user to login with administrator for the default organization account credentials.",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 2703747,
+      "file_name": "Screenshot_2023-09-16_at_12.06.11_PM.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/m29eshr6423z9pwuqacpn5utuwki?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_2023-09-16_at_12.06.11_PM.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_2023-09-16_at_12.06.11_PM.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQRZWXXGLE%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123528Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDqZUGl3VV2etMJyVqIrgNV6wD2AtzHKWfQgp6W8WTKRAiEAuJ6EJBHKu7Zh4Bf3gJoc1LKi6doFIo%2BI%2Bp0ubPUSeQ4qugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDNDZtoMpjV%2FNfA7n0yqOBXq4Ryw%2F5Yd%2FQNa7197uwZCuDUBsfMpuu2m0KPzdqi2r3yvVdBblqztsIOlxuppNU99Aneeb585iyd5c%2FdKzAGrKnT9EcU5%2FAY8g9ydwpP3Z6oqNbTkvI8kcO69T62qBsiIH9HE9Ih7iGskLf1tFc6gxpmBpE%2Be4Pc4NIL4RXDUEyUsgP%2FuInqHI6fFGCJonLGTIjmNdXBrL9pCtraT35cepcP9ULauP1SPg7ms76%2BxkmN6otElOHEX7ugcmWsxsX0BBl7GHkcuhE6bzQw2pTLKvaQ45swjnserrioQaod8IsO3TzMU9mhjJ9B3qyOsZOe7%2F2G0tUo4%2Bqrf55owJ831%2B%2FOC6TTP%2By0oZzZDPO7uC1py55yhj9UB%2F8NVt3E02ZjGIQL4dLK7HKMcjmgkIVexkQ7qNX1pRgX7kWLW2vOF4GsyPDyAyoy1w7KD0xyH49LqrZpHot5d0QOOJK3%2BYkd3Ms5ArOe25ezGEYkgvH4CNEvhF8gT5nhJniTAp44j6TFtyGMtG8cfZnrWHAmfVuzw0D%2FgcY9aU2T9QIBN9V9BWaA%2BDGP%2FaPlR7LBh6skZz0a3ObaAwjn24hewlCorLCMOMLnokaso6pLySGzvYE114%2BTPL6jqr2FxSxwcxT6JE10I5n5FITH535hXySPublsZJU5dd5d%2FBKL%2BStHdaFD5IN2r8WsacCYENQQiLGmUhAG5DAz9YRUJ2vWGWWQeei1RynMGfrz9d3iPFkhE8N1ewUGM1PdaQu0kNFWp%2BtkE%2BggqnLgCDKKtrI%2Bxri9kI%2FI9dJvuCLXFiKh5s0idwqXpD%2BcbRijTWV3Qb1DmVbL6yOD0xG9WTv%2F7VamvmYSzGLCLH3%2FmrrCURDG8%2BDTB3ezDbkJXRBjqxAZW5Y55x3VEu4yLEcrjZ9d%2FsiqcplBfBpVFhxMkhrzSiaI0nc6xLi66saw6%2Fy4ApmQNSOVzmvgl3BzMD8jR4kx0K5IQiRun0iSqlaG5QLJdtlqjvutpYtpKqDbcbt5DBc3QnloagyP5%2BxVxG5KpHt%2F38n1C16RB2fWU5QFxxk5Z5ODBCOQwbJVANz3K7Oy%2Bx%2BfRerrdhYyYhlYJYb7OWtIyAD81zvt9zrlr1ti2T94lGYg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=00d10fd50ec78137baad8021907719ae29562d1f03c66f1942ffc24ed95e4576",
+      "file_size": 297674,
+      "type": "image/png",
+      "moderated": false
+    },
+    {
+      "id": 2703748,
+      "file_name": "Screenshot_2023-09-16_at_12.11.18_PM.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/9yqpi5e1m9ma7o89igsaw5uruluz?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_2023-09-16_at_12.11.18_PM.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_2023-09-16_at_12.11.18_PM.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQRZWXXGLE%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123528Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDqZUGl3VV2etMJyVqIrgNV6wD2AtzHKWfQgp6W8WTKRAiEAuJ6EJBHKu7Zh4Bf3gJoc1LKi6doFIo%2BI%2Bp0ubPUSeQ4qugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDNDZtoMpjV%2FNfA7n0yqOBXq4Ryw%2F5Yd%2FQNa7197uwZCuDUBsfMpuu2m0KPzdqi2r3yvVdBblqztsIOlxuppNU99Aneeb585iyd5c%2FdKzAGrKnT9EcU5%2FAY8g9ydwpP3Z6oqNbTkvI8kcO69T62qBsiIH9HE9Ih7iGskLf1tFc6gxpmBpE%2Be4Pc4NIL4RXDUEyUsgP%2FuInqHI6fFGCJonLGTIjmNdXBrL9pCtraT35cepcP9ULauP1SPg7ms76%2BxkmN6otElOHEX7ugcmWsxsX0BBl7GHkcuhE6bzQw2pTLKvaQ45swjnserrioQaod8IsO3TzMU9mhjJ9B3qyOsZOe7%2F2G0tUo4%2Bqrf55owJ831%2B%2FOC6TTP%2By0oZzZDPO7uC1py55yhj9UB%2F8NVt3E02ZjGIQL4dLK7HKMcjmgkIVexkQ7qNX1pRgX7kWLW2vOF4GsyPDyAyoy1w7KD0xyH49LqrZpHot5d0QOOJK3%2BYkd3Ms5ArOe25ezGEYkgvH4CNEvhF8gT5nhJniTAp44j6TFtyGMtG8cfZnrWHAmfVuzw0D%2FgcY9aU2T9QIBN9V9BWaA%2BDGP%2FaPlR7LBh6skZz0a3ObaAwjn24hewlCorLCMOMLnokaso6pLySGzvYE114%2BTPL6jqr2FxSxwcxT6JE10I5n5FITH535hXySPublsZJU5dd5d%2FBKL%2BStHdaFD5IN2r8WsacCYENQQiLGmUhAG5DAz9YRUJ2vWGWWQeei1RynMGfrz9d3iPFkhE8N1ewUGM1PdaQu0kNFWp%2BtkE%2BggqnLgCDKKtrI%2Bxri9kI%2FI9dJvuCLXFiKh5s0idwqXpD%2BcbRijTWV3Qb1DmVbL6yOD0xG9WTv%2F7VamvmYSzGLCLH3%2FmrrCURDG8%2BDTB3ezDbkJXRBjqxAZW5Y55x3VEu4yLEcrjZ9d%2FsiqcplBfBpVFhxMkhrzSiaI0nc6xLi66saw6%2Fy4ApmQNSOVzmvgl3BzMD8jR4kx0K5IQiRun0iSqlaG5QLJdtlqjvutpYtpKqDbcbt5DBc3QnloagyP5%2BxVxG5KpHt%2F38n1C16RB2fWU5QFxxk5Z5ODBCOQwbJVANz3K7Oy%2Bx%2BfRerrdhYyYhlYJYb7OWtIyAD81zvt9zrlr1ti2T94lGYg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=04e6ef9d15be5ef499f92b00bc349308f29c3541fe687bf32bbb6cc99935db43",
+      "file_size": 666117,
+      "type": "image/png",
+      "moderated": false
+    }
+  ],
+  "allow_singular_disclosure_at": "2024-02-01T16:13:18.853Z",
+  "allow_singular_disclosure_after": -74031729.77016862,
+  "singular_disclosure_allowed": true,
+  "vote_count": 74,
+  "voters": [
+    "k0ns0l",
+    "kanazawaaaa",
+    "babayaga53",
+    "loaymorad",
+    "skoll101",
+    "ganeshbagaria",
+    "roland_hack",
+    "exec_iq",
+    "mr-k0anti",
+    "zy9ard3",
+    "and 64 more..."
+  ],
+  "severity": {
+    "rating": "critical",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 23529,
+    "asset_type": "WILDCARD",
+    "asset_identifier": "*.trellix.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

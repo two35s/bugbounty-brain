@@ -1,0 +1,539 @@
+Category: idor
+Reports: 134
+
+[High] Autotranslate DDP Method Exposes Private Messages Without Authentication or Room Access Check
+  URL: https://hackerone.com/reports/3734326 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: rocket_chat | Reporter: deprrous
+
+[Medium] Cross-repository IDOR in `/settings/security_analysis/bypass_reviewers` allows unauthorized delegated bypass reviewer modification
+  URL: https://hackerone.com/reports/3560256 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: github | Reporter: ahacker1
+
+[Medium] IDOR: autotranslate.translateMessage Full Message Content Leak
+  URL: https://hackerone.com/reports/3713682 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: rocket_chat | Reporter: josan_george
+
+[Low] Private circle can be added to another circle via API despite visibility restriction
+  URL: https://hackerone.com/reports/3511998 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: nextcloud | Reporter: vidang04
+
+[Low] Files drop share links for end-to-end encrypted folders allowed to drop files into other folders of the share owner 
+  URL: https://hackerone.com/reports/3304830 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: nextcloud | Reporter: 0x0doteth
+
+[Medium] IDOR to make someone attend or leave an event
+  URL: https://hackerone.com/reports/1734639 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: safehacker_2715
+
+[High] Missing Access Control in MigrationFile allows attacker to upload files to any Migration
+  URL: https://hackerone.com/reports/3506183 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: github | Reporter: ahacker1
+
+[Low] WebAuthn app was updated based on public key
+  URL: https://hackerone.com/reports/3360354 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: nextcloud | Reporter: se1en
+
+[Medium] Disclose Hidden Comments on Media Section of hub.vroid.com
+  URL: https://hackerone.com/reports/2541962 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: pixiv | Reporter: giwadaoud
+
+[High] IDOR Exposes PII of Tens of Thousands of Users and Supervisors
+  URL: https://hackerone.com/reports/2967032 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: tacnull
+
+[Low] Calendar app allowed booking appointments without the generated token
+  URL: https://hackerone.com/reports/3275810 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: nextcloud | Reporter: daroo
+
+[Medium] Missing ownership check in Tables app allows moving columns into tables of other users
+  URL: https://hackerone.com/reports/3137895 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: nextcloud | Reporter: daroo
+
+[High] Arbitrary Read of Another Users private repository without Authorization
+  URL: https://hackerone.com/reports/3124517 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: github | Reporter: furbreeze
+
+[High] IDOR: Account Deletion via Session Misbinding – Attacker Can Delete Victim Account
+  URL: https://hackerone.com/reports/3154983 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mozilla | Reporter: z3phyrus
+
+[Critical] Sale cancellations from other sellers without restrictions
+  URL: https://hackerone.com/reports/2495989 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mercadolibre | Reporter: capablanca0
+
+[High] Insecure Direct Object Reference (IDOR) in GraphQL deleteProfileImages Mutation
+  URL: https://hackerone.com/reports/2968039 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: autodesk | Reporter: alphahacks
+
+[Low] IDOR on ads.tiktok.com Allows Unauthorized Product Addition
+  URL: https://hackerone.com/reports/2848610 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: tiktok | Reporter: p_oria
+
+[Medium] IDOR Vulnerability Allowing Unauthorized Profile Picture Change
+  URL: https://hackerone.com/reports/2962056 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: autodesk | Reporter: l1ackersalman
+
+[Medium] Insecure Direct Object Reference (IDOR) Vulnerability in Autodesk User Profile
+  URL: https://hackerone.com/reports/2965357 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: autodesk | Reporter: eyax0
+
+[Critical] █████████ when adding branches to your account
+  URL: https://hackerone.com/reports/2756402 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mars | Reporter: kh4rish34v3n
+
+[High] Upload profile photo and  Pets addition - IDOR
+  URL: https://hackerone.com/reports/2393021 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mars | Reporter: ozilll
+
+[Low] fs.fchown/fchmod bypasses permission model
+  URL: https://hackerone.com/reports/2590608 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: ibb | Reporter: 4xpl0r3r
+
+[Low] IDOR vulnerability leads to Deleting message after leaving/getting banned from group using message ID
+  URL: https://hackerone.com/reports/2028450 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: rocket_chat | Reporter: yash24
+
+[Critical] IDOR at mtnmobad.mtnbusiness.com.ng leads to PII leakage. 
+  URL: https://hackerone.com/reports/1773609 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mtn_group | Reporter: hazemhussien99
+
+[Medium] IDOR Exposes All Machine Learning Models
+  URL: https://hackerone.com/reports/2528293 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: gitlab | Reporter: moblig
+
+[Medium] IDOR may allow access to non-public photos
+  URL: https://hackerone.com/reports/1737943 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: flickr | Reporter: 0xcyborg
+
+[High] IDOR leading unauthenticated attacker to download documents discloses PII of users and soldiers via https://www.█████████/Download.aspx?id= [HtUS]
+  URL: https://hackerone.com/reports/1626508 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: berserker22
+
+[Low] [IDOR] Improper Access Control on Embedded Submission Form
+  URL: https://hackerone.com/reports/2483666 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: security | Reporter: japz
+
+[Medium] IDOR - Leaking of team data (name, email, ID, member ID) via POST /api/v1/graphql  `FetchMemberships` operation
+  URL: https://hackerone.com/reports/2381816 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: toolsforhumanity | Reporter: oneagha
+
+[High] IDOR - Delete all Licenses and certifications from users account using CreateOrUpdateHackerCertification GraphQL query
+  URL: https://hackerone.com/reports/2122671 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: security | Reporter: harshdranjan
+
+[Critical] Attachment disclosure via summary report 
+  URL: https://hackerone.com/reports/2442008 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: security | Reporter: xklepxn
+
+[Critical] Insecure Direct Object Reference Protection bypass by changing HTTP method in IBM Your Learning endpoint. 
+  URL: https://hackerone.com/reports/2456603 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: ibm | Reporter: suryahss
+
+[Medium] IDOR in one subdomain of █████████ -> change information of pets without athorization!
+  URL: https://hackerone.com/reports/2073950 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mars | Reporter: haoshokunoo
+
+[Medium] IDOR on GraphQL queries BillingDocumentDownload and BillDetails
+  URL: https://hackerone.com/reports/2207248 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: shopify | Reporter: blaklis
+
+[Medium] View Repo and Title of Any Private Check Run
+  URL: https://hackerone.com/reports/2210179 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: github | Reporter: ahacker1
+
+[Medium] IDOR to delete profile images in https:███████
+  URL: https://hackerone.com/reports/2213900 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: maskedpersian
+
+[Medium] IDOR vulnerability in unreleased HackerOne Copilot feature
+  URL: https://hackerone.com/reports/2218334 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: security | Reporter: bebiks
+
+[Medium] [ADMIN FEATURE ACCESS] Knowing The Competitors analytics of any company  
+  URL: https://hackerone.com/reports/1538177 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: poneglyph
+
+[Critical] IDOR in upload videos of a Channel on https://video.ibm.com
+  URL: https://hackerone.com/reports/2085185 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: ibm | Reporter: tusnj
+
+[High] Attackers can use TRIAL Premium only by paying **IDR 10,000.00** from the original price of `IDR462,400.00` per month
+  URL: https://hackerone.com/reports/1808719 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: find_me_here
+
+[Medium] IDOR allows an attacker to delete anyone's featured photo.
+  URL: https://hackerone.com/reports/1608735 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: adilnbabras
+
+[High] An IDOR that can lead to enumeration of a user and disclosure of email and phone number within cashier
+  URL: https://hackerone.com/reports/1966006 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: unikrn | Reporter: miquinho
+
+[Low] IDOR in family pairing API
+  URL: https://hackerone.com/reports/1586950 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: tiktok | Reporter: ahmedna126
+
+[Medium] Attacker is able to create,Edit & delete notes and leak the title of a victim's private personal snippet
+  URL: https://hackerone.com/reports/1751258 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: gitlab | Reporter: cryptopone
+
+[Medium] Attacker can create malicious child epics linked to a victim's epic in an unrelated group
+  URL: https://hackerone.com/reports/1892200 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: gitlab | Reporter: cryptopone
+
+[Medium] Anyone can view the results of linkedin skill test -if failed to earn a badge or if the badge earned is kept private: both cases results can be viewed
+  URL: https://hackerone.com/reports/1837309 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: marvelmaniac
+
+[Medium] [ Continuation Report from #1814842 ] Can create articles using other users' NewsLetters
+  URL: https://hackerone.com/reports/1818969 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: find_me_here
+
+[Medium] Ability to read any emails through IDOR on Nextcloud Mail
+  URL: https://hackerone.com/reports/1784681 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: nextcloud | Reporter: ctulhu
+
+[High] IDOR in TalentMAP API can be abused to enumerate personal information of all the users
+  URL: https://hackerone.com/reports/1848176 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: us-department-of-state | Reporter: nhx1
+
+[Medium] Session mismatch leading to potential account takeover (local access required)
+  URL: https://hackerone.com/reports/1825227 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: cloudflare | Reporter: theendisnear
+
+[High] Unauthorized User can View Subscribers of Other Users Newsletters
+  URL: https://hackerone.com/reports/1716300 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: tushar6378
+
+[High] Delete anyone's content spotlight remotely.
+  URL: https://hackerone.com/reports/1819832 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: snapchat | Reporter: prickn9
+
+[Low] Possibility to delete files attached to deck cards of other users
+  URL: https://hackerone.com/reports/1755555 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: nextcloud | Reporter: supr4s
+
+[High] Unauthorized access to resumes stored on LinkedIn
+  URL: https://hackerone.com/reports/1777095 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: headhunter
+
+[Medium] IDOR in Stats API Endpoint Allows Viewing Equity or Net Profit of Any MT Account 
+  URL: https://hackerone.com/reports/1644436 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: exness | Reporter: ashwarya
+
+[Critical] Remove Every User, Admin, And Owner Out Of Their Teams on developers.mtn.com via IDOR + Information Disclosure
+  URL: https://hackerone.com/reports/1448550 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mtn_group | Reporter: wallotry
+
+[Critical] Unprotected Direct Object Reference
+  URL: https://hackerone.com/reports/1536936 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mtn_group | Reporter: coyemerald
+
+[Medium] Campaign Account Balance and History Disclosed in API Response
+  URL: https://hackerone.com/reports/1587374 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: sachin_kr
+
+[Medium] IDOR on ███████ [HtUS]
+  URL: https://hackerone.com/reports/1627974 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: nightm4re
+
+[Medium] A malicious admin can be able to permanently disable a Owner(Admin) to access his account
+  URL: https://hackerone.com/reports/1718574 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linktree | Reporter: dewcode91
+
+[Medium] IDOR leaking PII data via VendorId parameter
+  URL: https://hackerone.com/reports/1690044 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: 696e746c6f6c
+
+[Medium] Email Address Exposure via Gratipay Migration Tool
+  URL: https://hackerone.com/reports/1727044 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: liberapay | Reporter: suprnova
+
+[Medium] IDOR on Tagged People
+  URL: https://hackerone.com/reports/1555376 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: tiktok | Reporter: apapedulimu
+
+[Medium] IDOR Lead  To VIEW & DELETE & Create api_key [HtUS]
+  URL: https://hackerone.com/reports/1628012 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: bate5a
+
+[High] Getting access of mod logs from any public or restricted subreddit with IDOR vulnerability
+  URL: https://hackerone.com/reports/1658418 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: reddit | Reporter: high_ping_ninja
+
+[Low] Sensei LMS IDOR to send message
+  URL: https://hackerone.com/reports/1592596 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: automattic | Reporter: ghimire_veshraj
+
+[Low] IDOR in report download functionality on ads.tiktok.com
+  URL: https://hackerone.com/reports/1559739 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: tiktok | Reporter: f_m
+
+[Medium] Can access the job name, creator name and can report any draft/under review/rejected job
+  URL: https://hackerone.com/reports/1581528 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: linkedin | Reporter: sachin_kr
+
+[Medium] Privilege Escalation on TikTok for Business
+  URL: https://hackerone.com/reports/1505567 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: tiktok | Reporter: naaash
+
+[High] Multiple IDORs in family pairing api
+  URL: https://hackerone.com/reports/1286332 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: tiktok | Reporter: s3c
+
+[Medium] Acess control vulnerability (read/write)
+  URL: https://hackerone.com/reports/1174387 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: exness | Reporter: ashwarya
+
+[Medium] Access control vulnerability (read/write)
+  URL: https://hackerone.com/reports/1174734 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: exness | Reporter: ashwarya
+
+[Medium] Access control vulnerability (read-only)
+  URL: https://hackerone.com/reports/1159367 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: exness | Reporter: ashwarya
+
+[High] Chain of IDORs Between U4B and Vouchers APIs Allows Attackers to View and Modify Program/Voucher Policies and to Obtain Organization Employees' PII
+  URL: https://hackerone.com/reports/1148697 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: uber | Reporter: hunt4p1zza
+
+[High] Authorization bypass -> IDOR -> PII Leakage
+  URL: https://hackerone.com/reports/1489470 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: lubak
+
+[High] IDOR: leak buyer info & Publish/Hide foreign comments
+  URL: https://hackerone.com/reports/1410498 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: judgeme | Reporter: chupa__chups
+
+[High] IDOR delete any Tickets on ads.tiktok.com
+  URL: https://hackerone.com/reports/1475520 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: tiktok | Reporter: datph4m
+
+[Medium] IDOR in "external status check" API leaks data about any status check on the instance
+  URL: https://hackerone.com/reports/1372216 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: gitlab | Reporter: joaxcar
+
+[Medium] IDOR
+  URL: https://hackerone.com/reports/389250 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: websecnl
+
+[Medium] User can pay using archived price by manipulating the request sent to `POST /v1/payment_pages/for_plink`
+  URL: https://hackerone.com/reports/1328278 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: stripe | Reporter: gregxsunday
+
+[Medium] [IDOR] Modify other team's reminders via reminderId parameter
+  URL: https://hackerone.com/reports/946323 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: lark_technologies | Reporter: imran_nisar
+
+[High] IDOR - Other user's delivery address disclosed
+  URL: https://hackerone.com/reports/964010 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: av | Reporter: sachin_kr
+
+[Medium] IDOR on www.acronis.com API lead to steal private business user information
+  URL: https://hackerone.com/reports/1182465 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: acronis | Reporter: f_m
+
+[High] IDOR while uploading ████ attachments at [█████████]
+  URL: https://hackerone.com/reports/1196976 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: rook1337
+
+[Medium] IDOR leads to See analytics of Loyalty Program in any restaurant.
+  URL: https://hackerone.com/reports/1137819 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: uber | Reporter: 0xprial
+
+[Critical] Ability to add arbitrary images/descriptions/titles to ohter people's issues via IDOR on getrevue.co
+  URL: https://hackerone.com/reports/1096560 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: x | Reporter: mirhat
+
+[Medium] IDOR leads to leak analytics of any restaurant
+  URL: https://hackerone.com/reports/1116387 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: uber | Reporter: 0xprial
+
+[Medium] IDOR at training.smartpay.gsa.gov/reports/quizzes-taken-by-user
+  URL: https://hackerone.com/reports/1118638 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: gsa_vdp | Reporter: alihassam95
+
+[Medium] Messages disclosure via search feature of other users group(Cross-Tenant).
+  URL: https://hackerone.com/reports/912161 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: lark_technologies | Reporter: base_64
+
+[Critical] █████████ IDOR leads to disclosure of PHI/PII
+  URL: https://hackerone.com/reports/1085782 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: nidens
+
+[Low] View the Starred Projects in a Private Profile
+  URL: https://hackerone.com/reports/703894 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: gitlab | Reporter: maruthi12
+
+[Low] IDOR when creating App on [platform.streamlabs.com/api/v1/store/whitelist] with user_id field
+  URL: https://hackerone.com/reports/983070 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: logitech | Reporter: bugra
+
+[High] Security@ email forwarding and Embedded Submission drafts can be used to obtain copy of deleted attachments from other HackerOne users
+  URL: https://hackerone.com/reports/1034346 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: security | Reporter: jobert
+
+[Critical] IDOR + Account Takeover  [UNAUTHENTICATED]
+  URL: https://hackerone.com/reports/1004750 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: silentbreach
+
+[Medium] A staff member with no permissions can edit Store Customer Email
+  URL: https://hackerone.com/reports/980511 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: shopify | Reporter: ash_nz
+
+[Medium] China - IDOR on Reservation Staging/Non Production Site - https://reservation.stg.starbucks.com.cn
+  URL: https://hackerone.com/reports/715054 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: starbucks | Reporter: seven6
+
+[?] Ability to generate shipping labels in another store orders
+  URL: https://hackerone.com/reports/884159 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: shopify | Reporter: imgnotfound
+
+[Critical] I.D.O.R To Order,Book,Buy,reserve On YELP FOR FREE (UNAUTHORIZED USE OF OTHER USER'S CREDIT CARD)
+  URL: https://hackerone.com/reports/391092 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: yelp | Reporter: hk755a
+
+[Medium] I.D.O.R TO EDIT ALL USER'S CREDIT CARD INFORMATION+(Partial credit card info disclosure)
+  URL: https://hackerone.com/reports/361984 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: yelp | Reporter: hk755a
+
+[Medium] IDOR at https://cpanel.hostinger.com/billing/change-order-period
+  URL: https://hackerone.com/reports/837349 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: hostinger | Reporter: yashrs
+
+[Critical] Singapore - Account Takeover via IDOR
+  URL: https://hackerone.com/reports/876300 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: starbucks | Reporter: ko2sec
+
+[Low] IDOR: Adding Contacts to Other User Groups
+  URL: https://hackerone.com/reports/879960 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: 8x8-bounty | Reporter: ameyanekar
+
+[High] IDOR with Geolocation data not stripped from images
+  URL: https://hackerone.com/reports/906907 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: irccloud | Reporter: do_some_hack
+
+[Critical] account takeover on 3.0.1 version
+  URL: https://hackerone.com/reports/842625 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: rocket_chat | Reporter: elfiman
+
+[Low] Thailand - IDOR on www.starbuckscardth.in.th: A logged in user could view any Thailand Starbucks card balance if they knew that Starbucks card number
+  URL: https://hackerone.com/reports/858662 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: starbucks | Reporter: nnez
+
+[Medium] IDOR at https://account.mackeeper.com/at/load-reports/profile/<profile_id> leaks information about devices/licenses
+  URL: https://hackerone.com/reports/783117 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: clario | Reporter: m4ll0k
+
+[Critical] ████ █████ exposes highly sensitive information to public
+  URL: https://hackerone.com/reports/388554 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: cablej_dds
+
+[Medium] Insecure redirect rule results in bypassing ban redirect on certain pages
+  URL: https://hackerone.com/reports/703058 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: roblox | Reporter: b62ba6bd20eb778df2a0691
+
+[Medium] Singapore - IDOR in campaign.starbucks.com.sg
+  URL: https://hackerone.com/reports/783332 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: starbucks | Reporter: bytebunny
+
+[Medium] IDOR in semrush academy
+  URL: https://hackerone.com/reports/783708 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: semrush | Reporter: a_d_a_m
+
+[Low] IDOR in Bugs overview enables attacker to determine the date range a hackathon was active
+  URL: https://hackerone.com/reports/663431 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: security | Reporter: jobert
+
+[Medium] India - An Insecure Direct Object Reference (IDOR) allowed unauthorized access to view card index number and monetary balance
+  URL: https://hackerone.com/reports/701160 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: starbucks | Reporter: mr_intrusionist
+
+[High] Importing GitLab project archives can replace uploads of other users
+  URL: https://hackerone.com/reports/534794 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: gitlab | Reporter: ajxchapman
+
+[?] [IDOR] Attacker user can Approve/Decline AFK on the behalf of other users
+  URL: https://hackerone.com/reports/725569 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: automattic | Reporter: sachin_kr
+
+[Medium] Web protection component in Anti-Virus products family uses predictable links for certificate warnings
+  URL: https://hackerone.com/reports/469372 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: kaspersky | Reporter: palant
+
+[Medium] Reporter, external users, collaborators can mark sent swag awarded to reporter as unsent
+  URL: https://hackerone.com/reports/717729 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: security | Reporter: jobert
+
+[High] IDOR on DoD Website exposes FTP users and passes linked to all accounts!
+  URL: https://hackerone.com/reports/228383 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: cdl
+
+[?] IDOR bug to See hidden slowvote of any user even when you dont have access right
+  URL: https://hackerone.com/reports/661978 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: phabricator | Reporter: ranjit_p
+
+[Low] IDOR to update folder name of other user
+  URL: https://hackerone.com/reports/587687 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: trint | Reporter: toannc123
+
+[Critical] Access to all █████████ files, including CAC authentication bypass
+  URL: https://hackerone.com/reports/429000 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: cablej_dds
+
+[Critical] ███████ Site Exposes █████████ forms
+  URL: https://hackerone.com/reports/395246 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: cablej_dds
+
+[Low] User uploaded portfolio files can be accessed by any user even after deleted
+  URL: https://hackerone.com/reports/300179 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: mavenlink | Reporter: tolo7010
+
+[Medium] IDOR on partners.uber.com allows for a driver to override administrator documents
+  URL: https://hackerone.com/reports/194594 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: uber | Reporter: indoappsec
+
+[Medium] Read Access to all comments on unauthorized forums' discussions! IDOR! 
+  URL: https://hackerone.com/reports/308610 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: valve | Reporter: ta8ahi
+
+[Low] [EE] change the author of post using the author_id
+  URL: https://hackerone.com/reports/338477 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: expressionengine | Reporter: flex0geek
+
+[Critical] 'cnvID' parameter vulnerable to Insecure Direct Object References
+  URL: https://hackerone.com/reports/265284 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: concretecms | Reporter: testdefense
+
+[Medium] Access to Private Photos of Apps in App section(IDOR)
+  URL: https://hackerone.com/reports/318751 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: shopify | Reporter: indoappsec
+
+[?] [www.zomato.com] IDOR - Delete/Deactivate ANY/ALL Promos through a Post Request at **clients/promoDataHandler.php**
+  URL: https://hackerone.com/reports/264754 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: eternal | Reporter: prateek_0490
+
+[High] [www.zomato.com] IDOR - Leaking all Personal Details of all Zomato Users through an endpoint
+  URL: https://hackerone.com/reports/269937 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: eternal | Reporter: prateek_0490
+
+[High] IDOR to cancel any table booking and leak sensitive information such as email,mobile number,uuid
+  URL: https://hackerone.com/reports/265258 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: eternal | Reporter: darwinks
+
+[Medium] IDOR unsubscribe Anyone from NextClouds Newsletters by knowing their Email 
+  URL: https://hackerone.com/reports/230328 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: nextcloud | Reporter: khizer47
+
+[Medium] Arbitary file download vulnerability on a DoD website
+  URL: https://hackerone.com/reports/230870 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[Medium] Arbitary file download vulnerability on a DoD website
+  URL: https://hackerone.com/reports/230714 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[Low] IDOR create accounts and verify them with original account email
+  URL: https://hackerone.com/reports/244636 | CWE: Insecure Direct Object Reference (IDOR)
+  Program: wakatime | Reporter: b3nac
+

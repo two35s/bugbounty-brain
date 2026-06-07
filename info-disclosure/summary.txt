@@ -1,0 +1,2347 @@
+Category: info-disclosure
+Reports: 586
+
+[?] Connection Count Bug in Monero Node Enables Outbound Peer Reset Attack
+  URL: https://hackerone.com/reports/3185083 | CWE: Privacy Violation
+  Program: monero | Reporter: yulge
+
+[Medium] CVE-2026-6429: netrc credential leak with reused proxy connection
+  URL: https://hackerone.com/reports/3677759 | CWE: Information Exposure Through Sent Data
+  Program: curl | Reporter: nobcoderr
+
+[High] IBM Aspera HTTP Gateway stores sensitive information in clear text in easily obtainable files which can be read by an unauthenticated user.
+  URL: https://hackerone.com/reports/3340797 | CWE: Information Disclosure
+  Program: ibm | Reporter: jhon1231248e
+
+[Medium] CVE-2026-3783: token leak with redirect and netrc
+  URL: https://hackerone.com/reports/3583983 | CWE: Information Exposure Through Sent Data
+  Program: curl | Reporter: spectreglobalsec
+
+[Medium] Publicly accessible `█████████` endpoint exposing internal user identifiers and email addresses
+  URL: https://hackerone.com/reports/3360293 | CWE: Information Disclosure
+  Program: mars | Reporter: xgoon
+
+[Medium] Sensitive information exposed at [███] via /export_panelists_to_xlsx endpoint
+  URL: https://hackerone.com/reports/3376598 | CWE: Cleartext Storage of Sensitive Information
+  Program: mars | Reporter: prakhar0x01
+
+[Medium] ███████ - Publicly Accessible public_html Directory Exposing WordPress Configuration
+  URL: https://hackerone.com/reports/3066548 | CWE: Information Disclosure
+  Program: mars | Reporter: xgoon
+
+[High] ASLR leak in Mario Kart World through LAN mode
+  URL: https://hackerone.com/reports/3463719 | CWE: Information Disclosure
+  Program: nintendo | Reporter: kinnay
+
+[High] Internal logs/info leaked via endpoint {https://203.137.128.240/server-status}
+  URL: https://hackerone.com/reports/2473173 | CWE: Information Disclosure
+  Program: pixiv | Reporter: dexter34
+
+[Medium] Roundcube Webmail Style Sanitizer can be bypassed using CSS Character Escapes
+  URL: https://hackerone.com/reports/3443563 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: somerandomdev
+
+[High] Exposed wp-config.php file in ███ National Guard website
+  URL: https://hackerone.com/reports/3328408 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: jonasdiasrebelo
+
+[High] Critical PII Data Exposure in ORDER_ERROR_LOG
+  URL: https://hackerone.com/reports/3242830 | CWE: Cleartext Storage of Sensitive Information
+  Program: deptofdefense | Reporter: xenion_
+
+[High] Exposed wp-config.php file
+  URL: https://hackerone.com/reports/3252302 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: jonasdiasrebelo
+
+[High] [███] .NET Framework ObjRefs Disclosure (CVE-2024-29059)
+  URL: https://hackerone.com/reports/2471924 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: xchopath
+
+[High] ASP.NET Application Trace Enabled
+  URL: https://hackerone.com/reports/2928785 | CWE: Information Exposure Through Debug Information
+  Program: deptofdefense | Reporter: jonasdiasrebelo
+
+[High] Exposure of Sensitive Debug File Containing database dump with passwords in plain text
+  URL: https://hackerone.com/reports/3019290 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: jonasdiasrebelo
+
+[High] Secret Access Key of AWS Firehose Disclosure
+  URL: https://hackerone.com/reports/2914739 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: marucube35
+
+[Critical] Exposed Extremely Sensitive Information in Public ZIP File
+  URL: https://hackerone.com/reports/2857082 | CWE: Insecure Storage of Sensitive Information
+  Program: deptofdefense | Reporter: aldenpartridge
+
+[Critical] ASBS viewing other soldiers PII/Board/Board Voters/ETC
+  URL: https://hackerone.com/reports/2954320 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: badlifeguard
+
+[Critical] [Critical Data Breach] Exposure of PII Data Leak via API Response
+  URL: https://hackerone.com/reports/3078508 | CWE: Cleartext Storage of Sensitive Information
+  Program: deptofdefense | Reporter: rocky1696
+
+[Medium] Non-Production API Endpoints for the AI Ops Service Fails to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/3418966 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] AWS Auto Scaling Service Reporting "AWS Internal" for CloudTrail Events Generated from Specific Endpoints
+  URL: https://hackerone.com/reports/3419587 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[None] Information disclosure via Desktop client when attempting to lock a file inside a end-to-end encrypted directory 
+  URL: https://hackerone.com/reports/3159877 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: nilsding
+
+[Medium] admin_audit does not log actions on files in a group folder
+  URL: https://hackerone.com/reports/2890071 | CWE: Insufficient Logging
+  Program: nextcloud | Reporter: klipz
+
+[Medium] Directory Listing of publicly available assets
+  URL: https://hackerone.com/reports/2311179 | CWE: Information Exposure Through Directory Listing
+  Program: nextcloud | Reporter: farhad0x1
+
+[Low] MongoDB Query Logs & Schema Leak via Unauthenticated Endpoint
+  URL: https://hackerone.com/reports/3249406 | CWE: LLM06: Sensitive Information Disclosure
+  Program: bykea | Reporter: sameer_ali
+
+[High] 337k users and 1 employee leaked credentials
+  URL: https://hackerone.com/reports/3250691 | CWE: Information Disclosure
+  Program: khanacademy | Reporter: meowsint
+
+[Medium] Unauthenticated Sensitive Information Disclosure on █████████  CVE-2021-38314
+  URL: https://hackerone.com/reports/1452774 | CWE: Information Disclosure
+  Program: mars | Reporter: kuriyama
+
+[Medium] PII Exposure via Email Confirmation Link – Email Embedded in Token & Leaked via Wayback Machine
+  URL: https://hackerone.com/reports/3210022 | CWE: Information Disclosure
+  Program: omise | Reporter: mantu1738
+
+[Medium] █.8x8.vc/index.js: Exposed Google Maps API Key Allowing Potential Abuse of Paid Services
+  URL: https://hackerone.com/reports/3250315 | CWE: Information Disclosure
+  Program: 8x8-bounty | Reporter: abdallasamir12
+
+[None] Sample report: Denial of service 
+  URL: https://hackerone.com/reports/3290630 | CWE: LLM06: Sensitive Information Disclosure
+  Program: github | Reporter: ghbountyocto
+
+[Medium] Unauthorized Disclosure of Private Emails via WakaTime Private Leaderboards
+  URL: https://hackerone.com/reports/3279508 | CWE: Information Disclosure
+  Program: wakatime | Reporter: ctrl_cipher
+
+[Medium] Public GitHub repositories for multiple HackerOne managed triage team profiles contain private HackerOne reports information
+  URL: https://hackerone.com/reports/2937622 | CWE: Information Disclosure
+  Program: security | Reporter: w2w
+
+[Low] Information Disclosure of metrics fax.wavecell.com/metrics
+  URL: https://hackerone.com/reports/1365076 | CWE: Information Disclosure
+  Program: 8x8-bounty | Reporter: kauenavarro
+
+[Medium] Non-Production API Endpoints for the bedrock-agent Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/2800091 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Non-Production API Endpoints for the bedrock Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/2951803 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Non-Production API Endpoint for the EventBridge Service Fails to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/3021618 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Non-Production API Endpoints for the Global Accelerator Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/3029552 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Non-Production API Endpoints for the Health Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/3042588 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Amazon Pinpoint SMS and Voice, version 2  Service Reporting "AWS Internal" for CloudTrail Events Generated from FIPS Endpoints
+  URL: https://hackerone.com/reports/3072841 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Amazon Kendra Intelligent Ranking Service Reporting "AWS Internal" for CloudTrail Events Generated from FIPS Endpoints
+  URL: https://hackerone.com/reports/3044471 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Non-Production API Endpoints for the Neptune Graph Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/3068422 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Non-Production API Endpoints for the Route 53 Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/3092085 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Customer Data Exposure via Insecure Endpoint of coupon
+  URL: https://hackerone.com/reports/2828720 | CWE: Information Disclosure
+  Program: mars | Reporter: bughunter0x7
+
+[None] user api key leaked
+  URL: https://hackerone.com/reports/3098717 | CWE: Information Disclosure
+  Program: wakatime | Reporter: atasec
+
+[Critical] Netlify Authentication Token Exposed in Public Mozilla CI Logs
+  URL: https://hackerone.com/reports/2915647 | CWE: Information Disclosure
+  Program: mozilla | Reporter: samirsec0x01
+
+[Medium] Users Data Exposure via Insecure Endpoint
+  URL: https://hackerone.com/reports/2828608 | CWE: Information Disclosure
+  Program: mars | Reporter: bughunter0x7
+
+[Low] debug.log leaked [█████████]
+  URL: https://hackerone.com/reports/3063026 | CWE: Information Disclosure
+  Program: mars | Reporter: imeng
+
+[Medium] massive PII  leakage for ███████
+  URL: https://hackerone.com/reports/2887506 | CWE: Insecure Storage of Sensitive Information
+  Program: mars | Reporter: thpless
+
+[Critical] Unauthorized Account Access via Leaked Credentials in URL Format (Account Takeover )
+  URL: https://hackerone.com/reports/3080597 | CWE: Cleartext Storage of Sensitive Information
+  Program: khanacademy | Reporter: firec4t
+
+[Low] cgi scripts wordlist entry for windmail.exe has payload that sends arbitrary file read result to third-party
+  URL: https://hackerone.com/reports/2733994 | CWE: Information Disclosure
+  Program: portswigger | Reporter: floyd
+
+[Medium] Non-Production API Endpoints for the DocumentDB Elastic Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/3009411 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Low] Exposing debug.log file leads to server full path disclosure
+  URL: https://hackerone.com/reports/3002345 | CWE: Information Disclosure
+  Program: autodesk | Reporter: kanon4
+
+[Medium] CVE-2023-5561 on Payapps.com
+  URL: https://hackerone.com/reports/2997549 | CWE: Information Disclosure
+  Program: autodesk | Reporter: khoof
+
+[Medium] Non-Production API Endpoints for the Device Farm Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/2999116 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Non-Production API Endpoints for the Datazone Service Fail to Log to CloudTrail Resulting in Silent Permission Enumeration
+  URL: https://hackerone.com/reports/2981210 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Amazon Comprehend Medical Service Reporting "AWS Internal" for CloudTrail Events Generated from FIPS Endpoints
+  URL: https://hackerone.com/reports/2979238 | CWE: Insufficient Logging
+  Program: aws_vdp | Reporter: nick_frichette_dd
+
+[Medium] Information disclosure due to debug mode enabled at Laravel instance https://mpos.mtn.co.sz/ 
+  URL: https://hackerone.com/reports/2765259 | CWE: Information Disclosure
+  Program: mtn_group | Reporter: odaysec
+
+[Medium] User Email Disclosure via ID-Based Invitation
+  URL: https://hackerone.com/reports/3003716 | CWE: Information Disclosure
+  Program: wakatime | Reporter: m_kamal1
+
+[None] VSCode launch.json file exposed on hemi.xyz
+  URL: https://hackerone.com/reports/2997774 | CWE: Information Exposure Through Debug Information
+  Program: hemi_labs_vdp | Reporter: ahmednasr1
+
+[Low] Possible to enumerate valid files in password protected shares/files drop shares as well as spam folder with files
+  URL: https://hackerone.com/reports/2376909 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: lukasreschke
+
+[Low] CVE-2025-0167: netrc and default credential leak
+  URL: https://hackerone.com/reports/2917232 | CWE: LLM06: Sensitive Information Disclosure
+  Program: curl | Reporter: sherlock2010
+
+[Medium] Information disclosure via enabled Django Debug Mode 
+  URL: https://hackerone.com/reports/2201370 | CWE: Information Disclosure
+  Program: mtn_group | Reporter: nhx1
+
+[Medium] Sensitive data exposure via /secure/███████ endpoint on ████████
+  URL: https://hackerone.com/reports/1278952 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: njmulsqb
+
+[Medium] Incomplete sanitization in SVG preview provider
+  URL: https://hackerone.com/reports/2484499 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: pulsejet
+
+[?] Exposed Logs and Bearer Tokens on Test Endpoint
+  URL: https://hackerone.com/reports/2844797 | CWE: Information Disclosure
+  Program: ibm | Reporter: facades
+
+[Low] CVE-2024-11053: netrc + redirect credential leak
+  URL: https://hackerone.com/reports/2829063 | CWE: Information Disclosure
+  Program: curl | Reporter: nyymi
+
+[Medium] Insecure API Response Leads to Disclosure of Hashed Passwords
+  URL: https://hackerone.com/reports/2788557 | CWE: Information Disclosure
+  Program: mars | Reporter: itsmatinx
+
+[Medium] External storage - global credentials returned to the client side in plaintext
+  URL: https://hackerone.com/reports/2554079 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: tuyenee
+
+[Medium] Api data leak
+  URL: https://hackerone.com/reports/1639011 | CWE: Information Disclosure
+  Program: planet-labs | Reporter: y0usef
+
+[Medium] Maintainer can leak sentry token by changing the configured URL (fix bypass)
+  URL: https://hackerone.com/reports/2104591 | CWE: Information Disclosure
+  Program: gitlab | Reporter: 70rpedo
+
+[High] User API Key leakage in Github commit leads to unauthorized access to sql.telemetry.mozilla.org
+  URL: https://hackerone.com/reports/2735646 | CWE: Information Disclosure
+  Program: mozilla | Reporter: anhchangmutrang
+
+[Low] Able to see location coordinates in any event without permission to do so
+  URL: https://hackerone.com/reports/2610467 | CWE: Information Disclosure
+  Program: fetlife | Reporter: ezzra
+
+[Medium] inviting collaborator using email disclose the hackerone account related to the user
+  URL: https://hackerone.com/reports/2045722 | CWE: Information Disclosure
+  Program: security | Reporter: raymatp
+
+[Medium] Private draft report exposure in a program a user is added as a viewer to
+  URL: https://hackerone.com/reports/2552205 | CWE: Information Disclosure
+  Program: security | Reporter: jay
+
+[?] jazz.net - publicly accessible .svn repositories
+  URL: https://hackerone.com/reports/2398335 | CWE: LLM06: Sensitive Information Disclosure
+  Program: ibm | Reporter: cyber_punk
+
+[High] Course Registration Form Allowing an attacker to dump all the candidate name who had enrolled for the course
+  URL: https://hackerone.com/reports/1100383 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: steveflex
+
+[Medium] Unread Messages can leak Message IDs
+  URL: https://hackerone.com/reports/1063114 | CWE: Information Disclosure
+  Program: rocket_chat | Reporter: gronke
+
+[High] Pinning leaks message content
+  URL: https://hackerone.com/reports/1062538 | CWE: Information Disclosure
+  Program: rocket_chat | Reporter: gronke
+
+[High] Leaking usernames through endpoints Wordpress
+  URL: https://hackerone.com/reports/1785021 | CWE: Information Disclosure
+  Program: mtn_group | Reporter: alitoni224
+
+[High] https://srcds.valve.net/find/ is leaking server config / API keys
+  URL: https://hackerone.com/reports/1168557 | CWE: Information Disclosure
+  Program: valve | Reporter: njbooher3
+
+[Medium] Access body and title of Internal Repo Issues in Projects
+  URL: https://hackerone.com/reports/2501036 | CWE: Information Disclosure
+  Program: github | Reporter: ahacker1
+
+[Medium] CVE-2024-3416: MTU of 4096 or greater without fragmentation may cause NGINX worker processes to leak previously freed memory
+  URL: https://hackerone.com/reports/2599391 | CWE: Information Disclosure
+  Program: ibb | Reporter: noentry
+
+[Medium] NoSQL injection leaks visitor token and livechat messages
+  URL: https://hackerone.com/reports/2580062 | CWE: Information Disclosure
+  Program: rocket_chat | Reporter: gronke
+
+[Critical] Local File Disclosure on the █████ (https://████████.edu/) leads to the full source code disclosure and credentials leak
+  URL: https://hackerone.com/reports/684836 | CWE: Insecure Storage of Sensitive Information
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[Medium] [HTAF4-213] [Pre-submission] HTTPOnly session cookie exposure on the /csstest endpoint
+  URL: https://hackerone.com/reports/723090 | CWE: Information Exposure Through Debug Information
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[High] An attacker can can view any hacker email via  /SaveCollaboratorsMutation operation name 
+  URL: https://hackerone.com/reports/2032716 | CWE: Information Disclosure
+  Program: security | Reporter: 0xrayan1996
+
+[Critical] Creation of bounties through Customer API leads to private email disclosure
+  URL: https://hackerone.com/reports/2382120 | CWE: Information Disclosure
+  Program: security | Reporter: 0v3rw4tch
+
+[None] Production Key and Data Found on Subdomain No Longer Operated by Shopify / Dangling DNS
+  URL: https://hackerone.com/reports/1590115 | CWE: File and Directory Information Exposure
+  Program: shopify | Reporter: ryanmoles6
+
+[Critical] Jira Credential Disclosure within Mozilla Slack
+  URL: https://hackerone.com/reports/2467999 | CWE: Information Disclosure
+  Program: mozilla | Reporter: griffinf
+
+[High] Docker Secret Disclosure via GitHub Actions Cache Poisoning
+  URL: https://hackerone.com/reports/2410111 | CWE: Information Disclosure
+  Program: hyperledger | Reporter: adnanthekhan
+
+[Medium] Intent Leads To Unauthorised Video Call Initiation Leaking Surrounding Informations Of Victim
+  URL: https://hackerone.com/reports/2139260 | CWE: Privacy Violation
+  Program: snapchat | Reporter: hulkvision_
+
+[Medium] Using Branded Hashtag Feature User Partnered with Account Manager Can View Videos Uploaded By A Private TikTok Account If 'item_id' Is Known
+  URL: https://hackerone.com/reports/2209429 | CWE: Information Disclosure
+  Program: tiktok | Reporter: dxcoder
+
+[Medium] # Drivers can access the customers phone number, current location without getting their offer accepted!
+  URL: https://hackerone.com/reports/1785079 | CWE: Information Disclosure
+  Program: indrive | Reporter: bugsv2
+
+[Medium] Disclosure of users' ip address whenever they view my fright offer on image preview (Without interaction)
+  URL: https://hackerone.com/reports/1782467 | CWE: Information Disclosure
+  Program: indrive | Reporter: bugsv2
+
+[?] File listing through scripts folder
+  URL: https://hackerone.com/reports/2190117 | CWE: File and Directory Information Exposure
+  Program: tennessee-valley-authority | Reporter: itssixtynein
+
+[Medium] curl cookie mixed case PSL bypass
+  URL: https://hackerone.com/reports/2274981 | CWE: Information Exposure Through Sent Data
+  Program: ibb | Reporter: nyymi
+
+[Medium] OpenSSL vulnerable to the Marvin Attack (CVE-2022-4304)
+  URL: https://hackerone.com/reports/2270225 | CWE: Information Exposure Through Timing Discrepancy
+  Program: ibb | Reporter: hkario
+
+[Medium] Elasticsearch is currently open without authentication on  https://██████l
+  URL: https://hackerone.com/reports/2231261 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: roland_hack
+
+[Critical] Mozilla Employee's Token for sql.telemetry.mozilla.org Exposed in Git Commit
+  URL: https://hackerone.com/reports/2193815 | CWE: Cleartext Storage of Sensitive Information
+  Program: mozilla | Reporter: yakirka
+
+[Medium] Avatar URL is exposed in patron export for secret donations
+  URL: https://hackerone.com/reports/2286764 | CWE: Privacy Violation
+  Program: liberapay | Reporter: mdivecky
+
+[Low] Private program name disclosure in the invitation mail for another program
+  URL: https://hackerone.com/reports/2228413 | CWE: Information Disclosure
+  Program: security | Reporter: byq
+
+[Low] User Details Can Be Disclosed Even If The Account IS In Hibernation State
+  URL: https://hackerone.com/reports/1728087 | CWE: Information Disclosure
+  Program: linkedin | Reporter: tushar6378
+
+[Low] Possibility of Deface through translation tool - www.mozilla.com
+  URL: https://hackerone.com/reports/2053396 | CWE: Information Disclosure
+  Program: mozilla | Reporter: astrounder
+
+[Low] Flickr API key leaked in GitHub commit
+  URL: https://hackerone.com/reports/1992261 | CWE: Information Disclosure
+  Program: mozilla | Reporter: m4y4nk
+
+[Medium] New Search Feature: Search for non-public words in limited disclosure reports
+  URL: https://hackerone.com/reports/2213251 | CWE: Information Disclosure
+  Program: security | Reporter: ahacker1
+
+[Low] Hacker email disclosed on submission at hackerone hactivity
+  URL: https://hackerone.com/reports/2215434 | CWE: Information Disclosure
+  Program: security | Reporter: xdemiray
+
+[?] Hackers two email disclosed on  submission at hackerone hactivity
+  URL: https://hackerone.com/reports/2134874 | CWE: Information Disclosure
+  Program: security | Reporter: inscryption
+
+[Medium] Limited path traversal in Node.js SDK leads to PII disclosure
+  URL: https://hackerone.com/reports/1575014 | CWE: Information Disclosure
+  Program: stripe | Reporter: zerodivisi0n
+
+[Medium] Draft report exposure via slack alerting system for programs
+  URL: https://hackerone.com/reports/2069593 | CWE: Information Disclosure
+  Program: security | Reporter: imranhudaa
+
+[High] LDAP Anonymous Login enabled in ████
+  URL: https://hackerone.com/reports/2081332 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: shuvam321
+
+[Low] Names not completely redacted despite "Redact the names of the involved users" is selected
+  URL: https://hackerone.com/reports/2122644 | CWE: Information Disclosure
+  Program: security | Reporter: japz
+
+[?] Origin IP found, Cloudflare bypassed
+  URL: https://hackerone.com/reports/703882 | CWE: Information Disclosure
+  Program: people_interactive | Reporter: zishanadthandar
+
+[Critical] Full access to InDrive jira panel via exposed API token 
+  URL: https://hackerone.com/reports/1785145 | CWE: Information Disclosure
+  Program: indrive | Reporter: bogdantc
+
+[Medium] Authenticated but unauthorized users may enumerate Application names via the API
+  URL: https://hackerone.com/reports/1916583 | CWE: Information Exposure Through an Error Message
+  Program: ibb | Reporter: bean-zhang
+
+[Low] Impact of Using the PHP Function "phpinfo()" on System Security - PHP info page disclosure
+  URL: https://hackerone.com/reports/1822665 | CWE: Information Disclosure
+  Program: us-department-of-state | Reporter: carpc
+
+[Medium] AEM misconfiguration leads to Information disclosure
+  URL: https://hackerone.com/reports/1939272 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: cametome006
+
+[Critical] Sensitive Data Exposure via wp-config.php file
+  URL: https://hackerone.com/reports/1912671 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: 0r10nh4ck
+
+[Medium] Facebook App API credentials leaked in the APK
+  URL: https://hackerone.com/reports/1641475 | CWE: Cleartext Storage of Sensitive Information
+  Program: glasswire | Reporter: chip_sec
+
+[Medium] PII of users can be downloaded from export pages
+  URL: https://hackerone.com/reports/1172852 | CWE: Information Disclosure
+  Program: wordpress | Reporter: chip_sec
+
+[Medium] Email exploitation with web hosting services.
+  URL: https://hackerone.com/reports/1878756 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: mdfarhanchowdhuryhasin
+
+[Low] Sensitive information for phpinfo.php at https://products.ean.com/
+  URL: https://hackerone.com/reports/1762764 | CWE: Information Disclosure
+  Program: expediagroup_bbp | Reporter: exploitmsf
+
+[Low] information disclosure of another company bug on video.
+  URL: https://hackerone.com/reports/1886143 | CWE: Information Disclosure
+  Program: security | Reporter: mundre_07
+
+[Medium] Extraction of Pages build scripts, config values, tokens, etc. via symlinks
+  URL: https://hackerone.com/reports/1754811 | CWE: Information Disclosure
+  Program: cloudflare | Reporter: mattipv4
+
+[Low] Direct access to tox.ini file which is contain configuration details
+  URL: https://hackerone.com/reports/1824865 | CWE: Insecure Storage of Sensitive Information
+  Program: yelp | Reporter: xn--pple-43d
+
+[Low] Messages can still be seen on conversation after expiring when cron is misconfigured
+  URL: https://hackerone.com/reports/1784310 | CWE: Privacy Violation
+  Program: nextcloud | Reporter: ctulhu
+
+[Medium] Install.php File Exposure on Drupal
+  URL: https://hackerone.com/reports/1844674 | CWE: Information Exposure Through an Error Message
+  Program: deptofdefense | Reporter: carpc
+
+[High] Sensitive Data Exposure at https://█████████
+  URL: https://hackerone.com/reports/1720278 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: 0r10nh4ck
+
+[High] Sensitive information disclosure [HtUS]
+  URL: https://hackerone.com/reports/1632104 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: syarif07
+
+[Medium] Users querying dim_hacker_reports table through Analytics API can determine data from dim_reports table using WHERE or HAVING query
+  URL: https://hackerone.com/reports/1824342 | CWE: Information Disclosure
+  Program: security | Reporter: jobert
+
+[Low] View thumbnail of any private video (friends or followers only) of Private/Public account 
+  URL: https://hackerone.com/reports/1498353 | CWE: Privacy Violation
+  Program: tiktok | Reporter: amans
+
+[Medium] Private information exposed through GraphQL search endpoints aggregates
+  URL: https://hackerone.com/reports/1838329 | CWE: Information Disclosure
+  Program: security | Reporter: reigertje
+
+[High] Critical sensitive information Disclosure. [HtUS]
+  URL: https://hackerone.com/reports/1626236 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: ghostkernalbbt
+
+[Medium] Reference caching can leak data to unauthorized users
+  URL: https://hackerone.com/reports/1767503 | CWE: Insecure Storage of Sensitive Information
+  Program: nextcloud | Reporter: systemkeeper
+
+[Medium] Origin IP address disclosure through Pingora response header
+  URL: https://hackerone.com/reports/1803659 | CWE: Information Exposure Through an Error Message
+  Program: cloudflare | Reporter: smither
+
+[Critical] HEIC image preview can be used to invoke Imagick
+  URL: https://hackerone.com/reports/1261413 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: lukasreschkenc
+
+[Medium] POST following PUT confusion
+  URL: https://hackerone.com/reports/1752146 | CWE: Information Disclosure
+  Program: ibb | Reporter: robbotic
+
+[Critical] Firebase Database Takeover in https://pulseradio.mtn.co.ug/
+  URL: https://hackerone.com/reports/1447751 | CWE: Insecure Storage of Sensitive Information
+  Program: mtn_group | Reporter: shuvam321
+
+[High] Any organization's assets pending review can be downloaded
+  URL: https://hackerone.com/reports/1787644 | CWE: Information Disclosure
+  Program: security | Reporter: jobert
+
+[Critical] Wordpress users Disclosure [ /wp-json/wp/v2/users/ ]
+  URL: https://hackerone.com/reports/1735586 | CWE: Information Disclosure
+  Program: mtn_group | Reporter: shubham_srt
+
+[Medium] Exception logging in Sharepoint app reveals clear-text connection details
+  URL: https://hackerone.com/reports/1652903 | CWE: Cleartext Storage of Sensitive Information
+  Program: nextcloud | Reporter: kichernde_erbse
+
+[Low] Remotely Accessible Container Advisor exposed performance metrics and resource usage
+  URL: https://hackerone.com/reports/1697599 | CWE: Information Disclosure
+  Program: tiktok | Reporter: tw4v3sx
+
+[High] User information disclosed via API
+  URL: https://hackerone.com/reports/1218461 | CWE: Information Disclosure
+  Program: gsa_vdp | Reporter: toormund
+
+[Low] TikTok Account Creation Date Information Disclosure 
+  URL: https://hackerone.com/reports/1562020 | CWE: Privacy Violation
+  Program: tiktok | Reporter: f15
+
+[Medium] Unauthenticated PII leak on verified/requested to be verified profiles on ███████/app/org/{id}/profile/{id}/version/{id} [HtUS]
+  URL: https://hackerone.com/reports/1627962 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: shreky
+
+[Medium] [HTA2] Receiving████ access request on @wearehackerone.com email address
+  URL: https://hackerone.com/reports/715740 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: jr0ch17
+
+[Medium] Last video frame is still sent after video is disabled in a call
+  URL: https://hackerone.com/reports/1641088 | CWE: Privacy Violation
+  Program: nextcloud | Reporter: daniel_calvino_sanchez
+
+[Low] Information exposure in in guzzlehttp/guzzle (https://github.com/nextcloud/3rdparty/tree/master/guzzlehttp/guzzle)
+  URL: https://hackerone.com/reports/1604606 | CWE: Information Exposure Through Debug Information
+  Program: nextcloud | Reporter: ro0t_elqayser
+
+[Medium] store internal email disclosed through shopify-data-exporter 
+  URL: https://hackerone.com/reports/1605962 | CWE: Information Disclosure
+  Program: shopify | Reporter: xenx
+
+[Medium] an internel important  paths  disclosure  [HtUS]
+  URL: https://hackerone.com/reports/1631471 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: ahmed0x0mahmoud
+
+[Critical] springboot actuator is leaking internals at ██████████
+  URL: https://hackerone.com/reports/1662474 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: thpless
+
+[Critical] Cleartext storage of sensitive information at https://staging.status.ai-apps-comms.ibm.com/env can lead to account takeover  of several IBM employees
+  URL: https://hackerone.com/reports/1670586 | CWE: Cleartext Storage of Sensitive Information
+  Program: ibm | Reporter: zere
+
+[Critical] The dashboard is exposed in https://███
+  URL: https://hackerone.com/reports/1566758 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: alitoni224
+
+[Medium] Wordpress Users Disclosure (/wp-json/wp/v2/users/)  
+  URL: https://hackerone.com/reports/1663363 | CWE: Information Disclosure
+  Program: top_echelon_software | Reporter: hammodmt
+
+[Low] Lack of Brute force protection while joining video call in talk section which is password protected
+  URL: https://hackerone.com/reports/1596673 | CWE: Privacy Violation
+  Program: nextcloud | Reporter: errorsec_
+
+[Medium] Unauthenticated Private Messages DIsclosure via wordpress Rest API
+  URL: https://hackerone.com/reports/1590237 | CWE: Information Disclosure
+  Program: automattic | Reporter: ghimire_veshraj
+
+[Medium] Internal Employee informations Disclosure via TikTok Athena api
+  URL: https://hackerone.com/reports/1575560 | CWE: Information Disclosure
+  Program: tiktok | Reporter: ht0x0
+
+[Medium] LFI via Jolokia at https://█.█.█.█:1293
+  URL: https://hackerone.com/reports/1641661 | CWE: Information Disclosure
+  Program: 8x8-bounty | Reporter: shuvam321
+
+[Medium] Bypassing Cache Deception Armor using .avif extension file
+  URL: https://hackerone.com/reports/1391635 | CWE: Information Disclosure
+  Program: cloudflare | Reporter: bombon
+
+[High] API docs expose an active token for the sample domain theburritobot.com
+  URL: https://hackerone.com/reports/1507412 | CWE: Information Disclosure
+  Program: cloudflare | Reporter: sainaen
+
+[Medium] All user password hash can be seen from admin panel
+  URL: https://hackerone.com/reports/1489892 | CWE: Insecure Storage of Sensitive Information
+  Program: upchieve | Reporter: dark_haxor
+
+[Medium] CVE-2022-27779: cookie for trailing dot TLD
+  URL: https://hackerone.com/reports/1565615 | CWE: Information Exposure Through Sent Data
+  Program: ibb | Reporter: haxatron1
+
+[Medium] disclosure the live_analytics information of any livestream.
+  URL: https://hackerone.com/reports/1561299 | CWE: Information Disclosure
+  Program: tiktok | Reporter: datph4m
+
+[Low] Email address disclosure via invite token validatiion
+  URL: https://hackerone.com/reports/1560072 | CWE: Information Disclosure
+  Program: tiktok | Reporter: noob_but_cut3
+
+[None] Disclose STUFF member name and make actions.
+  URL: https://hackerone.com/reports/968174 | CWE: Information Disclosure
+  Program: shopify | Reporter: zambo
+
+[Medium] Disclose customer orders details by shopify chat application.
+  URL: https://hackerone.com/reports/968165 | CWE: Information Disclosure
+  Program: shopify | Reporter: zambo
+
+[Medium] Public Postman Api Collection Leaks Internal access to https://assets-paris-dev.codefi.network/ 
+  URL: https://hackerone.com/reports/1523651 | CWE: Insecure Storage of Sensitive Information
+  Program: metamask | Reporter: polem4rch
+
+[Medium] CVE-2022-27779: cookie for trailing dot TLD
+  URL: https://hackerone.com/reports/1553301 | CWE: Information Exposure Through Sent Data
+  Program: curl | Reporter: haxatron1
+
+[High] Enumerate class codes via yahoo dork - Can access any course under teacher - Sensitive information leaked
+  URL: https://hackerone.com/reports/1514356 | CWE: Information Disclosure
+  Program: khanacademy | Reporter: bughunterpol
+
+[?] Open S3 Bucket Accessible by any  User
+  URL: https://hackerone.com/reports/1474017 | CWE: Information Disclosure
+  Program: omise | Reporter: ravansurya
+
+[Critical] Insecure Storage of Sensitive Information on lonestarcell.com server
+  URL: https://hackerone.com/reports/1482830 | CWE: Insecure Storage of Sensitive Information
+  Program: mtn_group | Reporter: q9m
+
+[Medium] Folder architecture and Filesizes of private file drop shares can be getten
+  URL: https://hackerone.com/reports/1337422 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: shakierbellows
+
+[Low] Exposed Golang Pprof debugger at https://cn-geo1.uber.com/
+  URL: https://hackerone.com/reports/1385906 | CWE: Information Exposure Through Debug Information
+  Program: uber | Reporter: boobalan123
+
+[Medium] username and password leaked via pptx for █████████ website
+  URL: https://hackerone.com/reports/1512199 | CWE: Cleartext Storage of Sensitive Information
+  Program: deptofdefense | Reporter: ibrahimatix0x01
+
+[Low] Uninstalling Rockstar Games Launcher for Windows (64-bit), then reinstalling keeps you logged in without authentication
+  URL: https://hackerone.com/reports/1278261 | CWE: Privacy Violation
+  Program: rockstargames | Reporter: toxiqcitee
+
+[Low] Private invitation links/tokens leak to third-party analytics site
+  URL: https://hackerone.com/reports/1491127 | CWE: Information Disclosure
+  Program: security | Reporter: bigbug
+
+[High] Workspace configuration metadata disclosure
+  URL: https://hackerone.com/reports/864489 | CWE: Information Disclosure
+  Program: slack | Reporter: kadusantiago
+
+[Critical] Identify the mobile number of a twitter user
+  URL: https://hackerone.com/reports/1225164 | CWE: Information Disclosure
+  Program: x | Reporter: aymen_mansour
+
+[High] PHP Info Exposing Secrets at https://radio.mtn.bj/info
+  URL: https://hackerone.com/reports/1049402 | CWE: Information Disclosure
+  Program: mtn_group | Reporter: pudsec
+
+[High] ████ api key exposed in github.com/███/███
+  URL: https://hackerone.com/reports/1454965 | CWE: Cleartext Storage of Sensitive Information
+  Program: 8x8-bounty | Reporter: adnanmalikinfo
+
+[Medium] De-anonymize anonymous tips through the Tumblr blog network
+  URL: https://hackerone.com/reports/1484168 | CWE: Privacy Violation
+  Program: automattic | Reporter: ajoekerr
+
+[Medium] Page has a link to google drive which has logos and a few customer phone recordings
+  URL: https://hackerone.com/reports/864712 | CWE: Cleartext Storage of Sensitive Information
+  Program: eternal | Reporter: codersanjay
+
+[Medium] CUI Labelled document out in the open
+  URL: https://hackerone.com/reports/1436460 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: pll25
+
+[Critical] default ████ creds on https://████████
+  URL: https://hackerone.com/reports/711662 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: pirateducky
+
+[Medium] Able to detect if a user is FetLife supporter although this user hides their support badge in fetlife.com/conversations/{id} JSON response
+  URL: https://hackerone.com/reports/1423704 | CWE: Information Disclosure
+  Program: fetlife | Reporter: trieulieuf9
+
+[Medium] [h1-2102] Information disclosure - ShopifyPlus add user displays existing Shopify ID fullname
+  URL: https://hackerone.com/reports/1083922 | CWE: Information Disclosure
+  Program: shopify | Reporter: imgnotfound
+
+[Medium] Friend Request Flow Exposes User Data 
+  URL: https://hackerone.com/reports/1245741 | CWE: Privacy Violation
+  Program: zenly | Reporter: yetanotherhacker
+
+[Medium] Default credentials lead to Spring Boot Admin dashboard access
+  URL: https://hackerone.com/reports/1417635 | CWE: Information Disclosure
+  Program: 8x8-bounty | Reporter: sparroww
+
+[Medium] admin password disclosure via log file 
+  URL: https://hackerone.com/reports/1121972 | CWE: Information Disclosure
+  Program: acronis | Reporter: darkdream
+
+[Medium] Sidekiq dashboard exposed at notary.shopifycloud.com
+  URL: https://hackerone.com/reports/1405673 | CWE: Information Disclosure
+  Program: shopify | Reporter: youstin
+
+[None] Apache Flink Dashboard exposure at https://streaming-sales-model-production.flink.shopifykloud.com
+  URL: https://hackerone.com/reports/1262907 | CWE: Information Disclosure
+  Program: shopify | Reporter: savik
+
+[Medium] chainning bugs to get full disclosure of Users addresses 
+  URL: https://hackerone.com/reports/1398905 | CWE: Information Disclosure
+  Program: glovo | Reporter: spaceboy20
+
+[High] Corporate Jira credentials disclosed in public gist
+  URL: https://hackerone.com/reports/958432 | CWE: Information Disclosure
+  Program: av | Reporter: mkhazov
+
+[Medium] Possible to steal any protected files on Android
+  URL: https://hackerone.com/reports/377107 | CWE: Information Disclosure
+  Program: owncloud | Reporter: shell_c0de
+
+[None] Senseitive data Related to Shopify Host -> https://shopify.zendesk.com/
+  URL: https://hackerone.com/reports/1298809 | CWE: Cleartext Storage of Sensitive Information
+  Program: shopify | Reporter: sam_exploit
+
+[Medium] Blog posts atom feed of a  store with password protection  can be accessed by anyone 
+  URL: https://hackerone.com/reports/1256375 | CWE: Information Disclosure
+  Program: shopify | Reporter: xenx
+
+[Medium] Leaked H1's Employees Email addresses,meeting info on private bug bounty program ████████
+  URL: https://hackerone.com/reports/1285115 | CWE: Information Disclosure
+  Program: security | Reporter: superman85
+
+[Low] HackerOne Staging uses Production data for testing
+  URL: https://hackerone.com/reports/1392511 | CWE: Privacy Violation
+  Program: security | Reporter: tk0
+
+[Medium] phpinfo() disclosure info
+  URL: https://hackerone.com/reports/804809 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: 0xelkomy
+
+[Medium] DoD internal documents are leaked to the public
+  URL: https://hackerone.com/reports/1330455 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: br0sck
+
+[Medium] Information disclosure at '████████' --- CVE-2020-14179
+  URL: https://hackerone.com/reports/1336397 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: 0x3f
+
+[Critical] Critical || Unrestricted access to private Github repos and properties of Elastic through leaked token of Elastic employee
+  URL: https://hackerone.com/reports/1266188 | CWE: Cleartext Storage of Sensitive Information
+  Program: elastic | Reporter: prateek_0490
+
+[Medium] CUI labled and ████ Restricted pdf on █████
+  URL: https://hackerone.com/reports/1243782 | CWE: Insecure Storage of Sensitive Information
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[Medium] Sensitive information on ██████████
+  URL: https://hackerone.com/reports/1300589 | CWE: Cleartext Storage of Sensitive Information
+  Program: deptofdefense | Reporter: 3mm3
+
+[Medium] Sensitive information on '████████'
+  URL: https://hackerone.com/reports/1300591 | CWE: Cleartext Storage of Sensitive Information
+  Program: deptofdefense | Reporter: 3mm3
+
+[Medium] Attachment object in GraphQL continues to grant access to files, even if they are removed from rendering
+  URL: https://hackerone.com/reports/1132606 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Low] Hackers can reveal the names of private programs that have an external link and Enterprise Product Edition
+  URL: https://hackerone.com/reports/1130235 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Low] Hackers can find out the ID of private programs
+  URL: https://hackerone.com/reports/1129649 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Low] PII data Leakage through hackerone reports 
+  URL: https://hackerone.com/reports/1256371 | CWE: Information Disclosure
+  Program: security | Reporter: iamr0000t
+
+[Medium] Partial report contents leakage - via HTTP/2 concurrent stream handling
+  URL: https://hackerone.com/reports/493176 | CWE: Information Disclosure
+  Program: security | Reporter: tomvg
+
+[High] Internal Gitlab Ticket Disclosure via External Slack Channels
+  URL: https://hackerone.com/reports/1273292 | CWE: Information Disclosure
+  Program: security | Reporter: none_of_the_above
+
+[Medium] Private application files can be uploaded to Slack via malicious uploader
+  URL: https://hackerone.com/reports/375083 | CWE: Information Disclosure
+  Program: slack | Reporter: shell_c0de
+
+[Low] Information disclosure - Feedback is accessible on Public profile even after 'disallowed' at https://hackerone.com/settings/feedback
+  URL: https://hackerone.com/reports/1264725 | CWE: Information Disclosure
+  Program: security | Reporter: brdoors3
+
+[Medium] Bitmoji source code is accessible
+  URL: https://hackerone.com/reports/301812 | CWE: Information Exposure Through Directory Listing
+  Program: snapchat | Reporter: rms
+
+[High] All private support requests to ███████ are being disclosed at https://███████
+  URL: https://hackerone.com/reports/1004964 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: nagli
+
+[Critical] Arbitrary File Reading leads to RCE in the Pulse Secure SSL VPN on the https://████
+  URL: https://hackerone.com/reports/695005 | CWE: File and Directory Information Exposure
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[High] DNS Leaks when using any VPN Browser extension with Brave Shield enabled
+  URL: https://hackerone.com/reports/1203842 | CWE: Information Disclosure
+  Program: brave | Reporter: neeythann
+
+[Low] Report Bulk endpoint "agree-on-going-public" action may reveal Report disclosure state for invite-only programs
+  URL: https://hackerone.com/reports/1219011 | CWE: Information Disclosure
+  Program: security | Reporter: clubbable
+
+[Medium] Google  Maps API key stored as plain text leading to DOS and financial damage
+  URL: https://hackerone.com/reports/1093667 | CWE: Cleartext Storage of Sensitive Information
+  Program: zenly | Reporter: sdushantha
+
+[Low] F5 BIG-IP Cookie  potentially reveal BigIP pool name, backend's IP address and port, routed domain.
+  URL: https://hackerone.com/reports/1211094 | CWE: Information Disclosure
+  Program: informatica | Reporter: reebak
+
+[Low] Report Duplicate Detector can match deleted and draft reports, may disclose title and vulnerability information
+  URL: https://hackerone.com/reports/1242680 | CWE: Information Disclosure
+  Program: security | Reporter: jobert
+
+[Medium] Blocked user can see live video
+  URL: https://hackerone.com/reports/1067967 | CWE: Privacy Violation
+  Program: tiktok | Reporter: sandipgyawalii
+
+[Medium] CVE-2021-22898: TELNET stack contents disclosure
+  URL: https://hackerone.com/reports/1176461 | CWE: Information Disclosure
+  Program: curl | Reporter: nyymi
+
+[High] SNMP Community String Disclosure to ReadOnly Users on EdgeSwitch
+  URL: https://hackerone.com/reports/797988 | CWE: Information Disclosure
+  Program: ui | Reporter: fr33rh
+
+[Medium] Several domains on kaspersky.com are vulnerable to Web Cache Deception attack
+  URL: https://hackerone.com/reports/1185028 | CWE: Insecure Storage of Sensitive Information
+  Program: kaspersky | Reporter: golim
+
+[Low] Hi! Security Team Rocket.Chat, It's possible to get information about the users emails without authentication
+  URL: https://hackerone.com/reports/1089116 | CWE: Information Disclosure
+  Program: rocket_chat | Reporter: khekhe
+
+[Medium] Very long names on demo.openmage.org could redirect victim users to malicious url redirects via email contacts.
+  URL: https://hackerone.com/reports/1091957 | CWE: Privacy Violation
+  Program: openmage | Reporter: lmhu
+
+[Low] PHP info page disclosure
+  URL: https://hackerone.com/reports/1118898 | CWE: Information Disclosure
+  Program: gsa_vdp | Reporter: valluvarsploit_h1
+
+[High] Exposed█████████in apk file - devbuilds.uber.com
+  URL: https://hackerone.com/reports/848905 | CWE: Information Disclosure
+  Program: uber | Reporter: m4ll0k
+
+[Medium] Unsecured Dropwizard Admin Panel on display.uber-adsystem.com exposes sensitive server information
+  URL: https://hackerone.com/reports/651355 | CWE: Cleartext Storage of Sensitive Information
+  Program: uber | Reporter: healdb
+
+[Critical] Duplicate Entry of email leads to 500 Server Error which disclosing the SQL Database table information
+  URL: https://hackerone.com/reports/1082891 | CWE: Information Disclosure
+  Program: kartpay | Reporter: basant0x01
+
+[Medium] Bumble API exposes read status of chat messages
+  URL: https://hackerone.com/reports/1080437 | CWE: Information Disclosure
+  Program: bumble | Reporter: ndrong
+
+[Low] Open AWS S3 bucket at ubergreece.s3.amazonaws.com exposes confidential internal documents and files
+  URL: https://hackerone.com/reports/361438 | CWE: Information Disclosure
+  Program: uber | Reporter: healdb
+
+[Critical] critical information disclosure
+  URL: https://hackerone.com/reports/1106009 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: ba56adcb299ff13a87475bf
+
+[High] Cookie poisoning leads to DOS and Privacy Violation
+  URL: https://hackerone.com/reports/1067809 | CWE: Privacy Violation
+  Program: cs_money | Reporter: benjamin-mauss
+
+[Low] information disclosure lead to disclose users private notes
+  URL: https://hackerone.com/reports/1070081 | CWE: Information Disclosure
+  Program: automattic | Reporter: hamzadzworm
+
+[Medium] [experience.uber.com] Node.js source code disclosure & anonymous access to internal Uber documents, templates and tools
+  URL: https://hackerone.com/reports/389078 | CWE: Information Disclosure
+  Program: uber | Reporter: molejarka
+
+[High] Access to requests and approvals via /█████ allows sensitive information gathering
+  URL: https://hackerone.com/reports/904671 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: z32
+
+[High] PII Leak via /██████
+  URL: https://hackerone.com/reports/905688 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: z32
+
+[High] PII Leak via /████████
+  URL: https://hackerone.com/reports/905679 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: z32
+
+[High] PII Leak via /███████
+  URL: https://hackerone.com/reports/904659 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: z32
+
+[High] Improper Access Controls Allow PII Leak via ████
+  URL: https://hackerone.com/reports/819591 | CWE: Privacy Violation
+  Program: deptofdefense | Reporter: z32
+
+[Medium] Sensitive Information Leaking Through DoD Owned Website https://www.█████.mil
+  URL: https://hackerone.com/reports/1063371 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: stevv
+
+[High] Unauthenticated access to webmail at maildev.happytools.dev leading to compromised wordpress site api.happytools.dev [RCE]
+  URL: https://hackerone.com/reports/1067547 | CWE: Information Disclosure
+  Program: automattic | Reporter: superman85
+
+[Low] Google API key leaked to Public
+  URL: https://hackerone.com/reports/1065041 | CWE: Information Disclosure
+  Program: fetlife | Reporter: bb89e4af088379499c73f7d
+
+[Critical] How The Hackers Saved Christmas
+  URL: https://hackerone.com/reports/1069335 | CWE: Information Disclosure
+  Program: h1-ctf | Reporter: nytr0gen
+
+[Low] phpinfo() on graph.rockstargames.com exposes sensitive information
+  URL: https://hackerone.com/reports/1082774 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: bugstar
+
+[Medium] Sensitive information disclosure to shared access user via streamlabs platform api
+  URL: https://hackerone.com/reports/1072893 | CWE: Information Disclosure
+  Program: logitech | Reporter: ht0x0
+
+[Medium] Information Disclosure of Advertiser Account on TikTok Ads Portal
+  URL: https://hackerone.com/reports/1018608 | CWE: Information Disclosure
+  Program: tiktok | Reporter: emanuelharijanto
+
+[Medium] Async search stores authorization headers in clear text
+  URL: https://hackerone.com/reports/1042716 | CWE: Cleartext Storage of Sensitive Information
+  Program: elastic | Reporter: alexbrasetvik
+
+[Critical] HackyHolidays 2020 Full Write-up: Information Disclosure of 12 Flags
+  URL: https://hackerone.com/reports/1068434 | CWE: Information Disclosure
+  Program: h1-ctf | Reporter: liamg
+
+[Medium] Обход приватности у фотографий/документов
+  URL: https://hackerone.com/reports/1056686 | CWE: Privacy Violation
+  Program: vkcom | Reporter: executor
+
+[Medium] Able to leak private email of any user given his/her username via graphql
+  URL: https://hackerone.com/reports/972355 | CWE: Information Disclosure
+  Program: gitlab | Reporter: vaib25vicky
+
+[Medium] Vulnerability in (*www.yoti.com) - Leads to Leakage of admin usernames
+  URL: https://hackerone.com/reports/738615 | CWE: Information Disclosure
+  Program: yoti | Reporter: deb0con
+
+[Low] Slack-Corp Heroku application disclosing limited info about company members
+  URL: https://hackerone.com/reports/966814 | CWE: Information Disclosure
+  Program: slack | Reporter: demonia
+
+[High] Able to comment/view in others support ticket at https://en.instagram-brand.com/requests/dashboard
+  URL: https://hackerone.com/reports/1007988 | CWE: Information Disclosure
+  Program: automattic | Reporter: cryptordx
+
+[Medium] CVE-2020-8169: Partial password leak over DNS on HTTP redirect
+  URL: https://hackerone.com/reports/874778 | CWE: Information Disclosure
+  Program: curl | Reporter: mszpl
+
+[Medium] Non-revoked API Key Disclosure in a Disclosed API Key Disclosure Report on Stripo
+  URL: https://hackerone.com/reports/1047125 | CWE: Cleartext Storage of Sensitive Information
+  Program: stripo | Reporter: whoisbinit
+
+[Critical] Leaked DB credentials on https://██████████.mil/███
+  URL: https://hackerone.com/reports/761790 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: al-madjus
+
+[Medium] PII Leak of USCG Designated Examiner List at https://www.███
+  URL: https://hackerone.com/reports/1007702 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: nagli
+
+[Medium] Bypass of image rewriting / tracking blocker via srcset
+  URL: https://hackerone.com/reports/1021885 | CWE: Information Disclosure
+  Program: basecamp | Reporter: foobar7
+
+[High] Unauthorized user is able to access schedule pipeline variables and values
+  URL: https://hackerone.com/reports/962462 | CWE: Information Disclosure
+  Program: gitlab | Reporter: vaib25vicky
+
+[Medium] secret leaks in vsphere cloud controller manager log
+  URL: https://hackerone.com/reports/966383 | CWE: Cleartext Storage of Sensitive Information
+  Program: kubernetes | Reporter: derek0405
+
+[Medium] CVE-2019-11250 remains in effect.
+  URL: https://hackerone.com/reports/952771 | CWE: Cleartext Storage of Sensitive Information
+  Program: kubernetes | Reporter: purelyapplied
+
+[Medium] CORS misconfiguration leads to users information disclosure at https://studyroom.line.me
+  URL: https://hackerone.com/reports/924951 | CWE: Information Disclosure
+  Program: line | Reporter: duahaubadao
+
+[Medium] Twitter Media Studio Source Information Disclosure With Analyst Role
+  URL: https://hackerone.com/reports/961757 | CWE: Information Disclosure
+  Program: x | Reporter: bcc20c71c2f1f135afb8c3b
+
+[Low] Admin/Info lekage
+  URL: https://hackerone.com/reports/964315 | CWE: Information Disclosure
+  Program: kartpay | Reporter: abhhi
+
+[Medium] User sensitive information disclosure
+  URL: https://hackerone.com/reports/975047 | CWE: Privacy Violation
+  Program: shopify | Reporter: a_yang
+
+[Medium] Sensitive data exposure via https://████████.mil/secure/QueryComponent!Default.jspa - CVE-2020-14179
+  URL: https://hackerone.com/reports/988550 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: r4d1kal
+
+[High] External Service Interaction | https://█████████.mil
+  URL: https://hackerone.com/reports/997988 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: x3ph_
+
+[High] Sensitive information about a ██████
+  URL: https://hackerone.com/reports/893970 | CWE: Cleartext Storage of Sensitive Information
+  Program: deptofdefense | Reporter: 0x9747
+
+[Low] Clear text storage of proxy parameters and passwords
+  URL: https://hackerone.com/reports/685990 | CWE: Cleartext Storage of Sensitive Information
+  Program: nextcloud | Reporter: rbcafe
+
+[?] CircleCI token in github repo allows for access to sensitive build information
+  URL: https://hackerone.com/reports/858915 | CWE: Information Disclosure
+  Program: shopify | Reporter: dwimmerlaik
+
+[Low] Internal Path Disclosure
+  URL: https://hackerone.com/reports/979110 | CWE: File and Directory Information Exposure
+  Program: cs_money | Reporter: mr_vrush
+
+[Medium] Team object in GraphQL disclosed private_comment
+  URL: https://hackerone.com/reports/978143 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Low] Smartsheet employees email disclosure through enpoint after login.
+  URL: https://hackerone.com/reports/880089 | CWE: Information Disclosure
+  Program: smartsheet | Reporter: soareswallace
+
+[Medium] Ability to see password protected content by bypassing the password page of shopify preview URL for new development stores (as of August 17, 2020)
+  URL: https://hackerone.com/reports/961929 | CWE: Information Disclosure
+  Program: shopify | Reporter: saltymermaid
+
+[Medium] STAFF "No-Permissions" on the Store can retrieve the details Order via exchangeReceiptSend
+  URL: https://hackerone.com/reports/917875 | CWE: Information Disclosure
+  Program: shopify | Reporter: langduvnsec
+
+[Low] Pentester can obtain information about other pentesters who applied for the same test, but weren't accepted
+  URL: https://hackerone.com/reports/958374 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Low] Unauthorized Use of Victim Credit Card
+  URL: https://hackerone.com/reports/391385 | CWE: Privacy Violation
+  Program: yelp | Reporter: hk755a
+
+[Low] Django debug enabled showing information about system, database, configuration files.
+  URL: https://hackerone.com/reports/963164 | CWE: Information Disclosure
+  Program: dropcontact | Reporter: vbdev
+
+[Low] Django should not have debug mode enabled
+  URL: https://hackerone.com/reports/963809 | CWE: Information Exposure Through Debug Information
+  Program: dropcontact | Reporter: higbee
+
+[Critical] Sensitive Information Disclosure
+  URL: https://hackerone.com/reports/963352 | CWE: Information Disclosure
+  Program: dropcontact | Reporter: akashhamal0x01
+
+[Critical] Information Disclosure through DEBUG at Subscription [https://app.dropcontact.io/app/subscription?connector=salesforce](CRITICAL)
+  URL: https://hackerone.com/reports/963921 | CWE: Information Exposure Through Debug Information
+  Program: dropcontact | Reporter: xploiterr
+
+[Medium] Registering with email [ +70 Chars ] Lead to Disclose some informations [Django Debug Mode ]
+  URL: https://hackerone.com/reports/963584 | CWE: Information Disclosure
+  Program: dropcontact | Reporter: elmahdi
+
+[High] Dropcontact's disclosed report is exposing Private/Confidential information
+  URL: https://hackerone.com/reports/963327 | CWE: Information Disclosure
+  Program: dropcontact | Reporter: n1m0
+
+[High] CRITICAL Insecure Direct Object Reference (I.D.O.R) - Link Other User's Credit Card 
+  URL: https://hackerone.com/reports/358143 | CWE: Privacy Violation
+  Program: yelp | Reporter: hk755a
+
+[?] Some store settings/data are accessible to "No Access" permission users on GraphQL LiveView operation
+  URL: https://hackerone.com/reports/409973 | CWE: Information Disclosure
+  Program: shopify | Reporter: tolo7010
+
+[?] Anonymous file drop page ignores user profile visibility restrictions
+  URL: https://hackerone.com/reports/752353 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: pshknst
+
+[Low] Ngnix Server version disclosure.
+  URL: https://hackerone.com/reports/947637 | CWE: Information Disclosure
+  Program: dropcontact | Reporter: xploiterr
+
+[Medium] ajaxgetachievementsforgame is not guarded for unreleased apps
+  URL: https://hackerone.com/reports/835087 | CWE: Information Disclosure
+  Program: valve | Reporter: j4ln
+
+[Critical] PulseSSL VPN Site with Compromised Creds @ ████
+  URL: https://hackerone.com/reports/854049 | CWE: Insecure Storage of Sensitive Information
+  Program: deptofdefense | Reporter: r00tpgp
+
+[None] Open Github Repo Leaking WEBLATE SECRET KEY
+  URL: https://hackerone.com/reports/942146 | CWE: Cleartext Storage of Sensitive Information
+  Program: weblate | Reporter: nafisaqil
+
+[Low] Contacts menu (not app) fails to restrict (to local groups) for contacts from federated servers
+  URL: https://hackerone.com/reports/895730 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: nursoda
+
+[Medium] GraphQL field on Team node can be used to determine if External Program runs invite-only program
+  URL: https://hackerone.com/reports/877642 | CWE: Information Disclosure
+  Program: security | Reporter: kunal94
+
+[Medium] Stored XSS on Company Logo
+  URL: https://hackerone.com/reports/808167 | CWE: Cleartext Storage of Sensitive Information
+  Program: 8x8-bounty | Reporter: bugify12334
+
+[Low] Testing for arbitrary HTTP methods
+  URL: https://hackerone.com/reports/775560 | CWE: Information Exposure Through an Error Message
+  Program: drive_net_inc | Reporter: sandesh_shinde
+
+[Low] Enumeration of username on password reset page
+  URL: https://hackerone.com/reports/806151 | CWE: Information Exposure Through an Error Message
+  Program: endless_group | Reporter: codermak
+
+[Low] PHPinfo page on  http://█████.callstats.io
+  URL: https://hackerone.com/reports/907701 | CWE: Information Disclosure
+  Program: 8x8-bounty | Reporter: manantch
+
+[Medium] [www.stripo.email] You can bypass the speed limit by changing the IP.
+  URL: https://hackerone.com/reports/881186 | CWE: Information Exposure Through Debug Information
+  Program: stripo | Reporter: what_web
+
+[None] Misconfigured web directory allows to retrieve public proxy list
+  URL: https://hackerone.com/reports/791826 | CWE: Information Disclosure
+  Program: nordsecurity | Reporter: zhh
+
+[High] PII/PHI data available on web https://████████Portals/22/Documents/Meetings
+  URL: https://hackerone.com/reports/877598 | CWE: Cleartext Storage of Sensitive Information
+  Program: deptofdefense | Reporter: pvm
+
+[Medium] image injection /screenshot-viewer/responsive/image (ANOTHER FIX BYPASS)
+  URL: https://hackerone.com/reports/506126 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: netfuzzer
+
+[Medium] Image injection on /screenshot-viewer/responsive/image ( FIX BYPASS)
+  URL: https://hackerone.com/reports/505259 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: netfuzzer
+
+[Medium] Image Injection on /bully/anniversaryedition may lead to OAuth token theft.
+  URL: https://hackerone.com/reports/498358 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: netfuzzer
+
+[Medium] Image Injection Vulnerability on /bully/screens
+  URL: https://hackerone.com/reports/661646 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: netfuzzer
+
+[Critical] [H1-2006 2020] H1-2006 CTF Writeup
+  URL: https://hackerone.com/reports/887611 | CWE: Information Disclosure
+  Program: h1-ctf | Reporter: nytr0gen
+
+[Medium] OAuth `redirect_uri` bypass using IDN homograph attack resulting in user's access token leakage
+  URL: https://hackerone.com/reports/861940 | CWE: Information Disclosure
+  Program: semrush | Reporter: yassineaboukir
+
+[Medium] Image Injection on www.rockstargames.com/screenshot-viewer/responsive/image may allow facebook oauth token theft.
+  URL: https://hackerone.com/reports/497655 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: netfuzzer
+
+[Low] Disclosure of the name of a program that has a private part with an external link
+  URL: https://hackerone.com/reports/871142 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Medium] User data not anonymized is sent to analytics server
+  URL: https://hackerone.com/reports/781238 | CWE: Privacy Violation
+  Program: nordsecurity | Reporter: martinbydefault
+
+[Low] 404-response contains debug-information with all headers
+  URL: https://hackerone.com/reports/792998 | CWE: Information Exposure Through Debug Information
+  Program: security | Reporter: p4fg
+
+[High] Customer private program can disclose email any users through invited via username
+  URL: https://hackerone.com/reports/807448 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Low] Information disclosure of Internal php files on [mackeeper.com/blog/api/send-event]
+  URL: https://hackerone.com/reports/833836 | CWE: Information Exposure Through an Error Message
+  Program: clario | Reporter: darkerhack
+
+[Critical] PII Leak via https://████████
+  URL: https://hackerone.com/reports/808338 | CWE: Insecure Storage of Sensitive Information
+  Program: deptofdefense | Reporter: z32
+
+[Medium] Google Maps API key leaked during device pairing
+  URL: https://hackerone.com/reports/724039 | CWE: Information Exposure Through Sent Data
+  Program: pingidentity | Reporter: bug_digger21
+
+[Low] ubernycmarketplace.com is vulnerable to the Heartbleed Bug
+  URL: https://hackerone.com/reports/304190 | CWE: Information Disclosure
+  Program: uber | Reporter: healdb
+
+[Critical] China – Limited Partner PII Regarding Work Scheduling via Unauthenticated API Endpoint
+  URL: https://hackerone.com/reports/659248 | CWE: Information Disclosure
+  Program: starbucks | Reporter: 0xpatrik
+
+[None] Apache Server Version Disclousure
+  URL: https://hackerone.com/reports/406388 | CWE: Information Disclosure
+  Program: bohemia | Reporter: mazmur
+
+[Low] program_analytics_benchmarks query shows information not visible in public
+  URL: https://hackerone.com/reports/826176 | CWE: Information Disclosure
+  Program: security | Reporter: 0619
+
+[Low] Account deletion requests not entirely honoured. Misinformation even after seeking clarification from customer support.
+  URL: https://hackerone.com/reports/813421 | CWE: Privacy Violation
+  Program: nordsecurity | Reporter: keshavkejriwal
+
+[Medium] Hidden scheduled partner events are propagated to Steam clients in CMsgClientClanState
+  URL: https://hackerone.com/reports/780167 | CWE: Information Disclosure
+  Program: valve | Reporter: xpaw
+
+[Low] Minimal information disclosure of internal asset names and links which were not publicly accessible.
+  URL: https://hackerone.com/reports/805699 | CWE: Information Disclosure
+  Program: starbucks | Reporter: e4366eolywrgpidfbio
+
+[Low] Password authentication at newsletter.nextcloud.com discloses username list
+  URL: https://hackerone.com/reports/476439 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: br3ach
+
+[None] Information Disclosure PHPpgAdmin
+  URL: https://hackerone.com/reports/463177 | CWE: Information Disclosure
+  Program: ratelimited | Reporter: mazmur
+
+[Medium] Debug information disclosure on oauth-redirector.services.greenhouse.io
+  URL: https://hackerone.com/reports/315205 | CWE: Information Exposure Through Debug Information
+  Program: greenhouse | Reporter: ajxchapman
+
+[Low] Total Paid Bounty Paid can be disclose
+  URL: https://hackerone.com/reports/674757 | CWE: Information Disclosure
+  Program: security | Reporter: zanasz
+
+[Critical] sdrc.starbucks.com - Information Disclosure via unsecured attachment directory
+  URL: https://hackerone.com/reports/769016 | CWE: Information Disclosure
+  Program: starbucks | Reporter: l00ph0le
+
+[Critical] Connection informaton is sent to a third-party service
+  URL: https://hackerone.com/reports/752402 | CWE: Privacy Violation
+  Program: nordsecurity | Reporter: martinbydefault
+
+[Low] "Bounties paid in the last 90 days" discloses the undisclosed bounty amount in program statistics
+  URL: https://hackerone.com/reports/696266 | CWE: Information Disclosure
+  Program: security | Reporter: japz
+
+[Medium] GetGlobalAchievementPercentagesForApp is missing the same release checks as GetSchemaForGame
+  URL: https://hackerone.com/reports/541020 | CWE: Information Disclosure
+  Program: valve | Reporter: xpaw
+
+[Low] Directory listing is enabled that exposes non public data through multiple path 
+  URL: https://hackerone.com/reports/690796 | CWE: Information Exposure Through Directory Listing
+  Program: nextcloud | Reporter: tibin_sunny
+
+[Low] Android content provider exposes password-protected share password hashes
+  URL: https://hackerone.com/reports/242727 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: netranger
+
+[Low] SQL exception in JSON format
+  URL: https://hackerone.com/reports/225098 | CWE: Information Exposure Through an Error Message
+  Program: nextcloud | Reporter: clizsec
+
+[Low] Disclosure of User Information
+  URL: https://hackerone.com/reports/753725 | CWE: Information Disclosure
+  Program: nordsecurity | Reporter: shardulb_23
+
+[Medium] De-anonymization Attack: Cross Site Information Leakage
+  URL: https://hackerone.com/reports/723175 | CWE: Information Disclosure
+  Program: imgur | Reporter: soheil_k
+
+[Low] Private System Note Disclosure using GraphQL
+  URL: https://hackerone.com/reports/633001 | CWE: Information Disclosure
+  Program: gitlab | Reporter: ngalog
+
+[Low] Project Milestones Disclosed Via Groups When the Victim disabled milestones access in project settings
+  URL: https://hackerone.com/reports/636560 | CWE: Information Disclosure
+  Program: gitlab | Reporter: rockrzhackr9z
+
+[Medium] Information Disclosure when /invitations/<token>.json is not yet accepted
+  URL: https://hackerone.com/reports/290930 | CWE: Information Disclosure
+  Program: security | Reporter: japz
+
+[Medium] Critical information disclosure at https://█████████
+  URL: https://hackerone.com/reports/200079 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: juliocesar
+
+[Medium] Open FTP on ███
+  URL: https://hackerone.com/reports/197976 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[Medium] Disclosure of `payment_transactions` for programs via GraphQL query
+  URL: https://hackerone.com/reports/707433 | CWE: Information Disclosure
+  Program: security | Reporter: msdian7
+
+[Medium] Nextcloud domain and name of every user leaked to lookup server
+  URL: https://hackerone.com/reports/508490 | CWE: Privacy Violation
+  Program: nextcloud | Reporter: leonklingele
+
+[Medium] Kaspersky Password Manager allows websites to access user's address data
+  URL: https://hackerone.com/reports/430854 | CWE: Information Disclosure
+  Program: kaspersky | Reporter: palant
+
+[Low] Information disclosure on sim.starbucks.com
+  URL: https://hackerone.com/reports/632808 | CWE: Information Disclosure
+  Program: starbucks | Reporter: johnstone
+
+[?] Shopify's SF and LA offices Dashboard Information disclosed via Public Gist
+  URL: https://hackerone.com/reports/729040 | CWE: Information Disclosure
+  Program: shopify | Reporter: eh0x01
+
+[None] Private target account appears in search results
+  URL: https://hackerone.com/reports/708696 | CWE: Privacy Violation
+  Program: liberapay | Reporter: magic_spell
+
+[High] Access MoPub Reports Data even after Company removed you from their MoPub Account.
+  URL: https://hackerone.com/reports/399174 | CWE: Information Disclosure
+  Program: x | Reporter: suyog
+
+[Medium] H1514 Extract information about other sites (new sites) through Affiliate/Referral pages
+  URL: https://hackerone.com/reports/423506 | CWE: Information Disclosure
+  Program: shopify | Reporter: rijalrojan
+
+[Low] H1514 Get access to non public information by pivoting with graphql queries
+  URL: https://hackerone.com/reports/423388 | CWE: Information Disclosure
+  Program: shopify | Reporter: emitrani
+
+[Medium] Lack of CSRF header validation at https://g-mail.grammarly.com/profile
+  URL: https://hackerone.com/reports/629892 | CWE: Information Disclosure
+  Program: superhuman | Reporter: orlserg
+
+[Low] Information disclosure in mmap module - python 2.7.12
+  URL: https://hackerone.com/reports/174632 | CWE: Information Disclosure
+  Program: ibb | Reporter: aerodudrizzt
+
+[Low] Disclosure of Email title report in quick award paypout email (no content mode)
+  URL: https://hackerone.com/reports/689997 | CWE: Information Disclosure
+  Program: security | Reporter: kunal94
+
+[Low] full path disclosure on www.rockstargames.com via apache filename brute forcing
+  URL: https://hackerone.com/reports/210238 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: geeknik
+
+[High] ██████ Authenticated User Data Disclosure
+  URL: https://hackerone.com/reports/587214 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: deputy
+
+[Medium] Reports Modal in app.mopub.com Disclose by any user
+  URL: https://hackerone.com/reports/574639 | CWE: Information Disclosure
+  Program: x | Reporter: updatelap
+
+[High] [mena.starbucks.com] Laravel App Log & Configuration Disclosure.
+  URL: https://hackerone.com/reports/401098 | CWE: Information Disclosure
+  Program: starbucks | Reporter: bobrov
+
+[High] Starbucks China Android app cloud storage service leaks a credential.
+  URL: https://hackerone.com/reports/440629 | CWE: Information Disclosure
+  Program: starbucks | Reporter: k3mlol
+
+[Low] Manipulate hacker profile and private program hacktivity to expose your name as researchers who is actively submitting reports with resolve status
+  URL: https://hackerone.com/reports/654198 | CWE: Information Disclosure
+  Program: security | Reporter: japz
+
+[Low] Email enumeration at SignUp page
+  URL: https://hackerone.com/reports/666722 | CWE: Information Disclosure
+  Program: omise | Reporter: sheerwood
+
+[Low] EXIF Geolocation Data Not Stripped From Uploaded Images
+  URL: https://hackerone.com/reports/615336 | CWE: Information Disclosure
+  Program: hiro | Reporter: the_predator
+
+[Low] environment variable leakage in error reporting
+  URL: https://hackerone.com/reports/526258 | CWE: Information Exposure Through an Error Message
+  Program: nodejs-ecosystem | Reporter: mcollina
+
+[Low] Last build status and coverage leaked to unauthorized users
+  URL: https://hackerone.com/reports/477222 | CWE: Information Disclosure
+  Program: gitlab | Reporter: xanbanx
+
+[Low] Passwords being stored as plain text in logging
+  URL: https://hackerone.com/reports/469668 | CWE: Cleartext Storage of Sensitive Information
+  Program: nextcloud | Reporter: xatom
+
+[Low] Option method enabled in kartpay Webservers
+  URL: https://hackerone.com/reports/642862 | CWE: Information Disclosure
+  Program: kartpay | Reporter: lollol1
+
+[High] SMTP Failure Leads to Chain of Internal System Failure
+  URL: https://hackerone.com/reports/642488 | CWE: Information Disclosure
+  Program: kartpay | Reporter: bb00x
+
+[Low] Extremly simple way to bypass Nextcloud-Client PIN/Fingerprint lock
+  URL: https://hackerone.com/reports/331489 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: volker_weissmann
+
+[Medium] Private information exposed through GraphQL filters
+  URL: https://hackerone.com/reports/645299 | CWE: Information Disclosure
+  Program: security | Reporter: reigertje
+
+[High] [https://life.informatica.com] - information disclose 
+  URL: https://hackerone.com/reports/312292 | CWE: Information Disclosure
+  Program: informatica | Reporter: modam3r5
+
+[High] Просмотр любых статей по их айди.
+  URL: https://hackerone.com/reports/589400 | CWE: Information Disclosure
+  Program: vkcom | Reporter: cheatboss
+
+[None] Slack Token exposed over internet (Github)
+  URL: https://hackerone.com/reports/386614 | CWE: Cleartext Storage of Sensitive Information
+  Program: rocket_chat | Reporter: sanjogpanda
+
+[Medium] HTML injection and information disclosure in support panel
+  URL: https://hackerone.com/reports/634312 | CWE: Information Disclosure
+  Program: weblate | Reporter: xaleraf4ra
+
+[Low] Grammarly Keyboard for Android <4.1  leaks user input through logs (except for sensitive input fields)
+  URL: https://hackerone.com/reports/462416 | CWE: Information Exposure Through Debug Information
+  Program: superhuman | Reporter: homelander
+
+[None] Detect Tor Browser's language
+  URL: https://hackerone.com/reports/588239 | CWE: Privacy Violation
+  Program: torproject | Reporter: ryotak
+
+[Medium] Wordpress VIP leaks email of the test a/c
+  URL: https://hackerone.com/reports/540301 | CWE: Information Disclosure
+  Program: automattic | Reporter: cryptordx
+
+[High] Employee's GitHub Token Found In Travis CI Build Logs
+  URL: https://hackerone.com/reports/496937 | CWE: Information Disclosure
+  Program: superhuman | Reporter: karimpwnz
+
+[Low] Detecting Tor Browser UI Language
+  URL: https://hackerone.com/reports/282748 | CWE: Privacy Violation
+  Program: torproject | Reporter: newfunction
+
+[Medium] Twitter ID exposure via error-based side-channel attack
+  URL: https://hackerone.com/reports/505424 | CWE: Privacy Violation
+  Program: x | Reporter: terjanq
+
+[Medium] Talk / spreed: Disclosure of Room names and participants for password protected rooms
+  URL: https://hackerone.com/reports/428010 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: foobar7
+
+[Low] Логирование ответов запросов VK API в приложении Клевер
+  URL: https://hackerone.com/reports/475177 | CWE: Insecure Storage of Sensitive Information
+  Program: vkcom | Reporter: norver
+
+[High] Real Time Error Logs Through Debug Information
+  URL: https://hackerone.com/reports/503283 | CWE: Information Exposure Through Debug Information
+  Program: slack | Reporter: rubaljain
+
+[None] Verbose PHP error messages exposed on a blog article
+  URL: https://hackerone.com/reports/439174 | CWE: Information Exposure Through an Error Message
+  Program: security | Reporter: corb3nik
+
+[Low] Emails of invited collaborators are disclosed in full in payload for report participants
+  URL: https://hackerone.com/reports/269230 | CWE: Information Disclosure
+  Program: security | Reporter: flashdisk
+
+[High] ███ exposes sensitive shipment information to public web
+  URL: https://hackerone.com/reports/389116 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: cablej_dds
+
+[Medium] [harp] File access even when they have been set to be ignored.
+  URL: https://hackerone.com/reports/453820 | CWE: Information Exposure Through Directory Listing
+  Program: nodejs-ecosystem | Reporter: skyn3t
+
+[Low] Invited team member can disclosure slack channels
+  URL: https://hackerone.com/reports/509574 | CWE: Information Disclosure
+  Program: security | Reporter: eremeev
+
+[Low] Using GraphQL, STAFF with NO explicit permissions on Store can retrieve Shopify Payments Balance.
+  URL: https://hackerone.com/reports/417170 | CWE: Information Disclosure
+  Program: shopify | Reporter: h13-
+
+[Low] Snippet JS template allows attacker to read a user's private snippets
+  URL: https://hackerone.com/reports/348443 | CWE: Information Disclosure
+  Program: gitlab | Reporter: jobert
+
+[Low] Users able to set video url for unpublished words and able to see the name of unpublished words
+  URL: https://hackerone.com/reports/486837 | CWE: Information Disclosure
+  Program: urbandictionary | Reporter: d3f4u17
+
+[High] [glance] Access unlisted internal files/folders revealing sensitive information
+  URL: https://hackerone.com/reports/490379 | CWE: Information Exposure Through Directory Listing
+  Program: nodejs-ecosystem | Reporter: skyn3t
+
+[Critical] AWS bucket leading to iOS test build code and configuration exposure
+  URL: https://hackerone.com/reports/404822 | CWE: Information Disclosure
+  Program: slack | Reporter: kiyell
+
+[Low] A small set of users were assigned someone else's payout preference
+  URL: https://hackerone.com/reports/498845 | CWE: Privacy Violation
+  Program: security | Reporter: jobert
+
+[Medium] XSSI: Quick Navigation Interface - leak of private page/post titles
+  URL: https://hackerone.com/reports/495525 | CWE: Information Disclosure
+  Program: iandunn-projects | Reporter: foobar7
+
+[Low] Information Exposure Through Directory Listing vulnerability on 8 vcache**.usw2.snappytv.com websites
+  URL: https://hackerone.com/reports/438299 | CWE: Information Exposure Through Directory Listing
+  Program: x | Reporter: ameerpornillos
+
+[Medium] Tracking of users on third-party websites using the Twitter cookie, due to a flaw in authenticating image requests
+  URL: https://hackerone.com/reports/329957 | CWE: Privacy Violation
+  Program: x | Reporter: cris-staicu
+
+[?] Client secret, server tokens for developer applications returned by internal API
+  URL: https://hackerone.com/reports/419655 | CWE: Information Disclosure
+  Program: uber | Reporter: anandpingsafe
+
+[Critical] [serve] Access unlisted internal files/folders revealing sensitive information
+  URL: https://hackerone.com/reports/486933 | CWE: Information Exposure Through Directory Listing
+  Program: nodejs-ecosystem | Reporter: skyn3t
+
+[Critical] Confidential data of users and limited metadata of programs and reports accessible via GraphQL
+  URL: https://hackerone.com/reports/489146 | CWE: Information Disclosure
+  Program: security | Reporter: yashrs
+
+[Low] Disclosure of h1 challenges name through the calendar
+  URL: https://hackerone.com/reports/488643 | CWE: Information Disclosure
+  Program: security | Reporter: rijalrojan
+
+[Critical] [avito.ru] Утекают креды от платежных провайдеров
+  URL: https://hackerone.com/reports/271360 | CWE: Information Disclosure
+  Program: avito | Reporter: kxyry
+
+[None] lert.uber.com: Few default folders/files of AURA Framework are accessible
+  URL: https://hackerone.com/reports/195205 | CWE: Information Disclosure
+  Program: uber | Reporter: filedescryptor
+
+[?] Information Disclosure on https://theendlessweb.com/
+  URL: https://hackerone.com/reports/461598 | CWE: Information Disclosure
+  Program: ratelimited | Reporter: dhamu_harker
+
+[Medium] Incorrect details on OAuth permissions screen allows DMs to be read without permission
+  URL: https://hackerone.com/reports/434763 | CWE: Privacy Violation
+  Program: x | Reporter: edent
+
+[Medium] Banner Grabbing - Apache Server Version Disclousure
+  URL: https://hackerone.com/reports/460556 | CWE: Information Disclosure
+  Program: ratelimited | Reporter: hamzamandil
+
+[Low]  information disclosure which leak the apache version 
+  URL: https://hackerone.com/reports/460530 | CWE: Information Disclosure
+  Program: ratelimited | Reporter: hamzamn2098
+
+[Low] Inline banner on Report page discloses whether organization runs a private program
+  URL: https://hackerone.com/reports/452973 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Medium] Unauthorized users may be able to view almost all informations related to Private projects.
+  URL: https://hackerone.com/reports/407763 | CWE: Information Disclosure
+  Program: gitlab | Reporter: 8ayac
+
+[Medium] Disclosure of Github Issues
+  URL: https://hackerone.com/reports/425719 | CWE: Information Disclosure
+  Program: shopify | Reporter: rijalrojan
+
+[Low] Disclosure of top 10 vulnerability types for programs that haven't enabled the Insights feature
+  URL: https://hackerone.com/reports/397031 | CWE: Information Disclosure
+  Program: security | Reporter: tolo7010
+
+[Medium] [staging-engineering.gnip.com] Publicly accessible GIT directory
+  URL: https://hackerone.com/reports/218465 | CWE: Information Disclosure
+  Program: x | Reporter: bobrov
+
+[Medium] Расшифровка всех типов шифрованных ID
+  URL: https://hackerone.com/reports/402410 | CWE: Information Disclosure
+  Program: bumble | Reporter: jarvis0x1
+
+[Medium] Smuggle SocialClub's Facebook OAuth Code via Referer Leakage
+  URL: https://hackerone.com/reports/342709 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: 1hack0
+
+[?] Browser Self XSS Protection not implemented
+  URL: https://hackerone.com/reports/400781 | CWE: Information Disclosure
+  Program: weblate | Reporter: hallaleen
+
+[Medium] Shared file link - password protection bypass under certain conditions
+  URL: https://hackerone.com/reports/231917 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: netranger
+
+[Low] Password protected rooms total number of viewers disclosure to unauthorized members
+  URL: https://hackerone.com/reports/411822 | CWE: Information Disclosure
+  Program: chaturbate | Reporter: batee5a
+
+[Critical] Stealing Private Information in VK Android App through PlayerProxy Port Remotely
+  URL: https://hackerone.com/reports/292761 | CWE: Information Disclosure
+  Program: vkcom | Reporter: heeeeen
+
+[High] Доступ к администраторским faq 
+  URL: https://hackerone.com/reports/370629 | CWE: Information Disclosure
+  Program: vkcom | Reporter: executor
+
+[Medium] Information Leak - GitHub - Endpoint Configuration Details
+  URL: https://hackerone.com/reports/378558 | CWE: Information Disclosure
+  Program: uber | Reporter: p3t3r_r4bb1t
+
+[Medium] Information / sensitive data disclosure on some endpoints
+  URL: https://hackerone.com/reports/273726 | CWE: Information Disclosure
+  Program: wordpress | Reporter: europa
+
+[High] Privacy violation для аттачей в сообщениях.
+  URL: https://hackerone.com/reports/377115 | CWE: Privacy Violation
+  Program: ok | Reporter: iframe
+
+[Low] Internal usage of AdBlockPlus may expose PoC URLs to unknown third-parties
+  URL: https://hackerone.com/reports/395518 | CWE: Information Disclosure
+  Program: security | Reporter: dudez
+
+[High] Information Leak - Github - JMS Information
+  URL: https://hackerone.com/reports/360811 | CWE: Information Disclosure
+  Program: starbucks | Reporter: p3t3r_r4bb1t
+
+[Critical] Physical Laptop Takeover
+  URL: https://hackerone.com/reports/393615 | CWE: Privacy Violation
+  Program: ed | Reporter: h1_analyst_everton
+
+[Medium] Private program policy page still accessible after user left the program
+  URL: https://hackerone.com/reports/386997 | CWE: Information Disclosure
+  Program: security | Reporter: japz
+
+[Critical] GitHub API Key for BrewTestBot is publicly exposed
+  URL: https://hackerone.com/reports/388740 | CWE: Information Disclosure
+  Program: homebrew | Reporter: ejholmes
+
+[Low] Basic auth details is still work on report ( 351555 ) 
+  URL: https://hackerone.com/reports/367581 | CWE: Information Disclosure
+  Program: reverb | Reporter: m7mdharoun
+
+[Low] Просмотр приватных видео записей у Пользователей
+  URL: https://hackerone.com/reports/317985 | CWE: Information Disclosure
+  Program: vkcom | Reporter: pisarenko
+
+[None] Team object in GraphQL that have a published external program may expose existence of a private program
+  URL: https://hackerone.com/reports/347937 | CWE: Information Disclosure
+  Program: security | Reporter: nismo
+
+[High] De-anonymization by visiting specially crafted bookmark.
+  URL: https://hackerone.com/reports/294364 | CWE: Information Disclosure
+  Program: torproject | Reporter: qab
+
+[Medium] ImageMagick GIF coder vulnerability leading to memory disclosure
+  URL: https://hackerone.com/reports/315256 | CWE: Information Disclosure
+  Program: valve | Reporter: alyssa_herrera
+
+[High] Получение чужого номера телефона (все цифры) через форму восстановления пароля
+  URL: https://hackerone.com/reports/350939 | CWE: Privacy Violation
+  Program: vkcom | Reporter: namthar
+
+[None] Invalid Phabricator API token revealed through error message when escalating a report
+  URL: https://hackerone.com/reports/335123 | CWE: Information Exposure Through an Error Message
+  Program: security | Reporter: bigbug
+
+[None] User object in GraphQL exposes number of trial reports for External Programs that also have a Private Program
+  URL: https://hackerone.com/reports/350964 | CWE: Information Disclosure
+  Program: security | Reporter: ashish_r_padelkar
+
+[Low] People who interviewed for HackerOne security analyst position can be enumerated and their personal email address may be exposed
+  URL: https://hackerone.com/reports/353310 | CWE: Information Disclosure
+  Program: security | Reporter: testdefense
+
+[High] Просмотр любых записей на стене
+  URL: https://hackerone.com/reports/341675 | CWE: Information Disclosure
+  Program: vkcom | Reporter: trainzment
+
+[None] Publicly Accessible Datadog link
+  URL: https://hackerone.com/reports/345152 | CWE: Information Disclosure
+  Program: shopify | Reporter: rijalrojan
+
+[Critical] Leaking sensitive files on Github leads to internal files (python scripts,SQL files)
+  URL: https://hackerone.com/reports/301831 | CWE: Information Disclosure
+  Program: starbucks | Reporter: xsam
+
+[Medium] Api token exposed in Reverb.com's public github repository
+  URL: https://hackerone.com/reports/352623 | CWE: Information Disclosure
+  Program: reverb | Reporter: albatraoz
+
+[Medium] Раскрытие информации о частной группе или приложении
+  URL: https://hackerone.com/reports/216289 | CWE: Information Disclosure
+  Program: vkcom | Reporter: trainzment
+
+[Medium] Team object in GraphQL disclosed total number of whitelisted hackers
+  URL: https://hackerone.com/reports/342978 | CWE: Information Disclosure
+  Program: security | Reporter: haxta4ok00
+
+[Medium] ms5 debug page exposing internal info (internal IPs, headers)
+  URL: https://hackerone.com/reports/311326 | CWE: Information Exposure Through Debug Information
+  Program: x | Reporter: lukeberner
+
+[Low] Table and Column Exposure
+  URL: https://hackerone.com/reports/218898 | CWE: Information Exposure Through an Error Message
+  Program: rockstargames | Reporter: n00bsec
+
+[Low] Bypassing one-time checkout router page (revealing payment information)
+  URL: https://hackerone.com/reports/271176 | CWE: Information Disclosure
+  Program: lyst | Reporter: tolo7010
+
+[Medium] Program metrics disclosed response_efficiency_percentage via /program_name json response despite the team decided not to show on their profile
+  URL: https://hackerone.com/reports/347693 | CWE: Information Disclosure
+  Program: security | Reporter: japz
+
+[Medium] Определение id по номеру телефона
+  URL: https://hackerone.com/reports/331040 | CWE: Information Disclosure
+  Program: vkcom | Reporter: arhimason
+
+[Critical] SSRF+XSS
+  URL: https://hackerone.com/reports/326043 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[Critical] Information Disclosure
+  URL: https://hackerone.com/reports/330860 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[?] Information disclosure (No rate limting in forgot password & other login)
+  URL: https://hackerone.com/reports/91343 | CWE: Information Disclosure
+  Program: imgur | Reporter: protector47
+
+[Low] Cleartext Password returned in JSON response
+  URL: https://hackerone.com/reports/215083 | CWE: Cleartext Storage of Sensitive Information
+  Program: pushwoosh | Reporter: ryudox
+
+[Medium] Registration enabled on ███grab.com
+  URL: https://hackerone.com/reports/318099 | CWE: Information Disclosure
+  Program: grab | Reporter: grouptherapy
+
+[Critical] [http://www.informatica.com]- info disclosure
+  URL: https://hackerone.com/reports/311058 | CWE: Information Disclosure
+  Program: informatica | Reporter: modam3r5
+
+[?] error
+  URL: https://hackerone.com/reports/309594 | CWE: Information Disclosure
+  Program: vkcom | Reporter: linkks
+
+[Critical] Backup Source Code Detected
+  URL: https://hackerone.com/reports/309537 | CWE: Information Disclosure
+  Program: vkcom | Reporter: linkks
+
+[High] Opcode Cache
+  URL: https://hackerone.com/reports/308355 | CWE: Information Disclosure
+  Program: vkcom | Reporter: linkks
+
+[?] Просмотр привязного к странице email, всего лишь раз скомпрометировав письмо-уведомление
+  URL: https://hackerone.com/reports/223172 | CWE: Privacy Violation
+  Program: vkcom | Reporter: povargek
+
+[Medium] Information disclosure when trying to delete an expense's attachment on m.mavenlink.com  
+  URL: https://hackerone.com/reports/299334 | CWE: Information Disclosure
+  Program: mavenlink | Reporter: aroly
+
+[High] Information Disclosure and Privilege Escalation in app.goodhire.com/member/developers/api-settings
+  URL: https://hackerone.com/reports/276976 | CWE: Information Disclosure
+  Program: inflection | Reporter: hackedbrain
+
+[Critical] Development configuration file
+  URL: https://hackerone.com/reports/231267 | CWE: Information Disclosure
+  Program: pushwoosh | Reporter: protector47
+
+[Low] Invitation token leaks to https://bat.bing.com
+  URL: https://hackerone.com/reports/301526 | CWE: Information Disclosure
+  Program: security | Reporter: zuriel
+
+[Medium] Просмотр Участников ЧАСТНОЙ встречи 
+  URL: https://hackerone.com/reports/261764 | CWE: Information Disclosure
+  Program: vkcom | Reporter: pisarenko
+
+[High] Uninitialized server memory disclosure via ImageMagick gif parser
+  URL: https://hackerone.com/reports/284155 | CWE: Information Disclosure
+  Program: mavenlink | Reporter: chaosbolt
+
+[Medium] User Profiles Leak PII in HTML Document for Mobile Browser User Agents
+  URL: https://hackerone.com/reports/288596 | CWE: Privacy Violation
+  Program: eternal | Reporter: chriszielinski
+
+[?] 16 instances where return value of OpenSSL i2d_RSAPublicKey is discarded -- might lead to use of uninitialized memory
+  URL: https://hackerone.com/reports/142773 | CWE: Information Disclosure
+  Program: torproject | Reporter: guido
+
+[?] Listing of Amazon S3 Bucket accessible to any amazon authenticated user (metrics.pscp.tv)
+  URL: https://hackerone.com/reports/278191 | CWE: Information Disclosure
+  Program: x | Reporter: segumarc
+
+[High] [IRCCloud Android] Theft of arbitrary files leading to token leakage
+  URL: https://hackerone.com/reports/288955 | CWE: Privacy Violation
+  Program: irccloud | Reporter: bagipro
+
+[Medium] Program profile metrics endpoint contains mean time to triage, even when turned off
+  URL: https://hackerone.com/reports/289568 | CWE: Information Disclosure
+  Program: security | Reporter: flashdisk
+
+[High] Leaking sensitive information lead to compromise employer API keys
+  URL: https://hackerone.com/reports/273630 | CWE: Insecure Storage of Sensitive Information
+  Program: yelp | Reporter: xsam
+
+[Low] User Enumeration
+  URL: https://hackerone.com/reports/280509 | CWE: Information Disclosure
+  Program: infogram | Reporter: saikiran-10098
+
+[Medium] Report Private Links Leaks to Google Analytics via Query String Param
+  URL: https://hackerone.com/reports/269479 | CWE: Information Disclosure
+  Program: security | Reporter: r3y
+
+[Critical] Linux TBB SFTP URI allows local IP disclosure
+  URL: https://hackerone.com/reports/253429 | CWE: Information Disclosure
+  Program: torproject | Reporter: rethink5807
+
+[?] Banner Grabbing - Apache Server Version Disclousure
+  URL: https://hackerone.com/reports/269467 | CWE: Information Disclosure
+  Program: owncloud | Reporter: cybertiger
+
+[Low] Scrollbar Width permits detecting browser platform
+  URL: https://hackerone.com/reports/252580 | CWE: Information Disclosure
+  Program: torproject | Reporter: hackerfactor
+
+[Low] Simple CSS line-height identifies platform
+  URL: https://hackerone.com/reports/256647 | CWE: Information Disclosure
+  Program: torproject | Reporter: hackerfactor
+
+[Low] languagechange event fires simultaneously on all tabs
+  URL: https://hackerone.com/reports/257942 | CWE: Privacy Violation
+  Program: torproject | Reporter: tomvg
+
+[?] Watch any Password Video without password
+  URL: https://hackerone.com/reports/155618 | CWE: Information Disclosure
+  Program: vimeo | Reporter: opnsec
+
+[?] Images and Subtitles Leakage from private videos
+  URL: https://hackerone.com/reports/136850 | CWE: Information Disclosure
+  Program: vimeo | Reporter: opnsec
+
+[Medium] Раскрытие имени файла приватных документов
+  URL: https://hackerone.com/reports/219715 | CWE: Privacy Violation
+  Program: vkcom | Reporter: zhumarin
+
+[?] Verification of email addresses possible through https://www.yelp.com/signup/facebook
+  URL: https://hackerone.com/reports/194721 | CWE: Information Disclosure
+  Program: yelp | Reporter: coder13
+
+[Low] Information disclosure (system username) in the x-amz-meta-s3cmd-attrs response header on federation.data.gov
+  URL: https://hackerone.com/reports/262649 | CWE: Information Disclosure
+  Program: gsa_bbp | Reporter: sp1d3rs
+
+[Medium] [Quora Android] Possible to steal arbitrary files from mobile device
+  URL: https://hackerone.com/reports/258460 | CWE: Information Disclosure
+  Program: quora | Reporter: bagipro
+
+[Medium] [dev-unifi-go.ubnt.com] Insecure CORS, Stealing Cookies
+  URL: https://hackerone.com/reports/219014 | CWE: Information Exposure Through an Error Message
+  Program: ui | Reporter: bobrov
+
+[Medium] Gratipay rails secret token (secret_key_base) publicly exposed in GitHub
+  URL: https://hackerone.com/reports/262620 | CWE: Cleartext Storage of Sensitive Information
+  Program: gratipay | Reporter: sp4rrow
+
+[High] Open prod Jenkins instance
+  URL: https://hackerone.com/reports/231460 | CWE: Information Disclosure
+  Program: snapchat | Reporter: preben
+
+[Low] [Cross-domain Referer leakage] Password reset token leakage via referer
+  URL: https://hackerone.com/reports/253448 | CWE: Information Disclosure
+  Program: legalrobot | Reporter: r3y
+
+[?] Token leakage by referrer header & analytics
+  URL: https://hackerone.com/reports/252544 | CWE: Information Disclosure
+  Program: legalrobot | Reporter: mehmil
+
+[?] SSRF and local file disclosure in https://wordpress.com/media/videos/ via FFmpeg HLS processing
+  URL: https://hackerone.com/reports/237381 | CWE: Information Disclosure
+  Program: automattic | Reporter: neex
+
+[Medium] Reading redacted data via hackbot's answers
+  URL: https://hackerone.com/reports/247628 | CWE: Information Disclosure
+  Program: security | Reporter: inhibitor181
+
+[Low] Information disclosure vulnerability on a DoD website
+  URL: https://hackerone.com/reports/226427 | CWE: Information Exposure Through Debug Information
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[Low] Arbitary file download vulnerability on a DoD website
+  URL: https://hackerone.com/reports/186326 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[?] Base alpha version code exposure
+  URL: https://hackerone.com/reports/167859 | CWE: Information Disclosure
+  Program: eternal | Reporter: cha5m
+
+[Low] Information disclosure on a DoD website
+  URL: https://hackerone.com/reports/184076 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: tsug0d
+
+[?] Leaking password reset token via referrer from external Twitter share button
+  URL: https://hackerone.com/reports/244434 | CWE: Information Disclosure
+  Program: wakatime | Reporter: prateek_0490
+
+[Low] Information disclosure vulnerability on a DoD website
+  URL: https://hackerone.com/reports/195836 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[None] Directory Listing 
+  URL: https://hackerone.com/reports/223384 | CWE: Cleartext Storage of Sensitive Information
+  Program: weblate | Reporter: red_horse
+
+[Medium] change bank account numbers
+  URL: https://hackerone.com/reports/90805 | CWE: Information Disclosure
+  Program: gratipay | Reporter: whit537
+
+[Medium] An “algobot”-s GitHub access token was leaked
+  URL: https://hackerone.com/reports/212067 | CWE: Information Disclosure
+  Program: algolia | Reporter: sainaen
+
+[?] Angular Expression Injection in the my.gmc.com Search Page
+  URL: https://hackerone.com/reports/124578 | CWE: Information Disclosure
+  Program: gm | Reporter: signalchaos
+
+[?] GFM renderer leaks external issue tracker URL of private project
+  URL: https://hackerone.com/reports/133717 | CWE: Information Disclosure
+  Program: gitlab | Reporter: jobert
+
+[?] Shopify GitHub Login and Password exposed all private source code might be available.
+  URL: https://hackerone.com/reports/124100 | CWE: Information Disclosure
+  Program: shopify | Reporter: todayisnew
+
+[Medium] A HackerOne employee's GitHub personal access token exposed in Travis CI build logs
+  URL: https://hackerone.com/reports/215625 | CWE: Information Exposure Through an Error Message
+  Program: security | Reporter: sainaen
+
+[Low] Report invitation links not restricted to any existing user
+  URL: https://hackerone.com/reports/214839 | CWE: Information Disclosure
+  Program: security | Reporter: japz
+
+[High] Arbitrary Local-File Read from Admin - Restore From Backup due to Symlinks
+  URL: https://hackerone.com/reports/213558 | CWE: Information Disclosure
+  Program: discourse | Reporter: ziot
+
+[Low] HTTP 401 response injection on "amp.twimg.com/amplify-web-player/prod/source.html" through "image_src" parameter
+  URL: https://hackerone.com/reports/221328 | CWE: Information Disclosure
+  Program: x | Reporter: zlz
+
+[Low] Calendar and addressbook names disclosed (NC-SA-2017-012)
+  URL: https://hackerone.com/reports/203594 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: juliushaertl
+
+[Medium] bug reporting template encourages users to paste config file with passwords
+  URL: https://hackerone.com/reports/196878 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: hanno
+
+[?] https://portal.nextcloud.com/.htaccess file is readable
+  URL: https://hackerone.com/reports/220946 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: peeper35
+
+[Low] web.xml configuration file disclosure
+  URL: https://hackerone.com/reports/173972 | CWE: Information Disclosure
+  Program: ok | Reporter: linkks
+
+[Low] Mapbox Android SDK uses Broadcast Receiver instead of Local Broadcast Manager
+  URL: https://hackerone.com/reports/192886 | CWE: Information Disclosure
+  Program: mapbox | Reporter: mishre
+
+[Medium] Source Code Disclosure (CGI)
+  URL: https://hackerone.com/reports/211418 | CWE: Information Disclosure
+  Program: rockstargames | Reporter: cyberunit
+
+[Low] Information disclosure on a DoD website
+  URL: https://hackerone.com/reports/189414 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: khizer47
+
+[Medium] Differential "Show Raw File" feature exposes generated files to unauthorised users
+  URL: https://hackerone.com/reports/213942 | CWE: Information Disclosure
+  Program: phabricator | Reporter: calvium
+
+[?] Stealing users' facebook access tokens - kitcrm.com
+  URL: https://hackerone.com/reports/211477 | CWE: Information Disclosure
+  Program: shopify | Reporter: zombiehelp54
+
+[Medium] Controlled address leak due to type confusion - ASLR bypass
+  URL: https://hackerone.com/reports/207321 | CWE: Information Disclosure
+  Program: shopify-scripts | Reporter: aerodudrizzt
+
+[Medium] Disclose any user's private email through API
+  URL: https://hackerone.com/reports/196655 | CWE: Information Disclosure
+  Program: security | Reporter: zombiehelp54
+
+[Medium] Personal information disclosure on a DoD website
+  URL: https://hackerone.com/reports/188149 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: spam404
+
+[?] User Information Disclosure via REST API
+  URL: https://hackerone.com/reports/197877 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: xploitt
+
+[Low] Уязвимость приватных записей пользователя (личных)
+  URL: https://hackerone.com/reports/65966 | CWE: Information Disclosure
+  Program: vkcom | Reporter: pisarenko
+
+[None] Способ узнать имя человека удаленной страницы 2
+  URL: https://hackerone.com/reports/193759 | CWE: Information Disclosure
+  Program: vkcom | Reporter: pisarenko
+
+[None] Способ узнать имя человека удаленной страницы
+  URL: https://hackerone.com/reports/193419 | CWE: Information Disclosure
+  Program: vkcom | Reporter: pisarenko
+
+[Low] http://digital.starbucks.com/ Creation of Google G Suite Account on Behalf of starbucks. 
+  URL: https://hackerone.com/reports/191179 | CWE: Information Disclosure
+  Program: starbucks | Reporter: khizer47
+
+[Low] Twitter for android is exposing user's location to any installed android app
+  URL: https://hackerone.com/reports/185862 | CWE: Information Disclosure
+  Program: x | Reporter: mishre
+
+[?] Disclosure of administrators via JSON on nextcloud.com Wordpress
+  URL: https://hackerone.com/reports/198012 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: rbcafe
+
+[Low] Unrestricted File Download / Path Traversal
+  URL: https://hackerone.com/reports/183925 | CWE: Information Disclosure
+  Program: deptofdefense | Reporter: ziot
+
+[Low] server version dislosure
+  URL: https://hackerone.com/reports/179217 | CWE: Information Disclosure
+  Program: blockchain | Reporter: goodman97
+
+[?] Information Disclosure through .DS_Store in ██████████
+  URL: https://hackerone.com/reports/142549 | CWE: Information Disclosure
+  Program: x | Reporter: lewerkun
+
+[Low] [product360.informatica.com] Unauthenticated Apache Tomcat 8 Installation
+  URL: https://hackerone.com/reports/146436 | CWE: Information Disclosure
+  Program: informatica | Reporter: zephrfish
+
+[Medium] Information Disclosure on stun.screenhero.com
+  URL: https://hackerone.com/reports/175061 | CWE: Information Disclosure
+  Program: slack | Reporter: kazan71p
+
+[High] Internal attachments can be exported via "Export as .zip" feature
+  URL: https://hackerone.com/reports/186230 | CWE: Information Disclosure
+  Program: security | Reporter: japz
+
+[Low] Information disclosure at https://blockchain.atlassian.net
+  URL: https://hackerone.com/reports/179599 | CWE: Information Disclosure
+  Program: blockchain | Reporter: lewerkun
+
+[Critical] Read files on application server, leads to RCE
+  URL: https://hackerone.com/reports/178152 | CWE: Information Disclosure
+  Program: gitlab | Reporter: jobert
+
+[?] Email information leakage for certain addresses
+  URL: https://hackerone.com/reports/169992 | CWE: Information Disclosure
+  Program: slack | Reporter: procode701
+
+[High] [Airship CMS] Local File Inclusion - RST Parser
+  URL: https://hackerone.com/reports/179034 | CWE: Information Disclosure
+  Program: paragonie | Reporter: h4ckninja
+
+[Low] Information disclosure via policy update notifications after removal from program
+  URL: https://hackerone.com/reports/177484 | CWE: Information Disclosure
+  Program: security | Reporter: staytuned
+
+[Low] Requesting Show CheckIn Alert for Non Friend User
+  URL: https://hackerone.com/reports/174882 | CWE: Information Disclosure
+  Program: yelp | Reporter: vinesh1989
+
+[?] Verification of E-Mail address possible on https://biz.yelp.com/login and https://biz.yelp.com/forgot
+  URL: https://hackerone.com/reports/166265 | CWE: Information Disclosure
+  Program: yelp | Reporter: badagent
+
+[Low] Information Disclosure on rate limit defense mechanism
+  URL: https://hackerone.com/reports/172296 | CWE: Information Disclosure
+  Program: legalrobot | Reporter: japz
+
+[?] Ability to enumerate private programs using SAML
+  URL: https://hackerone.com/reports/167828 | CWE: Information Disclosure
+  Program: security | Reporter: ayoubfathi_
+
+[?] Blacklist bypass on Callback URLs
+  URL: https://hackerone.com/reports/53004 | CWE: Information Disclosure
+  Program: coinbase | Reporter: agarri_fr
+
+[?] Directory Listening
+  URL: https://hackerone.com/reports/151772 | CWE: Information Disclosure
+  Program: gocd | Reporter: kiraak-boy
+
+[?] XXE in the Connector Designer
+  URL: https://hackerone.com/reports/112116 | CWE: Information Disclosure
+  Program: bime | Reporter: agarri_fr
+
+[?] Fetch private list metadata and any user's personal name
+  URL: https://hackerone.com/reports/162822 | CWE: Information Disclosure
+  Program: instacart | Reporter: sameoldstory
+
+[?] Image Upload Path Disclosure
+  URL: https://hackerone.com/reports/158021 | CWE: Information Disclosure
+  Program: instacart | Reporter: mefkan
+
+[?] User Information sent to client through websockets
+  URL: https://hackerone.com/reports/163464 | CWE: Information Disclosure
+  Program: legalrobot | Reporter: cablej
+
+[?] Bulk UUID enumeration via invite codes
+  URL: https://hackerone.com/reports/145150 | CWE: Information Disclosure
+  Program: uber | Reporter: vijay_kumar
+
+[?] Information Disclosure of .htaccess file in Private Server/Subdomain
+  URL: https://hackerone.com/reports/163106 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: ahsan
+
+[?] Wordpress: Directory Traversal / Denial of Serivce
+  URL: https://hackerone.com/reports/163421 | CWE: Information Disclosure
+  Program: nextcloud | Reporter: tbehroz
+
+[?] Estimation of a Lower Bound on Number of Uber Drivers via Enumeration
+  URL: https://hackerone.com/reports/125488 | CWE: Information Disclosure
+  Program: uber | Reporter: ddworken
+
+[?] Information leakage of private program
+  URL: https://hackerone.com/reports/159526 | CWE: Information Disclosure
+  Program: security | Reporter: faisalahmed
+
+[?] Missing authorization checks leading to the exposure of ubernihao.com administrator accounts 
+  URL: https://hackerone.com/reports/154762 | CWE: Information Disclosure
+  Program: uber | Reporter: issam_rabhi
+
+[?] Lack of rate limiting on get.uber.com leads to enumeration of promotion codes and estimation of a lower bound on the number of Uber drivers
+  URL: https://hackerone.com/reports/125200 | CWE: Information Disclosure
+  Program: uber | Reporter: ddworken
+
+[?] Bug Report 
+  URL: https://hackerone.com/reports/142940 | CWE: Information Disclosure
+  Program: drchrono | Reporter: 1337_inj3c70r
+
+[?] Potentially Sensitive Information on GitHub
+  URL: https://hackerone.com/reports/143438 | CWE: Information Disclosure
+  Program: shopify | Reporter: wkcaj
+
+[Low] stop serving grtp.co over HTTP
+  URL: https://hackerone.com/reports/117330 | CWE: Information Disclosure
+  Program: gratipay | Reporter: secbughunter
+
+[Low] suppress version in Server header on gratipay.com or grtp.co
+  URL: https://hackerone.com/reports/123742 | CWE: Information Disclosure
+  Program: gratipay | Reporter: caffeine
+
+[Low] don't leak server version of grtp.co in error pages
+  URL: https://hackerone.com/reports/136720 | CWE: Information Disclosure
+  Program: gratipay | Reporter: dotnick
+
+[?] Lack of CNAME/A Record Trimming Pointing Uber Domains to Insecure Non-Uber AWS Instances/Sites
+  URL: https://hackerone.com/reports/125118 | CWE: Information Disclosure
+  Program: uber | Reporter: jutsuce
+
+[Low] don't serve hidden files from Nginx
+  URL: https://hackerone.com/reports/120026 | CWE: Information Disclosure
+  Program: gratipay | Reporter: jsshen
+
+[?] Information regarding trips from other users
+  URL: https://hackerone.com/reports/127161 | CWE: Information Disclosure
+  Program: uber | Reporter: maluko
+
+[?] Ability to add pishing links in discusion ," Bypassing uneductional Links  add "
+  URL: https://hackerone.com/reports/62301 | CWE: Information Disclosure
+  Program: udemy | Reporter: zeyadk
+
+[?] information disclose  
+  URL: https://hackerone.com/reports/135782 | CWE: Information Disclosure
+  Program: moneybird | Reporter: dotnick
+
+[?] Получение оригинала скрытого изображения
+  URL: https://hackerone.com/reports/143669 | CWE: Information Disclosure
+  Program: bumble | Reporter: nikitchenko
+
+[?] Ability to collect users' ids that have visited a specific web page with malicious code 
+  URL: https://hackerone.com/reports/139192 | CWE: Information Disclosure
+  Program: bumble | Reporter: saeedhashem
+
+[?] PHP version disclosed on blog.algolia.com
+  URL: https://hackerone.com/reports/116692 | CWE: Information Disclosure
+  Program: algolia | Reporter: bugs3ra
+
+[?] Server and PHP version Disclosed in Response Header
+  URL: https://hackerone.com/reports/123194 | CWE: Information Disclosure
+  Program: veris | Reporter: bugs3ra
+
+[?] Apache version disclosed on developer.leaseweb.com
+  URL: https://hackerone.com/reports/117593 | CWE: Information Disclosure
+  Program: leaseweb | Reporter: bugs3ra
+
+[?] PHP and Web Server version disclosed on leasewebnoc.com
+  URL: https://hackerone.com/reports/117385 | CWE: Information Disclosure
+  Program: leaseweb | Reporter: bugs3ra
+
+[?] Labels created in private projects are leaked
+  URL: https://hackerone.com/reports/132777 | CWE: Information Disclosure
+  Program: gitlab | Reporter: jobert
+
+[?] Confidential issues leaked in public projects when attached to milestone
+  URL: https://hackerone.com/reports/134300 | CWE: Information Disclosure
+  Program: gitlab | Reporter: jobert
+
+[?] Private snippets in public / internal projects leaked though GitLab API
+  URL: https://hackerone.com/reports/134305 | CWE: Information Disclosure
+  Program: gitlab | Reporter: jobert
+
+[?] Using GET method for account login with CSRF token leaking to external sites Via Referer.
+  URL: https://hackerone.com/reports/76733 | CWE: Information Disclosure
+  Program: zaption | Reporter: bugs3ra
+
+[?] Distinguish EP+Private vs Private programs in HackerOne
+  URL: https://hackerone.com/reports/118965 | CWE: Information Disclosure
+  Program: security | Reporter: nismo
+
+[?] Disclosure of private programs that have an "external" page on HackerOne
+  URL: https://hackerone.com/reports/124611 | CWE: Information Disclosure
+  Program: security | Reporter: saeedhashem
+
+[?] Profile Pic padding (Length-hiding) fails due to use of GZIP
+  URL: https://hackerone.com/reports/29835 | CWE: Information Disclosure
+  Program: x | Reporter: ericlaw
+
+[?] Insecure Direct 'org-invite-log' References
+  URL: https://hackerone.com/reports/123712 | CWE: Information Disclosure
+  Program: veris | Reporter: zuh4n
+
+[?] Insecure Direct 'org-visitor-log' References
+  URL: https://hackerone.com/reports/123713 | CWE: Information Disclosure
+  Program: veris | Reporter: zuh4n
+
+[?] Insecure Direct Member Disclosure
+  URL: https://hackerone.com/reports/123501 | CWE: Information Disclosure
+  Program: veris | Reporter: zuh4n
+
+[?] Legacy API exposes private video titles
+  URL: https://hackerone.com/reports/111386 | CWE: Information Disclosure
+  Program: vimeo | Reporter: nathonsecurity
+
+[?] information disclosure
+  URL: https://hackerone.com/reports/78765 | CWE: Information Disclosure
+  Program: udemy | Reporter: shekhar93
+
+[?] Full access to Amazon S3 bucket containing AWS CloudTrail logs
+  URL: https://hackerone.com/reports/111643 | CWE: Information Disclosure
+  Program: shopify | Reporter: koenrh
+
+[?] s2.owncloud.com: SSL Session cookie without secure flag set
+  URL: https://hackerone.com/reports/83856 | CWE: Information Disclosure
+  Program: owncloud | Reporter: ashesh
+
+[?] Minimum bounty of a private program is visible for users that were removed from the program
+  URL: https://hackerone.com/reports/94336 | CWE: Information Disclosure
+  Program: security | Reporter: coolboss
+
+[?] apps.owncloud.com: Mixed Active Scripting Issue 
+  URL: https://hackerone.com/reports/85541 | CWE: Information Disclosure
+  Program: owncloud | Reporter: suhas_gaikwad
+
+[?] Minor Bug: Public un-compiled CSS with original sass, versioning, source map, comments, etc.
+  URL: https://hackerone.com/reports/90367 | CWE: Information Disclosure
+  Program: security | Reporter: ericr
+
+[?] Directory traversal attack in view resolver
+  URL: https://hackerone.com/reports/3370 | CWE: Information Disclosure
+  Program: rails | Reporter: lautis
+
+[?] CRITICAL full source code/config disclosure for Cameo
+  URL: https://hackerone.com/reports/43998 | CWE: Information Disclosure
+  Program: vimeo | Reporter: avlidienbrunn
+
+[?] comment out causes information disclosure
+  URL: https://hackerone.com/reports/57125 | CWE: Information Disclosure
+  Program: shopify | Reporter: shhnjk
+

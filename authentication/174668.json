@@ -1,0 +1,137 @@
+{
+  "id": 174668,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNzQ2Njg=",
+  "url": "https://hackerone.com/reports/174668",
+  "title": "No rate-limit in SERVER_SECURITY_CHECK",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2016-10-08T14:57:33.337Z",
+  "submitted_at": "2016-10-08T14:57:33.337Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "c0rte",
+    "url": "/c0rte",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/078/843/e004f52f88e3653756179cc41af057da2ae75420_original.jpg/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 21554,
+    "url": "https://hackerone.com/bumble",
+    "handle": "bumble",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/021/554/13fb93fae5496e8e259a0f2a2fba3a72ca10550b_original./235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/021/554/13fb93fae5496e8e259a0f2a2fba3a72ca10550b_original./3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Bumble",
+      "twitter_handle": "bumble",
+      "website": "https://bumble.com/",
+      "about": "Bumble - Date, Meet, Network Better"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2016-11-10T15:03:30.459Z",
+  "bug_reporter_agreed_on_going_public_at": "2016-10-11T15:03:21.573Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi,\n\nWhen you login in another Ip address Badoo will ask to confirm mobile number to authenticate.\nThe problem is that there is no limit of tries.\n\nThis make this feature useless since it can be brute forced.\nIn the video you can see at request 56 we found the right number which lead to authentication.\n\nResponse when found right number:\n\n```\nHTTP/1.1 200 OK\nServer: nginx\nDate: Sat, 08 Oct 2016 14:29:46 GMT\nContent-Type: application/json\nConnection: close\nX-BMA-Server: www33\nX-User-id: 471337266\nX-Session-id: meba0dcc7466641ca981034c8c2df3090\nX-Static-Version: 10735\nStrict-Transport-Security: max-age=31536000; includeSubDomains; preload\nTiming-Allow-Origin: https://eu1.badoo.com\nContent-Length: 494\n\n{\"$gpb\":\"badoo.bma.BadooMessage\",\"message_type\":6004,\"version\":1,\"message_id\":13,\"body\":[{\"$gpb\":\"badoo.bma.MessageBody\",\"client_security_check_result\":{\"$gpb\":\"badoo.bma.ClientSecurityCheckResult\",\"complete\":true,\"success\":true},\"message_type\":528},{\"$gpb\":\"badoo.bma.MessageBody\",\"server_error_message\":{\"$gpb\":\"badoo.bma.ServerErrorMessage\",\"error_code\":\"15\",\"error_message\":\"Security check required\",\"error_id\":\"captcha_10\",\"error_eta\":394,\"type\":15},\"message_type\":1}],\"responses_count\":2}\n```\n\nWrong number:\n```\nHTTP/1.1 200 OK\nServer: nginx\nDate: Sat, 08 Oct 2016 14:29:42 GMT\nContent-Type: application/json\nConnection: close\nX-BMA-Server: www88\nX-User-id: 471337266\nX-Session-id: meba0dcc7466641ca981034c8c2df3090\nX-Static-Version: 10735\nStrict-Transport-Security: max-age=31536000; includeSubDomains; preload\nTiming-Allow-Origin: https://eu1.badoo.com\nContent-Length: 528\n\n{\"$gpb\":\"badoo.bma.BadooMessage\",\"message_type\":6004,\"version\":1,\"message_id\":13,\"body\":[{\"$gpb\":\"badoo.bma.MessageBody\",\"client_security_check_result\":{\"$gpb\":\"badoo.bma.ClientSecurityCheckResult\",\"complete\":true,\"success\":false,\"error_text\":\"D\u00c3gitos errados.\"},\"message_type\":528},{\"$gpb\":\"badoo.bma.MessageBody\",\"server_error_message\":{\"$gpb\":\"badoo.bma.ServerErrorMessage\",\"error_code\":\"15\",\"error_message\":\"Security check required\",\"error_id\":\"captcha_10\",\"error_eta\":394,\"type\":15},\"message_type\":1}],\"responses_count\":2}\n```\n\nThanks,\nDiogo Real\n\n\n\n ",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 126714,
+      "file_name": "Screenshot_from_2016-10-08_15-16-37.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/126/714/793eee47b756af335fe6dff75c8a062b4bde2f1f/Screenshot_from_2016-10-08_15-16-37.png?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_from_2016-10-08_15-16-37.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_from_2016-10-08_15-16-37.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQU3JX7KC2%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124124Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDzH6yeKqYYbaDKgqU43xFJxjjkWBfp2t6hKibbKkEazAIgSvBb9yJW0aRvPUrYzmyXTZqIOJXrq5ZuBX1ot2h%2FsvoqugUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDCZDPdh%2FwQj8d9dOjCqOBQzsWuKV0Eyxqmkjrnp0uYC4z4ueCVRXG26IiCcDQeuaU2os7VQsSH5pjNR0808r4aLzPR2ixKNANtFsweOxn88%2FyMtzTEG%2BtReIo94ykei0JB3TWM7%2FaieJu%2BVYfuMVINChADEKDN3%2BqsNRVmYpyothFbekPna7K2ZABkh2i7C3v%2BNcUTjVzp4FcsMjbhs6eVur0p%2FF44aanXpFjCxOhi79YTxGpQFKLmAP6EEipOfJ9Zw9kOlTY3IQG6ophrb6oF5q6Ei2ztjGveqkTDGKuAZTVbQtQIr679sMmmZ7q2%2BiXrlUZqRXqpVcX4EoYmj3c4ML6vlnjWB%2Fuu6M3Yns%2BJz6GlWnBf%2BisnRti726JCXt3ZqES38pi0n2SIoORDkgQHIdZzxSrLEUqEt1rma0HGMP4K8k98ZEur%2F2zSVml%2BCBFEKbsqtgZRCURmQQsOl0nKmpVGsge2A%2BN6HZTiJMIWzvNGBJJpTlXXZ7ovSZqSY0rwS9Q3I8qE0I8Xl%2BW6U9qjggaRmDzWNFjEJ5CxS3H8gaZOPkCzeS8rNP747gpiuJ1AfaMEdt3E3n7SOKgi2pzFqHquageZVKfLw2GeJfqCL94Lo3inZVOa6%2BNaGZv%2FLBv4zxqHJSanpIg8nRtccjM%2Fv4Xjrf75dvv1Okmdku4v%2BYqCrhYhc7%2B%2BPeiAr8c7JKruda0o418Is%2BJTjsoMqlHY%2B%2Bb17MG0X4ctx5GcbVN6OTw6GHLk7xx%2FWNQTvn%2BcsQiDXKyn7Mpnu%2Be9ke59nBfctcwBuCrSQBfaNXN7%2FBLNmf0ehtfzKV5HHpsR9cYeDmaFHjt1BrKOAdOc5MW4qzc3aYPdYYilALkfp2y9LTulvgza41qjAxY1zY51nE2DC1sJXRBjqxAfRg%2Bte6w04bKGpy3hhgNE9IcqVyETkdHZpKLWSMl%2BErA7r5Oa2aDEQU%2BD%2B36IOaqbR9oeLv9uJQLNmL1AMxe6Jfx7HjJij6kDELnnSrNJqmYEidw4DxMzi%2BtOOnSLfclBbJBpZZvRTwusBZOav7h0j6szGi8dcFRg46i%2B0p09tPINRgoWYZvaJ89O0NJHtr6leRLrnle0vpPFVSi2g01OdN4g6M6JmNQsj1p3QZdzx9yA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=dfd220fa64d95d01b79775f9d308cc8db5c94433d652d3ef733351aff3435181",
+      "file_size": 146194,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 126715,
+      "file_name": "Bruteforce.mp4",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/126/715/7030d3d5c083ff252cf78821dbb32d70c9ccc5a0/Bruteforce.mp4?response-content-disposition=attachment%3B%20filename%3D%22Bruteforce.mp4%22%3B%20filename%2A%3DUTF-8%27%27Bruteforce.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQU3JX7KC2%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124124Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQDzH6yeKqYYbaDKgqU43xFJxjjkWBfp2t6hKibbKkEazAIgSvBb9yJW0aRvPUrYzmyXTZqIOJXrq5ZuBX1ot2h%2FsvoqugUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDCZDPdh%2FwQj8d9dOjCqOBQzsWuKV0Eyxqmkjrnp0uYC4z4ueCVRXG26IiCcDQeuaU2os7VQsSH5pjNR0808r4aLzPR2ixKNANtFsweOxn88%2FyMtzTEG%2BtReIo94ykei0JB3TWM7%2FaieJu%2BVYfuMVINChADEKDN3%2BqsNRVmYpyothFbekPna7K2ZABkh2i7C3v%2BNcUTjVzp4FcsMjbhs6eVur0p%2FF44aanXpFjCxOhi79YTxGpQFKLmAP6EEipOfJ9Zw9kOlTY3IQG6ophrb6oF5q6Ei2ztjGveqkTDGKuAZTVbQtQIr679sMmmZ7q2%2BiXrlUZqRXqpVcX4EoYmj3c4ML6vlnjWB%2Fuu6M3Yns%2BJz6GlWnBf%2BisnRti726JCXt3ZqES38pi0n2SIoORDkgQHIdZzxSrLEUqEt1rma0HGMP4K8k98ZEur%2F2zSVml%2BCBFEKbsqtgZRCURmQQsOl0nKmpVGsge2A%2BN6HZTiJMIWzvNGBJJpTlXXZ7ovSZqSY0rwS9Q3I8qE0I8Xl%2BW6U9qjggaRmDzWNFjEJ5CxS3H8gaZOPkCzeS8rNP747gpiuJ1AfaMEdt3E3n7SOKgi2pzFqHquageZVKfLw2GeJfqCL94Lo3inZVOa6%2BNaGZv%2FLBv4zxqHJSanpIg8nRtccjM%2Fv4Xjrf75dvv1Okmdku4v%2BYqCrhYhc7%2B%2BPeiAr8c7JKruda0o418Is%2BJTjsoMqlHY%2B%2Bb17MG0X4ctx5GcbVN6OTw6GHLk7xx%2FWNQTvn%2BcsQiDXKyn7Mpnu%2Be9ke59nBfctcwBuCrSQBfaNXN7%2FBLNmf0ehtfzKV5HHpsR9cYeDmaFHjt1BrKOAdOc5MW4qzc3aYPdYYilALkfp2y9LTulvgza41qjAxY1zY51nE2DC1sJXRBjqxAfRg%2Bte6w04bKGpy3hhgNE9IcqVyETkdHZpKLWSMl%2BErA7r5Oa2aDEQU%2BD%2B36IOaqbR9oeLv9uJQLNmL1AMxe6Jfx7HjJij6kDELnnSrNJqmYEidw4DxMzi%2BtOOnSLfclBbJBpZZvRTwusBZOav7h0j6szGi8dcFRg46i%2B0p09tPINRgoWYZvaJ89O0NJHtr6leRLrnle0vpPFVSi2g01OdN4g6M6JmNQsj1p3QZdzx9yA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=f91ccfbf984d4f1df7c8981f72c25bb0c3ac25dd0592e55614a935b012a69842",
+      "file_size": 8528779,
+      "type": "video/mp4",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-11-10T15:03:21.629Z",
+  "allow_singular_disclosure_after": -302045882.86534613,
+  "singular_disclosure_allowed": true,
+  "vote_count": 11,
+  "voters": [
+    "madrobot",
+    "c0rte",
+    "spetr0x",
+    "bm666",
+    "jaimin",
+    "twi0x00tter",
+    "dyabla",
+    "franc",
+    "mralexander",
+    "darking",
+    "and 1 more..."
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "Team"
+  },
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

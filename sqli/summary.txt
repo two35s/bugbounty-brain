@@ -1,0 +1,407 @@
+Category: sqli
+Reports: 101
+
+[High] Blind SQL injection via clientid parameter in zone‑include.php
+  URL: https://hackerone.com/reports/3653196 | CWE: SQL Injection
+  Program: revive_adserver | Reporter: titanrain
+
+[High] SQL Injection in Column Type Parameter Allows Arbitrary SQL Execution
+  URL: https://hackerone.com/reports/3462991 | CWE: SQL Injection
+  Program: nextcloud | Reporter: suul
+
+[Critical] SQL Injection vulnerability found on ibm.com endpoint
+  URL: https://hackerone.com/reports/3578842 | CWE: SQL Injection
+  Program: ibm | Reporter: cr3ckerxploit
+
+[Critical] SQLi At `███████` via `theme_name` 
+  URL: https://hackerone.com/reports/3293803 | CWE: SQL Injection
+  Program: mars | Reporter: 4ksh3ye
+
+[Critical] SQLi at █████ parameter
+  URL: https://hackerone.com/reports/3277276 | CWE: SQL Injection
+  Program: mars | Reporter: scriptsavvy
+
+[Medium] SQL injection in structure plugin
+  URL: https://hackerone.com/reports/3249794 | CWE: SQL Injection
+  Program: expressionengine | Reporter: fed01k
+
+[High] SQL Injection - entryid parameter in 'formbuilderv2-confirmation.php'
+  URL: https://hackerone.com/reports/3127198 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: jonasdiasrebelo
+
+[High] SQLi in LASCO CME Query
+  URL: https://hackerone.com/reports/186367 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: 0daystolive
+
+[High] SQL Injection - JSON 'name' parameter
+  URL: https://hackerone.com/reports/3257171 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: jonasdiasrebelo
+
+[High] SQL Injection in URI Path Leading to Full Database Disclosure on ████████
+  URL: https://hackerone.com/reports/3234050 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: 0x0sadat
+
+[High] SQL Injection via URL
+  URL: https://hackerone.com/reports/3127562 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: jonasdiasrebelo
+
+[High] SQL Injection - data[account][id] parameter
+  URL: https://hackerone.com/reports/3127152 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: jonasdiasrebelo
+
+[Critical] SQL injection identified on IBM endpoint. 
+  URL: https://hackerone.com/reports/2830573 | CWE: SQL Injection
+  Program: ibm | Reporter: rakib0x7
+
+[Critical] SQL Injection when using FilteredRelation
+  URL: https://hackerone.com/reports/3292573 | CWE: SQL Injection
+  Program: django | Reporter: eyalsec
+
+[High] SQL injection in JSONField KeyTransform
+  URL: https://hackerone.com/reports/2588426 | CWE: SQL Injection
+  Program: django | Reporter: eyalsec
+
+[Low] Apache Airflow Sql injection by authenticated user
+  URL: https://hackerone.com/reports/3078856 | CWE: SQL Injection
+  Program: ibb | Reporter: nxczje
+
+[Critical] SQLi | in URL paths
+  URL: https://hackerone.com/reports/2958619 | CWE: SQL Injection
+  Program: mtn_group | Reporter: almuntadhar0x01
+
+[High] CVE-2024-53908: Django Potential SQL injection in `HasKey(lhs, rhs)` on Oracle
+  URL: https://hackerone.com/reports/2882887 | CWE: SQL Injection
+  Program: ibb | Reporter: scyoon
+
+[Critical] SQL injection in /errors/viewbuild/
+  URL: https://hackerone.com/reports/690349 | CWE: SQL Injection
+  Program: valve | Reporter: njbooher3
+
+[Medium] sqli on █████████ search functionality
+  URL: https://hackerone.com/reports/2446550 | CWE: SQL Injection
+  Program: mars | Reporter: b_i_n_i_a_m
+
+[Medium] Sqli on ██████ search functionality
+  URL: https://hackerone.com/reports/2453475 | CWE: SQL Injection
+  Program: mars | Reporter: b_i_n_i_a_m
+
+[Medium] SQL injection on ██████████ via 'where' parameter
+  URL: https://hackerone.com/reports/2433970 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: neg0x
+
+[Critical] Blind SQL Injection on █████ via URI Path
+  URL: https://hackerone.com/reports/2266081 | CWE: SQL Injection
+  Program: mars | Reporter: stuux
+
+[High] Blind Sql Injection in https://█████/qsSearch.aspx
+  URL: https://hackerone.com/reports/2081316 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: hack0neone
+
+[High] Blind Sql Injection in https://████████/
+  URL: https://hackerone.com/reports/2072306 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: hack0neone
+
+[Medium] SqlInject at ██████
+  URL: https://hackerone.com/reports/2073717 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: appllite
+
+[Medium] Blind Sql Injection https:/████████
+  URL: https://hackerone.com/reports/2020429 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: codeslayer1337
+
+[Medium] GitHub Security Lab (GHSL) Vulnerability Report: SQLInjection in FileContentProvider.kt (GHSL-2022-059)
+  URL: https://hackerone.com/reports/1650264 | CWE: SQL Injection
+  Program: owncloud | Reporter: atorralba
+
+[High] SQL Injection in CVE Discovery Search 
+  URL: https://hackerone.com/reports/1893800 | CWE: SQL Injection
+  Program: security | Reporter: rcoleman
+
+[Medium] Sql Injection At █████████
+  URL: https://hackerone.com/reports/1723896 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: w13d0m
+
+[Critical] SQL Injection at https://████████.asp (█████████) [selMajcom] [HtUS]
+  URL: https://hackerone.com/reports/1628408 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: haxor31337
+
+[High] SQL Injection on [█████████]
+  URL: https://hackerone.com/reports/1213207 | CWE: SQL Injection
+  Program: sony | Reporter: splint3rsec
+
+[Critical] Unauthenticated SQL Injection at █████████  [HtUS]
+  URL: https://hackerone.com/reports/1626226 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: 0xd0ff9
+
+[Critical] time based SQL injection at [https://███] [HtUS]
+  URL: https://hackerone.com/reports/1627970 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: malcolmx
+
+[Critical] SQL injection at [█████████] [HtUS]
+  URL: https://hackerone.com/reports/1626198 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: malcolmx
+
+[Critical] SQL injection at [https://█████████] [HtUS]
+  URL: https://hackerone.com/reports/1627995 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: malcolmx
+
+[High] Ability to escape database transaction through SQL injection, leading to arbitrary code execution
+  URL: https://hackerone.com/reports/1663299 | CWE: SQL Injection
+  Program: security | Reporter: jobert
+
+[Critical] sql injection via https://setup.p2p.ihost.com/
+  URL: https://hackerone.com/reports/1567516 | CWE: SQL Injection
+  Program: ibm | Reporter: exploitmsf
+
+[High] SQL Injection on https://████████/
+  URL: https://hackerone.com/reports/232378 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: cdl
+
+[High] SQL Injection on █████
+  URL: https://hackerone.com/reports/277380 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: cdl
+
+[High] SQL injextion via vulnerable doctrine/dbal version
+  URL: https://hackerone.com/reports/1390331 | CWE: SQL Injection
+  Program: nextcloud | Reporter: nickvergessen
+
+[Critical] SQL injection in URL path processing on www.ibm.com
+  URL: https://hackerone.com/reports/1527284 | CWE: SQL Injection
+  Program: ibm | Reporter: asterite
+
+[Critical] SQL Injection in █████
+  URL: https://hackerone.com/reports/1489744 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: lubak
+
+[High] SQL Injection at https://files.palantir.com/ due to CVE-2021-38159
+  URL: https://hackerone.com/reports/1525200 | CWE: SQL Injection
+  Program: palantir_public | Reporter: haxor31337
+
+[High] SQL Injection and plaintext passwords via User Search
+  URL: https://hackerone.com/reports/703819 | CWE: SQL Injection
+  Program: ibm | Reporter: xyantix
+
+[Critical] SQL Injection in IBM access control panel & Broken access in admin panel
+  URL: https://hackerone.com/reports/1355817 | CWE: SQL Injection
+  Program: ibm | Reporter: thecyberguy0
+
+[Medium] bypass sql injection #1109311
+  URL: https://hackerone.com/reports/1224660 | CWE: SQL Injection
+  Program: acronis | Reporter: lu3ky-13
+
+[High] SQLi on █████████
+  URL: https://hackerone.com/reports/954667 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: hexagr
+
+[Critical] SQL Injection on the administrator panel
+  URL: https://hackerone.com/reports/865436 | CWE: SQL Injection
+  Program: mtn_group | Reporter: z3lox
+
+[Critical] ccc ctf 
+  URL: https://hackerone.com/reports/1216085 | CWE: SQL Injection
+  Program: h1-ctf | Reporter: shamollash
+
+[High] SQL injection on admin.acronis.host development web service
+  URL: https://hackerone.com/reports/923020 | CWE: SQL Injection
+  Program: acronis | Reporter: stealthy
+
+[Critical] 100K CTF's Writeup
+  URL: https://hackerone.com/reports/1216591 | CWE: SQL Injection
+  Program: h1-ctf | Reporter: dexter0us
+
+[High] SQLI on uberpartner.eu leads to exposure of sensitive user data of Uber partners
+  URL: https://hackerone.com/reports/361623 | CWE: SQL Injection
+  Program: uber | Reporter: healdb
+
+[Critical] Taking Grinch Down To Save Holidays
+  URL: https://hackerone.com/reports/1067037 | CWE: SQL Injection
+  Program: h1-ctf | Reporter: akshansh
+
+[Medium] SQL Injection  intensedebate.com
+  URL: https://hackerone.com/reports/1069561 | CWE: SQL Injection
+  Program: automattic | Reporter: lu3ky-13
+
+[Critical] [intensedebate.com] SQL Injection Time Based on /changeReplaceOpt.php
+  URL: https://hackerone.com/reports/1042746 | CWE: SQL Injection
+  Program: automattic | Reporter: fuzzme
+
+[Critical] [intensedebate.com] SQL Injection Time Based On /js/commentAction/
+  URL: https://hackerone.com/reports/1044698 | CWE: SQL Injection
+  Program: automattic | Reporter: fuzzme
+
+[High] Sql injection on docs.atavist.com
+  URL: https://hackerone.com/reports/1039315 | CWE: SQL Injection
+  Program: automattic | Reporter: lu3ky-13
+
+[Critical] Blind SQL injection at tsftp.informatica.com
+  URL: https://hackerone.com/reports/1034625 | CWE: SQL Injection
+  Program: informatica | Reporter: r1pley
+
+[High] [SQLI ]Time  Bassed Injection at ██████████ via referer header
+  URL: https://hackerone.com/reports/995122 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: yassinek3ch
+
+[High] SQL injection (stacked queries) in the export to Excel functionality on Vidyo Server
+  URL: https://hackerone.com/reports/922567 | CWE: SQL Injection
+  Program: 8x8-bounty | Reporter: b1ackgamba
+
+[Critical] SQL Injection or Denial of Service due to a Prototype Pollution
+  URL: https://hackerone.com/reports/869574 | CWE: SQL Injection
+  Program: nodejs-ecosystem | Reporter: phra
+
+[High] SQL Injection in the `move_papers.php` on the https://██████████
+  URL: https://hackerone.com/reports/491191 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[Low] Information Disclosure in https://www.rockstargames.com/search
+  URL: https://hackerone.com/reports/808832 | CWE: SQL Injection
+  Program: rockstargames | Reporter: netfuzzer
+
+[High]  SQL Injection on cookie parameter
+  URL: https://hackerone.com/reports/761304 | CWE: SQL Injection
+  Program: mtn_group | Reporter: w31rd0
+
+[High] [@azhou/basemodel] SQL injection
+  URL: https://hackerone.com/reports/506644 | CWE: SQL Injection
+  Program: nodejs-ecosystem | Reporter: verichains
+
+[Medium] stripo blog search  SQL Injection
+  URL: https://hackerone.com/reports/761382 | CWE: SQL Injection
+  Program: stripo | Reporter: bluebridsec
+
+[Medium] SQL injection found in US Navy Website (http://███/)
+  URL: https://hackerone.com/reports/197755 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: hassaan
+
+[High]  SQL injections
+  URL: https://hackerone.com/reports/272506 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: lfb
+
+[High] SQL injection on the https://████/
+  URL: https://hackerone.com/reports/488795 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[High] SQL Injection in the get_publications.php on the https://█████
+  URL: https://hackerone.com/reports/489483 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[High] SQL Injection in ████
+  URL: https://hackerone.com/reports/419017 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: arinerron2
+
+[Critical] Blind SQLi leading to RCE, from Unauthenticated access to a test API Webservice
+  URL: https://hackerone.com/reports/592400 | CWE: SQL Injection
+  Program: starbucks | Reporter: geek_jeremy
+
+[Critical] Arbitrary SQL command injection
+  URL: https://hackerone.com/reports/508487 | CWE: SQL Injection
+  Program: nextcloud | Reporter: leonklingele
+
+[Medium] typeorm does not properly escape parameters when building SQL queries, resulting in potential SQLi
+  URL: https://hackerone.com/reports/319458 | CWE: SQL Injection
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Critical] [www.zomato.com] SQLi - /php/██████████ - item_id
+  URL: https://hackerone.com/reports/403616 | CWE: SQL Injection
+  Program: eternal | Reporter: gerben_javado
+
+[Medium] [Informational] Possible SQL Injection in inc/ajax-actions-frontend.php
+  URL: https://hackerone.com/reports/310280 | CWE: SQL Injection
+  Program: mapsmarker_com_e_u | Reporter: damian89
+
+[Critical] [query-mysql] SQL Injection due to lack of user input sanitization allows to run arbitrary SQL queries when fetching data from database
+  URL: https://hackerone.com/reports/311244 | CWE: SQL Injection
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[Medium] `sql` does not properly escape parameters when building SQL queries, resulting in potential SQLi
+  URL: https://hackerone.com/reports/319465 | CWE: SQL Injection
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[High]  SQL injection 
+  URL: https://hackerone.com/reports/311922 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[Medium] SQL injection in partner id field on https://www.teavana.com (Sign-up form)
+  URL: https://hackerone.com/reports/269279 | CWE: SQL Injection
+  Program: starbucks | Reporter: bigbug
+
+[High] www.drivegrab.com SQL injection
+  URL: https://hackerone.com/reports/273946 | CWE: SQL Injection
+  Program: grab | Reporter: jouko
+
+[Critical] WordPress DB Class, bad implementation of prepare method guides to sqli and information disclosure
+  URL: https://hackerone.com/reports/179920 | CWE: SQL Injection
+  Program: wordpress | Reporter: b258ea62bf297b02afa9854
+
+[?] [www.zomato.com] Union SQLi + Waf Bypass
+  URL: https://hackerone.com/reports/258582 | CWE: SQL Injection
+  Program: eternal | Reporter: gerben_javado
+
+[Medium] Time Based SQL Injection vulnerability on a DoD website
+  URL: https://hackerone.com/reports/189851 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[High] SQL Injection vulnerability in a DoD website
+  URL: https://hackerone.com/reports/216699 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: albinowax
+
+[Medium] SQL Injection vulnerability in a DoD website
+  URL: https://hackerone.com/reports/201512 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: alyssa_herrera
+
+[Medium] SQL injection vulnerability on a DoD website
+  URL: https://hackerone.com/reports/202619 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: 0xd0m7
+
+[Medium] SQL injection vulnerability on a DoD website
+  URL: https://hackerone.com/reports/189069 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: korprit
+
+[Medium] Time Based SQL Injection vulnerability on a DoD website
+  URL: https://hackerone.com/reports/188929 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: korprit
+
+[Medium] Blind SQLi in a DoD Website
+  URL: https://hackerone.com/reports/196300 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: bfe3fdb1088411d8ef018aa3abde8
+
+[High] SQL injection in 3rd party software Anomali
+  URL: https://hackerone.com/reports/206872 | CWE: SQL Injection
+  Program: uber | Reporter: kazan71p
+
+[High] SQL injection vulnerability on a DoD website
+  URL: https://hackerone.com/reports/200623 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: vag_mour
+
+[High] Time-based Blind SQLi on news.starbucks.com
+  URL: https://hackerone.com/reports/198292 | CWE: SQL Injection
+  Program: starbucks | Reporter: toctou
+
+[Critical] [ipm.informatica.com] Sql injection Oracle 
+  URL: https://hackerone.com/reports/178057 | CWE: SQL Injection
+  Program: informatica | Reporter: e3xpl0it
+
+[Medium] SQL injection vulnerability on a DoD website
+  URL: https://hackerone.com/reports/189332 | CWE: SQL Injection
+  Program: deptofdefense | Reporter: thirup
+
+[Critical] [afocusp.informatica.com] Sql injection  afocusp.informatica.com:37777
+  URL: https://hackerone.com/reports/178632 | CWE: SQL Injection
+  Program: informatica | Reporter: e3xpl0it
+
+[Critical] [informatica.com] Blind SQL Injection
+  URL: https://hackerone.com/reports/117073 | CWE: SQL Injection
+  Program: informatica | Reporter: konqi
+
+[?] Multiple vulnerabilities in a WordPress plugin at drive.uber.com
+  URL: https://hackerone.com/reports/135288 | CWE: SQL Injection
+  Program: uber | Reporter: 0xsyndr0me
+
+[?] SQL injection in conc/index.php/ccm/system/search/users/submit
+  URL: https://hackerone.com/reports/38778 | CWE: SQL Injection
+  Program: concretecms | Reporter: yujitounai
+
+[?] SQLi in love.uber.com
+  URL: https://hackerone.com/reports/125181 | CWE: SQL Injection
+  Program: uber | Reporter: laps-forever
+

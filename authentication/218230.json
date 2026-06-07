@@ -1,0 +1,204 @@
+{
+  "id": 218230,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yMTgyMzA=",
+  "url": "https://hackerone.com/reports/218230",
+  "title": "Access to GitLab's Slack by abusing issue creation from e-mail",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "critical",
+  "readable_substate": "Resolved",
+  "created_at": "2017-04-03T00:23:27.224Z",
+  "submitted_at": "2017-04-03T00:23:27.224Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "intidc",
+    "url": "/intidc",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/002/322/cb30ac31b7653e73d6dd5a0f0e2cfeed113d2feb_original.jpg/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 264,
+    "url": "https://hackerone.com/gitlab",
+    "handle": "gitlab",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "GitLab",
+      "twitter_handle": "gitlab",
+      "website": "https://about.gitlab.com",
+      "about": "A single application for the entire software development lifecycle."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2017-09-21T05:59:20.034Z",
+  "bug_reporter_agreed_on_going_public_at": "2017-09-21T05:59:19.999Z",
+  "team_member_agreed_on_going_public_at": "2017-09-17T22:13:47.253Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi there,\n\nI found a way to become a verified GitLab team member on [Slack](http://gitlab.slack.com). \nBy doing so, I gained access to dozens of channels possibly containing sensitive information. Note that I deleted my account `intidc_hackerone` immediately afterwards and did not join, read or engage with any of those channels.\n\n\n\n#How it works\n\n- The [GitLab Slack login page](https://gitlab.slack.com/) allows anyone with a `@gitlab.com` e-mail address to join the team:\n\n{F172989}\n\n - GitLab allows new issues to be created when e-mailed to a unique e-mail address containing a secret token at `incoming+{username}/{projectname}+{token}@gitlab.com`\n\n{F172990}\n\n- As you can see, this is a valid **@gitlab.com** e-mail address, so we can use the issues system to sign up for services like Slack, Facebook Workplace, ...\n\n{F172991}\n\n- These e-mail verification e-mails are e-mailed as new issue tickets to my project:\n\n{F172992}\n\n{F172993}\n\n- After clicking the verification link, all you need to do is set-up 2FA and you'll be able to access GitLab's Slack:\n\n{F172987}\n\n*I took a screenshot of some channels as a proof of concept, but did not actually enter them*\n \n \n#Suggested fix\n\nI've seen companies taking different approaches to prevent this from happening:\n\n- Only allow employees to join the Slack group by invitation, [like Facebook does](http://facebook.slack.com).\n- Enable SSO or other authentication methods, [like PayPal does](https://paypal.slack.com)\n\nThese fixes can be carried out quickly but aren't waterproof: an attacker will still be able to gain access to similar services such as Facebook workplace or Yammer if they use similar authentication methods. \n\nIn the longer run, a safer approach would be:\n\n- Requiring users to mail their issue tickets to a gitlab subdomain e-mail, such as `@reply.gitlab.com`\n\n\nPlease let me know if you have any questions,\nBest regards,\n\nInti\n",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 172987,
+      "file_name": "Screen_Shot_2017-04-03_at_00.57.58.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/172/987/ccf893c4c9ffd116234f2b4fd55d905c0e0ab6c2/Screen_Shot_2017-04-03_at_00.57.58.png?response-content-disposition=attachment%3B%20filename%3D%22Screen_Shot_2017-04-03_at_00.57.58.png%22%3B%20filename%2A%3DUTF-8%27%27Screen_Shot_2017-04-03_at_00.57.58.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYJLSRTR4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124013Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDPZnOZp4HayRf%2Fb%2FNp4CIx%2BXu3K%2BIr1GwNJh%2BVBViJwQIhALIvpZfIJ6aVb6WKJSmv8UcfyBxPXCy9gfw%2Fl3LGI6G5KroFCJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzoKP5BkSK6%2BxYvo2wqjgVHcDsx0%2Fdi%2BsgBT8tLEaEnO9nG8SvCoVbzfjnUMlw0H6fWUa4XeRz6wNmhwuh0mrTUqlhLkMjcshMyLPBUZtm33C2pSkJXuxfa1E889ExQsWsOlTtw052%2BMjlQU47TvCsnT2PbDDMw4DwxXg3D2t0qfLkCgr3H%2BLN4zUsxijsTh3TDsBRiHv%2FrW1Zv3NH9RursDbBSL%2BSZ5%2BWCgaUGw8pBKS0NCUlozK94iCIjnwtmBUTm1zwzv4W2XSVVZa18iNxAjS4jDjpRHsd0tH2AwFeWGPOGD9U1XDojTDJBFqpk3gZkmgsYEjymZKjMGKWCIUkIY63fLyMJ0%2FBqCE8caU3j1OrV%2F6NnSPpcQh8%2FtflCmNOsK9szhKfZMAwgonYn9Ijulf8xMc1sPrO8JUeozNd6c2DedXfW6ffx4agJHa6RqN%2FwGAwqecu78VIjaNT2pq%2FLqzC2YZmcAwSLVPZzoVKK5JRKp2NeF5JI8QUnikgJGa5DfhVepYVU47mjVKCRTNeqGcrf%2BR75ITBKjO%2B%2BAbFmXPAOGO4DOhdqHOVNqQAOyeFWnOCMb5SnBY%2BTtn98Avt4XS%2BSmhoFN0C6pSPT1mDBUZ%2Bl4rHlAwvkVlJRHQjL%2BrOsIT6nGlC2sTA%2FuWZTW2l5ByMkVQXYEigeHHnkogdvvzgIPsvG2fb9shFnel8SFZWVRVx2RbfKbxVFS0AkzHd5gdkDW6tseUf%2Foxy%2FdmOxL2QWW9zD1dWQIalRT66sUFkOEaCtTLNzxI0tZJeS0uKFtaLypS1EUP%2FWX2TZ%2FUzSR1Po%2B5PUgE4%2FLtd68sYrhTFP%2F6yfGeXWoij4WJDw242I1PWUK%2Ba9rZcIZELa3gkS42UOoF5xBMJBuZiySo0wzIKV0QY6sAFXp8mt7GaBXGYKzjUb7FEXlqUt4yIfYkLhjGx3g9OkUBqcl6yTcdd4U3RbSAylBmRfn985la8Zm134MSAoD1slx7PHJOtatYDS3WuaeWb%2FYNjv5GJXLWur75a8QAzaslgzTPRRAFcvYHzquGH%2BSWser9GAmU5c32ivkYvbOEbS2SL1Yl7DMpVJAj9gLg6YGidYvVoG6OgXXAcqmncYLVD2Ac2yv%2BLFdffSHOX7Pm2JmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=06fa183e8c65f9bdf849aebaea7a5d599f3ff6170581069c0969e63cf281c703",
+      "file_size": 335913,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 172989,
+      "file_name": "Screen_Shot_2017-04-03_at_01.19.47.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/172/989/41f1cde7cd9aaa3ac36183de59dd36ae62ecf850/Screen_Shot_2017-04-03_at_01.19.47.png?response-content-disposition=attachment%3B%20filename%3D%22Screen_Shot_2017-04-03_at_01.19.47.png%22%3B%20filename%2A%3DUTF-8%27%27Screen_Shot_2017-04-03_at_01.19.47.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYJLSRTR4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124013Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDPZnOZp4HayRf%2Fb%2FNp4CIx%2BXu3K%2BIr1GwNJh%2BVBViJwQIhALIvpZfIJ6aVb6WKJSmv8UcfyBxPXCy9gfw%2Fl3LGI6G5KroFCJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzoKP5BkSK6%2BxYvo2wqjgVHcDsx0%2Fdi%2BsgBT8tLEaEnO9nG8SvCoVbzfjnUMlw0H6fWUa4XeRz6wNmhwuh0mrTUqlhLkMjcshMyLPBUZtm33C2pSkJXuxfa1E889ExQsWsOlTtw052%2BMjlQU47TvCsnT2PbDDMw4DwxXg3D2t0qfLkCgr3H%2BLN4zUsxijsTh3TDsBRiHv%2FrW1Zv3NH9RursDbBSL%2BSZ5%2BWCgaUGw8pBKS0NCUlozK94iCIjnwtmBUTm1zwzv4W2XSVVZa18iNxAjS4jDjpRHsd0tH2AwFeWGPOGD9U1XDojTDJBFqpk3gZkmgsYEjymZKjMGKWCIUkIY63fLyMJ0%2FBqCE8caU3j1OrV%2F6NnSPpcQh8%2FtflCmNOsK9szhKfZMAwgonYn9Ijulf8xMc1sPrO8JUeozNd6c2DedXfW6ffx4agJHa6RqN%2FwGAwqecu78VIjaNT2pq%2FLqzC2YZmcAwSLVPZzoVKK5JRKp2NeF5JI8QUnikgJGa5DfhVepYVU47mjVKCRTNeqGcrf%2BR75ITBKjO%2B%2BAbFmXPAOGO4DOhdqHOVNqQAOyeFWnOCMb5SnBY%2BTtn98Avt4XS%2BSmhoFN0C6pSPT1mDBUZ%2Bl4rHlAwvkVlJRHQjL%2BrOsIT6nGlC2sTA%2FuWZTW2l5ByMkVQXYEigeHHnkogdvvzgIPsvG2fb9shFnel8SFZWVRVx2RbfKbxVFS0AkzHd5gdkDW6tseUf%2Foxy%2FdmOxL2QWW9zD1dWQIalRT66sUFkOEaCtTLNzxI0tZJeS0uKFtaLypS1EUP%2FWX2TZ%2FUzSR1Po%2B5PUgE4%2FLtd68sYrhTFP%2F6yfGeXWoij4WJDw242I1PWUK%2Ba9rZcIZELa3gkS42UOoF5xBMJBuZiySo0wzIKV0QY6sAFXp8mt7GaBXGYKzjUb7FEXlqUt4yIfYkLhjGx3g9OkUBqcl6yTcdd4U3RbSAylBmRfn985la8Zm134MSAoD1slx7PHJOtatYDS3WuaeWb%2FYNjv5GJXLWur75a8QAzaslgzTPRRAFcvYHzquGH%2BSWser9GAmU5c32ivkYvbOEbS2SL1Yl7DMpVJAj9gLg6YGidYvVoG6OgXXAcqmncYLVD2Ac2yv%2BLFdffSHOX7Pm2JmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e6d313c0eeb46be91b60760b08dad1581629f281c41cae3fc896f4fc66bb2390",
+      "file_size": 229106,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 172990,
+      "file_name": "Screen_Shot_2017-04-03_at_01.26.08_copy.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/172/990/65f9b46faf960c9817eb9ccf2a986ba205d17ce3/Screen_Shot_2017-04-03_at_01.26.08_copy.png?response-content-disposition=attachment%3B%20filename%3D%22Screen_Shot_2017-04-03_at_01.26.08_copy.png%22%3B%20filename%2A%3DUTF-8%27%27Screen_Shot_2017-04-03_at_01.26.08_copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYJLSRTR4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124013Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDPZnOZp4HayRf%2Fb%2FNp4CIx%2BXu3K%2BIr1GwNJh%2BVBViJwQIhALIvpZfIJ6aVb6WKJSmv8UcfyBxPXCy9gfw%2Fl3LGI6G5KroFCJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzoKP5BkSK6%2BxYvo2wqjgVHcDsx0%2Fdi%2BsgBT8tLEaEnO9nG8SvCoVbzfjnUMlw0H6fWUa4XeRz6wNmhwuh0mrTUqlhLkMjcshMyLPBUZtm33C2pSkJXuxfa1E889ExQsWsOlTtw052%2BMjlQU47TvCsnT2PbDDMw4DwxXg3D2t0qfLkCgr3H%2BLN4zUsxijsTh3TDsBRiHv%2FrW1Zv3NH9RursDbBSL%2BSZ5%2BWCgaUGw8pBKS0NCUlozK94iCIjnwtmBUTm1zwzv4W2XSVVZa18iNxAjS4jDjpRHsd0tH2AwFeWGPOGD9U1XDojTDJBFqpk3gZkmgsYEjymZKjMGKWCIUkIY63fLyMJ0%2FBqCE8caU3j1OrV%2F6NnSPpcQh8%2FtflCmNOsK9szhKfZMAwgonYn9Ijulf8xMc1sPrO8JUeozNd6c2DedXfW6ffx4agJHa6RqN%2FwGAwqecu78VIjaNT2pq%2FLqzC2YZmcAwSLVPZzoVKK5JRKp2NeF5JI8QUnikgJGa5DfhVepYVU47mjVKCRTNeqGcrf%2BR75ITBKjO%2B%2BAbFmXPAOGO4DOhdqHOVNqQAOyeFWnOCMb5SnBY%2BTtn98Avt4XS%2BSmhoFN0C6pSPT1mDBUZ%2Bl4rHlAwvkVlJRHQjL%2BrOsIT6nGlC2sTA%2FuWZTW2l5ByMkVQXYEigeHHnkogdvvzgIPsvG2fb9shFnel8SFZWVRVx2RbfKbxVFS0AkzHd5gdkDW6tseUf%2Foxy%2FdmOxL2QWW9zD1dWQIalRT66sUFkOEaCtTLNzxI0tZJeS0uKFtaLypS1EUP%2FWX2TZ%2FUzSR1Po%2B5PUgE4%2FLtd68sYrhTFP%2F6yfGeXWoij4WJDw242I1PWUK%2Ba9rZcIZELa3gkS42UOoF5xBMJBuZiySo0wzIKV0QY6sAFXp8mt7GaBXGYKzjUb7FEXlqUt4yIfYkLhjGx3g9OkUBqcl6yTcdd4U3RbSAylBmRfn985la8Zm134MSAoD1slx7PHJOtatYDS3WuaeWb%2FYNjv5GJXLWur75a8QAzaslgzTPRRAFcvYHzquGH%2BSWser9GAmU5c32ivkYvbOEbS2SL1Yl7DMpVJAj9gLg6YGidYvVoG6OgXXAcqmncYLVD2Ac2yv%2BLFdffSHOX7Pm2JmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=16ba209bfba3425bc93d0bcb7cbabfcc711905c3a55e84f8f52eae50700271a9",
+      "file_size": 127054,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 172991,
+      "file_name": "Screen_Shot_2017-04-03_at_01.51.39.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/172/991/11d4d0eedca86a62e2a4fc00be7241514c35bde8/Screen_Shot_2017-04-03_at_01.51.39.png?response-content-disposition=attachment%3B%20filename%3D%22Screen_Shot_2017-04-03_at_01.51.39.png%22%3B%20filename%2A%3DUTF-8%27%27Screen_Shot_2017-04-03_at_01.51.39.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYJLSRTR4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124013Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDPZnOZp4HayRf%2Fb%2FNp4CIx%2BXu3K%2BIr1GwNJh%2BVBViJwQIhALIvpZfIJ6aVb6WKJSmv8UcfyBxPXCy9gfw%2Fl3LGI6G5KroFCJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzoKP5BkSK6%2BxYvo2wqjgVHcDsx0%2Fdi%2BsgBT8tLEaEnO9nG8SvCoVbzfjnUMlw0H6fWUa4XeRz6wNmhwuh0mrTUqlhLkMjcshMyLPBUZtm33C2pSkJXuxfa1E889ExQsWsOlTtw052%2BMjlQU47TvCsnT2PbDDMw4DwxXg3D2t0qfLkCgr3H%2BLN4zUsxijsTh3TDsBRiHv%2FrW1Zv3NH9RursDbBSL%2BSZ5%2BWCgaUGw8pBKS0NCUlozK94iCIjnwtmBUTm1zwzv4W2XSVVZa18iNxAjS4jDjpRHsd0tH2AwFeWGPOGD9U1XDojTDJBFqpk3gZkmgsYEjymZKjMGKWCIUkIY63fLyMJ0%2FBqCE8caU3j1OrV%2F6NnSPpcQh8%2FtflCmNOsK9szhKfZMAwgonYn9Ijulf8xMc1sPrO8JUeozNd6c2DedXfW6ffx4agJHa6RqN%2FwGAwqecu78VIjaNT2pq%2FLqzC2YZmcAwSLVPZzoVKK5JRKp2NeF5JI8QUnikgJGa5DfhVepYVU47mjVKCRTNeqGcrf%2BR75ITBKjO%2B%2BAbFmXPAOGO4DOhdqHOVNqQAOyeFWnOCMb5SnBY%2BTtn98Avt4XS%2BSmhoFN0C6pSPT1mDBUZ%2Bl4rHlAwvkVlJRHQjL%2BrOsIT6nGlC2sTA%2FuWZTW2l5ByMkVQXYEigeHHnkogdvvzgIPsvG2fb9shFnel8SFZWVRVx2RbfKbxVFS0AkzHd5gdkDW6tseUf%2Foxy%2FdmOxL2QWW9zD1dWQIalRT66sUFkOEaCtTLNzxI0tZJeS0uKFtaLypS1EUP%2FWX2TZ%2FUzSR1Po%2B5PUgE4%2FLtd68sYrhTFP%2F6yfGeXWoij4WJDw242I1PWUK%2Ba9rZcIZELa3gkS42UOoF5xBMJBuZiySo0wzIKV0QY6sAFXp8mt7GaBXGYKzjUb7FEXlqUt4yIfYkLhjGx3g9OkUBqcl6yTcdd4U3RbSAylBmRfn985la8Zm134MSAoD1slx7PHJOtatYDS3WuaeWb%2FYNjv5GJXLWur75a8QAzaslgzTPRRAFcvYHzquGH%2BSWser9GAmU5c32ivkYvbOEbS2SL1Yl7DMpVJAj9gLg6YGidYvVoG6OgXXAcqmncYLVD2Ac2yv%2BLFdffSHOX7Pm2JmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=34b09f387ebc05727d8e5e11d66b9601d66d53fc63c7aadf712cab8075d172ca",
+      "file_size": 83667,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 172992,
+      "file_name": "Screen_Shot_2017-04-03_at_01.53.16.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/172/992/0f9a1ee43bf422ec3a8dddb090e5f5d91328f016/Screen_Shot_2017-04-03_at_01.53.16.png?response-content-disposition=attachment%3B%20filename%3D%22Screen_Shot_2017-04-03_at_01.53.16.png%22%3B%20filename%2A%3DUTF-8%27%27Screen_Shot_2017-04-03_at_01.53.16.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYJLSRTR4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124013Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDPZnOZp4HayRf%2Fb%2FNp4CIx%2BXu3K%2BIr1GwNJh%2BVBViJwQIhALIvpZfIJ6aVb6WKJSmv8UcfyBxPXCy9gfw%2Fl3LGI6G5KroFCJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzoKP5BkSK6%2BxYvo2wqjgVHcDsx0%2Fdi%2BsgBT8tLEaEnO9nG8SvCoVbzfjnUMlw0H6fWUa4XeRz6wNmhwuh0mrTUqlhLkMjcshMyLPBUZtm33C2pSkJXuxfa1E889ExQsWsOlTtw052%2BMjlQU47TvCsnT2PbDDMw4DwxXg3D2t0qfLkCgr3H%2BLN4zUsxijsTh3TDsBRiHv%2FrW1Zv3NH9RursDbBSL%2BSZ5%2BWCgaUGw8pBKS0NCUlozK94iCIjnwtmBUTm1zwzv4W2XSVVZa18iNxAjS4jDjpRHsd0tH2AwFeWGPOGD9U1XDojTDJBFqpk3gZkmgsYEjymZKjMGKWCIUkIY63fLyMJ0%2FBqCE8caU3j1OrV%2F6NnSPpcQh8%2FtflCmNOsK9szhKfZMAwgonYn9Ijulf8xMc1sPrO8JUeozNd6c2DedXfW6ffx4agJHa6RqN%2FwGAwqecu78VIjaNT2pq%2FLqzC2YZmcAwSLVPZzoVKK5JRKp2NeF5JI8QUnikgJGa5DfhVepYVU47mjVKCRTNeqGcrf%2BR75ITBKjO%2B%2BAbFmXPAOGO4DOhdqHOVNqQAOyeFWnOCMb5SnBY%2BTtn98Avt4XS%2BSmhoFN0C6pSPT1mDBUZ%2Bl4rHlAwvkVlJRHQjL%2BrOsIT6nGlC2sTA%2FuWZTW2l5ByMkVQXYEigeHHnkogdvvzgIPsvG2fb9shFnel8SFZWVRVx2RbfKbxVFS0AkzHd5gdkDW6tseUf%2Foxy%2FdmOxL2QWW9zD1dWQIalRT66sUFkOEaCtTLNzxI0tZJeS0uKFtaLypS1EUP%2FWX2TZ%2FUzSR1Po%2B5PUgE4%2FLtd68sYrhTFP%2F6yfGeXWoij4WJDw242I1PWUK%2Ba9rZcIZELa3gkS42UOoF5xBMJBuZiySo0wzIKV0QY6sAFXp8mt7GaBXGYKzjUb7FEXlqUt4yIfYkLhjGx3g9OkUBqcl6yTcdd4U3RbSAylBmRfn985la8Zm134MSAoD1slx7PHJOtatYDS3WuaeWb%2FYNjv5GJXLWur75a8QAzaslgzTPRRAFcvYHzquGH%2BSWser9GAmU5c32ivkYvbOEbS2SL1Yl7DMpVJAj9gLg6YGidYvVoG6OgXXAcqmncYLVD2Ac2yv%2BLFdffSHOX7Pm2JmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e57648c811f0ff5b5335f0d4a68d88247bcde11fd624404673ef0dfaa3adba34",
+      "file_size": 304526,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 172993,
+      "file_name": "Screen_Shot_2017-04-03_at_01.54.10_copy.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/172/993/2d7393674be51be3c957a66bb451bc7e791fc162/Screen_Shot_2017-04-03_at_01.54.10_copy.png?response-content-disposition=attachment%3B%20filename%3D%22Screen_Shot_2017-04-03_at_01.54.10_copy.png%22%3B%20filename%2A%3DUTF-8%27%27Screen_Shot_2017-04-03_at_01.54.10_copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYJLSRTR4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124013Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDPZnOZp4HayRf%2Fb%2FNp4CIx%2BXu3K%2BIr1GwNJh%2BVBViJwQIhALIvpZfIJ6aVb6WKJSmv8UcfyBxPXCy9gfw%2Fl3LGI6G5KroFCJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzoKP5BkSK6%2BxYvo2wqjgVHcDsx0%2Fdi%2BsgBT8tLEaEnO9nG8SvCoVbzfjnUMlw0H6fWUa4XeRz6wNmhwuh0mrTUqlhLkMjcshMyLPBUZtm33C2pSkJXuxfa1E889ExQsWsOlTtw052%2BMjlQU47TvCsnT2PbDDMw4DwxXg3D2t0qfLkCgr3H%2BLN4zUsxijsTh3TDsBRiHv%2FrW1Zv3NH9RursDbBSL%2BSZ5%2BWCgaUGw8pBKS0NCUlozK94iCIjnwtmBUTm1zwzv4W2XSVVZa18iNxAjS4jDjpRHsd0tH2AwFeWGPOGD9U1XDojTDJBFqpk3gZkmgsYEjymZKjMGKWCIUkIY63fLyMJ0%2FBqCE8caU3j1OrV%2F6NnSPpcQh8%2FtflCmNOsK9szhKfZMAwgonYn9Ijulf8xMc1sPrO8JUeozNd6c2DedXfW6ffx4agJHa6RqN%2FwGAwqecu78VIjaNT2pq%2FLqzC2YZmcAwSLVPZzoVKK5JRKp2NeF5JI8QUnikgJGa5DfhVepYVU47mjVKCRTNeqGcrf%2BR75ITBKjO%2B%2BAbFmXPAOGO4DOhdqHOVNqQAOyeFWnOCMb5SnBY%2BTtn98Avt4XS%2BSmhoFN0C6pSPT1mDBUZ%2Bl4rHlAwvkVlJRHQjL%2BrOsIT6nGlC2sTA%2FuWZTW2l5ByMkVQXYEigeHHnkogdvvzgIPsvG2fb9shFnel8SFZWVRVx2RbfKbxVFS0AkzHd5gdkDW6tseUf%2Foxy%2FdmOxL2QWW9zD1dWQIalRT66sUFkOEaCtTLNzxI0tZJeS0uKFtaLypS1EUP%2FWX2TZ%2FUzSR1Po%2B5PUgE4%2FLtd68sYrhTFP%2F6yfGeXWoij4WJDw242I1PWUK%2Ba9rZcIZELa3gkS42UOoF5xBMJBuZiySo0wzIKV0QY6sAFXp8mt7GaBXGYKzjUb7FEXlqUt4yIfYkLhjGx3g9OkUBqcl6yTcdd4U3RbSAylBmRfn985la8Zm134MSAoD1slx7PHJOtatYDS3WuaeWb%2FYNjv5GJXLWur75a8QAzaslgzTPRRAFcvYHzquGH%2BSWser9GAmU5c32ivkYvbOEbS2SL1Yl7DMpVJAj9gLg6YGidYvVoG6OgXXAcqmncYLVD2Ac2yv%2BLFdffSHOX7Pm2JmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a483360287d4eda2d395154dfaf149a9fec2275c8756668e53b2ed13f32409e7",
+      "file_size": 186672,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2017-10-17T22:13:47.301Z",
+  "allow_singular_disclosure_after": -272557585.7669457,
+  "singular_disclosure_allowed": true,
+  "vote_count": 54,
+  "voters": [
+    "lboy",
+    "flamezzz",
+    "bogdantc",
+    "aroly",
+    "michiel",
+    "dawgyg",
+    "bl4de",
+    "spam404",
+    "sudi",
+    "vijay_kumar",
+    "and 44 more..."
+  ],
+  "severity": {
+    "rating": "critical",
+    "score": 9.3,
+    "author_type": "User",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "none",
+      "user_interaction": "none",
+      "scope": "changed",
+      "confidentiality": "high",
+      "integrity": "none",
+      "availability": "low"
+    }
+  },
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "id": 5372,
+      "category": "researcher",
+      "content": "SEE BLOGPOST: \"How I hacked hundreds of companies through their helpdesk\" https://medium.com/@intideceukelaire/how-i-hacked-hundreds-of-companies-through-their-helpdesk-b7680ddc2d4c",
+      "updated_at": "2017-09-21T05:58:57.929Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 2322,
+        "username": "intidc",
+        "name": "Inti De Ceukelaire",
+        "bio": "@securinti",
+        "cleared": false,
+        "verified": false,
+        "website": "http://twitter.com/securinti",
+        "location": "Oilsjt, Belgium",
+        "created_at": "2014-01-19T21:00:55.430Z",
+        "url": "https://hackerone.com/intidc",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/000/002/322/cb30ac31b7653e73d6dd5a0f0e2cfeed113d2feb_original.jpg/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/000/002/322/cb30ac31b7653e73d6dd5a0f0e2cfeed113d2feb_original.jpg/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/000/002/322/cb30ac31b7653e73d6dd5a0f0e2cfeed113d2feb_original.jpg/4ac84fbe897190579a137d0cf55152b233cdd4f9984435bd80ef67e5e51a0586"
+        }
+      }
+    }
+  ]
+}

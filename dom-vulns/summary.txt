@@ -1,0 +1,215 @@
+Category: dom-vulns
+Reports: 53
+
+[Medium] DOM XSS on www.omnipod.com/freedom/birthdate-confirmation and www.omnipod.com/pif/thanks-freedom
+  URL: https://hackerone.com/reports/1073725 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: insulet_corporation | Reporter: mechatech84
+
+[Critical] XSS on using the legacy "Graphie To Png" API
+  URL: https://hackerone.com/reports/2846011 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: khanacademy | Reporter: sikn
+
+[High] DOM Based Reflected Cross Site Scripting
+  URL: https://hackerone.com/reports/2321874 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: mtn_group | Reporter: nhx1
+
+[High] DOM XSS in tiktok.com/login via the redirect_url parameter
+  URL: https://hackerone.com/reports/2583874 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: tiktok | Reporter: sh1yo
+
+[Medium] XSS in Aspera documentation website
+  URL: https://hackerone.com/reports/2308491 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: ibm | Reporter: aviv_keller
+
+[High] DOM XSS on multiple Automattic domains through postMessages
+  URL: https://hackerone.com/reports/2371019 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: automattic | Reporter: renniepak
+
+[Medium] Self XSS when pasting HTML into Text app with Ctrl+Shift+V
+  URL: https://hackerone.com/reports/2211561 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: nextcloud | Reporter: max_nextcloud
+
+[Medium] [CVE-2023-23913] DOM Based Cross-site Scripting in rails-ujs for contenteditable HTML Elements
+  URL: https://hackerone.com/reports/2125679 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: ibb | Reporter: ryotak
+
+[Medium] wp-embed XSS on Safari
+  URL: https://hackerone.com/reports/1238528 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: wordpress | Reporter: zoczus
+
+[Medium] DOM-XSS
+  URL: https://hackerone.com/reports/1982099 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: deptofdefense | Reporter: medokll0011
+
+[Medium] DOM XSS at `https://adobedocs.github.io/indesign-api-docs/?configUrl={site}` due to outdated Swagger UI
+  URL: https://hackerone.com/reports/1736327 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: adobe | Reporter: dreamer_eh
+
+[Medium] HTML INJECTION on https://adobedocs.github.io/JourneyAPI/ due to outdated SWAGGER UI
+  URL: https://hackerone.com/reports/1744212 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: adobe | Reporter: dreamer_eh
+
+[Medium] DOM XSS on ads.tiktok.com
+  URL: https://hackerone.com/reports/1549451 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: tiktok | Reporter: 0x7
+
+[Medium] DOM XSS through ads
+  URL: https://hackerone.com/reports/889041 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: urbandictionary | Reporter: bemodtwz
+
+[High] Stored XSS in Mermaid when viewing Markdown files
+  URL: https://hackerone.com/reports/1212822 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: gitlab | Reporter: saleemrashid
+
+[Low] DOM XSS в learning.ozon.ru
+  URL: https://hackerone.com/reports/1167230 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: ozon | Reporter: mrdruid
+
+[High] Stored XSS in any message (leads to priv esc for all users and file leak + rce via electron app)
+  URL: https://hackerone.com/reports/1014459 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: rocket_chat | Reporter: psych0tr1a
+
+[Medium] Reflected XSS  on Lark Suite
+  URL: https://hackerone.com/reports/700726 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: lark_technologies | Reporter: jin0ne
+
+[Medium] Session Hijack via Self-XSS
+  URL: https://hackerone.com/reports/962902 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: rocket_chat | Reporter: jcardona
+
+[Medium] XSS в названии звонка
+  URL: https://hackerone.com/reports/1056953 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: vkcom | Reporter: manaenckov
+
+[Medium] [m.vk.com] XSS на страницах /artist/ 
+  URL: https://hackerone.com/reports/874198 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: vkcom | Reporter: s_p_q_r
+
+[Low] XSS in vk.link
+  URL: https://hackerone.com/reports/1025125 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: vkcom | Reporter: b052e5f5f59c6ce2fb90f1f9ecb74
+
+[Low] self-xss with ClickJacking can leads to account takeover in Firefox
+  URL: https://hackerone.com/reports/892289 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: imgur | Reporter: keer0k
+
+[High] Possible DOM XSS on app.hey.com
+  URL: https://hackerone.com/reports/1010132 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: basecamp | Reporter: enigmaticjohn
+
+[High] Cross-site Scripting (XSS) - DOM - iqcard.informatica.com
+  URL: https://hackerone.com/reports/1004833 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: informatica | Reporter: rodtvs
+
+[Medium] DOM Based XSS at docs.8x8.com
+  URL: https://hackerone.com/reports/895917 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: 8x8-bounty | Reporter: wh0ru
+
+[Medium] DOM XSS on duckduckgo.com search
+  URL: https://hackerone.com/reports/921635 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: duckduckgo | Reporter: sijisu
+
+[Medium] DOM-Based XSS in tumblr.com
+  URL: https://hackerone.com/reports/882546 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: automattic | Reporter: keer0k
+
+[Low] CVE-2019-19935 - DOM based XSS in the froala editor
+  URL: https://hackerone.com/reports/938683 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: lemlist | Reporter: chackal
+
+[Medium] Dom based xss on /reddeadredemption2/br/videos
+  URL: https://hackerone.com/reports/488108 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: rockstargames | Reporter: netfuzzer
+
+[Medium] Dom based xss on https://www.rockstargames.com/ via `returnUrl` parameter
+  URL: https://hackerone.com/reports/505157 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: rockstargames | Reporter: netfuzzer
+
+[High] DOM BASED XSS ON https://www.rockstargames.com/GTAOnline/features 
+  URL: https://hackerone.com/reports/479612 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: rockstargames | Reporter: netfuzzer
+
+[High] DOM Based xss on https://www.rockstargames.com/ ( 1 )
+  URL: https://hackerone.com/reports/475442 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: rockstargames | Reporter: netfuzzer
+
+[High] Warehouse dom based xss may lead to Social Club Account Taker Over.
+  URL: https://hackerone.com/reports/663312 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: rockstargames | Reporter: netfuzzer
+
+[High] DOM-based XSS on mobile.line.me
+  URL: https://hackerone.com/reports/736272 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: line | Reporter: zophi
+
+[Medium] DOM XSS on app.starbucks.com via ReturnUrl
+  URL: https://hackerone.com/reports/526265 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: starbucks | Reporter: gamer7112
+
+[Medium] [reveal.js] XSS by calling arbitrary method via postMessage
+  URL: https://hackerone.com/reports/691977 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: nodejs-ecosystem | Reporter: s_p_q_r
+
+[Medium] H1514 DOM XSS on checkout.shopify.com via postMessage handler on /:id/sandbox/google_maps
+  URL: https://hackerone.com/reports/423218 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: shopify | Reporter: bored-engineer
+
+[Low] DOM XSS via Shopify.API.remoteRedirect
+  URL: https://hackerone.com/reports/576532 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: shopify | Reporter: yxw21
+
+[High] H1514 DOMXSS on Embedded SDK via Shopify.API.setWindowLocation abusing cookie Stuffing
+  URL: https://hackerone.com/reports/422043 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: shopify | Reporter: filedescriptor
+
+[Low] DOM Based XSS in www.hackerone.com via PostMessage
+  URL: https://hackerone.com/reports/398054 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: security | Reporter: adac95
+
+[Low] Cross-site Scripting (XSS) on HackerOne careers page
+  URL: https://hackerone.com/reports/474656 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: security | Reporter: nguyenlv7
+
+[Low] Self DOM-Based XSS in www.hackerone.com
+  URL: https://hackerone.com/reports/406587 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: security | Reporter: adac95
+
+[High] DOM XSS on 50x.html page on proxy.duckduckgo.com
+  URL: https://hackerone.com/reports/426275 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: duckduckgo | Reporter: smither
+
+[Medium] Admin bar: Incomplete message origin validation results in XSS
+  URL: https://hackerone.com/reports/387544 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: shopify | Reporter: palant
+
+[Medium] Xss was found by exploiting the URL markdown on http://store.steampowered.com
+  URL: https://hackerone.com/reports/313250 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: valve | Reporter: kenziy
+
+[?] XSS в колбек апи в сообществах 
+  URL: https://hackerone.com/reports/261966 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: vkcom | Reporter: pisarenko
+
+[High] XSS в названии сервера
+  URL: https://hackerone.com/reports/262010 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: vkcom | Reporter: pisarenko
+
+[High] XSS в комментариях от имени сообщества 
+  URL: https://hackerone.com/reports/264445 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: vkcom | Reporter: flyink
+
+[Medium] dom based xss in http://www.rockstargames.com/GTAOnline/ (Fix bypass)
+  URL: https://hackerone.com/reports/261571 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: rockstargames | Reporter: netfuzzer
+
+[Medium] xss found in zomato
+  URL: https://hackerone.com/reports/240989 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: eternal | Reporter: rasi-ras
+
+[?] XSS on any Shopify shop via abuse of the HTML5 structured clone algorithm in postMessage listener on "/:id/digital_wallets/dialog"
+  URL: https://hackerone.com/reports/231053 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: shopify | Reporter: bored-engineer
+
+[Medium] Unfiltered `class` attribute in markdown code
+  URL: https://hackerone.com/reports/216453 | CWE: Cross-site Scripting (XSS) - DOM
+  Program: gitlab | Reporter: chalker
+

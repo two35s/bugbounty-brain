@@ -1,0 +1,221 @@
+{
+  "id": 762271,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC83NjIyNzE=",
+  "url": "https://hackerone.com/reports/762271",
+  "title": "Guest users can change the confidentiality attribute on those issues that have been assigned to them",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2019-12-20T11:29:58.372Z",
+  "submitted_at": "2019-12-20T11:29:58.372Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "0xwintermute",
+    "url": "/0xwintermute",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/aT73s19aFe8KiEZYzRgmND7z/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 264,
+    "url": "https://hackerone.com/gitlab",
+    "handle": "gitlab",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "GitLab",
+      "twitter_handle": "gitlab",
+      "website": "https://about.gitlab.com",
+      "about": "A single application for the entire software development lifecycle."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2020-11-09T09:44:50.775Z",
+  "bug_reporter_agreed_on_going_public_at": "2020-11-09T09:44:50.680Z",
+  "team_member_agreed_on_going_public_at": "2020-11-02T15:29:17.290Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "### Summary\n\nA user with no association to a project nor group can use a mutation GraphQL query to change the confidentiality on those issues where they have been previously assigned. This functionality is restricted to those users which have been granted access to a project and hold at least the `Reporter` role, or those users that have created the issue.\n\n\n\n### Steps to reproduce\n\nA user creates an issue on a program and assigns by mistake the issue to our attacker account. The attacker will receive a notification, as he has been assigned to a new issue on a particular program.\n\nThe attacker could then craft a GraphQL mutation on the `issueSetConfidential` object and change the `confidentiality` attribute from `false` to `true`. This will have an immediate effect on the issue, hiding it from the rest of users holding the `Guest` role.\n\n### Impact\n\nAs detailed above, an attacker with no role or permissions on a group that has created a project could hide issues from other users.\n\n\n\nI'm completely aware of the likelihood of this scenario from happening, however I've not been able to exercise this functionality from the web interface nor the API. Hence why I believe this behavior is not intended and should not happen. Specially if the user performing this attack does not belong to the group that has created the project.\n\n\n\n### Example\n\nFor this scenario lets gonna use two different accounts:\n\n* `victim@gitlab.com`\n* `attacker@gitlab.com`\n\nAs `victim@gitlab.com` lets create a new issue on a public project where we participate:\n\n{F664563}\n\nAs the `attacker@gitlab.com`, if we attempt to access the issue, we will be presented with only the ability to write new comments:\n\n{F664561}\n\nIf attacker attempts to perform the mutation GraphQL query mentioned above, the following response will be returned:\n\n**GraphQL Query**\n\n```\nmutation {\n  issueSetConfidential(input:{projectPath:\"groupID/projectID\", iid:\"5\", confidential:true}){\n    errors\n  }\n}\n```\n\n\n\n**GraphQL Response**\n\n```\n{\n  \"data\": {\n    \"issueSetConfidential\": null\n  },\n  \"errors\": [\n    {\n      \"message\": \"The resource that you are attempting to access does not exist or you don't have permission to perform this action\",\n      \"locations\": [\n        {\n          \"line\": 2,\n          \"column\": 3\n        }\n      ],\n      \"path\": [\n        \"issueSetConfidential\"\n      ]\n    }\n  ]\n}\n```\n\n\n\nWe will get back later to this, for now lets focus again on our `victim@gitlab.com`. As we have decided to assign the recently created issue to a new user, which in this case will be our `attacker@gitlab.com` (Either by mistake or on purpose):\n\n*Note* : In this case I'm going to use the quick action `/assign @username` as I cannot assign external users that do not belong to a project using the web interface (I'm not sure if this is kind of expected, but thought would be worth to be brought to your attention)\n\n\n\n{F664559}\n\n\n\nRight after doing this, the `attacker@gitlab.com` will receive a new notification on the UI, as shown below:\n\n{F664560}\n\nAfter visiting the new issue as the `attacker@gitlab.com` we can observe two things:\n\n* There is no user assigned to the issue\n* There is no option to change the `confidentiality` attribute through the web interface.\n\n{F664561}\n\nHowever, if we repeat the same GraphQL mutation query mentioned above, we will receive a different response this time:\n\n\n**GraphQL Request**\n\n```\nmutation {\n  issueSetConfidential(input:{projectPath:\"groupID/projectID\", iid:\"5\", confidential:true}){\n    errors\n  }\n}\n```\n\n**GraphQL Response**\n\n```\n{\n  \"data\": {\n    \"issueSetConfidential\": {\n      \"errors\": []\n    }\n  }\n}\n```\n\nIf we check the issue activity, we will observe the following message:\n\n{F664562}\n\nOur `attacker@gitlab.com` has been able to successfully change the `confidential` attribute for a finding, when this functionality was not being offered in first place through the web interface.\n\nAdditionally, if we open a new anonymous session and navigate to the issues page for this project, we will see that the issue is \"gone\".\n\n{F664558}\n\n\n### What's the current bug behaviour?\n\nChanging `confidentiality` attributes on findings through a mutation GraphQL query should not be possible if such functionality is not offered neither through the web interface, nor the GitLab API.\n\nThis may allow an attacker without any special role nor privileges to arbitrarily change the confidentiality of those issues for which he/she has been assigned to. Revoking visibiility to uses with `Guest` or no role at all.\n\n\n\n### What's the expected correct behaviour?\n\nI would expect this action to not be possible from being executed as such functionality/behaviour is not present within the GitLab web interface nor GitLab API.\n\nAs a user with no privileges nor member of a group where the affected project belongs to, I would expect two things:\n\n- Not being able to get any issues assigned as I'm not involve nor belongs to the project's group.\n- Not being able to arbitrarily set the confidentiality attribute of an issue for which I've been assigned to, specially if I don't have enough permissions for such action.\n\n## Impact\n\nPlease see the description provided above",
+  "bounty_amount": "100.0",
+  "formatted_bounty": "$100",
+  "weakness": {
+    "id": 26,
+    "name": "Improper Access Control - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 664558,
+      "file_name": "Issue_-_Anonymous_Window.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/aVFgAay1Y7UL6YgxB74kLmLL?response-content-disposition=attachment%3B%20filename%3D%22Issue_-_Anonymous_Window.png%22%3B%20filename%2A%3DUTF-8%27%27Issue_-_Anonymous_Window.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125119Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=f0e24d0a836059baf12f62a6fe721b0ee282b9bb7b12066877db8293d7178b73",
+      "file_size": 129898,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 664559,
+      "file_name": "Issue_-_Attacker_Assigned.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/qqaZkTXdaCyW6Ag5QRAaniBr?response-content-disposition=attachment%3B%20filename%3D%22Issue_-_Attacker_Assigned.png%22%3B%20filename%2A%3DUTF-8%27%27Issue_-_Attacker_Assigned.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125119Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=06ded50db1e350dd262bdc126a7fac4eb20fe1f68b7900df5e6d782530ec2cbe",
+      "file_size": 279298,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 664560,
+      "file_name": "Issue_-_Attacker_Notification.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/oLejUPuNbzkTV4tjJkMSvuT3?response-content-disposition=attachment%3B%20filename%3D%22Issue_-_Attacker_Notification.png%22%3B%20filename%2A%3DUTF-8%27%27Issue_-_Attacker_Notification.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125119Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1a37137efbee0d425600c58f3a484e2c35e8a44b76a7da9c984df61c32b24176",
+      "file_size": 147260,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 664561,
+      "file_name": "Issue_-_Attacker_perspective.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/NUxtNckRs2KtksFbG91wuPMb?response-content-disposition=attachment%3B%20filename%3D%22Issue_-_Attacker_perspective.png%22%3B%20filename%2A%3DUTF-8%27%27Issue_-_Attacker_perspective.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125119Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3f3ca12b6b3c8fb2c4c58bac2dc4a88cf27359b2681b34000717dd591cbfb238",
+      "file_size": 217319,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 664562,
+      "file_name": "Issue_-_Changed_by_attacker.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/GLUpG5ZzFDvvVdVuoAsEZp8p?response-content-disposition=attachment%3B%20filename%3D%22Issue_-_Changed_by_attacker.png%22%3B%20filename%2A%3DUTF-8%27%27Issue_-_Changed_by_attacker.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125119Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0fc487e8b86eadf7b25c2b27a1c85ab0f7e9d70eb952991c189168ed04dfd80c",
+      "file_size": 226511,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 664563,
+      "file_name": "Issue_-_Created.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/AVDqN1JdFYAhGksdsB8DMxac?response-content-disposition=attachment%3B%20filename%3D%22Issue_-_Created.png%22%3B%20filename%2A%3DUTF-8%27%27Issue_-_Created.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ66YK7MQF%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125119Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGU0Po0j9nBAWntByGsaV8qM8igbDGbNYD8ZIfeb7Wz%2BAiEAss8HDoUlCU88bLENgFWu1O0p4EvnBk8D%2B2uzXPm8zisquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDBECEVCovOA0enRD0yqPBaP62FaOb2gKQsaJJlekDVGub0laMm0HMyox%2BeqyMZ4RPB4EiC0qbSz0Gmq7OcZ8x6k7A6wTuJqHsyh6KxjletuAE9zUNV%2FVQtisbv18hvmpp6igB0W3gNR4n3qhfyGxo6kaPRYP8tpPGIfG79DcOXiN8zHA%2FyFFJhJmEvABSjj%2BnsZGjhPjligT%2Fadv85uWAv8M1E%2BYWu9bmn2IMUceWYM1NRUULKmwBv9gX0espR24gX5nL3mWSaDQQVOExtdXa3L3gT5hT%2BiLlQEWHY%2FFW4OGsjGxGIF5OkWZzbUSsNcbb%2FQkGk%2F4hDqN8LAwtWdHqX0jAmk4PWvuzQXGqPwuAy8Yt6N5tcPbM3yRb64DZGVs5bh%2ByWP%2BgkZSmKkH7ALOAMCRcoLyaqHU7gYYnHS1SyUKjznmN5mdqNi4ZMl%2B%2BH8ESRepvhoJxYp6KL%2B91VtwCBchXEMMlmnexajTNNlTIKAAVuEOyZdq1RHr%2Fps6CuMEKvyMjHXQvMt0ikfWC4YoNLJyHUPxQIqStAQE8iOI0lGaoDN4JaW0LQEfThLWXiju9gMpfFNNFg7L08hrW4sRjWfCYhmDdWrqEn8ErvY7N6ame2CdHVr83lcg92ZCd20z1pRJBW2QNfQeH85iY%2BYSYbVuKgIGIcUH0mYnZwv%2B1%2FYOUbFtOBR7kA3uCxfMvEUy21WdApcY1kGgU2kmVNlUtIiMUHuV45m%2BoPJs4xdoujT0jc1qTwEodRjTUdMr9UWFM924olmIL8gu970AZfjJEADzD8cIZecM973zmJxY3%2BwIOZgFAt%2BEOz%2FoawNrF7c78v%2FIQU6PhDsG150%2F%2Bi3XilQv2usOwrsPfhuu4NOOeQXnBavV36IxMQX%2BQc1chKEw%2BLaV0QY6sQFdJV0HudWAxd75kTjrq6Q4GYR5G%2BQ9zAjw2BYH31a4aMzuouwxOsbVRVOkF1JvTM9scwSZF2UqZEu5O2kkKBBrIrYlDloH6dKNpH9vLCQK2WMYe%2Fz1fOlXcdatnsZjJ2b0e4ibNAXllHuIN099Xekyrn4OFgGmZ8g77%2BWnsr5mqyDcPEKcTmzyLtYRD0BD7v7GZOwmd5fWqfXiA4En0vQrB3DDevsnzLDzQJjfNHObQr4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7d91a7f4bca7d22a350bfc795c06867a9a9bcf20cb9912cf9caf60414819d99d",
+      "file_size": 269005,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 13,
+  "voters": [
+    "rjenningsuk",
+    "0xwintermute",
+    "poneglyph",
+    "ali",
+    "sakshamguruji",
+    "mr-inspector",
+    "jbono",
+    "samclarke",
+    "destinedtohack",
+    "bl4ckmamba",
+    "and 3 more..."
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 18138,
+    "asset_type": "URL",
+    "asset_identifier": "gitlab.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

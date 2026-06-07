@@ -1,0 +1,19 @@
+Category: websocket
+Reports: 4
+
+[Low] CVE-2025-10148: predictable WebSocket mask
+  URL: https://hackerone.com/reports/3330839 | CWE: Reusing a Nonce, Key Pair in Encryption
+  Program: curl | Reporter: cruocco
+
+[Low] CVE-2025-5399: WebSocket endless loop
+  URL: https://hackerone.com/reports/3168039 | CWE: Loop with Unreachable Exit Condition ('Infinite Loop')
+  Program: curl | Reporter: z2_
+
+[High] `socket` command allows sending data over WebSockets to arbitrary origins from Grammarly Extension
+  URL: https://hackerone.com/reports/395729 | CWE: Unknown
+  Program: superhuman | Reporter: metnew
+
+[?] mod_lua: Crash in websockets PING handling
+  URL: https://hackerone.com/reports/103991 | CWE: Unknown
+  Program: ibb | Reporter: guido
+

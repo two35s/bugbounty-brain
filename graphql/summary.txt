@@ -1,0 +1,15 @@
+Category: graphql
+Reports: 3
+
+[Medium] Circular based introspetion Query leading to single request denial of service and cost consumption and query cost on api.sorare.com/graphql
+  URL: https://hackerone.com/reports/2048725 | CWE: Unknown
+  Program: sorare | Reporter: thebeast99
+
+[Low] Changes to data in a CVE request after draft via GraphQL query
+  URL: https://hackerone.com/reports/813300 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: security | Reporter: haxta4ok00
+
+[Low] Team object in GraphQL disclosed of private programs via the industry
+  URL: https://hackerone.com/reports/707406 | CWE: Unknown
+  Program: security | Reporter: haxta4ok00
+

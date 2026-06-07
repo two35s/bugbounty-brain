@@ -1,0 +1,152 @@
+{
+  "id": 122050,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMjIwNTA=",
+  "url": "https://hackerone.com/reports/122050",
+  "title": "Mapbox API Access Token with No Scope Can Read Styles",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2016-03-10T14:09:16.649Z",
+  "submitted_at": "2016-03-10T14:09:16.649Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "bugs3ra",
+    "url": "/bugs3ra",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 1366,
+    "url": "https://hackerone.com/mapbox",
+    "handle": "mapbox",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/001/366/d4dfa3c8752e3849cdfb22fea49c17bd37f03850_original.jpg/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/001/366/d4dfa3c8752e3849cdfb22fea49c17bd37f03850_original.jpg/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Mapbox",
+      "twitter_handle": "mapbox",
+      "website": "https://www.mapbox.com/security",
+      "about": "Mapbox is an open source mapping platform, providing building blocks for developers to integrate location into any mobile or online application."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2016-05-31T22:03:00.657Z",
+  "bug_reporter_agreed_on_going_public_at": "2016-05-04T04:40:48.490Z",
+  "team_member_agreed_on_going_public_at": "2016-05-31T22:03:00.482Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "HI \nI created one api token with 0 scope.\nThen I sent the following request to server\n\nGET /styles/v1/katilthe?access_token=pk.eyJ1Ijoia2F0aWx0aGUiLCJhIjoiY2lsbWJwcWpjNjhmNnZubWNhYXdwZm5obyJ9.2cPnaIiXcFnDRFMfrD1TRw HTTP/1.1\nHost: api.mapbox.com\nUser-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\nAccept-Language: en-US,en;q=0.5\nAccept-Encoding: gzip, deflate, br\nReferer: https://www.mapbox.com/studio/styles/fonts/\nOrigin: https://www.mapbox.com\nConnection: keep-alive\n\nI Got 200 OK in response and my styles.\n\n[{\"version\":8,\"name\":\"test\\\"><svg/onload=alert(2)>-copy-copy\",\"center\":[-78.90145050000001,33.70101199999998],\"zoom\":12,\"bearing\":0,\"pitch\":0,\"created\":\"2016-03-10T13:45:51.193Z\",\"id\":\"cilmbusls00cvc6m23qpi69gg\",\"modified\":\"2016-03-10T13:45:51.193Z\",\"owner\":\"katilthe\"},{\"version\":8,\"name\":\"test\\\"><svg/onload=alert(2)>-copy\",\"center\":[0,-1.1368683772161603e-13],\"zoom\":0.3106126682923422,\"bearing\":0,\"pitch\":0,\"created\":\"2016-03-10T13:43:58.005Z\",\"id\":\"cilmbsd9s00cfc7mcl1m7nnrz\",\"modified\":\"2016-03-10T13:43:58.005Z\",\"owner\":\"katilthe\"}]\n\n\n\n",
+  "bounty_amount": "200.0",
+  "formatted_bounty": "$200",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 77764,
+      "file_name": "api.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/077/764/ecd712865ee61e5182afe754d7a620f7b5a0ea1c/api.JPG?response-content-disposition=attachment%3B%20filename%3D%22api.JPG%22%3B%20filename%2A%3DUTF-8%27%27api.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124228Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=dc92c2fc10a6634cffb769830eaddd0986cbb6118175d993c4887ccbd1295163",
+      "file_size": 17027,
+      "type": "image/jpeg",
+      "moderated": null
+    },
+    {
+      "id": 77765,
+      "file_name": "req_response.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/077/765/4595139a161916f40f28c8352fcc0f628fb06fcc/req_response.JPG?response-content-disposition=attachment%3B%20filename%3D%22req_response.JPG%22%3B%20filename%2A%3DUTF-8%27%27req_response.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQTQ2NTHLV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124228Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIDgwOn0p4ESetb8t%2FI7h702GUTyRli9v8KU0iIIlHMn7AiEAkJLcN4phy%2BsE19QvRLMZFg8SBqIRMySEWza%2FVwymJHQqugUIm%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOyqQlHHQEDFJTJRtCqOBVQ%2F2fYZ2mpnjwky3OmPakUGMMjyeagSQI7OreqGIBwDApO%2FRlv%2FaDLR7RKu3IYjKuab61F%2FG4yt4HQA9wRcVdRaeZz5Ael8bf4bNsQqDJIa%2BzMOUGzHwhWFomEfmefpkp6F6ntfgNkoMmm0u3dOLyoJRmJKjcWPw7%2BZecnO8Y0dTAY8YQNAXzxl%2F9Y0d9CLp%2FswdyMgH7ypqFlUUd%2FKeyRSa%2F57lJ7SqfRZm28IkWrT8y01BtKQdeH0bx4yv4ZRmoiIaNz7BZDl4Mwx6vW9UROt7YvntzaF%2F9MEww%2FLFVp%2Bk7OlpfYAObGNnLSoztCVdYBaD4YsXvzJHKGMYzskejcW7zngZWGbXLHUeqlDvFB0D4dtiY6LuO38jtSwZdBIZtAoydOloJHkhEHkJwK7anNAdJyUCF7UwM%2BWIhiu7fCtdqd%2FYxjczH5qmycpHWMne0Jf9ze5uxPo5okJEZtP3%2BzLn7CosSSsorcOFlfUCZM2XnPc7wSfN7GVYG9LP2Qy9h2kddhfboctOIDASqX3cht%2FwhOPc7lW9Zrkrd0ECFO%2Bo6tf3ZmgKE3kLKfKMCmxn9zypJUUnx3BQy48bZSYMsQKM%2Bg2xbXXwKcbLYigEnb4sVVher1HI8i56QR7lbsSf9nVNY3xY%2BlcddJeDlTM4hAQsoTxNO%2B5Iudeqy3zYJAPilktHQpqMzXC98PlDVHpm0DcGbcexsEoqEUV7tNZTVQvW4JOq6TCRHda8dP3F6S4EIXENnlO9Wh4xGZYgOF9YaBL6KbH42gxkQs9RzBeGjOVSOFkj%2FyfF%2FpqFPl0Mx2TmWM67eFNN7LKDfUYES7N%2FewDy%2BMokzHFnMDfNeL2RY7eQ%2B01MJihnTpu6SpV7zD3%2B5TRBjqxAXoaErrwZs%2B9rnVSVMCag2eN82AyrIqcFqObN%2FhWoo5gyvTG%2F42FhtBtlahtun0wHItictExHzn5KOtq1fww9IKOzWBdpfCroAwpaaMv7xmPe4SHvcM0LWvwRQvnvJJuyRwZ6lt0W8k%2BDkgWwwNNFUj%2FnTpEfSgvWAntqY5ggtH6V9tMpGgctV3N1kPPz3tyGC64CbSydJAiysZ6ehvmI78hwxYhFXSU5GiMsk9m7twaSg%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=9f0cc09f190e7989dd62f6c793d07b19113d9b9307a8470e9965fbe9849039a9",
+      "file_size": 103658,
+      "type": "image/jpeg",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-06-03T04:40:48.577Z",
+  "allow_singular_disclosure_after": -315907300.361512,
+  "singular_disclosure_allowed": true,
+  "vote_count": 5,
+  "voters": [
+    "thalaivar304",
+    "dyabla",
+    "destinedtohack",
+    "spedooo_api",
+    "haripatel"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 2018,
+      "category": "team",
+      "content": "On March 10th, 2016, @bugs3ra reported that a public Mapbox API access token with no explicitly declared scopes could read public map styles. This meant that a token with no scopes had the `styles:read` scope. In fact, the no scope token had all three public scopes associated with a user's default public access token - `styles:tiles`, `styles:read`, and `fonts:read`. \n\nTo fix this issue, we updated the UI in Studio to make token scopes more clear. We updated the text \"No scopes\" to \"Public token (all public scopes)\" in the token creation modal dialog.\n\nWe decided to award a bounty for this report since granting more scopes than expected is unexpected for the user and represents a minor violation of the principle of least privilege. ",
+      "updated_at": "2016-05-31T22:02:49.335Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 39856,
+        "username": "alulsh",
+        "name": "Alexandra Ulsh",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": "http://alexandraulsh.com",
+        "location": "Washington, D.C.",
+        "created_at": "2015-09-09T10:35:58.141Z",
+        "url": "https://hackerone.com/alulsh",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/000/039/856/496b75e2cc4a4ce5798ef27243d139b9dd38fea5_original.JPG/8774a5031fc14b74dc4404da039040c69df8ed41021007c0c2beb9de489fcf66",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/000/039/856/496b75e2cc4a4ce5798ef27243d139b9dd38fea5_original.JPG/83a62d03223573cfc0f155a612b2adb97f819481786b8f5c531134ea426ed026",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/000/039/856/496b75e2cc4a4ce5798ef27243d139b9dd38fea5_original.JPG/0edb7ad7ad0f50cf9c2e69c89ae9c522e7e14267ff47e234065e04398e7425fd"
+        }
+      }
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

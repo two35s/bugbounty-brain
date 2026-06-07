@@ -1,0 +1,172 @@
+{
+  "id": 642862,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC82NDI4NjI=",
+  "url": "https://hackerone.com/reports/642862",
+  "title": "Option method enabled in kartpay Webservers",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2019-07-14T09:57:43.962Z",
+  "submitted_at": "2019-07-14T09:57:43.962Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "lollol1",
+    "url": "/lollol1",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 22925,
+    "url": "https://hackerone.com/kartpay",
+    "handle": "kartpay",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/022/925/d481af80adf6cd2b19449b09c785cb232f74eeba_original.jpg/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/022/925/d481af80adf6cd2b19449b09c785cb232f74eeba_original.jpg/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Kartpay",
+      "twitter_handle": "",
+      "website": "http://Kartpay.com",
+      "about": "Kartpay is an Online Payment Gateway For Indian Region."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2019-08-28T15:31:29.878Z",
+  "bug_reporter_agreed_on_going_public_at": "2019-08-20T07:01:14.670Z",
+  "team_member_agreed_on_going_public_at": "2019-08-28T15:31:29.806Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "HTTP OPTIONS method is enabled on this web server. The OPTIONS method provides a list of the methods that are supported by the web server, it represents a request for information about the communication options available on the request/response chain identified by the Request-URI.\n\nDomain :\nmerchant.kartpay.com\n\n## Impact\n\nThe issue was not critical, as the impact of using other methods than GET and POST in this domain is nearly nonexistent. The bounty reflects the criticality of the issue.",
+  "weakness": {
+    "id": 18,
+    "name": "Information Disclosure"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 528859,
+      "file_name": "options_method.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/528/859/0994893a5ca45682123ff8bcb6f093db8abd7992/options_method.png?response-content-disposition=attachment%3B%20filename%3D%22options_method.png%22%3B%20filename%2A%3DUTF-8%27%27options_method.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSHCDSHIV%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T142412Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENb%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGYiUBQ9%2BEStSSZJhPT08qYdsws7B0eTgQXhIqT2SoBSAiEA7p0vYBU39%2FDrRexFlv311hDOr62EfA6nY%2BGFCygrHdEqugUIn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDC0A3inaddDxznPArSqOBa0hOGHEn9POZuOpTlB2GOZdEPQPshkSvAI4qu80FO3p%2F3Ugbu4oBb%2F%2BIDH1oZpdRWSFsmQXxtH9fOaZP4vuasFCC9TJrher7yi81Bv5J2djdW0iaortN9sCPxzzjC%2BNEQU7gfYhfQ331i9%2FGUVGlUUNiOBseAlkCoA%2BSGi9WRYoGYWqAjfHbhR38hTyug6bQ9ZhtKz8n%2Bl4xzSEYUg4wzc5RDNTEWG%2BXKzbLclPJotJxHyVTqmMT72MGfidA425HfzAFyQmmNox9zCNlgBzXJtJZcKApfy33d439GYY0widJnIw4ACpW4HQba4J9piUs3KJYPbCUtwfOvJfbLqAQnQ4yXVhQ%2BqV6tZvg71wvK3iaqFuuhz1Z390FVqGRCM4xrjRKvGmNuqhuc7msiaau1rRW1G%2Fv1IuW32QGch6UQTtK9xSWFcoMK8S%2F0GDcpV9bOCKUC5C14U2B3PEOlNuID2EJakS6lkhsOCwJmPSZHuaGjFyHpwaPjYQYgcvXKoVm0uCVsudkQ5xoR6Q9%2FTrbvK6Dp5n8%2FQaScFNq6eyTt5Af2wL5lcSHPUtzJjZ%2BDhfOtUjzpFWPOFDueNmRRkBxaYr%2FbZ0eRQVd8QVSZfIqfoxXIht2duFON0WiuH7O0aeF1rks3CUiKeKA3S6odzZ%2Bur%2BRPD4OuwVvwzLIlrXgfs%2BNyCovnu0mu7JQDSti2nUIO3eYS6OtAj8GKsChVTF18N8aRxhDPoYnMVXYKtpftny7OUapT6Pmheo7DLmFhgajaDAosGImjyVij5DoDnyJZs%2BWZAXi8wx8zb4amVFbQ4bqDRgWuWNyIyHsDxFc7sw4c%2BSsLH1eiv4FTzfRCwh%2BPHFEyc1dl1lGwEEluVb0TC%2F7ZXRBjqxASTc3t%2Bq1tXIgCR8K6EfJgpNbeXzj6X9IsbJVDrELqMSzqDzt%2Bdxat7C9iGxRjteTArU%2Fy2pq8hnJaqe1iXdK7YOyiH9WUi6wKoLRZg0uHREq%2BsVYmxOn09CmGm8Z63HgLHPU1kam5urrQdOwhVqw7gLBD5GOyAte%2FXI3ekmDRZGLk75adaKCFPoxTjoSR3GO4AXow1eRazTvNKk1j44ilbAgUbabnkjctgHqraMaT8npw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=a3adb6bcad9f67b342128a35bdbb35740898adb87091d2de512c7e32abc13910",
+      "file_size": 148962,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2019-09-19T07:01:14.757Z",
+  "allow_singular_disclosure_after": -211965777.46676216,
+  "singular_disclosure_allowed": true,
+  "vote_count": 2,
+  "voters": [
+    "tiago-danin",
+    "ethan101"
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 3965,
+    "asset_type": "WILDCARD",
+    "asset_identifier": "*.kartpay.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+{
+  "id": 1966083,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xOTY2MDgz",
+  "url": "https://hackerone.com/reports/1966083",
+  "title": "CVE-2023-28710 Apache Airflow Spark Provider Arbitrary File Read via JDBC",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2023-04-29T07:52:39.744Z",
+  "submitted_at": "2023-04-29T07:52:39.854Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "sw0rd1ight",
+    "url": "/sw0rd1ight",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/76bn402tp8f0kmpv94jevxurbmyq/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 54349,
+    "url": "https://hackerone.com/ibb",
+    "handle": "ibb",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ2FTC6XXP%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHpTynNkiHpqIVod%2Fd0PkxPFjRYJTIQFqc%2BnaZxQEfmyAiEAyVkVvzLZYWQ7ryZJQgiOMDbMgpPdbyyx6RYIgEDZtJsqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDO22ndmtvevlXNzheCqOBXEKB%2BzztR22P44klF08w9IHGqF78GTiwGMeAyu2Eb%2BlmzEFPYzRgPPVEYVW5JTBy5GH9DMX7YGDjiAZGU4AWu6UZEQbYrwXAuV176S7%2F1EBk19N41hkX34hXr0W48iJ%2FeYDUdYDsdSsjXzsvOOJQCsvlta7uw5qJ7NA8LolYaKk5KIyPd9nznUu8hPj8ZTo%2FouYq7845P%2F9Y8WwLq%2FaYgZnDMwlRGHQjZC8zdvUPP48YrvC3h4JVxDcLbSX8rMJx9ikle371%2F2lJwKchlsAYYA6xLjzbLKvBWz9WDQgg11Lqlr6%2BcDdh4meZ2YkQCJ5MhLaMIsF03msIfhlyQRlMkpbmijibNKSsXOENCeFUPCk%2BydiDyoyxG0Q5hUUhIyG3rIjtRiFOEdVXD1cMrQejcndLV9vHH0MWyW6CnQ4LRVYhqD6P%2BeS%2BSqjPNo5oO4xwLWMZTz56KmtVoVkgwB1BF2aBm%2BwQvnteTDGK7M%2BxJlC%2Fq8kEx55JDjqurjhMXlUqlwx0vC6Y7C%2B%2FimuqgF7FXeQTbap%2B4MJ68pWXISBT6B1idgO081cTr7Jzbu%2FAaoAG97BR8W%2FK3avtgxixU47nPuDoju6Gr4ht3sfYdjo%2B6M2%2FGfubKAdzBEl3L5OoyM61mntCxqUegX%2BmJCmz6hpEfaw2ff6V4RO1fOu72fJaNNbgqMtK3twxAwPyRfQS8VZHtGkmRw4DznmF71%2FuTNneOnig3j8pyuSzEauhY3PRjKRUBRIQM7DEbENZUxge1nS0iJ%2BQ8mlARjzLYIVnnSOLRpzZLU%2BMvZG74BveFaDTf8Mg4AGN8fviJxUI6a2%2BzNEbxiEMZEbkFBHkTU711Iov%2B6wd4yeYFvuKHooD%2BCubTDzjZXRBjqxAcRG9o4uE92hNtcMu29X0S3aQhY86hsVSPD%2Bof55dTTLyyhlOs%2F0Xo6f47x55cagliuvke7CtwBcOcx9GONfGSai7kqSYvJ35wLKXvIFtfwjGO5NWlN6ZE5e7BV0z9SQlDtjOE0C4Rk6DrvtidkKvu0Z1te7NYJduNXIuaJFHBSSz9r1MEeJpIEaR%2BgPwneUoBF%2FCK%2FvhrDCWxM4aielt07JuAc5jUcxYg9T9D5o4jhQDw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=000d29f9eb09fd04b92c63f537fcf56140e13fd65ab9302a029068be6eb16a62",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ2FTC6XXP%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123258Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIHpTynNkiHpqIVod%2Fd0PkxPFjRYJTIQFqc%2BnaZxQEfmyAiEAyVkVvzLZYWQ7ryZJQgiOMDbMgpPdbyyx6RYIgEDZtJsqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDO22ndmtvevlXNzheCqOBXEKB%2BzztR22P44klF08w9IHGqF78GTiwGMeAyu2Eb%2BlmzEFPYzRgPPVEYVW5JTBy5GH9DMX7YGDjiAZGU4AWu6UZEQbYrwXAuV176S7%2F1EBk19N41hkX34hXr0W48iJ%2FeYDUdYDsdSsjXzsvOOJQCsvlta7uw5qJ7NA8LolYaKk5KIyPd9nznUu8hPj8ZTo%2FouYq7845P%2F9Y8WwLq%2FaYgZnDMwlRGHQjZC8zdvUPP48YrvC3h4JVxDcLbSX8rMJx9ikle371%2F2lJwKchlsAYYA6xLjzbLKvBWz9WDQgg11Lqlr6%2BcDdh4meZ2YkQCJ5MhLaMIsF03msIfhlyQRlMkpbmijibNKSsXOENCeFUPCk%2BydiDyoyxG0Q5hUUhIyG3rIjtRiFOEdVXD1cMrQejcndLV9vHH0MWyW6CnQ4LRVYhqD6P%2BeS%2BSqjPNo5oO4xwLWMZTz56KmtVoVkgwB1BF2aBm%2BwQvnteTDGK7M%2BxJlC%2Fq8kEx55JDjqurjhMXlUqlwx0vC6Y7C%2B%2FimuqgF7FXeQTbap%2B4MJ68pWXISBT6B1idgO081cTr7Jzbu%2FAaoAG97BR8W%2FK3avtgxixU47nPuDoju6Gr4ht3sfYdjo%2B6M2%2FGfubKAdzBEl3L5OoyM61mntCxqUegX%2BmJCmz6hpEfaw2ff6V4RO1fOu72fJaNNbgqMtK3twxAwPyRfQS8VZHtGkmRw4DznmF71%2FuTNneOnig3j8pyuSzEauhY3PRjKRUBRIQM7DEbENZUxge1nS0iJ%2BQ8mlARjzLYIVnnSOLRpzZLU%2BMvZG74BveFaDTf8Mg4AGN8fviJxUI6a2%2BzNEbxiEMZEbkFBHkTU711Iov%2B6wd4yeYFvuKHooD%2BCubTDzjZXRBjqxAcRG9o4uE92hNtcMu29X0S3aQhY86hsVSPD%2Bof55dTTLyyhlOs%2F0Xo6f47x55cagliuvke7CtwBcOcx9GONfGSai7kqSYvJ35wLKXvIFtfwjGO5NWlN6ZE5e7BV0z9SQlDtjOE0C4Rk6DrvtidkKvu0Z1te7NYJduNXIuaJFHBSSz9r1MEeJpIEaR%2BgPwneUoBF%2FCK%2FvhrDCWxM4aielt07JuAc5jUcxYg9T9D5o4jhQDw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0f04922dfc4097f020c9d9fb3c3c6d7f6af81c56f3bec5dbc4adffbed5bb76ae"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Internet Bug Bounty",
+      "twitter_handle": "",
+      "website": "https://www.hackerone.com/internet-bug-bounty",
+      "about": "The Internet Bug Bounty rewards security research into vulnerabilities impacting Open Source Software Projects."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2023-28710"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2023-07-12T18:02:32.898Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2023-06-12T18:02:31.089Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "In all versions of Apache Airflow Spark Provider (the verification version is 4.0.0), because the parameters are not effectively filtered, the attacker can pass in malicious schema parameters (including malicious JDBC url) when establishing a connection with SparkJDBCHook, so that when establishing When connecting, a malicious mysql server can read any file on airflow.\n\nthis is screenshot of  email and ASF response email I submitted\n\n\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\n\n## Impact\n\nWhen airflow does not enable authentication, the attacker can modify the existing connection configuration information, so that the DAG that uses SparkJDBCOperator in the system is running and connected to a malicious mysql server (or other types of servers), and is read by the attacker on the system , and more seriously, attackers can send malicious serialized data, which eventually leads to remote code execution.\n\nThis deserialization command was not successfully verified because the version of apache-common-collections-3.2.2 used by pyspark is too high, but when the jdk version used by the target system is 7u21 or there are other exploit chains, it can Causes the deserialization command to execute",
+  "bounty_amount": "2400.0",
+  "formatted_bounty": "$2,400",
+  "weakness": {
+    "id": 107,
+    "name": "Improper Input Validation"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [],
+  "allow_singular_disclosure_at": "2023-07-12T18:02:31.206Z",
+  "allow_singular_disclosure_after": -91650627.74177906,
+  "singular_disclosure_allowed": true,
+  "vote_count": 22,
+  "voters": [
+    "sw0rd1ight",
+    "n1m0",
+    "zy9ard3",
+    "h4x0r_dz",
+    "f_m",
+    "shivammusic",
+    "1st_t3st",
+    "uz0kage",
+    "abugu1",
+    "salmananu",
+    "and 12 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 86381,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/apache/airflow",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 306324,
+      "category": "team",
+      "content": "CVE-2023-28710: Apache Airflow Spark Provider Arbitrary File Read via JDBC\n\nSeverity: low\n\nDescription:\nImproper Input Validation vulnerability in Apache Software Foundation Apache Airflow Spark Provider.This issue affects Apache Airflow Spark Provider: before 4.0.1.\n\nCredit:\nXie Jianming of Nsfocus (finder)\n\nFull Security Advisory: https://lists.apache.org/thread/lb9w9114ow00h2nkn8bjm106v5x1p1d2",
+      "updated_at": "2023-06-12T18:00:50.884Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 904892,
+        "username": "kunderkoffler",
+        "name": "Kayla Underkoffler",
+        "bio": null,
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": null,
+        "created_at": "2020-01-13T19:26:22.339Z",
+        "url": "https://hackerone.com/kunderkoffler",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "medium": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "xtralarge": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+        }
+      }
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

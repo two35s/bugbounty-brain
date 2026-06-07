@@ -1,0 +1,143 @@
+{
+  "id": 1183335,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMTgzMzM1",
+  "url": "https://hackerone.com/reports/1183335",
+  "title": "Object injection in `stripe-billing-typographic` GitHub project via /auth/login ",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2021-05-03T22:14:22.670Z",
+  "submitted_at": "2021-05-03T22:14:22.713Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "ph0r3nsic",
+    "url": "/ph0r3nsic",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/8ttioj4210ytirdjuulw69auvdsl/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 50933,
+    "url": "https://hackerone.com/stripe",
+    "handle": "stripe",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/oje0985ewr1z66rlzofs2fjfda8y/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22stripe-s.png%22%3B%20filename%2A%3DUTF-8%27%27stripe-s.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUTL24LV6%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123311Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDHLZpSDlirOrl2sNxG44Wy%2FTtQf%2BpR1cZdlAPEKc9acQIhAIYMmQkFyk42UmBxxLzSIn5IYCGI0BdGbANePEfGoOw5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzzRT35l%2FlhdogvTXQqjwXsQOfQmY%2FD5WUAi0yFdfd0Lu04fn%2FWh4ItIcpkJe20IrfPQdZ%2FagNZKBepxwtZlwNJThIkTBT7w6TL6rpxH9j02SzqGxn8sBBwmiqW2GmU1XkkN%2FsKhEGgzEQyjugLGcva1f5eeObqA1NX3etVG6Gialv%2BMr55spvkPjc6ZD00NdN5KDC8k%2BoOwiKsIKGDYJwIBi%2Ba3KOYeU%2FMNTZhWtlOuR3q4HMpGJoX%2FGFU0vk0BLdlwOGiAxas%2BJfwMn1xDID6Sagmw2XiVadBh%2BdRaH5hM5r9RE0BfNNsUl2VdWp%2FbOVLTGI1hPTrFP0PVV1Wkw1V%2FJZJnePEd1vAjhtUw8kpXOELyvnlNWexZ2Q8Vdl3W%2Bc8BPcXWK82%2FOLVI5kOuDQw%2BNzRo6rXjZtjUx7UeUEJU3PBdBj8lGlJWwyxLW4OLbwN1Qu7H2V%2FjWS71SbcvY5dGuXWgvPGR5DZ0iPHdyG3r1dlWX%2BWW0TL5fFGxQjjkgdWSP5qYRvNx6xAk%2Ba7Gjcnky2kQiM0SPeP8N0qI8d0hDobltOXZYtHPC%2FxPJkanHaFsE91993VyzwFejK2pUY0tXysMFzq5vktMjAXA5Bo1aXNeeBDNh37mhtwSUaMQeti5jki%2Fm%2FZ6UW45hh2dp4Kk5CnHdJMohh5yfdiege%2BZGqf9ZkKWoC9hJGLbGq%2FlItnQIht7iPomkG41dBo%2FtlClES5KBFk3qmnoQwCKOGCPKjj0F6jBwX%2FioH1V5BTJf%2FxpJhrunnB42A67KlCAUngqZLkVBZRWTxdI839Am87XiTkrIi45SCO05i3PWUkAznyiH85rjuPNbRQ14p%2FGOF985ttmkPUIq%2F0q1J0EPvSa8NLzG7rF3DoBwf03ZjFMJOdldEGOrAB8ddztdSQUVFzUKp9P10BULhP6%2BJQWsr06Hey3sVuoPwRDGF3vrIUGWeD%2B%2F8wtBdImx5ASaEBa1KFAbwZGvxcm7rgZzD573hQsuzVEh2%2BhEczRpvGtJUGuzbODe70D23UIvUl48CW7JinIptZYwAdwSnBvonzwUZTNGdxPTO0TSGZeiKODd%2B0KlXd91AC5d1gDz%2FDSu%2FNpM33GeCo31CX51AbUulgpbS4Uh5Yy5ANL7U%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ea2dd4bd9719973641999bebbc557aefd283fb6acc0ceb5a4ec8cc4dc83e4e10",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/oje0985ewr1z66rlzofs2fjfda8y/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22stripe-s.png%22%3B%20filename%2A%3DUTF-8%27%27stripe-s.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUTL24LV6%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123311Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDHLZpSDlirOrl2sNxG44Wy%2FTtQf%2BpR1cZdlAPEKc9acQIhAIYMmQkFyk42UmBxxLzSIn5IYCGI0BdGbANePEfGoOw5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzzRT35l%2FlhdogvTXQqjwXsQOfQmY%2FD5WUAi0yFdfd0Lu04fn%2FWh4ItIcpkJe20IrfPQdZ%2FagNZKBepxwtZlwNJThIkTBT7w6TL6rpxH9j02SzqGxn8sBBwmiqW2GmU1XkkN%2FsKhEGgzEQyjugLGcva1f5eeObqA1NX3etVG6Gialv%2BMr55spvkPjc6ZD00NdN5KDC8k%2BoOwiKsIKGDYJwIBi%2Ba3KOYeU%2FMNTZhWtlOuR3q4HMpGJoX%2FGFU0vk0BLdlwOGiAxas%2BJfwMn1xDID6Sagmw2XiVadBh%2BdRaH5hM5r9RE0BfNNsUl2VdWp%2FbOVLTGI1hPTrFP0PVV1Wkw1V%2FJZJnePEd1vAjhtUw8kpXOELyvnlNWexZ2Q8Vdl3W%2Bc8BPcXWK82%2FOLVI5kOuDQw%2BNzRo6rXjZtjUx7UeUEJU3PBdBj8lGlJWwyxLW4OLbwN1Qu7H2V%2FjWS71SbcvY5dGuXWgvPGR5DZ0iPHdyG3r1dlWX%2BWW0TL5fFGxQjjkgdWSP5qYRvNx6xAk%2Ba7Gjcnky2kQiM0SPeP8N0qI8d0hDobltOXZYtHPC%2FxPJkanHaFsE91993VyzwFejK2pUY0tXysMFzq5vktMjAXA5Bo1aXNeeBDNh37mhtwSUaMQeti5jki%2Fm%2FZ6UW45hh2dp4Kk5CnHdJMohh5yfdiege%2BZGqf9ZkKWoC9hJGLbGq%2FlItnQIht7iPomkG41dBo%2FtlClES5KBFk3qmnoQwCKOGCPKjj0F6jBwX%2FioH1V5BTJf%2FxpJhrunnB42A67KlCAUngqZLkVBZRWTxdI839Am87XiTkrIi45SCO05i3PWUkAznyiH85rjuPNbRQ14p%2FGOF985ttmkPUIq%2F0q1J0EPvSa8NLzG7rF3DoBwf03ZjFMJOdldEGOrAB8ddztdSQUVFzUKp9P10BULhP6%2BJQWsr06Hey3sVuoPwRDGF3vrIUGWeD%2B%2F8wtBdImx5ASaEBa1KFAbwZGvxcm7rgZzD573hQsuzVEh2%2BhEczRpvGtJUGuzbODe70D23UIvUl48CW7JinIptZYwAdwSnBvonzwUZTNGdxPTO0TSGZeiKODd%2B0KlXd91AC5d1gDz%2FDSu%2FNpM33GeCo31CX51AbUulgpbS4Uh5Yy5ANL7U%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4769365819aff60dab6174cf594075f5aee24ddbc2df30f482bdf899f348d4c8"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Stripe",
+      "twitter_handle": "stripe",
+      "website": "https://stripe.com",
+      "about": "Stripe is a global technology company that builds economic infrastructure for the internet."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2023-03-06T14:03:26.851Z",
+  "bug_reporter_agreed_on_going_public_at": "2022-09-13T15:42:25.526Z",
+  "team_member_agreed_on_going_public_at": "2023-03-06T14:03:26.483Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\nIt is possible to use an object injection failure to achieve a sql injection, where attacker uses the means to bypass authentication, requiring only a valid password within the database.\n\nThe vulnerable code is:  https://github.com/stripe/stripe-billing-typographic\n\nFor a failure to occur, it is necessary that the environment is configuring with the mysql database.  \n\nThe same scenario is seen in the demonstration environment: https://typographic.io/\n\n## Steps To Reproduce:\n\n  1. Register a simple user in the application, with a password at your desire. Ex:\n```\nuser: test@test.com\npassword:123\n```\n  2. Send a request to /auth/login like this:\n```\nPOST /auth/login\n\n{\"email\":{\"email\":1},\"password\":\"1234\"}\n```\n  3. You will then see that the login was performed without the need to provide a valid user!\n\n{F1287585}\n\n\n## Supporting Material/References:\nWell, the failure occurs due to the possibility of an object reaching the query, which will be handled by a dependency called sqlstring, performing some scapes, where it will cause a confusion to the query.\n\nSqlstring will handle {,} replacing with `. \nSo your login query will be:\n```\nSELECT * FROM `accounts` WHERE `email`=`email`=1\n```\nThe sql string library is a dependency on the mysql library, which is used by knex.\n\n## Mitigation\n\nIs a simple step, use JSON.stringfy e resolve your problem, because JSON.stringfy will transform the malicious object into a string, preventing treatment during a query.\n\n## Impact\n\nThis vulnerability to the applied scenario makes it easier for the attacker to acquire accounts, as the attacker only needs to discover a valid password to gain access to the victim's account.",
+  "weakness": {
+    "id": 72,
+    "name": "Resource Injection"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1287585,
+      "file_name": "Captura_de_Tela_2021-05-03_a_s_18.05.45.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/hx7wodupepulrtl0yqwi06pze18n?response-content-disposition=attachment%3B%20filename%3D%22Captura_de_Tela_2021-05-03_a_s_18.05.45.png%22%3B%20filename%2A%3DUTF-8%27%27Captura_de_Tela_2021-05-03_a_s_18.05.45.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUTL24LV6%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123312Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDHLZpSDlirOrl2sNxG44Wy%2FTtQf%2BpR1cZdlAPEKc9acQIhAIYMmQkFyk42UmBxxLzSIn5IYCGI0BdGbANePEfGoOw5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzzRT35l%2FlhdogvTXQqjwXsQOfQmY%2FD5WUAi0yFdfd0Lu04fn%2FWh4ItIcpkJe20IrfPQdZ%2FagNZKBepxwtZlwNJThIkTBT7w6TL6rpxH9j02SzqGxn8sBBwmiqW2GmU1XkkN%2FsKhEGgzEQyjugLGcva1f5eeObqA1NX3etVG6Gialv%2BMr55spvkPjc6ZD00NdN5KDC8k%2BoOwiKsIKGDYJwIBi%2Ba3KOYeU%2FMNTZhWtlOuR3q4HMpGJoX%2FGFU0vk0BLdlwOGiAxas%2BJfwMn1xDID6Sagmw2XiVadBh%2BdRaH5hM5r9RE0BfNNsUl2VdWp%2FbOVLTGI1hPTrFP0PVV1Wkw1V%2FJZJnePEd1vAjhtUw8kpXOELyvnlNWexZ2Q8Vdl3W%2Bc8BPcXWK82%2FOLVI5kOuDQw%2BNzRo6rXjZtjUx7UeUEJU3PBdBj8lGlJWwyxLW4OLbwN1Qu7H2V%2FjWS71SbcvY5dGuXWgvPGR5DZ0iPHdyG3r1dlWX%2BWW0TL5fFGxQjjkgdWSP5qYRvNx6xAk%2Ba7Gjcnky2kQiM0SPeP8N0qI8d0hDobltOXZYtHPC%2FxPJkanHaFsE91993VyzwFejK2pUY0tXysMFzq5vktMjAXA5Bo1aXNeeBDNh37mhtwSUaMQeti5jki%2Fm%2FZ6UW45hh2dp4Kk5CnHdJMohh5yfdiege%2BZGqf9ZkKWoC9hJGLbGq%2FlItnQIht7iPomkG41dBo%2FtlClES5KBFk3qmnoQwCKOGCPKjj0F6jBwX%2FioH1V5BTJf%2FxpJhrunnB42A67KlCAUngqZLkVBZRWTxdI839Am87XiTkrIi45SCO05i3PWUkAznyiH85rjuPNbRQ14p%2FGOF985ttmkPUIq%2F0q1J0EPvSa8NLzG7rF3DoBwf03ZjFMJOdldEGOrAB8ddztdSQUVFzUKp9P10BULhP6%2BJQWsr06Hey3sVuoPwRDGF3vrIUGWeD%2B%2F8wtBdImx5ASaEBa1KFAbwZGvxcm7rgZzD573hQsuzVEh2%2BhEczRpvGtJUGuzbODe70D23UIvUl48CW7JinIptZYwAdwSnBvonzwUZTNGdxPTO0TSGZeiKODd%2B0KlXd91AC5d1gDz%2FDSu%2FNpM33GeCo31CX51AbUulgpbS4Uh5Yy5ANL7U%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=31544d9588761e1ac1a7d3832a4745582808ce9b8a9fbbb33d62297c94d3d007",
+      "file_size": 190760,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 17,
+  "voters": [
+    "zy9ard3",
+    "yassinek3ch",
+    "ali",
+    "shreyaschavhan",
+    "shubham_srt",
+    "zig_shark",
+    "2026",
+    "ph0r3nsic",
+    "cryptographer",
+    "shivammusic",
+    "and 7 more..."
+  ],
+  "severity": {
+    "rating": "low",
+    "score": 3.7,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "high",
+      "privileges_required": "none",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "none",
+      "integrity": "low",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 61185,
+    "asset_type": "OTHER",
+    "asset_identifier": "Stripe Open Source",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

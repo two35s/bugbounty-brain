@@ -1,0 +1,1195 @@
+Category: authentication
+Reports: 298
+
+[High] Authentication Bypass in ID4me handling via Missing JWT Signature Verification in User OIDC
+  URL: https://hackerone.com/reports/3489490 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: priyanka010
+
+[Medium] PIN bypass in PassCodeActivity via back button
+  URL: https://hackerone.com/reports/3625210 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: alper_ozturk
+
+[Medium] Session ID reuse allowing XML‑RPC API authentication bypass
+  URL: https://hackerone.com/reports/3672641 | CWE: Improper Authentication - Generic
+  Program: revive_adserver | Reporter: 0x4c616e
+
+[Medium] iOS Brave Playlist "Open in Private Tab" bypasses FaceID requirement for Private Tabs
+  URL: https://hackerone.com/reports/3693295 | CWE: Improper Authentication - Generic
+  Program: brave | Reporter: aaront
+
+[Medium] POST /api/bitcoinWithdrawalFees returns financial data without authentication despite being documented as a USER OPERATION (private endpoint)
+  URL: https://hackerone.com/reports/3676308 | CWE: Improper Authentication - Generic
+  Program: coinmate | Reporter: glferreira-devsecops
+
+[Medium] CVE-2026-5545: wrong reuse of HTTP Negotiate connection
+  URL: https://hackerone.com/reports/3642555 | CWE: Authentication Bypass by Primary Weakness
+  Program: curl | Reporter: quaccws
+
+[Medium]  No Rate Limiting on Password Attempts After Insecure Registration Flow cause ATO
+  URL: https://hackerone.com/reports/3174778 | CWE: Improper Restriction of Authentication Attempts
+  Program: mars | Reporter: azar_man
+
+[Medium] Approval app allows users to request approval for other users file 
+  URL: https://hackerone.com/reports/3338748 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: 0x0doteth
+
+[Medium] Unauthenticated GraphQL access by prepending __schema to private operations
+  URL: https://hackerone.com/reports/3452015 | CWE: Authentication Bypass
+  Program: enjin | Reporter: pwnie
+
+[Critical] Account Takeover in Password Reset Function
+  URL: https://hackerone.com/reports/3228888 | CWE: Authentication Bypass
+  Program: mars | Reporter: egsec
+
+[Low] AWS | Self Registration Internal LibreChat : Access to internal/proprietary LLMs
+  URL: https://hackerone.com/reports/3287396 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: aws_vdp | Reporter: notnotnotveg
+
+[Medium] total Failure of password protection while extracting seed phrase! increases attack surface area for scammers
+  URL: https://hackerone.com/reports/2280279 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: metamask | Reporter: bug_vs_me
+
+[Medium] returnUrl= allow attacker to redirect users to the another phising website and takeover credientials
+  URL: https://hackerone.com/reports/1544236 | CWE: Improper Authentication - Generic
+  Program: insightly | Reporter: basant0x01
+
+[Medium] TLS client authentication can be bypassed due to ticket resumption
+  URL: https://hackerone.com/reports/2978267 | CWE: Improper Authentication - Generic
+  Program: ibb | Reporter: snhebrok
+
+[Critical] Ability to Add and Verify Uncontrolled Mobile Numbers Leading to Account Takeover (ATO)
+  URL: https://hackerone.com/reports/2762462 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: mtn_group | Reporter: trev0ck
+
+[Medium] Improper Authentication Allows Making Appeals as Other Users
+  URL: https://hackerone.com/reports/2666323 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: tacnull
+
+[High] Unauthorized Access  Exposing Sensitive Data
+  URL: https://hackerone.com/reports/2858876 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: moha1sd
+
+[Medium] Forced OAuth authorization using button ID in hash and holding space
+  URL: https://hackerone.com/reports/2649615 | CWE: Improper Authentication - Generic
+  Program: linkedin | Reporter: j0r1an
+
+[Medium] IBM OpenPages vulnerable to exposure of sensitive information
+  URL: https://hackerone.com/reports/2501986 | CWE: Improper Authentication - Generic
+  Program: ibm | Reporter: 0xhassan
+
+[Critical] Authentication Bypass Leads To  Complete Account TakeveOver on ██████████
+  URL: https://hackerone.com/reports/1709881 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: mtn_group | Reporter: reachaxis
+
+[High] Registration bypass with leaked Invite Token
+  URL: https://hackerone.com/reports/1071102 | CWE: Improper Authentication - Generic
+  Program: rocket_chat | Reporter: gronke
+
+[Critical] Authentication Bypass in login-token Authentication Method
+  URL: https://hackerone.com/reports/1447619 | CWE: Improper Authentication - Generic
+  Program: rocket_chat | Reporter: gronke
+
+[Low] Bypassing 2FA with conventional session management - open.rocket.chat
+  URL: https://hackerone.com/reports/1701378 | CWE: Improper Authentication - Generic
+  Program: rocket_chat | Reporter: hackeriron1
+
+[Critical] Account Takeover via Authentication Bypass in TikTok Account Recovery
+  URL: https://hackerone.com/reports/2443228 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: tiktok | Reporter: fl4w
+
+[Medium] Authentication & Registration Bypass in Newspack Extended Access
+  URL: https://hackerone.com/reports/2536758 | CWE: Improper Authentication - Generic
+  Program: automattic | Reporter: xurizaemon0
+
+[Medium] CVE-2024-25128: Apache Airflow: Authentication Bypass when Legacy OpenID(2.0) is in use as AUTH_TYPE
+  URL: https://hackerone.com/reports/2401359 | CWE: Improper Authentication - Generic
+  Program: ibb | Reporter: parantheses
+
+[Medium] Unprotected Atlantis Server at https://152.70.█.█
+  URL: https://hackerone.com/reports/2223041 | CWE: Improper Authentication - Generic
+  Program: 8x8-bounty | Reporter: ahmadzuriqi3
+
+[Medium] Improper Authentication on Alertmanager instance
+  URL: https://hackerone.com/reports/2292236 | CWE: Improper Authentication - Generic
+  Program: ibm | Reporter: nhx1
+
+[High] Jenkins server access due to weak password
+  URL: https://hackerone.com/reports/2139047 | CWE: Improper Authentication - Generic
+  Program: ibm | Reporter: bugoverflow
+
+[Low] Vulnerability Report: NO RATE LIMIT Password RESET
+  URL: https://hackerone.com/reports/640781 | CWE: Improper Authentication - Generic
+  Program: trellix | Reporter: cyb3r_assass1n
+
+[Critical] default credentials at https://52.42.105.71/
+  URL: https://hackerone.com/reports/2160178 | CWE: Improper Authentication - Generic
+  Program: trellix | Reporter: forcedrofes
+
+[Low] App PIN code can be bypassed in Files iOS
+  URL: https://hackerone.com/reports/2245437 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: spell1
+
+[Low] Authentication Bypass to (CVE-2023-2982)
+  URL: https://hackerone.com/reports/2269989 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: cs_money | Reporter: smalx
+
+[High] Accessing apps protected via ZT's Access when user account is deleted/disabled even after clearing user session/seat
+  URL: https://hackerone.com/reports/2122690 | CWE: Improper Authentication - Generic
+  Program: cloudflare | Reporter: matured_kazama
+
+[Medium] Admin.MyTVA.com Customer lookup and internal notes bypass
+  URL: https://hackerone.com/reports/2043552 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: tennessee-valley-authority | Reporter: itssixtynein
+
+[Low] No Rate Limit in Login Page
+  URL: https://hackerone.com/reports/1322243 | CWE: Improper Restriction of Authentication Attempts
+  Program: on | Reporter: mr_sparrow
+
+[Low] CVE-2023-40273: Session fixation in Apache Airflow web interface
+  URL: https://hackerone.com/reports/2121960 | CWE: Session Fixation
+  Program: ibb | Reporter: leixiao
+
+[?] Missing brute force protection on login page on www.acronis.com
+  URL: https://hackerone.com/reports/1435392 | CWE: Improper Restriction of Authentication Attempts
+  Program: acronis | Reporter: brazil1
+
+[Medium] Improper restriction of excessive authentication attempts on WebDAV endpoint 
+  URL: https://hackerone.com/reports/1924212 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: unknownsh
+
+[Medium] Missing brute force protection on OAuth2 API controller
+  URL: https://hackerone.com/reports/1258448 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: mikaelgundersen
+
+[Low] Entering passwords on the Share Login Page can lead to a brute-force attack
+  URL: https://hackerone.com/reports/2039447 | CWE: Improper Restriction of Authentication Attempts
+  Program: automattic | Reporter: riadalrashed
+
+[High] Password reset endpoint is not brute force protected
+  URL: https://hackerone.com/reports/1987062 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: rullzer
+
+[Medium] Bypass for forced re-authentication upon biometrics change
+  URL: https://hackerone.com/reports/1929915 | CWE: Improper Authentication - Generic
+  Program: bitwarden | Reporter: rink_
+
+[Medium] Brute force protection allows to send more requests than intended
+  URL: https://hackerone.com/reports/1918525 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: polapain1337
+
+[High] Improper Authentication inside the Rockstar Games Launcher which leads to Account takeover to some extend
+  URL: https://hackerone.com/reports/1442783 | CWE: Improper Authentication - Generic
+  Program: rockstargames | Reporter: j4ck_d4niels
+
+[High] Basic auth header on WebDAV requests is not bruteforce protected
+  URL: https://hackerone.com/reports/1879549 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: hackit_bharat
+
+[High] Bypass validation parts in AWS IAM Authenticator for Kubernetes
+  URL: https://hackerone.com/reports/1580493 | CWE: Improper Authentication - Generic
+  Program: kubernetes | Reporter: 0ria
+
+[Medium] Unauthorized access to GovSlack
+  URL: https://hackerone.com/reports/1758174 | CWE: Improper Authentication - Generic
+  Program: slack | Reporter: violet
+
+[Medium] Traffic amplification attack via discovery protocol
+  URL: https://hackerone.com/reports/502207 | CWE: Improper Authentication - Generic
+  Program: rootstocklabs | Reporter: luk-matczak
+
+[Critical] Authentication Bypass Using Default Credentials on █████
+  URL: https://hackerone.com/reports/1839012 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: hack3ron___1
+
+[Low] Uninstalling Mattermost Launcher for Windows (64-bit), then reinstalling keeps you logged in without authentication
+  URL: https://hackerone.com/reports/1797661 | CWE: Improper Restriction of Authentication Attempts
+  Program: mattermost | Reporter: annonmous
+
+[High] Security Issue into Wallet lock protection 
+  URL: https://hackerone.com/reports/1792544 | CWE: Improper Authentication - Generic
+  Program: hiro | Reporter: bug_vs_me
+
+[Medium] bypass two-factor authentication in Android apps and web
+  URL: https://hackerone.com/reports/1747978 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: tiktok | Reporter: lu3ky-13
+
+[Medium] Unprotected Atlantis Server at https://152.70.█.█
+  URL: https://hackerone.com/reports/1793526 | CWE: Improper Authentication - Generic
+  Program: 8x8-bounty | Reporter: shuvam321
+
+[Critical] Authentication bypass in ████████
+  URL: https://hackerone.com/reports/1747146 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: mtn_group | Reporter: roland_hack
+
+[High] Mass Accounts Takeover Without any user Interaction  at https://app.taxjar.com/ 
+  URL: https://hackerone.com/reports/1685970 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: stripe | Reporter: mr_asg
+
+[Low] Local applications from user's computer can listen for webhooks via insecure gRPC server from stripe-cli
+  URL: https://hackerone.com/reports/1369191 | CWE: Improper Authentication - Generic
+  Program: stripe | Reporter: gregxsunday
+
+[High] Otp  bypass in verifying nin
+  URL: https://hackerone.com/reports/1314172 | CWE: Improper Authentication - Generic
+  Program: mtn_group | Reporter: mr_sparrow
+
+[High] Account takeover on ███████ [HtUS]
+  URL: https://hackerone.com/reports/1627961 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: nightm4re
+
+[?] There is no rate limit for SME REGISTRATION PORTAL
+  URL: https://hackerone.com/reports/1305766 | CWE: Improper Authentication - Generic
+  Program: mtn_group | Reporter: sachinrajput
+
+[High] Response Manipulation leads to Admin Panel Login Bypass at https://██████/
+  URL: https://hackerone.com/reports/1508661 | CWE: Improper Authentication - Generic
+  Program: sony | Reporter: amanr1337
+
+[Medium] Signup with any Email and Enable 2-FA without verifying Email
+  URL: https://hackerone.com/reports/1543259 | CWE: Improper Authentication - Generic
+  Program: cloudflare | Reporter: imtheking
+
+[Medium] many commands can be manipulated to delete identities or affiliations
+  URL: https://hackerone.com/reports/348090 | CWE: Improper Authentication - Generic
+  Program: hyperledger | Reporter: cet2000
+
+[High] Brute Force of fabric-ca server admin account
+  URL: https://hackerone.com/reports/411364 | CWE: Improper Restriction of Authentication Attempts
+  Program: hyperledger | Reporter: xiaoc
+
+[Low] Sign in with Apple generates long-life JWTs, seemingly irrevocable, that grant immediate access to accounts
+  URL: https://hackerone.com/reports/1593413 | CWE: Improper Authentication - Generic
+  Program: cloudflare | Reporter: mattipv4
+
+[High] Sign in with Apple works on existing accounts, bypasses 2FA
+  URL: https://hackerone.com/reports/1593404 | CWE: Improper Authentication - Generic
+  Program: cloudflare | Reporter: mattipv4
+
+[High] Authentication CSRF resulting in unauthorized account access on Krisp app
+  URL: https://hackerone.com/reports/1267476 | CWE: Improper Authentication - Generic
+  Program: krisp | Reporter: yassineaboukir
+
+[Medium] Admin Authentication Bypass Lead to Admin Account Takeover 
+  URL: https://hackerone.com/reports/1490470 | CWE: Improper Authentication - Generic
+  Program: ups | Reporter: 7odamoo
+
+[High] Broken access control 
+  URL: https://hackerone.com/reports/1539426 | CWE: Improper Authentication - Generic
+  Program: ups | Reporter: nayefhamouda
+
+[High] Account takeover via Google OneTap
+  URL: https://hackerone.com/reports/671406 | CWE: Improper Authentication - Generic
+  Program: priceline | Reporter: badca7
+
+[Medium] Ability to connect an external login service for unverified emails/accounts at accounts.shopify.com
+  URL: https://hackerone.com/reports/1018489 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: saltymermaid
+
+[Medium] Brute force attack of current password on  login page by bypassing account limit using IP rotator(https://dashboard.omise.co/signin)
+  URL: https://hackerone.com/reports/1466967 | CWE: Improper Restriction of Authentication Attempts
+  Program: omise | Reporter: sachinrajput
+
+[Critical] Incorrect authorization to the intelbot service leading to ticket information
+  URL: https://hackerone.com/reports/1328546 | CWE: Improper Authentication - Generic
+  Program: tiktok | Reporter: johnstone
+
+[High] Уязвимость в приложении для Android
+  URL: https://hackerone.com/reports/1343528 | CWE: Improper Authentication - Generic
+  Program: vkcom | Reporter: executor
+
+[Low] Bypass For #997350 your-store.myshopify.com preview link is leak on third party website Via Online Store
+  URL: https://hackerone.com/reports/1015283 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: danishalkatiri
+
+[High] Account Takeover via SMS Authentication Flow 
+  URL: https://hackerone.com/reports/1245762 | CWE: Improper Authentication - Generic
+  Program: zenly | Reporter: yetanotherhacker
+
+[Medium] Missing authentication in buddy group API of LINE TIMELINE
+  URL: https://hackerone.com/reports/1283938 | CWE: Improper Authentication - Generic
+  Program: line | Reporter: e26174222
+
+[Critical] See drafts and post articles if the account owner hasn't set password (livedoor CMS plugin)
+  URL: https://hackerone.com/reports/1278881 | CWE: Improper Authentication - Generic
+  Program: line | Reporter: akichia
+
+[Medium] [jitsi-meet] Authentication Bypass when using JWT w/ public keys
+  URL: https://hackerone.com/reports/1210502 | CWE: Improper Authentication - Generic
+  Program: 8x8-bounty | Reporter: plokta
+
+[High] Unauthorized access to employee panel with default credentials.
+  URL: https://hackerone.com/reports/1063298 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: gsa_vdp | Reporter: 7azimo
+
+[Critical] Improper Validation at Partners Login
+  URL: https://hackerone.com/reports/990048 | CWE: Improper Authentication - Generic
+  Program: eternal | Reporter: ashoka_rao
+
+[Critical] Improper Authentication - any user can login as other user with otp/logout & otp/login
+  URL: https://hackerone.com/reports/921780 | CWE: Improper Authentication - Generic
+  Program: snapchat | Reporter: korniltsev
+
+[None] No Rate Limit On  Contact Us 
+  URL: https://hackerone.com/reports/1166069 | CWE: Improper Restriction of Authentication Attempts
+  Program: upchieve | Reporter: lu3ky-13
+
+[Critical] Cache Manager ACL Bypass
+  URL: https://hackerone.com/reports/824203 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: ibb | Reporter: jeriko_one
+
+[Low] Password reset link not expiring after changing password in settings
+  URL: https://hackerone.com/reports/1288898 | CWE: Improper Authentication - Generic
+  Program: basecamp | Reporter: zukito
+
+[High] Stealing SSO Login Tokens (snappublisher.snapchat.com)
+  URL: https://hackerone.com/reports/265943 | CWE: Authentication Bypass
+  Program: snapchat | Reporter: coolboss
+
+[Low] Ratelimiting can be bypassed using IPv6 subnets
+  URL: https://hackerone.com/reports/1154003 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: sjw
+
+[Low] No brute force protection on web-api-cloud.acronis.com
+  URL: https://hackerone.com/reports/972045 | CWE: Improper Restriction of Authentication Attempts
+  Program: acronis | Reporter: hensis
+
+[High] Firebase Database Takeover in Zego Sense Android app
+  URL: https://hackerone.com/reports/1065134 | CWE: Improper Authentication - Generic
+  Program: zego | Reporter: sheikhrishad0
+
+[?] No rate Limit on Add new Translation Project 
+  URL: https://hackerone.com/reports/1238749 | CWE: Improper Restriction of Authentication Attempts
+  Program: weblate | Reporter: deathpoolxrs
+
+[?] Member still able close another user poll on communities topic
+  URL: https://hackerone.com/reports/1129816 | CWE: Improper Authentication - Generic
+  Program: vkcom | Reporter: ferdihermawan1337
+
+[Critical] Administration Authentication Bypass on https://█████
+  URL: https://hackerone.com/reports/1146600 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: fiveguyslover
+
+[Critical] ████████ portal is open to enumeration once authenticated.  Session ID's appear static.  All PII available once a valid session ID is found.
+  URL: https://hackerone.com/reports/1150573 | CWE: Session Fixation
+  Program: deptofdefense | Reporter: gentlemenhacker
+
+[High] Ability to DOS any organization's SSO and open up the door to account takeovers
+  URL: https://hackerone.com/reports/976603 | CWE: Improper Authentication - Generic
+  Program: superhuman | Reporter: cache-money
+
+[Medium] Misconfigured AWS S3 bucket leaks senstive data  such of  admin, Prdouction,beta, localhost and many more directories....
+  URL: https://hackerone.com/reports/1062803 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: i_am_no__one
+
+[?] Subdomain Takeover Via unclaimed Heroku Instance tim-exclusive.shopify.com
+  URL: https://hackerone.com/reports/424669 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: todayisnew
+
+[Medium] CVE 2020 14179 on jira instance 
+  URL: https://hackerone.com/reports/1061204 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: 0xanubiz
+
+[Medium] email verification bypass
+  URL: https://hackerone.com/reports/1089205 | CWE: Improper Authentication - Generic
+  Program: algolia | Reporter: akashhamal0x01
+
+[High] Administrative access to development deployment of web service due to auto-filled credentials
+  URL: https://hackerone.com/reports/923022 | CWE: Improper Authentication - Generic
+  Program: acronis | Reporter: stealthy
+
+[Medium] Remote hacker can download all the files of master branch in public projects where everything is members only.
+  URL: https://hackerone.com/reports/1043480 | CWE: Improper Authentication - Generic
+  Program: gitlab | Reporter: anshraj_srivastava
+
+[High] Misconfiguration of Merchant id in jwt header + Weird Debug mode enabling behavior leads to exposed OTP of mobile number.
+  URL: https://hackerone.com/reports/1080901 | CWE: Improper Authentication - Generic
+  Program: kartpay | Reporter: basant0x01
+
+[Medium] loing in to marketplace panel on enablement.informatica.com
+  URL: https://hackerone.com/reports/1081750 | CWE: Improper Authentication - Generic
+  Program: informatica | Reporter: lu3ky-13
+
+[Medium] 2FA Session not expires after the password reset
+  URL: https://hackerone.com/reports/486693 | CWE: Session Fixation
+  Program: nextcloud | Reporter: jack567son
+
+[Critical] Grinch-Networks taken down - hacky holidays CTF 
+  URL: https://hackerone.com/reports/1069189 | CWE: Improper Restriction of Authentication Attempts
+  Program: h1-ctf | Reporter: pirateducky
+
+[High] Bypass Password Authentication to Update the Password
+  URL: https://hackerone.com/reports/970157 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: a13h1
+
+[Low] Login page vulnerable to bruteforce attacks via rate limiting bypass
+  URL: https://hackerone.com/reports/1040471 | CWE: Improper Restriction of Authentication Attempts
+  Program: khanacademy | Reporter: tomorrowisnew_
+
+[Critical] Other misconfiguration on Slack Server
+  URL: https://hackerone.com/reports/1039325 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: impresscms | Reporter: ex1st3nc3_
+
+[Medium] SSL expired subdomain leads to API swap with main and flagged cookies. Unable to log device ids and certain session tokens. 
+  URL: https://hackerone.com/reports/1024880 | CWE: Improper Restriction of Authentication Attempts
+  Program: basecamp | Reporter: babykeem
+
+[Critical] Absence of Token expiry leads to Unauthorized login Access
+  URL: https://hackerone.com/reports/766578 | CWE: Improper Authentication - Generic
+  Program: affirm | Reporter: yogesh_ojha
+
+[Medium] Subdomain Takeover Via via Dangling NS records on Amazon Route 53 http://api.e2e-kops-aws-canary.test-cncf-aws.canary.k8s.io
+  URL: https://hackerone.com/reports/746000 | CWE: Improper Authentication - Generic
+  Program: kubernetes | Reporter: todayisnew
+
+[Low] Slack server disclose h1 private issue report
+  URL: https://hackerone.com/reports/1035976 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: impresscms | Reporter: ex1st3nc3_
+
+[?] Rate Limit Misconfiguration on tumblr login .
+  URL: https://hackerone.com/reports/708917 | CWE: Improper Authentication - Generic
+  Program: automattic | Reporter: u0pattern
+
+[?] Access to some Slack workspace metadata and settings available to unauthorized parties
+  URL: https://hackerone.com/reports/130133 | CWE: Improper Authentication - Generic
+  Program: slack | Reporter: secalert
+
+[Medium] PIN for passwordless WebAuthn is asked for but not verified
+  URL: https://hackerone.com/reports/924393 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: dschuermann
+
+[Low] Password Reset Link not expiring after changing the email Leads To Account Takeover
+  URL: https://hackerone.com/reports/792737 | CWE: Improper Authentication - Generic
+  Program: nordsecurity | Reporter: dantt
+
+[Low] [www.drive2.ru] Insufficient Security Configurability - The user's can set an existing password as a new password.
+  URL: https://hackerone.com/reports/835302 | CWE: Improper Authentication - Generic
+  Program: drive_net_inc | Reporter: what_web
+
+[Low] [www.drive2.ru] Insufficient Security Configurability - The user can using the same password as your current ID.
+  URL: https://hackerone.com/reports/850938 | CWE: Improper Authentication - Generic
+  Program: drive_net_inc | Reporter: what_web
+
+[Low] [www.drive2.ru] Insufficient Security Configurability - Notification email is not sent when email is changed.
+  URL: https://hackerone.com/reports/835647 | CWE: Improper Authentication - Generic
+  Program: drive_net_inc | Reporter: what_web
+
+[Low] [www.drive2.ru] Insufficient Security Configurability - Email notification is not being sent while changing passwords
+  URL: https://hackerone.com/reports/835138 | CWE: Improper Authentication - Generic
+  Program: drive_net_inc | Reporter: what_web
+
+[Medium] Rate limits too low for email 2FA
+  URL: https://hackerone.com/reports/979820 | CWE: Improper Restriction of Authentication Attempts
+  Program: bitwarden | Reporter: akashhamal0x01
+
+[Medium] Possible denial of service when entering a loooong password
+  URL: https://hackerone.com/reports/952349 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: guoxuxin
+
+[High] [authmagic-timerange-stateless-core] Improper Authentication
+  URL: https://hackerone.com/reports/736522 | CWE: Improper Authentication - Generic
+  Program: nodejs-ecosystem | Reporter: ermilov
+
+[High] SSO bypass in zendesk using trint organization able to leak internal ticket information
+  URL: https://hackerone.com/reports/734936 | CWE: Improper Authentication - Generic
+  Program: trint | Reporter: sopankbegitu
+
+[?] Insufficient validation on Digits bridge
+  URL: https://hackerone.com/reports/168116 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: filedescriptor
+
+[High] Exposed Docker Registry at https://████
+  URL: https://hackerone.com/reports/924487 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: ph0cu5
+
+[Medium] Possible denial of service when entering a loooong password
+  URL: https://hackerone.com/reports/840598 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: xcheater
+
+[Medium] Missing rate limit in signup Form 
+  URL: https://hackerone.com/reports/905692 | CWE: Improper Authentication - Generic
+  Program: trycourier | Reporter: ahmedelmalky
+
+[Medium] Account takeover w/o interaction for a user that doesn't have 2fa enabled via 2fa linking and improper auth at /api/2fa/verify
+  URL: https://hackerone.com/reports/810880 | CWE: Improper Authentication - Generic
+  Program: helium | Reporter: w2w
+
+[Low] SAML Response Reuse on hackerone.com/users/saml/auth
+  URL: https://hackerone.com/reports/888930 | CWE: Improper Authentication - Generic
+  Program: security | Reporter: samtink
+
+[Low] Affiliates - Session Fixation
+  URL: https://hackerone.com/reports/737058 | CWE: Session Fixation
+  Program: clario | Reporter: jair
+
+[Critical] ████ - Complete account takeover
+  URL: https://hackerone.com/reports/566811 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: cablej_dds
+
+[Critical] █████ - Pre-generation of VIEWSTATE allows CAC bypass
+  URL: https://hackerone.com/reports/496219 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: cablej_dds
+
+[Medium] Account verification bypass on translate.kromtech.com
+  URL: https://hackerone.com/reports/737334 | CWE: Authentication Bypass Using an Alternate Path or Channel
+  Program: clario | Reporter: rumiljonov
+
+[Medium] India - OTP bypass on Phone number verification for account creation
+  URL: https://hackerone.com/reports/762695 | CWE: Improper Authentication - Generic
+  Program: starbucks | Reporter: deksterh11
+
+[Low] Talk - Leak of password-protected room name via already existent resource addition
+  URL: https://hackerone.com/reports/662218 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: foobar7
+
+[Medium] Bypass configured 2FA provider with another provider that can be set up at login
+  URL: https://hackerone.com/reports/722748 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: christophwurst
+
+[Medium] scripts loader DOS vulnerability
+  URL: https://hackerone.com/reports/690338 | CWE: Improper Restriction of Authentication Attempts
+  Program: formassembly | Reporter: badisman
+
+[High] Bruteforce in admin panel
+  URL: https://hackerone.com/reports/341074 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: shawalkhan
+
+[High] Account take over of 'light' starbuckscardb2b users
+  URL: https://hackerone.com/reports/767829 | CWE: Improper Authentication - Generic
+  Program: starbucks | Reporter: zude
+
+[High] The login of Hotor Not is Vulnerable to bruteforce.
+  URL: https://hackerone.com/reports/744692 | CWE: Improper Restriction of Authentication Attempts
+  Program: bumble | Reporter: oo7hacker3
+
+[Low] Staging Rabbitmq instance is exposed to the internet with default credentials
+  URL: https://hackerone.com/reports/753602 | CWE: Improper Authentication - Generic
+  Program: unikrn | Reporter: albatraoz
+
+[Medium] Attackers can control which security questions they are presented (████████)
+  URL: https://hackerone.com/reports/192082 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: korprit
+
+[?] The password recovery let users know whether an email address exists or not in the website
+  URL: https://hackerone.com/reports/681468 | CWE: Improper Restriction of Authentication Attempts
+  Program: nextcloud | Reporter: be1ca65b1f89b948ba751aed98e2e
+
+[High] Thailand – a small number of alarm system portals accessible with the default credentials
+  URL: https://hackerone.com/reports/406486 | CWE: Improper Authentication - Generic
+  Program: starbucks | Reporter: radosec
+
+[Medium] Session is not expire after logout
+  URL: https://hackerone.com/reports/709378 | CWE: Improper Authentication - Generic
+  Program: owox | Reporter: saqib98
+
+[Low] Last pipeline status for MR leaked 
+  URL: https://hackerone.com/reports/582349 | CWE: Improper Authentication - Generic
+  Program: gitlab | Reporter: xanbanx
+
+[Medium] No Valid SPF Records.
+  URL: https://hackerone.com/reports/629087 | CWE: Improper Authentication - Generic
+  Program: chainlink | Reporter: danangtriatmaja
+
+[Low] Missing Rate Limit in Password Change
+  URL: https://hackerone.com/reports/440495 | CWE: Improper Restriction of Authentication Attempts
+  Program: smule | Reporter: dhakal_ananda
+
+[Medium] Обходим 2FA и/или получаем access_token, если мы когда-либо были на аккаунте жертвы
+  URL: https://hackerone.com/reports/316078 | CWE: Improper Authentication - Generic
+  Program: vkcom | Reporter: povargek
+
+[Critical] H1514 [*.(my)shopify.com] - Viewing Password Protected Content
+  URL: https://hackerone.com/reports/421859 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: corb3nik
+
+[High] Authentication Bypass by abusing Insecure crypto tokens in /lib/OA/Dal/PasswordRecovery.php:
+  URL: https://hackerone.com/reports/576504 | CWE: Improper Authentication - Generic
+  Program: revive_adserver | Reporter: paulos__
+
+[Medium] Missing Rate Limit in Forgot Password can Lead to email address leakage of all smule accounts
+  URL: https://hackerone.com/reports/441161 | CWE: Improper Restriction of Authentication Attempts
+  Program: smule | Reporter: dhakal_ananda
+
+[?] Insufficient OAuth callback validation which leads to Periscope account takeover
+  URL: https://hackerone.com/reports/110293 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: filedescriptor
+
+[Low] SMS URL verification link does not expire on phone number change and lacks rate limiting
+  URL: https://hackerone.com/reports/200179 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: hanuman1
+
+[None] Physical Access to Mobile App Allows Local Attribute Updates without Authentication
+  URL: https://hackerone.com/reports/165561 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: jigarthakkar39
+
+[?] Read access to hidden orders,products,customers etc. by limited access Staff member through reference page in Comments (Information disclosure )
+  URL: https://hackerone.com/reports/154405 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: indoappsec
+
+[Critical] Redirect on authorization allows account compromise
+  URL: https://hackerone.com/reports/384289 | CWE: Improper Authentication - Generic
+  Program: gsa_bbp | Reporter: cablej_dds
+
+[High] Unauthorized access to a system used for CI/CD processes
+  URL: https://hackerone.com/reports/410475 | CWE: Improper Authentication - Generic
+  Program: starbucks | Reporter: k3mlol
+
+[Low] Session fixation in password protected public download.
+  URL: https://hackerone.com/reports/237184 | CWE: Session Fixation
+  Program: nextcloud | Reporter: frankspierings
+
+[?] Authentication Issue
+  URL: https://hackerone.com/reports/146133 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: bugdiscloseguys
+
+[Medium] Rate limit missing at room login
+  URL: https://hackerone.com/reports/385381 | CWE: Improper Restriction of Authentication Attempts
+  Program: chaturbate | Reporter: lucky_sen
+
+[Low] twofactor_auth bypassable if provider fails to load
+  URL: https://hackerone.com/reports/317711 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: cyphar
+
+[?] Incorrect param parsing in Digits web authentication
+  URL: https://hackerone.com/reports/126522 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: filedescriptor
+
+[Medium] resetreportedcount & updatetags doesn't verify appid param
+  URL: https://hackerone.com/reports/351106 | CWE: Improper Authentication - Generic
+  Program: valve | Reporter: creekie
+
+[High] Improper Authentication in Vimeo's API 'versions' endpoint.
+  URL: https://hackerone.com/reports/328724 | CWE: Improper Authentication - Generic
+  Program: vimeo | Reporter: bugdiscloseguys
+
+[High] [oauth token leak] at oauth.semrush.com
+  URL: https://hackerone.com/reports/314814 | CWE: Improper Authentication - Generic
+  Program: semrush | Reporter: nikitastupin
+
+[High] Leak ██████████ information in real time through API request
+  URL: https://hackerone.com/reports/307050 | CWE: Improper Authentication - Generic
+  Program: grab | Reporter: severus
+
+[?] Воскрешение сессии после сброса сессий / смены пароля / принудительной смены пароля
+  URL: https://hackerone.com/reports/207062 | CWE: Improper Authentication - Generic
+  Program: vkcom | Reporter: povargek
+
+[Low] Oauth flow on the comments widget login can lead to the access code leakage
+  URL: https://hackerone.com/reports/292783 | CWE: Improper Authentication - Generic
+  Program: ed | Reporter: sp1d3rs
+
+[None] SSH backdated version open port
+  URL: https://hackerone.com/reports/255627 | CWE: Improper Restriction of Authentication Attempts
+  Program: wakatime | Reporter: walidhossain010
+
+[?] Bypass  two-factor authentication
+  URL: https://hackerone.com/reports/121696 | CWE: Improper Authentication - Generic
+  Program: slack | Reporter: kamikaze
+
+[?] Password reset token not expiring
+  URL: https://hackerone.com/reports/170161 | CWE: Improper Authentication - Generic
+  Program: yelp | Reporter: hk755a
+
+[?] [www.zomato.com] Unauthenticated access to Internal Sales Data of Zomato through an unrestricted endpoint
+  URL: https://hackerone.com/reports/263535 | CWE: Improper Authentication - Generic
+  Program: eternal | Reporter: prateek_0490
+
+[?] Many Slack teams can be joined by abusing an improperly configured support@ inbox
+  URL: https://hackerone.com/reports/239623 | CWE: Improper Authentication - Generic
+  Program: slack | Reporter: securinti
+
+[Critical] Access to GitLab's Slack by abusing issue creation from e-mail
+  URL: https://hackerone.com/reports/218230 | CWE: Improper Authentication - Generic
+  Program: gitlab | Reporter: intidc
+
+[Medium] Race Conditions in OAuth 2 API implementations
+  URL: https://hackerone.com/reports/55140 | CWE: Improper Authentication - Generic
+  Program: ibb | Reporter: dor1s
+
+[None] DKIM records not present, Email Hijacking is possible.....
+  URL: https://hackerone.com/reports/253926 | CWE: Improper Authentication - Generic
+  Program: weblate | Reporter: kaamakya
+
+[Critical] Ability to log in as any user without authentication if █████████ is empty
+  URL: https://hackerone.com/reports/215053 | CWE: Improper Authentication - Generic
+  Program: ui | Reporter: thenickdude
+
+[None] Password token validation in Weblate Bypass
+  URL: https://hackerone.com/reports/243842 | CWE: Improper Authentication - Generic
+  Program: weblate | Reporter: footstep
+
+[None] Password reset form ignores email field
+  URL: https://hackerone.com/reports/213180 | CWE: Improper Authentication - Generic
+  Program: legalrobot | Reporter: rehan
+
+[Medium] Full Api Access and Run All Functions via Starbucks App
+  URL: https://hackerone.com/reports/232650 | CWE: Improper Authentication - Generic
+  Program: starbucks | Reporter: ynsy
+
+[Low] Weak Forgot Password implementation
+  URL: https://hackerone.com/reports/176116 | CWE: Improper Authentication - Generic
+  Program: revive_adserver | Reporter: pavanw3b
+
+[?] Login to any user account using other facebook app access token 
+  URL: https://hackerone.com/reports/101977 | CWE: Improper Authentication - Generic
+  Program: imgur | Reporter: vinothkumar
+
+[Low] Password token validation in https://wakatime.com/
+  URL: https://hackerone.com/reports/244614 | CWE: Improper Authentication - Generic
+  Program: wakatime | Reporter: silv3rpoision
+
+[Medium] Password reset links should expire after being used, instead of at specific time
+  URL: https://hackerone.com/reports/244612 | CWE: Improper Authentication - Generic
+  Program: wakatime | Reporter: silv3rpoision
+
+[?] Новый 2FA Bypass
+  URL: https://hackerone.com/reports/179421 | CWE: Improper Authentication - Generic
+  Program: vkcom | Reporter: povargek
+
+[High] Default credentials on a DoD website
+  URL: https://hackerone.com/reports/192074 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: korprit
+
+[Low] No redirect uri for Twitter Oath resulting in token leak
+  URL: https://hackerone.com/reports/244958 | CWE: Improper Authentication - Generic
+  Program: wakatime | Reporter: b3nac
+
+[Low] Rate Limit Issue on hosted.weblate.org
+  URL: https://hackerone.com/reports/229825 | CWE: Improper Restriction of Authentication Attempts
+  Program: weblate | Reporter: imran_hadid
+
+[Low] Existing sessions valid after removing third party auth
+  URL: https://hackerone.com/reports/223475 | CWE: Improper Authentication - Generic
+  Program: weblate | Reporter: brdoors3
+
+[Medium] Vine - overwrite account associated with email via android application
+  URL: https://hackerone.com/reports/187714 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: mishre
+
+[Low] Takeover of an account via reset password options after removing the account
+  URL: https://hackerone.com/reports/230076 | CWE: Improper Authentication - Generic
+  Program: weblate | Reporter: imran_hadid
+
+[Low] Control Character Injection In Messages
+  URL: https://hackerone.com/reports/210994 | CWE: Improper Authentication - Generic
+  Program: rockstargames | Reporter: exception
+
+[Critical] Broken Authentication & Session Management (Login Bypass) at support.owox.com
+  URL: https://hackerone.com/reports/222082 | CWE: Improper Authentication - Generic
+  Program: owox | Reporter: koviri_jagdish
+
+[Low] Login with Google Not Authenticated on iOS App
+  URL: https://hackerone.com/reports/202177 | CWE: Improper Authentication - Generic
+  Program: instacart | Reporter: bhavukjain1
+
+[Low] Missing Rate Limit for Current Password field in nextcloud.com
+  URL: https://hackerone.com/reports/199714 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: sumitsahoo
+
+[?] Второй способ обхода 2FA
+  URL: https://hackerone.com/reports/167121 | CWE: Improper Authentication - Generic
+  Program: vkcom | Reporter: povargek
+
+[Medium] Subdomain takeover on https://cloudfront.ubnt.com/ due to non-used CloudFront DNS entry
+  URL: https://hackerone.com/reports/210188 | CWE: Improper Authentication - Generic
+  Program: ui | Reporter: linkks
+
+[?] Обход 2ух-шаговой авторизации / 2FA Bypass
+  URL: https://hackerone.com/reports/163834 | CWE: Improper Authentication - Generic
+  Program: vkcom | Reporter: povargek
+
+[High] [ipm.informatica.com]- Broken Authentication
+  URL: https://hackerone.com/reports/201152 | CWE: Improper Authentication - Generic
+  Program: informatica | Reporter: adminadminadmin
+
+[Low] Bypass file access control vulnerability on a DoD website
+  URL: https://hackerone.com/reports/203311 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: generaleg
+
+[Medium] pam-ussh may be tricked into using another logged in user's ssh-agent
+  URL: https://hackerone.com/reports/204802 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: solardiz
+
+[Low] Limit email address length
+  URL: https://hackerone.com/reports/127995 | CWE: Improper Authentication - Generic
+  Program: gratipay | Reporter: jaypatel
+
+[Low] Misconfigured user account settings on DoD website
+  URL: https://hackerone.com/reports/197907 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: mantis
+
+[High] Password reset vulnerability on a DoD website
+  URL: https://hackerone.com/reports/194308 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[Critical] Authentication bypass vulnerability on a DoD website
+  URL: https://hackerone.com/reports/187705 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: spam404
+
+[Medium] Exposed Access Control Data Backup Files on DoD Website
+  URL: https://hackerone.com/reports/195544 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: mazen160
+
+[Critical] Misconfigured password reset vulnerability on a DoD website
+  URL: https://hackerone.com/reports/193932 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: thirup
+
+[?] Can message users without the proper authorization
+  URL: https://hackerone.com/reports/46113 | CWE: Improper Authentication - Generic
+  Program: vimeo | Reporter: jkjkjk
+
+[?] 2-factor authentication bypass
+  URL: https://hackerone.com/reports/145629 | CWE: Improper Authentication - Generic
+  Program: algolia | Reporter: malcolmx
+
+[?] Parameter Manipulation allowed for viewing of other user’s teavana.com orders
+  URL: https://hackerone.com/reports/141090 | CWE: Improper Authentication - Generic
+  Program: starbucks | Reporter: meals
+
+[?] Near-duplicate accounts allowed with ignored email mutations
+  URL: https://hackerone.com/reports/171337 | CWE: Improper Authentication - Generic
+  Program: legalrobot | Reporter: vishnuraj
+
+[Medium] Information leakage on a Department of Defense website
+  URL: https://hackerone.com/reports/186189 | CWE: Improper Authentication - Generic
+  Program: deptofdefense | Reporter: korprit
+
+[Low] Authentication Bypass on monitoring server
+  URL: https://hackerone.com/reports/194832 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: jamesclyde
+
+[?] Share owner has no possibility to list all existing derived shares
+  URL: https://hackerone.com/reports/145452 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: detroitsmash
+
+[?] Password reset link remains valid after email change
+  URL: https://hackerone.com/reports/145896 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: rootxflood
+
+[Low] No rate-limit in SERVER_SECURITY_CHECK
+  URL: https://hackerone.com/reports/174668 | CWE: Improper Authentication - Generic
+  Program: bumble | Reporter: c0rte
+
+[Low] [oneclickdrsfdc-test.informatica.com] Tomcat Example Scripts Exposed Unauthenticated
+  URL: https://hackerone.com/reports/147161 | CWE: Improper Authentication - Generic
+  Program: informatica | Reporter: zephrfish
+
+[?] Bybass The Closing of the account and logged again to your account
+  URL: https://hackerone.com/reports/167489 | CWE: Improper Authentication - Generic
+  Program: yelp | Reporter: need_new_username_103
+
+[?] Users can falsely declare their own Uber account info on the monthly billing application
+  URL: https://hackerone.com/reports/168453 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: rubyroobs
+
+[?] Authentication bypass leads to sensitive data exposure (token+secret)
+  URL: https://hackerone.com/reports/129918 | CWE: Improper Authentication - Generic
+  Program: slack | Reporter: secalert
+
+[?] password less login token expiration issue
+  URL: https://hackerone.com/reports/172837 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: satishb3
+
+[?] Missing access control exposing detailed information on all users
+  URL: https://hackerone.com/reports/138244 | CWE: Improper Authentication - Generic
+  Program: wp-api | Reporter: albinowax
+
+[?] Password Reset Link issue
+  URL: https://hackerone.com/reports/161924 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: i1ackerone
+
+[?] Access to Splunk via shard3-db2.ec2.shopify.com endpoint
+  URL: https://hackerone.com/reports/165048 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: ysx
+
+[?] No valid SPF record
+  URL: https://hackerone.com/reports/66385 | CWE: Improper Authentication - Generic
+  Program: legalrobot | Reporter: paramdham
+
+[?]   Rate limiting on Email confirmation link
+  URL: https://hackerone.com/reports/115845 | CWE: Improper Authentication - Generic
+  Program: legalrobot | Reporter: paramdham
+
+[?] shopper login_code's can be brute forced
+  URL: https://hackerone.com/reports/158157 | CWE: Improper Authentication - Generic
+  Program: instacart | Reporter: b6117130df17feef13481e3
+
+[?] - Guessing registered users in legalrobot.com
+  URL: https://hackerone.com/reports/66845 | CWE: Improper Authentication - Generic
+  Program: legalrobot | Reporter: paramdham
+
+[?]   Rate limiting on password reset links 
+  URL: https://hackerone.com/reports/115844 | CWE: Improper Authentication - Generic
+  Program: legalrobot | Reporter: paramdham
+
+[?] Generate new Test token
+  URL: https://hackerone.com/reports/147544 | CWE: Improper Authentication - Generic
+  Program: slack | Reporter: alblandino_
+
+[?] Snooping into messages via email service
+  URL: https://hackerone.com/reports/163938 | CWE: Improper Authentication - Generic
+  Program: slack | Reporter: rijalrojan
+
+[?] Reading Emails in Uber Subdomains
+  URL: https://hackerone.com/reports/156536 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: rijalrojan
+
+[?] Bypass verification of email while creating account(No rate limiting enable for verification code)
+  URL: https://hackerone.com/reports/64666 | CWE: Improper Authentication - Generic
+  Program: maplogin | Reporter: indoappsec
+
+[?] Read-only share recipient can restore old versions of file
+  URL: https://hackerone.com/reports/146067 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: bugdiscloseguys
+
+[?] Wordpress Vulnerabilities in transparencyreport.uber.com and eng.uber.com domains
+  URL: https://hackerone.com/reports/148163 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: vivek-p
+
+[?] Urgent : Disclosure of all the apps with hash ID in mopub through API request (Authentication bypass) 
+  URL: https://hackerone.com/reports/98432 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: indoappsec
+
+[?] Broken authentication and session management flaw 
+  URL: https://hackerone.com/reports/152080 | CWE: Improper Authentication - Generic
+  Program: coursera | Reporter: khizer47
+
+[?] [IODR] Get business trip via organization id
+  URL: https://hackerone.com/reports/151470 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: severus
+
+[?] [CRITICAL] -- Complete Account Takeover
+  URL: https://hackerone.com/reports/136885 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: parth
+
+[?] Source code leakage through GIT web access at host '52.91.137.42'
+  URL: https://hackerone.com/reports/148068 | CWE: Improper Authentication - Generic
+  Program: slack | Reporter: d0znpp
+
+[?] Bypassing Digits web authentication's host validation with HPP
+  URL: https://hackerone.com/reports/114169 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: filedescriptor
+
+[?] Unauthorized access to Zookeeper on http://locutus-zk3.ec2.shopify.com:2181
+  URL: https://hackerone.com/reports/154369 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: mico02
+
+[?] Uploading files to a folder where invited user don't have any EDIT privilege
+  URL: https://hackerone.com/reports/145950 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: detroitsmash
+
+[?] Stealing livechat token and using it to chat as the user - user information disclosure 
+  URL: https://hackerone.com/reports/151058 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: zombiehelp54
+
+[?] newsletter.nextcloud.com: Bypass firewall protection
+  URL: https://hackerone.com/reports/145730 | CWE: Improper Authentication - Generic
+  Program: nextcloud | Reporter: bug_cat
+
+[?] Authentication Bypass on Icinga monitoring server
+  URL: https://hackerone.com/reports/143482 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: wkcaj
+
+[?] Change any Uber user's password through /rt/users/passwordless-signup - Account Takeover (critical)
+  URL: https://hackerone.com/reports/143717 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: mongo
+
+[?] Administrator access to a Django Administration Panel on *.sc-corp.net via bruteforced credentials
+  URL: https://hackerone.com/reports/128114 | CWE: Improper Authentication - Generic
+  Program: snapchat | Reporter: shubs
+
+[Low] strengthen Diffie-Hellman (DH) key exchange parameters in grtp.co
+  URL: https://hackerone.com/reports/117458 | CWE: Improper Authentication - Generic
+  Program: gratipay | Reporter: ashish_r_padelkar
+
+[?] [Critical] - Steal OAuth Tokens
+  URL: https://hackerone.com/reports/131202 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: paulos__
+
+[?] Employees with Any Permissions Can Create App with Full Permissions and Perform any API Action
+  URL: https://hackerone.com/reports/135989 | CWE: Improper Authentication - Generic
+  Program: moneybird | Reporter: yaworsk
+
+[?] Security Vulnerability - SMTP protection not used
+  URL: https://hackerone.com/reports/123518 | CWE: Improper Authentication - Generic
+  Program: veris | Reporter: ashishdhaduk
+
+[?] OneLogin authentication bypass on WordPress sites
+  URL: https://hackerone.com/reports/136169 | CWE: Improper Authentication - Generic
+  Program: uber | Reporter: jouko
+
+[?] Remove anyone's pic gravtar
+  URL: https://hackerone.com/reports/101145 | CWE: Improper Authentication - Generic
+  Program: automattic | Reporter: akshyy
+
+[?] Auth bypass on directory.corp.ubnt.com
+  URL: https://hackerone.com/reports/116504 | CWE: Improper Authentication - Generic
+  Program: ui | Reporter: ebrietas
+
+[?] No rate-limit in Two factor Authentication leads to bypass using bruteforce attack
+  URL: https://hackerone.com/reports/128777 | CWE: Improper Authentication - Generic
+  Program: algolia | Reporter: bugs3ra
+
+[?] API Key added for one Indices works for all other indices too.
+  URL: https://hackerone.com/reports/118925 | CWE: Improper Authentication - Generic
+  Program: algolia | Reporter: bugs3ra
+
+[?] User with limited access to Index configuration can rename the Index
+  URL: https://hackerone.com/reports/99969 | CWE: Improper Authentication - Generic
+  Program: algolia | Reporter: bugs3ra
+
+[?] Bypass OTP verification when placing Order
+  URL: https://hackerone.com/reports/142221 | CWE: Improper Authentication - Generic
+  Program: eternal | Reporter: thisishrsh
+
+[?] Mapbox API Access Token with No Scope Can Read Styles
+  URL: https://hackerone.com/reports/122050 | CWE: Improper Authentication - Generic
+  Program: mapbox | Reporter: bugs3ra
+
+[?] Tweetdeck (twitter owned app) not revoked
+  URL: https://hackerone.com/reports/90172 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: xmly
+
+[?] Mediation link can be accepted by other users
+  URL: https://hackerone.com/reports/123420 | CWE: Improper Authentication - Generic
+  Program: security | Reporter: kirkj
+
+[?] Complete Profile URL is not Random and not expiring 
+  URL: https://hackerone.com/reports/123902 | CWE: Improper Authentication - Generic
+  Program: veris | Reporter: s4thi5h
+
+[Medium] SPF/DKIM/DMARC for aspen.io
+  URL: https://hackerone.com/reports/117159 | CWE: Improper Authentication - Generic
+  Program: gratipay | Reporter: nullboy
+
+[Medium] Email Forgery through Mandrillapp SPF
+  URL: https://hackerone.com/reports/117097 | CWE: Improper Authentication - Generic
+  Program: gratipay | Reporter: bugdiscloseguys
+
+[?] User enumeration via error message
+  URL: https://hackerone.com/reports/123496 | CWE: Improper Authentication - Generic
+  Program: veris | Reporter: zuh4n
+
+[?] Not Using Secure Flag Option on Cookies Could Lead to a Man in the Middle Session Highjacking
+  URL: https://hackerone.com/reports/123748 | CWE: Improper Authentication - Generic
+  Program: veris | Reporter: yaworsk
+
+[?] Private program activity timeline information disclosure
+  URL: https://hackerone.com/reports/116029 | CWE: Improper Authentication - Generic
+  Program: security | Reporter: charfe
+
+[?] Broken Authentication on Badoo
+  URL: https://hackerone.com/reports/121469 | CWE: Improper Authentication - Generic
+  Program: bumble | Reporter: varotariadarshit
+
+[?] Weak Password Policy
+  URL: https://hackerone.com/reports/115036 | CWE: Improper Authentication - Generic
+  Program: eternal | Reporter: mugeesahmed
+
+[?] Private Program Disclosure in /:handle/reports/draft.json endpoint
+  URL: https://hackerone.com/reports/116032 | CWE: Improper Authentication - Generic
+  Program: security | Reporter: charfe
+
+[?] OAuth authorization page vulnerable to clickjacking
+  URL: https://hackerone.com/reports/65825 | CWE: Improper Authentication - Generic
+  Program: coinbase | Reporter: paulos__
+
+[?] test1.owncloud.com: Web Server HTTP Trace/Track Method Support Cross-Site Tracing Vulnerability
+  URL: https://hackerone.com/reports/83971 | CWE: Improper Authentication - Generic
+  Program: owncloud | Reporter: ashesh
+
+[?] IDOR- Activate Mopub on different organizations- steal api token- Fabric.io
+  URL: https://hackerone.com/reports/95552 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: akhil-reni
+
+[?] Subdomain Expired
+  URL: https://hackerone.com/reports/101104 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: hak
+
+[?] Non-owner user can remove online store channel and re-add it.
+  URL: https://hackerone.com/reports/98151 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: zombiehelp54
+
+[?] Email Verification Link can be Used as Password Reset Link!
+  URL: https://hackerone.com/reports/98469 | CWE: Improper Authentication - Generic
+  Program: deriv | Reporter: karimrahal
+
+[?] OAUTH pemission set as true= lead to authorize malicious application
+  URL: https://hackerone.com/reports/87561 | CWE: Improper Authentication - Generic
+  Program: coinbase | Reporter: paresh_parmar
+
+[?] Paid account can review\download any invoice of any other shop
+  URL: https://hackerone.com/reports/94899 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: dvl
+
+[?] Arbitrary read on s3://shopify-delivery-app-storage/files
+  URL: https://hackerone.com/reports/94087 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: brakhane
+
+[?] Unauthorized access to all collections, products, pages from other stores
+  URL: https://hackerone.com/reports/93921 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: supernatural
+
+[?] Arbitrary write on s3://shopify-delivery-app-storage/files
+  URL: https://hackerone.com/reports/93691 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: brakhane
+
+[?] change Login Services settings without owner access
+  URL: https://hackerone.com/reports/90690 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: supernatural
+
+[?] Insecure direct object reference - have access to deleted DM's
+  URL: https://hackerone.com/reports/52646 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: akhil-reni
+
+[?] unauthorized access to all customers first and last name 
+  URL: https://hackerone.com/reports/92453 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: supernatural
+
+[?] customers password hash leak!!!!
+  URL: https://hackerone.com/reports/92344 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: supernatural
+
+[?] Notification request disclose private information about other myshopify accounts
+  URL: https://hackerone.com/reports/56936 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: dvl
+
+[?] Verification code issues for Two-Step Authentication
+  URL: https://hackerone.com/reports/67660 | CWE: Improper Authentication - Generic
+  Program: automattic | Reporter: maverickrocky02
+
+[?] Bypass access restrictions from API
+  URL: https://hackerone.com/reports/67557 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: supernatural
+
+[?] Expire User Sessions in Admin Site does not expire user session in Shopify Application in IOS
+  URL: https://hackerone.com/reports/67220 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: nismo
+
+[?] Invitation is not properly cancelled while inviting to bug reports.
+  URL: https://hackerone.com/reports/66151 | CWE: Improper Authentication - Generic
+  Program: security | Reporter: boredengineer21
+
+[?] Shopify android client all API request's response leakage, including access_token, cookie, response header, response body content
+  URL: https://hackerone.com/reports/56002 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: sukhoi
+
+[?] I Can Delete Any Airbnb Users Symbol!
+  URL: https://hackerone.com/reports/49356 | CWE: Improper Authentication - Generic
+  Program: airbnb | Reporter: faisalahmed
+
+[?] Insecure Direct Object References that allows to read any comment (even if it should be private)
+  URL: https://hackerone.com/reports/52181 | CWE: Improper Authentication - Generic
+  Program: vimeo | Reporter: patrik
+
+[?] Insecure Direct Object References in https://vimeo.com/forums
+  URL: https://hackerone.com/reports/52176 | CWE: Improper Authentication - Generic
+  Program: vimeo | Reporter: patrik
+
+[?] Twitter Ads Campaign information disclosure through admin without any authentication.
+  URL: https://hackerone.com/reports/49806 | CWE: Improper Authentication - Generic
+  Program: x | Reporter: avicoder_
+
+[?] IDOR expire other user sessions
+  URL: https://hackerone.com/reports/56511 | CWE: Improper Authentication - Generic
+  Program: shopify | Reporter: sappi
+

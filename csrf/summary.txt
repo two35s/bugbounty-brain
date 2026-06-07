@@ -1,0 +1,655 @@
+Category: csrf
+Reports: 163
+
+[Medium] CSRF vulnerability allows disabling Gmail contacts link for user referrals
+  URL: https://hackerone.com/reports/1668489 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: insightly | Reporter: khaledx
+
+[High] CSRF leads to Account takeover
+  URL: https://hackerone.com/reports/2699029 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: br0x1337
+
+[High] CSRF leads to Account takeover
+  URL: https://hackerone.com/reports/2712857 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: br0x1337
+
+[High] CSRF Attack on changing security questions leads to full Account TakeOver
+  URL: https://hackerone.com/reports/2652603 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: prakhar0x01
+
+[Medium] CSRF Attack leads to delete album at
+  URL: https://hackerone.com/reports/2652190 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: prakhar0x01
+
+[Medium] CSRF to XSS
+  URL: https://hackerone.com/reports/2736979 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: k0x
+
+[Medium] CSRF Attack leads to delete album at ████████
+  URL: https://hackerone.com/reports/2697588 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: prakhar0x01
+
+[Low] csrftoken not unique to session or specific user and csrfmiddlewaretoken  can be altered
+  URL: https://hackerone.com/reports/2513333 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: mozilla | Reporter: bashbdeer
+
+[Medium] CSRF in Delete Pet Function
+  URL: https://hackerone.com/reports/2445106 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: mars | Reporter: mosalah1102
+
+[Medium] Client-Side Path Traversal on LINE Developers Console
+  URL: https://hackerone.com/reports/2473862 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: line | Reporter: never_die
+
+[Low] CSRF resulting in adding pet at ███████
+  URL: https://hackerone.com/reports/2313478 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: mars | Reporter: dr34m14
+
+[Low] monitoring.prow-canary.k8s.io is vulnerable to CVE-2022-21703 (Grafana 0-day)
+  URL: https://hackerone.com/reports/1466765 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: kubernetes | Reporter: jub0bs
+
+[Low] CSRF to delete a pet on ██████
+  URL: https://hackerone.com/reports/2261600 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: mars | Reporter: dr34m14
+
+[Medium] CVE-2023-49920: Apache Airflow: Missing CSRF protection on DAG/trigger
+  URL: https://hackerone.com/reports/2294709 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: ibb | Reporter: itztrq
+
+[Medium] CSRF to XSS in /htdocs/modules/system/admin.php
+  URL: https://hackerone.com/reports/1096123 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: impresscms | Reporter: d3addog
+
+[Medium] CSRF to delete a pet
+  URL: https://hackerone.com/reports/2029753 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: mars | Reporter: d0rift
+
+[Medium] CSRF in seller-us.tiktok.com/profile/account-setting/delegation-login 
+  URL: https://hackerone.com/reports/2002352 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: tiktok | Reporter: eye_
+
+[Medium] CSRF protection bypass on TikTok Webcast Endpoints
+  URL: https://hackerone.com/reports/1543234 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: tiktok | Reporter: zerody
+
+[Medium] Account takeover due to insufficient URL validation on RelayState parameter
+  URL: https://hackerone.com/reports/1923672 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: gitlab | Reporter: bull
+
+[Medium] CSRF protection on OIDC login is broken
+  URL: https://hackerone.com/reports/1878381 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: nextcloud | Reporter: mikaelgundersen
+
+[Medium] CSRF vulnerability in Nextcloud Desktop Client 3.6.1 on Windows when clicking malicious link 
+  URL: https://hackerone.com/reports/1741430 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: nextcloud | Reporter: lukasreschke
+
+[High] CSRF to ATO at https://█████/user/account [HtUS]
+  URL: https://hackerone.com/reports/1624421 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: pwn33d
+
+[Medium] [CSRF] No Csrf protection against sending invitation to join the team.
+  URL: https://hackerone.com/reports/728199 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: lark_technologies | Reporter: imran_nisar
+
+[Medium] Account Takeover and Information update due to cross site request forgery via POST █████████/registration/my-account.cfm
+  URL: https://hackerone.com/reports/1626356 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: snifyak
+
+[Low] CSRF in Changing User Verification Email
+  URL: https://hackerone.com/reports/1531235 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: tiktok | Reporter: f_m
+
+[Low] CSRF Bypassed on Logout Endpoint
+  URL: https://hackerone.com/reports/1091403 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: enjin | Reporter: er_salil
+
+[Medium] CSRF (protection bypassed) to force a below 18 user into viewing an nsfw subreddit !
+  URL: https://hackerone.com/reports/1480569 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: reddit | Reporter: marvelmaniac
+
+[Low] URL Scheme misconfiguration on TikTok for IOS
+  URL: https://hackerone.com/reports/1437294 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: tiktok | Reporter: joemcdonald23
+
+[High] CSRF protection bypass in GitHub Enterprise management console
+  URL: https://hackerone.com/reports/1497169 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: github | Reporter: bitquark
+
+[Medium] CSRF token validation system is disabled on Stripe Dashboard
+  URL: https://hackerone.com/reports/1483327 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: stripe | Reporter: d_sharad
+
+[High] Widespread CSRF on authenticated POST endpoints
+  URL: https://hackerone.com/reports/1309435 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: upchieve | Reporter: zeyu2001
+
+[Critical] CSRF to change password
+  URL: https://hackerone.com/reports/204703 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: nordsecurity | Reporter: paramdham
+
+[Medium] Drive-by arbitrary file deletion in the GDK via letter_opener_web gem
+  URL: https://hackerone.com/reports/1353103 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: gitlab | Reporter: vakzz
+
+[None] CSRF в виджетах 
+  URL: https://hackerone.com/reports/1091296 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: circuit
+
+[High] CSRF on /api/graphql allows executing mutations through GET requests
+  URL: https://hackerone.com/reports/1122408 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: gitlab | Reporter: az3z3l
+
+[Low] CSRF when unlocking lenses leads to lenses being forcefully installed without user interaction
+  URL: https://hackerone.com/reports/1085336 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: snapchat | Reporter: sdushantha
+
+[High] Slack integration setup lacks CSRF protection
+  URL: https://hackerone.com/reports/170552 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: security | Reporter: whhackersbr
+
+[Low] CSRF in changing password after using reset password link
+  URL: https://hackerone.com/reports/1086752 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: openmage | Reporter: xenx
+
+[Medium] CSRF on TikTok Ads Portal
+  URL: https://hackerone.com/reports/1087436 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: tiktok | Reporter: probatorem
+
+[Critical] CSRF на установку своей почты к аккаунту.
+  URL: https://hackerone.com/reports/301586 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: executor
+
+[High] Japan - CSRF in webapp.starbucks.co.jp with user interaction could leak an access token if the user was not using Chrome
+  URL: https://hackerone.com/reports/1113559 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: starbucks | Reporter: elber
+
+[Medium] CSRF in  https://███
+  URL: https://hackerone.com/reports/1090838 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: blackangel11
+
+[Medium] CSRF to Cross-site Scripting (XSS)
+  URL: https://hackerone.com/reports/1118521 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: lu3ky-13
+
+[Medium] CSRF to Cross-site Scripting (XSS)
+  URL: https://hackerone.com/reports/1118501 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: lu3ky-13
+
+[Medium] Lack of CSRF protection on uberps.com makes every form vulnerable to CSRF
+  URL: https://hackerone.com/reports/343120 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: uber | Reporter: healdb
+
+[High] [socket.io] Cross-Site Websocket Hijacking 
+  URL: https://hackerone.com/reports/931197 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: nodejs-ecosystem | Reporter: sh1yo
+
+[High] ███████mill is vulnerable to cross site request forgery that leads to full account take over.
+  URL: https://hackerone.com/reports/1066083 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: m4xp0w3r
+
+[Medium] One Click Account takeover using Ouath CSRF bypass by adding Null byte %00 in state parameter on  www.streamlabs.com
+  URL: https://hackerone.com/reports/1046630 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: logitech | Reporter: surajbhosale
+
+[High] [CSRF] TikTok Careers Portal Account Takeover
+  URL: https://hackerone.com/reports/1010522 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: tiktok | Reporter: lauritz
+
+[Medium] CSRF on https://apps.topcoder.com/wiki/users/editmyprofilepicture.action
+  URL: https://hackerone.com/reports/868572 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: lab45 | Reporter: meryem0x
+
+[Medium] CSRF on https://apps.topcoder.com/wiki/pages/doattachfile.action
+  URL: https://hackerone.com/reports/867473 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: lab45 | Reporter: meryem0x
+
+[Medium] Arbitrary change of blog's background image via CSRF
+  URL: https://hackerone.com/reports/881855 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: wordpress | Reporter: erwan_lr
+
+[Medium] CSRF to Stored HTML injection at https://www.█████
+  URL: https://hackerone.com/reports/1014593 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: nagli
+
+[Low] [Admin Panel] CSRF to resume/pause runner
+  URL: https://hackerone.com/reports/415238 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: gitlab | Reporter: ngalog
+
+[Critical] CSRF to account takeover in https://█████/
+  URL: https://hackerone.com/reports/1018270 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: i_hack_everyone
+
+[Medium] Site-wide CSRF on Safari due to CORS misconfiguration (not localhost)
+  URL: https://hackerone.com/reports/975983 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: cs_money | Reporter: nnez
+
+[Medium] authenticity token not verfied leads to change business name
+  URL: https://hackerone.com/reports/994504 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: shopify | Reporter: cforu12
+
+[Critical] CSRF to account takeover in https://███████.mil/
+  URL: https://hackerone.com/reports/987751 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: dhakal_bibek
+
+[Low] CSRF Vulnerability on post creation page /community/create-post.json
+  URL: https://hackerone.com/reports/487378 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: netfuzzer
+
+[Low] csrf in https://www.rockstargames.com/reddeadonline/feedback/submit.json
+  URL: https://hackerone.com/reports/796295 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: netfuzzer
+
+[Medium] CSRF at https://chatstory.pixiv.net/imported
+  URL: https://hackerone.com/reports/534908 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: pixiv | Reporter: katsuragicsl
+
+[Medium] Referer Leakge in language changer may lead to FB token theft.
+  URL: https://hackerone.com/reports/809691 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: netfuzzer
+
+[Low] Login CSRF vulnerability on hackerone.com
+  URL: https://hackerone.com/reports/834366 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: security | Reporter: what_web
+
+[Medium] CSRF Vulnerability on https://signin.rockstargames.com/tpa/facebook/link/
+  URL: https://hackerone.com/reports/474833 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: netfuzzer
+
+[Medium] CSRF in Profile Fields allows deleting any field in BuddyPress
+  URL: https://hackerone.com/reports/836187 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: wordpress | Reporter: hoangkien1020
+
+[Critical] Отсутствие CSRF ключа на функции Закрытый Профиль.
+  URL: https://hackerone.com/reports/448928 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: ok | Reporter: iframe
+
+[Low] Periscope iOS app CSRF in follow action due to deeplink
+  URL: https://hackerone.com/reports/805073 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: mgf15
+
+[Medium] [www.drive2.ru] CSRF through FCTX token bypass
+  URL: https://hackerone.com/reports/835142 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: drive_net_inc | Reporter: what_web
+
+[High] H1514 CSRF in Domain transfer allows adding your domain to other user's account
+  URL: https://hackerone.com/reports/416978 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: shopify | Reporter: rijalrojan
+
+[Medium] XSRF Token is Not being validated when sending emails test request which lead to CSRF attack using the flash file + 307 redirect technique
+  URL: https://hackerone.com/reports/799867 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: stripo | Reporter: abdellah29
+
+[Low] Periscope android app deeplink leads to CSRF in follow action
+  URL: https://hackerone.com/reports/583987 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: kunal94
+
+[Medium] Cross Site Request Forgery in auth in https://auth.ratelimited.me/
+  URL: https://hackerone.com/reports/473798 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: ratelimited | Reporter: miguel_santareno
+
+[High] Norway - store.starbucks.no - CSRF on email change
+  URL: https://hackerone.com/reports/718852 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: starbucks | Reporter: moonlight323
+
+[Low] CSRF vulnerability that allows an attacker to modify encryption settings
+  URL: https://hackerone.com/reports/630146 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: nextcloud | Reporter: cwave
+
+[Medium] CSRF in generating developer api_key
+  URL: https://hackerone.com/reports/593893 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: magic-bbp | Reporter: mr_r0w07
+
+[Medium] login csrf in analytics.mopub.com
+  URL: https://hackerone.com/reports/577920 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: protostar0
+
+[Critical] Take over of accounts created using Google or Facebook
+  URL: https://hackerone.com/reports/442901 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: khanacademy | Reporter: tomoh
+
+[Critical] Account takeover by changing email
+  URL: https://hackerone.com/reports/538800 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: khanacademy | Reporter: tomoh
+
+[High] CSRF to HTML Injection in Comments
+  URL: https://hackerone.com/reports/428019 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: wordpress | Reporter: simonscannell
+
+[Medium] CSRF and probable account takeover on https://www.niche.co
+  URL: https://hackerone.com/reports/493535 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: mik317
+
+[Medium] CSRF Add user templates
+  URL: https://hackerone.com/reports/301919 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: mavenlink | Reporter: tolo7010
+
+[?] CSRF Trial 14 days express subscription
+  URL: https://hackerone.com/reports/334139 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: instacart | Reporter: tolo7010
+
+[High] Account Takeover using Linked Accounts due to lack of CSRF protection
+  URL: https://hackerone.com/reports/463330 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: rafiem
+
+[Medium] Facebook OAuth Code Theft through referer leakage on support.rockstargames.com
+  URL: https://hackerone.com/reports/482743 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: netfuzzer
+
+[Medium] XSSI on refer.xoom.com allows stealing email addresses and posting to Twitter on behalf of victim
+  URL: https://hackerone.com/reports/450796 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: paypal | Reporter: alexbirsan
+
+[High] Проверяем принадлеженость email и номера телефона к определенному юзеру / CSRF на смену номера для некоторых пользователей
+  URL: https://hackerone.com/reports/388236 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: povargek
+
+[High] Site-wide CSRF on eats.uber.com
+  URL: https://hackerone.com/reports/161529 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: uber | Reporter: indoappsec
+
+[High] Account takeover at https://try.discourse.org due to no CSRF protection in connecting Yahoo account
+  URL: https://hackerone.com/reports/423022 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: discourse | Reporter: avinash_
+
+[Medium] Imperfect CSRF To Overwrite Server Config at /go/admin/restful/configuration/file/POST/xml
+  URL: https://hackerone.com/reports/240048 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: gocd | Reporter: 4cad
+
+[Low] CSRF in "send them an email and browser notification" feature
+  URL: https://hackerone.com/reports/396802 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: chaturbate | Reporter: encrypt
+
+[Low] CSRF in REPORT EMOTICON feature
+  URL: https://hackerone.com/reports/395731 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: chaturbate | Reporter: encrypt
+
+[Low] Уязвимость дает возможность видеть записи , которые предлагаются пабликам + еще
+  URL: https://hackerone.com/reports/106179 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: pisarenko
+
+[Low] Уязвимость дает возможность смотреть кто лайкал приватным фото или видео 
+  URL: https://hackerone.com/reports/92113 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: pisarenko
+
+[Medium] Application Vulnerable to CSRF - Remove Invited user
+  URL: https://hackerone.com/reports/282490 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: infogram | Reporter: ramakanthk35
+
+[Medium] CSRF logs the victim into attacker's account
+  URL: https://hackerone.com/reports/339352 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: unikrn | Reporter: albatraoz
+
+[High] CSRF log victim into the attacker account
+  URL: https://hackerone.com/reports/293016 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: unikrn | Reporter: tolo7010
+
+[?] session_id is not being validated at email invitation endpoint
+  URL: https://hackerone.com/reports/292636 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: unikrn | Reporter: tolo7010
+
+[High] CSRF in Raffles Ticket Purchasing
+  URL: https://hackerone.com/reports/272588 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: unikrn | Reporter: tolo7010
+
+[None] CSRF отредактировать карточки в посте у группы
+  URL: https://hackerone.com/reports/307382 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: circuit
+
+[Low] remote access to localhost daemon, can issue jsonrpc commands
+  URL: https://hackerone.com/reports/303390 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: monero | Reporter: bugbound
+
+[High] Wordpress 4.7 - CSRF -> HTTP SSRF any private ip:port and basic-auth
+  URL: https://hackerone.com/reports/187520 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: wordpress | Reporter: skansing
+
+[?] OAuth 2 Authorization Bypass via CSRF and Cross Site Flashing
+  URL: https://hackerone.com/reports/136582 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vimeo | Reporter: opnsec
+
+[High] Possible SOP bypass in www.starbucks.com due to insecure crossdomain.xml
+  URL: https://hackerone.com/reports/244504 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: starbucks | Reporter: jackb898
+
+[Medium] Создание ссылки от имени чужой страницы vk.cc
+  URL: https://hackerone.com/reports/212046 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: pisarenko
+
+[?] CSRF in the "Add restaurant picture" function
+  URL: https://hackerone.com/reports/169699 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: eternal | Reporter: 0xamir
+
+[?] CSRF Проверить является ли пользователь админом группы.
+  URL: https://hackerone.com/reports/250386 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: circuit
+
+[Medium] HackerOne reports escalation to JIRA is CSRF vulnerable
+  URL: https://hackerone.com/reports/226418 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: security | Reporter: whhackersbr
+
+[?] XSSI (Cross Site Script Inclusion)
+  URL: https://hackerone.com/reports/118631 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: coinbase | Reporter: paulos__
+
+[Low] Posting to Twitter CSRF on php/post_twitter_authenticate.php
+  URL: https://hackerone.com/reports/249234 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: eternal | Reporter: kuromatae
+
+[High] CSRF Vulnerability allows attackers to steal SocialClub private token.
+  URL: https://hackerone.com/reports/253128 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: netfuzzer
+
+[?] CSRF on Periscope Web OAuth authorization endpoint 
+  URL: https://hackerone.com/reports/215381 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: filedescriptor
+
+[Medium] JSON CSRF on POST Heartbeats API
+  URL: https://hackerone.com/reports/245346 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: wakatime | Reporter: sp1d3rs
+
+[?] CSRF to add admin [wordpress]
+  URL: https://hackerone.com/reports/149589 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: wordpress | Reporter: abdullah
+
+[Medium] CSRF To Like/Unlike Photos
+  URL: https://hackerone.com/reports/230837 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: eternal | Reporter: pabster
+
+[Medium] Cross-site request forgery (CSRF) vulnerability on a DoD website
+  URL: https://hackerone.com/reports/191831 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: korprit
+
+[Medium] Prevent content spoofing on /~username/emails/verify.html
+  URL: https://hackerone.com/reports/117187 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: gratipay | Reporter: ishahriyar
+
+[None] CSRF @ configuration 
+  URL: https://hackerone.com/reports/208734 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: files | Reporter: simba50091
+
+[Critical] <- Critical IDOR vulnerability in socialclub allow to insert and delete comments as another user and it discloses sensitive information ->
+  URL: https://hackerone.com/reports/204292 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: rz01
+
+[Low] Information leakage via CSV when content is valid JavaScript
+  URL: https://hackerone.com/reports/207266 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: security | Reporter: mikkocarreon
+
+[High] Account Takeover using Third party Auth CSRF
+  URL: https://hackerone.com/reports/225653 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: weblate | Reporter: ansariosama
+
+[High] Persistent CSRF in /GiftCert-AddToBasket prevents purchases on eCommerce sites
+  URL: https://hackerone.com/reports/206319 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: starbucks | Reporter: inhibitor181
+
+[Low] CSRF vulnerability in saving payment card on store.starbucks.com (COBilling -AddCreditCard)
+  URL: https://hackerone.com/reports/177635 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: starbucks | Reporter: codequick
+
+[Low] Clickjacking Vulnerability found on Yelp
+  URL: https://hackerone.com/reports/214087 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: yelp | Reporter: hckyguy77
+
+[?] Information disclosure - emails disclosed in response > staging.seatme.us
+  URL: https://hackerone.com/reports/49170 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: yelp | Reporter: quistertow
+
+[?] CSRF on cards API
+  URL: https://hackerone.com/reports/95555 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: filedescriptor
+
+[Low] Avoid "resend verification email" confusion
+  URL: https://hackerone.com/reports/156542 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: gratipay | Reporter: s_p_q_r
+
+[Medium] Cross-site request forgery vulnerability on a DoD website
+  URL: https://hackerone.com/reports/191608 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: deptofdefense | Reporter: korprit
+
+[Medium] CSRF in 'set.php' via age causes stored XSS on 'get.php' - http://www.rockstargames.com/php/videoplayer_cache/get.php'
+  URL: https://hackerone.com/reports/152013 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rockstargames | Reporter: nahamsec
+
+[Medium] CSRF exploit | Adding/Editing comment of wishlist items (teavana.com - Wishlist-Comments)
+  URL: https://hackerone.com/reports/177639 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: starbucks | Reporter: faisalahmed
+
+[?] Добавление в меню сообщества без ведома пользователя (нажатия пользователем)
+  URL: https://hackerone.com/reports/106806 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: pisarenko
+
+[?] Уязвимость Создание фотографий без ведома пользователей
+  URL: https://hackerone.com/reports/72775 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vkcom | Reporter: pisarenko
+
+[?] URGENT - Subdomain Takeover on status.vimeo.com due to unclaimed domain pointing to statuspage.io
+  URL: https://hackerone.com/reports/49663 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vimeo | Reporter: avlidienbrunn
+
+[?] account.ubnt.com CSRF
+  URL: https://hackerone.com/reports/101909 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: ui | Reporter: benkhlifafahmi
+
+[High] [community.informatica.com] - CSRF in Private Messages allows to move user's messages to Trash
+  URL: https://hackerone.com/reports/45050 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: informatica | Reporter: artem
+
+[Low] Possible CSRF during external programs
+  URL: https://hackerone.com/reports/174470 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: security | Reporter: malcolmx
+
+[?] Changing paymentProfileUuid when booking a trip allows free rides
+  URL: https://hackerone.com/reports/162809 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: uber | Reporter: temmyscript
+
+[?] CSRF To change Email Notification Settings 
+  URL: https://hackerone.com/reports/157956 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: instacart | Reporter: trad_zero_h
+
+[?] CSRF
+  URL: https://hackerone.com/reports/65167 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: legalrobot | Reporter: paramdham
+
+[?] Add tweet to collection CSRF 
+  URL: https://hackerone.com/reports/100820 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: indoappsec
+
+[?] CSRF - Add optional two factor mobile number
+  URL: https://hackerone.com/reports/155774 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: slack | Reporter: nhavis
+
+[?] CSRF Full Account Takeover
+  URL: https://hackerone.com/reports/152052 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: concretecms | Reporter: khalidamin
+
+[?] Possible CSRF during joining report as participant 
+  URL: https://hackerone.com/reports/148517 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: security | Reporter: eh0x01
+
+[?] Missing Server Side Validation of CSRF Middleware Token in Change Password Request
+  URL: https://hackerone.com/reports/120143 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: veris | Reporter: itly
+
+[?] SVG parser loads external resources on image upload
+  URL: https://hackerone.com/reports/97501 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: shopify | Reporter: ogig
+
+[?] Akismet Several CSRF vulnerabilities
+  URL: https://hackerone.com/reports/131108 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: automattic | Reporter: eboda
+
+[?] No Limitation on Following allows user to follow people automatically!
+  URL: https://hackerone.com/reports/43846 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vimeo | Reporter: optimus_prime
+
+[?] CSRF on eng.uber.com may lead to server-side compromise
+  URL: https://hackerone.com/reports/125594 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: uber | Reporter: jouko
+
+[?] Обход защиты от csrf-ок в m.ok.ru
+  URL: https://hackerone.com/reports/102376 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: ok | Reporter: bohdansec
+
+[?] CSRF AT SELECTING ZAMATO HANDLE
+  URL: https://hackerone.com/reports/113857 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: eternal | Reporter: kiraak-boy
+
+[?] Account Takeover
+  URL: https://hackerone.com/reports/121827 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: bumble | Reporter: bugdisclose
+
+[?] CSRF in Connecting Pinterest Account
+  URL: https://hackerone.com/reports/104931 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: shopify | Reporter: mercurii
+
+[?] Twitter Disconnect CSRF
+  URL: https://hackerone.com/reports/111216 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: shopify | Reporter: akhil-reni
+
+[?] Attach Pinterest account - no State/CSRF parameter in Oauth Call back
+  URL: https://hackerone.com/reports/111218 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: shopify | Reporter: akhil-reni
+
+[?] Missing of csrf protection 
+  URL: https://hackerone.com/reports/96470 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: shopify | Reporter: harishkumar0394
+
+[?]  [CSRF] Activate PayPal Express Checkout
+  URL: https://hackerone.com/reports/99321 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: shopify | Reporter: zombiehelp54
+
+[?] Limited CSRF bypass.
+  URL: https://hackerone.com/reports/99708 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: security | Reporter: defmax
+
+[?] rails-ujs will send CSRF tokens to other origins
+  URL: https://hackerone.com/reports/49935 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: rails | Reporter: mastahyeti
+
+[?] Multiple so called  'type juggling' attacks. Most notably PhabricatorUser::validateCSRFToken() is 'bypassable' in certain cases.
+  URL: https://hackerone.com/reports/86022 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: phabricator | Reporter: superkritisch
+
+[?] Logout any user of same team
+  URL: https://hackerone.com/reports/54610 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: slack | Reporter: oldusername
+
+[?] [mobile.twitter.com / twitter.com] CSRF protection bypass
+  URL: https://hackerone.com/reports/14883 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: bobrov
+
+[?] [URGENT ISSUE] Add or Delete the videos in watch later list of any user .
+  URL: https://hackerone.com/reports/52982 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: vimeo | Reporter: ckmk44
+
+[?] Marking notifications as read CSRF bug
+  URL: https://hackerone.com/reports/5946 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: security | Reporter: redkan
+
+[?] iOS App can establish Facetime calls without user's permission
+  URL: https://hackerone.com/reports/28500 | CWE: Cross-Site Request Forgery (CSRF)
+  Program: x | Reporter: gepeto42
+

@@ -1,0 +1,179 @@
+Category: hunt-jwt
+Reports: 44
+
+[High] elections.k8s.io uses weak session secret key, may place elections at risk
+  URL: https://hackerone.com/reports/1387366 | CWE: Cryptographic Issues - Generic
+  Program: kubernetes | Reporter: ian
+
+[High] Improper error handling in async cryptographic operations crashes process
+  URL: https://hackerone.com/reports/2817648 | CWE: Cryptographic Issues - Generic
+  Program: nodejs | Reporter: tniessen
+
+[Medium] DiffieHellman doesn't generate keys after setting a key
+  URL: https://hackerone.com/reports/2038484 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: bensmyth
+
+[Critical] JWT audience claim is not verified
+  URL: https://hackerone.com/reports/1889161 | CWE: Missing Critical Step in Authentication
+  Program: ibb | Reporter: farcaller
+
+[Medium] Inadequate Encryption Strength in nodejs-current reads openssl.cnf from /home/iojs/build/... upon startup on MacOS
+  URL: https://hackerone.com/reports/1888758 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: zdg0x0
+
+[Medium] CVE-2023-23919: Multiple OpenSSL error handling issues in nodejs crypto library
+  URL: https://hackerone.com/reports/1877977 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: nobacktrack
+
+[Medium] Multiple OpenSSL error handling issues in nodejs crypto library
+  URL: https://hackerone.com/reports/1808596 | CWE: Cryptographic Issues - Generic
+  Program: nodejs | Reporter: mjones-vsat
+
+[Medium] CVE-2021-22947: STARTTLS protocol injection via MITM
+  URL: https://hackerone.com/reports/1334763 | CWE: Cryptographic Issues - Generic
+  Program: curl | Reporter: monnerat
+
+[High] [HTAF4-213] [Pre-submission] CVE-2018-2879 (padding oracle attack in the Oracle Access Manager) at https://█████████
+  URL: https://hackerone.com/reports/728110 | CWE: Cryptographic Issues - Generic
+  Program: deptofdefense | Reporter: sp1d3rs
+
+[Medium] imap: StartTLS stripping attack (CVE-2016-0772).
+  URL: https://hackerone.com/reports/1178562 | CWE: Cryptographic Issues - Generic
+  Program: ruby | Reporter: sighook
+
+[Medium] SSL certificate not validated when registering with a provider
+  URL: https://hackerone.com/reports/903424 | CWE: Cryptographic Issues - Generic
+  Program: nextcloud | Reporter: netranger
+
+[High] Some build dependencies are downloaded over an insecure channel (without subsequent integrity checks)
+  URL: https://hackerone.com/reports/1039504 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: jub0bs
+
+[Low] Reduced purmations on encryption
+  URL: https://hackerone.com/reports/852841 | CWE: Cryptographic Issues - Generic
+  Program: nextcloud | Reporter: realguyman0
+
+[Critical] RCE (Remote code execution) in one of DoD's websites 
+  URL: https://hackerone.com/reports/874924 | CWE: Cryptographic Issues - Generic
+  Program: deptofdefense | Reporter: pwn1um
+
+[Critical] █████████ - Insecure download cookie generation allows bypass of CAC authentication, access to deleted and locked files
+  URL: https://hackerone.com/reports/496326 | CWE: Cryptographic Issues - Generic
+  Program: deptofdefense | Reporter: cablej_dds
+
+[Medium] Dragonblood: Design and Implementation Flaws in WPA3 and EAP-pwd
+  URL: https://hackerone.com/reports/745276 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: vanhoefm
+
+[Medium] Ubuntu/Debian installation method allows key poisoning and code execution for network attacker
+  URL: https://hackerone.com/reports/639473 | CWE: Cryptographic Issues - Generic
+  Program: mariadb | Reporter: hanno
+
+[?] Able to change password by entering wrong old password
+  URL: https://hackerone.com/reports/738899 | CWE: Cryptographic Issues - Generic
+  Program: stripo | Reporter: rutik346
+
+[High] [Twitter Open Source] Releases were & are built/executed/tested/released in the context of insecure/untrusted code
+  URL: https://hackerone.com/reports/505007 | CWE: Cryptographic Issues - Generic
+  Program: x | Reporter: jlleitschuh
+
+[None] Missing Certificate Authority Authorization rule
+  URL: https://hackerone.com/reports/410245 | CWE: Cryptographic Issues - Generic
+  Program: security | Reporter: theendisnear
+
+[None] TOTP Key is shorter than RFC 4226 recommended minimum
+  URL: https://hackerone.com/reports/435648 | CWE: Cryptographic Issues - Generic
+  Program: phabricator | Reporter: insufficiententropy
+
+[High] Samlify is vulnerable to signature wrapping
+  URL: https://hackerone.com/reports/356284 | CWE: Cryptographic Issues - Generic
+  Program: nodejs-ecosystem | Reporter: webtonull
+
+[Low] Insecure Transportation Security Protocol Supported (TLS 1.0) on https://www.jamieweb.net
+  URL: https://hackerone.com/reports/323735 | CWE: Cryptographic Issues - Generic
+  Program: jamieweb | Reporter: retr0
+
+[None] Недочет в поиске по хештегам
+  URL: https://hackerone.com/reports/92271 | CWE: Cryptographic Issues - Generic
+  Program: vkcom | Reporter: pisarenko
+
+[?] POODLE SSLv3 bug on multiple twitter smtp servers (mx3.twitter.com,199.59.148.204,199.16.156.108 and 199.59.148.204)
+  URL: https://hackerone.com/reports/288966 | CWE: Cryptographic Issues - Generic
+  Program: x | Reporter: omespino
+
+[High] NexTable: Credentials exposure
+  URL: https://hackerone.com/reports/120941 | CWE: Cryptographic Issues - Generic
+  Program: eternal | Reporter: mrtuxracer
+
+[?] Webhook allows sending payload using insecure HTTP protocol
+  URL: https://hackerone.com/reports/158541 | CWE: Cryptographic Issues - Generic
+  Program: moneybird | Reporter: mattweidner
+
+[?] SSL/TLS BEAST ATTACK VULNERABILITY 
+  URL: https://hackerone.com/reports/134760 | CWE: Cryptographic Issues - Generic
+  Program: veris | Reporter: d0rkerdevil
+
+[Medium] formassembly.com is vulnerable to padding-oracle attacks.
+  URL: https://hackerone.com/reports/197253 | CWE: Cryptographic Issues - Generic
+  Program: formassembly | Reporter: edoverflow
+
+[?] SSLv2 doesn't block disabled ciphers (CVE-2015-3197)
+  URL: https://hackerone.com/reports/166634 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: nimia
+
+[?] Cross-protocol attack on TLS using SSLv2 (DROWN) (CVE-2016-0800)
+  URL: https://hackerone.com/reports/166629 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: nimia
+
+[?] No Rate Limit In Inviting Similar Contact Multiple Times
+  URL: https://hackerone.com/reports/151868 | CWE: Cryptographic Issues - Generic
+  Program: algolia | Reporter: rajauzairabdullah
+
+[?] CBC "cut and paste" attack may cause Open Redirect(even XSS)
+  URL: https://hackerone.com/reports/126203 | CWE: Cryptographic Issues - Generic
+  Program: uber | Reporter: orange
+
+[?] Divide-and-conquer session key recovery in SSLv2 (CVE-2016-0703)
+  URL: https://hackerone.com/reports/138179 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: dadrian
+
+[?] Bleichenbacher oracle in SSLv2 (CVE-2016-0704)
+  URL: https://hackerone.com/reports/138181 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: dadrian
+
+[?] OpenSSL Key Recovery Attack on DH small subgroups (CVE-2016-0701) 
+  URL: https://hackerone.com/reports/113288 | CWE: Cryptographic Issues - Generic
+  Program: ibb | Reporter: asanso
+
+[?] Possible Timing Side-Channel in XMLRPC Verification
+  URL: https://hackerone.com/reports/107296 | CWE: Cryptographic Issues - Generic
+  Program: automattic | Reporter: voodookobra
+
+[Low] The POODLE attack (SSLv3 supported) for https://grtp.co/
+  URL: https://hackerone.com/reports/116360 | CWE: Cryptographic Issues - Generic
+  Program: gratipay | Reporter: anonymous_ftpuser
+
+[?] Big Bug in SSL : breach compression attack (CVE-2013-3587) affect imgur.com
+  URL: https://hackerone.com/reports/111752 | CWE: Cryptographic Issues - Generic
+  Program: imgur | Reporter: hacker00000000
+
+[?] demo.owncloud.org: HTTP compression is enabled potentially leading to BREACH attack
+  URL: https://hackerone.com/reports/84105 | CWE: Cryptographic Issues - Generic
+  Program: owncloud | Reporter: paresh_parmar
+
+[?] POODLE Bug: 199.16.156.44, 199.16.156.108, mx4.twitter.com
+  URL: https://hackerone.com/reports/41240 | CWE: Cryptographic Issues - Generic
+  Program: x | Reporter: isox
+
+[?] New Device Confirmation, token is valid until not used. 
+  URL: https://hackerone.com/reports/36594 | CWE: Cryptographic Issues - Generic
+  Program: coinbase | Reporter: lovepakistan
+
+[?] Missing spf flags for hackerone.com
+  URL: https://hackerone.com/reports/57736 | CWE: Cryptographic Issues - Generic
+  Program: security | Reporter: d1pakda5
+
+[?] SSL Issues
+  URL: https://hackerone.com/reports/49537 | CWE: Cryptographic Issues - Generic
+  Program: airbnb | Reporter: ruisilva
+

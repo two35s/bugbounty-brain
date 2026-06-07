@@ -1,0 +1,202 @@
+{
+  "id": 1685979,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNjg1OTc5",
+  "url": "https://hackerone.com/reports/1685979",
+  "title": "DoS via Playbook ",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2022-08-31T00:41:40.539Z",
+  "submitted_at": "2022-08-31T00:41:40.606Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "vultza",
+    "url": "/vultza",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/nn900mz33sie5ce8rs5xesax9tma/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 35268,
+    "url": "https://hackerone.com/mattermost",
+    "handle": "mattermost",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/035/268/9c24022b929e7fae94799068cf956f5c69d3ea15_original./235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/035/268/9c24022b929e7fae94799068cf956f5c69d3ea15_original./3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "disabled",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Mattermost",
+      "twitter_handle": "Mattermost",
+      "website": "https://mattermost.com",
+      "about": "Open-source collaboration, self-managed or SaaS"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2022-4019"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2022-11-23T14:55:52.329Z",
+  "bug_reporter_agreed_on_going_public_at": "2022-11-23T14:55:52.216Z",
+  "team_member_agreed_on_going_public_at": "2022-11-23T05:36:22.190Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\nA normal user can create a playbook, that has some attributes like the `run_summary_template`, `retrospective_template` and `description`,that don't have any size check or validation, which allows an attacker to set an unlimited number of characters as their values.\n\nIn a production environment is possible to set up to 50MB of data, due to the default nginx configuration, as the `run_summary_template` value. The creation of the playbook for itself is not sufficient to trigger an DoS attack in the application, but once this playbook is executed(run) the server  starts to consume a large amount of computing resources, which causes to the server to stop responding to users requests and ultimately leads to server crash.\n\nThis attack is even worst because after the application is restarted, its not possible to the user who created the playbook run to finish its execution via the Web Portal, because both the channel created by the playbook run, and the run dedicated management page, don't properly load, showing only a blank screen.\n\n## Steps To Reproduce:\n1.  Log in as a normal user in the platform.\n2. Grab the user `MMAUTHTOKEN` authentication token.\n3. Generate the playbook payload, that contains 50000000(50MB) characters as the `run_summary_template` attribute value. Use F1893243\n4. Send the following `POST` request to the `plugins/playbooks/api/v0/playbooks` API endpoint:\n```bash\ncurl -X POST \"http://<domain>/plugins/playbooks/api/v0/playbooks\" -H 'Content-Type: application/json' -d @payload --cookie \"MMAUTHTOKEN=<user-auth-token>\" -H \"X-CSRF-TOKEN: <csrf-token>\"\n```\n5. Go to the playbooks page, and click on the newly created playbook.\n6. Click in the \"Run\" button and then set an name for the run.\n7. After the run is initiated, the server will start to consume an abnormal quantity of computing resources, and crashes after some seconds.\n8. The application becomes unavailable for all its users.\n\n## Supporting Material/References:\n\n  * PoC Video\n{F1893242}\n\n## Impact\n\nA user can cause a full denial of service attack in the application server, making the application server unavailable to all its users.",
+  "weakness": {
+    "id": 48,
+    "name": "Uncontrolled Resource Consumption"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1893242,
+      "file_name": "dos_playbook_final.mp4",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/z25ecgyvkh8lczlknnww6gv2yiu4?response-content-disposition=attachment%3B%20filename%3D%22dos_playbook_final.mp4%22%3B%20filename%2A%3DUTF-8%27%27dos_playbook_final.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQQ6PT5FW7%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154709Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBWsNOEJ0JFaVY8K37i6yiYtWpkMKSOdbV0u217X%2FY0QAiEA8YDLcSAn5e7qmxX%2FoY26m2M8nAjVcEkad717GZWp4kcquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOogTVbrrv%2FDunPS2CqPBQM0ojAF5GvWDZ6Gk6ogSSxryivHFLktPW3GYiWBS68TIeARQY6cxB9nI8zADw1t8igGHFEUifmdux8a0WC62sF2dakU8cHnTYKP5yEe1%2Btq%2BfZSMdvtYLb9rIwddsoUV9hMEPtXgEByMEnT58I3Lv0j%2FDuhMGTULtvNCgvyNPGSfkmrxWCsboKpuO4scWgX5fOib6yXtOTwFAEGapT4CI%2BBJRIx3lbIL2T32c6yJEMrXbsG%2FYiVtgfWDsOVALYFc5C6lDuNIyiHi8aOL8Npb8IUJBkmJYiQCuCScGzqBenrwB8iYsn1doq2PbhNh9WxPw7F7EFt9rpirsOqdi59UBwOse756dlDiuaCSHbmV9U4BbNKkC8FjfLCrG1EbWw6ZZH26rvzJeps5KOfkgXlw3Y7W%2BFUzUlyJA4SbbZ209%2BQ4nNxzkHBHr9Q7DLUW942Nwzx97mpu9P195RmtzzSWLpwmI0dYYKqmJ%2FsXWxSpHP88yD%2BLkwC9lvXpmGQnZoEbgE7ymmIhr6T69mql5Lt88UKHRsfKvp85A4MD409SBbJxT9PQUh27gfhX4P%2B2JMWXjn3FrqN%2B%2FO4mhFx9er3ULbfhGFltDhBq2dk7KfEKUd3JHfMUMSYPYCExOmvqm%2BtwnEFj8Qwcjzpx1MqWBgt5jxm2nflSVeFXltOBkDeD82bOenKfHiXTX4pemTegzJkZZtFTlpqNTkP1EBD9nrgusG%2FgVS1Jb4MpZiAnjkbR2fqiUrwJ8Pek7yDsyp2qly8ocRw3nZsc%2FBwth%2FVT8mClYpar7rJrf4bL%2B5vq0uz61qUSpjJn%2FPoMc82BNzAU%2F9aOvSz1IbjjndTSQNBdU9oc9BZjdjDgRG5e4nQrioWE1MwpZKW0QY6sQFIVrhotMM%2BiYAYvukTtwRKC6urEDZga1zKBi1obGvhVGsD8SaeQX%2BppUWu9tl5c4pHiUk5C5xSNsOq%2Fe%2BCTnC0dtpm6sWu%2F5YoDxT11cmvAsJtIeXUbSyLtnVEwreIlV%2F4qTqUH75tpsuw9gQlrKoa9VK2WElaKS7lVm%2BkWZtQr%2BtxoJ2Ds9jLKhIYgObWjSEi22jbfe2AuoowBv39qbU8tixAUr3N1ISNU%2F4GaVuWcR0%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1e14dd60d287e7cef4c4adf5c994021e757517c3563770d2f4c64c1820dce8ac",
+      "file_size": 12310291,
+      "type": "video/mp4",
+      "moderated": null
+    },
+    {
+      "id": 1893243,
+      "file_name": "generate-payload.py",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/lawafgj3ghtqfg37s0zep44nfe7f?response-content-disposition=attachment%3B%20filename%3D%22generate-payload.py%22%3B%20filename%2A%3DUTF-8%27%27generate-payload.py&response-content-type=text%2Fx-python&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQQ6PT5FW7%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T154709Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBWsNOEJ0JFaVY8K37i6yiYtWpkMKSOdbV0u217X%2FY0QAiEA8YDLcSAn5e7qmxX%2FoY26m2M8nAjVcEkad717GZWp4kcquwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDOogTVbrrv%2FDunPS2CqPBQM0ojAF5GvWDZ6Gk6ogSSxryivHFLktPW3GYiWBS68TIeARQY6cxB9nI8zADw1t8igGHFEUifmdux8a0WC62sF2dakU8cHnTYKP5yEe1%2Btq%2BfZSMdvtYLb9rIwddsoUV9hMEPtXgEByMEnT58I3Lv0j%2FDuhMGTULtvNCgvyNPGSfkmrxWCsboKpuO4scWgX5fOib6yXtOTwFAEGapT4CI%2BBJRIx3lbIL2T32c6yJEMrXbsG%2FYiVtgfWDsOVALYFc5C6lDuNIyiHi8aOL8Npb8IUJBkmJYiQCuCScGzqBenrwB8iYsn1doq2PbhNh9WxPw7F7EFt9rpirsOqdi59UBwOse756dlDiuaCSHbmV9U4BbNKkC8FjfLCrG1EbWw6ZZH26rvzJeps5KOfkgXlw3Y7W%2BFUzUlyJA4SbbZ209%2BQ4nNxzkHBHr9Q7DLUW942Nwzx97mpu9P195RmtzzSWLpwmI0dYYKqmJ%2FsXWxSpHP88yD%2BLkwC9lvXpmGQnZoEbgE7ymmIhr6T69mql5Lt88UKHRsfKvp85A4MD409SBbJxT9PQUh27gfhX4P%2B2JMWXjn3FrqN%2B%2FO4mhFx9er3ULbfhGFltDhBq2dk7KfEKUd3JHfMUMSYPYCExOmvqm%2BtwnEFj8Qwcjzpx1MqWBgt5jxm2nflSVeFXltOBkDeD82bOenKfHiXTX4pemTegzJkZZtFTlpqNTkP1EBD9nrgusG%2FgVS1Jb4MpZiAnjkbR2fqiUrwJ8Pek7yDsyp2qly8ocRw3nZsc%2FBwth%2FVT8mClYpar7rJrf4bL%2B5vq0uz61qUSpjJn%2FPoMc82BNzAU%2F9aOvSz1IbjjndTSQNBdU9oc9BZjdjDgRG5e4nQrioWE1MwpZKW0QY6sQFIVrhotMM%2BiYAYvukTtwRKC6urEDZga1zKBi1obGvhVGsD8SaeQX%2BppUWu9tl5c4pHiUk5C5xSNsOq%2Fe%2BCTnC0dtpm6sWu%2F5YoDxT11cmvAsJtIeXUbSyLtnVEwreIlV%2F4qTqUH75tpsuw9gQlrKoa9VK2WElaKS7lVm%2BkWZtQr%2BtxoJ2Ds9jLKhIYgObWjSEi22jbfe2AuoowBv39qbU8tixAUr3N1ISNU%2F4GaVuWcR0%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e82297ed8f072eb0a320186e28cfd45f5aba3f248722de364cc1fa84acd85cf3",
+      "file_size": 1637,
+      "type": "text/x-python",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2022-12-23T05:36:22.376Z",
+  "allow_singular_disclosure_after": -109073446.83903404,
+  "singular_disclosure_allowed": true,
+  "vote_count": 17,
+  "voters": [
+    "randomrootx",
+    "skoll101",
+    "ertugrul",
+    "oscuridad1010",
+    "zy9ard3",
+    "thalaivar304",
+    "shubham_srt",
+    "ayoub0x1",
+    "2026",
+    "kerolesmagdy",
+    "and 7 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "score": 4.3,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "low",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "none",
+      "integrity": "none",
+      "availability": "low"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 181350,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "Mattermost Plugins",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

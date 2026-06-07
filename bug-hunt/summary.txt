@@ -1,0 +1,2559 @@
+Category: bug-hunt
+Reports: 639
+
+[High] DLL side-loading vulnerability in Sony Music Center for PC Ver. 2.7.2 (Latest version)
+  URL: https://hackerone.com/reports/3355766 | CWE: Uncontrolled Search Path Element
+  Program: sony | Reporter: resurrect20
+
+[Medium] V1Plugin.Decrypt panics on empty ciphertext (Remote DoS)
+  URL: https://hackerone.com/reports/3620748 | CWE: Array Index Underflow
+  Program: aws_vdp | Reporter: misop00p
+
+[Medium] V2Plugin.Decrypt panics on empty ciphertext (Remote DoS)
+  URL: https://hackerone.com/reports/3620753 | CWE: Array Index Underflow
+  Program: aws_vdp | Reporter: misop00p
+
+[Low] HMAC signature verification omits endpoint and payload allowing request forgery on CoinMate API
+  URL: https://hackerone.com/reports/3670955 | CWE: Missing Required Cryptographic Step
+  Program: coinmate | Reporter: glferreira-devsecops
+
+[None] QuickSight Authorization Bypass: Chat Agents Accessible Despite Custom Permissions Denial
+  URL: https://hackerone.com/reports/3577145 | CWE: Unknown
+  Program: aws_vdp | Reporter: jcow
+
+[Low] Out of scope: Improper Input Validation Order on /api-internal/login via password field leads to unnecessary resource consumption
+  URL: https://hackerone.com/reports/3625600 | CWE: Unknown
+  Program: portswigger | Reporter: bereza4321
+
+[None] Improper input validation On Exported deep-link handler crashes `FileDisplayActivity` on crafted external URL — Denial-of-Service
+  URL: https://hackerone.com/reports/3399016 | CWE: Improper Null Termination
+  Program: nextcloud | Reporter: khoof
+
+[High] Double fdrop on a socket through sys_netcontrol
+  URL: https://hackerone.com/reports/3320669 | CWE: Double Free
+  Program: playstation | Reporter: slidybat
+
+[Medium] CVE-2026-7168: cross-proxy Digest auth state leak
+  URL: https://hackerone.com/reports/3697719 | CWE: Exposure of Data Element to Wrong Session
+  Program: curl | Reporter: xkilua
+
+[Medium] CVE-2026-7009: OCSP stapling bypass with Apple SecTrust
+  URL: https://hackerone.com/reports/3694390 | CWE: Improper Certificate Validation
+  Program: curl | Reporter: 3lcarry
+
+[Medium] CVE-2026-6253: proxy credentials leak over redirect-to proxy
+  URL: https://hackerone.com/reports/3669637 | CWE: Unknown
+  Program: curl | Reporter: joesephdiver
+
+[Low] CVE-2026-6276: stale custom cookie host causes cookie leak
+  URL: https://hackerone.com/reports/3671818 | CWE: Exposure of Data Element to Wrong Session
+  Program: curl | Reporter: arkss
+
+[Low] CVE-2026-4873: connection reuse ignores TLS requirement
+  URL: https://hackerone.com/reports/3621851 | CWE: Cleartext Transmission of Sensitive Information
+  Program: curl | Reporter: bonaire
+
+[Low] CVE-2026-5773: wrong reuse of SMB connection
+  URL: https://hackerone.com/reports/3650689 | CWE: Unknown
+  Program: curl | Reporter: osama-hamad
+
+[Low] CVE-2026-3784: wrong proxy connection reuse with credentials
+  URL: https://hackerone.com/reports/3584903 | CWE: Incorrect Authorization
+  Program: curl | Reporter: xaksaskookqdo
+
+[?] Open Redirect on lovable.dev via redirect parameter leads to phishing attacks
+  URL: https://hackerone.com/reports/3581815 | CWE: Unknown
+  Program: lovable-vdp | Reporter: jdc94
+
+[?] DoS via Unbounded Memory Allocation in sendWebStream on Fastify v5.7.0+ leads to OOM crash when backpressure is ignored
+  URL: https://hackerone.com/reports/3524779 | CWE: Unknown
+  Program: fastify | Reporter: onlybugs05
+
+[Low] HTML Injection in DAST Trial Request Form Confirmation Email – PortSwigger
+  URL: https://hackerone.com/reports/3556892 | CWE: Unknown
+  Program: portswigger | Reporter: zorixu
+
+[?] Unbounded decompression chain in HTTP responses on Node.js Fetch API via Content-Encoding leads to resource exhaustion
+  URL: https://hackerone.com/reports/3456148 | CWE: Unknown
+  Program: nodejs | Reporter: illia-v
+
+[?] Splatoon 3 Anticheat Seed Randomization Weakness
+  URL: https://hackerone.com/reports/3042475 | CWE: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)
+  Program: nintendo | Reporter: hana2736
+
+[?] XSS Vulnerability on Pressable/Atomic Hosting Platform via unescaped admin notices leads to code execution
+  URL: https://hackerone.com/reports/3447021 | CWE: Unknown
+  Program: automattic | Reporter: georgestephanis
+
+[Medium] Uncatchable "Maximum call stack size exceeded" error on Node.js via async_hooks leads to process crashes bypassing error handlers
+  URL: https://hackerone.com/reports/3456295 | CWE: Improper Handling of Exceptional Conditions
+  Program: nodejs | Reporter: aaron_vercel
+
+[Medium] Mail stored HTML injection in subject text
+  URL: https://hackerone.com/reports/3357036 | CWE: Unknown
+  Program: nextcloud | Reporter: se1en
+
+[?] ASGIRequest header concatenation quadratic CPU DoS on Django via repeated headers leads to worker exhaustion
+  URL: https://hackerone.com/reports/3426417 | CWE: Unknown
+  Program: django | Reporter: sy2n0
+
+[?] User enumeration via timing attack in Django mod_wsgi authentication backend leads to account discovery
+  URL: https://hackerone.com/reports/3424977 | CWE: Unknown
+  Program: django | Reporter: stackered
+
+[Low] CVE-2025-14524: bearer token leak on cross-protocol redirect
+  URL: https://hackerone.com/reports/3459417 | CWE: Insufficiently Protected Credentials
+  Program: curl | Reporter: anonymous_237
+
+[Low] CVE-2025-15079: libssh global knownhost override 
+  URL: https://hackerone.com/reports/3477116 | CWE: Improper Validation of Certificate with Host Mismatch
+  Program: curl | Reporter: nyymi
+
+[Low] CVE-2025-15224: libssh key passphrase bypass without agent set
+  URL: https://hackerone.com/reports/3480925 | CWE: Unknown
+  Program: curl | Reporter: nyymi
+
+[Low] Stored XSS via SVG Upload in chat.line.biz
+  URL: https://hackerone.com/reports/3008878 | CWE: Unknown
+  Program: line | Reporter: imnotr3al
+
+[Low] Predictable proposal participant tokens enable unauthorized access and vote submission
+  URL: https://hackerone.com/reports/3385434 | CWE: Use of Insufficiently Random Values
+  Program: nextcloud | Reporter: loremipsumi
+
+[Medium] Deck app allows to spoof file extensions by using RTLO characters
+  URL: https://hackerone.com/reports/2326618 | CWE: Unknown
+  Program: nextcloud | Reporter: jayateerthag
+
+[Critical] Remote Code Execution identified on IBM endpoint.
+  URL: https://hackerone.com/reports/3463045 | CWE: Unknown
+  Program: ibm | Reporter: dara_7979
+
+[?] tabnabbing in roundcube webmail
+  URL: https://hackerone.com/reports/3367676 | CWE: Unknown
+  Program: nextcloud | Reporter: waloodi109
+
+[Medium] Calendar attachments of local files are offered to downloaded
+  URL: https://hackerone.com/reports/3112033 | CWE: Improper Handling of Unexpected Data Type
+  Program: nextcloud | Reporter: daroo
+
+[Critical] Critical Information Disclosure via /talos/api/v1/files/upload
+  URL: https://hackerone.com/reports/3228011 | CWE: Inclusion of Sensitive Information in an Include File
+  Program: bykea | Reporter: sameer_ali
+
+[Low] URL Scheme Validation Bypass in Shopify Mobile App Allows Javascript Execution
+  URL: https://hackerone.com/reports/1737358 | CWE: Forced Browsing
+  Program: shopify | Reporter: fr4via
+
+[Low] Rails Debug Mode Enabled On ( https://44.208.145.207/testrail/files.md5 ) 
+  URL: https://hackerone.com/reports/1874836 | CWE: Unknown
+  Program: malwarebytes | Reporter: tarun_sec
+
+[Medium] Man-in-the-middle through broken SSL certificate verification
+  URL: https://hackerone.com/reports/3174987 | CWE: Man-in-the-Middle
+  Program: nintendo | Reporter: kinnay
+
+[None] Private AWS AMIs are temporarily being exposed publicly
+  URL: https://hackerone.com/reports/3083011 | CWE: Unknown
+  Program: aws_vdp | Reporter: seth_art_dd
+
+[Medium] CVE-2025-5025: No QUIC certificate pinning with wolfSSL
+  URL: https://hackerone.com/reports/3153497 | CWE: Improper Certificate Validation
+  Program: curl | Reporter: kurohiro
+
+[Medium] CVE-2025-4947: QUIC certificate check skip with wolfSSL
+  URL: https://hackerone.com/reports/3150884 | CWE: Improper Validation of Certificate with Host Mismatch
+  Program: curl | Reporter: kurohiro
+
+[Medium] CVE-2024-56374:  Denial-of-service vulnerability in IPv6 validation
+  URL: https://hackerone.com/reports/2939104 | CWE: Unknown
+  Program: ibb | Reporter: sav_
+
+[High] Missing ^ Line Beginner Leads to Origin Spoofing
+  URL: https://hackerone.com/reports/2818009 | CWE: Unknown
+  Program: metamask | Reporter: pkkr
+
+[Medium] [Xenoblade Chronicles X: Definitive Edition] Improper validation of names allows injecting formatting tags and bypassing profanity filter
+  URL: https://hackerone.com/reports/3052880 | CWE: Unknown
+  Program: nintendo | Reporter: roccodev
+
+[Low] HTML Injection in LinkedIn Premium Support Chat
+  URL: https://hackerone.com/reports/3079966 | CWE: Unknown
+  Program: linkedin | Reporter: nagu123
+
+[Low] Account Takeover Vulnerability in Shopify Collabs Platform Due to Missing Email Verification
+  URL: https://hackerone.com/reports/1679734 | CWE: Unknown
+  Program: shopify | Reporter: kun_19
+
+[High] Broken Access Control leads to disclosure of transaction history via /v2/rechargeTransactionHistory endpoint
+  URL: https://hackerone.com/reports/2746709 | CWE: Unknown
+  Program: mtn_group | Reporter: hafiz-ng
+
+[None] Broken X (Twitter) link on hemi.xyz/about
+  URL: https://hackerone.com/reports/2994013 | CWE: Externally Controlled Reference to a Resource in Another Sphere
+  Program: hemi_labs_vdp | Reporter: muralidharan_1530
+
+[Low] Linkedin Broken Link Hijacking on https://hemi.xyz/about
+  URL: https://hackerone.com/reports/2990368 | CWE: Externally Controlled Reference to a Resource in Another Sphere
+  Program: hemi_labs_vdp | Reporter: an_gr_y
+
+[High] Clickjacking in main domain https://topechelon.com/
+  URL: https://hackerone.com/reports/2964441 | CWE: Unknown
+  Program: top_echelon_software | Reporter: genz-1
+
+[Medium] X-E2EE-SIGNATURE verification can be bypassed, leading to loss of confidentiality of end-to-end encrypted files
+  URL: https://hackerone.com/reports/2597504 | CWE: Improper Certificate Validation
+  Program: nextcloud | Reporter: d-xuan
+
+[Low] Es posible poder navegar a cualquier pagina en Point Smart application
+  URL: https://hackerone.com/reports/2778400 | CWE: Unknown
+  Program: mercadolibre | Reporter: andresbebe
+
+[Low] CVE-2024-45498: Apache Airflow Command injection in read_dataset_event_from_classic DAG
+  URL: https://hackerone.com/reports/2705661 | CWE: Unknown
+  Program: ibb | Reporter: nhienit2010
+
+[Low] IP restriction bypass via X-Forwarded-For header
+  URL: https://hackerone.com/reports/1224089 | CWE: Forced Browsing
+  Program: acronis | Reporter: mrityushell
+
+[Medium] Rate limit bypass on passport.acronis.work using X-Forwarded-For request header
+  URL: https://hackerone.com/reports/2627062 | CWE: Unknown
+  Program: acronis | Reporter: analyz3r
+
+[Medium] Reflected HTML Injection via contact (faq) search parameter on ██████████
+  URL: https://hackerone.com/reports/2587101 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: mars | Reporter: the-white-evil
+
+[Medium] Reflected HTML Injection via contact (faq) search parameter on ███]=
+  URL: https://hackerone.com/reports/2578985 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: mars | Reporter: the-white-evil
+
+[Low] Information Exposure due to enabled debug mode
+  URL: https://hackerone.com/reports/2243003 | CWE: Unknown
+  Program: mars | Reporter: thpless
+
+[Low] `std::process::Command` batch files argument escaping could be bypassed with trailing whitespace or periods
+  URL: https://hackerone.com/reports/2721478 | CWE: Unknown
+  Program: ibb | Reporter: 4xpl0r3r
+
+[Medium] sensitive  data-creds for database - private key
+  URL: https://hackerone.com/reports/2396630 | CWE: Missing Encryption of Sensitive Data
+  Program: mars | Reporter: mosalah1102
+
+[Critical] Remote code execution [CVE-2023-36845]
+  URL: https://hackerone.com/reports/2182202 | CWE: Unknown
+  Program: mtn_group | Reporter: m4lc0lmx
+
+[High] The initial E2EE password generated by Rocket.Chat mobile can be recovered in a practical timescale.
+  URL: https://hackerone.com/reports/2546437 | CWE: Use of Insufficiently Random Values
+  Program: rocket_chat | Reporter: h0011
+
+[Medium] [Switch, PIA/MK8DX] Stack buffer overflow and potential RCE in PIA (LAN/LDN, possibly NEX) room info deserialization
+  URL: https://hackerone.com/reports/2611669 | CWE: Stack Overflow
+  Program: nintendo | Reporter: jitlua
+
+[High] Possible DoS Vulnerability with Range Header in Rack
+  URL: https://hackerone.com/reports/2520679 | CWE: Unknown
+  Program: ibb | Reporter: ooooooo_q
+
+[Critical] IDOR Leads To  User Profile Modification https://mtnmobad.mtnbusiness.com.ng/app/updateUser
+  URL: https://hackerone.com/reports/1714638 | CWE: Incorrect Authorization
+  Program: mtn_group | Reporter: reachaxis
+
+[High] Privilege Escalation to Root SSH Access via Pre-Receive Hook Environment in GitHub Enterprise Server
+  URL: https://hackerone.com/reports/2336236 | CWE: Unknown
+  Program: github | Reporter: inspector-ambitious
+
+[Critical] FULL ACCOUNT TAKEOVER
+  URL: https://hackerone.com/reports/2542372 | CWE: Unknown
+  Program: mtn_group | Reporter: impozzible
+
+[Medium] Impersonation in Sequential Messages
+  URL: https://hackerone.com/reports/1379645 | CWE: Unknown
+  Program: rocket_chat | Reporter: gronke
+
+[High] 0 Click account takeover via timed requests to ███████forgot-password (single-packet attack)
+  URL: https://hackerone.com/reports/2142109 | CWE: Use of a Broken or Risky Cryptographic Algorithm
+  Program: mars | Reporter: 0x999
+
+[Low] Rocket.Chat Desktop client fails to open browser on 3rd party external actions from PDF documents
+  URL: https://hackerone.com/reports/1967109 | CWE: Cleartext Transmission of Sensitive Information
+  Program: rocket_chat | Reporter: itssixtynein
+
+[Medium] CVE-2024-32760 in nginx
+  URL: https://hackerone.com/reports/2526046 | CWE: Unknown
+  Program: ibb | Reporter: noentry
+
+[Medium] CVE-2024-31079 in nginx
+  URL: https://hackerone.com/reports/2526051 | CWE: Stack Overflow
+  Program: ibb | Reporter: noentry
+
+[High] DoS with crafted "Range" header
+  URL: https://hackerone.com/reports/2307813 | CWE: Unknown
+  Program: rails | Reporter: ooooooo_q
+
+[High] HackerOne SAML signup domain enforcement bypass results in unauthorized access to HackerOne PullRequest organization
+  URL: https://hackerone.com/reports/2101076 | CWE: Improper Null Termination
+  Program: security | Reporter: 0xacb
+
+[Low] Proxy-Authorization header not cleared on cross-origin redirect in undici.request
+  URL: https://hackerone.com/reports/2408074 | CWE: Insufficiently Protected Credentials
+  Program: nodejs | Reporter: iylz
+
+[Medium] CVE-2024-2398: HTTP/2 push headers memory-leak
+  URL: https://hackerone.com/reports/2442613 | CWE: Unknown
+  Program: ibb | Reporter: w0x42
+
+[Low] Cleartext Transmission of password via Email
+  URL: https://hackerone.com/reports/2337938 | CWE: Cleartext Transmission of Sensitive Information
+  Program: sheer_bbp | Reporter: tuannq_gg
+
+[High] CVE-2024-27281: RCE vulnerability with .rdoc_options in RDoc
+  URL: https://hackerone.com/reports/2438265 | CWE: Unknown
+  Program: ibb | Reporter: ooooooo_q
+
+[Low] Sensitive information disclosure on grafana
+  URL: https://hackerone.com/reports/1448218 | CWE: Unknown
+  Program: jetblue | Reporter: asce21
+
+[Medium] Arbitrary file read from Cloudflare Pages build environment
+  URL: https://hackerone.com/reports/1570874 | CWE: Unknown
+  Program: cloudflare | Reporter: ryotak
+
+[Low] HTML Injection on TikTok Ads
+  URL: https://hackerone.com/reports/2299529 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: tiktok | Reporter: a77w3
+
+[Medium] Node.js is vulnerable to the Marvin Attack (timing variant of the Bleichenbacher attack against PKCS#1 v1.5 padding)
+  URL: https://hackerone.com/reports/2269177 | CWE: Use of a Broken or Risky Cryptographic Algorithm
+  Program: nodejs | Reporter: hkario
+
+[Medium] Non-revoked API Key Disclosure in a Disclosed API Key Disclosure Report on Stripo
+  URL: https://hackerone.com/reports/1709815 | CWE: Cleartext Transmission of Sensitive Information
+  Program: stripo | Reporter: sankalpa_1337
+
+[Medium] CVE-2018-6389 exploitation - using scripts loader
+  URL: https://hackerone.com/reports/2334446 | CWE: Unknown
+  Program: publitas | Reporter: 0xhacker1xox
+
+[Low] Information Disclosure
+  URL: https://hackerone.com/reports/2370002 | CWE: Unknown
+  Program: weblate | Reporter: aydinyunus
+
+[None] Port 587 SMPT Open: Can send any mail remotely from the internal mail users to company mail id's.
+  URL: https://hackerone.com/reports/2264982 | CWE: Unknown
+  Program: sidefx | Reporter: harshniture12
+
+[High] Authentication bypass on JetPack SSO manager - Allows to access the administration panel of wordpress without user interaction
+  URL: https://hackerone.com/reports/2037902 | CWE: Unknown
+  Program: automattic | Reporter: hundredpercent
+
+[None] How the Arch Angel stole Live Events
+  URL: https://hackerone.com/reports/2285198 | CWE: Unknown
+  Program: security | Reporter: archangel
+
+[Medium] Able to blocking users with 2fa from login into their accounts by just knowing the SteamID
+  URL: https://hackerone.com/reports/1179232 | CWE: Reliance on Cookies without Validation and Integrity Checking in a Security Decision
+  Program: cs_money | Reporter: benjamin-mauss
+
+[High] Unrestricted Access to Celery Flower Instance
+  URL: https://hackerone.com/reports/2264960 | CWE: Unknown
+  Program: exness | Reporter: ashwarya
+
+[Medium] URI parser's RFC3986 regular expression has poor performance when there are two # characters, leading to ReDoS
+  URL: https://hackerone.com/reports/1444501 | CWE: Unknown
+  Program: ruby | Reporter: dee-see
+
+[Low] Web API key registration allows registering multiple keys by reusing `request_id` 
+  URL: https://hackerone.com/reports/2270633 | CWE: Unknown
+  Program: valve | Reporter: xpaw
+
+[Low] CVE-2023-46219: HSTS long file name clears contents
+  URL: https://hackerone.com/reports/2236133 | CWE: Missing Encryption of Sensitive Data
+  Program: curl | Reporter: cxshakal
+
+[Medium] Password and mail address stored unencrypted in memory - Rockstar Game Launcher
+  URL: https://hackerone.com/reports/1128357 | CWE: Missing Encryption of Sensitive Data
+  Program: rockstargames | Reporter: moltenbit
+
+[Low] HTML injection at Company Name or Product Name and can be shown on Contact Sales form
+  URL: https://hackerone.com/reports/2076019 | CWE: Unknown
+  Program: linkedin | Reporter: domg
+
+[Medium] Client Side string length check
+  URL: https://hackerone.com/reports/1244798 | CWE: Client-Side Enforcement of Server-Side Security
+  Program: khanacademy | Reporter: tomh
+
+[Medium] Potential Spoofing Risk through Firefox Private Relay Service
+  URL: https://hackerone.com/reports/2109320 | CWE: Content Spoofing
+  Program: mozilla | Reporter: nicholas_cw
+
+[Low] CVE-2023-38546: cookie injection with none file
+  URL: https://hackerone.com/reports/2148242 | CWE: External Control of File Name or Path
+  Program: curl | Reporter: w0x42
+
+[Medium] (CVE-2023-32006) Permissions policies can impersonate other modules in using module.constructor.createRequire() 
+  URL: https://hackerone.com/reports/2104566 | CWE: Unknown
+  Program: ibb | Reporter: haxatron1
+
+[Low] (CVE-2023-32003) fs.mkdtemp() and fs.mkdtempSync() are missing getValidatedPath() checks
+  URL: https://hackerone.com/reports/2104567 | CWE: Unknown
+  Program: ibb | Reporter: haxatron1
+
+[None] Unauthorized Ticket can be created by an Attacker in user's Helpdesk account
+  URL: https://hackerone.com/reports/2079502 | CWE: Unknown
+  Program: security | Reporter: fanimalikhack
+
+[None] Support Tickets can be created on behalf of other users using spoofed email | Bypass of #2001913
+  URL: https://hackerone.com/reports/2109382 | CWE: Incorrect Authorization
+  Program: security | Reporter: as_patro
+
+[High] Ability to  bypass Admin override on Cloudflare WARP Android
+  URL: https://hackerone.com/reports/2043885 | CWE: Client-Side Enforcement of Server-Side Security
+  Program: cloudflare | Reporter: harshdranjan
+
+[Medium] Triager/Team members can edit  hacker's report and hacker is not even notified
+  URL: https://hackerone.com/reports/2061367 | CWE: Unknown
+  Program: security | Reporter: kalkii
+
+[Medium] Html injection
+  URL: https://hackerone.com/reports/2061049 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: mars | Reporter: ped_baq
+
+[Medium] Issuer not verified from obtained token in user_oidc 
+  URL: https://hackerone.com/reports/2021684 | CWE: Unknown
+  Program: nextcloud | Reporter: rullzer
+
+[Medium] DiffieHellman doesn't generate keys after setting a key
+  URL: https://hackerone.com/reports/1927480 | CWE: Inconsistency Between Implementation and Documented Design
+  Program: nodejs | Reporter: bensmyth
+
+[Medium] inDriver Job - Admin Approval Bypass
+  URL: https://hackerone.com/reports/1861487 | CWE: Incorrect Authorization
+  Program: indrive | Reporter: mikejohnson_1
+
+[Low] Error Page Content Spoofing or Text Injection
+  URL: https://hackerone.com/reports/1998179 | CWE: Unknown
+  Program: pyca | Reporter: darky_os
+
+[Medium] Escape Sequence Injection vulnerability in Rack
+  URL: https://hackerone.com/reports/1411867 | CWE: Unknown
+  Program: rails | Reporter: vairelt
+
+[Low] Git Arg Injection in  kubernetes-sigs/release-sdk 
+  URL: https://hackerone.com/reports/1763704 | CWE: Unknown
+  Program: kubernetes | Reporter: snoopysecurity
+
+[Medium] Privilege Esacalation at Apache Airflow 2.5.1 
+  URL: https://hackerone.com/reports/1872682 | CWE: Unknown
+  Program: ibb | Reporter: ksw9722
+
+[Low] CVE-2023-28321: IDN wildcard match
+  URL: https://hackerone.com/reports/1950627 | CWE: Improper Certificate Validation
+  Program: curl | Reporter: kurohiro
+
+[Low] CVE-2023-28322: more POST-after-PUT confusion
+  URL: https://hackerone.com/reports/1954658 | CWE: Expected Behavior Violation
+  Program: curl | Reporter: kurohiro
+
+[Low] No rate limit while adding Additional emails feature
+  URL: https://hackerone.com/reports/1913951 | CWE: Unknown
+  Program: nextcloud | Reporter: cryptographer
+
+[?] ReDoS in Time.rfc2822
+  URL: https://hackerone.com/reports/1485501 | CWE: Unknown
+  Program: ruby | Reporter: ooooooo_q
+
+[Critical] Default Credentials on Kinetic Core System Console - https://█████/kinetic/app/
+  URL: https://hackerone.com/reports/1938693 | CWE: Use of Default Credentials
+  Program: deptofdefense | Reporter: waterlord7788
+
+[?] Sensitive Information Disclosure
+  URL: https://hackerone.com/reports/1577793 | CWE: Unknown
+  Program: trellix | Reporter: salna_kuruvi
+
+[Low] Twitter Broken Link in https://gener8ads.com (Hackerone Profile)
+  URL: https://hackerone.com/reports/1815355 | CWE: Unknown
+  Program: gener8 | Reporter: 0ctopu3
+
+[Low] Possible to spoof Origin in "Connected Sites"
+  URL: https://hackerone.com/reports/1710564 | CWE: User Interface (UI) Misrepresentation of Critical Information
+  Program: metamask | Reporter: renniepak
+
+[Low] Testing flow includes a DeepSource secret
+  URL: https://hackerone.com/reports/1927499 | CWE: Use of Hard-coded Credentials
+  Program: weblate | Reporter: triplesided
+
+[Medium] Website PHP source code returned in javascript
+  URL: https://hackerone.com/reports/1794462 | CWE: Unknown
+  Program: nextcloud | Reporter: mdfarhanchowdhuryhasin
+
+[Low] Security Unfavorable Specifications and Implementations in the CGI::Cookie Class
+  URL: https://hackerone.com/reports/1889477 | CWE: Unknown
+  Program: ibb | Reporter: ht0k
+
+[High] Ruby's CGI library has HTTP response splitting (HTTP header injection), leaking confidential information
+  URL: https://hackerone.com/reports/1889474 | CWE: Unknown
+  Program: ibb | Reporter: ht0k
+
+[High] Use of Cryptographically Weak Pseudo-Random Number Generator in WebCrypto keygen
+  URL: https://hackerone.com/reports/1888803 | CWE: Unknown
+  Program: ibb | Reporter: imhunternull
+
+[Medium] Email  user account in indexacao waybackurl
+  URL: https://hackerone.com/reports/1880929 | CWE: Brute Force
+  Program: mozilla | Reporter: kauenavarro
+
+[Medium] HTML Injection / Reflected Cross-Site Scripting with CSP on https://accounts.firefox.com/settings
+  URL: https://hackerone.com/reports/1880896 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: mozilla | Reporter: celesian
+
+[Medium] Twitter Account hijack @nextcloudfrance
+  URL: https://hackerone.com/reports/1916565 | CWE: Unknown
+  Program: nextcloud | Reporter: devokta
+
+[Low] the complete server installation path is visible in cloud/user endpoint
+  URL: https://hackerone.com/reports/1690510 | CWE: Improper Removal of Sensitive Information Before Storage or Transfer
+  Program: nextcloud | Reporter: bohwaz
+
+[Low] Insecure randomness for default password in file sharing when password policy app is disabled
+  URL: https://hackerone.com/reports/1745702 | CWE: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)
+  Program: nextcloud | Reporter: gorei
+
+[Low] iOS group chat denial of service
+  URL: https://hackerone.com/reports/1701642 | CWE: Use of a Broken or Risky Cryptographic Algorithm
+  Program: line | Reporter: yinmo
+
+[Medium] xss and html injection on ( https://labs.history.state.gov)
+  URL: https://hackerone.com/reports/1810656 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: us-department-of-state | Reporter: iismailu
+
+[Low] Account takeover due to misconfiguration
+  URL: https://hackerone.com/reports/1114347 | CWE: Use of a Key Past its Expiration Date
+  Program: mattermost | Reporter: akashhamal0x01
+
+[Medium] Unauthenticated phpinfo()files could lead to ability file read at █████████  [HtUS]
+  URL: https://hackerone.com/reports/1794884 | CWE: Missing Encryption of Sensitive Data
+  Program: deptofdefense | Reporter: hackeronanywhere
+
+[High] Local File Read vulnerability on ██████████ [HtUS]
+  URL: https://hackerone.com/reports/1624670 | CWE: PHP Local File Inclusion
+  Program: deptofdefense | Reporter: demon1c
+
+[?] ReDoS (Rails::Html::PermitScrubber.scrub_attribute)
+  URL: https://hackerone.com/reports/1684163 | CWE: Unknown
+  Program: rails | Reporter: ooooooo_q
+
+[Low] CVE-2022-35260: .netrc parser out-of-bounds access
+  URL: https://hackerone.com/reports/1753224 | CWE: Stack Overflow
+  Program: ibb | Reporter: kurohiro
+
+[High] Double evaluation in .bash_prompt of dotfiles allows a malicious repository to execute arbitrary commands
+  URL: https://hackerone.com/reports/1785378 | CWE: Unknown
+  Program: iandunn-projects | Reporter: ryotak
+
+[Medium] CVE-2022-42915: HTTP proxy double-free
+  URL: https://hackerone.com/reports/1722065 | CWE: Double Free
+  Program: curl | Reporter: bagder
+
+[Medium] CVE-2022-32221: POST following PUT confusion
+  URL: https://hackerone.com/reports/1704017 | CWE: Expected Behavior Violation
+  Program: curl | Reporter: robbotic
+
+[Low] Jitsi: Attacker is able to cast a vote using the Victim's name on the Polls
+  URL: https://hackerone.com/reports/1517120 | CWE: Unknown
+  Program: 8x8-bounty | Reporter: xsky
+
+[Medium] Sub-Dept User Can Add User's To Main Department.
+  URL: https://hackerone.com/reports/890209 | CWE: Improper Privilege Management
+  Program: lark_technologies | Reporter: imran_nisar
+
+[None] CVE-2017-5929: Hyperledger - Arbitrary Deserialization of Untrusted Data 
+  URL: https://hackerone.com/reports/1739099 | CWE: Unknown
+  Program: hyperledger | Reporter: mik-patient
+
+[Low] Misconfigured build on websites "abuse.cloudflare.com"
+  URL: https://hackerone.com/reports/1624911 | CWE: Unknown
+  Program: cloudflare | Reporter: paradessiaa
+
+[Critical] IDOR  [mtnmobad.mtnbusiness.com.ng]
+  URL: https://hackerone.com/reports/1698006 | CWE: Unknown
+  Program: mtn_group | Reporter: insomnia_hax
+
+[High] size_t-to-int vulnerability in exFAT leads to memory corruption via malformed USB flash drives
+  URL: https://hackerone.com/reports/1340942 | CWE: Incorrect Calculation of Buffer Size
+  Program: playstation | Reporter: theflow0
+
+[Medium] Airflow Daemon Mode Insecure Umask Privilege Escalation
+  URL: https://hackerone.com/reports/1690093 | CWE: Incorrect Permission Assignment for Critical Resource
+  Program: ibb | Reporter: nyymi
+
+[Medium] No validation to Image upload user can upload ( php APK zip files and can be used as storage purpose)
+  URL: https://hackerone.com/reports/1644062 | CWE: Unrestricted Upload of File with Dangerous Type
+  Program: linktree | Reporter: bug_vs_me
+
+[Low] Disable xmlrpc.php file
+  URL: https://hackerone.com/reports/712321 | CWE: Unknown
+  Program: top_echelon_software | Reporter: sohelahmed786
+
+[High] HTTP PUT method is enabled downloader.ratelimited.me
+  URL: https://hackerone.com/reports/545136 | CWE: Unknown
+  Program: ratelimited | Reporter: codeslayer1337
+
+[Medium] HTML Injection via TikTok Ads Email Share 
+  URL: https://hackerone.com/reports/1376990 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: tiktok | Reporter: lu3ky-13
+
+[Low] Twitter Account hijack through broken link in https://runpanther.io
+  URL: https://hackerone.com/reports/1607429 | CWE: Unknown
+  Program: panther_labs | Reporter: prakash142
+
+[Low] HTML Injection via Email Share
+  URL: https://hackerone.com/reports/1490311 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: tiktok | Reporter: lu3ky-13
+
+[High] Node.js - DLL Hijacking on Windows
+  URL: https://hackerone.com/reports/1636566 | CWE: Untrusted Search Path
+  Program: ibb | Reporter: yakirka
+
+[Medium] reflected XSS on panther.com
+  URL: https://hackerone.com/reports/1601140 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: panther_labs | Reporter: ibrahimatix0x01
+
+[Medium] Rack CVE-2022-30122: Denial of Service Vulnerability in Rack Multipart Parsing
+  URL: https://hackerone.com/reports/1627159 | CWE: Unknown
+  Program: ibb | Reporter: ooooooo_q
+
+[Medium] HTML Injection in E-mail Not Resolved ()
+  URL: https://hackerone.com/reports/1600720 | CWE: Unknown
+  Program: acronis | Reporter: thewikiii
+
+[Critical] June 2022 Incident Report
+  URL: https://hackerone.com/reports/1622449 | CWE: Unknown
+  Program: security | Reporter: jobert
+
+[High] Browser is not following proper flow for redirection cause open redirect 
+  URL: https://hackerone.com/reports/1579374 | CWE: Unknown
+  Program: brave | Reporter: kalkii
+
+[Low] Weak rate limit for SIGN.PLUS email verification
+  URL: https://hackerone.com/reports/1584569 | CWE: Unknown
+  Program: alohi | Reporter: zeesozee
+
+[Medium] Remote 0click exfiltration of Safari user's IP address
+  URL: https://hackerone.com/reports/1392211 | CWE: Forced Browsing
+  Program: x | Reporter: max2x
+
+[Low] HTML Injection in E-mail
+  URL: https://hackerone.com/reports/1536899 | CWE: Unknown
+  Program: acronis | Reporter: hackersight
+
+[Medium] CVE-2022-30115: HSTS bypass via trailing dot
+  URL: https://hackerone.com/reports/1565622 | CWE: Cleartext Transmission of Sensitive Information
+  Program: ibb | Reporter: haxatron1
+
+[?] Conduit feed.publish API allows you to spoof other users or make it look like you have access to a restricted object
+  URL: https://hackerone.com/reports/1566325 | CWE: Unknown
+  Program: phabricator | Reporter: dyls
+
+[Critical] Integer overflow vulnerability 
+  URL: https://hackerone.com/reports/1562515 | CWE: Integer Overflow
+  Program: glovo | Reporter: 0f1c3r
+
+[Low] Origin IP found, WAF Cloudflare Bypass
+  URL: https://hackerone.com/reports/1536299 | CWE: Unknown
+  Program: smtp2go | Reporter: tarun_sec
+
+[Critical] Download full backup  [Mtn.co.rw]
+  URL: https://hackerone.com/reports/1516520 | CWE: Unknown
+  Program: mtn_group | Reporter: ibrahimatix0x01
+
+[Medium] Storage of old passwords in plain text format
+  URL: https://hackerone.com/reports/1549217 | CWE: Plaintext Storage of a Password
+  Program: recorded-future | Reporter: subuganz
+
+[Medium] CVE-2022-30115: HSTS bypass via trailing dot
+  URL: https://hackerone.com/reports/1557449 | CWE: Missing Required Cryptographic Step
+  Program: curl | Reporter: haxatron1
+
+[High] One Click Account Hijacking via Unvalidated Deeplink
+  URL: https://hackerone.com/reports/1500614 | CWE: Forced Browsing
+  Program: tiktok | Reporter: fr4via
+
+[Critical] Hardcoded AWS credentials in ███████.msi
+  URL: https://hackerone.com/reports/1368690 | CWE: Use of Hard-coded Credentials
+  Program: 8x8-bounty | Reporter: chip_sec
+
+[Medium] Taking position in a discontinued forex pair without executing any trades
+  URL: https://hackerone.com/reports/1509211 | CWE: Unknown
+  Program: exness | Reporter: ashwarya
+
+[Low] Broken Domain Link Takeover from kubernetes.io docs
+  URL: https://hackerone.com/reports/1434179 | CWE: Insecure Temporary File
+  Program: kubernetes | Reporter: 0xlegendkiller
+
+[Medium] Insecure Storage and Overly Permissive API Keys
+  URL: https://hackerone.com/reports/1283575 | CWE: Missing Encryption of Sensitive Data
+  Program: stripo | Reporter: dc61703fdbcd3f8331d3dc24078c01
+
+[Low] Bypass Email Verification in Customer Portal
+  URL: https://hackerone.com/reports/1443211 | CWE: Unknown
+  Program: mattermost | Reporter: 0dx
+
+[Medium] [AWC-Pune] - User can download files deleted by Admin using shortcuts
+  URL: https://hackerone.com/reports/1463028 | CWE: Unknown
+  Program: lark_technologies | Reporter: prateek_thakare
+
+[Low] Ability to Disable the Login Attempt of any Shopify Owner for 24 hrs  (Zero_Click)
+  URL: https://hackerone.com/reports/1406495 | CWE: Client-Side Enforcement of Server-Side Security
+  Program: shopify | Reporter: saurabhsankhwar3
+
+[Low] [h1-2102] Break permissions waterfall
+  URL: https://hackerone.com/reports/1088159 | CWE: Unknown
+  Program: shopify | Reporter: hogarth45
+
+[?]  Clickjacking
+  URL: https://hackerone.com/reports/688546 | CWE: Unknown
+  Program: palo_alto_software | Reporter: paramdham
+
+[Medium] Lack of URL normalization renders Blocked-Previews feature ineffectual
+  URL: https://hackerone.com/reports/1102764 | CWE: Security Through Obscurity
+  Program: slack | Reporter: jub0bs
+
+[Medium] Grafana LFI on https://grafana.mariadb.org
+  URL: https://hackerone.com/reports/1419213 | CWE: Remote File Inclusion
+  Program: mariadb | Reporter: tess
+
+[Low] Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  URL: https://hackerone.com/reports/1440161 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: 8x8-bounty | Reporter: n1had
+
+[Medium] Баг с оплатой подписки
+  URL: https://hackerone.com/reports/1300583 | CWE: Unknown
+  Program: vkcom | Reporter: azimoff
+
+[Critical] Missing ownership check in 2FA for secondary client login
+  URL: https://hackerone.com/reports/1250474 | CWE: Unknown
+  Program: line | Reporter: q0jt
+
+[High] LINE Profile ID leaks in OpenChat
+  URL: https://hackerone.com/reports/927338 | CWE: Unknown
+  Program: line | Reporter: aki__0421
+
+[Medium] Unauthorized access to choice.av.ru control panel
+  URL: https://hackerone.com/reports/963161 | CWE: Missing Authorization
+  Program: av | Reporter: takeyourheart
+
+[Low] No-Rate limit of current password on delete account endpoint(https://www.xvideos.com/account/close)
+  URL: https://hackerone.com/reports/1392287 | CWE: Unknown
+  Program: xvideos | Reporter: rawat_16
+
+[Medium] Staff who only have apps and channels permission can do a takeover account at the wholesale store (Bypass get invitation link)
+  URL: https://hackerone.com/reports/1266828 | CWE: Unknown
+  Program: shopify | Reporter: urfavenemy01
+
+[High] Leak of Google Sheets API credentials
+  URL: https://hackerone.com/reports/965314 | CWE: Cleartext Transmission of Sensitive Information
+  Program: av | Reporter: adsec2s
+
+[Medium] A bypass of adding remote files in concrete5 FIlemanager leads to remote code execution
+  URL: https://hackerone.com/reports/1350444 | CWE: Unknown
+  Program: concretecms | Reporter: byc_404
+
+[Medium] A member-member privilege could access the https://console.rockset.com/billing?tab=payment page even though the billing page is hidden from the menu. 
+  URL: https://hackerone.com/reports/946384 | CWE: Improper Handling of Insufficient Permissions or Privileges
+  Program: rockset | Reporter: jhimansh
+
+[Medium] IPv4 only clusters susceptible to MitM attacks via IPv6 rogue router advertisements
+  URL: https://hackerone.com/reports/819717 | CWE: Man-in-the-Middle
+  Program: kubernetes | Reporter: champtar
+
+[Critical] Unauthorized Kubernetes to RCE (root) and found TEAMTNT Crypto Miner on it
+  URL: https://hackerone.com/reports/1317236 | CWE: Unknown
+  Program: ibm | Reporter: un_kn0wn
+
+[High] Array Index Underflow--http rpc
+  URL: https://hackerone.com/reports/825091 | CWE: Array Index Underflow
+  Program: monero | Reporter: minerscan
+
+[Medium] Domain does not Match SSL Certificate
+  URL: https://hackerone.com/reports/1341142 | CWE: Unknown
+  Program: acronis | Reporter: skimask
+
+[Medium] CVE-2021-22946: Protocol downgrade required TLS bypassed
+  URL: https://hackerone.com/reports/1334111 | CWE: Missing Required Cryptographic Step
+  Program: curl | Reporter: monnerat
+
+[Medium] End to end encryption public key is not properly verified on Desktop and Android
+  URL: https://hackerone.com/reports/1189162 | CWE: Unknown
+  Program: nextcloud | Reporter: rtod
+
+[Low] Clients do not verify server public key
+  URL: https://hackerone.com/reports/1192470 | CWE: Unknown
+  Program: nextcloud | Reporter: rtod
+
+[None] old session  dose not   expire  after  password change 
+  URL: https://hackerone.com/reports/1166076 | CWE: Unknown
+  Program: upchieve | Reporter: scorpion_x
+
+[?] Publicly exposed HashiCorp Vault (Secrets management) at usec-gcp-staging.uberinternal.com & usec-gcp.uberinternal.com
+  URL: https://hackerone.com/reports/519044 | CWE: Unknown
+  Program: uber | Reporter: ayoubfathi_
+
+[Medium] 1-byte heap buffer overflow in DNS resolver
+  URL: https://hackerone.com/reports/1210450 | CWE: Off-by-one Error
+  Program: ibb | Reporter: luismerino
+
+[Medium] [CVE-2021-29156] LDAP Injection at https://██████
+  URL: https://hackerone.com/reports/1278891 | CWE: LDAP Injection
+  Program: deptofdefense | Reporter: whoisbinit
+
+[Medium] Disclosure handle private program with external link
+  URL: https://hackerone.com/reports/1276992 | CWE: Unknown
+  Program: security | Reporter: haxta4ok00
+
+[Medium] Mishandling of hackerone clear background checks resulting in disclosure of other hacker's information
+  URL: https://hackerone.com/reports/1240162 | CWE: Off-by-one Error
+  Program: security | Reporter: frozensolid
+
+[High] Acronis True Image  (Windows) does not validate server certificate on a TLS connection
+  URL: https://hackerone.com/reports/1056144 | CWE: Improper Certificate Validation
+  Program: acronis | Reporter: aapo
+
+[High] Disclosure of internal information using hidden NTLM authentication leading to an exploit server
+  URL: https://hackerone.com/reports/853284 | CWE: External Control of Critical State Data
+  Program: mtn_group | Reporter: z3lox
+
+[?] When uploading attachments, unencrypted file names are made available to the server
+  URL: https://hackerone.com/reports/1206799 | CWE: Missing Encryption of Sensitive Data
+  Program: bitwarden | Reporter: jjlin
+
+[High] Two-factor authentication enforcement bypass
+  URL: https://hackerone.com/reports/1050244 | CWE: Unknown
+  Program: nextcloud | Reporter: abdullah-a
+
+[High] Post-Auth Blind NoSQL Injection in the users.list API leads to Remote Code Execution
+  URL: https://hackerone.com/reports/1130874 | CWE: Unknown
+  Program: rocket_chat | Reporter: sonarsource
+
+[None] Session Hijacking leads to full control of account by attacker
+  URL: https://hackerone.com/reports/1201396 | CWE: Unknown
+  Program: upchieve | Reporter: sampritdas
+
+[Medium] anti_ransomware_service.exe REST API does not require authentication
+  URL: https://hackerone.com/reports/858608 | CWE: Missing Authentication for Critical Function
+  Program: acronis | Reporter: mjoensen
+
+[Low] Second-order SOQL injection through email and campaign name parameter in Salesforce lead submission
+  URL: https://hackerone.com/reports/1039821 | CWE: Unknown
+  Program: security | Reporter: jobert
+
+[?] [VK Android] Access to app protected components leads to arbitrary code execution
+  URL: https://hackerone.com/reports/1095633 | CWE: Unknown
+  Program: vkcom | Reporter: bagipro
+
+[Critical] Signedness issue in ClassInfo message handler leads to RCE on CS:GO client
+  URL: https://hackerone.com/reports/876719 | CWE: Array Index Underflow
+  Program: valve | Reporter: teapotd
+
+[Medium] Git Config
+  URL: https://hackerone.com/reports/1176174 | CWE: Unknown
+  Program: mariadb | Reporter: dtattoedhackers
+
+[Medium] SMAP bypass
+  URL: https://hackerone.com/reports/1048322 | CWE: Unknown
+  Program: playstation | Reporter: m00nbsd
+
+[Critical] Pre-Auth Blind NoSQL Injection leading to Remote Code Execution
+  URL: https://hackerone.com/reports/1130721 | CWE: Unknown
+  Program: rocket_chat | Reporter: sonarsource
+
+[Low] CVE-2021-22890: TLS 1.3 session ticket proxy host mixup
+  URL: https://hackerone.com/reports/1129529 | CWE: Man-in-the-Middle
+  Program: curl | Reporter: mingtao
+
+[Low] CVE-2021-22876: Automatic referer leaks credentials
+  URL: https://hackerone.com/reports/1101882 | CWE: Unknown
+  Program: curl | Reporter: vsz
+
+[Critical] Any meeting chat history can be read and modified by an arbitrary user
+  URL: https://hackerone.com/reports/1038658 | CWE: Incorrect Authorization
+  Program: 8x8-bounty | Reporter: pmnh
+
+[Low] credentials found in config file on github
+  URL: https://hackerone.com/reports/1134060 | CWE: Password in Configuration File
+  Program: blockfi | Reporter: akitech
+
+[Critical] Cookie steal through content Uri
+  URL: https://hackerone.com/reports/876192 | CWE: Weak Password Recovery Mechanism for Forgotten Password
+  Program: brave | Reporter: kanytu
+
+[Medium] Lack of quarantine macOS attribute(com.apple.quarantine) leads multiple issues including RCE
+  URL: https://hackerone.com/reports/1019389 | CWE: Unknown
+  Program: basecamp | Reporter: hensis
+
+[Medium] Broken Link Hijacking on Twitter link
+  URL: https://hackerone.com/reports/1117079 | CWE: Unknown
+  Program: panther_labs | Reporter: run_win
+
+[Critical] Broken parsing of Git diff allows an attacker to inject arbitrary Ruby scripts to Casks on official taps
+  URL: https://hackerone.com/reports/1167608 | CWE: Unknown
+  Program: homebrew | Reporter: ryotak
+
+[Medium] Round-trip instability in REXML
+  URL: https://hackerone.com/reports/1104077 | CWE: Unknown
+  Program: ruby | Reporter: jupenur
+
+[Low] CRLF INJECTION 
+  URL: https://hackerone.com/reports/1038594 | CWE: Unknown
+  Program: gsa_vdp | Reporter: amannnnnnnnnnnnnnn
+
+[Medium] [h1-2102] FQDN takeover on all Shopify wholesale customer domains by trailing dot (RFC 1034)
+  URL: https://hackerone.com/reports/1086108 | CWE: Incorrect Permission Assignment for Critical Resource
+  Program: shopify | Reporter: intidc
+
+[High] Git repo on https://██████.mil/ discloses API password
+  URL: https://hackerone.com/reports/765825 | CWE: Password in Configuration File
+  Program: deptofdefense | Reporter: al-madjus
+
+[Low] "Bounty splitting enabled" can discloses if public VDPs are running private VRP
+  URL: https://hackerone.com/reports/1103812 | CWE: Unknown
+  Program: security | Reporter: hundredpercent
+
+[Critical] Multiple bugs leads to RCE on TikTok for Android
+  URL: https://hackerone.com/reports/1065500 | CWE: Improper Export of Android Application Components
+  Program: tiktok | Reporter: dphoeniixx
+
+[High] Reflected XSS on https://www.uber.com 
+  URL: https://hackerone.com/reports/390386 | CWE: Unknown
+  Program: uber | Reporter: samux
+
+[Low] Access to SQL server of ubergreen.pt through password disclosure from different domain on same IP
+  URL: https://hackerone.com/reports/439223 | CWE: Password in Configuration File
+  Program: uber | Reporter: healdb
+
+[Medium] Informations disclosure - Access to some checkout informations
+  URL: https://hackerone.com/reports/1064869 | CWE: Unknown
+  Program: shopify | Reporter: imgnotfound
+
+[Low] Leak of Internal IP addresses
+  URL: https://hackerone.com/reports/673723 | CWE: Unknown
+  Program: trint | Reporter: rook1337
+
+[High] Arbitrary File Reading on Uber SSL VPN
+  URL: https://hackerone.com/reports/617543 | CWE: Plaintext Storage of a Password
+  Program: uber | Reporter: orange
+
+[High] Password Cracking - Weak Password Used to Secure ████ Containing a Plaintext Password
+  URL: https://hackerone.com/reports/985133 | CWE: Storing Passwords in a Recoverable Format
+  Program: deptofdefense | Reporter: z32
+
+[High]  Github Account hijack through broken link in developer.twitter.com
+  URL: https://hackerone.com/reports/1031321 | CWE: Phishing
+  Program: x | Reporter: milankatwal99
+
+[High] nextcloud-snap CircleCI project has vulnerable configuration which can lead to exposing secrets
+  URL: https://hackerone.com/reports/794407 | CWE: Insufficiently Protected Credentials
+  Program: nextcloud | Reporter: nathand
+
+[?] Solution for hackyholiday
+  URL: https://hackerone.com/reports/1065495 | CWE: Unknown
+  Program: h1-ctf | Reporter: holme
+
+[Critical] [h1ctf-Grinch Networks] MrR3b00t Saving the Christmas
+  URL: https://hackerone.com/reports/1068934 | CWE: Unknown
+  Program: h1-ctf | Reporter: d3f4u17
+
+[Critical] H1 Hackyholidays CTF - The Grinch was defeated
+  URL: https://hackerone.com/reports/1069467 | CWE: Unknown
+  Program: h1-ctf | Reporter: val_brux
+
+[Critical] Grinch Networks compromised!
+  URL: https://hackerone.com/reports/1066504 | CWE: Unknown
+  Program: h1-ctf | Reporter: zonduu
+
+[High] Writeup Submission
+  URL: https://hackerone.com/reports/1068880 | CWE: Unknown
+  Program: h1-ctf | Reporter: h3x0ne
+
+[?] HackyHolidays H1 CTF Writeup
+  URL: https://hackerone.com/reports/1068881 | CWE: Unknown
+  Program: h1-ctf | Reporter: mava
+
+[?] [h1-ctf] 12 Days of Adventure to stop Grinch from ruining Christmas
+  URL: https://hackerone.com/reports/1067087 | CWE: Unknown
+  Program: h1-ctf | Reporter: sudi
+
+[?] Stopping Grinch to ruin XMas!
+  URL: https://hackerone.com/reports/1065485 | CWE: Unknown
+  Program: h1-ctf | Reporter: nukedx
+
+[Low] Нет флуд-контроля на функции "Запрос денег" в VK Pay. Флуд уведомлениями и сообщениями пользователю, находящемуся в друзьях.
+  URL: https://hackerone.com/reports/1029466 | CWE: Unknown
+  Program: vkcom | Reporter: zelenskyy
+
+[Critical] Email Confirmation Bypass in myshop.myshopify.com that Leads to Full Privilege Escalation to Any Shop Owner by Taking Advantage of the Shopify SSO
+  URL: https://hackerone.com/reports/791775 | CWE: Unknown
+  Program: shopify | Reporter: ngalog
+
+[Medium] CVE-2020-8285: FTP wildcard stack overflow
+  URL: https://hackerone.com/reports/1045844 | CWE: Uncontrolled Recursion
+  Program: curl | Reporter: bagder
+
+[Critical] SQL Injection Union Based
+  URL: https://hackerone.com/reports/1046084 | CWE: Unknown
+  Program: automattic | Reporter: fuzzme
+
+[Low] HTML Injection on Company Name on Email
+  URL: https://hackerone.com/reports/1022655 | CWE: Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS)
+  Program: tiktok | Reporter: gnux
+
+[?] Уязвимость в методе auth.restore
+  URL: https://hackerone.com/reports/366153 | CWE: Unknown
+  Program: vkcom | Reporter: darkprism
+
+[Medium] CVE-2020-8286: Inferior OCSP verification
+  URL: https://hackerone.com/reports/1048457 | CWE: Improper Certificate Validation
+  Program: curl | Reporter: ospoco
+
+[Low] CVE-2019-5435: An integer overflow found in /lib/urlapi.c
+  URL: https://hackerone.com/reports/547630 | CWE: Incorrect Calculation of Buffer Size
+  Program: curl | Reporter: 1wc
+
+[Medium] Social App does not validate server certificates for outgoing connections
+  URL: https://hackerone.com/reports/915585 | CWE: Improper Certificate Validation
+  Program: nextcloud | Reporter: sanktjodel
+
+[Medium] CVE-2019-5481: krb5: double-free in read_data() after realloc() fail
+  URL: https://hackerone.com/reports/686823 | CWE: Double Free
+  Program: curl | Reporter: thomas_v
+
+[Medium] Improper confidentiality protection of server-side encryption keys
+  URL: https://hackerone.com/reports/743505 | CWE: Insufficiently Protected Credentials
+  Program: nextcloud | Reporter: weizenspreu
+
+[High] Improper integrity protection of server-side encryption keys
+  URL: https://hackerone.com/reports/732431 | CWE: Insufficiently Protected Credentials
+  Program: nextcloud | Reporter: weizenspreu
+
+[Low] Content Spoofing/Text Injection in https://support.cs.money and JS file not minified and uglyfied which makes it clearly readable 
+  URL: https://hackerone.com/reports/997198 | CWE: User Interface (UI) Misrepresentation of Critical Information
+  Program: cs_money | Reporter: rootishere
+
+[Low] Uninstalling Slack for Windows (64-bit), then reinstalling keeps you logged in without authentication
+  URL: https://hackerone.com/reports/238260 | CWE: Insufficiently Protected Credentials
+  Program: slack | Reporter: pclinger
+
+[Medium] PHP link() silently truncates after a null byte on Windows
+  URL: https://hackerone.com/reports/805010 | CWE: Improper Null Termination
+  Program: ibb | Reporter: ryat
+
+[Critical] Negative size parameter in mb_split
+  URL: https://hackerone.com/reports/476178 | CWE: Buffer Underflow
+  Program: ibb | Reporter: haquaman
+
+[Medium] DirectoryIterator class silently truncates after a null byte
+  URL: https://hackerone.com/reports/805013 | CWE: Improper Null Termination
+  Program: ibb | Reporter: ryat
+
+[Low] The password of a mail share is not hashed if the password is given when the share is created
+  URL: https://hackerone.com/reports/885041 | CWE: Plaintext Storage of a Password
+  Program: nextcloud | Reporter: daniel_calvino_sanchez
+
+[Medium] Sensitive Info Leak - An Attacker Can Retrieve All the Users Mobile Numbers at https://website-api.production.curve.app/api/waitlist/us
+  URL: https://hackerone.com/reports/902733 | CWE: Cleartext Transmission of Sensitive Information
+  Program: curve | Reporter: praseudo7
+
+[High] mb_strtolower (UTF-32LE): stack-buffer-overflow at php_unicode_tolower_full (CVE-2020-7065)
+  URL: https://hackerone.com/reports/838127 | CWE: Stack Overflow
+  Program: ibb | Reporter: anatoliq
+
+[Low] DOM based XSS in store.acronis.com/<id>/purl-corporate-standard-IT [cfg parameter]
+  URL: https://hackerone.com/reports/968690 | CWE: Unknown
+  Program: acronis | Reporter: f_m
+
+[Critical] https://██████ vulnerable to CVE-2020-3187 - Unauthenticated arbitrary file deletion in Cisco ASA/FTD
+  URL: https://hackerone.com/reports/987090 | CWE: Array Index Underflow
+  Program: deptofdefense | Reporter: pwnsauc3_
+
+[?] 2020-10-09 Credential Stuffing Attack
+  URL: https://hackerone.com/reports/1007689 | CWE: Unknown
+  Program: security | Reporter: jobert
+
+[Medium] Unauthenticated HTML Injection Stored - ContactUs form
+  URL: https://hackerone.com/reports/768327 | CWE: Unknown
+  Program: concretecms | Reporter: javakhishvili
+
+[Medium] [steam client] Opening a specific steam:// url overwrites files at an arbitrary location
+  URL: https://hackerone.com/reports/667242 | CWE: Write-what-where Condition
+  Program: valve | Reporter: kbeckmann
+
+[High] xss triggered in "myshopify.com/admin/product"
+  URL: https://hackerone.com/reports/978125 | CWE: Unknown
+  Program: shopify | Reporter: jaka-tingkir
+
+[?] Password protection can be removed for newly created development store 
+  URL: https://hackerone.com/reports/965510 | CWE: Unknown
+  Program: shopify | Reporter: imgnotfound
+
+[Low] Safe Redirect Bypass 
+  URL: https://hackerone.com/reports/945990 | CWE: Security Through Obscurity
+  Program: x | Reporter: try_to_hac
+
+[?] Stocky App Administrator can create a backdoor admin account by using an existing POS User
+  URL: https://hackerone.com/reports/962895 | CWE: Unknown
+  Program: shopify | Reporter: imgnotfound
+
+[Critical] [com.smule.autorap.*] Cloud Messaging/Push Notification service takeover due to clear-text usage of Legacy FCM Server keys in the client app 
+  URL: https://hackerone.com/reports/789370 | CWE: Use of Hard-coded Credentials
+  Program: smule | Reporter: absshax
+
+[?] *.shopify.com - Authentication bypass
+  URL: https://hackerone.com/reports/838231 | CWE: Unknown
+  Program: shopify | Reporter: nooblife
+
+[Medium] increased privileges on staff account
+  URL: https://hackerone.com/reports/911857 | CWE: Unknown
+  Program: shopify | Reporter: jaka-tingkir
+
+[Medium] User registration using public domain email like gmail in place of professional email.
+  URL: https://hackerone.com/reports/963546 | CWE: Reliance on Untrusted Inputs in a Security Decision
+  Program: dropcontact | Reporter: cyc0rpion
+
+[Critical] [cloudron-surfer] Denial of Service via LDAP Injection
+  URL: https://hackerone.com/reports/906959 | CWE: LDAP Injection
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Critical] [meemo-app] Denial of Service via LDAP Injection
+  URL: https://hackerone.com/reports/907311 | CWE: LDAP Injection
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[None] Rate Limit too lenient for endpoint sending emails
+  URL: https://hackerone.com/reports/658089 | CWE: Weak Password Recovery Mechanism for Forgotten Password
+  Program: wakatime | Reporter: harshita174
+
+[Medium] Missing SPF Records
+  URL: https://hackerone.com/reports/652447 | CWE: Phishing
+  Program: avito | Reporter: harshita174
+
+[High] Buffer overflow In hl.exe's launch -game argument allows an attacker to execute arbitrary code locally or from browser
+  URL: https://hackerone.com/reports/832750 | CWE: Stack Overflow
+  Program: valve | Reporter: irukandjisecresearch
+
+[Low] Implement rate limit on internal password checks
+  URL: https://hackerone.com/reports/832475 | CWE: Unknown
+  Program: hostinger | Reporter: ?
+
+[High] Stored XSS on ████████helpdesk
+  URL: https://hackerone.com/reports/901799 | CWE: Unrestricted Upload of File with Dangerous Type
+  Program: deptofdefense | Reporter: atbabers
+
+[Medium] Grammarly Keyboard for Android "Authorization Code with PKCE" flow implementation vulnerability that allows account takeover
+  URL: https://hackerone.com/reports/824931 | CWE: Use of Cryptographically Weak Pseudo-Random Number Generator (PRNG)
+  Program: superhuman | Reporter: tomtenisse
+
+[?] [H1-2006 2020] CTF Writeup
+  URL: https://hackerone.com/reports/888253 | CWE: Unknown
+  Program: h1-ctf | Reporter: yashrs
+
+[Critical] @shakedko H1-2006 CTF writeup
+  URL: https://hackerone.com/reports/894623 | CWE: Unknown
+  Program: h1-ctf | Reporter: shakedko
+
+[Critical] [h1-2006 CTF] Multiple vulnerabilities leading to account takeover and two-factor authentication bypass allows to send pending bounty payments
+  URL: https://hackerone.com/reports/895722 | CWE: Unknown
+  Program: h1-ctf | Reporter: kapytein
+
+[Medium] 暴力破解用户密码没有速率控制
+  URL: https://hackerone.com/reports/854424 | CWE: Unverified Password Change
+  Program: x | Reporter: 1735096419
+
+[High] Tricking the "Create snippet" feature into displaying the wrong filetype can lead to RCE on Slack users
+  URL: https://hackerone.com/reports/833080 | CWE: Unrestricted Upload of File with Dangerous Type
+  Program: slack | Reporter: padillac
+
+[Critical] [H1-2006 2020]  Got the flag
+  URL: https://hackerone.com/reports/887744 | CWE: Buffer Underflow
+  Program: h1-ctf | Reporter: s1r1u5
+
+[?] PHPUnit is included in groupfolders release package potentially causing RCE
+  URL: https://hackerone.com/reports/820146 | CWE: Unknown
+  Program: nextcloud | Reporter: ledfan
+
+[Critical] [H1-2006 2020] Exploiting multiple vulnerabilities to get hacker's payment ensured
+  URL: https://hackerone.com/reports/894949 | CWE: Improper Privilege Management
+  Program: h1-ctf | Reporter: hecsv17
+
+[Critical] [H1-2006 2020]  ^FLAG^736c635d8842751b8aafa556154eb9f3$FLAG$
+  URL: https://hackerone.com/reports/888331 | CWE: Unknown
+  Program: h1-ctf | Reporter: pirateducky
+
+[?] [H1-2006 2020]  36 hours of brain cycles utilized on solving a neat puzzle
+  URL: https://hackerone.com/reports/889793 | CWE: Unknown
+  Program: h1-ctf | Reporter: 0xatul
+
+[Critical] [H1-2006 2020] [Multiple Vulnerability] CTF Writeup - @abdilahrf_
+  URL: https://hackerone.com/reports/888484 | CWE: Unknown
+  Program: h1-ctf | Reporter: abdilahrf_
+
+[Critical] [H1-2006 2020] I successfully solved it!
+  URL: https://hackerone.com/reports/887818 | CWE: Unknown
+  Program: h1-ctf | Reporter: zeroxyele
+
+[Critical] [h1-2006 2020] Write up for H1-2006 CTF
+  URL: https://hackerone.com/reports/895772 | CWE: Unknown
+  Program: h1-ctf | Reporter: zer0ttl
+
+[?] [H1-2006 2020] Flag for H1-CTF
+  URL: https://hackerone.com/reports/888141 | CWE: Unknown
+  Program: h1-ctf | Reporter: batee5a
+
+[Critical] [H1-2006 2020] CTF Writeup!
+  URL: https://hackerone.com/reports/889293 | CWE: Unknown
+  Program: h1-ctf | Reporter: sw33tlie
+
+[High] unpermitted user can change the device name of admin account
+  URL: https://hackerone.com/reports/865115 | CWE: Unknown
+  Program: helium | Reporter: error___404
+
+[Low] Rack parses encoded cookie names allowing an attacker to send malicious `__Host-` and `__Secure-` prefixed cookies
+  URL: https://hackerone.com/reports/895727 | CWE: Reliance on Cookies without Validation and Integrity Checking in a Security Decision
+  Program: rails | Reporter: fletchto99
+
+[High] DOM XSS on duckduckgo.com search
+  URL: https://hackerone.com/reports/868934 | CWE: Unknown
+  Program: duckduckgo | Reporter: cujanovic
+
+[Medium] Incorrect control of the trial period
+  URL: https://hackerone.com/reports/865828 | CWE: Client-Side Enforcement of Server-Side Security
+  Program: nordsecurity | Reporter: corryl
+
+[Medium] Lack of HTTPS in service communications
+  URL: https://hackerone.com/reports/741549 | CWE: Cleartext Transmission of Sensitive Information
+  Program: clario | Reporter: patient_zero
+
+[Medium] Privilege Escalation in BuddyPress core allows Moderate to Administrator 
+  URL: https://hackerone.com/reports/837018 | CWE: Unknown
+  Program: wordpress | Reporter: hoangkien1020
+
+[Medium] ActiveStorage direct upload fails to sign content-length header for S3 service
+  URL: https://hackerone.com/reports/789579 | CWE: Client-Side Enforcement of Server-Side Security
+  Program: rails | Reporter: travispew
+
+[Medium] ActionController::Parameters .each returns an unsafe hash
+  URL: https://hackerone.com/reports/292797 | CWE: Unknown
+  Program: rails | Reporter: abuisman
+
+[Critical] Sensitive Information Leaking Through DoD Owned Website. [██████████]
+  URL: https://hackerone.com/reports/806213 | CWE: Insufficiently Protected Credentials
+  Program: deptofdefense | Reporter: rootuser
+
+[Low] duplicate hsts headers lead to firefox ignoring hsts on  business.uber.com
+  URL: https://hackerone.com/reports/221955 | CWE: Unknown
+  Program: uber | Reporter: kirtixs
+
+[High] Reflected XSS and sensitive data exposure, including payment details, on lioncityrentals.com.sg
+  URL: https://hackerone.com/reports/340431 | CWE: Cleartext Transmission of Sensitive Information
+  Program: uber | Reporter: healdb
+
+[Low] Session works after logout from Shopify account and password of online store is displayed
+  URL: https://hackerone.com/reports/837729 | CWE: Unknown
+  Program: shopify | Reporter: premium101
+
+[Low] URL link spoofing
+  URL: https://hackerone.com/reports/481472 | CWE: Phishing
+  Program: slack | Reporter: bfe3fdb1088411d8ef018aa3abde8
+
+[Low] Full Path and internal information disclosure+ SQLNet.log file disclose internal network information
+  URL: https://hackerone.com/reports/410187 | CWE: Unknown
+  Program: uber | Reporter: peroni
+
+[Medium] Signup with any email and enable 2FA without verifying email
+  URL: https://hackerone.com/reports/699200 | CWE: Unknown
+  Program: omise | Reporter: rioncool22
+
+[High] China - Leaked credentials permitted a limited ability to create Starbucks coupons and cards
+  URL: https://hackerone.com/reports/766770 | CWE: Insufficiently Protected Credentials
+  Program: starbucks | Reporter: b006e4ea768a5d1b5340969
+
+[Medium] API Keys Hardcoded in Github repository
+  URL: https://hackerone.com/reports/766346 | CWE: Use of Hard-coded Credentials
+  Program: rocket_chat | Reporter: codermak
+
+[Medium] Lets Encrypt Certificates affected by CAA Rechecking Incident
+  URL: https://hackerone.com/reports/813279 | CWE: Improper Certificate Validation
+  Program: endless_group | Reporter: pr3r00t
+
+[Medium] Отправка подарков/стикерпаков не теряя голоса.
+  URL: https://hackerone.com/reports/729064 | CWE: Unknown
+  Program: vkcom | Reporter: nesqe
+
+[High] Vulnerability in GoldSource Engine allows to upload and run an arbitrary DLL on client
+  URL: https://hackerone.com/reports/508894 | CWE: Malware
+  Program: valve | Reporter: kohtep2010
+
+[Low] Reset password without knowing current password
+  URL: https://hackerone.com/reports/806055 | CWE: Weak Password Recovery Mechanism for Forgotten Password
+  Program: x | Reporter: naategh
+
+[High] One Click Code Execution via File
+  URL: https://hackerone.com/reports/822609 | CWE: Execution with Unnecessary Privileges
+  Program: evernote | Reporter: ajdumanhug
+
+[High] Email verification bypasa
+  URL: https://hackerone.com/reports/763458 | CWE: Incorrect Authorization
+  Program: stripo | Reporter: veejeey_
+
+[Medium] NO username used in authenthication to www.mopub.com leading to direct password submission which  has unlimited submission rate.
+  URL: https://hackerone.com/reports/790854 | CWE: Unknown
+  Program: x | Reporter: adarsh_p
+
+[Medium] No Rate Limit On forgot Password Leading To Massive Email Flooding
+  URL: https://hackerone.com/reports/794395 | CWE: Unknown
+  Program: companyhub | Reporter: el_chapo
+
+[High] Malformed save files (.sav) allow to write files with arbitrary extensions and content in GoldSrc-based games.
+  URL: https://hackerone.com/reports/458842 | CWE: Malware
+  Program: valve | Reporter: splatt581
+
+[Low] Twitter Source Label allow 'mongolian vowel separator' U+180E (app name)
+  URL: https://hackerone.com/reports/785243 | CWE: Phishing
+  Program: x | Reporter: lorenznickel
+
+[Low] URL filter bypass in Enterprise Grid
+  URL: https://hackerone.com/reports/500348 | CWE: Phishing
+  Program: slack | Reporter: bfe3fdb1088411d8ef018aa3abde8
+
+[Low] Nextcloud logs ldap passwords
+  URL: https://hackerone.com/reports/264426 | CWE: Plaintext Storage of a Password
+  Program: nextcloud | Reporter: tribut
+
+[Medium] File-drop content is visible through the gallery app
+  URL: https://hackerone.com/reports/719426 | CWE: Unknown
+  Program: nextcloud | Reporter: nursoda
+
+[Critical] Open memory dump method leaking customer information ,secret keys , password , source code & admin accounts
+  URL: https://hackerone.com/reports/783360 | CWE: Exposed Dangerous Method or Function
+  Program: stripo | Reporter: secyour-org
+
+[High] Helpdesk Takeover at dmc.datastax.com
+  URL: https://hackerone.com/reports/759454 | CWE: Reliance on Untrusted Inputs in a Security Decision
+  Program: datastax | Reporter: matrixsoftsec
+
+[Low] Camo Image Proxy Bypass with CSS Escape Sequences
+  URL: https://hackerone.com/reports/745953 | CWE: Improper Neutralization of Escape, Meta, or Control Sequences
+  Program: chaturbate | Reporter: zhutyra
+
+[Low] Мини-уязвимость в обработке ссылок
+  URL: https://hackerone.com/reports/726063 | CWE: Unknown
+  Program: vkcom | Reporter: qwe
+
+[?] XSS on https://app.mopub.com/reports/custom/add/ [new-d1]
+  URL: https://hackerone.com/reports/692352 | CWE: Unknown
+  Program: x | Reporter: c00lbugs
+
+[Critical] Хранимая XSS в личных сообщениях новое место
+  URL: https://hackerone.com/reports/310339 | CWE: Unknown
+  Program: ok | Reporter: circuit
+
+[Medium] Exploiting Network and Timing Side-Channels to Break Monero Receiver Anonymity
+  URL: https://hackerone.com/reports/713321 | CWE: Unknown
+  Program: monero | Reporter: ftramer
+
+[?] HTTP header can split /[\r\n]/ instead of /\r\n/
+  URL: https://hackerone.com/reports/331984 | CWE: Unknown
+  Program: ruby | Reporter: znz
+
+[Medium] Create an Unexpected Object and Don't Invoke __wakeup() in Deserialization
+  URL: https://hackerone.com/reports/198723 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[Medium] Type Confusion in Object Deserialization
+  URL: https://hackerone.com/reports/198733 | CWE: Type Confusion
+  Program: ibb | Reporter: ryat
+
+[?] Create an Unexpected Object and Don't Invoke __wakeup() in During Deserialization
+  URL: https://hackerone.com/reports/159943 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] PHP Session Data Injection Vulnerability
+  URL: https://hackerone.com/reports/159946 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Integer Overflow/Heap Overflow in json_encode()/json_decode()
+  URL: https://hackerone.com/reports/146182 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Integer Overflow in Length of String-typed ZVAL
+  URL: https://hackerone.com/reports/146185 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Integer Overflow in addcslashes()/addslashes()
+  URL: https://hackerone.com/reports/146184 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Integer Overflow in nl2br()
+  URL: https://hackerone.com/reports/146183 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Integer Overflow in SplFileObject::fread
+  URL: https://hackerone.com/reports/146180 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Multiple Heap Overflows in php_raw_url_encode/php_url_encode
+  URL: https://hackerone.com/reports/124737 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Integer Overflow in php_raw_url_encode
+  URL: https://hackerone.com/reports/126416 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Integer Overflow in php_html_entities()
+  URL: https://hackerone.com/reports/140865 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Type Confusion in WDDX Packet Deserialization
+  URL: https://hackerone.com/reports/114339 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Type Confusion Vulnerability in PHP_to_XMLRPC_worker()
+  URL: https://hackerone.com/reports/108682 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[High] [REMOTE] Full Account Takeover At https://██████████████/CAS/
+  URL: https://hackerone.com/reports/215859 | CWE: Reliance on Cookies without Validation and Integrity Checking in a Security Decision
+  Program: deptofdefense | Reporter: karimrahal
+
+[High] LFI with potential to RCE on ██████ using CVE-2019-3396
+  URL: https://hackerone.com/reports/538771 | CWE: Remote File Inclusion
+  Program: deptofdefense | Reporter: nahamsec
+
+[Low] Ruby is shipping a vulnerable jQuery
+  URL: https://hackerone.com/reports/519061 | CWE: Unknown
+  Program: ruby | Reporter: chrisseaton
+
+[High] Administrator access to staging.railto.com
+  URL: https://hackerone.com/reports/686015 | CWE: Unknown
+  Program: railto | Reporter: dhakal_bibek
+
+[High] ChaCha20-Poly1305 with long nonces
+  URL: https://hackerone.com/reports/506040 | CWE: Missing Encryption of Sensitive Data
+  Program: ibb | Reporter: jorandirkgreef
+
+[Critical] Silent omission of certificate hostname verification in LibreSSL and BoringSSL
+  URL: https://hackerone.com/reports/329645 | CWE: Improper Certificate Validation
+  Program: ibb | Reporter: tiran
+
+[Critical] Exim off-by-one RCE vulnerability
+  URL: https://hackerone.com/reports/322935 | CWE: Off-by-one Error
+  Program: ibb | Reporter: mehqq
+
+[Critical] Integer overflow leading to buffer overflow
+  URL: https://hackerone.com/reports/424447 | CWE: Integer Overflow
+  Program: ibb | Reporter: jkrshnmenon
+
+[Medium] [larvitbase-www] Unintended Require
+  URL: https://hackerone.com/reports/579560 | CWE: Remote File Inclusion
+  Program: nodejs-ecosystem | Reporter: ermilov
+
+[High] User Editable nextcloud Wiki pages of Public Repositories
+  URL: https://hackerone.com/reports/498878 | CWE: Unknown
+  Program: nextcloud | Reporter: chernobyl
+
+[Medium] Bypass Email Verification -- Able to Access Internal Gitlab Services that use Login with Gitlab and Perform Check on email domain
+  URL: https://hackerone.com/reports/565883 | CWE: Reliance on Untrusted Inputs in a Security Decision
+  Program: gitlab | Reporter: ngalog
+
+[Medium] Missing DNSSEC
+  URL: https://hackerone.com/reports/509390 | CWE: Man-in-the-Middle
+  Program: nextcloud | Reporter: jelle293
+
+[?] XSS in https://merchant.kartpay.com/settlements
+  URL: https://hackerone.com/reports/653221 | CWE: Unknown
+  Program: kartpay | Reporter: c00lbugs
+
+[High] Linux kernel: CVE-2017-6074: DCCP double-free vulnerability
+  URL: https://hackerone.com/reports/347282 | CWE: Double Free
+  Program: ibb | Reporter: xairy
+
+[Medium] Stack overflow affecting "ext" field on stylers.xml configuration file
+  URL: https://hackerone.com/reports/480984 | CWE: Stack Overflow
+  Program: notepad-plus-plus | Reporter: ammm
+
+[High] Stack overflow in XML Parsing
+  URL: https://hackerone.com/reports/480883 | CWE: Stack Overflow
+  Program: notepad-plus-plus | Reporter: ammm
+
+[Medium] Reflected File Download (RFD) in download video
+  URL: https://hackerone.com/reports/378941 | CWE: Unknown
+  Program: vimeo | Reporter: dphoeniixx
+
+[High] Catch mails sent to an SMTP Server over SSL using an Evil SMTP Server
+  URL: https://hackerone.com/reports/519582 | CWE: Man-in-the-Middle
+  Program: ui | Reporter: smartnoob
+
+[High] Important information leaked on Github
+  URL: https://hackerone.com/reports/649322 | CWE: Use of Hard-coded Credentials
+  Program: equifax | Reporter: mohanaddobal
+
+[Medium] [larvitbase-api] Unintended Require
+  URL: https://hackerone.com/reports/566056 | CWE: Remote File Inclusion
+  Program: nodejs-ecosystem | Reporter: ermilov
+
+[Medium] [min-http-server] Stored XSS in the filename when directories listing
+  URL: https://hackerone.com/reports/570568 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: lightangel1412
+
+[Medium] Access Violation Reading in libfaad_plugin
+  URL: https://hackerone.com/reports/502816 | CWE: Integer Underflow
+  Program: vlc_h1c | Reporter: biewuxz
+
+[Medium] Access Violation Reading EXPLOITABLE_0228
+  URL: https://hackerone.com/reports/503208 | CWE: Double Free
+  Program: vlc_h1c | Reporter: biewuxz
+
+[Low] Testnet address being sent in cleartext as http://rinkeby.chain.link/ is missing SSL certificate
+  URL: https://hackerone.com/reports/576288 | CWE: Cleartext Transmission of Sensitive Information
+  Program: chainlink | Reporter: jaisharma
+
+[Low] View HackerOne challenge scope before challenge begins
+  URL: https://hackerone.com/reports/565736 | CWE: Forced Browsing
+  Program: security | Reporter: neema
+
+[Medium] multiple vulnerabilities on your mautic server
+  URL: https://hackerone.com/reports/592885 | CWE: Unknown
+  Program: unikrn | Reporter: bbc6dfb7d3878289f2f98d4
+
+[High] Locked_Transfer functional burning
+  URL: https://hackerone.com/reports/417515 | CWE: Unknown
+  Program: monero | Reporter: keejef
+
+[Low] [Privilege Escalation] Shopify Admin -- Permission from Settings to Customer
+  URL: https://hackerone.com/reports/541606 | CWE: Unknown
+  Program: shopify | Reporter: ngalog
+
+[Medium] Insufficient DKIM record with RSA 512-bit key used on WordPress.com
+  URL: https://hackerone.com/reports/550937 | CWE: Inadequate Encryption Strength
+  Program: automattic | Reporter: vavkamil
+
+[?] HTTPS is not validating TLS mac codes
+  URL: https://hackerone.com/reports/402671 | CWE: Use of a Broken or Risky Cryptographic Algorithm
+  Program: x | Reporter: cy1337
+
+[Critical] Cisco ASA Denial of Service & Path Traversal (CVE-2018-0296)
+  URL: https://hackerone.com/reports/378698 | CWE: Unknown
+  Program: ok | Reporter: linkks
+
+[?] Banned researcher gets email updates on a private program.
+  URL: https://hackerone.com/reports/271506 | CWE: Unknown
+  Program: security | Reporter: fixit
+
+[Low] Protected Tweets setting overridden by Android app
+  URL: https://hackerone.com/reports/519059 | CWE: Unknown
+  Program: x | Reporter: alexiaya
+
+[Medium] c3p0 may be exploited by a Billion Laughs Attack when loading XML configuration
+  URL: https://hackerone.com/reports/509315 | CWE: XML Entity Expansion
+  Program: central-security-project | Reporter: amassey
+
+[?] Repeated mediation requests and multiple emails possible on a report.
+  URL: https://hackerone.com/reports/156948 | CWE: Unknown
+  Program: security | Reporter: haxta4ok00
+
+[?] Path traversal leading to limited CSRF on GET requests on two endpoints
+  URL: https://hackerone.com/reports/301862 | CWE: Unknown
+  Program: security | Reporter: kapytein
+
+[None] bypass Claudflare access crm.mautic.com
+  URL: https://hackerone.com/reports/507012 | CWE: Unknown
+  Program: unikrn | Reporter: b4a1d31dd4acbccc47b8072
+
+[Low] Path Disclosure Vulnerability http://crm.******.com
+  URL: https://hackerone.com/reports/503804 | CWE: Unknown
+  Program: unikrn | Reporter: b4a1d31dd4acbccc47b8072
+
+[Medium] Corrupted Authorization header can cause logs not to be ingested properly in ████████
+  URL: https://hackerone.com/reports/447488 | CWE: Unknown
+  Program: security | Reporter: jobert
+
+[None] Deprecated Hacker101 coursework repository mentions Heroku App that is susceptible to takeover
+  URL: https://hackerone.com/reports/514451 | CWE: Externally Controlled Reference to a Resource in Another Sphere
+  Program: security | Reporter: m7mdharoun
+
+[?] Arbitrary file overwrites in `node-tar`
+  URL: https://hackerone.com/reports/344595 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: max
+
+[Medium] Credientals Over GET method in plain Text
+  URL: https://hackerone.com/reports/490899 | CWE: Unprotected Transport of Credentials
+  Program: ratelimited | Reporter: d33van
+
+[Low] DMARC RECORD MISSING
+  URL: https://hackerone.com/reports/491753 | CWE: Unknown
+  Program: brave | Reporter: hackthedevil
+
+[Medium] [dev.twitter.com] XSS and Open Redirect Protection Bypass
+  URL: https://hackerone.com/reports/330008 | CWE: Unknown
+  Program: x | Reporter: bywalks
+
+[Critical] UBNT Amplification DDOS Attack
+  URL: https://hackerone.com/reports/221625 | CWE: Unknown
+  Program: ui | Reporter: csiete
+
+[Critical] HTTP PUT method is enabled ratelimited.me
+  URL: https://hackerone.com/reports/487656 | CWE: Unknown
+  Program: ratelimited | Reporter: codeslayer1337
+
+[?] HTTP MitM on Flash Player settings manager allows attacker to set sandbox settings
+  URL: https://hackerone.com/reports/54094 | CWE: Unknown
+  Program: ibb | Reporter: flashplayer
+
+[Low] Passive mixed content issues on the site https://*.fanduel.com
+  URL: https://hackerone.com/reports/437800 | CWE: Man-in-the-Middle
+  Program: fanduel | Reporter: mobius07
+
+[Medium] Field Day With Protocol Handlers
+  URL: https://hackerone.com/reports/416040 | CWE: Unknown
+  Program: brave | Reporter: dudetechitout
+
+[None] GitHub users outside of HackerOne organization can create and update Wiki pages of certain public HackerOne repositories
+  URL: https://hackerone.com/reports/459634 | CWE: Phishing
+  Program: security | Reporter: mik317
+
+[High] Долгоживущий хеш + получение частичного доступа к аккаунту после сброса сессии
+  URL: https://hackerone.com/reports/363809 | CWE: Unknown
+  Program: vkcom | Reporter: executor
+
+[Low] 65534 times efficient, Brute-force attack for api_key
+  URL: https://hackerone.com/reports/449356 | CWE: Unknown
+  Program: rubygems | Reporter: ooooooo_q
+
+[Medium] Specially constructed multi-part requests cause multi-second response times; vulnerable to DoS
+  URL: https://hackerone.com/reports/431561 | CWE: Unknown
+  Program: rails | Reporter: bjeanes
+
+[Medium] A user can bypass approval step in Hacker Publishing feature, allowing them to publish reports immediately
+  URL: https://hackerone.com/reports/452959 | CWE: Incorrect Authorization
+  Program: security | Reporter: haxta4ok00
+
+[Low] Exposing voting results on the Slowvote application without actually voting
+  URL: https://hackerone.com/reports/434116 | CWE: Unknown
+  Program: phabricator | Reporter: mishre
+
+[Medium] [CVE-2018-6913] heap-buffer-overflow in S_pack_rec
+  URL: https://hackerone.com/reports/354650 | CWE: Buffer Underflow
+  Program: ibb | Reporter: karas
+
+[Critical] SSRF vulnerability on proxy.duckduckgo.com (access to metadata server on AWS)
+  URL: https://hackerone.com/reports/395521 | CWE: Unknown
+  Program: duckduckgo | Reporter: cujanovic
+
+[High] RCE: DnDing shortcut files to chrome://brave allows loading HTML files in Muon's context
+  URL: https://hackerone.com/reports/415258 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[Low] Cross-origin page stays focused before/after downloading + uninformative modal window for download
+  URL: https://hackerone.com/reports/375259 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[Medium] URL spoofing using protocol handlers
+  URL: https://hackerone.com/reports/373721 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[Medium] URL spoofing in Brave for macOS
+  URL: https://hackerone.com/reports/369086 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[Medium] Session ID is accessible via XSS
+  URL: https://hackerone.com/reports/241194 | CWE: Unknown
+  Program: inflection | Reporter: exception
+
+[High] Local files reading using `link[rel="import"]`
+  URL: https://hackerone.com/reports/375329 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[High] Local files reading from the "file://" origin through `brave://`
+  URL: https://hackerone.com/reports/390362 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[?] Stack Overflow in JSON RPC Server
+  URL: https://hackerone.com/reports/390499 | CWE: Stack Overflow
+  Program: monero | Reporter: talko
+
+[Low] License verification mechanism can be bypassed
+  URL: https://hackerone.com/reports/411068 | CWE: Use of a Broken or Risky Cryptographic Algorithm
+  Program: expressionengine | Reporter: unbaiat
+
+[High] `chrome://brave` available for navigation in Release build [-> RCE] + navigation to `chrome://*` using tab_helper ["Open in new tab"]
+  URL: https://hackerone.com/reports/395737 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[Medium] Reflected Swf XSS In ( plugins.svn.wordpress.org )
+  URL: https://hackerone.com/reports/270060 | CWE: Unknown
+  Program: wordpress | Reporter: m7mdharoun
+
+[None] Broken Authentication – Session Token bug
+  URL: https://hackerone.com/reports/400826 | CWE: Unknown
+  Program: weblate | Reporter: code_monkey
+
+[Critical] Local files reading from the web using `brave://`
+  URL: https://hackerone.com/reports/390013 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[Low] Navigation to `chrome-extension://` origin (internal pages) from the web
+  URL: https://hackerone.com/reports/378805 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[Low] Unsafe handling of protocol handlers
+  URL: https://hackerone.com/reports/369185 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[Medium] Navigation to protocol handler URL from the opened page displayed as a request from this page.
+  URL: https://hackerone.com/reports/374969 | CWE: Unknown
+  Program: brave | Reporter: metnew
+
+[?] Tab nabbing via window.opener
+  URL: https://hackerone.com/reports/403891 | CWE: Unknown
+  Program: weblate | Reporter: logan47
+
+[None] Audit log validation
+  URL: https://hackerone.com/reports/296632 | CWE: Improper Neutralization of HTTP Headers for Scripting Syntax
+  Program: weblate | Reporter: mur90210
+
+[Medium] Information Leakage - GitHub - VCenter configuration scripts, StorMagic usernames and password along with default ESXi root password
+  URL: https://hackerone.com/reports/365199 | CWE: Unknown
+  Program: uber | Reporter: p3t3r_r4bb1t
+
+[?]  Account Restore / Reactivating an old email via old reset link
+  URL: https://hackerone.com/reports/275303 | CWE: Unknown
+  Program: weblate | Reporter: footstep
+
+[High] Arbitrary File Write Through Archive Extraction
+  URL: https://hackerone.com/reports/362118 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: danny_grander
+
+[?] Индексация почты/логинов пользователей
+  URL: https://hackerone.com/reports/261734 | CWE: Unknown
+  Program: bumble | Reporter: isaeva
+
+[High] Format String Vulnerability in the EdgeSwitch restricted CLI
+  URL: https://hackerone.com/reports/311884 | CWE: Use of Externally-Controlled Format String
+  Program: ui | Reporter: maxpl0it
+
+[?] [Zomato Android/iOS] Theft of user session
+  URL: https://hackerone.com/reports/328486 | CWE: Unknown
+  Program: eternal | Reporter: bagipro
+
+[None] [Привязка email к странице] by admin@notify.vk.com | email-flood
+  URL: https://hackerone.com/reports/344223 | CWE: Unknown
+  Program: vkcom | Reporter: waalw
+
+[Low] Import File Converter - local File inclusion 
+  URL: https://hackerone.com/reports/341992 | CWE: Unknown
+  Program: expressionengine | Reporter: 0xsp
+
+[Low] Bypassing CSRF Token On Reply Message & Send Message
+  URL: https://hackerone.com/reports/330122 | CWE: Unknown
+  Program: reverb | Reporter: apapedulimu
+
+[Medium] MySQL username and password leaked in developer.valvesoftware.com via source code dislosure
+  URL: https://hackerone.com/reports/291057 | CWE: Password in Configuration File
+  Program: valve | Reporter: nahamsec
+
+[None] Hard Coded username and password in registry
+  URL: https://hackerone.com/reports/291200 | CWE: Use of Hard-coded Credentials
+  Program: kaspersky | Reporter: bluedangerforyou
+
+[Low] Content Spoofing or Text Injection support.mycrypto.com
+  URL: https://hackerone.com/reports/325827 | CWE: Phishing
+  Program: mycrypto | Reporter: w2w
+
+[Medium] Remote Code Execution in the Import Channel function
+  URL: https://hackerone.com/reports/236607 | CWE: Unknown
+  Program: expressionengine | Reporter: strukt
+
+[Medium] wpjobmanager - unserialize of user input
+  URL: https://hackerone.com/reports/308489 | CWE: Unknown
+  Program: automattic | Reporter: b258ea62bf297b02afa9854
+
+[Medium] SSH server compatible with several vulnerable cryptographic algorithms
+  URL: https://hackerone.com/reports/318068 | CWE: Use of a Broken or Risky Cryptographic Algorithm
+  Program: gsa_bbp | Reporter: northivanastan
+
+[Low] Просмотр аватара и название частной группы
+  URL: https://hackerone.com/reports/246085 | CWE: Unknown
+  Program: vkcom | Reporter: pisarenko
+
+[High] Open redirect at app.goodhire.com via ReturnUrl parameter
+  URL: https://hackerone.com/reports/240091 | CWE: Unknown
+  Program: inflection | Reporter: exception
+
+[Medium] XSS at https://app.goodhire.com/member/GH.aspx
+  URL: https://hackerone.com/reports/239762 | CWE: Unknown
+  Program: inflection | Reporter: exception
+
+[Low] Window.opener fix bypass
+  URL: https://hackerone.com/reports/317243 | CWE: Unknown
+  Program: phabricator | Reporter: mishre
+
+[?] Window.opener protection  Bypass
+  URL: https://hackerone.com/reports/306414 | CWE: Unknown
+  Program: phabricator | Reporter: ranjit_p
+
+[High] XSS в личных сообщениях
+  URL: https://hackerone.com/reports/293105 | CWE: Unknown
+  Program: ok | Reporter: circuit
+
+[?] Improper Host Detection During Team Up  on tweetdeck.twitter.com
+  URL: https://hackerone.com/reports/294867 | CWE: Unknown
+  Program: x | Reporter: avinash_
+
+[Low] Узнаем название и аватарку частной группы, по ID приложения.
+  URL: https://hackerone.com/reports/270119 | CWE: Unknown
+  Program: vkcom | Reporter: sql
+
+[?] self-xss ads_easy_promote vk.com
+  URL: https://hackerone.com/reports/293581 | CWE: Unknown
+  Program: vkcom | Reporter: circuit
+
+[Critical] CSRF: Replacing the router configuration backup having an 'operator' user and bypassing the "Referer:' whitelist protection
+  URL: https://hackerone.com/reports/240098 | CWE: Unknown
+  Program: ui | Reporter: hacknroll
+
+[Critical] Privilege Escalation: From operator to ubnt (and root) with non-interactive Session Hijacking
+  URL: https://hackerone.com/reports/241044 | CWE: Unknown
+  Program: ui | Reporter: hacknroll
+
+[None] Improper validation of unicode characters 
+  URL: https://hackerone.com/reports/278718 | CWE: Unknown
+  Program: weblate | Reporter: code_monkey
+
+[Low] Bypass insecure password validation
+  URL: https://hackerone.com/reports/287758 | CWE: Unknown
+  Program: infogram | Reporter: japz
+
+[None] Logic issue in email change process
+  URL: https://hackerone.com/reports/265931 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[None] Broken links for stale domains may be leveraged for Phishing, Misinformation, Defaming
+  URL: https://hackerone.com/reports/276244 | CWE: Unknown
+  Program: legalrobot | Reporter: leovin
+
+[Medium] Buddypress 2.9.1 - Exceeding the maximum upload size  - XSS leading to potential RCE. 
+  URL: https://hackerone.com/reports/263109 | CWE: Unknown
+  Program: wordpress | Reporter: skansing
+
+[?] facebook button URL should be HTTPS
+  URL: https://hackerone.com/reports/271928 | CWE: Unknown
+  Program: mapsmarker_com_e_u | Reporter: nih95had
+
+[Low] Fake mailing reports using mail service on [URL : mail-txn.identity.com]
+  URL: https://hackerone.com/reports/280803 | CWE: Unknown
+  Program: inflection | Reporter: namansahore
+
+[?] CSRF Добавить просмотр к записи без ведома пользователя.
+  URL: https://hackerone.com/reports/252324 | CWE: Unknown
+  Program: vkcom | Reporter: circuit
+
+[None] Sub Domain Takeover
+  URL: https://hackerone.com/reports/221133 | CWE: Unknown
+  Program: gratipay | Reporter: b3nac
+
+[Medium] Potential server misconfiguration leads to disclosure of vendor/ directory
+  URL: https://hackerone.com/reports/271391 | CWE: Forced Browsing
+  Program: eternal | Reporter: h4ckninja
+
+[Low] 2FA manual entry uses wrong encoding
+  URL: https://hackerone.com/reports/260390 | CWE: Unknown
+  Program: legalrobot | Reporter: area-51
+
+[Medium] app.mixmax.com Information Discloure on cal.mixmax.com and Not Signing out after Removing information grant access from Google
+  URL: https://hackerone.com/reports/262262 | CWE: Unknown
+  Program: mixmax | Reporter: ykw1337
+
+[?] Missing homograph filter character
+  URL: https://hackerone.com/reports/268981 | CWE: Unknown
+  Program: legalrobot | Reporter: ranjit_p
+
+[None] External links to be in HTTP
+  URL: https://hackerone.com/reports/269288 | CWE: Unknown
+  Program: legalrobot | Reporter: akaash_pantherdefence
+
+[Medium] https://secure.gravatar.com
+  URL: https://hackerone.com/reports/260755 | CWE: Unknown
+  Program: automattic | Reporter: isaeva
+
+[?] Homograph IDNs displayed in Description
+  URL: https://hackerone.com/reports/260938 | CWE: Unknown
+  Program: legalrobot | Reporter: d4rk_g1rl
+
+[Medium] woocommerce - prevent_caching() bug / bypass
+  URL: https://hackerone.com/reports/241323 | CWE: Unknown
+  Program: automattic | Reporter: b258ea62bf297b02afa9854
+
+[Critical] Unauthenticated RCE in Vaultpress
+  URL: https://hackerone.com/reports/236552 | CWE: Unknown
+  Program: automattic | Reporter: b258ea62bf297b02afa9854
+
+[None] Profile fields validation mismatch
+  URL: https://hackerone.com/reports/260316 | CWE: Unknown
+  Program: legalrobot | Reporter: hulsker
+
+[?] Futureoflife organization URL should be HTTPS
+  URL: https://hackerone.com/reports/260591 | CWE: Unknown
+  Program: legalrobot | Reporter: d4rk_g1rl
+
+[?] observer.com URL should HTTPS
+  URL: https://hackerone.com/reports/260299 | CWE: Unknown
+  Program: legalrobot | Reporter: bf7e43565d8cf54de3bc5a7
+
+[?] CSP script-src includes "unsafe-inline"
+  URL: https://hackerone.com/reports/260648 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[None] Password complexity ignores empty spaces
+  URL: https://hackerone.com/reports/250253 | CWE: Weak Cryptography for Passwords
+  Program: legalrobot | Reporter: rpkumar
+
+[None] UX: JS error on Password Safety link
+  URL: https://hackerone.com/reports/262109 | CWE: Unknown
+  Program: legalrobot | Reporter: mehmil
+
+[Critical] Restaurant payment information leakage
+  URL: https://hackerone.com/reports/252043 | CWE: Unknown
+  Program: eternal | Reporter: adibou
+
+[None] Setting Arbitrary Cookie at kitcrm.com
+  URL: https://hackerone.com/reports/213991 | CWE: Unknown
+  Program: shopify | Reporter: dhaval
+
+[High] [Buddypress] Arbitrary File Deletion through bp_avatar_set
+  URL: https://hackerone.com/reports/183568 | CWE: Unknown
+  Program: wordpress | Reporter: mopman
+
+[?] Full Name Overwrite on Third party login
+  URL: https://hackerone.com/reports/241598 | CWE: Unknown
+  Program: weblate | Reporter: footstep
+
+[?] No Rate Limitation on Regenerate Api Key
+  URL: https://hackerone.com/reports/243619 | CWE: Unknown
+  Program: weblate | Reporter: footstep
+
+[?] Previous password could set as new password
+  URL: https://hackerone.com/reports/243616 | CWE: Unknown
+  Program: weblate | Reporter: footstep
+
+[?] Password token validation in Weblate Bypass #2
+  URL: https://hackerone.com/reports/244287 | CWE: Unknown
+  Program: weblate | Reporter: footstep
+
+[?] Improper validation of unicode characters #3
+  URL: https://hackerone.com/reports/243635 | CWE: Unknown
+  Program: weblate | Reporter: footstep
+
+[?] Improper validation of unicode characters still not fixed #2
+  URL: https://hackerone.com/reports/243611 | CWE: Unknown
+  Program: weblate | Reporter: footstep
+
+[?] Improper validation of unicode characters still not fixed
+  URL: https://hackerone.com/reports/241596 | CWE: Unknown
+  Program: weblate | Reporter: footstep
+
+[?] Missing Issuer parameter on TOTP 2FA
+  URL: https://hackerone.com/reports/251200 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[?] Change password logic inversion
+  URL: https://hackerone.com/reports/255679 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[Low] Weak password policy
+  URL: https://hackerone.com/reports/224572 | CWE: Unknown
+  Program: weblate | Reporter: platinum1933
+
+[Critical] In App purchase Hack 
+  URL: https://hackerone.com/reports/218287 | CWE: Use of a Key Past its Expiration Date
+  Program: kaspersky | Reporter: huntman
+
+[?] Profile shows incorrect account creation date
+  URL: https://hackerone.com/reports/255021 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[None] 2FA Error Handling on Google Authenticator
+  URL: https://hackerone.com/reports/249695 | CWE: Unknown
+  Program: legalrobot | Reporter: japz
+
+[?] No notification on change password feature
+  URL: https://hackerone.com/reports/251526 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[?] Meta characters are not filtered into full name on profile page
+  URL: https://hackerone.com/reports/251469 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[None] Pages don't render in old browsers like IE11
+  URL: https://hackerone.com/reports/251468 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[?] [New Feature] Password history check
+  URL: https://hackerone.com/reports/250741 | CWE: Unknown
+  Program: legalrobot | Reporter: gujjuboy10x00
+
+[Low] Узнать название частной группы и ее аватарку по видеоролику.
+  URL: https://hackerone.com/reports/247072 | CWE: Unknown
+  Program: vkcom | Reporter: circuit
+
+[Low] Information disclosure same issue #176002
+  URL: https://hackerone.com/reports/248599 | CWE: Unknown
+  Program: coinbase | Reporter: jobertevans
+
+[?] Frans Visits Vegas Announcement
+  URL: https://hackerone.com/reports/251747 | CWE: Unknown
+  Program: fransvisitsvegas | Reporter: fransrosen
+
+[Low] Forgot password link doesn't expire after used, only after some hours
+  URL: https://hackerone.com/reports/244642 | CWE: Weak Password Recovery Mechanism for Forgotten Password
+  Program: wakatime | Reporter: mohammad_obaid
+
+[?] Missing Account Deletion Notification
+  URL: https://hackerone.com/reports/245311 | CWE: Unknown
+  Program: wakatime | Reporter: pavanw3b
+
+[None] Weblate |Security Misconfiguration| Method Enumeration Possible on domain 
+  URL: https://hackerone.com/reports/230648 | CWE: Unknown
+  Program: weblate | Reporter: sadhu16
+
+[?] Email Spoofing Via /api/v1/users/reset_password
+  URL: https://hackerone.com/reports/244555 | CWE: Unknown
+  Program: wakatime | Reporter: leet-boy
+
+[High] Lack of Controls Allowing for Card and PIN Enumeration Leading to Fraud
+  URL: https://hackerone.com/reports/198494 | CWE: Unknown
+  Program: starbucks | Reporter: kylecolson
+
+[Medium] http://lists.parrotsec.org vulnerable to MITM
+  URL: https://hackerone.com/reports/238344 | CWE: Man-in-the-Middle
+  Program: parrot_sec | Reporter: nobody_cares_
+
+[Low] Adding Email lacks Password validation
+  URL: https://hackerone.com/reports/229869 | CWE: Unknown
+  Program: weblate | Reporter: proabiral
+
+[?] Email spoofing at weblate.org
+  URL: https://hackerone.com/reports/224186 | CWE: Unknown
+  Program: weblate | Reporter: pyrk2142
+
+[None] Incorrect HTTPS Certificate
+  URL: https://hackerone.com/reports/225540 | CWE: Improper Certificate Validation
+  Program: weblate | Reporter: numbshiva
+
+[?] 7BO: Binary Option Robot URL should be HTTPS
+  URL: https://hackerone.com/reports/225722 | CWE: Unknown
+  Program: weblate | Reporter: bf7e43565d8cf54de3bc5a7
+
+[?] Facebook share URL should be HTTPS
+  URL: https://hackerone.com/reports/225769 | CWE: Unknown
+  Program: weblate | Reporter: bf7e43565d8cf54de3bc5a7
+
+[High] Parameter tampering can result in product price manipulation
+  URL: https://hackerone.com/reports/218748 | CWE: Unknown
+  Program: adobe | Reporter: khalidamin
+
+[Medium] Attacker can trick other into logging in as themselves
+  URL: https://hackerone.com/reports/233379 | CWE: Unknown
+  Program: mixmax | Reporter: fixit
+
+[Low] Security Vulnerability - SMTP protection not used
+  URL: https://hackerone.com/reports/234701 | CWE: Unknown
+  Program: mixmax | Reporter: ashishdhaduk
+
+[?] Reverse Tab-nabbing at www.instacart.com/store/partner_recipe?recipe_url=
+  URL: https://hackerone.com/reports/227833 | CWE: Unknown
+  Program: instacart | Reporter: ak1t4
+
+[Critical] OP_SCALL in LHS of a OP_ASGN resulting in arbitrary memory write
+  URL: https://hackerone.com/reports/226200 | CWE: Write-what-where Condition
+  Program: shopify-scripts | Reporter: avisaven
+
+[Medium] Weak password requirement on techsupport.teradici.com 
+  URL: https://hackerone.com/reports/227659 | CWE: Unknown
+  Program: teradici | Reporter: inlovewithaghost
+
+[?] Reflected File Download in community.ubnt.com/restapi/
+  URL: https://hackerone.com/reports/107960 | CWE: Unknown
+  Program: ui | Reporter: a0xnirudh
+
+[Critical] [██████████.gnip.com] .htpasswd disclosure
+  URL: https://hackerone.com/reports/219197 | CWE: Unknown
+  Program: x | Reporter: rbcafe
+
+[Low] [buy.coinbase.com]Content Injection
+  URL: https://hackerone.com/reports/218680 | CWE: Unknown
+  Program: coinbase | Reporter: 0xspade
+
+[Low] Profile bio at rockstar is accepting control characters
+  URL: https://hackerone.com/reports/214763 | CWE: Failure to Sanitize Special Elements into a Different Plane (Special Element Injection)
+  Program: rockstargames | Reporter: exception
+
+[High] [URGENT] Opportunity to publish tweets on any twitters account
+  URL: https://hackerone.com/reports/208978 | CWE: Unknown
+  Program: x | Reporter: kedrischh
+
+[Low] Email verification over an unencrypted channel
+  URL: https://hackerone.com/reports/224287 | CWE: Man-in-the-Middle
+  Program: weblate | Reporter: pavanw3b
+
+[Medium] No Rate Limitting at Change Password
+  URL: https://hackerone.com/reports/223694 | CWE: Unknown
+  Program: weblate | Reporter: 0xspade
+
+[?] WannaCrypt “Killswitch”
+  URL: https://hackerone.com/reports/228648 | CWE: Unknown
+  Program: security | Reporter: malwaretech
+
+[?] SIGABRT - mirb - Double Free
+  URL: https://hackerone.com/reports/214576 | CWE: Double Free
+  Program: shopify-scripts | Reporter: ston3
+
+[?] heap use-after-free in mrb_vm_exec()
+  URL: https://hackerone.com/reports/216700 | CWE: Unknown
+  Program: shopify-scripts | Reporter: mg36
+
+[?] Crash in ary_concat() 
+  URL: https://hackerone.com/reports/216615 | CWE: Unknown
+  Program: shopify-scripts | Reporter: mg36
+
+[High] mirb only: stack-buffer-overflow (OOB write) in main()
+  URL: https://hackerone.com/reports/219870 | CWE: Stack Overflow
+  Program: shopify-scripts | Reporter: geeknik
+
+[?] Null pointer dereferences in kh_copy_mt
+  URL: https://hackerone.com/reports/221712 | CWE: Unknown
+  Program: shopify-scripts | Reporter: locator
+
+[?] heap use after free in fiber_switch
+  URL: https://hackerone.com/reports/222171 | CWE: Unknown
+  Program: shopify-scripts | Reporter: locator
+
+[?] Incorrect detection of onion URLs
+  URL: https://hackerone.com/reports/181210 | CWE: Unknown
+  Program: paragonie | Reporter: e3amn2l
+
+[?] Missing rel=noopener noreferrer in target=_blank links (Phishing attack)
+  URL: https://hackerone.com/reports/181225 | CWE: Unknown
+  Program: paragonie | Reporter: e3amn2l
+
+[Medium] [https://jenkins.brew.sh] Jenkins in Debug Mode with Stack Traces Enabled
+  URL: https://hackerone.com/reports/221833 | CWE: Stack Overflow
+  Program: homebrew | Reporter: zephrfish
+
+[Medium] File access controls incorrectly enforced for files shared via QuickLink - Unshared files can be accessed
+  URL: https://hackerone.com/reports/214001 | CWE: Unknown
+  Program: files | Reporter: eboda
+
+[Medium] Phabricator is vulnerable to padding oracle attacks and chosen-ciphertext attacks.
+  URL: https://hackerone.com/reports/216746 | CWE: Missing Required Cryptographic Step
+  Program: phabricator | Reporter: edoverflow
+
+[?] Покупка=>скачка песен, которые не предназначены для продажи
+  URL: https://hackerone.com/reports/78253 | CWE: Unknown
+  Program: ok | Reporter: 4lemon
+
+[None] sprintf gem - format string combined attack
+  URL: https://hackerone.com/reports/212239 | CWE: Unknown
+  Program: shopify-scripts | Reporter: aerodudrizzt
+
+[?] found a vulnerability in your website
+  URL: https://hackerone.com/reports/202797 | CWE: Unknown
+  Program: websummit | Reporter: sagarrajani
+
+[None] Group admin can remove user from all his groups via API
+  URL: https://hackerone.com/reports/199286 | CWE: Unknown
+  Program: nextcloud | Reporter: nickvergessen
+
+[?] Sub Domain Takeover at mk.prd.vine.co
+  URL: https://hackerone.com/reports/191323 | CWE: Unknown
+  Program: x | Reporter: punkrock
+
+[Medium] Leave inaccessible messaging system with a message (https://us1.badoo.com)
+  URL: https://hackerone.com/reports/178742 | CWE: Unknown
+  Program: bumble | Reporter: ahiezer
+
+[High] Jenkins
+  URL: https://hackerone.com/reports/181849 | CWE: Unknown
+  Program: udemy | Reporter: top
+
+[High] Crash: Initialize Decimal with itself triggers an assertion
+  URL: https://hackerone.com/reports/185775 | CWE: Unknown
+  Program: shopify-scripts | Reporter: brakhane
+
+[?] Not using Binary::safe* functions for substr/strlen function
+  URL: https://hackerone.com/reports/181315 | CWE: Unknown
+  Program: paragonie | Reporter: e3amn2l
+
+[?] Possilbe Sub Domain takever at prestashop.algolia.com
+  URL: https://hackerone.com/reports/173417 | CWE: Unknown
+  Program: algolia | Reporter: punkrock
+
+[?] [api.owncloud.org] CRLF Injection
+  URL: https://hackerone.com/reports/154306 | CWE: Unknown
+  Program: owncloud | Reporter: bobrov
+
+[?] [doc.owncloud.org] CRLF Injection
+  URL: https://hackerone.com/reports/154275 | CWE: Unknown
+  Program: owncloud | Reporter: bobrov
+
+[?] [greenhouse.io] CRLF Injection / Insecure nginx configuration
+  URL: https://hackerone.com/reports/25275 | CWE: Unknown
+  Program: greenhouse | Reporter: bobrov
+
+[Low] [ios] Address bar spoofing in Brave for iOS
+  URL: https://hackerone.com/reports/176929 | CWE: Unknown
+  Program: brave | Reporter: ibram
+
+[?] [vimeopro.com] CRLF Injection
+  URL: https://hackerone.com/reports/39181 | CWE: Unknown
+  Program: vimeo | Reporter: bobrov
+
+[Low] Full Path Disclosure at 27.prd.vine.co
+  URL: https://hackerone.com/reports/175451 | CWE: Unknown
+  Program: x | Reporter: punkrock
+
+[?] Invalid username updating
+  URL: https://hackerone.com/reports/170301 | CWE: Unknown
+  Program: rubygems | Reporter: jackb898
+
+[?] Bypass of the SSRF protection (Slack commands, Phabricator integration)
+  URL: https://hackerone.com/reports/61312 | CWE: Unknown
+  Program: slack | Reporter: agarri_fr
+
+[?] The JDBC driver used by the Vertica connector allows to create files on the backends
+  URL: https://hackerone.com/reports/112166 | CWE: Unknown
+  Program: bime | Reporter: agarri_fr
+
+[?] Non-secure requests are not automatically upgraded to HTTPS
+  URL: https://hackerone.com/reports/158186 | CWE: Unknown
+  Program: security | Reporter: koenrh
+
+[?] Change contents of the careers iframe in https://corp.badoo.com/jobs
+  URL: https://hackerone.com/reports/147776 | CWE: Unknown
+  Program: bumble | Reporter: zombiehelp54
+
+[?] node.drchrono.com - Information Disclosure and Windows Host Exposed
+  URL: https://hackerone.com/reports/141174 | CWE: Unknown
+  Program: drchrono | Reporter: bashlogic
+
+[?] Insufficient shell characters filtering leads to (potentially remote) code execution (CVE-2016-3714)
+  URL: https://hackerone.com/reports/143966 | CWE: Unknown
+  Program: ibb | Reporter: stewie
+
+[?] Tokens from services like Facebook can be stolen
+  URL: https://hackerone.com/reports/92472 | CWE: Unknown
+  Program: bumble | Reporter: stefanovettorazzi
+
+[?] Same-Origin Policy bypass on main domain - ok.ru
+  URL: https://hackerone.com/reports/102234 | CWE: Unknown
+  Program: ok | Reporter: zoczus
+
+[?] Same-Origin Policy Bypass #2 
+  URL: https://hackerone.com/reports/102236 | CWE: Unknown
+  Program: ok | Reporter: zoczus
+
+[?] Покупка песни дешевле, чем она стоит.
+  URL: https://hackerone.com/reports/78219 | CWE: Unknown
+  Program: ok | Reporter: 4lemon
+
+[?] New hacktivity view discloses report IDs of non-public reports
+  URL: https://hackerone.com/reports/127235 | CWE: Unknown
+  Program: security | Reporter: ayoubfathi_
+
+[?] WordPress Failure Notice page will generate arbitrary hyperlinks
+  URL: https://hackerone.com/reports/112955 | CWE: Unknown
+  Program: withinsecurity | Reporter: ilikeleeks
+
+[?] Sub-Domain Takeover
+  URL: https://hackerone.com/reports/119220 | CWE: Unknown
+  Program: x | Reporter: bugdisclose
+
+[?] Full takeover of some binary.com sub domains
+  URL: https://hackerone.com/reports/112306 | CWE: Unknown
+  Program: deriv | Reporter: koenrh
+
+[?] Content Spoofing OR Text Injection in https://withinsecurity.com
+  URL: https://hackerone.com/reports/111094 | CWE: Unknown
+  Program: withinsecurity | Reporter: deepaktest30
+
+[?] Big Bug with Vault which i have already reported: Case #606962
+  URL: https://hackerone.com/reports/65084 | CWE: Unknown
+  Program: coinbase | Reporter: datokaa
+
+[?] [livechat.shopify.com] Cookie bomb at customer chats
+  URL: https://hackerone.com/reports/105363 | CWE: Unknown
+  Program: shopify | Reporter: s_p_q_r
+
+[?] HTTP-Response-Splitting on v.shopify.com
+  URL: https://hackerone.com/reports/106427 | CWE: Unknown
+  Program: shopify | Reporter: krankopwnz
+
+[?] bytearray.find Buffer Over-read
+  URL: https://hackerone.com/reports/104023 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] hotshot pack_string Heap Buffer Overflow
+  URL: https://hackerone.com/reports/104022 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] audioop.adpcm2lin Buffer Over-read
+  URL: https://hackerone.com/reports/104021 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] audioop.lin2adpcm Buffer Over-read
+  URL: https://hackerone.com/reports/104020 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] Files extracted from archive may be placed outside of destination directory
+  URL: https://hackerone.com/reports/104019 | CWE: Unknown
+  Program: ibb | Reporter: stewie
+
+[?] Multiple Use After Free Vulnerabilites in unserialize()
+  URL: https://hackerone.com/reports/104018 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Arbitrary code execution in str_ireplace function
+  URL: https://hackerone.com/reports/104017 | CWE: Unknown
+  Program: ibb | Reporter: dimitri
+
+[?] Dangling pointer in the unserialization of ArrayObject items
+  URL: https://hackerone.com/reports/104016 | CWE: Unknown
+  Program: ibb | Reporter: seanhn
+
+[?] curl_setopt_array() type confusion
+  URL: https://hackerone.com/reports/104015 | CWE: Unknown
+  Program: ibb | Reporter: cogitoergor00t
+
+[?] libcurl duphandle read out of bounds
+  URL: https://hackerone.com/reports/104014 | CWE: Unknown
+  Program: ibb | Reporter: sparaschoudis
+
+[?] heap buffer overflow in enchant_broker_request_dict()
+  URL: https://hackerone.com/reports/104013 | CWE: Unknown
+  Program: ibb | Reporter: sparaschoudis
+
+[?] Integer overflow in unserialize() (32-bits only)
+  URL: https://hackerone.com/reports/104012 | CWE: Unknown
+  Program: ibb | Reporter: sparaschoudis
+
+[?] AddressSanitizer reports a global buffer overflow in mkgmtime() function
+  URL: https://hackerone.com/reports/104011 | CWE: Unknown
+  Program: ibb | Reporter: sparaschoudis
+
+[?] SOAP serialize_function_call() type confusion / RCE
+  URL: https://hackerone.com/reports/104010 | CWE: Unknown
+  Program: ibb | Reporter: cogitoergor00t
+
+[?] zend_throw_or_error() format string vulnerability
+  URL: https://hackerone.com/reports/104009 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Uninitialized pointer in phar_make_dirstream
+  URL: https://hackerone.com/reports/104008 | CWE: Unknown
+  Program: ibb | Reporter: haquaman
+
+[?] Buffer over-read in exif_read_data with TIFF IFD tag
+  URL: https://hackerone.com/reports/104007 | CWE: Unknown
+  Program: ibb | Reporter: haquaman
+
+[?] Null pointer deref (segfault) in spl_autoload via ob_start
+  URL: https://hackerone.com/reports/104006 | CWE: Unknown
+  Program: ibb | Reporter: haquaman
+
+[?] null pointer deref (segfault) in zend_eval_const_expr
+  URL: https://hackerone.com/reports/104005 | CWE: Unknown
+  Program: ibb | Reporter: haquaman
+
+[?] Mem out-of-bounds write (segfault) in ZEND_ASSIGN_DIV_SPEC_CV_UNUSED_HANDLER
+  URL: https://hackerone.com/reports/104004 | CWE: Unknown
+  Program: ibb | Reporter: haquaman
+
+[?] Python deque.index() uninitialized memory
+  URL: https://hackerone.com/reports/104003 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] Python scan_eol() Buffer Over-read
+  URL: https://hackerone.com/reports/104002 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] time_strftime() Buffer Over-read
+  URL: https://hackerone.com/reports/104001 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] Python xmlparse_setattro() Type Confusion
+  URL: https://hackerone.com/reports/104000 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] Use after free vulnerability in unserialize() with GMP
+  URL: https://hackerone.com/reports/103999 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Use After Free Vulnerability in session deserializer
+  URL: https://hackerone.com/reports/103998 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Use After Free Vulnerability in unserialize()
+  URL: https://hackerone.com/reports/103997 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Use After Free Vulnerability in unserialize() with SplObjectStorage
+  URL: https://hackerone.com/reports/103996 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Use After Free Vulnerability in unserialize() with SplDoublyLinkedList
+  URL: https://hackerone.com/reports/103995 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Python 3.3 - 3.5 product_setstate() Out-of-bounds Read
+  URL: https://hackerone.com/reports/103994 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] Request Hijacking Vulnerability In RubyGems 2.4.6 And Earlier
+  URL: https://hackerone.com/reports/103993 | CWE: Unknown
+  Program: rubygems | Reporter: claudijd
+
+[?] Integer overflow in _Unpickler_Read
+  URL: https://hackerone.com/reports/103992 | CWE: Unknown
+  Program: ibb | Reporter: hugbounter
+
+[?] Null pointer dereference in phar_get_fp_offset()
+  URL: https://hackerone.com/reports/103990 | CWE: Unknown
+  Program: ibb | Reporter: libnex
+
+[?] HTTP header injection in info.hackerone.com allows setting cookies for hackerone.com
+  URL: https://hackerone.com/reports/97292 | CWE: Unknown
+  Program: security | Reporter: harisec
+
+[?] Pre-generation of 2FA secret/backup codes seems like an unnecessary risk
+  URL: https://hackerone.com/reports/100509 | CWE: Unknown
+  Program: security | Reporter: danlec
+
+[?] Hackerone impersonation
+  URL: https://hackerone.com/reports/97377 | CWE: Unknown
+  Program: security | Reporter: abhisheksingh
+
+[?] Content spoofing on invitations page 
+  URL: https://hackerone.com/reports/92607 | CWE: Unknown
+  Program: security | Reporter: rohan_pagey
+
+[?] In markdown, parsing things like @danlec and #46072 after links is unsafe
+  URL: https://hackerone.com/reports/46312 | CWE: Unknown
+  Program: security | Reporter: danlec
+
+[?] Integer overflow in _json_encode_unicode leads to crash
+  URL: https://hackerone.com/reports/73260 | CWE: Unknown
+  Program: ibb | Reporter: nilch
+
+[?] Integer overflow in _pickle.c
+  URL: https://hackerone.com/reports/73259 | CWE: Unknown
+  Program: ibb | Reporter: tukan
+
+[?] Python: imageop Unsafe Arithmetic
+  URL: https://hackerone.com/reports/73258 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] PHP yaml_parse/yaml_parse_file/yaml_parse_url Unsafe Deserialization
+  URL: https://hackerone.com/reports/73257 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] PHP yaml_parse/yaml_parse_file/yaml_parse_url Double Free
+  URL: https://hackerone.com/reports/73256 | CWE: Unknown
+  Program: ibb | Reporter: johnleitch
+
+[?] str_repeat() sign mismatch based memory corruption
+  URL: https://hackerone.com/reports/73255 | CWE: Unknown
+  Program: ibb | Reporter: cogitoergor00t
+
+[?] Multiple type confusions in unicode error handlers
+  URL: https://hackerone.com/reports/73253 | CWE: Unknown
+  Program: ibb | Reporter: pakt_
+
+[?] Use after free in get_filter
+  URL: https://hackerone.com/reports/73252 | CWE: Unknown
+  Program: ibb | Reporter: pakt_
+
+[?] Multiple use after free bugs in json encoding
+  URL: https://hackerone.com/reports/73251 | CWE: Unknown
+  Program: ibb | Reporter: pakt_
+
+[?] Multiple use after free bugs in heapq module
+  URL: https://hackerone.com/reports/73250 | CWE: Unknown
+  Program: ibb | Reporter: pakt_
+
+[?] Multiple use after free bugs in element module
+  URL: https://hackerone.com/reports/73249 | CWE: Unknown
+  Program: ibb | Reporter: pakt_
+
+[?] Tokenizer crash when processing undecodable source code
+  URL: https://hackerone.com/reports/73248 | CWE: Unknown
+  Program: ibb | Reporter: hugbounter
+
+[?] php_stream_url_wrap_http_ex() type-confusion vulnerability
+  URL: https://hackerone.com/reports/73247 | CWE: Unknown
+  Program: ibb | Reporter: mongo
+
+[?] Use-after-free in php_curl related to CURLOPT_FILE/_INFILE/_WRITEHEADER
+  URL: https://hackerone.com/reports/73246 | CWE: Unknown
+  Program: ibb | Reporter: mongo
+
+[?] Type Confusion Vulnerability in SoapClient
+  URL: https://hackerone.com/reports/73245 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] Use after free vulnerability in unserialize() with DateInterval
+  URL: https://hackerone.com/reports/73244 | CWE: Unknown
+  Program: ibb | Reporter: ryat
+
+[?] libcurl: URL request injection
+  URL: https://hackerone.com/reports/73242 | CWE: Unknown
+  Program: ibb | Reporter: isciurus
+
+[?] Malformed ECParameters causes infinite loop
+  URL: https://hackerone.com/reports/73241 | CWE: Unknown
+  Program: ibb | Reporter: ctz
+
+[?] Integer overflow in ftp_genlist() resulting in heap overflow
+  URL: https://hackerone.com/reports/73240 | CWE: Unknown
+  Program: ibb | Reporter: ruben
+
+[?] ZIP Integer Overflow leads to writing past heap boundary
+  URL: https://hackerone.com/reports/73239 | CWE: Unknown
+  Program: ibb | Reporter: libnex
+
+[?] Buffer Over-read in unserialize when parsing Phar
+  URL: https://hackerone.com/reports/73238 | CWE: Unknown
+  Program: ibb | Reporter: libnex
+
+[?] Buffer Over flow when parsing tar/zip/phar in phar_set_inode
+  URL: https://hackerone.com/reports/73237 | CWE: Unknown
+  Program: ibb | Reporter: libnex
+
+[?] Bypass Setup by External Activity Invoke
+  URL: https://hackerone.com/reports/55064 | CWE: Unknown
+  Program: faceless | Reporter: dragonfire_inc
+
+[?] HTTP Response Splitting (CRLF injection) due to headers overflow
+  URL: https://hackerone.com/reports/53843 | CWE: Unknown
+  Program: x | Reporter: filedescriptor
+
+[?] HTTP Response Splitting (CRLF injection) in report_story
+  URL: https://hackerone.com/reports/52042 | CWE: Unknown
+  Program: x | Reporter: filedescriptor
+
+[?] Vimeo + & Vimeo PRO Unautorised Tax bypass
+  URL: https://hackerone.com/reports/49561 | CWE: Unknown
+  Program: vimeo | Reporter: march
+
+[?] Missing spf flags for myshopify.com
+  URL: https://hackerone.com/reports/54779 | CWE: Unknown
+  Program: shopify | Reporter: shpendk13
+

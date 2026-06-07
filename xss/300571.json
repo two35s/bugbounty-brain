@@ -1,0 +1,231 @@
+{
+  "id": 300571,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8zMDA1NzE=",
+  "url": "https://hackerone.com/reports/300571",
+  "title": "Stored XSS on Add Calendar",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2017-12-26T09:25:29.489Z",
+  "submitted_at": "2017-12-26T09:25:29.489Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "gamliel",
+    "url": "/gamliel",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/jcrnw31uz0jogesmhdbbxrkmw2tf/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 60,
+    "url": "https://hackerone.com/concretecms",
+    "handle": "concretecms",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/mhbwznkvtxed2330krmlxr2bpqa8/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22concrete_CMS_logo_-_handat2x.png%22%3B%20filename%2A%3DUTF-8%27%27concrete_CMS_logo_-_handat2x.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=76f3b1441894f1b81584dfbfe933de1b30c1b279965fdf4437f1c9a913bbb2ca",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/mhbwznkvtxed2330krmlxr2bpqa8/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22concrete_CMS_logo_-_handat2x.png%22%3B%20filename%2A%3DUTF-8%27%27concrete_CMS_logo_-_handat2x.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c0d25c66e6a16cb285d73cc0e849ddbe57b01b207b88c34e013c5338c3bd6b7e"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Concrete CMS",
+      "twitter_handle": "concrete_cms",
+      "website": "https://www.concretecms.org",
+      "about": "A simple and powerful content management system."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2018-09-01T06:03:35.830Z",
+  "bug_reporter_agreed_on_going_public_at": "2018-08-02T06:03:25.102Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Greetings, **(There is no soup like crayons soup with vegetables)**.\n\nHello @Concrete5 Team.\n\nLike my last report #300532 I found other Stored XSS vulnerability in your nice CMS. If you don't mind I will omit what Stored - XSS is and its description, hope everything is fine in your side about that :).\n\nThe testing scenario is the same: **Concrete5 8.3.1 released at 12/20/17**, while searching for some fields where I could insert a XSS payload I stopped into: **Dashboard > Calendar & Events > Add Calendar**\n\n###Steps to reproduce:\n1. Open your favorite updated web browser (Firefox or Chrome)\n2. Log into your Concrete5 instance as **admin**\n3. For the ease create an user (or use an existent one) and add it to **Administrators** group\n4. Open a new window browser in Private or Incognito mode and log in as the new user (**user2**)\n5. As **user2** go to **Dashboard > Calendar & Events**\n6. Now, click on **Add Calendar**\n7. In **Calendar Name** type something like: **TEST<img src=K onerror={here goes js payload}>**\n8. My js payload:\n ` Hi, Admin<img src=K onerror=prompt(document.location) width=1px height=1px> ` {F249506}\n(If there's a public page containing a Calendar Event block or custom code that can render a specific calendar the Stored XSS would be public to and all a malicious user have to do is in _Enable Additional Event Details_ chose **Link to an existing page**)\n9. Now, click on **Add Calendar** button\n10. In **user2** browser the prompt box is showing the page's document location {F249510} (close it)\n11. Now, go to the window browser where **admin** user is logged\n12. Go to  **Dashboard > Calendar & Events**\n13. Select \"**Hi, Admin**\" Calendar {F249509}\n14. The prompt box will appear in the context of **admin** user browser {F249507}\n\n## Impact\n\nAgain, in **Step 3** I mentioned \"for the ease\" creating an user and add it to **Administrators** group for the ease of give to the new user quick access to add Calendars but, in other scenario, an administrator can grant access to (for example) **Registered Users** to add Calendars. Remember, a calendar could be linked to existing public pages {F249480} if the page is previously designed to show a calendar too.\n\nRegarding to impact, even if the cookie can't be stolen to takeover the session or account because it has set the `HttpOnly` flag {F249505} and it cannot be directly accessed via client-side JavaScript, If malicious user can insert JavaScript code in a field where he is allowed to. The limit of mad actions is the attacker's imagination.\n\nSome (mad) actions could be:\n* setting a Javascript keylogger\n* JavaScript can read and make arbitrary modifications to the browser\u2019s DOM (within the page that JavaScript is running)\n* Can [Manipulate the browser history](https://developer.mozilla.org/en-US/docs/Web/API/History_API) and [Use Javascript to read a users browser history](https://web.archive.org/web/20170429124134/http://bhavin.directi.com/using-javascript-to-read-a-users-browser-history/)\n\nAs said before, the limit is attacker creativity. I hope it helps to improve Concrete5 CMS.\n\nKind regards,\n**Gamliel Hernandez**.",
+  "weakness": {
+    "id": 62,
+    "name": "Cross-site Scripting (XSS) - Stored"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 249480,
+      "file_name": "Calendar_XSS_Link-to-page.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/249/480/0859ad1e3a78998cd48e7727f12303b786ebfb95/Calendar_XSS_Link-to-page.png?response-content-disposition=attachment%3B%20filename%3D%22Calendar_XSS_Link-to-page.png%22%3B%20filename%2A%3DUTF-8%27%27Calendar_XSS_Link-to-page.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=917187c8065fa5a1eea366320341bafec87588ebc478ba75921d0a81fd60c97d",
+      "file_size": 43958,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 249505,
+      "file_name": "Calendar_httponly-flag.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/249/505/c4eb81338f608cc7dcb5667ff4e50b1b4d8be3ca/Calendar_httponly-flag.png?response-content-disposition=attachment%3B%20filename%3D%22Calendar_httponly-flag.png%22%3B%20filename%2A%3DUTF-8%27%27Calendar_httponly-flag.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=943af0fd2020a5b857280876892369996871886cc54da3f4620b0eb80f071697",
+      "file_size": 50839,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 249506,
+      "file_name": "Calendar_XSS_AddCalendar-field.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/249/506/561fed21fa236be76ffc2d1da498ed8c0baaa763/Calendar_XSS_AddCalendar-field.png?response-content-disposition=attachment%3B%20filename%3D%22Calendar_XSS_AddCalendar-field.png%22%3B%20filename%2A%3DUTF-8%27%27Calendar_XSS_AddCalendar-field.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4e519e8ed00f96325e80cb26cdfd5ab6054089ea91d4292e661c5b2a3de3724f",
+      "file_size": 96085,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 249507,
+      "file_name": "Calendar_XSS_Calendar-XSSED-Selected.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/249/507/ac5f4dd0718f0d3350a7384f409731d0e955e247/Calendar_XSS_Calendar-XSSED-Selected.png?response-content-disposition=attachment%3B%20filename%3D%22Calendar_XSS_Calendar-XSSED-Selected.png%22%3B%20filename%2A%3DUTF-8%27%27Calendar_XSS_Calendar-XSSED-Selected.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=faffcefdd7a4c9ca4458d2bc128c9b55b057f525f6638b47e1ced8d53063223d",
+      "file_size": 178659,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 249508,
+      "file_name": "Calendar_XSS_Link-to-page.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/249/508/079d562ad981e597341541da4af84b9080f88bf2/Calendar_XSS_Link-to-page.png?response-content-disposition=attachment%3B%20filename%3D%22Calendar_XSS_Link-to-page.png%22%3B%20filename%2A%3DUTF-8%27%27Calendar_XSS_Link-to-page.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=f5133cb4cd8d873f63edea440b015e5bc4b38460b81f28961e91e2fa3b86e53f",
+      "file_size": 43958,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 249509,
+      "file_name": "Calendar_XSS_Select-HiAdmin-Calendar.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/249/509/d2a9364bb67081e317987e107a46f78a9a1602f7/Calendar_XSS_Select-HiAdmin-Calendar.png?response-content-disposition=attachment%3B%20filename%3D%22Calendar_XSS_Select-HiAdmin-Calendar.png%22%3B%20filename%2A%3DUTF-8%27%27Calendar_XSS_Select-HiAdmin-Calendar.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=33c1901a507597c0ba4d14a2f11ca5740f65b85484bc258fb596589b73f73150",
+      "file_size": 104589,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 249510,
+      "file_name": "Calendar_XSS_User2-browser.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/249/510/51cfb35cad094f0d7f0f8140f920ec57417e2891/Calendar_XSS_User2-browser.png?response-content-disposition=attachment%3B%20filename%3D%22Calendar_XSS_User2-browser.png%22%3B%20filename%2A%3DUTF-8%27%27Calendar_XSS_User2-browser.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ4PA35AKB%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIBldJXcu9uqizSdyMrX8uUG%2FxZAk99VYGvkDicb7ITdHAiEAjIx3bnoQVO7aDlbKXG1MPM54E5iP6EWeL%2BG48WXe0%2F4quwUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEWP232ItK3NfuYe%2FiqPBf2bg%2FTd59h5t5Jf6d29SmTZBFglp1OcntFOTxgxJ%2Btw2NhAsgKreDhvLwiI8HumjL6sgn2%2BcJ6287EqMPaKnNWeHzLEBwhNmLQWYRbx9otSP6cRQ6Fxs3PEiONHEImd45c%2Fjwvgm%2F%2BIAGq0nnL%2FRwe9qnHD592Q1HuptJJiZ6v%2BrLXAOsGlp4sGYGoF3wGQ%2FPoVUg31hXWxUCYNWdgxM%2B6uSswbfsqGI1J2gc2auLiNyt29DKqUzkjXIF9tBwHBgs1h%2BbEB5O%2B3HppCdPURenKxmmIaliP00qzkLH3Vow680d3%2Bv6g8bg4KB1G7vFZjFmGQs0707%2BB5Hxqla9TvZisWi8PVMkqsNaQpH5zxjIZtSpmgKucsru02LN7HeKiHyau03NJWelUwD51B05Vvhb8cJUC4yvGFESJT8TcaE%2BjQHfFom7qs2rdHJC%2BDj1qI20NlsOxMl7WZ8Boo7BFz0JSJ6vvJtbj6gfKwtRKbpNgLXy7LqYJglDOZ3vzVg5L2uKTf%2BCBs0DG09hxH8%2BIOVbY2E2CbLj26Zj%2FphFG2VPpK02wajUHUE7DET3FrgCD1ie7n0CDnUBh0M50PA1BoMI3aDnhZHOTTvM8x7TfwXz%2BiIWuLvtIrx3sFfZkIoNeYMBlqmIZlHzDr85Fn%2BkgP1M4XGQDTODCErcyhd6EmXODK7FbmUCz7lT3JMPxqvvdJQHP5fZOb9Jdpka17fcREopE0ZpiAdCSQqtdi3j%2Bno30BGtFHxjTL04Q9lgqSsot4aB2dc%2BYPk%2FWldFi7ijy%2BL7zOyISV1icLABMs%2FqzFS%2BkB%2F%2FkzN0BWA5Q%2BXN9jfbsFT4pG7e3i9rA9QEQ0O0cydlQZtAGmugMF10LMWX5SyTkwpo6W0QY6sQFqG9IpqK7A%2FkjRp63RibKHRrnrR%2FDSjnROOY2F%2FRnBOu9kl1qJJGbiSRIF%2BEd0rN7IQKb7W0zErtZ25vpRytQikZn%2FXTaBYLE6upAt7fPW1gZJ6puskgM7pQBVFm54AL%2BMYInk%2BDncUloosfclg%2BYXkU%2FHRoPl7FenhO6SdyRdtvQuM5aCS1SNijXbKg9031xVe4QucF1Vme6gdr5KTPD1aGrTHIh%2FgOgH%2FMfa3SL6gro%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=281f9c5583de718fbfb12f3e5f257fbeeb8f1f3dd53b0c668ddbc8051eabbce9",
+      "file_size": 180292,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2018-09-01T06:03:25.195Z",
+  "allow_singular_disclosure_after": -245066406.87671715,
+  "singular_disclosure_allowed": true,
+  "vote_count": 7,
+  "voters": [
+    "ali",
+    "eveeez",
+    "khizer47",
+    "ronygigi",
+    "cryptographer",
+    "tarunaggarwal437",
+    "mrstix"
+  ],
+  "severity": {
+    "rating": "low",
+    "score": 3.9,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "high",
+      "privileges_required": "high",
+      "user_interaction": "required",
+      "scope": "unchanged",
+      "confidentiality": "low",
+      "integrity": "low",
+      "availability": "low"
+    }
+  },
+  "structured_scope": null,
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

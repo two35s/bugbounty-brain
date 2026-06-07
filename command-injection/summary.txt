@@ -1,0 +1,523 @@
+Category: command-injection
+Reports: 130
+
+[Critical] GlobalProtect - OS Command Injection #█████████
+  URL: https://hackerone.com/reports/2468496 | CWE: OS Command Injection
+  Program: deptofdefense | Reporter: 0xr2r
+
+[High] CVE-2023-41763 Business Elevation of Privilege vulnerability on [.mtn.com]
+  URL: https://hackerone.com/reports/2309291 | CWE: Command Injection - Generic
+  Program: mtn_group | Reporter: h0w
+
+[Critical] Cisco IOS XE instance at ████ vulnerable to CVE-██████
+  URL: https://hackerone.com/reports/2778350 | CWE: Command Injection - Generic
+  Program: mtn_group | Reporter: odaysec
+
+[Critical]  Remote Code Execution and AWS IAM Credentials Exfiltration in https://████████/
+  URL: https://hackerone.com/reports/2083771 | CWE: Command Injection - Generic
+  Program: deptofdefense | Reporter: shuvam321
+
+[High] Management Console Editor Privilege Escalation to Root SSH Access in GitHub Enterprise Server via RCE in ghe-update-check
+  URL: https://hackerone.com/reports/2325023 | CWE: Command Injection - Generic
+  Program: github | Reporter: inspector-ambitious
+
+[High] Management Console Editor Privilege Escalation to Root SSH Access in GitHub Enterprise Server via RCE in collectd
+  URL: https://hackerone.com/reports/2329547 | CWE: Command Injection - Generic
+  Program: github | Reporter: inspector-ambitious
+
+[High] Management Console Editor Privilege Escalation to Root SSH Access in GitHub Enterprise Server via RCE in actions-console
+  URL: https://hackerone.com/reports/2323292 | CWE: Command Injection - Generic
+  Program: github | Reporter: inspector-ambitious
+
+[High] Management Console Editor Privilege Escalation to Root SSH Access in GitHub Enterprise Server via nomad template injection and audit-forward
+  URL: https://hackerone.com/reports/2332623 | CWE: Command Injection - Generic
+  Program: github | Reporter: inspector-ambitious
+
+[High] Management Console Editor Privilege Escalation to Root SSH Access in GitHub Enterprise Server via nomad template injection
+  URL: https://hackerone.com/reports/2332551 | CWE: Command Injection - Generic
+  Program: github | Reporter: inspector-ambitious
+
+[High] Management Console Editor Privilege Escalation to Root SSH Access in GitHub Enterprise Server via RCE in syslog-ng
+  URL: https://hackerone.com/reports/2329466 | CWE: Command Injection - Generic
+  Program: github | Reporter: inspector-ambitious
+
+[Critical] Shell command injection in https://partner.steamgames.com/admin/game/publish/ via screenshot URL
+  URL: https://hackerone.com/reports/949361 | CWE: OS Command Injection
+  Program: valve | Reporter: njbooher3
+
+[Critical] Shell command injection in https://partner.steamgames.com/bundles/savestore/ via overwriting asset_path_identifier
+  URL: https://hackerone.com/reports/926169 | CWE: OS Command Injection
+  Program: valve | Reporter: njbooher3
+
+[Critical] Shell command injection in https://partner.steamgames.com/apps/communityitems/ via file extension of item_image_small and item_image_large
+  URL: https://hackerone.com/reports/840243 | CWE: Command Injection - Generic
+  Program: valve | Reporter: njbooher3
+
+[Critical] WG call injection in /economy/contextcommand
+  URL: https://hackerone.com/reports/652649 | CWE: Command Injection - Generic
+  Program: valve | Reporter: njbooher3
+
+[Critical] RCE on partner.steampowered.com
+  URL: https://hackerone.com/reports/518348 | CWE: Command Injection - Generic
+  Program: valve | Reporter: njbooher3
+
+[High] Bypass incomplete fix of CVE-2024-27980
+  URL: https://hackerone.com/reports/2461831 | CWE: Command Injection - Generic
+  Program: nodejs | Reporter: tianst
+
+[Critical] RCE in ███ [CVE-2021-26084]
+  URL: https://hackerone.com/reports/1327769 | CWE: OS Command Injection
+  Program: deptofdefense | Reporter: fdeleite
+
+[Critical] RCE on ███████ [CVE-2021-26084]
+  URL: https://hackerone.com/reports/1327701 | CWE: OS Command Injection
+  Program: deptofdefense | Reporter: fdeleite
+
+[Critical] RCE via File Upload  with a Null Byte Truncated File Extension at https://██████/
+  URL: https://hackerone.com/reports/2054184 | CWE: Command Injection - Generic
+  Program: deptofdefense | Reporter: pizzapower
+
+[High] RCE of Burp  Scanner / Crawler via Clickjacking 
+  URL: https://hackerone.com/reports/1274695 | CWE: Command Injection - Generic
+  Program: portswigger | Reporter: mattaustin
+
+[Critical] Rocket.Chat Server RCE
+  URL: https://hackerone.com/reports/1631258 | CWE: Command Injection - Generic
+  Program: rocket_chat | Reporter: yuske
+
+[Medium] CSV Injection at https://assets-paris-demo.codefi.network/
+  URL: https://hackerone.com/reports/1748961 | CWE: Command Injection - Generic
+  Program: metamask | Reporter: 0xjackal
+
+[Medium] DNS rebinding in --inspect via invalid octal IP address
+  URL: https://hackerone.com/reports/1710652 | CWE: OS Command Injection
+  Program: nodejs | Reporter: haxatron1
+
+[Critical] LOGJ4 VUlnerability [HtUS]
+  URL: https://hackerone.com/reports/1624137 | CWE: Command Injection - Generic
+  Program: deptofdefense | Reporter: ferreiraklet_
+
+[Critical] POOL_UPGRADE request handler may allow an unauthenticated attacker to remotely execute code on every node in the network. 
+  URL: https://hackerone.com/reports/1705717 | CWE: Command Injection - Generic
+  Program: hyperledger | Reporter: shakedreiner
+
+[Critical] Remote Command Execution via Github import
+  URL: https://hackerone.com/reports/1679624 | CWE: Command Injection - Generic
+  Program: gitlab | Reporter: vakzz
+
+[Critical] RCE via the DecompressedArchiveSizeValidator and Project BulkImports (behind feature flag)
+  URL: https://hackerone.com/reports/1609965 | CWE: Command Injection - Generic
+  Program: gitlab | Reporter: vakzz
+
+[Critical] Insecure use of shell.openExternal() in Rocket.Chat Desktop App leading to RCE
+  URL: https://hackerone.com/reports/924151 | CWE: OS Command Injection
+  Program: rocket_chat | Reporter: baltpeter
+
+[?] RCE via WikiCloth markdown rendering if the `rubyluabridge` gem is installed
+  URL: https://hackerone.com/reports/1401444 | CWE: OS Command Injection
+  Program: gitlab | Reporter: vakzz
+
+[High] CVE-2022-24288: Apache Airflow: TWO RCEs in example DAGs
+  URL: https://hackerone.com/reports/1492896 | CWE: Command Injection - Generic
+  Program: ibb | Reporter: x_h1
+
+[High] Insecure Bundler configuration fetching internal Gems (okra) from Rubygems.org
+  URL: https://hackerone.com/reports/1104874 | CWE: Command Injection - Generic
+  Program: basecamp | Reporter: zofrex
+
+[Critical] Exposed Kubernetes API - RCE/Exposed Creds
+  URL: https://hackerone.com/reports/455645 | CWE: OS Command Injection
+  Program: snapchat | Reporter: txt3rob
+
+[High] View Only to Root Privilege Escalation on UniFi Protect
+  URL: https://hackerone.com/reports/825764 | CWE: Command Injection - Generic
+  Program: ui | Reporter: fr33rh
+
+[High] Readonly to Root Privilege Escalation on EdgeSwitch
+  URL: https://hackerone.com/reports/796414 | CWE: Command Injection - Generic
+  Program: ui | Reporter: fr33rh
+
+[Critical] Remote OS Command Execution on Oracle Weblogic server via [CVE-2017-10271]
+  URL: https://hackerone.com/reports/810755 | CWE: OS Command Injection
+  Program: mtn_group | Reporter: tounsi_007
+
+[Critical] Remote OS Command Execution on Oracle Weblogic server via [CVE-2017-3506]
+  URL: https://hackerone.com/reports/810778 | CWE: OS Command Injection
+  Program: mtn_group | Reporter: tounsi_007
+
+[Critical] [wireguard-wrapper] Command Injection via insecure command concatenation
+  URL: https://hackerone.com/reports/858674 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Critical] Unauth RCE on Jenkins Instance at https://█████████/
+  URL: https://hackerone.com/reports/1125329 | CWE: OS Command Injection
+  Program: deptofdefense | Reporter: brbsainath
+
+[High] [CVE-2018-7600] Remote Code Execution due to outdated Drupal server on www.█████████
+  URL: https://hackerone.com/reports/1063256 | CWE: Command Injection - Generic
+  Program: deptofdefense | Reporter: ph0cu5
+
+[Critical] Pre-auth Remote Code Execution on multiple Uber SSL VPN servers
+  URL: https://hackerone.com/reports/540242 | CWE: Command Injection - Generic
+  Program: uber | Reporter: orange
+
+[None] Server-side template injection at ujs test server
+  URL: https://hackerone.com/reports/942103 | CWE: Command Injection - Generic
+  Program: rails | Reporter: ooooooo_q
+
+[Medium] Possible RCE through Windows Custom Protocol on Windows client
+  URL: https://hackerone.com/reports/1001255 | CWE: OS Command Injection
+  Program: nordsecurity | Reporter: cyku
+
+[Critical] XSS leads to RCE on the RocketChat desktop client.
+  URL: https://hackerone.com/reports/899964 | CWE: OS Command Injection
+  Program: rocket_chat | Reporter: fabianfreyer
+
+[High] [last-commit-log] Command Injection
+  URL: https://hackerone.com/reports/881713 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: bilk0h
+
+[Critical] Remote code execution on Basecamp.com
+  URL: https://hackerone.com/reports/365271 | CWE: Command Injection - Generic
+  Program: basecamp | Reporter: gammarex
+
+[Critical] [systeminformation] Command Injection via insecure command formatting
+  URL: https://hackerone.com/reports/925324 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: effectrenan
+
+[Critical] [gfc] Command Injection via insecure command formatting
+  URL: https://hackerone.com/reports/871071 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Medium] [freespace] Command Injection due to Lack of Sanitization
+  URL: https://hackerone.com/reports/951249 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: ansuj7
+
+[Medium] [@knutkirkhorn/free-space] - Command Injection through Lack of Sanitization
+  URL: https://hackerone.com/reports/950192 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: ansuj7
+
+[Critical] [extra-asciinema] Command Injection via insecure command formatting
+  URL: https://hackerone.com/reports/863956 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Critical] [extra-ffmpeg] Command Injection via insecure command formatting
+  URL: https://hackerone.com/reports/863944 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Critical] [vboxmanage.js] Command Injection via insecure command concatenation
+  URL: https://hackerone.com/reports/864777 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Critical] Test-scripts for postgis in mason-repository using unsafe unzip of content from unclaimed bucket creates potential RCE-issues
+  URL: https://hackerone.com/reports/329689 | CWE: Command Injection - Generic
+  Program: mapbox | Reporter: fransrosen
+
+[Medium] Send arbitrary PUT requests when user clicks on a link
+  URL: https://hackerone.com/reports/824689 | CWE: Command Injection - Generic
+  Program: gitlab | Reporter: yvvdwf
+
+[Medium] Local File Disclosure (+XSS+CSRF) in AirOS 6.2.0 devices
+  URL: https://hackerone.com/reports/661647 | CWE: Command Injection - Generic
+  Program: ui | Reporter: murmus
+
+[High] RCE in AirOS 6.2.0 Devices with CSRF bypass
+  URL: https://hackerone.com/reports/703659 | CWE: Command Injection - Generic
+  Program: ui | Reporter: murmus
+
+[Critical] OS Command Injection in Nexus Repository Manager 2.x -- Bypass for Nexus Repository Manage 2.14.15-01 Command Injection fix
+  URL: https://hackerone.com/reports/724599 | CWE: Command Injection - Generic
+  Program: central-security-project | Reporter: wisolzzz
+
+[Medium] Default credentials for the temporary POC site alipoc.stg.starbucks.com.cn permitted WAF bypass and RCE
+  URL: https://hackerone.com/reports/881548 | CWE: OS Command Injection
+  Program: starbucks | Reporter: b006e4ea768a5d1b5340969
+
+[Critical] [devcert] Command Injection via insecure command formatting
+  URL: https://hackerone.com/reports/863544 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Critical] Remote Code Execution in ██████
+  URL: https://hackerone.com/reports/710864 | CWE: OS Command Injection
+  Program: deptofdefense | Reporter: 0xs3cr3t
+
+[Critical] Command Injection (via CVE-2019-11510 and CVE-2019-11539)
+  URL: https://hackerone.com/reports/680480 | CWE: Command Injection - Generic
+  Program: deptofdefense | Reporter: l00ph0le
+
+[Medium] Pull Request #12949 - Security Implications without CVE assignment
+  URL: https://hackerone.com/reports/415329 | CWE: Command Injection - Generic
+  Program: nodejs | Reporter: jzebor
+
+[Critical] [listening-processes] Command Injection
+  URL: https://hackerone.com/reports/511459 | CWE: OS Command Injection
+  Program: nodejs-ecosystem | Reporter: notpwnguy
+
+[Medium] Command Injection vulnerability in kill-port-process package
+  URL: https://hackerone.com/reports/661959 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: effectrenan
+
+[High] Git flag injection - Search API with scope 'blobs' 
+  URL: https://hackerone.com/reports/682442 | CWE: Command Injection - Generic
+  Program: gitlab | Reporter: vakzz
+
+[High] [open] concatenation of unsanitized input into exec() command
+  URL: https://hackerone.com/reports/319473 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Critical] Store Development Resource Center was vulnerable to a Remote Code Execution - Unauthenticated Remote Command Injection (CVE-2019-0604)
+  URL: https://hackerone.com/reports/536134 | CWE: OS Command Injection
+  Program: starbucks | Reporter: l00ph0le
+
+[Medium] Kaspersky Protection extension for Google Chrome is vulnerable to abuse its features
+  URL: https://hackerone.com/reports/470519 | CWE: Command Injection - Generic
+  Program: kaspersky | Reporter: palant
+
+[Medium] Unauthorized command execution in Web protection component of Anti-Virus products family [FF, Chrome]
+  URL: https://hackerone.com/reports/470553 | CWE: Command Injection - Generic
+  Program: kaspersky | Reporter: palant
+
+[Medium] Unauthorized command execution in Web protection component of Anti-Virus products family
+  URL: https://hackerone.com/reports/470544 | CWE: Command Injection - Generic
+  Program: kaspersky | Reporter: palant
+
+[Medium] Unauthorized command execution in Web protection component of Anti-Virus products family [IE]
+  URL: https://hackerone.com/reports/470547 | CWE: Command Injection - Generic
+  Program: kaspersky | Reporter: palant
+
+[Critical] Webshell via File Upload on ecjobs.starbucks.com.cn
+  URL: https://hackerone.com/reports/506646 | CWE: OS Command Injection
+  Program: starbucks | Reporter: johnstone
+
+[Critical] OS Command Injection in Nexus Repository Manager 2.x(bypass CVE-2019-5475)
+  URL: https://hackerone.com/reports/688270 | CWE: Command Injection - Generic
+  Program: central-security-project | Reporter: badcode_
+
+[Medium] Command Injection due to lack of sanitisation of tar.gz filename passed as an argument to pm2.install()  function
+  URL: https://hackerone.com/reports/630227 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[Medium] Command Injection in npm module name passed as an argument to pm2.install() function
+  URL: https://hackerone.com/reports/633364 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[Critical] Mercurial git subrepo lead to arbritary command injection
+  URL: https://hackerone.com/reports/294147 | CWE: Command Injection - Generic
+  Program: ibb | Reporter: criticalonly
+
+[?] OS Command Injection via egrep in Rake::FileList
+  URL: https://hackerone.com/reports/651518 | CWE: OS Command Injection
+  Program: ruby | Reporter: kyoshida
+
+[Critical] OS Command Injection in Nexus Repository Manager 2.x
+  URL: https://hackerone.com/reports/654888 | CWE: OS Command Injection
+  Program: central-security-project | Reporter: christianaugust
+
+[Critical] Local files could be overwritten in GitLab, leading to remote command execution
+  URL: https://hackerone.com/reports/587854 | CWE: Command Injection - Generic
+  Program: gitlab | Reporter: saltyyolk
+
+[Medium] No SearchEngine sanatizing can lead to command injection
+  URL: https://hackerone.com/reports/495382 | CWE: Command Injection - Generic
+  Program: notepad-plus-plus | Reporter: mrnbayoh
+
+[Medium] Insufficient sanitizing can lead to arbitrary commands execution
+  URL: https://hackerone.com/reports/494979 | CWE: Command Injection - Generic
+  Program: notepad-plus-plus | Reporter: mrnbayoh
+
+[High] Remote Code Execution via Extract App Plugin
+  URL: https://hackerone.com/reports/546753 | CWE: OS Command Injection
+  Program: nextcloud | Reporter: hdbreaker
+
+[Low] CSV Injection at the CSV export feature
+  URL: https://hackerone.com/reports/118582 | CWE: Command Injection - Generic
+  Program: security | Reporter: niemand_sec
+
+[Critical] Sending arbitrary IPC messages via overriding Function.prototype.apply
+  URL: https://hackerone.com/reports/188086 | CWE: Command Injection - Generic
+  Program: brave | Reporter: masatokinugawa
+
+[Critical] [samsung-remote] Command injection
+  URL: https://hackerone.com/reports/394294 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: pontus_johnson
+
+[Critical] Vulnerability in project import leads to arbitrary command execution
+  URL: https://hackerone.com/reports/378148 | CWE: Command Injection - Generic
+  Program: gitlab | Reporter: saltyyolk
+
+[High] [egg-scripts] Command injection
+  URL: https://hackerone.com/reports/388936 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: pontus_johnson
+
+[Critical] Malware in `active-support` gem
+  URL: https://hackerone.com/reports/392311 | CWE: Command Injection - Generic
+  Program: rubygems | Reporter: reed
+
+[High] Code Execution in restricted CLI of EdgeSwitch
+  URL: https://hackerone.com/reports/313245 | CWE: Command Injection - Generic
+  Program: ui | Reporter: maxpl0it
+
+[High] Authenticated RCE in ToughSwitch
+  URL: https://hackerone.com/reports/273449 | CWE: OS Command Injection
+  Program: ui | Reporter: maxpl0it
+
+[High] Triggering RCE using XSS to bypass CSRF in PowerBeam M5 300
+  URL: https://hackerone.com/reports/289264 | CWE: Command Injection - Generic
+  Program: ui | Reporter: maxpl0it
+
+[Critical] [git-dummy-commit] Command injection on the msg parameter
+  URL: https://hackerone.com/reports/341710 | CWE: OS Command Injection
+  Program: nodejs-ecosystem | Reporter: caioluders
+
+[Critical] `macaddress` concatenates unsanitized input into exec() command
+  URL: https://hackerone.com/reports/319467 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Critical] `command-exists` concatenates unsanitized input into exec()/execSync() commands
+  URL: https://hackerone.com/reports/324453 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[Critical] [buttle] Remote Command Execution via unsanitized PHP filename when it's run with --php-bin flag
+  URL: https://hackerone.com/reports/331032 | CWE: OS Command Injection
+  Program: nodejs-ecosystem | Reporter: bl4de
+
+[Critical] `fs-path` concatenates unsanitized input into exec()/execSync() commands
+  URL: https://hackerone.com/reports/324491 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: chalker
+
+[High] RCE By import channel field
+  URL: https://hackerone.com/reports/335761 | CWE: Command Injection - Generic
+  Program: expressionengine | Reporter: khalooda0x
+
+[High] [pdfinfojs] Command Injection on filename parameter
+  URL: https://hackerone.com/reports/330957 | CWE: Command Injection - Generic
+  Program: nodejs-ecosystem | Reporter: caioluders
+
+[Critical] Admin Panel Accessed (OAuth Bypassed ) 
+  URL: https://hackerone.com/reports/294911 | CWE: Command Injection - Generic
+  Program: mapbox | Reporter: anees_khan
+
+[Critical] Command injection on Phabricator instance with an evil hg branch name
+  URL: https://hackerone.com/reports/288704 | CWE: Command Injection - Generic
+  Program: phabricator | Reporter: criticalonly
+
+[Medium] CSV Injection https://hub.grab.com
+  URL: https://hackerone.com/reports/244292 | CWE: Command Injection - Generic
+  Program: grab | Reporter: poison
+
+[Medium] Formula injection via CSV exports in WordCamp Talks plugin
+  URL: https://hackerone.com/reports/277525 | CWE: Command Injection - Generic
+  Program: iandunn-projects | Reporter: whitehatter
+
+[High] RCE via ssh:// URIs in multiple VCS 
+  URL: https://hackerone.com/reports/260005 | CWE: OS Command Injection
+  Program: ibb | Reporter: joernchen
+
+[Medium] Escape sequence injection vulnerability in WEBrick BasicAuth
+  URL: https://hackerone.com/reports/223363 | CWE: Command Injection - Generic
+  Program: ruby | Reporter: mame
+
+[High] HTML injection in email in unikrn.com
+  URL: https://hackerone.com/reports/262004 | CWE: Command Injection - Generic
+  Program: unikrn | Reporter: codebrained
+
+[Medium] [EdgeSwitch] Web GUI command injection as root with Privilege-1 and Privilege-15 users
+  URL: https://hackerone.com/reports/197958 | CWE: Command Injection - Generic
+  Program: ui | Reporter: phenix
+
+[Medium] CSV injection in gitlab.com via issues export feature.
+  URL: https://hackerone.com/reports/216243 | CWE: Command Injection - Generic
+  Program: gitlab | Reporter: edoverflow
+
+[High] Admin Command Injection via username in user_archive ExportCsvFile
+  URL: https://hackerone.com/reports/214022 | CWE: Command Injection - Generic
+  Program: discourse | Reporter: ziot
+
+[?] SSRF issue
+  URL: https://hackerone.com/reports/120219 | CWE: Command Injection - Generic
+  Program: bime | Reporter: 4lemon
+
+[?] XXE issue
+  URL: https://hackerone.com/reports/130661 | CWE: Command Injection - Generic
+  Program: moneybird | Reporter: 4lemon
+
+[High] [marketplace.informatica.com] - XXE
+  URL: https://hackerone.com/reports/106797 | CWE: Command Injection - Generic
+  Program: informatica | Reporter: yarbabin
+
+[High] [rev-app.informatica.com] - XXE via SAML
+  URL: https://hackerone.com/reports/106865 | CWE: Command Injection - Generic
+  Program: informatica | Reporter: yarbabin
+
+[Medium] [website] Script injection in newsletter signup https://brave.com/brave_youth_program_signup.html
+  URL: https://hackerone.com/reports/175403 | CWE: Command Injection - Generic
+  Program: brave | Reporter: cmd-0_0
+
+[?] Shell Injection via Web Management Console (dl-fw.cgi)
+  URL: https://hackerone.com/reports/121940 | CWE: Command Injection - Generic
+  Program: ui | Reporter: mornaner
+
+[?] CSV Injection at Camptix Event Ticketing
+  URL: https://hackerone.com/reports/151516 | CWE: Command Injection - Generic
+  Program: iandunn-projects | Reporter: thezawad
+
+[?] SMTP command injection
+  URL: https://hackerone.com/reports/137631 | CWE: Command Injection - Generic
+  Program: ruby | Reporter: jeremy
+
+[?] CSV Injection with the CSV export feature
+  URL: https://hackerone.com/reports/130338 | CWE: Command Injection - Generic
+  Program: moneybird | Reporter: trabajoduro
+
+[?] CSV Injection via the CSV export feature
+  URL: https://hackerone.com/reports/124223 | CWE: Command Injection - Generic
+  Program: security | Reporter: stewie
+
+[?] Внедрение внешних сущностей в функционале импорта пользователей YouTrack
+  URL: https://hackerone.com/reports/114476 | CWE: Command Injection - Generic
+  Program: vkcom | Reporter: bo0om
+
+[?] SSRF / Local file enumeration / DoS due to improper handling of certain file formats by ffmpeg
+  URL: https://hackerone.com/reports/115978 | CWE: Command Injection - Generic
+  Program: imgur | Reporter: aesteral
+
+[?] CSV Injection via the CSV export feature
+  URL: https://hackerone.com/reports/111192 | CWE: Command Injection - Generic
+  Program: security | Reporter: zombiehelp54
+
+[?] XXE at host vpn.owncloud.com
+  URL: https://hackerone.com/reports/105980 | CWE: Command Injection - Generic
+  Program: owncloud | Reporter: d0znpp
+
+[?] git-fastclone allows arbitrary command execution through usage of ext remote URLs in submodules
+  URL: https://hackerone.com/reports/104465 | CWE: Command Injection - Generic
+  Program: square-open-source | Reporter: bburky
+
+[?] Unsafe usage of Ruby string interpolation enabling command injection in git-fastclone
+  URL: https://hackerone.com/reports/105190 | CWE: Command Injection - Generic
+  Program: square-open-source | Reporter: bburky
+
+[?] CSV Excel Macro Injection Vulnerability in export list of current users - app.shopify.com
+  URL: https://hackerone.com/reports/100667 | CWE: Command Injection - Generic
+  Program: shopify | Reporter: zombiehelp54
+
+[?] Vulnerable to JavaScript injection. (WXS)  (Javascript injection)!
+  URL: https://hackerone.com/reports/54631 | CWE: Command Injection - Generic
+  Program: snapchat | Reporter: protector47
+
+[?] CSV Excel Macro Injection in Export Response
+  URL: https://hackerone.com/reports/90415 | CWE: Command Injection - Generic
+  Program: zaption | Reporter: alyssa_herrera
+
+[?] CSV Injection with the CVS export feature
+  URL: https://hackerone.com/reports/72785 | CWE: Command Injection - Generic
+  Program: security | Reporter: appsec3
+
+[?] Reflected File Download attack allows attacker to 'upload' executables to hackerone.com domain
+  URL: https://hackerone.com/reports/50658 | CWE: Command Injection - Generic
+  Program: security | Reporter: rickypaipie
+
+[?] twitter android app Fragment Injection
+  URL: https://hackerone.com/reports/43988 | CWE: Command Injection - Generic
+  Program: x | Reporter: miantaiduo
+

@@ -1,0 +1,87 @@
+Category: prototype-pollution
+Reports: 21
+
+[Low] Prototype pollution via console.table properties
+  URL: https://hackerone.com/reports/1431042 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs | Reporter: rugvip
+
+[High] Prototype Pollution Vulnerability in noble Package
+  URL: https://hackerone.com/reports/390857 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: cris_semmle
+
+[High] [i18next] Prototype pollution attack
+  URL: https://hackerone.com/reports/968355 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: 0b5cur17y
+
+[High] [plain-object-merge] Prototype pollution
+  URL: https://hackerone.com/reports/871156 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Low] [chart.js] Prototype pollution
+  URL: https://hackerone.com/reports/776371 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: asgerf
+
+[High] [@firebase/util] Prototype pollution
+  URL: https://hackerone.com/reports/1001218 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Medium] [nested-property] Prototype Pollution
+  URL: https://hackerone.com/reports/788883 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: johnssimon007
+
+[High] [json8-merge-patch] Prototype Pollution
+  URL: https://hackerone.com/reports/980649 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: gkmr
+
+[High] property-expr - Prototype pollution
+  URL: https://hackerone.com/reports/910206 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: ahihi
+
+[High] [objtools] Prototype pollution
+  URL: https://hackerone.com/reports/878394 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[High] [keyd] Prototype pollution
+  URL: https://hackerone.com/reports/877515 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[?] [supermixer] Prototype pollution
+  URL: https://hackerone.com/reports/959987 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: u0pattern
+
+[High] [object-path-set] Prototype pollution
+  URL: https://hackerone.com/reports/878332 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: d3lla
+
+[Medium] Prototype pollution in dot-prop
+  URL: https://hackerone.com/reports/719856 | CWE: Modification of Assumed-Immutable Data (MAID)
+  Program: nodejs-ecosystem | Reporter: aaron_costello
+
+[Critical] [klona] Prototype pollution
+  URL: https://hackerone.com/reports/778414 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: skyn3t
+
+[Medium] Prototype pollution attack (upmerge)
+  URL: https://hackerone.com/reports/439120 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: dienpv
+
+[Medium] Prototype pollution attack (merge-objects)
+  URL: https://hackerone.com/reports/310706 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: holyvier
+
+[Low] Prototype pollution attack (merge-options)
+  URL: https://hackerone.com/reports/311336 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: holyvier
+
+[Low] Prototype pollution attack (merge-recursive)
+  URL: https://hackerone.com/reports/311337 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: holyvier
+
+[Low] Prototype pollution attack (deep-extend)
+  URL: https://hackerone.com/reports/311333 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: holyvier
+
+[Low] Prototype pollution attack (deap)
+  URL: https://hackerone.com/reports/310446 | CWE: Unknown
+  Program: nodejs-ecosystem | Reporter: holyvier
+

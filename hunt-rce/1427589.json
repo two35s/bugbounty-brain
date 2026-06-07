@@ -1,0 +1,199 @@
+{
+  "id": 1427589,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNDI3NTg5",
+  "url": "https://hackerone.com/reports/1427589",
+  "title": "Log4j RCE on https://judge.me/reviews",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "none",
+  "readable_substate": "Resolved",
+  "created_at": "2021-12-15T10:30:12.893Z",
+  "submitted_at": "2021-12-15T10:30:12.992Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "bhishma14",
+    "url": "/bhishma14",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/w9nFN1wNoFc5AANXtpKt6TpQ/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 50842,
+    "url": "https://hackerone.com/judgeme",
+    "handle": "judgeme",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/nlko0t9tbnnnvrnboo0f2qpliu7t/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/nlko0t9tbnnnvrnboo0f2qpliu7t/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Judge.me ",
+      "twitter_handle": "",
+      "website": "https://judge.me",
+      "about": "Judge.me powers the product reviews for e-commerce stores. Our apps help you collect and display reviews on Shopify, WooCommerce and BigCommerce."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2021-44228"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2021-12-21T08:57:29.170Z",
+  "bug_reporter_agreed_on_going_public_at": "2021-12-21T08:57:29.082Z",
+  "team_member_agreed_on_going_public_at": "2021-12-21T08:17:44.270Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Summary:\nCVE-2021-44228, also named Log4Shell or LogJam, is a Remote Code Execution (RCE) class vulnerability. If attackers manage to exploit it on one of the servers, they gain the ability to execute arbitrary code and potentially take full control of the system.\nWhat makes CVE-2021-44228 especially dangerous is the ease of exploitation: even an inexperienced hacker can successfully execute an attack using this vulnerability. According to the researchers, attackers only need to force the application to write just one string to the log, and after that they are able to upload their own code into the application due to the message lookup substitution function.\n\nSupporting Material/References:\nPicture and Logs was Uploaded as a proof.\n\nhttps://www.tenable.com/blog/cve-2021-44228-proof-of-concept-for-critical-apache-log4j-remote-code-execution-vulnerability\n\nRemediation:\nUpdate the log4j jar to 2.15 or 2.16\n\n## Impact\n\nSuccessful attack leads Arbitary Code Execution on the application",
+  "bounty_amount": "50.0",
+  "formatted_bounty": "$50",
+  "weakness": {
+    "id": 70,
+    "name": "Code Injection"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1546427,
+      "file_name": "Judgeme_1.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/ppmfxbxdx8ptp5tag8liifab6nwf?response-content-disposition=attachment%3B%20filename%3D%22Judgeme_1.png%22%3B%20filename%2A%3DUTF-8%27%27Judgeme_1.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ53BD6HTK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T134234Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGTR6OHhF%2FMvddbq8oOla9wrSZjA14YD2R4mLG0aFWC%2FAiEAoaYRiBUVYj1veruQA1cjy6W3tIou6veVOS%2BwfQJIaG4quwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDJ%2BOW9ouV8xrISDCjSqPBUBKAn8HeGw4bFER3czadorOkPj6MgFMunb%2FAGHxb0zA38AGKlIhvQVAsPfBjKRWgk0LGkN%2BA6UrQASBKpN9gpstJLRNq5mia6Y3zX5VExZTuRUxVAo88cXRpOahPlQhTFKUUR6kkKmeHDEJ4i%2FARExJrV4lOisOx7%2F9fI0MDrYEvgl2sEmugES93LrHO9JtFqRv4FN2cmMRXFPnKMpq3ttbHdXnaF3EAJmMKBd5Hjde3qy7%2F2PkU6Wm2VYkPcGVm%2BQJfnXbnMerCfgpmUaOJRks7nC8mCcqmtcNA%2BJp6KUoW71be%2BF6r7Nf4uKC6gY1Miz%2BDTJFOYjBuN0MiGJ%2FcWgIc%2FSE6Yw8oLFKNNvFBO608RR%2FQev9XRKlCj1pXWRbJ62C%2FY1knIJCQ%2F96%2FubbKAesj2PQV7LTChphZVtryNpGtv4izdxFeeRe9ytgfZ00RX4obI76tL%2BZBUrRAR0xVl5t6MrO3bDG05PMnj2R%2BzR9khNTh1Lyv%2FY%2FGnzO25SEHu3DXz1LelMaop65rKX2uNVoIOK1pIRTcleJNlqD3aqZ63T8%2BF5XCeoFtBANynpPfeXDd8baNefmj1L1XwOph8FYx57vG2ojPR2xs7NaFwsP81cZRCuyDt%2BNbtRrKitopSEOkzq6p0mW4%2FkSQoOhGtmUHM45vbpqhK2Z1Btm3LW1RybsbZ0QstdnM7DbCbbrFLC3IW8uvut9zNSD6IWCt3hTmuwymI6WmbALDd96KXmM0G8uZHMbt3XZFNMuqtSRIrlU439g4FE8jRgPXXe9PHK35QE1lmsizR2aTKrb8gW3hPoiqHn2sxQYPW5zZ1b62mFicaeJQQKyvlog%2FNtxJIVi6Z%2BFmb9jgQ%2BnCZ3ZiVMwosKV0QY6sQG5ZnNYj%2F3jkyZx%2FiDXTbKKqcv%2BPbj8bQkfjymIhICIz165i2esrFW0wvqUbEvSviGX3umW6Br0AKBEVodZLUh8Qhhh4MiR0IVFl2qXAB%2FbYcsDz9yjRUCHFV5vemcDXvggu7XMEgoodC3Ldh4dM%2BIdP4diQve3prRcovK%2Fh%2B8%2B7SD0v%2BUigQQ9SxVSm1m2pDJGEeM9irFsrsQ%2B%2FBykKw6X%2BV9c2%2BNMshswa97ExBuNRlE%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3f6f1f86658f79ef7f17a39cca7b94ef796d59664c8a763e33e914f214c734ef",
+      "file_size": 173091,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1546428,
+      "file_name": "Judgeme_2.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/xfi9zupb3z9mirje8dl3fwa8fq4n?response-content-disposition=attachment%3B%20filename%3D%22Judgeme_2.png%22%3B%20filename%2A%3DUTF-8%27%27Judgeme_2.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ53BD6HTK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T134234Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGTR6OHhF%2FMvddbq8oOla9wrSZjA14YD2R4mLG0aFWC%2FAiEAoaYRiBUVYj1veruQA1cjy6W3tIou6veVOS%2BwfQJIaG4quwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDJ%2BOW9ouV8xrISDCjSqPBUBKAn8HeGw4bFER3czadorOkPj6MgFMunb%2FAGHxb0zA38AGKlIhvQVAsPfBjKRWgk0LGkN%2BA6UrQASBKpN9gpstJLRNq5mia6Y3zX5VExZTuRUxVAo88cXRpOahPlQhTFKUUR6kkKmeHDEJ4i%2FARExJrV4lOisOx7%2F9fI0MDrYEvgl2sEmugES93LrHO9JtFqRv4FN2cmMRXFPnKMpq3ttbHdXnaF3EAJmMKBd5Hjde3qy7%2F2PkU6Wm2VYkPcGVm%2BQJfnXbnMerCfgpmUaOJRks7nC8mCcqmtcNA%2BJp6KUoW71be%2BF6r7Nf4uKC6gY1Miz%2BDTJFOYjBuN0MiGJ%2FcWgIc%2FSE6Yw8oLFKNNvFBO608RR%2FQev9XRKlCj1pXWRbJ62C%2FY1knIJCQ%2F96%2FubbKAesj2PQV7LTChphZVtryNpGtv4izdxFeeRe9ytgfZ00RX4obI76tL%2BZBUrRAR0xVl5t6MrO3bDG05PMnj2R%2BzR9khNTh1Lyv%2FY%2FGnzO25SEHu3DXz1LelMaop65rKX2uNVoIOK1pIRTcleJNlqD3aqZ63T8%2BF5XCeoFtBANynpPfeXDd8baNefmj1L1XwOph8FYx57vG2ojPR2xs7NaFwsP81cZRCuyDt%2BNbtRrKitopSEOkzq6p0mW4%2FkSQoOhGtmUHM45vbpqhK2Z1Btm3LW1RybsbZ0QstdnM7DbCbbrFLC3IW8uvut9zNSD6IWCt3hTmuwymI6WmbALDd96KXmM0G8uZHMbt3XZFNMuqtSRIrlU439g4FE8jRgPXXe9PHK35QE1lmsizR2aTKrb8gW3hPoiqHn2sxQYPW5zZ1b62mFicaeJQQKyvlog%2FNtxJIVi6Z%2BFmb9jgQ%2BnCZ3ZiVMwosKV0QY6sQG5ZnNYj%2F3jkyZx%2FiDXTbKKqcv%2BPbj8bQkfjymIhICIz165i2esrFW0wvqUbEvSviGX3umW6Br0AKBEVodZLUh8Qhhh4MiR0IVFl2qXAB%2FbYcsDz9yjRUCHFV5vemcDXvggu7XMEgoodC3Ldh4dM%2BIdP4diQve3prRcovK%2Fh%2B8%2B7SD0v%2BUigQQ9SxVSm1m2pDJGEeM9irFsrsQ%2B%2FBykKw6X%2BV9c2%2BNMshswa97ExBuNRlE%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=c9e768f3431ee8be81b1ce85000ffa4f76dc24d37e5962ab8d7af0c7982e446c",
+      "file_size": 173559,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 1546429,
+      "file_name": "Judgeme_3.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/muijuahy6asjkeaxtdbwyjj9maoz?response-content-disposition=attachment%3B%20filename%3D%22Judgeme_3.png%22%3B%20filename%2A%3DUTF-8%27%27Judgeme_3.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ53BD6HTK%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T134234Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIGTR6OHhF%2FMvddbq8oOla9wrSZjA14YD2R4mLG0aFWC%2FAiEAoaYRiBUVYj1veruQA1cjy6W3tIou6veVOS%2BwfQJIaG4quwUInf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDJ%2BOW9ouV8xrISDCjSqPBUBKAn8HeGw4bFER3czadorOkPj6MgFMunb%2FAGHxb0zA38AGKlIhvQVAsPfBjKRWgk0LGkN%2BA6UrQASBKpN9gpstJLRNq5mia6Y3zX5VExZTuRUxVAo88cXRpOahPlQhTFKUUR6kkKmeHDEJ4i%2FARExJrV4lOisOx7%2F9fI0MDrYEvgl2sEmugES93LrHO9JtFqRv4FN2cmMRXFPnKMpq3ttbHdXnaF3EAJmMKBd5Hjde3qy7%2F2PkU6Wm2VYkPcGVm%2BQJfnXbnMerCfgpmUaOJRks7nC8mCcqmtcNA%2BJp6KUoW71be%2BF6r7Nf4uKC6gY1Miz%2BDTJFOYjBuN0MiGJ%2FcWgIc%2FSE6Yw8oLFKNNvFBO608RR%2FQev9XRKlCj1pXWRbJ62C%2FY1knIJCQ%2F96%2FubbKAesj2PQV7LTChphZVtryNpGtv4izdxFeeRe9ytgfZ00RX4obI76tL%2BZBUrRAR0xVl5t6MrO3bDG05PMnj2R%2BzR9khNTh1Lyv%2FY%2FGnzO25SEHu3DXz1LelMaop65rKX2uNVoIOK1pIRTcleJNlqD3aqZ63T8%2BF5XCeoFtBANynpPfeXDd8baNefmj1L1XwOph8FYx57vG2ojPR2xs7NaFwsP81cZRCuyDt%2BNbtRrKitopSEOkzq6p0mW4%2FkSQoOhGtmUHM45vbpqhK2Z1Btm3LW1RybsbZ0QstdnM7DbCbbrFLC3IW8uvut9zNSD6IWCt3hTmuwymI6WmbALDd96KXmM0G8uZHMbt3XZFNMuqtSRIrlU439g4FE8jRgPXXe9PHK35QE1lmsizR2aTKrb8gW3hPoiqHn2sxQYPW5zZ1b62mFicaeJQQKyvlog%2FNtxJIVi6Z%2BFmb9jgQ%2BnCZ3ZiVMwosKV0QY6sQG5ZnNYj%2F3jkyZx%2FiDXTbKKqcv%2BPbj8bQkfjymIhICIz165i2esrFW0wvqUbEvSviGX3umW6Br0AKBEVodZLUh8Qhhh4MiR0IVFl2qXAB%2FbYcsDz9yjRUCHFV5vemcDXvggu7XMEgoodC3Ldh4dM%2BIdP4diQve3prRcovK%2Fh%2B8%2B7SD0v%2BUigQQ9SxVSm1m2pDJGEeM9irFsrsQ%2B%2FBykKw6X%2BV9c2%2BNMshswa97ExBuNRlE%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=98405da8c40a2f6ef3ba1a80f2588bbc5c4f123110966a52b18874a0da8e25d5",
+      "file_size": 173149,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 40,
+  "voters": [
+    "velociraptorism",
+    "mr-k0anti",
+    "0xmr_b4rayz",
+    "tess",
+    "dnelsaka",
+    "nightm4re",
+    "akashhamal0x01",
+    "vigilops",
+    "3rd4l",
+    "h4x0r_dz",
+    "and 30 more..."
+  ],
+  "severity": {
+    "rating": "none",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 58432,
+    "asset_type": "URL",
+    "asset_identifier": "https://judge.me/reviews",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

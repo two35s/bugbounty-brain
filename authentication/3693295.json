@@ -1,0 +1,156 @@
+{
+  "id": 3693295,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8zNjkzMjk1",
+  "url": "https://hackerone.com/reports/3693295",
+  "title": "iOS Brave Playlist \"Open in Private Tab\" bypasses FaceID requirement for Private Tabs",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "medium",
+  "readable_substate": "Resolved",
+  "created_at": "2026-04-24T13:34:05.997Z",
+  "submitted_at": "2026-04-24T13:34:06.898Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "aaront",
+    "url": "/aaront",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/okv9bzggvlm8tsj71hwnlstnlgd0/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 15688,
+    "url": "https://hackerone.com/brave",
+    "handle": "brave",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/015/688/2aad5641af643ee4f4402896e4747293f6e9c5ca_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/015/688/2aad5641af643ee4f4402896e4747293f6e9c5ca_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Brave Software",
+      "twitter_handle": "brave",
+      "website": "https://brave.com",
+      "about": ""
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2026-05-28T15:40:39.530Z",
+  "bug_reporter_agreed_on_going_public_at": "2026-04-27T20:04:35.313Z",
+  "team_member_agreed_on_going_public_at": "2026-05-28T15:40:36.826Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\n\nAdding/Opening a song in your Brave playlist and holding for the option of \"Open in new Private Tab\" bypasses FaceID/Passcode Requirement for Private Tabs.  \n\n\n## Products affected: \n\nBrave iOS version: 1.88\niOS version: 26.4.2\nBrave Browser Private Tab FaceID Protection\n\n## Steps To Reproduce:\n\nStep 1:  Enable FaceID Protection for Private Tabs and Keep Private Tabs in Brave Settings \nStep 2:  Open Private Tabs and browse any websites \nStep 3: Exit out of Private Tabs and add any song or audio to your Brave Playlist. (For this PoC, I used a Youtube video) \nStep 4: Enter your Brave Playlist and go to the song you just added. \nStep 5: Tap and hold the song until a dropdown menu appears. \nStep 6: Tap on the option to \"Open in a New Private Tab\" \n\nYou will now be able to access the content of Private Tabs without any  FaceID or Passcode Authentication. \n\n## Supporting Material/References:\n\nPlease check PoC video below\n\n## Impact\n\nAn attacker may be able to access content of Private Tabs  without FaceID or Passcode Authentication.",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 5793815,
+      "file_name": "BravePrivateTabPoC.mp4",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/7k0x1v3y27aoh8zpfh6iye9m9i2d?response-content-disposition=attachment%3B%20filename%3D%22BravePrivateTabPoC.mp4%22%3B%20filename%2A%3DUTF-8%27%27BravePrivateTabPoC.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQYJLSRTR4%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123438Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDPZnOZp4HayRf%2Fb%2FNp4CIx%2BXu3K%2BIr1GwNJh%2BVBViJwQIhALIvpZfIJ6aVb6WKJSmv8UcfyBxPXCy9gfw%2Fl3LGI6G5KroFCJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgzoKP5BkSK6%2BxYvo2wqjgVHcDsx0%2Fdi%2BsgBT8tLEaEnO9nG8SvCoVbzfjnUMlw0H6fWUa4XeRz6wNmhwuh0mrTUqlhLkMjcshMyLPBUZtm33C2pSkJXuxfa1E889ExQsWsOlTtw052%2BMjlQU47TvCsnT2PbDDMw4DwxXg3D2t0qfLkCgr3H%2BLN4zUsxijsTh3TDsBRiHv%2FrW1Zv3NH9RursDbBSL%2BSZ5%2BWCgaUGw8pBKS0NCUlozK94iCIjnwtmBUTm1zwzv4W2XSVVZa18iNxAjS4jDjpRHsd0tH2AwFeWGPOGD9U1XDojTDJBFqpk3gZkmgsYEjymZKjMGKWCIUkIY63fLyMJ0%2FBqCE8caU3j1OrV%2F6NnSPpcQh8%2FtflCmNOsK9szhKfZMAwgonYn9Ijulf8xMc1sPrO8JUeozNd6c2DedXfW6ffx4agJHa6RqN%2FwGAwqecu78VIjaNT2pq%2FLqzC2YZmcAwSLVPZzoVKK5JRKp2NeF5JI8QUnikgJGa5DfhVepYVU47mjVKCRTNeqGcrf%2BR75ITBKjO%2B%2BAbFmXPAOGO4DOhdqHOVNqQAOyeFWnOCMb5SnBY%2BTtn98Avt4XS%2BSmhoFN0C6pSPT1mDBUZ%2Bl4rHlAwvkVlJRHQjL%2BrOsIT6nGlC2sTA%2FuWZTW2l5ByMkVQXYEigeHHnkogdvvzgIPsvG2fb9shFnel8SFZWVRVx2RbfKbxVFS0AkzHd5gdkDW6tseUf%2Foxy%2FdmOxL2QWW9zD1dWQIalRT66sUFkOEaCtTLNzxI0tZJeS0uKFtaLypS1EUP%2FWX2TZ%2FUzSR1Po%2B5PUgE4%2FLtd68sYrhTFP%2F6yfGeXWoij4WJDw242I1PWUK%2Ba9rZcIZELa3gkS42UOoF5xBMJBuZiySo0wzIKV0QY6sAFXp8mt7GaBXGYKzjUb7FEXlqUt4yIfYkLhjGx3g9OkUBqcl6yTcdd4U3RbSAylBmRfn985la8Zm134MSAoD1slx7PHJOtatYDS3WuaeWb%2FYNjv5GJXLWur75a8QAzaslgzTPRRAFcvYHzquGH%2BSWser9GAmU5c32ivkYvbOEbS2SL1Yl7DMpVJAj9gLg6YGidYvVoG6OgXXAcqmncYLVD2Ac2yv%2BLFdffSHOX7Pm2JmA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=106f6a2ccb3ff1c3b54423d0c0664709657ffb9cbea78ed90fd181d37c0b11ca",
+      "file_size": 16178284,
+      "type": "video/mp4",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 38,
+  "voters": [
+    "0xcyborg",
+    "tolga",
+    "roland_hack",
+    "2026",
+    "benjamin_qa",
+    "levinitycyber",
+    "securex01",
+    "satochi7",
+    "aionsyn",
+    "beta-tesster",
+    "and 28 more..."
+  ],
+  "severity": {
+    "rating": "medium",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 7950,
+    "asset_type": "APPLE_STORE_APP_ID",
+    "asset_identifier": "com.brave.ios.browser",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "id": 847515,
+      "category": "researcher",
+      "content": "An attacker with physical access may be able to bypass Face ID or Passcode Authentication  of Brave Private Tabs via Brave Playlist. This was addressed by ensuring Face ID is required from the Brave Playlist when opening new private tab.",
+      "updated_at": "2026-05-29T13:40:09.305Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 3563956,
+        "username": "aaront",
+        "name": "Aaron ",
+        "bio": "Privacy & Security Researcher ",
+        "cleared": false,
+        "verified": true,
+        "website": null,
+        "location": "",
+        "created_at": "2025-01-10T17:45:21.629Z",
+        "url": "https://hackerone.com/aaront",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/okv9bzggvlm8tsj71hwnlstnlgd0/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/okv9bzggvlm8tsj71hwnlstnlgd0/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/okv9bzggvlm8tsj71hwnlstnlgd0/4ac84fbe897190579a137d0cf55152b233cdd4f9984435bd80ef67e5e51a0586"
+        }
+      }
+    }
+  ]
+}

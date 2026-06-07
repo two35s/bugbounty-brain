@@ -1,0 +1,219 @@
+{
+  "id": 2778350,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yNzc4MzUw",
+  "url": "https://hackerone.com/reports/2778350",
+  "title": "Cisco IOS XE instance at \u2588\u2588\u2588\u2588 vulnerable to CVE-\u2588\u2588\u2588\u2588\u2588\u2588",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "critical",
+  "readable_substate": "Resolved",
+  "created_at": "2024-10-12T02:28:27.362Z",
+  "submitted_at": "2024-10-12T02:28:27.657Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": true,
+    "username": "odaysec",
+    "url": "/odaysec",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/cqjxx3wbhejfzvl1dwusepkdthvr/c8a1698ff707a5e3e8a91a3484838363845daac68cb82c86d55c9e2d44d67b67"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 41919,
+    "url": "https://hackerone.com/mtn_group",
+    "handle": "mtn_group",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/4e6ikuxrt34g8b14w2bk53c6vyry/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/4e6ikuxrt34g8b14w2bk53c6vyry/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "MTN Group",
+      "twitter_handle": "",
+      "website": "https://www.mtn.com/",
+      "about": ""
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [
+    "CVE-2023-20198",
+    "CVE-2023-20273"
+  ],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2025-02-19T06:23:28.648Z",
+  "bug_reporter_agreed_on_going_public_at": "2025-01-20T06:23:16.815Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "## Summary:\nCVE-\u2588\u2588\u2588\u2588\u2588\u2588\u2588 is characterized by improper path validation to bypass Nginx filtering to reach the webui_wsma_http web endpoint without requiring authentication. By bypassing authentication to the endpoint, an attacker can execute arbitrary Cisco IOS commands or issue configuration changes with Privilege 15 privileges. Further attacks involved exploitation of CVE-2023-20273 to escalate to the underlying Linux OS root user to facilitate implantation.\n\nThis PoC exploits CVE-\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588 to leverage two different XML SOAP endpoints:\nThe vulnerability check, config, and command execution options all target the `cisco:wsma-exec` SOAP endpoint to insert commands into the `execCLI` element tag.\nThe add user option targets the `cisco:wsma-config` SOAP endpoint to issue a configuration change and add the Privilege 15 account. This endpoint could be [ab]used to make other configuration changes, but thats outside the scope of this PoC.\n\n## Proof On Concepts :\nSee below for an example request that bypasses authentication on vulnerable instances of IOS-XE. This POC creates a user named baduser with privilege level 15. Let\u2019s dig into the details.\n{F3672631}\n\n  1. Sign in as any user \u2588\u2588\u2588 query\n  1. Visit Searchbar and Search Query \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588: \"MTN Innovation Centre\"`\n  1. Found domain owned by MTN Cameroon as `\u2588\u2588\u2588`\n  1. Intercept url to burp-suite and sent to repeater\n  1. Sent to intruder and Set up the [exploits here](\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588)\n  1. Run exploits bellow command \n\n```bash\nexploit.py -t \u2588\u2588\u2588\u2588 -c\n\nTesting for vulnerability\nTarget IP:      \u2588\u2588\u2588\u2588\u2588\nTarget URL:     \u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\nVulnerable:     True\nIOS Ver:        ISR4331/K9 europ-constantia-2 IOS 16.6 Cisco IOS Software [Everest], ISR Software (X86_64_LINUX_IOSD-UNIVERSALK9-M), Version 16.6.4, RELEASE SOFTWARE (fc3)\n\nDone.\n```\n```bash\nexploit.py -t \u2588\u2588\u2588\u2588\u2588 -g\n\nSelected Target:        \u2588\u2588\u2588\u2588\u2588\u2588\nRunning in Exec Mode\nExecuting Command:      sh run\n\nSending exploit to target URL:  \u2588\u2588\u2588\u2588\u2588\n\nBuilding configuration...\nCurrent configuration : 17326 bytes\n```\n```bash\nenable secret 5 $1$vF3Q$wplcifyib3DUyzbgcUGe/1\nenable password 7 1214041E1E\nsnmp-server trap-source GigabitEthernet0/0/0.3029\nsnmp-server source-interface informs GigabitEthernet0/0/0.3029\nsnmp-server contact \u2588\u2588\u2588\u2588 \u2588\u2588\u2588\u2588\u2588\u2588\n```\nand you can see all the sensitive for configuration was exposed\n\n{F3672637}\n\n{F3672640}\n\n{F3672642}\n\n\n## Supporting Material/References:\n  * [Cisco Advisory](\u2588\u2588\u2588\u2588\u2588\u2588\u2588)\n  * [horizon3ai CVE-\u2588\u2588\u2588\u2588\u2588\u2588 research](\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588)\n  * [horizon3ai CVE-\u2588\u2588\u2588\u2588\u2588\u2588 PoC](\u2588\u2588\u2588\u2588\u2588\u2588)\n  * [LeakIX CVE-2023-20273 PoC](\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588\u2588)\n\n## Impact\n\nCisco is providing an update for the ongoing investigation into observed exploitation of the web UI feature in Cisco IOS XE Software. We are updating the list of fixed releases and adding the Software Checker. Our investigation has determined that the actors exploited two previously unknown issues. The attacker first exploited CVE-\u2588\u2588\u2588\u2588\u2588 to gain initial access and issued a privilege 15 command to create a local user and password combination. This allowed the user to log in with normal user access. The attacker then exploited another component of the web UI feature, leveraging the new local user to elevate privilege to root and write the implant to the file system.",
+  "weakness": {
+    "id": 58,
+    "name": "Command Injection - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 3672631,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/cqtiarswk5pgfccbgir5zu1p0fnf?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133003Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=0a4a5ad8243efa5c7fe0a85db66f6edc9d4de1b115b9d3587765a1b25ef6e412",
+      "file_size": 41719,
+      "type": "image/png",
+      "moderated": false
+    },
+    {
+      "id": 3672637,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/xiu6z5iczll21nz7wzeh6jd7bjv7?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133003Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ede9cf43a01c6afcbc5cb6bea300d63894392395f256d533ac4b669e99d78258",
+      "file_size": 29255,
+      "type": "image/png",
+      "moderated": false
+    },
+    {
+      "id": 3672640,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/o3f6ivn4ri9q089xf7ggin64tobj?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133003Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=dc6201928d9065a8672553bb2bcaf4d2ad04a72ef58b5f4fd359e3bb1eec3d4b",
+      "file_size": 36192,
+      "type": "image/png",
+      "moderated": false
+    },
+    {
+      "id": 3672642,
+      "file_name": "image.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/0tjsb8ombc09sadn0a8mjy8t6eyu?response-content-disposition=attachment%3B%20filename%3D%22image.png%22%3B%20filename%2A%3DUTF-8%27%27image.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSDG43OGG%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T133003Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD1gsKK3ct3H57WT18FQgI0X50iiCJ0IC7jwysKDOmIXQIhAP5UGoWicOodN36u8rNby3JF4YXntkq4Pz7gzSZsGYh6KroFCJ7%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwO2v9pI2OYyqVJpQAqjgVUDXQPnWyb4mL%2F7xer4KMHmfj5s9Y1TGbANO%2BySLsyV7%2B9KfSDvJVVh1REteoVcXIcIQi%2B%2F2xDdTUF1d%2F7EdPugsby7lw%2BCMBKC7x%2BbS2RQTYxd8dB%2BjpFdV2cmY78d3udx1mPUBcTYAcSoAvLAGSPEZAQ3TFnq2bZb9PSMY2zcPBZqrJuFCgMDaaJXxWdPP38AeVgVzX%2B7FiuKsYkBbEulH493B4yOFd8moTd2WAiTzCfXXpCpQ1%2FC0CkxQq9gnDOph473MCvr87AFU1ZuuUPg2dfTY07vzo%2FxKGyoEJOkSIyWJw97HtKfYjuf8leoXufOgEJpSsQVq0ezJtOzeyjgGkS%2FVBb5tHtqpLsm%2FjIiCV2O37rlBUltTlyqBs5bhqlgprgK7CN3%2BcpEXnZPpmXBfgoC0ghECDRNhLviWSLcNrU0%2B9gzcm7T74QkVm2jHTALmNDbC%2BxfePAdN7x8%2Fj15TKtfPb4XAuCZoVUSaw0k9hWw%2B9uYcvFmV9GaoyBkyXJpz9mRnOxRCM4CtqvSIUaoCOlRXxFiTibbTO4b8KtU8GgytN3Oz3QOTAYSarWiIh5IRZ1%2BW7TvyXnO%2FkRGrGLwxDlS4BsB5gGxZHhaO%2B7A%2B%2B%2FIGtimUgPMVTi5J3DLMT6Y54P4sJN8hn75gnexUaC%2BG9162kPN%2BEueXd68OZ3s8HqDC%2BjH8uu0XnDiWhQoXYUwxWugGIpr%2BjOmpTjVf5IX%2BJZQ7rdLJmJmtzCkK8aiGqSFjFAH9LgGAbwlSNz%2BepEBg4r96hGU87XA0H%2F2u1rMkkBe%2BOPhCwqpjDr6fMOXWF%2BI1HFn%2FptIQ3l%2FA871eah9ppF8ahwm5skf0wYtB4r%2BOy8noeuaHOsekw8DvowgcqV0QY6sAF6puqG3PDbIEJ5XNXS4jZl7zuMrgzYDsUCoOMfMyaMY1iIfaDVhYDK4PnzV2nXtCm3bSAWvEZShG8zv69zGEzE8AXF3fE4CCkRE3ded0kR5unF%2BU0x%2Bnnaml6Vxb6rOPXTqaoS92vN0sd05TtCOuzhgEnvSVom%2FPofXTfHdjl9HbO%2Bp7Vit5Jc6ZgOhGqwbgG5Tzl0h1TGr1AQePAbm3OUc5SxWYS%2FPq0HZKoOyEQp6A%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=b3c8862ec97f23d74d4d302b130dcb00ed17a0b365b6cc796e11eec14259d819",
+      "file_size": 52938,
+      "type": "image/png",
+      "moderated": false
+    }
+  ],
+  "allow_singular_disclosure_at": "2025-02-19T06:23:17.075Z",
+  "allow_singular_disclosure_after": -40892806.44001837,
+  "singular_disclosure_allowed": true,
+  "vote_count": 48,
+  "voters": [
+    "pippybear",
+    "newday_newlife",
+    "time1337",
+    "zettergren0x00",
+    "2buggy",
+    "aboalezz",
+    "bewgsy",
+    "starlox",
+    "mohaned0101",
+    "thalaivar304",
+    "and 38 more..."
+  ],
+  "severity": {
+    "rating": "critical",
+    "score": 9.1,
+    "author_type": "Team",
+    "metrics": {
+      "attack_vector": "network",
+      "attack_complexity": "low",
+      "privileges_required": "none",
+      "user_interaction": "none",
+      "scope": "unchanged",
+      "confidentiality": "high",
+      "integrity": "high",
+      "availability": "none"
+    }
+  },
+  "structured_scope": {
+    "databaseId": 159122,
+    "asset_type": "URL",
+    "asset_identifier": "mtnns.net",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

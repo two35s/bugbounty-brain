@@ -1,0 +1,19 @@
+Category: cors
+Reports: 4
+
+[Low] CORS Misconfiguration, could lead to disclosure of sensitive information (translate.kromtech.com)
+  URL: https://hackerone.com/reports/731472 | CWE: Unknown
+  Program: clario | Reporter: sec0ndw0lf
+
+[Medium] Unsafe cors sharing of admin users 
+  URL: https://hackerone.com/reports/772744 | CWE: Unknown
+  Program: mtn_group | Reporter: pwrspl0it
+
+[High] CORS misconfig | Account Takeover
+  URL: https://hackerone.com/reports/426147 | CWE: Unknown
+  Program: x | Reporter: nahoragg
+
+[?] CORS Misconfiguration on www.zomato.com
+  URL: https://hackerone.com/reports/168574 | CWE: Unknown
+  Program: eternal | Reporter: albinowax
+

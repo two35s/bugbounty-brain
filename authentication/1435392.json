@@ -1,0 +1,137 @@
+{
+  "id": 1435392,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xNDM1Mzky",
+  "url": "https://hackerone.com/reports/1435392",
+  "title": "Missing brute force protection on login page on www.acronis.com",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2021-12-24T10:57:18.540Z",
+  "submitted_at": "2021-12-24T10:57:18.581Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "brazil1",
+    "url": "/brazil1",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/fv4smbkcano5fdkjehfz9eiow447/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 13428,
+    "url": "https://hackerone.com/acronis",
+    "handle": "acronis",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/e54TDdWdgLKsH3h1oFpK26bq/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/e54TDdWdgLKsH3h1oFpK26bq/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Acronis",
+      "twitter_handle": "Acronis",
+      "website": "https://www.acronis.com",
+      "about": "Complete integrated cybersecurity and data protection for MSPs and IT teams"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": true,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2023-08-30T15:25:39.986Z",
+  "bug_reporter_agreed_on_going_public_at": "2023-08-30T15:25:39.884Z",
+  "team_member_agreed_on_going_public_at": "2022-08-23T15:01:47.099Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Good Night Team and a Merry Christmas!!!\nThe failure occurs as follows, to change the email the user has to click on a link sent to their email to confirm the change.if the user creates a new account with this email before clicking on the change email link,one second link is sent to your email to confirm your new account.if the user now clicks on the change email link, it will no longer be possible to confirm the change because the email is already in use and he will be redirected to a different login page from the original ,this login page has no rate limiting and is vulnerable to brute force attack.\nSteps to reproduce;1:Log in to your account at account.acronis.com\n2:Navigate to PROFILE -> Change email\n3:Enter an email address that is not being used in another account and click -> Save changes\n4:A message with a link to confirm the change will be sent to your email, Ignore the message for now, do not click on the link now\n5:Now create a new account using this email address\n6:You will receive another message in your email with a link to confirm your new account,Ignore the second message too,don't click.\n7:Now log out\n8:Now go to your email inbox and click on the link you received in the first message to confirm email change\n9:By clicking on the link you will be redirected to a login page different from the original\n10:Enter a random email and password and click login, intercept the request with BurpSuite and initiate the brute force attack\n11: For wrong passwords, the code 302 is displayed, and when the password is found, the code 1508 is displayed\n\n## Impact\n\nThe victim will have their account hacked by brute force attack because the changed login page has no rate limitation",
+  "bounty_amount": "250.0",
+  "formatted_bounty": "$250",
+  "weakness": {
+    "id": 31,
+    "name": "Improper Restriction of Authentication Attempts"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 1557720,
+      "file_name": "POC_IMAGENS.pdf",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/p95tdrcm0qkny69ho9hnbnhhot7i?response-content-disposition=attachment%3B%20filename%3D%22POC_IMAGENS.pdf%22%3B%20filename%2A%3DUTF-8%27%27POC_IMAGENS.pdf&response-content-type=application%2Fpdf&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUO3R647U%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123540Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB7tuEPt9H29dbTWyJW%2FywtcOXNrnMn469hp%2B%2B9gIqISAiEAsFUPZSM6RDiaXp%2BBIfm%2B%2FLrhV%2BzLGyeVGPpFGXdKToYquwUImv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEbBH1F9DTMEtcdt5SqPBT5X%2FsYqataEQaBLIOn3GnXmBvgYdRXUd2%2FBrVrWz39nw4TOKmjXDlYMOuBCo0r621RtlO295PTvCLtQKmJrhWueojS71935AFctq7Grhn6S0LKhHaAo9oHiL96C1HH9BFIj7tMCV%2FtpKKg9bJ%2BTJ3u0%2FT3VV%2FH0lm9wNbza93iqFwBOklkOLKik6sn0RJkZYEiZmQsJAY5F%2FFUqSs%2FBaXPIMzzySyMYpzNocaxsyxFzkI8UrPOVYXGJOUU2aNWcs8qdFlwOsxS5YZ2EE2yG0PCPLyqvDtol%2Futb%2BJQMOXI3L%2FU45e2ijFi%2BPus65xwg92wHFBXzRXry9Tpevik5cXoWL2fq1WfmSxKGokwdp38J3celMK389I2J3gdLIiGj3q4P1G8Hdx0sqBRtkLiCWzmLrQo%2BpRTE1B6exvE%2FzYzn0b9LgXF5EdyDRCFA1ihaFRIYfd3WodCmpgQq6EIQ9CZaY37%2Be8Ypr7HCHsNocY2SAV7%2BbU%2BJTOomPN2f9L2BMB9e%2BOUF9iYC3k3FIDZxQhBe4AYlTWCA6iO04P5i0uCzAPbWMjykr7sPVREoNDuwRDhDwjuZeJ0Zgzl8YBUeBRLCnjk%2FJUNzgrjyS%2BFMhlcOXIToSQvPo7lOBjNnSa5L9DJ%2FYrYN8o%2FiHIHeLWRjhL6UBVti4hhgqMXTgA3YIgA2gmui6ZFFeL9341Ke5B96uXh3GaRRRdGnoJL1477jesLfzQjcIrSXyOlwSr06b%2Bq3da93JMXe1MzzbhBECZM8Yqy7uBLzOAihVJGenPprqd8ajr10nsxO4SnAH3jkw8bWQTLbyqBmhkXnoJEtU52vcc3wN3JD0Zu4ex4dPgNURO2pv9soERPLwjCE9pAtIqUw8uOU0QY6sQFsqOQxcYJ76G4yI%2BUdKJiExOZn%2BhTxmG0iN2UNfOQq%2BFhxxHivylQM%2Bi7pjLTJg4ONXELJwoMAupUszlp6GyWbZ2KQVg50Asw6ToYp68cZjsssBwxKJuhtK92%2BCsCzEFRPo0zvxOW6NSuMtqla1sd98I0zKeylSd4yaehFx3E3%2Bf5klNikFqjOcAVlIFQz6TOYxyHA3LnEod9QW0wBPjo7DEGqAGNphStz9AB0frJWwl4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=dab773723b00fb6c890e6cb546ff4368489f30e419acc93f5798aeb91a39ed64",
+      "file_size": 2890907,
+      "type": "application/pdf",
+      "moderated": null
+    },
+    {
+      "id": 1557721,
+      "file_name": "Poc.mp4",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/jjhr20tc4j5xwze9bzlpf48s6l2s?response-content-disposition=attachment%3B%20filename%3D%22Poc.mp4%22%3B%20filename%2A%3DUTF-8%27%27Poc.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQUO3R647U%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123540Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENH%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIB7tuEPt9H29dbTWyJW%2FywtcOXNrnMn469hp%2B%2B9gIqISAiEAsFUPZSM6RDiaXp%2BBIfm%2B%2FLrhV%2BzLGyeVGPpFGXdKToYquwUImv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDEbBH1F9DTMEtcdt5SqPBT5X%2FsYqataEQaBLIOn3GnXmBvgYdRXUd2%2FBrVrWz39nw4TOKmjXDlYMOuBCo0r621RtlO295PTvCLtQKmJrhWueojS71935AFctq7Grhn6S0LKhHaAo9oHiL96C1HH9BFIj7tMCV%2FtpKKg9bJ%2BTJ3u0%2FT3VV%2FH0lm9wNbza93iqFwBOklkOLKik6sn0RJkZYEiZmQsJAY5F%2FFUqSs%2FBaXPIMzzySyMYpzNocaxsyxFzkI8UrPOVYXGJOUU2aNWcs8qdFlwOsxS5YZ2EE2yG0PCPLyqvDtol%2Futb%2BJQMOXI3L%2FU45e2ijFi%2BPus65xwg92wHFBXzRXry9Tpevik5cXoWL2fq1WfmSxKGokwdp38J3celMK389I2J3gdLIiGj3q4P1G8Hdx0sqBRtkLiCWzmLrQo%2BpRTE1B6exvE%2FzYzn0b9LgXF5EdyDRCFA1ihaFRIYfd3WodCmpgQq6EIQ9CZaY37%2Be8Ypr7HCHsNocY2SAV7%2BbU%2BJTOomPN2f9L2BMB9e%2BOUF9iYC3k3FIDZxQhBe4AYlTWCA6iO04P5i0uCzAPbWMjykr7sPVREoNDuwRDhDwjuZeJ0Zgzl8YBUeBRLCnjk%2FJUNzgrjyS%2BFMhlcOXIToSQvPo7lOBjNnSa5L9DJ%2FYrYN8o%2FiHIHeLWRjhL6UBVti4hhgqMXTgA3YIgA2gmui6ZFFeL9341Ke5B96uXh3GaRRRdGnoJL1477jesLfzQjcIrSXyOlwSr06b%2Bq3da93JMXe1MzzbhBECZM8Yqy7uBLzOAihVJGenPprqd8ajr10nsxO4SnAH3jkw8bWQTLbyqBmhkXnoJEtU52vcc3wN3JD0Zu4ex4dPgNURO2pv9soERPLwjCE9pAtIqUw8uOU0QY6sQFsqOQxcYJ76G4yI%2BUdKJiExOZn%2BhTxmG0iN2UNfOQq%2BFhxxHivylQM%2Bi7pjLTJg4ONXELJwoMAupUszlp6GyWbZ2KQVg50Asw6ToYp68cZjsssBwxKJuhtK92%2BCsCzEFRPo0zvxOW6NSuMtqla1sd98I0zKeylSd4yaehFx3E3%2Bf5klNikFqjOcAVlIFQz6TOYxyHA3LnEod9QW0wBPjo7DEGqAGNphStz9AB0frJWwl4%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e14a4083000996cbc15fd0266af6aaa0ece229136e5f3a334fb17fdff57ed6b9",
+      "file_size": 17194160,
+      "type": "video/mp4",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 16,
+  "voters": [
+    "zy9ard3",
+    "shreyaschavhan",
+    "shubham_srt",
+    "pr0f0x01",
+    "shivammusic",
+    "brazil1",
+    "director-",
+    "nykgirish",
+    "cicada369",
+    "lyonx",
+    "and 6 more..."
+  ],
+  "structured_scope": {
+    "databaseId": 50774,
+    "asset_type": "URL",
+    "asset_identifier": "account.acronis.com",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

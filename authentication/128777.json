@@ -1,0 +1,145 @@
+{
+  "id": 128777,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8xMjg3Nzc=",
+  "url": "https://hackerone.com/reports/128777",
+  "title": "No rate-limit in Two factor Authentication leads to bypass using bruteforce attack",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2016-04-06T19:41:25.681Z",
+  "submitted_at": "2016-04-06T19:41:25.681Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "bugs3ra",
+    "url": "/bugs3ra",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 443,
+    "url": "https://hackerone.com/algolia",
+    "handle": "algolia",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/000/443/6dc48cd913e21beebc873e81aaf28fd3b6b9e12e_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/000/000/443/6dc48cd913e21beebc873e81aaf28fd3b6b9e12e_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Algolia",
+      "twitter_handle": "algolia",
+      "website": "https://algolia.com",
+      "about": "Hosted search API that delivers instant and relevant results from the first keystroke"
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": false,
+  "disclosed_at": "2016-06-01T10:34:36.600Z",
+  "bug_reporter_agreed_on_going_public_at": "2016-05-02T10:34:36.290Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi,\n\nThere is no rate limit set for Two factor authentication, which demand for code sent to mobile. This code can be bruteforced easily to bypass this.\n\n```\nPOST /users/testqr HTTP/1.1\nHost: www.algolia.com\nUser-Agent: Mozilla/5.0 (Windows NT 6.3; WOW64; rv:44.0) Gecko/20100101 Firefox/44.0\nAccept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8\nAccept-Language: en-US,en;q=0.5\nAccept-Encoding: gzip, deflate, br\nReferer: https://www.algolia.com/users/displayqr\nCookie: __cfduid=dbe6010b3183f275b85d61f6dbce0417a1459962341; _ga=GA1.2.1293083525.1459962367; PRUM_EPISODES=s=1459971091672&r=https%3A//www.algolia.com/users/displayqr; _session_id=c8f877144126b9e3142d158ce5fbadfb; kvcd=1459971056919; km_ai=20868; km_uq=; km_lv=x; visitor_id139121=7630498; __cid=2af41b1f-9f59-4c7e-a3ef-e0c43327b92f; km_ni=20868; _hjIncludedInSample=1; _gat=1; _dc_gtm_UA-32446386-9=1; km_vs=1; km_identity=f7975d47418f3d188a1ed45468bc2c7e; _gat_UA-32446386-9=1; km_aliased=true\nConnection: close\nContent-Type: application/x-www-form-urlencoded\nContent-Length: 168\n\nutf8=%E2%9C%93&authenticity_token=twHnV25SUnlKr2rqoBCjEcZ5M749eY1aLiX8gL9f7NiR4PJreIlBlBtn3X6F6qi7Z1JBQOKNgFxFVKapX4lCdg%3D%3D&users%5Bgauth_token%5D=6700&commit=Verify\n```\nF83580\n",
+  "bounty_amount": "100.0",
+  "formatted_bounty": "$100",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 83580,
+      "file_name": "Brutforce.JPG",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/083/580/9bdf8b4dbd80fe4aec172938aa3356e1e29593b2/Brutforce.JPG?response-content-disposition=attachment%3B%20filename%3D%22Brutforce.JPG%22%3B%20filename%2A%3DUTF-8%27%27Brutforce.JPG&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQSRCWUF42%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124222Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENL%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQD%2B4MA2Ii3LHLueQ4Ra35E%2B4H5OeP3%2B1yzIJZzmujNitwIhAMS4VCwD6ab2q5pNxCIOED90l5Gu7lUzH%2BlMDEzmDgOdKroFCJv%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5IgxgzuC9AZ9Qer6Cq24qjgVw%2BX5a0MP%2BPaza2iGzBNC6OsYUgnAxlFT9kFpzxuNrebl2NvR8yNqz8uKoemxlbOVcgjGnf4P0xaVcS0u2HmVq53vXI7iAPb2qEnmMXE2f8eexNZe%2BI%2FlHJOy%2F5x7JqIffa%2BoUqokzE2i47F8HMitmrNlomV1Ym%2FB2Zl6gdC7WlK0RwttVNHgZCPIRnjPBeCO0Ob3nbR07YwRaaMyRr30Pl14y%2FGg6IC0zibFUPel6I1RwtYwUzogVASgnrOWqchHOBIAxzqQovpV1Ih0iVhcp1g3ofDD4v5V0n9YVU8%2FB6hHHvO6LaQgC6jnCDcHhxbukmREw7wTFduGiKtQ94iizohGxC6TX5EBPJEgtOCe9PFYNyXZL%2BrBn916%2FaJ3Nn3a93rJRR12BIHWZOAFnTM4W68UQhTf3aevftmGQyF7bwUamiA5PTUSYu7qIWL34H1tkRSueA%2BjJelEMqznRHu098obIy3dqqO7LvMklMxl4mwZITR9jICV0TVSkS%2FGC%2F%2BH%2F%2Fn5EWCcWdYN5nDvyjYG%2BcbLQQfziqj8kaJ2N%2F13OKhryWfyJoYNVnKrHe2NYEB7ZL11nsKmQu%2BnOvXPrnObRr1B%2BmRJh93qjxsWocT7ANxjyI6Ji9SJ23qdXGKkJ0rmYJ%2By3UQ%2BCVOcexfeuYsvMUphg8hIzNyTkxHT2NI1HKp11zZYU%2FbBxpW5A48GaMQFEiYkfJGPDLbgB5tKqjVzNoS9f0JQmpyPl1Zur%2BL0iyWFpHRsK1lQJy5srokd0VgKM3o324QKq0hafl0SRvcvfGqZdltvhBXp%2BdpO%2FCCqEXWb%2FvcowfXSH0FKkb8d%2FnD2lbeHvzRpU9FVJ6ntrL1vTLhrVos%2FMpD60CymbXS8wrvqU0QY6sAHaipUSUii8lwYQyBjXSo6dPU7gPU8crQsQIJ2%2Bn2Ug2yWqk1C7sL04Rdz4Ge4%2FIcRkUUdxddzGIr2i0%2B%2Fr0tUe2o4XQ2xN0wqcT%2F1GAhvJN3VLBxwROylObc5o31QKI%2F2ttZr3Ia5e3Q2istUe9h9zCgUs2dSNuqDOC2hZGa%2FMVj1cExCH%2FWBAcRM51BitHr2hjJnNPdSPiQGdatQFptn7pvo4BlCTP3nlOh9AkBGCOA%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=34764e00378b54a86144e974d0b540e2f8e11b8708d5c19ba117fbd1dce95073",
+      "file_size": 105179,
+      "type": "image/jpeg",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2016-06-01T10:34:36.353Z",
+  "allow_singular_disclosure_after": -316058866.3866495,
+  "singular_disclosure_allowed": true,
+  "vote_count": 6,
+  "voters": [
+    "mohaned0101",
+    "shubham_srt",
+    "pr0f0x01",
+    "imran_hadid",
+    "dyabla",
+    "destinedtohack"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "id": 1661,
+      "category": "researcher",
+      "content": "Two Factor Authentication bypass  allows user to access application without entering verification code and no rate limit is set to protect from Code bruteforce attack.",
+      "updated_at": "2016-04-12T10:42:14.073Z",
+      "can_view?": true,
+      "can_create?": false,
+      "attachments": [],
+      "user": {
+        "id": 31877,
+        "username": "bugs3ra",
+        "name": "Vijay Chaudhary",
+        "bio": "Just to learn new stuff here...",
+        "cleared": false,
+        "verified": false,
+        "website": "http://www.youtube.com/user/learnsecurityvideos",
+        "location": "Delhi, India",
+        "created_at": "2015-05-28T14:14:11.634Z",
+        "url": "https://hackerone.com/bugs3ra",
+        "hackerone_triager": false,
+        "hackerone_employee": false,
+        "user_type": "hacker",
+        "profile_picture_urls": {
+          "small": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+          "medium": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c",
+          "xtralarge": "https://profile-photos.hackerone-user-content.com/variants/000/031/877/979f1b2f975110612d4cab7336f0d594e4afb678_original.png/d6d8259739a2a4d509639b7804214d057bca547cc3fafe509ec3e3a86321b1d1"
+        }
+      }
+    }
+  ]
+}

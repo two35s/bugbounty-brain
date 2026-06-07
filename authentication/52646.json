@@ -1,0 +1,123 @@
+{
+  "id": 52646,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC81MjY0Ng==",
+  "url": "https://hackerone.com/reports/52646",
+  "title": "Insecure direct object reference - have access to deleted DM's",
+  "state": "Closed",
+  "substate": "resolved",
+  "readable_substate": "Resolved",
+  "created_at": "2015-03-19T19:01:36.118Z",
+  "submitted_at": "2015-03-19T19:01:36.118Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "akhil-reni",
+    "url": "/akhil-reni",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/iEozx7qMYfY94dxhXMs6ctPM/20fc426031f09e5347054871ae4e3af2478fd2b3d5e8a321468ecf6f2da5ac20"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 61,
+    "url": "https://hackerone.com/x",
+    "handle": "x",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/ikx4ept298unt534kpz4am2bd4zs/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/ikx4ept298unt534kpz4am2bd4zs/d9695107bfcd68eeb1c9e0912b109cdae9a6c00c0bda6fd4cbd6d9bdb828840a"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "X / xAI",
+      "twitter_handle": "XSecurity",
+      "website": "https://x.com",
+      "about": "X helps you create and share ideas and information instantly, without barriers."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2015-10-12T04:56:07.348Z",
+  "bug_reporter_agreed_on_going_public_at": "2015-09-12T04:55:52.073Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "**Hello**,\r\n\r\nThe bug is straight and simple, \r\nI have access to deleted DM's.\r\nOnce a DM is deleted a user/app will still be able to access the DM's using show DM endpoint\r\n\r\nAttack Scenario\r\n====================\r\nTheir are two accounts Sam and Molly ,\r\nSam Dm's Molly something important and both quickly delete the Dm's after the chat,\r\nSam has given access to a 3rd party app which can access his DM's.\r\nWhen Sam DM's molly every DM gets a unique id like 123456\r\nand the DM can be accessed using the following API call ,\r\nhttps://api.twitter.com/1.1/direct_messages/show.json?id={DM-id}\r\nNow let's say Sam and Molly both deleted the DM ,\r\nbut the 3rd party app can still access the deleted DM using the above end point.\r\n\r\nSteps to reproduce\r\n==========================\r\n- Create 2 account's A and B\r\n- From account A Dm account B\r\n- Note down the Dm id , and make an api \r\nhttps://api.twitter.com/1.1/direct_messages/show.json?id=[noted-dm-id]\r\n- Now delete the DM\r\n- Repeat the api call \r\nhttps://api.twitter.com/1.1/direct_messages/show.json?id=578631102144741376\r\n- You will still have access to the deleted DM.\r\n\r\n*POC: Check for video attached*\r\n\r\n\r\n\r\n**Regards,\r\nWesecureapp**\r\n\r\n",
+  "weakness": {
+    "id": 27,
+    "name": "Improper Authentication - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 32465,
+      "file_name": "twitterdm.mp4",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/032/465/54896055d620c8882a001e2bb1b57b8ec9c2dc00/twitterdm.mp4?response-content-disposition=attachment%3B%20filename%3D%22twitterdm.mp4%22%3B%20filename%2A%3DUTF-8%27%27twitterdm.mp4&response-content-type=video%2Fmp4&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JU4EJ5J%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124302Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENT%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDBbBITVwfkk2qa2031g8YMghb%2FgT6ZIiKyaxjKksSj0wIhALs2tTARz5vqe%2BOhHhWUsobK5RIT5dLqNHgxaX8lNzNkKroFCJ3%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igz512IR3M9%2BxCz1x9cqjgVTdK0kDg43%2Brsci%2F6HL19DEnBV8tINoWOz4R8rr74QqrBs2C7q%2BaT1lEygGcAPp11AuFwmLpEWWJRIgbiG8HZ4HXGxygPDqw28QUfHvQs23qUwbyK3cb9OXInwl3VIigNc2pds%2FBqMXhm1pGib56iz955tBONrQ4W8GxfM8DQ9FkVl8xgtj%2BNcNx%2FYjkRSzvKadmjtRTGFZVkffxu74sA0nFcTphSR7jvbPQr90NDBy8mIJaJcHXjU1WJ%2BrfHg%2BpbaBHZ2Wfhz2x9hqEJvxrVjWGyUfyW9ae1btGezaBZFCLFxam0iW23IDUEkusfQh9aCGPkd0c29lXih1Wqwo2xUCoGS%2FM%2BWi6o3BPBpQLeogUKnA9oXt2f8mGI3RZWglx%2BMRwwBgpKiwxYn4y8vWTOTuv6C0WBwTCxjMEj9BII6bQFNjrsigF0Z3KUDg09ra%2F6P%2F32Vy46XeQS3eK%2FV7JtllYiSxvwJc9OVlEnvPSN2kPA0hDvDQZ%2FjGu%2BKDkH1EG78XJVrtu6j7bLKN2ep%2BHCDHFmCyjk8A%2FLqVi8JmCn41rqr3ottmHO8FGIEVxUe8m9j5%2FSj1f%2BvC8VDTmUkAdDAEMOQXkebo%2Fe%2FK9KREsHG%2BpgABB%2BMAOaemv3QYBJTPSOWfxbT5PugnXQJjyYcoF8wXe438fk3SBm4%2Fs4JkjTFzthI6sJLbldGSzJCd2qhNgdj1bYG4Pa%2F0M8TRHciGogUuzdQuxzphwqaaEceIY5SgD6SiYkaFbkf7Ba89psbrXCSpwrBPBImKGEyQy3fOa%2F2gTyPyyy%2BtZbBqOfR39E8ML8h1Z1sfLNuderwNGGkFqlkCEyAU0vB69OFjWLY965tqvu0MTeXyceti9XbIfAw56uV0QY6sAFKqWvzxcKUk6y5UPGna6d9S4%2FUaeTgJGmZvu2w44p%2BWB2saplQdkkYzzYIssHOJ5IRUH6If%2BiDvCSP4SZlUIFIEMo0zPdwQeGCmoUCki8v3cCmlQMrQsOOa0taREeSuscjNbzm3%2BYqkDCxquLJCEcvXJ%2FL7kzWh0UZv%2BfCU8bTl3nqzuR0qVJikhZzorDUHvWVvNZHWjeJTsD2WZVeujxrjdfSDR6AXlAHviB8vqIhCw%3D%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=e4451cccb72826bfa4ef1683e5b036a0d6cf0128044d444f1d4f03ccbeef909a",
+      "file_size": 3243149,
+      "type": "video/mp4",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2015-10-12T04:55:52.379Z",
+  "allow_singular_disclosure_after": -336210429.83529603,
+  "singular_disclosure_allowed": true,
+  "vote_count": 10,
+  "voters": [
+    "wargsec",
+    "eveeez",
+    "shivammusic",
+    "xxxxxxxxxxx1",
+    "cai5ha0",
+    "aexonsec",
+    "0xkenzo",
+    "destinedtohack",
+    "nicky619",
+    "dark_07"
+  ],
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

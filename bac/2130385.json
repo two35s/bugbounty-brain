@@ -1,0 +1,203 @@
+{
+  "id": 2130385,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC8yMTMwMzg1",
+  "url": "https://hackerone.com/reports/2130385",
+  "title": " Unauthorized Blogs Creation",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "low",
+  "readable_substate": "Resolved",
+  "created_at": "2023-08-31T14:52:28.006Z",
+  "submitted_at": "2023-08-31T14:52:28.156Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "albetisi",
+    "url": "/albetisi",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/qpdtmnvmymwnodts3y3lu05d8odo/3cb67cc78dc0cba55b102dd9eca2ee89b206d3e960be830f070583d9070b69ef"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": true,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 48242,
+    "url": "https://hackerone.com/lichess",
+    "handle": "lichess",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/CbR2hQEVmv82Z9L1cfqd9SFQ/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/CbR2hQEVmv82Z9L1cfqd9SFQ/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "paused",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": false,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "Lichess",
+      "twitter_handle": "",
+      "website": "https://lichess.org",
+      "about": "The free chess server. No paywall, no tracking, no ads. Just the good stuff. Source code: https://lichess.org/source"
+    }
+  },
+  "has_bounty?": false,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2025-09-02T10:30:26.827Z",
+  "bug_reporter_agreed_on_going_public_at": "2025-07-01T08:04:31.489Z",
+  "team_member_agreed_on_going_public_at": "2025-09-02T10:30:26.623Z",
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi,\n\nAn unauthorized blog creation vulnerability has been identified on the lichess.org . By manipulating certain request and leveraging the session cookies of a different account, an attacker can bypass account-specific limitations and create a blog post on an account that is not yet eligible to do so.\n\n\nSteps:\n1.Open a new account  and attempt to create a blog post, you will face this message below.\n\n{F2653923}\n\n2.Log in with a different browser and  an old account that has the ability to create blog posts , go to create some blog with test data and solve the capatcha, but before click save fire up the burp suite, catch the request and send it to repeater and then drop it\n\n{F2653943}\n\n3.Here ,I Replaced the cookies in the request with the cookeis of  the new account ,I clicked send and response be like:\n\n{F2653958}\n\n4.I coppied the location url and I visited it  in the browser while logged in with the new account.\nhttps://lichess.org/[The Location Header]\n\n5.You can see that as a new account we are able to edit the content and submit the form\n\n6.Verify that the unauthorized blog post is successfully created in the new account.\n{F2653979}\n\n\n## Recommendation:\n\nThe platform's blog creation feature should be thoroughly reviewed and validated to ensure that all account restrictions are enforced correctly.\n\n## Impact\n\nAllows unauthorized users to circumvent the intended restrictions on blog creation and create posts on accounts that are not yet eligible to do so. This  lead to the spread of unauthorized or malicious content on the platform, potentially damaging the platform's reputation and user experience.",
+  "weakness": {
+    "id": 26,
+    "name": "Improper Access Control - Generic"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 2653923,
+      "file_name": "Screenshot_from_2023-08-31_05-24-12.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/ak2xqnp3y1w75tj0sp2ud55b0ooi?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_from_2023-08-31_05-24-12.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_from_2023-08-31_05-24-12.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JBIYRSO%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124511Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDeNC0qjFIKCNv7Y8LtQ78CMGLkNaJoX8YJ8yeYkGPH8QIhALKHdRCt2NNFlZs23rCLHJ049xlCLoN1fraeZnKRM3n5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igw7v4e4gyw0gQeBBFoqjwVJ9R55VOhkXbYKZSok7xnNb0oGYNrP93127p1gUrJx2yq%2FFu53W8GwSZsR1818maWUZRP%2FOrNYowTb0bCQ%2BmBh1yfHDHMxy%2BlY2cMtukRl1dljqwHXSkZhTb5nCX8ijk3D6gCAnQTJZ5rX7Sjk5v8QVRJhs2T4lu%2Fa1l4zcF%2BybGmUtJ35%2Fma3BOmd8jDKVS9MzLnh6ald2MlqaVdq%2Bcc1D8O999CRakAd0pDj6ygmq76qf1dpxJ22UQ1uy5bOGCVtS2ofUZ1BdmIWhyPvQqiC2%2FBnq4OI1WXO9IjzAkfU0P52osgNk1WY5Zi7oJVYMys3VvldzUSntYRXhF%2F4EWH32cUc1yZyUJGbZ9pxgTB86jyvxg%2BgKyK0Okbg3UGJzdy5WnvE7dpmkuWMSejdVS17OWkQ4mRvhgxgWiGBFc2%2F6k4f7pDiH3GJcgtGRfve4DFES8%2B3XFKatIxqMSU9mb8EMdpq0Ca57EauAQZZG8XgXP%2F%2BniQ9rrB2OtavSPFSpQqgO1AYm%2FN48pGBMNa17Q9nqUKnfHWj%2FjzF1G8M%2BGkv%2FWAp7RrMK1lZc5ySqhXdeEpuHDIDXQhcIvniJd%2Ffg1AVVfW2RUNl1K6XraUzFKYpH4UyAb93GVPsgMbNarGpbGvOPodo6jlH9meim7LC5YHAiKvEAeNrYbtfla%2BZD7sshhBViVxfDPQQxQ0zyjafpMN0JfAeREKYUga%2F3kQ138o%2Fj0TMHvslKOPCwk6UsvMdrs12ueZzHhdAvNLMEGX6wmZuHiv6zYe0%2FCEPGpzklxdFrg8aoyKIQOH2nr1d7abLJePKeagGj0RbwlOCD6GCcHL76swZ8xzcC3dKGWP%2B0Hh2rjTfp9nVJvK4f0ExF1KNMOSildEGOrABAdyAPSfnpBT79%2F0%2FkCP%2BzTjVrTkLx%2Bc127eOKs2PvS5Vy1eZ4KjM8wtCj%2BN4xvTWFE4vN5YWQIHG%2FQmEfyG9%2BoeGQ6RromIg5LipDag9ns3uobU%2BC11rzHjMdxV94RvpaS2WzuBjkHuavdlmyElkOzt6IWG5x8VffcYmwj7CvXnduH%2FcerOPUIpcF3eVZk4juj3xYV8EkZn%2BTrm7zdRngiCLfayaHrssJs8m7iC6VvA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=826f246f33a9c87160cf20729aad600fc8077181bd858a85bc52d876c5c70dfc",
+      "file_size": 60689,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2653943,
+      "file_name": "Screenshot_from_2023-08-31_05-28-58.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/nmhcue4jhyd8l5ks053q0r3vloah?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_from_2023-08-31_05-28-58.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_from_2023-08-31_05-28-58.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JBIYRSO%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124511Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDeNC0qjFIKCNv7Y8LtQ78CMGLkNaJoX8YJ8yeYkGPH8QIhALKHdRCt2NNFlZs23rCLHJ049xlCLoN1fraeZnKRM3n5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igw7v4e4gyw0gQeBBFoqjwVJ9R55VOhkXbYKZSok7xnNb0oGYNrP93127p1gUrJx2yq%2FFu53W8GwSZsR1818maWUZRP%2FOrNYowTb0bCQ%2BmBh1yfHDHMxy%2BlY2cMtukRl1dljqwHXSkZhTb5nCX8ijk3D6gCAnQTJZ5rX7Sjk5v8QVRJhs2T4lu%2Fa1l4zcF%2BybGmUtJ35%2Fma3BOmd8jDKVS9MzLnh6ald2MlqaVdq%2Bcc1D8O999CRakAd0pDj6ygmq76qf1dpxJ22UQ1uy5bOGCVtS2ofUZ1BdmIWhyPvQqiC2%2FBnq4OI1WXO9IjzAkfU0P52osgNk1WY5Zi7oJVYMys3VvldzUSntYRXhF%2F4EWH32cUc1yZyUJGbZ9pxgTB86jyvxg%2BgKyK0Okbg3UGJzdy5WnvE7dpmkuWMSejdVS17OWkQ4mRvhgxgWiGBFc2%2F6k4f7pDiH3GJcgtGRfve4DFES8%2B3XFKatIxqMSU9mb8EMdpq0Ca57EauAQZZG8XgXP%2F%2BniQ9rrB2OtavSPFSpQqgO1AYm%2FN48pGBMNa17Q9nqUKnfHWj%2FjzF1G8M%2BGkv%2FWAp7RrMK1lZc5ySqhXdeEpuHDIDXQhcIvniJd%2Ffg1AVVfW2RUNl1K6XraUzFKYpH4UyAb93GVPsgMbNarGpbGvOPodo6jlH9meim7LC5YHAiKvEAeNrYbtfla%2BZD7sshhBViVxfDPQQxQ0zyjafpMN0JfAeREKYUga%2F3kQ138o%2Fj0TMHvslKOPCwk6UsvMdrs12ueZzHhdAvNLMEGX6wmZuHiv6zYe0%2FCEPGpzklxdFrg8aoyKIQOH2nr1d7abLJePKeagGj0RbwlOCD6GCcHL76swZ8xzcC3dKGWP%2B0Hh2rjTfp9nVJvK4f0ExF1KNMOSildEGOrABAdyAPSfnpBT79%2F0%2FkCP%2BzTjVrTkLx%2Bc127eOKs2PvS5Vy1eZ4KjM8wtCj%2BN4xvTWFE4vN5YWQIHG%2FQmEfyG9%2BoeGQ6RromIg5LipDag9ns3uobU%2BC11rzHjMdxV94RvpaS2WzuBjkHuavdlmyElkOzt6IWG5x8VffcYmwj7CvXnduH%2FcerOPUIpcF3eVZk4juj3xYV8EkZn%2BTrm7zdRngiCLfayaHrssJs8m7iC6VvA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=91445b1c7b663a1b16dc785d51e1ad4de080697600fd27b372dc46331d5f7e68",
+      "file_size": 58909,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2653958,
+      "file_name": "Screenshot_from_2023-08-31_05-36-23.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/mk6hrwkdqw97fbotsx82no5s0qjb?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_from_2023-08-31_05-36-23.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_from_2023-08-31_05-36-23.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JBIYRSO%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124511Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDeNC0qjFIKCNv7Y8LtQ78CMGLkNaJoX8YJ8yeYkGPH8QIhALKHdRCt2NNFlZs23rCLHJ049xlCLoN1fraeZnKRM3n5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igw7v4e4gyw0gQeBBFoqjwVJ9R55VOhkXbYKZSok7xnNb0oGYNrP93127p1gUrJx2yq%2FFu53W8GwSZsR1818maWUZRP%2FOrNYowTb0bCQ%2BmBh1yfHDHMxy%2BlY2cMtukRl1dljqwHXSkZhTb5nCX8ijk3D6gCAnQTJZ5rX7Sjk5v8QVRJhs2T4lu%2Fa1l4zcF%2BybGmUtJ35%2Fma3BOmd8jDKVS9MzLnh6ald2MlqaVdq%2Bcc1D8O999CRakAd0pDj6ygmq76qf1dpxJ22UQ1uy5bOGCVtS2ofUZ1BdmIWhyPvQqiC2%2FBnq4OI1WXO9IjzAkfU0P52osgNk1WY5Zi7oJVYMys3VvldzUSntYRXhF%2F4EWH32cUc1yZyUJGbZ9pxgTB86jyvxg%2BgKyK0Okbg3UGJzdy5WnvE7dpmkuWMSejdVS17OWkQ4mRvhgxgWiGBFc2%2F6k4f7pDiH3GJcgtGRfve4DFES8%2B3XFKatIxqMSU9mb8EMdpq0Ca57EauAQZZG8XgXP%2F%2BniQ9rrB2OtavSPFSpQqgO1AYm%2FN48pGBMNa17Q9nqUKnfHWj%2FjzF1G8M%2BGkv%2FWAp7RrMK1lZc5ySqhXdeEpuHDIDXQhcIvniJd%2Ffg1AVVfW2RUNl1K6XraUzFKYpH4UyAb93GVPsgMbNarGpbGvOPodo6jlH9meim7LC5YHAiKvEAeNrYbtfla%2BZD7sshhBViVxfDPQQxQ0zyjafpMN0JfAeREKYUga%2F3kQ138o%2Fj0TMHvslKOPCwk6UsvMdrs12ueZzHhdAvNLMEGX6wmZuHiv6zYe0%2FCEPGpzklxdFrg8aoyKIQOH2nr1d7abLJePKeagGj0RbwlOCD6GCcHL76swZ8xzcC3dKGWP%2B0Hh2rjTfp9nVJvK4f0ExF1KNMOSildEGOrABAdyAPSfnpBT79%2F0%2FkCP%2BzTjVrTkLx%2Bc127eOKs2PvS5Vy1eZ4KjM8wtCj%2BN4xvTWFE4vN5YWQIHG%2FQmEfyG9%2BoeGQ6RromIg5LipDag9ns3uobU%2BC11rzHjMdxV94RvpaS2WzuBjkHuavdlmyElkOzt6IWG5x8VffcYmwj7CvXnduH%2FcerOPUIpcF3eVZk4juj3xYV8EkZn%2BTrm7zdRngiCLfayaHrssJs8m7iC6VvA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=7d17b68650b9da3529ad3b2902af8c82dd2bb5830b1baa5ca9627fcea86a27af",
+      "file_size": 65090,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 2653979,
+      "file_name": "Screenshot_from_2023-08-31_05-39-16.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/8rudylecdn6on80bwat1192d5e7q?response-content-disposition=attachment%3B%20filename%3D%22Screenshot_from_2023-08-31_05-39-16.png%22%3B%20filename%2A%3DUTF-8%27%27Screenshot_from_2023-08-31_05-39-16.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQ6JBIYRSO%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T124511Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDeNC0qjFIKCNv7Y8LtQ78CMGLkNaJoX8YJ8yeYkGPH8QIhALKHdRCt2NNFlZs23rCLHJ049xlCLoN1fraeZnKRM3n5KrsFCJz%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMDEzNjE5Mjc0ODQ5Igw7v4e4gyw0gQeBBFoqjwVJ9R55VOhkXbYKZSok7xnNb0oGYNrP93127p1gUrJx2yq%2FFu53W8GwSZsR1818maWUZRP%2FOrNYowTb0bCQ%2BmBh1yfHDHMxy%2BlY2cMtukRl1dljqwHXSkZhTb5nCX8ijk3D6gCAnQTJZ5rX7Sjk5v8QVRJhs2T4lu%2Fa1l4zcF%2BybGmUtJ35%2Fma3BOmd8jDKVS9MzLnh6ald2MlqaVdq%2Bcc1D8O999CRakAd0pDj6ygmq76qf1dpxJ22UQ1uy5bOGCVtS2ofUZ1BdmIWhyPvQqiC2%2FBnq4OI1WXO9IjzAkfU0P52osgNk1WY5Zi7oJVYMys3VvldzUSntYRXhF%2F4EWH32cUc1yZyUJGbZ9pxgTB86jyvxg%2BgKyK0Okbg3UGJzdy5WnvE7dpmkuWMSejdVS17OWkQ4mRvhgxgWiGBFc2%2F6k4f7pDiH3GJcgtGRfve4DFES8%2B3XFKatIxqMSU9mb8EMdpq0Ca57EauAQZZG8XgXP%2F%2BniQ9rrB2OtavSPFSpQqgO1AYm%2FN48pGBMNa17Q9nqUKnfHWj%2FjzF1G8M%2BGkv%2FWAp7RrMK1lZc5ySqhXdeEpuHDIDXQhcIvniJd%2Ffg1AVVfW2RUNl1K6XraUzFKYpH4UyAb93GVPsgMbNarGpbGvOPodo6jlH9meim7LC5YHAiKvEAeNrYbtfla%2BZD7sshhBViVxfDPQQxQ0zyjafpMN0JfAeREKYUga%2F3kQ138o%2Fj0TMHvslKOPCwk6UsvMdrs12ueZzHhdAvNLMEGX6wmZuHiv6zYe0%2FCEPGpzklxdFrg8aoyKIQOH2nr1d7abLJePKeagGj0RbwlOCD6GCcHL76swZ8xzcC3dKGWP%2B0Hh2rjTfp9nVJvK4f0ExF1KNMOSildEGOrABAdyAPSfnpBT79%2F0%2FkCP%2BzTjVrTkLx%2Bc127eOKs2PvS5Vy1eZ4KjM8wtCj%2BN4xvTWFE4vN5YWQIHG%2FQmEfyG9%2BoeGQ6RromIg5LipDag9ns3uobU%2BC11rzHjMdxV94RvpaS2WzuBjkHuavdlmyElkOzt6IWG5x8VffcYmwj7CvXnduH%2FcerOPUIpcF3eVZk4juj3xYV8EkZn%2BTrm7zdRngiCLfayaHrssJs8m7iC6VvA%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=59d3871adeb5c28b33d2fb5d198fa4f83baf1b8e73dfca5fdbe4a15e6c6627e5",
+      "file_size": 58784,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": null,
+  "vote_count": 48,
+  "voters": [
+    "loaymorad",
+    "ibraxy",
+    "almuntadhar0x01",
+    "ivoabreu",
+    "mohaned0101",
+    "thalaivar304",
+    "albetisi",
+    "ahmed_xyz",
+    "zig_shark",
+    "sisi0x",
+    "and 38 more..."
+  ],
+  "severity": {
+    "rating": "low",
+    "author_type": "Team"
+  },
+  "structured_scope": {
+    "databaseId": 50173,
+    "asset_type": "URL",
+    "asset_identifier": "lichess.org",
+    "max_severity": "critical"
+  },
+  "abilities": {
+    "can_manage?": false,
+    "can_export?": false,
+    "can_add_comment?": false,
+    "can_request_decision_review_without_strict_acl_mode?": false,
+    "can_request_decision_review?": false,
+    "can_reject_decision_review?": false,
+    "can_change_state?": false,
+    "can_reopen?": false,
+    "can_award_bounty?": false,
+    "can_award_swag?": false,
+    "can_suggest_bounty_amount?": false,
+    "can_create_dupe_window_bounty?": false,
+    "can_assign_to_user?": false,
+    "can_assign_to_h1_triage?": false,
+    "can_hide_timeline?": false,
+    "can_agree_on_going_public?": false,
+    "can_cancel_disclosure_request?": false,
+    "can_be_publicly_disclosed?": false,
+    "can_post_internal_comments?": false,
+    "can_manage_common_responses?": false,
+    "can_use_common_responses?": false,
+    "can_reassign_to_team?": false,
+    "can_change_title?": false,
+    "can_change_vulnerability_information?": false,
+    "can_change_weakness?": false,
+    "can_be_manually_disclosed?": false,
+    "can_clone?": false,
+    "can_close_as_na?": false,
+    "can_close_as_duplicate?": false,
+    "can_close_as_informative?": false,
+    "can_close_as_spam?": false,
+    "can_close_as_resolved?": false,
+    "can_ban_researcher?": false,
+    "can_create_severity?": false,
+    "can_close_comments?": false,
+    "can_change_structured_scope?": false,
+    "can_manage_collaborators?": false,
+    "can_view_bounty_weights?": false,
+    "can_redact?": false,
+    "can_view_credential_account_details?": false,
+    "can_request_retest?": false,
+    "can_cancel_retest?": false,
+    "can_submit_draft?": false,
+    "can_delete_draft?": false,
+    "can_change_to_pending_program_review_state?": false,
+    "can_request_code_review?": false,
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "can_change_pentest": false,
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}

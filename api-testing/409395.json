@@ -1,0 +1,145 @@
+{
+  "id": 409395,
+  "global_id": "Z2lkOi8vaGFja2Vyb25lL1JlcG9ydC80MDkzOTU=",
+  "url": "https://hackerone.com/reports/409395",
+  "title": "Bypass of GitLab CI runner slash fix in YAML validation",
+  "state": "Closed",
+  "substate": "resolved",
+  "severity_rating": "critical",
+  "readable_substate": "Resolved",
+  "created_at": "2018-09-13T11:50:47.225Z",
+  "submitted_at": "2018-09-13T11:50:47.225Z",
+  "is_member_of_team?": false,
+  "is_organization_group_member?": false,
+  "is_triager?": false,
+  "reporter": {
+    "disabled": false,
+    "username": "ngalog",
+    "url": "/ngalog",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/000/074/607/68068f139c99d98e3e8baf0a51f219c29ade1769_original.png/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1"
+    },
+    "is_me?": false,
+    "cleared": false,
+    "verified": false,
+    "hackerone_triager": false,
+    "hacker_mediation": false
+  },
+  "team": {
+    "id": 264,
+    "url": "https://hackerone.com/gitlab",
+    "handle": "gitlab",
+    "profile_picture_urls": {
+      "small": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/235acf2ba808c3a51a94888fb977392c26f8fb0ccf77a81a4546c5e4065c06f1",
+      "medium": "https://profile-photos.hackerone-user-content.com/variants/f0hovtq73f9ap815a0r1w42bocp4/3f1ab5c6a9b6dadada1e6c8121700b884388bd0a43471fee1897a38ce57d0b2c"
+    },
+    "permissions": [],
+    "submission_state": "open",
+    "default_currency": "usd",
+    "awards_miles": false,
+    "offers_bounties": true,
+    "state": "public_mode",
+    "only_cleared_hackers": false,
+    "pentest_feature_enabled?": false,
+    "pentest_retesting_ends_at": null,
+    "profile": {
+      "name": "GitLab",
+      "twitter_handle": "gitlab",
+      "website": "https://about.gitlab.com",
+      "about": "A single application for the entire software development lifecycle."
+    }
+  },
+  "has_bounty?": true,
+  "can_view_team": true,
+  "can_view_report": true,
+  "is_external_bug": false,
+  "is_published": false,
+  "is_participant": false,
+  "has_collaborators": false,
+  "submitted_by_team_member": false,
+  "submitted_with_assistant": false,
+  "stage": 4,
+  "public": true,
+  "visibility": "full",
+  "cve_ids": [],
+  "singular_disclosure_disabled": true,
+  "disclosed_at": "2019-04-10T04:33:42.240Z",
+  "bug_reporter_agreed_on_going_public_at": "2019-03-11T04:33:41.871Z",
+  "team_member_agreed_on_going_public_at": null,
+  "comments_closed?": false,
+  "facebook_team?": false,
+  "team_private?": false,
+  "vulnerability_information": "Hi Gitlab Security,\n\nI notice the bug #301432 that Jobert reported earlier is could be bypassed by setting variable in environment.\n\nThe reason is that the fix in place preventing url normalization is performed by doing the YAML  validation, however this could be bypassed by setting the environment variable in `https://gitlab.com/{project_id}/settings/ci_cd`\n\nBy setting the key ONE and variable value to `../1/key`, it is possible to replicate what jobert did in #301432.\n\nAnd in `.gitlab-ci.yml`\n\n```\na:\n  script:\n  - echo \"script\"\n  - echo \"a\"\n  cache:\n    key: \"$ONE\"\n    policy: pull #or push if you like to poison\n    paths:\n      - .\n```\n\nThen make any change to `.gitlab-ci.yml` will trigger the bug once again.\n\nDownload from cache\n{F345819}\nSetting environment variable\n{F345820}\nUpload to cache\n{F345821}\n\n## Impact\n\nQuoting from  #301432\n```\nDepending on the files that are cached, this may allow an attacker to run arbitrary code on a victim's Docker instance running a CI run. This may expose confidential data, inject artifacts in a build pipeline to ship additional code, among other things.\n```",
+  "weakness": {
+    "id": 107,
+    "name": "Improper Input Validation"
+  },
+  "original_report_id": null,
+  "original_report_url": null,
+  "attachments": [
+    {
+      "id": 345819,
+      "file_name": "download.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/345/819/31a4e9638fc63f09b77dddc8fa6e8d53e5d3af3e/download.png?response-content-disposition=attachment%3B%20filename%3D%22download.png%22%3B%20filename%2A%3DUTF-8%27%27download.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX4UVSF2W%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123424Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD5mX3ANJCxLlG%2Fa7ISDFNVNU1EQqG4vvHQCQ8dkahizAIgPOQuscDt4yH0RyIlxIW8j0s6yBiOf1vhHmN6lfXcqeIquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDTdiuzDp4v%2F9kobQiqPBfIcVYZAYFGfzmAt32HSv5Q1DPyerwLxIhd6ZEkC7ace4vaXyeNL005Tv%2B5ESVoIT0%2Fw06GKmQwrju4eXv518QTrRNmQUaOtoS17pA9Eld26Rpmj0JedRrH6J8oqsI2zkYou%2F9Mh7DHIuyitKuzXewt3mKC%2B%2F5VpERJB%2F7%2Bp%2BlmR28Ck26ry9mtASt6T83Of6PGLi4bMnw6rc1BN9IGbOjye9NsbdPgmim1pzCbi7yGL1p51dj39XdO0ptrjwwgUF1rVtNC4xCmvGYrlfX5C0xkVHz1S%2B27%2Fp4Ycj8RG%2BaFPD0mJ3%2BlOCi32PjaaGkJXE%2Bs9u%2FgGz2hu8BMpQu9VfD0Hr8fIvSGjaUTDbWZWj1Qc%2F%2F1DQ0XZcU2OLL%2FCJ1voUv1cYxvhmhZAJXLIzghPgWMZMKixrIj8saOItQt491Qv9UkbGjzTR3svAPSo8OYcJ15QVs1kAX4s%2Fd2OAaSsjLWVrNvLx1CGI0vtKa1sYnWlRLTocTD%2Fio%2BWDJn3Ir2ct8FlDdzUEj00JI%2FYkq8xZ%2FzbLbYdEncnGZYevTQ9pMJgD5HdE2%2BvGMi95PJn0V9CnobNDHL0J1plC0Z6ew6iizTJmdpMkCzF9yuDDFoJO%2FqucSgVwIhqInUtgnstSc98qzG4r5FsS4prfjzWz8ZkvQpKUUHTVZEkX38cr3pgqjmANinulKKpi89WW%2BT7t6ul7fnG%2FiXo%2BsOEazVCsiRPIw1q%2FlWma%2B%2FNdIvV%2F5TJWpLIUvoGgL5rXDsC6EpFu4CbMRCZdLeAEHRoy9%2BYEVTlB1rC1QAp1J9N81OSvjDF%2BaK3KbIu67rcfDvlvIg9mUlyQckupbmFpGhPPaOLCIPp5lJhakzaQvz0MKcDi6dyqhIwyoyV0QY6sQHcgH2dzuAno%2BcnzmFMg5TF465y88IkUtiANgwBADbTy2QVCRnMncg9gi1hu2NQmMSE8kHGu732MngqmvZN%2Boc2ghqULAkeMqmA%2F7DXQoQ7ZVl5mFMNDJfysyPsTaJp2NDUrD%2BPL8JoWob1av8ric3ijoNh7RcUCrwio%2FruRD7Qz1qRqchVEEOZPYaLYgq4NH1xzJjnindClsUDHr2crQy%2BNxKdzCmHYV4ZmFws7%2FZlVks%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=ae0e4e576be615dde5cfdf393cb5811cb0a38cfbd8d24cc32c9465a9c4b2a67b",
+      "file_size": 344405,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 345820,
+      "file_name": "environemtn_variable.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/345/820/e035de2b2f6e884c6d620008aa1cc5949a2a2bde/environemtn_variable.png?response-content-disposition=attachment%3B%20filename%3D%22environemtn_variable.png%22%3B%20filename%2A%3DUTF-8%27%27environemtn_variable.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX4UVSF2W%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123424Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD5mX3ANJCxLlG%2Fa7ISDFNVNU1EQqG4vvHQCQ8dkahizAIgPOQuscDt4yH0RyIlxIW8j0s6yBiOf1vhHmN6lfXcqeIquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDTdiuzDp4v%2F9kobQiqPBfIcVYZAYFGfzmAt32HSv5Q1DPyerwLxIhd6ZEkC7ace4vaXyeNL005Tv%2B5ESVoIT0%2Fw06GKmQwrju4eXv518QTrRNmQUaOtoS17pA9Eld26Rpmj0JedRrH6J8oqsI2zkYou%2F9Mh7DHIuyitKuzXewt3mKC%2B%2F5VpERJB%2F7%2Bp%2BlmR28Ck26ry9mtASt6T83Of6PGLi4bMnw6rc1BN9IGbOjye9NsbdPgmim1pzCbi7yGL1p51dj39XdO0ptrjwwgUF1rVtNC4xCmvGYrlfX5C0xkVHz1S%2B27%2Fp4Ycj8RG%2BaFPD0mJ3%2BlOCi32PjaaGkJXE%2Bs9u%2FgGz2hu8BMpQu9VfD0Hr8fIvSGjaUTDbWZWj1Qc%2F%2F1DQ0XZcU2OLL%2FCJ1voUv1cYxvhmhZAJXLIzghPgWMZMKixrIj8saOItQt491Qv9UkbGjzTR3svAPSo8OYcJ15QVs1kAX4s%2Fd2OAaSsjLWVrNvLx1CGI0vtKa1sYnWlRLTocTD%2Fio%2BWDJn3Ir2ct8FlDdzUEj00JI%2FYkq8xZ%2FzbLbYdEncnGZYevTQ9pMJgD5HdE2%2BvGMi95PJn0V9CnobNDHL0J1plC0Z6ew6iizTJmdpMkCzF9yuDDFoJO%2FqucSgVwIhqInUtgnstSc98qzG4r5FsS4prfjzWz8ZkvQpKUUHTVZEkX38cr3pgqjmANinulKKpi89WW%2BT7t6ul7fnG%2FiXo%2BsOEazVCsiRPIw1q%2FlWma%2B%2FNdIvV%2F5TJWpLIUvoGgL5rXDsC6EpFu4CbMRCZdLeAEHRoy9%2BYEVTlB1rC1QAp1J9N81OSvjDF%2BaK3KbIu67rcfDvlvIg9mUlyQckupbmFpGhPPaOLCIPp5lJhakzaQvz0MKcDi6dyqhIwyoyV0QY6sQHcgH2dzuAno%2BcnzmFMg5TF465y88IkUtiANgwBADbTy2QVCRnMncg9gi1hu2NQmMSE8kHGu732MngqmvZN%2Boc2ghqULAkeMqmA%2F7DXQoQ7ZVl5mFMNDJfysyPsTaJp2NDUrD%2BPL8JoWob1av8ric3ijoNh7RcUCrwio%2FruRD7Qz1qRqchVEEOZPYaLYgq4NH1xzJjnindClsUDHr2crQy%2BNxKdzCmHYV4ZmFws7%2FZlVks%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=4fac14eed87c110680c0ce5a5aec8d7b90a819a3e429934b600cd266f3645fcc",
+      "file_size": 179835,
+      "type": "image/png",
+      "moderated": null
+    },
+    {
+      "id": 345821,
+      "file_name": "upload.png",
+      "expiring_url": "https://hackerone-us-west-2-production-attachments.s3.us-west-2.amazonaws.com/000/345/821/a71d8b22d2076e221505ab76a8f8dc53fff39ffe/upload.png?response-content-disposition=attachment%3B%20filename%3D%22upload.png%22%3B%20filename%2A%3DUTF-8%27%27upload.png&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAQGK6FURQX4UVSF2W%2F20260607%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20260607T123424Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIQD5mX3ANJCxLlG%2Fa7ISDFNVNU1EQqG4vvHQCQ8dkahizAIgPOQuscDt4yH0RyIlxIW8j0s6yBiOf1vhHmN6lfXcqeIquwUInP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwMTM2MTkyNzQ4NDkiDDTdiuzDp4v%2F9kobQiqPBfIcVYZAYFGfzmAt32HSv5Q1DPyerwLxIhd6ZEkC7ace4vaXyeNL005Tv%2B5ESVoIT0%2Fw06GKmQwrju4eXv518QTrRNmQUaOtoS17pA9Eld26Rpmj0JedRrH6J8oqsI2zkYou%2F9Mh7DHIuyitKuzXewt3mKC%2B%2F5VpERJB%2F7%2Bp%2BlmR28Ck26ry9mtASt6T83Of6PGLi4bMnw6rc1BN9IGbOjye9NsbdPgmim1pzCbi7yGL1p51dj39XdO0ptrjwwgUF1rVtNC4xCmvGYrlfX5C0xkVHz1S%2B27%2Fp4Ycj8RG%2BaFPD0mJ3%2BlOCi32PjaaGkJXE%2Bs9u%2FgGz2hu8BMpQu9VfD0Hr8fIvSGjaUTDbWZWj1Qc%2F%2F1DQ0XZcU2OLL%2FCJ1voUv1cYxvhmhZAJXLIzghPgWMZMKixrIj8saOItQt491Qv9UkbGjzTR3svAPSo8OYcJ15QVs1kAX4s%2Fd2OAaSsjLWVrNvLx1CGI0vtKa1sYnWlRLTocTD%2Fio%2BWDJn3Ir2ct8FlDdzUEj00JI%2FYkq8xZ%2FzbLbYdEncnGZYevTQ9pMJgD5HdE2%2BvGMi95PJn0V9CnobNDHL0J1plC0Z6ew6iizTJmdpMkCzF9yuDDFoJO%2FqucSgVwIhqInUtgnstSc98qzG4r5FsS4prfjzWz8ZkvQpKUUHTVZEkX38cr3pgqjmANinulKKpi89WW%2BT7t6ul7fnG%2FiXo%2BsOEazVCsiRPIw1q%2FlWma%2B%2FNdIvV%2F5TJWpLIUvoGgL5rXDsC6EpFu4CbMRCZdLeAEHRoy9%2BYEVTlB1rC1QAp1J9N81OSvjDF%2BaK3KbIu67rcfDvlvIg9mUlyQckupbmFpGhPPaOLCIPp5lJhakzaQvz0MKcDi6dyqhIwyoyV0QY6sQHcgH2dzuAno%2BcnzmFMg5TF465y88IkUtiANgwBADbTy2QVCRnMncg9gi1hu2NQmMSE8kHGu732MngqmvZN%2Boc2ghqULAkeMqmA%2F7DXQoQ7ZVl5mFMNDJfysyPsTaJp2NDUrD%2BPL8JoWob1av8ric3ijoNh7RcUCrwio%2FruRD7Qz1qRqchVEEOZPYaLYgq4NH1xzJjnindClsUDHr2crQy%2BNxKdzCmHYV4ZmFws7%2FZlVks%3D&X-Amz-SignedHeaders=host&X-Amz-Signature=d4259f6a4396b808bf3a982f4fb8e6eec16d0853d05d904084b213ed2ed5de98",
+      "file_size": 332866,
+      "type": "image/png",
+      "moderated": null
+    }
+  ],
+  "allow_singular_disclosure_at": "2019-04-10T04:33:41.953Z",
+  "allow_singular_disclosure_after": -225964842.8500527,
+  "singular_disclosure_allowed": true,
+  "vote_count": 362,
+  "voters": [
+    "irek",
+    "lmy375",
+    "orange303",
+    "sky003",
+    "oub3ll4",
+    "upx",
+    "n1m0",
+    "nytr0gen",
+    "arneswinnen",
+    "j4v40n654n",
+    "and 352 more..."
+  ],
+  "severity": {
+    "rating": "critical",
+    "author_type": "User"
+  },
+  "structured_scope": null,
+  "abilities": {
+    "assignable_team_members": [],
+    "assignable_team_member_groups": []
+  },
+  "is_exploit_agent_supported?": false,
+  "is_linear_agent_ui_supported?": false,
+  "summaries": [
+    {
+      "category": "team",
+      "can_view?": true,
+      "can_create?": false
+    },
+    {
+      "category": "researcher",
+      "can_view?": true,
+      "can_create?": false
+    }
+  ]
+}
